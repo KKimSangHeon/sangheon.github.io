@@ -274,14 +274,14 @@ code {
 .logo {
   display: block;
   padding: 10px 0;
-  width: 165px;
-  height: 60px;
+  width: 300px;
+  height: 100px;
   background-image: url("images/logo-header.png");
   background-position: 0px 10px;
   background-repeat: no-repeat;
-  -webkit-background-size: 165px 60px;
-  -moz-background-size: 165px 60px;
-  background-size: 165px 60px;
+  -webkit-background-size: 300px 100px;
+  -moz-background-size: 300px 100px;
+  background-size: 300px 100px;
 }
 .main-body {
   margin-top: -60px;
@@ -357,7 +357,7 @@ code {
 }
 #header-title {
   text-align: center;
-  padding: 30px 30px;
+  padding: 0px 0px;
 }
 #header-title:before,
 #header-title:after {
@@ -366,6 +366,10 @@ code {
 }
 #header-title:after {
   clear: both;
+}
+#header-title .logo-wrap {
+  margin-top: -20px;
+  margin-left: -27px;
 }
 #header-title .logo-wrap,
 #header-title .subtitle-wrap {
@@ -378,7 +382,7 @@ code {
 #header-title .subtitle {
   font-size: 16px;
   font-style: italic;
-  line-height: 70px;
+  line-height: 110px;
   color: rgba(255,255,255,0.7);
   text-shadow: 0 1px rgba(0,0,0,0.2);
 }
@@ -1616,6 +1620,10 @@ a.article-title:hover {
 #footer .credit {
   padding: 30px;
 }
+#footer .logo-wrap {
+  margin-top: -30px;
+  margin-left: -25px;
+}
 #footer #back-to-top {
   background: #eaeaea;
   color: #777;
@@ -1637,11 +1645,11 @@ a.article-title:hover {
   line-height: 22px;
 }
 #footer .logo {
-  width: 132px;
-  height: 48px;
-  -webkit-background-size: 132px 48px;
-  -moz-background-size: 132px 48px;
-  background-size: 132px 48px;
+  width: 240px;
+  height: 80px;
+  -webkit-background-size: 240px 80px;
+  -moz-background-size: 240px 80px;
+  background-size: 240px 80px;
 }
 i.icon {
   display: inline-block;
