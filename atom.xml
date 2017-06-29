@@ -64,7 +64,7 @@
     <link href="http://KKimSangHeon.github.io/2017/06/29/request-parent/"/>
     <id>http://KKimSangHeon.github.io/2017/06/29/request-parent/</id>
     <published>2017-06-29T09:52:18.000Z</published>
-    <updated>2017-06-29T11:17:03.090Z</updated>
+    <updated>2017-06-29T11:18:28.490Z</updated>
     
     <content type="html"><![CDATA[<h1 id="App-소개"><a href="#App-소개" class="headerlink" title="App 소개"></a>App 소개</h1><p>이 어플리션은 증가하는 고독사를 줄여보자는 취지에서 개발하게 된 어플리케이션입니다. 부재중 통화수가 사전에 등록해 놓은 n 개가 되었을 경우 사전에 등록해 놓은 지인에게 위치정보가 포함된 문자메세지가 송신되는 앱 입니다.</p>
 <p>사용한 기술 : gps기능, sms기능</p>
@@ -79,7 +79,7 @@
     
       <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
     
-      <category term="1.Introduction" scheme="http://KKimSangHeon.github.io/categories/About-Me/1-Introduction/"/>
+      <category term="1. Introduction" scheme="http://KKimSangHeon.github.io/categories/About-Me/1-Introduction/"/>
     
     
       <category term="Android" scheme="http://KKimSangHeon.github.io/tags/Android/"/>
