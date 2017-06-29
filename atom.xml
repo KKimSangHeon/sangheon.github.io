@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-06-29T11:04:29.175Z</updated>
+  <updated>2017-06-29T11:47:25.514Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://KKimSangHeon.github.io/2017/06/29/about-me/"/>
     <id>http://KKimSangHeon.github.io/2017/06/29/about-me/</id>
     <published>2017-06-29T09:58:22.000Z</published>
-    <updated>2017-06-29T11:04:29.175Z</updated>
+    <updated>2017-06-29T11:47:25.514Z</updated>
     
     <content type="html"><![CDATA[<h1 id="블로그-소개"><a href="#블로그-소개" class="headerlink" title="블로그 소개"></a>블로그 소개</h1><p>안녕하세요. 항상 풀스택 개발자가 되고자 노력하는 취업준비생입니다. (#백수, #자소서)</p>
 <p>이 블로그는 제가 개인적으로 공부한 내용을 업로드하고, 공유하며 진행했던 프로젝트 내용을 업로드하고자 만들었습니다.</p>
@@ -50,7 +50,7 @@
     
       <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
     
-      <category term="1.Introduction" scheme="http://KKimSangHeon.github.io/categories/About-Me/1-Introduction/"/>
+      <category term="Introduction" scheme="http://KKimSangHeon.github.io/categories/About-Me/Introduction/"/>
     
     
       <category term="Sang Heon Kim" scheme="http://KKimSangHeon.github.io/tags/Sang-Heon-Kim/"/>
@@ -64,22 +64,26 @@
     <link href="http://KKimSangHeon.github.io/2017/06/29/request-parent/"/>
     <id>http://KKimSangHeon.github.io/2017/06/29/request-parent/</id>
     <published>2017-06-29T09:52:18.000Z</published>
-    <updated>2017-06-29T11:18:28.490Z</updated>
+    <updated>2017-06-29T13:03:20.205Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="App-소개"><a href="#App-소개" class="headerlink" title="App 소개"></a>App 소개</h1><p>이 어플리션은 증가하는 고독사를 줄여보자는 취지에서 개발하게 된 어플리케이션입니다. 부재중 통화수가 사전에 등록해 놓은 n 개가 되었을 경우 사전에 등록해 놓은 지인에게 위치정보가 포함된 문자메세지가 송신되는 앱 입니다.</p>
+    <content type="html"><![CDATA[<h1 id="App-소개"><a href="#App-소개" class="headerlink" title="App 소개"></a>App 소개</h1><img src="/2017/06/29/request-parent/request-parent-flow.png" alt="작동화면" title="작동화면">
+<img src="/2017/06/29/request-parent/request-parent-received-message.png" alt="수신된 메세지" title="수신된 메세지">
+<p>-이 어플리션은 증가하는 고독사를 줄여보자는 취지에서 개발하게 된 어플리케이션입니다. 부재중 통화수가 사전에 등록해 놓은 n 개가 되었을 경우 사전에 등록해 놓은 지인에게 위치정보가 포함된 문자메세지가 송신되는 앱 입니다.</p>
+<p>-시연영상</p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/3JUTYHuzjdA" frameborder="0" allowfullscreen></iframe></div>
 <p>사용한 기술 : gps기능, sms기능</p>
 <p><a href="https://play.google.com/store/apps/details?id=com.tkdgjs1501.RequestParent" target="_blank" rel="external">google play링크</a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;App-소개&quot;&gt;&lt;a href=&quot;#App-소개&quot; class=&quot;headerlink&quot; title=&quot;App 소개&quot;&gt;&lt;/a&gt;App 소개&lt;/h1&gt;&lt;p&gt;이 어플리션은 증가하는 고독사를 줄여보자는 취지에서 개발하게 된 어플리케이션입니다. 부재중 통화수
+      &lt;h1 id=&quot;App-소개&quot;&gt;&lt;a href=&quot;#App-소개&quot; class=&quot;headerlink&quot; title=&quot;App 소개&quot;&gt;&lt;/a&gt;App 소개&lt;/h1&gt;&lt;img src=&quot;/2017/06/29/request-parent/request-parent-flow.
     
     </summary>
     
       <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
     
-      <category term="1. Introduction" scheme="http://KKimSangHeon.github.io/categories/About-Me/1-Introduction/"/>
+      <category term="My Projects" scheme="http://KKimSangHeon.github.io/categories/About-Me/My-Projects/"/>
     
     
       <category term="Android" scheme="http://KKimSangHeon.github.io/tags/Android/"/>
