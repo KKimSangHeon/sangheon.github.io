@@ -7,16 +7,40 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/2017/06/28/testpost/</loc>
-        <lastmod>2017-06-28T00:26:31.048Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/2017/06/27/hello-world/</loc>
+        <lastmod>2017-06-29T01:56:32.260Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/2017/06/27/hello-world/</loc>
-        <lastmod>2017-06-27T14:09:29.070Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/2017/06/29/hi/</loc>
+        <lastmod>2017-06-29T01:50:46.614Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/06/29/hi-1/</loc>
+        <lastmod>2017-06-29T01:39:13.018Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/06/29/page/</loc>
+        <lastmod>2017-06-29T01:38:35.358Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/06/28/testpost/</loc>
+        <lastmod>2017-06-28T00:26:31.048Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

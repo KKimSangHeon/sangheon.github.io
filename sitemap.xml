@@ -3,7 +3,17 @@
 
     <sitemap>
         <loc>http://KKimSangHeon.github.io/post-sitemap.xml</loc>
-        <lastmod>2017-06-28T00:26:31.048Z</lastmod>
+        <lastmod>2017-06-29T01:56:32.260Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://KKimSangHeon.github.io/category-sitemap.xml</loc>
+        <lastmod>2017-06-29T01:50:46.614Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://KKimSangHeon.github.io/tag-sitemap.xml</loc>
+        <lastmod>2017-06-29T01:50:46.614Z</lastmod>
     </sitemap>
 
 </sitemapindex>

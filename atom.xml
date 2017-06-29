@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-06-28T00:26:31.048Z</updated>
+  <updated>2017-06-29T01:39:13.018Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,77 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hi</title>
+    <link href="http://KKimSangHeon.github.io/2017/06/29/hi-1/"/>
+    <id>http://KKimSangHeon.github.io/2017/06/29/hi-1/</id>
+    <published>2017-06-29T01:39:12.000Z</published>
+    <updated>2017-06-29T01:39:13.018Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>hi</title>
+    <link href="http://KKimSangHeon.github.io/2017/06/29/hi/"/>
+    <id>http://KKimSangHeon.github.io/2017/06/29/hi/</id>
+    <published>2017-06-29T01:23:21.000Z</published>
+    <updated>2017-06-29T01:50:46.614Z</updated>
+    
+    <content type="html"><![CDATA[<img src="/2017/06/29/hi/github-logo.png" alt="Example" title="Example">
+<figure class="highlight c"><figcaption><span>Array.map</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>,a);</div></pre></td></tr></table></figure>
+<div class="video-container"><iframe src="//www.youtube.com/embed/c7rCyll5AeY" frameborder="0" allowfullscreen></iframe></div>
+ <a href="/2017/06/29/hi-1/" title="hi">hi</a>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;img src=&quot;/2017/06/29/hi/github-logo.png&quot; alt=&quot;Example&quot; title=&quot;Example&quot;&gt;
+&lt;figure class=&quot;highlight c&quot;&gt;&lt;figcaption&gt;&lt;span&gt;Array.map&lt;/span&gt;&lt;/fig
+    
+    </summary>
+    
+      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/"/>
+    
+      <category term="Sort" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/Sort/"/>
+    
+    
+      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/tags/Data-Structure/"/>
+    
+      <category term="Sort" scheme="http://KKimSangHeon.github.io/tags/Sort/"/>
+    
+      <category term="Bubble Sort" scheme="http://KKimSangHeon.github.io/tags/Bubble-Sort/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>page</title>
+    <link href="http://KKimSangHeon.github.io/2017/06/29/page/"/>
+    <id>http://KKimSangHeon.github.io/2017/06/29/page/</id>
+    <published>2017-06-28T15:00:00.000Z</published>
+    <updated>2017-06-29T01:38:35.358Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/"/>
+    
+      <category term="Sort" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/Sort/"/>
+    
+    
+      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/tags/Data-Structure/"/>
+    
+      <category term="Sort" scheme="http://KKimSangHeon.github.io/tags/Sort/"/>
+    
+      <category term="Bubble Sort" scheme="http://KKimSangHeon.github.io/tags/Bubble-Sort/"/>
+    
+  </entry>
   
   <entry>
     <title>testpost</title>
@@ -34,7 +105,7 @@
     <link href="http://KKimSangHeon.github.io/2017/06/27/hello-world/"/>
     <id>http://KKimSangHeon.github.io/2017/06/27/hello-world/</id>
     <published>2017-06-27T14:09:29.070Z</published>
-    <updated>2017-06-27T14:09:29.070Z</updated>
+    <updated>2017-06-29T01:56:32.260Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
