@@ -1068,11 +1068,18 @@ a.article-title:hover {
 .article-meta:after {
   clear: both;
 }
-.article-meta > div {
+.article-meta > .article-date {
   float: left;
   margin-right: 10px;
 }
-.article-meta > div .fa {
+.article-meta > .article-date .fa {
+  margin-right: 3px;
+}
+.article-meta > .article-tag {
+  float: right;
+  margin-right: 10px;
+}
+.article-meta > .article-tag .fa {
   margin-right: 3px;
 }
 .article-meta a {
