@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-06-29T13:24:21.322Z</updated>
+  <updated>2017-06-29T15:00:00.965Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>where-are-you</title>
+    <link href="http://KKimSangHeon.github.io/2017/06/29/where-are-you/"/>
+    <id>http://KKimSangHeon.github.io/2017/06/29/where-are-you/</id>
+    <published>2017-06-29T14:53:44.000Z</published>
+    <updated>2017-06-29T15:00:00.965Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
+    
+      <category term="My Projects" scheme="http://KKimSangHeon.github.io/categories/About-Me/My-Projects/"/>
+    
+    
+      <category term="Android" scheme="http://KKimSangHeon.github.io/tags/Android/"/>
+    
+      <category term="Reco Beacon" scheme="http://KKimSangHeon.github.io/tags/Reco-Beacon/"/>
+    
+      <category term="Beacon" scheme="http://KKimSangHeon.github.io/tags/Beacon/"/>
+    
+  </entry>
   
   <entry>
     <title>안녕하세요!</title>
@@ -62,7 +86,7 @@
     <link href="http://KKimSangHeon.github.io/2017/06/29/request-parent/"/>
     <id>http://KKimSangHeon.github.io/2017/06/29/request-parent/</id>
     <published>2017-06-29T09:52:18.000Z</published>
-    <updated>2017-06-29T13:23:11.383Z</updated>
+    <updated>2017-06-29T14:50:23.704Z</updated>
     
     <content type="html"><![CDATA[<h1 id="App-소개"><a href="#App-소개" class="headerlink" title="App 소개"></a>App 소개</h1><img src="/2017/06/29/request-parent/request-parent-flow.png" alt="작동화면" title="작동화면">
 <img src="/2017/06/29/request-parent/request-parent-received-message.png" alt="수신된 메세지" title="수신된 메세지">
