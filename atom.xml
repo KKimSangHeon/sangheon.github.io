@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-06-29T15:12:43.318Z</updated>
+  <updated>2017-06-29T15:14:09.527Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>where-are-you</title>
+    <title>비콘을 이용한 다수 사용자의 실시간 위치추적 어플리케이션 구현</title>
     <link href="http://KKimSangHeon.github.io/2017/06/29/where-are-you/"/>
     <id>http://KKimSangHeon.github.io/2017/06/29/where-are-you/</id>
     <published>2017-06-29T14:53:44.000Z</published>
-    <updated>2017-06-29T15:12:43.318Z</updated>
+    <updated>2017-06-29T15:14:09.527Z</updated>
     
     <summary type="html">
     
