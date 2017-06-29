@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-06-29T11:47:25.514Z</updated>
+  <updated>2017-06-29T13:24:21.322Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://KKimSangHeon.github.io/2017/06/29/about-me/"/>
     <id>http://KKimSangHeon.github.io/2017/06/29/about-me/</id>
     <published>2017-06-29T09:58:22.000Z</published>
-    <updated>2017-06-29T11:47:25.514Z</updated>
+    <updated>2017-06-29T13:24:21.322Z</updated>
     
     <content type="html"><![CDATA[<h1 id="블로그-소개"><a href="#블로그-소개" class="headerlink" title="블로그 소개"></a>블로그 소개</h1><p>안녕하세요. 항상 풀스택 개발자가 되고자 노력하는 취업준비생입니다. (#백수, #자소서)</p>
 <p>이 블로그는 제가 개인적으로 공부한 내용을 업로드하고, 공유하며 진행했던 프로젝트 내용을 업로드하고자 만들었습니다.</p>
@@ -35,7 +35,7 @@
 <hr>
 <h1 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h1><p>제가 진행했었던 프로젝트는 다음과 같습니다. 클릭하시면 자세한 설명을 볼 수 있는 페이지로 이동합니다.</p>
 <p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">- Where Are You(Android, Beacon, Socket)</a></p>
-<p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">- 부모님을 부탁해(Android)</a></p>
+<p><a href="http://localhost:4000/2017/06/29/request-parent/" target="_blank" rel="external">- 부모님을 부탁해(Android)</a></p>
 <p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">- Music Share(C, Socket)</a></p>
 <p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">- 기숙사 외박계(Node.js, kakao api)</a></p>
 <p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">- 시각장애인을 위한 길안내 app제안(android)</a></p>
@@ -55,8 +55,6 @@
     
       <category term="Sang Heon Kim" scheme="http://KKimSangHeon.github.io/tags/Sang-Heon-Kim/"/>
     
-      <category term="tkdgjs1501" scheme="http://KKimSangHeon.github.io/tags/tkdgjs1501/"/>
-    
   </entry>
   
   <entry>
@@ -64,7 +62,7 @@
     <link href="http://KKimSangHeon.github.io/2017/06/29/request-parent/"/>
     <id>http://KKimSangHeon.github.io/2017/06/29/request-parent/</id>
     <published>2017-06-29T09:52:18.000Z</published>
-    <updated>2017-06-29T13:03:20.205Z</updated>
+    <updated>2017-06-29T13:23:11.383Z</updated>
     
     <content type="html"><![CDATA[<h1 id="App-소개"><a href="#App-소개" class="headerlink" title="App 소개"></a>App 소개</h1><img src="/2017/06/29/request-parent/request-parent-flow.png" alt="작동화면" title="작동화면">
 <img src="/2017/06/29/request-parent/request-parent-received-message.png" alt="수신된 메세지" title="수신된 메세지">
@@ -72,7 +70,7 @@
 <p>-시연영상</p>
 <div class="video-container"><iframe src="//www.youtube.com/embed/3JUTYHuzjdA" frameborder="0" allowfullscreen></iframe></div>
 <p>사용한 기술 : gps기능, sms기능</p>
-<p><a href="https://play.google.com/store/apps/details?id=com.tkdgjs1501.RequestParent" target="_blank" rel="external">google play링크</a></p>
+<p><a href="https://play.google.com/store/apps/details?id=com.tkdgjs1501.RequestParent" target="_blank" rel="external">github Repository 방문</a><br><a href="https://play.google.com/store/apps/details?id=com.tkdgjs1501.RequestParent" target="_blank" rel="external">google play 방문</a></p>
 ]]></content>
     
     <summary type="html">
