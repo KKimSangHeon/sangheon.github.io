@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-06-29T08:26:35.276Z</updated>
+  <updated>2017-06-29T11:04:29.175Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,84 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>안녕하세요!</title>
+    <link href="http://KKimSangHeon.github.io/2017/06/29/about-me/"/>
+    <id>http://KKimSangHeon.github.io/2017/06/29/about-me/</id>
+    <published>2017-06-29T09:58:22.000Z</published>
+    <updated>2017-06-29T11:04:29.175Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="블로그-소개"><a href="#블로그-소개" class="headerlink" title="블로그 소개"></a>블로그 소개</h1><p>안녕하세요. 항상 풀스택 개발자가 되고자 노력하는 취업준비생입니다. (#백수, #자소서)</p>
+<p>이 블로그는 제가 개인적으로 공부한 내용을 업로드하고, 공유하며 진행했던 프로젝트 내용을 업로드하고자 만들었습니다.</p>
+<p>부족한 부분에 대한 태클은 언제든지 환영하며 빠르게 반영하도록 하겠습니다.</p>
+<p>부족하지만 방문해주셔서 감사드리며 앞으로 더욱 완벽한 블로그를 만들기 위해 노력하겠습니다!</p>
+<hr>
+<h1 id="Profile"><a href="#Profile" class="headerlink" title="Profile"></a>Profile</h1><ul>
+<li>부명고등학교 졸업 (2008.03~2011.02)</li>
+<li>동국대학교 경주캠퍼스 컴퓨터공학과 졸업 (2011.03~2017.02)</li>
+<li>아이티센 인턴수료 [공공2사업부문 개발2팀] (2016.12~2017.03)</li>
+</ul>
+<hr>
+<h1 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h1><p>제가 진행했었던 프로젝트는 다음과 같습니다. 클릭하시면 자세한 설명을 볼 수 있는 페이지로 이동합니다.</p>
+<p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">- Where Are You(Android, Beacon, Socket)</a></p>
+<p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">- 부모님을 부탁해(Android)</a></p>
+<p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">- Music Share(C, Socket)</a></p>
+<p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">- 기숙사 외박계(Node.js, kakao api)</a></p>
+<p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">- 시각장애인을 위한 길안내 app제안(android)</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;블로그-소개&quot;&gt;&lt;a href=&quot;#블로그-소개&quot; class=&quot;headerlink&quot; title=&quot;블로그 소개&quot;&gt;&lt;/a&gt;블로그 소개&lt;/h1&gt;&lt;p&gt;안녕하세요. 항상 풀스택 개발자가 되고자 노력하는 취업준비생입니다. (#백수, #자소서)&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
+    
+      <category term="1.Introduction" scheme="http://KKimSangHeon.github.io/categories/About-Me/1-Introduction/"/>
+    
+    
+      <category term="Sang Heon Kim" scheme="http://KKimSangHeon.github.io/tags/Sang-Heon-Kim/"/>
+    
+      <category term="tkdgjs1501" scheme="http://KKimSangHeon.github.io/tags/tkdgjs1501/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>부모님을 부탁해</title>
+    <link href="http://KKimSangHeon.github.io/2017/06/29/request-parent/"/>
+    <id>http://KKimSangHeon.github.io/2017/06/29/request-parent/</id>
+    <published>2017-06-29T09:52:18.000Z</published>
+    <updated>2017-06-29T11:17:03.090Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="App-소개"><a href="#App-소개" class="headerlink" title="App 소개"></a>App 소개</h1><p>이 어플리션은 증가하는 고독사를 줄여보자는 취지에서 개발하게 된 어플리케이션입니다. 부재중 통화수가 사전에 등록해 놓은 n 개가 되었을 경우 사전에 등록해 놓은 지인에게 위치정보가 포함된 문자메세지가 송신되는 앱 입니다.</p>
+<p>사용한 기술 : gps기능, sms기능</p>
+<p><a href="https://play.google.com/store/apps/details?id=com.tkdgjs1501.RequestParent" target="_blank" rel="external">google play링크</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;App-소개&quot;&gt;&lt;a href=&quot;#App-소개&quot; class=&quot;headerlink&quot; title=&quot;App 소개&quot;&gt;&lt;/a&gt;App 소개&lt;/h1&gt;&lt;p&gt;이 어플리션은 증가하는 고독사를 줄여보자는 취지에서 개발하게 된 어플리케이션입니다. 부재중 통화수
+    
+    </summary>
+    
+      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
+    
+      <category term="1.Introduction" scheme="http://KKimSangHeon.github.io/categories/About-Me/1-Introduction/"/>
+    
+    
+      <category term="Android" scheme="http://KKimSangHeon.github.io/tags/Android/"/>
+    
+      <category term="고독사 감소" scheme="http://KKimSangHeon.github.io/tags/%EA%B3%A0%EB%8F%85%EC%82%AC-%EA%B0%90%EC%86%8C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>BubbleSort</title>
     <link href="http://KKimSangHeon.github.io/2017/06/29/BubbleSort/"/>
     <id>http://KKimSangHeon.github.io/2017/06/29/BubbleSort/</id>
     <published>2017-06-29T05:36:52.000Z</published>
-    <updated>2017-06-29T08:26:35.276Z</updated>
+    <updated>2017-06-29T08:30:01.839Z</updated>
     
     <content type="html"><![CDATA[<h3 id="버블소트"><a href="#버블소트" class="headerlink" title="버블소트"></a>버블소트</h3><p>버블소트의 코드는 다음과 같다.<br>시간복잡도는 O(n^2) 이다.</p>
 <figure class="highlight c"><figcaption><span>BubbleSort.c</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)</div><div class="line">&#123;</div><div class="line">	<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;(n-i)<span class="number">-1</span>;j++)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">if</span>(arr[j]&gt;arr[j+<span class="number">1</span>])</div><div class="line">		&#123;</div><div class="line">			swap;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
