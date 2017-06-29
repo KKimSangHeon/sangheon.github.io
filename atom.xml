@@ -34,7 +34,7 @@
     <link href="http://KKimSangHeon.github.io/2017/06/29/hi/"/>
     <id>http://KKimSangHeon.github.io/2017/06/29/hi/</id>
     <published>2017-06-29T01:23:21.000Z</published>
-    <updated>2017-06-29T01:50:46.614Z</updated>
+    <updated>2017-06-29T01:59:30.517Z</updated>
     
     <content type="html"><![CDATA[<img src="/2017/06/29/hi/github-logo.png" alt="Example" title="Example">
 <figure class="highlight c"><figcaption><span>Array.map</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>,a);</div></pre></td></tr></table></figure>
