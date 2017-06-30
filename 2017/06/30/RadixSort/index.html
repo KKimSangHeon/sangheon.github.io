@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     
-    <title>RadixSort | Kim Sang Heon&#39;s Bolg</title>
+    <title>기수정렬 (RadixSort) | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="Data Structure,Sort,Radix Sort" />
@@ -13,14 +13,14 @@
       <meta name="description" content="기수정렬버켓에 데이터를 작은 수 부터 넣고 빼내어 정렬하는 방식이다.기수정렬의 시간복잡도는 O(ln)이며 l은 버켓의 크기를 의미한다. red, why, few 정렬가능    - 버킷 3개 필요10,161,18,1 가능 - 버킷 3개 필요proffesor , red , why 불가능125 , -101, 167, -505 불가능 ##참고사항 1의자리 수 구하">
 <meta name="keywords" content="Data Structure,Sort,Radix Sort">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RadixSort">
+<meta property="og:title" content="기수정렬 (RadixSort)">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2017/06/30/RadixSort/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="기수정렬버켓에 데이터를 작은 수 부터 넣고 빼내어 정렬하는 방식이다.기수정렬의 시간복잡도는 O(ln)이며 l은 버켓의 크기를 의미한다. red, why, few 정렬가능    - 버킷 3개 필요10,161,18,1 가능 - 버킷 3개 필요proffesor , red , why 불가능125 , -101, 167, -505 불가능 ##참고사항 1의자리 수 구하">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/datastructure.jpg">
-<meta property="og:updated_time" content="2017-06-30T05:53:30.908Z">
+<meta property="og:updated_time" content="2017-06-30T11:02:17.317Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RadixSort">
+<meta name="twitter:title" content="기수정렬 (RadixSort)">
 <meta name="twitter:description" content="기수정렬버켓에 데이터를 작은 수 부터 넣고 빼내어 정렬하는 방식이다.기수정렬의 시간복잡도는 O(ln)이며 l은 버켓의 크기를 의미한다. red, why, few 정렬가능    - 버킷 3개 필요10,161,18,1 가능 - 버킷 3개 필요proffesor , red , why 불가능125 , -101, 167, -505 불가능 ##참고사항 1의자리 수 구하">
 <meta name="twitter:image" content="http://kkimsangheon.github.io/images/datastructure.jpg">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
@@ -75,7 +75,7 @@ ga('send', 'pageview');
                     <div class="nav-container-inner">
                         <ul id="main-nav">
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/">About Me</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/Introduction/">Introduction</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/My-Projects/">My Projects</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/">Data Structure</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Sort/">Sort</a></li></ul></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/">About Me</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/Introduction/">Introduction</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/My-Projects/">My Projects</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/">Data Structure</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Search/">Search</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Sort/">Sort</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/">Linux</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a></li></ul></li></ul>
                                     
                         </ul>
                         <nav id="sub-nav">
@@ -141,7 +141,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        RadixSort
+        기수정렬 (RadixSort)
         </h1>
     
 
@@ -179,7 +179,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/06/30/RadixSort/" data-id="cj4jgaifx000jw8v7sj6j2b3p" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/06/30/RadixSort/" data-id="cj4jqm7l2000m64v73pwczjdy" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -284,10 +284,20 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
+        <a href="/2017/06/30/ThisIsLinux1/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            2장. CentOS 리눅스 소개
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2017/06/30/QuickSort/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">QuickSort</p>
+        <p class="article-nav-title">퀵정렬 (QuickSort)</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -301,7 +311,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 

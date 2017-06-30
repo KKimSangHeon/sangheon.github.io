@@ -114,64 +114,92 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/tags/Linux/</loc>
+        <lastmod>2017-06-30T10:16:23.755Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/This-Is-Linux/</loc>
+        <lastmod>2017-06-30T10:16:23.755Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Search/</loc>
+        <lastmod>2017-06-30T11:01:37.840Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/BinarySearch/</loc>
+        <lastmod>2017-06-30T11:01:37.840Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/tags/Radix-Sort/</loc>
-        <lastmod>2017-06-30T05:53:30.908Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/Heap-Sort/</loc>
-        <lastmod>2017-06-30T05:53:33.562Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/Insertion-Sort/</loc>
-        <lastmod>2017-06-30T05:53:38.701Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/Bubble-Sort/</loc>
-        <lastmod>2017-06-30T05:53:41.612Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/Merge-Sort/</loc>
-        <lastmod>2017-06-30T05:53:57.685Z</lastmod>
+        <lastmod>2017-06-30T11:02:17.317Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://KKimSangHeon.github.io/tags/Quick-Sort/</loc>
-        <lastmod>2017-06-30T05:54:05.119Z</lastmod>
+        <lastmod>2017-06-30T11:02:24.397Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Data-Structure/</loc>
-        <lastmod>2017-06-30T05:54:10.507Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/tags/Merge-Sort/</loc>
+        <lastmod>2017-06-30T11:02:44.760Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Sort/</loc>
-        <lastmod>2017-06-30T05:54:10.507Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/tags/Heap-Sort/</loc>
+        <lastmod>2017-06-30T11:02:55.505Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Insertion-Sort/</loc>
+        <lastmod>2017-06-30T11:03:11.884Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://KKimSangHeon.github.io/tags/Selection-Sort/</loc>
-        <lastmod>2017-06-30T05:54:10.507Z</lastmod>
+        <lastmod>2017-06-30T11:03:24.859Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Data-Structure/</loc>
+        <lastmod>2017-06-30T11:03:53.379Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Sort/</loc>
+        <lastmod>2017-06-30T11:03:53.379Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Bubble-Sort/</loc>
+        <lastmod>2017-06-30T11:03:53.379Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
