@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-06-29T16:01:41.372Z</updated>
+  <updated>2017-06-30T01:17:07.133Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>music-share</title>
+    <link href="http://KKimSangHeon.github.io/2017/06/30/music-share/"/>
+    <id>http://KKimSangHeon.github.io/2017/06/30/music-share/</id>
+    <published>2017-06-30T00:31:38.000Z</published>
+    <updated>2017-06-30T01:17:07.133Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="프로그램-개발배경"><a href="#프로그램-개발배경" class="headerlink" title="프로그램 개발배경"></a>프로그램 개발배경</h1><p>-C 소켓프로그래밍에 대한 이해를 높이고자 진행한 프로젝트입니다.</p>
+<h1 id="프로그램-소개"><a href="#프로그램-소개" class="headerlink" title="프로그램 소개"></a>프로그램 소개</h1><p>-본 프로그램은 회원가입기능, 로그인기능, 서버에 mp3파일을 올리는기능 등이 구현되어 있습니다. 회원가입을 하고 로그인 후 서버에 mp3파일을 올리거나 다운로드 받을 수 있습니다. 프로그램 개발환경은 우분투 14.04 LTS 입니다.</p>
+<h1 id="프로그램-기능"><a href="#프로그램-기능" class="headerlink" title="프로그램 기능"></a>프로그램 기능</h1><img src="/2017/06/30/music-share/music-share1.png" alt="서버에 접속한 클라이언트[그림1]" title="서버에 접속한 클라이언트[그림1]">
+<p>초기 서버에 접속하였을 경우 화면입니다. 서버에서는 클라이언트의 접속현황 및 상태를 확인할 수 있으며 클라이언트에서는 다음에 할 수 있는 일을 확인할 수 있습니다.</p>
+<img src="/2017/06/30/music-share/music-share2.png" alt="두 클라이언트가 회원가입[그림2]" title="두 클라이언트가 회원가입[그림2]">
+<p>두 클라이언트가 회원가입을 진행하고 있고 이에 대한 내용이 서버측 화면에 출력됩니다.</p>
+<img src="/2017/06/30/music-share/music-share3.png" alt="회원가입한 ID로 로그인[그림3]" title="회원가입한 ID로 로그인[그림3]">
+<p>클라이언트가 가입한 ID를 이용하여 로그인을 하였습니다. 로그인 후 에는 서버에 존재하는 mp3파일리스트를 조회하거나 mp3파일을 업로드, 다운로드 할 수있습니다.</p>
+<img src="/2017/06/30/music-share/music-share4.png" alt="로그인 후 mp3파일 업로드[그림4]" title="로그인 후 mp3파일 업로드[그림4]">
+<p>클라이언트가 로그인을 한 후 mp3파일을 업로드하는 화면입니다.</p>
+<img src="/2017/06/30/music-share/music-share5.png" alt="로그인 후 mp3파일 조회[그림5]" title="로그인 후 mp3파일 조회[그림5]">
+<p>클라이언트가 로그인을 한 후 서버에 존재하는 mp3파일을 조회하는 화면입니다.</p>
+<img src="/2017/06/30/music-share/music-share6.png" alt="mp3파일 다운로드[그림6]" title="mp3파일 다운로드[그림6]">
+<p>[그림4]에서 KSH클라이언트가 업로드한 hello.mp3 파일을 HRA클라이언트가 접속하여 다운로드 하는 화면입니다.</p>
+<img src="/2017/06/30/music-share/music-share7.png" alt="비밀번호 찾기기능[그림7]" title="비밀번호 찾기기능[그림7]">
+<p>비밀번호를 찾기위해 ID, Email을 입력하였고 이 후 비밀번호가 화면에 출력되는 모습입니다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;프로그램-개발배경&quot;&gt;&lt;a href=&quot;#프로그램-개발배경&quot; class=&quot;headerlink&quot; title=&quot;프로그램 개발배경&quot;&gt;&lt;/a&gt;프로그램 개발배경&lt;/h1&gt;&lt;p&gt;-C 소켓프로그래밍에 대한 이해를 높이고자 진행한 프로젝트입니다.&lt;/p&gt;
+&lt;
+    
+    </summary>
+    
+      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
+    
+      <category term="My Projects" scheme="http://KKimSangHeon.github.io/categories/About-Me/My-Projects/"/>
+    
+    
+      <category term="C" scheme="http://KKimSangHeon.github.io/tags/C/"/>
+    
+      <category term="Socket" scheme="http://KKimSangHeon.github.io/tags/Socket/"/>
+    
+      <category term="Music Share" scheme="http://KKimSangHeon.github.io/tags/Music-Share/"/>
+    
+      <category term="Ubuntu" scheme="http://KKimSangHeon.github.io/tags/Ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>다수 사용자의 실시간 위치추적 어플리케이션 구현</title>
@@ -59,7 +106,7 @@
     <link href="http://KKimSangHeon.github.io/2017/06/29/about-me/"/>
     <id>http://KKimSangHeon.github.io/2017/06/29/about-me/</id>
     <published>2017-06-29T09:58:22.000Z</published>
-    <updated>2017-06-29T15:23:45.991Z</updated>
+    <updated>2017-06-30T01:19:57.703Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>안녕하세요. 항상 풀스택 개발자가 되고자 노력하는 취업준비생입니다. (#백수, #자소서)</p>
 <p>이 블로그는 제가 개인적으로 공부한 내용을 업로드하고, 공유하며 진행했던 프로젝트 내용을 업로드하고자 만들었습니다.</p>
@@ -73,9 +120,9 @@
 </ul>
 <hr>
 <h1 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h1><p>제가 진행했었던 프로젝트는 다음과 같습니다. 클릭하시면 자세한 설명을 볼 수 있는 페이지로 이동합니다.</p>
-<p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">- Where Are You(Android, Beacon, Socket)</a></p>
-<p><a href="http://localhost:4000/2017/06/29/request-parent/" target="_blank" rel="external">- 부모님을 부탁해(Android)</a></p>
-<p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">- Music Share(C, Socket)</a></p>
+<p><a href="https://kkimsangheon.github.io/2017/06/29/where-are-you/">- Where Are You(Android, Beacon, Socket)</a></p>
+<p><a href="https://kkimsangheon.github.io/2017/06/29/request-parent/">- 부모님을 부탁해(Android)</a></p>
+<p><a href="https://kkimsangheon.github.io/2017/06/30/music-share/">- Music Share(C, Socket)</a></p>
 <p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">- 기숙사 외박계(Node.js, kakao api)</a></p>
 <p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">- 시각장애인을 위한 길안내 app제안(android)</a></p>
 ]]></content>
@@ -100,7 +147,7 @@
     <link href="http://KKimSangHeon.github.io/2017/06/29/request-parent/"/>
     <id>http://KKimSangHeon.github.io/2017/06/29/request-parent/</id>
     <published>2017-06-29T09:52:18.000Z</published>
-    <updated>2017-06-29T16:08:40.178Z</updated>
+    <updated>2017-06-29T16:11:45.718Z</updated>
     
     <content type="html"><![CDATA[<h1 id="App-소개-및-개발배경"><a href="#App-소개-및-개발배경" class="headerlink" title="App 소개 및 개발배경"></a>App 소개 및 개발배경</h1><p>-본 어플리케이션은 증가하는 고독사를 줄여보자는 취지에서 개발하게 된 어플리케이션입니다. 부재중 통화수가 사전에 등록해 놓은 n 개가 되었을 경우 사전에 등록해 놓은 지인에게 위치정보가 포함된 문자메세지가 송신되는 앱 입니다.</p>
 <img src="/2017/06/29/request-parent/request-parent-flow.png" alt="작동화면" title="작동화면">

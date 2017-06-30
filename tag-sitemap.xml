@@ -23,13 +23,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Sang-Heon-Kim/</loc>
-        <lastmod>2017-06-29T15:23:45.991Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/Reco-Beacon/</loc>
         <lastmod>2017-06-29T16:01:41.372Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -45,14 +38,49 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/tags/Android/</loc>
-        <lastmod>2017-06-29T16:08:40.178Z</lastmod>
+        <lastmod>2017-06-29T16:11:45.718Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://KKimSangHeon.github.io/tags/%EA%B3%A0%EB%8F%85%EC%82%AC-%EA%B0%90%EC%86%8C/</loc>
-        <lastmod>2017-06-29T16:08:40.178Z</lastmod>
+        <lastmod>2017-06-29T16:11:45.718Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/C/</loc>
+        <lastmod>2017-06-30T01:17:07.133Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Socket/</loc>
+        <lastmod>2017-06-30T01:17:07.133Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Music-Share/</loc>
+        <lastmod>2017-06-30T01:17:07.133Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Ubuntu/</loc>
+        <lastmod>2017-06-30T01:17:07.133Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Sang-Heon-Kim/</loc>
+        <lastmod>2017-06-30T01:19:57.703Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
