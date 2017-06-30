@@ -7,8 +7,64 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2017/06/30/SelectionSort/</loc>
+        <lastmod>2017-06-30T05:54:10.507Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/06/30/QuickSort/</loc>
+        <lastmod>2017-06-30T05:54:05.119Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/06/30/MergeSort/</loc>
+        <lastmod>2017-06-30T05:53:57.685Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/06/29/BubbleSort/</loc>
+        <lastmod>2017-06-30T05:53:41.612Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/06/30/InsertionSort/</loc>
+        <lastmod>2017-06-30T05:53:38.701Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/06/30/HeapSort/</loc>
+        <lastmod>2017-06-30T05:53:33.562Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/06/30/RadixSort/</loc>
+        <lastmod>2017-06-30T05:53:30.908Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2017/06/30/paper/</loc>
-        <lastmod>2017-06-30T04:52:26.736Z</lastmod>
+        <lastmod>2017-06-30T04:57:38.940Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -57,14 +113,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2017/06/29/request-parent/</loc>
         <lastmod>2017-06-29T16:11:45.718Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2017/06/29/BubbleSort/</loc>
-        <lastmod>2017-06-29T08:30:01.839Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

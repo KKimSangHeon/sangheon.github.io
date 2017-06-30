@@ -2,27 +2,6 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Data-Structure/</loc>
-        <lastmod>2017-06-29T08:30:01.839Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/Sort/</loc>
-        <lastmod>2017-06-29T08:30:01.839Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/Bubble-Sort/</loc>
-        <lastmod>2017-06-29T08:30:01.839Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/%EA%B3%A0%EB%8F%85%EC%82%AC-%EA%B0%90%EC%86%8C/</loc>
         <lastmod>2017-06-29T16:11:45.718Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -129,7 +108,70 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/tags/%EC%9E%91%EC%84%B1-%EB%85%BC%EB%AC%B8/</loc>
-        <lastmod>2017-06-30T04:52:26.736Z</lastmod>
+        <lastmod>2017-06-30T04:57:38.940Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Radix-Sort/</loc>
+        <lastmod>2017-06-30T05:53:30.908Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Heap-Sort/</loc>
+        <lastmod>2017-06-30T05:53:33.562Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Insertion-Sort/</loc>
+        <lastmod>2017-06-30T05:53:38.701Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Bubble-Sort/</loc>
+        <lastmod>2017-06-30T05:53:41.612Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Merge-Sort/</loc>
+        <lastmod>2017-06-30T05:53:57.685Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Quick-Sort/</loc>
+        <lastmod>2017-06-30T05:54:05.119Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Data-Structure/</loc>
+        <lastmod>2017-06-30T05:54:10.507Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Sort/</loc>
+        <lastmod>2017-06-30T05:54:10.507Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Selection-Sort/</loc>
+        <lastmod>2017-06-30T05:54:10.507Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-06-30T04:52:26.736Z</updated>
+  <updated>2017-06-30T05:53:30.908Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,18 +16,211 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>paper</title>
-    <link href="http://KKimSangHeon.github.io/2017/06/30/paper/"/>
-    <id>http://KKimSangHeon.github.io/2017/06/30/paper/</id>
-    <published>2017-06-30T04:40:14.000Z</published>
-    <updated>2017-06-30T04:52:26.736Z</updated>
+    <title>RadixSort</title>
+    <link href="http://KKimSangHeon.github.io/2017/06/30/RadixSort/"/>
+    <id>http://KKimSangHeon.github.io/2017/06/30/RadixSort/</id>
+    <published>2017-06-30T05:36:34.000Z</published>
+    <updated>2017-06-30T05:53:30.908Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="논문"><a href="#논문" class="headerlink" title="논문"></a>논문</h1>
+    <content type="html"><![CDATA[<h3 id="기수정렬"><a href="#기수정렬" class="headerlink" title="기수정렬"></a>기수정렬</h3><p>버켓에 데이터를 작은 수 부터 넣고 빼내어 정렬하는 방식이다.<br>기수정렬의 시간복잡도는 O(ln)이며 l은 버켓의 크기를 의미한다.</p>
+<p>red, why, few 정렬가능    - 버킷 3개 필요<br>10,161,18,1 가능 - 버킷 3개 필요<br>proffesor , red , why 불가능<br>125 , -101, 167, -505 불가능</p>
+<p>##참고사항</p>
+<p>1의자리 수 구하기-num/1%10<br>10의자리 수 구하기 -num/10%10<br>100의 자리 수 구하기 -num/100%10</p>
+<figure class="highlight c"><figcaption><span>InsertionSort.c</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">RadixSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> num, <span class="keyword">int</span> maxLen)</span>   <span class="comment">// maxLen은 가장 긴 데이터의 길이</span></span></div><div class="line">&#123;</div><div class="line">	Queue buckets[BUCKET_NUM];</div><div class="line">	<span class="keyword">int</span> bi;</div><div class="line">	<span class="keyword">int</span> pos;</div><div class="line">	<span class="keyword">int</span> di;</div><div class="line">	<span class="keyword">int</span> divfac = <span class="number">1</span>;</div><div class="line">	<span class="keyword">int</span> radix;</div><div class="line"></div><div class="line">	<span class="comment">// 총 10개의 버킷 초기화</span></div><div class="line">	<span class="keyword">for</span>(bi=<span class="number">0</span>; bi&lt;BUCKET_NUM; bi++)</div><div class="line">		QueueInit(&amp;buckets[bi]);</div><div class="line"></div><div class="line">	<span class="comment">// 가장 긴 데이터의 길이만큼 반복</span></div><div class="line">	<span class="keyword">for</span>(pos=<span class="number">0</span>; pos&lt;maxLen; pos++)</div><div class="line">	&#123;</div><div class="line">		<span class="comment">// 정렬 대상의 수만큼 반복</span></div><div class="line">		<span class="keyword">for</span>(di=<span class="number">0</span>; di&lt;num; di++)</div><div class="line">		&#123;</div><div class="line">			<span class="comment">// N번째 자리의 숫자 추출</span></div><div class="line">			radix = (arr[di] / divfac) % <span class="number">10</span>;</div><div class="line"></div><div class="line">			<span class="comment">// 추출한 숫자를 근거로 데이터 버킷에 저장</span></div><div class="line">			Enqueue(&amp;buckets[radix], arr[di]);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="comment">// 버킷 수만큼 반복</span></div><div class="line">		<span class="keyword">for</span>(bi=<span class="number">0</span>, di=<span class="number">0</span>; bi&lt;BUCKET_NUM; bi++)</div><div class="line">		&#123;</div><div class="line">			<span class="comment">// 버킷에 저장된 것 순서대로 다 꺼내서 다시 arr에 저장</span></div><div class="line">			<span class="keyword">while</span>(!QIsEmpty(&amp;buckets[bi]))</div><div class="line">				arr[di++] = Dequeue(&amp;buckets[bi]);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="comment">// N번째 자리의 숫자 추출을 위한 피제수의 증가</span></div><div class="line">		divfac *= <span class="number">10</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<p>참고 : 윤성우의 열혈 자료구조</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;논문&quot;&gt;&lt;a href=&quot;#논문&quot; class=&quot;headerlink&quot; title=&quot;논문&quot;&gt;&lt;/a&gt;논문&lt;/h1&gt;
+      &lt;h3 id=&quot;기수정렬&quot;&gt;&lt;a href=&quot;#기수정렬&quot; class=&quot;headerlink&quot; title=&quot;기수정렬&quot;&gt;&lt;/a&gt;기수정렬&lt;/h3&gt;&lt;p&gt;버켓에 데이터를 작은 수 부터 넣고 빼내어 정렬하는 방식이다.&lt;br&gt;기수정렬의 시간복잡도는 O(ln)이며 l은 
+    
+    </summary>
+    
+      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/"/>
+    
+      <category term="Sort" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/Sort/"/>
+    
+    
+      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/tags/Data-Structure/"/>
+    
+      <category term="Sort" scheme="http://KKimSangHeon.github.io/tags/Sort/"/>
+    
+      <category term="Radix Sort" scheme="http://KKimSangHeon.github.io/tags/Radix-Sort/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QuickSort</title>
+    <link href="http://KKimSangHeon.github.io/2017/06/30/QuickSort/"/>
+    <id>http://KKimSangHeon.github.io/2017/06/30/QuickSort/</id>
+    <published>2017-06-30T05:36:18.000Z</published>
+    <updated>2017-06-30T05:54:05.119Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="퀵정렬"><a href="#퀵정렬" class="headerlink" title="퀵정렬"></a>퀵정렬</h3><p>퀵 정렬 O(nlog2n)- 피벗을 정하여 분할하여 정복.. 피벗을 선택 할때 3개를 선택하여 평균치를 구하여 구하면 더 효율적으로 피벗을 정할 수 있다.<br>피벗이 잘 선택될 경우 시간복잡도가 줄어든다.</p>
+<p>최악의 경우 O(n^2)이 될 수 있다  (피벗값이 많이 안좋을 경우)</p>
+<p>O(nlog2n)의 시간복잡도를 갖는 다른 정렬 알고리즘 보다 평균적으로 빠르다.<br>why ? 데이터 이동이 상대적으로 작고 병합정렬과 같이 별도의 메모리 공간을 요구하지 않기 때문에..</p>
+<p>나만의 요약! : 피벗값을 기준으로 처음지점부터 시작한 반복문은 피벗보다 작은값을 찾고 뒤에서 시작한 반복문은 피벗보다 큰값을 찾아 서로 바꾼다. ( 단 피벗을 지나치치 않음)</p>
+<figure class="highlight c"><figcaption><span>QuickSort.c</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Swap</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> idx1, <span class="keyword">int</span> idx2)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> temp = arr[idx1];</div><div class="line">	arr[idx1] = arr[idx2];</div><div class="line">	arr[idx2] = temp;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">Partition</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> pivot = arr[left];    <span class="comment">// 피벗의 위치는 가장 왼쪽!</span></div><div class="line">	<span class="keyword">int</span> low = left+<span class="number">1</span>;</div><div class="line">	<span class="keyword">int</span> high = right;</div><div class="line"></div><div class="line">	<span class="keyword">while</span>(low &lt;= high)    <span class="comment">// 교차되지 않을 때까지 반복</span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">while</span>(pivot &gt; arr[low])</div><div class="line">			low++;</div><div class="line"></div><div class="line">		<span class="keyword">while</span>(pivot &lt; arr[high])</div><div class="line">			high--;</div><div class="line"></div><div class="line">		<span class="comment">/*</span></div><div class="line">		while(pivot &gt;= arr[low] &amp;&amp; low &lt;= right)</div><div class="line">			low++;</div><div class="line"></div><div class="line">		while(pivot &lt;= arr[high] &amp;&amp; high &gt;= (left+1))</div><div class="line">			high--;</div><div class="line">		*/</div><div class="line"></div><div class="line">		<span class="keyword">if</span>(low &lt;= high)    <span class="comment">// 교차되지 않은 상태라면 Swap 실행</span></div><div class="line">			Swap(arr, low, high);    <span class="comment">// low와 high가 가리키는 대상 교환</span></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	Swap(arr, left, high);    <span class="comment">// 피벗과 high가 가리키는 대상 교환</span></div><div class="line">	<span class="keyword">return</span> high;    <span class="comment">// 옮겨진 피벗의 위치 정보 반환</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">QuickSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">if</span>(left &lt;= right)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">int</span> pivot = Partition(arr, left, right);    <span class="comment">// 둘로 나눠서</span></div><div class="line">		QuickSort(arr, left, pivot<span class="number">-1</span>);    <span class="comment">// 왼쪽 영역을 정렬</span></div><div class="line">		QuickSort(arr, pivot+<span class="number">1</span>, right);    <span class="comment">// 오른쪽 영역을 정렬</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>참고 : 윤성우의 열혈 자료구조</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;퀵정렬&quot;&gt;&lt;a href=&quot;#퀵정렬&quot; class=&quot;headerlink&quot; title=&quot;퀵정렬&quot;&gt;&lt;/a&gt;퀵정렬&lt;/h3&gt;&lt;p&gt;퀵 정렬 O(nlog2n)- 피벗을 정하여 분할하여 정복.. 피벗을 선택 할때 3개를 선택하여 평균치를 구하여 구하면 
+    
+    </summary>
+    
+      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/"/>
+    
+      <category term="Sort" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/Sort/"/>
+    
+    
+      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/tags/Data-Structure/"/>
+    
+      <category term="Sort" scheme="http://KKimSangHeon.github.io/tags/Sort/"/>
+    
+      <category term="Quick Sort" scheme="http://KKimSangHeon.github.io/tags/Quick-Sort/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MergeSort</title>
+    <link href="http://KKimSangHeon.github.io/2017/06/30/MergeSort/"/>
+    <id>http://KKimSangHeon.github.io/2017/06/30/MergeSort/</id>
+    <published>2017-06-30T05:36:10.000Z</published>
+    <updated>2017-06-30T05:53:57.685Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="병합정렬"><a href="#병합정렬" class="headerlink" title="병합정렬"></a>병합정렬</h3><p>재귀적으로 분할하여 병합하는 방식으로 재귀적으로 모든 요소들을 쪼갠 후 합쳐나간다. 시간복잡도는 O(nlog2n))이다.</p>
+<figure class="highlight c"><figcaption><span>MergeSort.c</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">MergeTwoArea</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> left, <span class="keyword">int</span> mid, <span class="keyword">int</span> right)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> fIdx = left;</div><div class="line">	<span class="keyword">int</span> rIdx = mid+<span class="number">1</span>;</div><div class="line">	<span class="keyword">int</span> i;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> * sortArr = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>)*(right+<span class="number">1</span>));</div><div class="line">	<span class="keyword">int</span> sIdx = left;</div><div class="line"></div><div class="line">	<span class="keyword">while</span>(fIdx&lt;=mid &amp;&amp; rIdx&lt;=right)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">if</span>(arr[fIdx] &lt;= arr[rIdx])</div><div class="line">			sortArr[sIdx] = arr[fIdx++];</div><div class="line">		<span class="keyword">else</span></div><div class="line">			sortArr[sIdx] = arr[rIdx++];</div><div class="line"></div><div class="line">		sIdx++;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(fIdx &gt; mid)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">for</span>(i=rIdx; i&lt;=right; i++, sIdx++)</div><div class="line">			sortArr[sIdx] = arr[i];</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">for</span>(i=fIdx; i&lt;=mid; i++, sIdx++)</div><div class="line">			sortArr[sIdx] = arr[i];</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">for</span>(i=left; i&lt;=right; i++)</div><div class="line">		arr[i] = sortArr[i];</div><div class="line"></div><div class="line">	<span class="built_in">free</span>(sortArr);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">MergeSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> mid;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(left &lt; right)</div><div class="line">	&#123;</div><div class="line">		<span class="comment">// 중간 지점을 계산한다.</span></div><div class="line">		mid = (left+right) / <span class="number">2</span>;</div><div class="line"></div><div class="line">		<span class="comment">// 둘로 나눠서 각각을 정렬한다.</span></div><div class="line">		MergeSort(arr, left, mid);</div><div class="line">		MergeSort(arr, mid+<span class="number">1</span>, right);</div><div class="line"></div><div class="line">		<span class="comment">// 정렬된 두 배열을 병합한다.</span></div><div class="line">		MergeTwoArea(arr, left, mid, right);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>참고 : 윤성우의 열혈 자료구조</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;병합정렬&quot;&gt;&lt;a href=&quot;#병합정렬&quot; class=&quot;headerlink&quot; title=&quot;병합정렬&quot;&gt;&lt;/a&gt;병합정렬&lt;/h3&gt;&lt;p&gt;재귀적으로 분할하여 병합하는 방식으로 재귀적으로 모든 요소들을 쪼갠 후 합쳐나간다. 시간복잡도는 O(nlog2n
+    
+    </summary>
+    
+      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/"/>
+    
+      <category term="Sort" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/Sort/"/>
+    
+    
+      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/tags/Data-Structure/"/>
+    
+      <category term="Sort" scheme="http://KKimSangHeon.github.io/tags/Sort/"/>
+    
+      <category term="Merge Sort" scheme="http://KKimSangHeon.github.io/tags/Merge-Sort/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HeapSort</title>
+    <link href="http://KKimSangHeon.github.io/2017/06/30/HeapSort/"/>
+    <id>http://KKimSangHeon.github.io/2017/06/30/HeapSort/</id>
+    <published>2017-06-30T05:35:38.000Z</published>
+    <updated>2017-06-30T05:53:33.562Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="힙-정렬"><a href="#힙-정렬" class="headerlink" title="힙 정렬"></a>힙 정렬</h3><p>힙을 만들어서 힙에 넣고 빼는것으로서 시간복잡도는 O(nlog2n) 이다.</p>
+<figure class="highlight c"><figcaption><span>BubbleSort.c</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</div><div class="line">	HInsert(&amp;heap,arr[i]);</div><div class="line"></div><div class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</div><div class="line">	arr[i]=HDelete(&amp;heap);</div></pre></td></tr></table></figure>
+<p>참고 : 윤성우의 열혈 자료구조</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;힙-정렬&quot;&gt;&lt;a href=&quot;#힙-정렬&quot; class=&quot;headerlink&quot; title=&quot;힙 정렬&quot;&gt;&lt;/a&gt;힙 정렬&lt;/h3&gt;&lt;p&gt;힙을 만들어서 힙에 넣고 빼는것으로서 시간복잡도는 O(nlog2n) 이다.&lt;/p&gt;
+&lt;figure class=&quot;h
+    
+    </summary>
+    
+      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/"/>
+    
+      <category term="Sort" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/Sort/"/>
+    
+    
+      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/tags/Data-Structure/"/>
+    
+      <category term="Sort" scheme="http://KKimSangHeon.github.io/tags/Sort/"/>
+    
+      <category term="Heap Sort" scheme="http://KKimSangHeon.github.io/tags/Heap-Sort/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>InsertionSort</title>
+    <link href="http://KKimSangHeon.github.io/2017/06/30/InsertionSort/"/>
+    <id>http://KKimSangHeon.github.io/2017/06/30/InsertionSort/</id>
+    <published>2017-06-30T05:35:28.000Z</published>
+    <updated>2017-06-30T05:53:38.701Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="삽입정렬"><a href="#삽입정렬" class="headerlink" title="삽입정렬"></a>삽입정렬</h3><p>1~n까지 정렬해 나감 1~2 정렬 12묶음 3정렬 13묶음 4정렬<br>첫 번째 데이터는 정렬이 되어있다고 봄. 그래서 i=0이아닌 1부터 시작.시간복잡도는 O(n^2) 이다.</p>
+<figure class="highlight c"><figcaption><span>InsertionSort.c</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</div><div class="line">&#123;</div><div class="line">	insData=arr[i];	<span class="comment">//정렬대상을 insData에 저장</span></div><div class="line">	<span class="keyword">for</span>(j=i<span class="number">-1</span>;i&gt;=<span class="number">0</span>;j--)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">if</span>(arr[j]&gt;insData)</div><div class="line">			arr[j+<span class="number">1</span>]=arr[j];</div><div class="line">		<span class="keyword">else</span></div><div class="line">			<span class="keyword">break</span>;</div><div class="line">	&#125;</div><div class="line">	arr[j+<span class="number">1</span>]=insData;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>참고 : 윤성우의 열혈 자료구조</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;삽입정렬&quot;&gt;&lt;a href=&quot;#삽입정렬&quot; class=&quot;headerlink&quot; title=&quot;삽입정렬&quot;&gt;&lt;/a&gt;삽입정렬&lt;/h3&gt;&lt;p&gt;1~n까지 정렬해 나감 1~2 정렬 12묶음 3정렬 13묶음 4정렬&lt;br&gt;첫 번째 데이터는 정렬이 되어있다고 봄
+    
+    </summary>
+    
+      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/"/>
+    
+      <category term="Sort" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/Sort/"/>
+    
+    
+      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/tags/Data-Structure/"/>
+    
+      <category term="Sort" scheme="http://KKimSangHeon.github.io/tags/Sort/"/>
+    
+      <category term="Insertion Sort" scheme="http://KKimSangHeon.github.io/tags/Insertion-Sort/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SelectionSort</title>
+    <link href="http://KKimSangHeon.github.io/2017/06/30/SelectionSort/"/>
+    <id>http://KKimSangHeon.github.io/2017/06/30/SelectionSort/</id>
+    <published>2017-06-30T04:59:38.000Z</published>
+    <updated>2017-06-30T05:54:10.507Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="선택정렬"><a href="#선택정렬" class="headerlink" title="선택정렬"></a>선택정렬</h3><p>오름차순일 경우 작은걸 맨앞에 넣고 그 다음 작은걸 두 번째 넣고 ..<br>이 과정을 계속 반복한다. 시간복잡도는 O(n^2) 이다.</p>
+<figure class="highlight c"><figcaption><span>SelectionSort.c</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)</div><div class="line">&#123;</div><div class="line">	maxIdx=i;</div><div class="line">	<span class="keyword">for</span>(j=i+<span class="number">1</span>;j&lt;n;j++)	<span class="comment">//최소값 탐색</span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">if</span>(arr[i]&lt;arr[maxIdx])</div><div class="line">			maxIdx=j;</div><div class="line">	&#125;</div><div class="line">	swap;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>참고 : 윤성우의 열혈 자료구조</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;선택정렬&quot;&gt;&lt;a href=&quot;#선택정렬&quot; class=&quot;headerlink&quot; title=&quot;선택정렬&quot;&gt;&lt;/a&gt;선택정렬&lt;/h3&gt;&lt;p&gt;오름차순일 경우 작은걸 맨앞에 넣고 그 다음 작은걸 두 번째 넣고 ..&lt;br&gt;이 과정을 계속 반복한다. 시간복잡
+    
+    </summary>
+    
+      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/"/>
+    
+      <category term="Sort" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/Sort/"/>
+    
+    
+      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/tags/Data-Structure/"/>
+    
+      <category term="Sort" scheme="http://KKimSangHeon.github.io/tags/Sort/"/>
+    
+      <category term="Selection Sort" scheme="http://KKimSangHeon.github.io/tags/Selection-Sort/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>paper</title>
+    <link href="http://KKimSangHeon.github.io/2017/06/30/paper/"/>
+    <id>http://KKimSangHeon.github.io/2017/06/30/paper/</id>
+    <published>2017-06-30T04:40:14.000Z</published>
+    <updated>2017-06-30T04:57:38.940Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="논문"><a href="#논문" class="headerlink" title="논문"></a>논문</h1><img src="/2017/06/30/paper/paper1.png" alt="상장" title="상장">
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;논문&quot;&gt;&lt;a href=&quot;#논문&quot; class=&quot;headerlink&quot; title=&quot;논문&quot;&gt;&lt;/a&gt;논문&lt;/h1&gt;&lt;img src=&quot;/2017/06/30/paper/paper1.png&quot; alt=&quot;상장&quot; title=&quot;상장&quot;&gt;
 
     
     </summary>
@@ -285,15 +478,16 @@
     <link href="http://KKimSangHeon.github.io/2017/06/29/BubbleSort/"/>
     <id>http://KKimSangHeon.github.io/2017/06/29/BubbleSort/</id>
     <published>2017-06-29T05:36:52.000Z</published>
-    <updated>2017-06-29T08:30:01.839Z</updated>
+    <updated>2017-06-30T05:53:41.612Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="버블소트"><a href="#버블소트" class="headerlink" title="버블소트"></a>버블소트</h3><p>버블소트의 코드는 다음과 같다.<br>시간복잡도는 O(n^2) 이다.</p>
+    <content type="html"><![CDATA[<h3 id="거품정렬"><a href="#거품정렬" class="headerlink" title="거품정렬"></a>거품정렬</h3><p>거품정렬의 코드는 다음과 같다.<br>시간복잡도는 O(n^2) 이다.</p>
 <figure class="highlight c"><figcaption><span>BubbleSort.c</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)</div><div class="line">&#123;</div><div class="line">	<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;(n-i)<span class="number">-1</span>;j++)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">if</span>(arr[j]&gt;arr[j+<span class="number">1</span>])</div><div class="line">		&#123;</div><div class="line">			swap;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>참고 : 윤성우의 열혈 자료구조</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;버블소트&quot;&gt;&lt;a href=&quot;#버블소트&quot; class=&quot;headerlink&quot; title=&quot;버블소트&quot;&gt;&lt;/a&gt;버블소트&lt;/h3&gt;&lt;p&gt;버블소트의 코드는 다음과 같다.&lt;br&gt;시간복잡도는 O(n^2) 이다.&lt;/p&gt;
+      &lt;h3 id=&quot;거품정렬&quot;&gt;&lt;a href=&quot;#거품정렬&quot; class=&quot;headerlink&quot; title=&quot;거품정렬&quot;&gt;&lt;/a&gt;거품정렬&lt;/h3&gt;&lt;p&gt;거품정렬의 코드는 다음과 같다.&lt;br&gt;시간복잡도는 O(n^2) 이다.&lt;/p&gt;
 &lt;figure class=&quot;high
     
     </summary>
