@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-06-30T04:32:05.752Z</updated>
+  <updated>2017-06-30T04:52:26.736Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>paper</title>
+    <link href="http://KKimSangHeon.github.io/2017/06/30/paper/"/>
+    <id>http://KKimSangHeon.github.io/2017/06/30/paper/</id>
+    <published>2017-06-30T04:40:14.000Z</published>
+    <updated>2017-06-30T04:52:26.736Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="논문"><a href="#논문" class="headerlink" title="논문"></a>논문</h1>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;논문&quot;&gt;&lt;a href=&quot;#논문&quot; class=&quot;headerlink&quot; title=&quot;논문&quot;&gt;&lt;/a&gt;논문&lt;/h1&gt;
+
+    
+    </summary>
+    
+      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
+    
+      <category term="My Projects" scheme="http://KKimSangHeon.github.io/categories/About-Me/My-Projects/"/>
+    
+    
+      <category term="작성 논문" scheme="http://KKimSangHeon.github.io/tags/%EC%9E%91%EC%84%B1-%EB%85%BC%EB%AC%B8/"/>
+    
+  </entry>
   
   <entry>
     <title>시각장애인을 위한 길안내 app</title>
