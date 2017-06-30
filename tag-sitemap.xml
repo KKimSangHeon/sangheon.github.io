@@ -79,8 +79,43 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/tags/Node-js/</loc>
+        <lastmod>2017-06-30T01:58:17.020Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Kakao-talk-open-API/</loc>
+        <lastmod>2017-06-30T01:58:17.020Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/%EC%B1%97%EB%B4%87/</loc>
+        <lastmod>2017-06-30T01:58:17.020Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/MySQL/</loc>
+        <lastmod>2017-06-30T01:58:17.020Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/CentOS/</loc>
+        <lastmod>2017-06-30T01:58:17.020Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/tags/Sang-Heon-Kim/</loc>
-        <lastmod>2017-06-30T01:19:57.703Z</lastmod>
+        <lastmod>2017-06-30T01:58:43.112Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

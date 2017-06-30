@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-06-30T01:17:07.133Z</updated>
+  <updated>2017-06-30T01:58:17.020Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>기숙사 외박계</title>
+    <link href="http://KKimSangHeon.github.io/2017/06/30/Dormitory-Sleep-Out/"/>
+    <id>http://KKimSangHeon.github.io/2017/06/30/Dormitory-Sleep-Out/</id>
+    <published>2017-06-30T01:22:14.000Z</published>
+    <updated>2017-06-30T01:58:17.020Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="프로그램-개발배경"><a href="#프로그램-개발배경" class="headerlink" title="프로그램 개발배경"></a>프로그램 개발배경</h1><p>-교내 기숙사의 외박계 프로그램이 존재하지 않으며, 업체에 의뢰하여 제작하려했으나 비용상의 문제로 거절된것을 알게되었습니다. 그래서 직접 만들어서 제출하면 어떨까 라는 생각을 하게되어 개발하게 되었습니다.</p>
+<h1 id="프로그램-소개"><a href="#프로그램-소개" class="headerlink" title="프로그램 소개"></a>프로그램 소개</h1><p>CentOS상에 서버를 실행시켰으며, 카카오톡 옐로아이디 페이지에서 세팅을 진행하였습니다. 각 과정을 거친 후 자신의 외박계를 하나 작성할 수 있는 프로그램입니다.</p>
+<h1 id="프로그램-동작화면"><a href="#프로그램-동작화면" class="headerlink" title="프로그램 동작화면"></a>프로그램 동작화면</h1><img src="/2017/06/30/Dormitory-Sleep-Out/Dormitory-Sleep-Out1.png" alt="초기접속화면 [그림1]" title="초기접속화면 [그림1]">
+<p>초기 채팅방에 진입하였을 경우 외박계를 작성할 것인지, 작성한 외박계를 확인할 것인지 선택합니다.<br><img src="/2017/06/30/Dormitory-Sleep-Out/Dormitory-Sleep-Out2.png" alt="외박계 작성절차1 [그림2]" title="외박계 작성절차1 [그림2]"><br>외박계 작성을 선택하였을 경우 이름, 거주하는 동, 호수, 귀관일, 행선지를 입력하고<br><img src="/2017/06/30/Dormitory-Sleep-Out/Dormitory-Sleep-Out3.png" alt="외박계 작성절차2 [그림3]" title="외박계 작성절차2 [그림3]"><br>전화번호 또한 입력 후 아무키나 입력하면 등록이 완료됩니다.<br><img src="/2017/06/30/Dormitory-Sleep-Out/Dormitory-Sleep-Out4.png" alt="[그림1]에서 확인을 선택 [그림4]" title="[그림1]에서 확인을 선택 [그림4]"><br>[그림1]에서 확인버튼을 선택하였을 경우 [그림4]와 같이 입력한 내용을 확인할 수 있습니다.</p>
+<img src="/2017/06/30/Dormitory-Sleep-Out/Dormitory-Sleep-Out5.png" alt="관리자계정모드 [그림5]" title="관리자계정모드 [그림5]">
+<p>작성된 외박계를 관리자가 확인하기 위해서는 채팅방에서 supervisorgj@를 입력합니다. 그 후 [그림5]와 같이 외박계를 조회할 수 있습니다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;프로그램-개발배경&quot;&gt;&lt;a href=&quot;#프로그램-개발배경&quot; class=&quot;headerlink&quot; title=&quot;프로그램 개발배경&quot;&gt;&lt;/a&gt;프로그램 개발배경&lt;/h1&gt;&lt;p&gt;-교내 기숙사의 외박계 프로그램이 존재하지 않으며, 업체에 의뢰하여 제작하려
+    
+    </summary>
+    
+      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
+    
+      <category term="My Projects" scheme="http://KKimSangHeon.github.io/categories/About-Me/My-Projects/"/>
+    
+    
+      <category term="Node.js" scheme="http://KKimSangHeon.github.io/tags/Node-js/"/>
+    
+      <category term="Kakao talk open API" scheme="http://KKimSangHeon.github.io/tags/Kakao-talk-open-API/"/>
+    
+      <category term="챗봇" scheme="http://KKimSangHeon.github.io/tags/%EC%B1%97%EB%B4%87/"/>
+    
+      <category term="MySQL" scheme="http://KKimSangHeon.github.io/tags/MySQL/"/>
+    
+      <category term="CentOS" scheme="http://KKimSangHeon.github.io/tags/CentOS/"/>
+    
+  </entry>
   
   <entry>
     <title>music-share</title>
@@ -106,10 +144,10 @@
     <link href="http://KKimSangHeon.github.io/2017/06/29/about-me/"/>
     <id>http://KKimSangHeon.github.io/2017/06/29/about-me/</id>
     <published>2017-06-29T09:58:22.000Z</published>
-    <updated>2017-06-30T01:19:57.703Z</updated>
+    <updated>2017-06-30T01:58:43.112Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>안녕하세요. 항상 풀스택 개발자가 되고자 노력하는 취업준비생입니다. (#백수, #자소서)</p>
-<p>이 블로그는 제가 개인적으로 공부한 내용을 업로드하고, 공유하며 진행했던 프로젝트 내용을 업로드하고자 만들었습니다.</p>
+<p>이 블로그는 제가 개인적으로 공부한 내용, 진행했던 프로젝트를 업로드하고, 공유하고자 만들었습니다.</p>
 <p>부족한 부분에 대한 태클은 언제든지 환영하며 빠르게 반영하도록 하겠습니다.</p>
 <p>부족하지만 방문해주셔서 감사드리며 앞으로 더욱 완벽한 블로그를 만들기 위해 노력하겠습니다!</p>
 <hr>
@@ -123,7 +161,7 @@
 <p><a href="https://kkimsangheon.github.io/2017/06/29/where-are-you/">- Where Are You(Android, Beacon, Socket)</a></p>
 <p><a href="https://kkimsangheon.github.io/2017/06/29/request-parent/">- 부모님을 부탁해(Android)</a></p>
 <p><a href="https://kkimsangheon.github.io/2017/06/30/music-share/">- Music Share(C, Socket)</a></p>
-<p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">- 기숙사 외박계(Node.js, kakao api)</a></p>
+<p><a href="https://kkimsangheon.github.io/2017/06/30/Dormitory-Sleep-Out/">- 기숙사 외박계(Node.js, kakao api)</a></p>
 <p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">- 시각장애인을 위한 길안내 app제안(android)</a></p>
 ]]></content>
     
