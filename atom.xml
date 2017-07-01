@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-07-01T05:14:31.539Z</updated>
+  <updated>2017-07-01T14:26:05.585Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,16 +16,48 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>4장. 시작과종료, 가상콘솔, 런레벨, 자동완성</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/01/ThisIsLinux2/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/01/ThisIsLinux2/</id>
+    <published>2017-07-01T13:53:50.000Z</published>
+    <updated>2017-07-01T14:26:05.585Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="참고사항"><a href="#참고사항" class="headerlink" title="참고사항"></a>참고사항</h3><p>lrwxrwxrwx. 어쩌구가 있을경우 맨앞의 l은 링크파일임을 의미한다. 윈도우의 바로가기를 생각하자!</p>
+<h3 id="종료관련-명령어"><a href="#종료관련-명령어" class="headerlink" title="종료관련 명령어"></a>종료관련 명령어</h3><p>리눅스는 기본개념이 멀티유저 이므로 함부러 누군가 종료하거나 재시작하면 문제의 소지가 있다. ex) 네이버 서버를 누군가 종료시킨다면?</p>
+<p>리눅스를 서버로 사용할 경우 리눅스는 종료가 아닌 로그아웃이 일반적인 개념이다!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">$ shutdown -P now // 종료</div><div class="line"></div><div class="line">$ shutdown -P +10 //10분후에 종료</div><div class="line"></div><div class="line">$ shutdown -c //종료예약한것 취소</div><div class="line"></div><div class="line">$ shutdown -r 23:00 //23시에 재부팅</div><div class="line"></div><div class="line">$ shutdown -r +10 //10분후에 재부팅</div><div class="line"></div><div class="line">$ shutdown -c // 리부팅예약한것 취소</div><div class="line"></div><div class="line">$ shutdown -k +15  //20분 후에 종료된다는 메세지가 날라감</div><div class="line">                  //루트를 제외한 모든 사용자에게..</div><div class="line">                  //실제 종료는 안됨.</div><div class="line">                  //필요한 이유: 서버에 많은 사용자가 접속하였을 경우 사용자들의 로그아웃을 유도.</div><div class="line"></div><div class="line">$ init 0~6        // 0-종료모드 2-멀티유저모드 5-그래픽모드의 다중사용자모드 6-리부트모드</div><div class="line"></div><div class="line">$ startx      //x윈도우 모드로 변경</div><div class="line">              주의) 예로 단순히 init4에서 init1로가는것과 다르다.</div><div class="line">              //명령어 모드에서 x윈도우 모드로 변경되는것</div></pre></td></tr></table></figure>
+<h3 id="가상콘솔-명령어"><a href="#가상콘솔-명령어" class="headerlink" title="가상콘솔 명령어"></a>가상콘솔 명령어</h3><p>CentOS는 6개의 가상콘솔을 제공하는데 ctrl+alt+F2~F6으로 이동이 가능하다. F1은 X윈도우 모드이다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ chvt 1~6 입력 //가상콘솔 이동</div><div class="line"></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;참고사항&quot;&gt;&lt;a href=&quot;#참고사항&quot; class=&quot;headerlink&quot; title=&quot;참고사항&quot;&gt;&lt;/a&gt;참고사항&lt;/h3&gt;&lt;p&gt;lrwxrwxrwx. 어쩌구가 있을경우 맨앞의 l은 링크파일임을 의미한다. 윈도우의 바로가기를 생각하자!&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
+    
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>리눅스 명령어</title>
     <link href="http://KKimSangHeon.github.io/2017/07/01/Instruction/"/>
     <id>http://KKimSangHeon.github.io/2017/07/01/Instruction/</id>
     <published>2017-07-01T04:57:06.000Z</published>
-    <updated>2017-07-01T05:14:31.539Z</updated>
+    <updated>2017-07-01T14:26:22.077Z</updated>
     
     <content type="html"><![CDATA[<h3 id="참고사항"><a href="#참고사항" class="headerlink" title="참고사항"></a>참고사항</h3><p> $: 일반사용자     </p>
 <p> #: 루트사용자</p>
 <hr>
-<h3 id="명령어"><a href="#명령어" class="headerlink" title="명령어"></a>명령어</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$ halt -p 		// 종료</div><div class="line"></div><div class="line">$ gedit 파일명 		//편집기 열기</div><div class="line"></div><div class="line">$ ifconfig 		//윈도우 ipconfig와 동일</div><div class="line"></div><div class="line">$ reboot			//리부트 명령어</div><div class="line"></div><div class="line">$ su - 			//루트사용자의 권한을 얻음(폴더가 이동됨)</div><div class="line"></div><div class="line">$ su -			//루트사용자의 권한을 얻음(폴더 이동되지 않고)</div><div class="line"></div><div class="line">$ setfont sun12x22	//글자크기 변경</div><div class="line"></div><div class="line">$ vi 파일명		//vi 에디터 열기</div><div class="line"></div><div class="line">$ ip addr		//ip 확인</div><div class="line"></div></pre></td></tr></table></figure>
+<h3 id="명령어"><a href="#명령어" class="headerlink" title="명령어"></a>명령어</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$ halt -p 		// 종료</div><div class="line"></div><div class="line">$ gedit 파일명 		//편집기 열기</div><div class="line"></div><div class="line">$ ifconfig 		//윈도우 ipconfig와 동일</div><div class="line"></div><div class="line">$ reboot			//리부트 명령어</div><div class="line"></div><div class="line">$ su - 			//루트사용자의 권한을 얻음(폴더가 이동됨)</div><div class="line"></div><div class="line">$ su -			//루트사용자의 권한을 얻음(폴더 이동되지 않고)</div><div class="line"></div><div class="line">$ setfont sun12x22	//글자크기 변경</div><div class="line"></div><div class="line">$ vi 파일명		//vi 에디터 열기</div><div class="line"></div><div class="line">$ ip addr		 //ip 확인</div><div class="line"></div><div class="line">$ clear           //콘솔창 초기화</div><div class="line"></div><div class="line">$ yum 프로그램    //프로그램 설치</div><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
