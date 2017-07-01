@@ -86,14 +86,14 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Beacon/</loc>
+        <loc>http://KKimSangHeon.github.io/tags/%EC%B0%BD%EC%97%85%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C/</loc>
         <lastmod>2017-06-30T04:32:05.752Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/%EC%B0%BD%EC%97%85%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C/</loc>
+        <loc>http://KKimSangHeon.github.io/tags/Beacon/</loc>
         <lastmod>2017-06-30T04:32:05.752Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -200,6 +200,13 @@
     <url>
         <loc>http://KKimSangHeon.github.io/tags/Bubble-Sort/</loc>
         <lastmod>2017-06-30T11:03:53.379Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/vmware-Error/</loc>
+        <lastmod>2017-07-01T04:51:38.696Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

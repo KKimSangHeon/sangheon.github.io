@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-06-30T11:01:37.840Z</updated>
+  <updated>2017-07-01T04:51:38.696Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vmware 에러</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/01/VmwareError/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/01/VmwareError/</id>
+    <published>2017-07-01T04:45:37.000Z</published>
+    <updated>2017-07-01T04:51:38.696Z</updated>
+    
+    <content type="html"><![CDATA[<p>증상:<br>Virtualized performance counters are not supported on the host CPU type. Module VPMC power on failed. Failed to start the virtual machine 이라는 에러메세지 출력.</p>
+<p>해결법:</p>
+<h2 id="vmx-파일을-열고-vpmc-enable-부분을-“FALSE”로-수정"><a href="#vmx-파일을-열고-vpmc-enable-부분을-“FALSE”로-수정" class="headerlink" title=".vmx 파일을 열고 vpmc.enable 부분을 “FALSE”로 수정."></a>.vmx 파일을 열고 vpmc.enable 부분을 “FALSE”로 수정.</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;증상:&lt;br&gt;Virtualized performance counters are not supported on the host CPU type. Module VPMC power on failed. Failed to start the virtual 
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="에러 해결방법." scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0%EB%B0%A9%EB%B2%95/"/>
+    
+    
+      <category term="vmware Error" scheme="http://KKimSangHeon.github.io/tags/vmware-Error/"/>
+    
+  </entry>
   
   <entry>
     <title>BinarySearch</title>
@@ -332,9 +358,9 @@
     
       <category term="Android" scheme="http://KKimSangHeon.github.io/tags/Android/"/>
     
-      <category term="Beacon" scheme="http://KKimSangHeon.github.io/tags/Beacon/"/>
-    
       <category term="창업경진대회" scheme="http://KKimSangHeon.github.io/tags/%EC%B0%BD%EC%97%85%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C/"/>
+    
+      <category term="Beacon" scheme="http://KKimSangHeon.github.io/tags/Beacon/"/>
     
   </entry>
   
@@ -459,9 +485,9 @@
     
       <category term="Android" scheme="http://KKimSangHeon.github.io/tags/Android/"/>
     
-      <category term="Reco Beacon" scheme="http://KKimSangHeon.github.io/tags/Reco-Beacon/"/>
-    
       <category term="Beacon" scheme="http://KKimSangHeon.github.io/tags/Beacon/"/>
+    
+      <category term="Reco Beacon" scheme="http://KKimSangHeon.github.io/tags/Reco-Beacon/"/>
     
   </entry>
   
