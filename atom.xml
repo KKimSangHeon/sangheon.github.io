@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-07-01T04:54:04.827Z</updated>
+  <updated>2017-07-01T05:01:18.882Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,48 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>리눅스 명령어</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/01/Instruction/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/01/Instruction/</id>
+    <published>2017-07-01T04:57:06.000Z</published>
+    <updated>2017-07-01T05:01:18.882Z</updated>
+    
+    <content type="html"><![CDATA[<p>$ 는 일반사용자</p>
+<h1 id="는-루트사용자"><a href="#는-루트사용자" class="headerlink" title="는 루트사용자"></a>는 루트사용자</h1><p>$ 폴더==디렉토리</p>
+<p>$ halt -p         // 종료</p>
+<p>$ gedit 파일명         //편집기 열기</p>
+<p>$ ifconfig         //윈도우 ipconfig와 동일</p>
+<p>$ reboot            //리부트 명령어</p>
+<p>$ su -             //루트사용자의 권한을 얻음(폴더가 이동됨)</p>
+<p>$ su -            //루트사용자의 권한을 얻음(폴더 이동되지 않고)</p>
+<p>$ setfont sun12x22    //글자크기 변경</p>
+<p>$ vi 파일명        //vi 에디터 열기</p>
+<p>$ ip addr        //ip 확인</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;$ 는 일반사용자&lt;/p&gt;
+&lt;h1 id=&quot;는-루트사용자&quot;&gt;&lt;a href=&quot;#는-루트사용자&quot; class=&quot;headerlink&quot; title=&quot;는 루트사용자&quot;&gt;&lt;/a&gt;는 루트사용자&lt;/h1&gt;&lt;p&gt;$ 폴더==디렉토리&lt;/p&gt;
+&lt;p&gt;$ halt -p      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="관련정보" scheme="http://KKimSangHeon.github.io/categories/Linux/%EA%B4%80%EB%A0%A8%EC%A0%95%EB%B3%B4/"/>
+    
+    
+      <category term="리눅스 명령어" scheme="http://KKimSangHeon.github.io/tags/%EB%A6%AC%EB%88%85%EC%8A%A4-%EB%AA%85%EB%A0%B9%EC%96%B4/"/>
+    
+  </entry>
+  
+  <entry>
     <title>vmware 에러</title>
     <link href="http://KKimSangHeon.github.io/2017/07/01/LinuxError/"/>
     <id>http://KKimSangHeon.github.io/2017/07/01/LinuxError/</id>
     <published>2017-07-01T04:45:37.000Z</published>
-    <updated>2017-07-01T04:54:04.827Z</updated>
+    <updated>2017-07-01T04:55:59.119Z</updated>
     
     <content type="html"><![CDATA[<p>증상:<br>Virtualized performance counters are not supported on the host CPU type. Module VPMC power on failed. Failed to start the virtual machine 이라는 에러메세지 출력.</p>
 <p>해결법:<br>.vmx 파일을 열고 vpmc.enable 부분을 “FALSE”로 수정.</p>
@@ -81,7 +118,7 @@
     <link href="http://KKimSangHeon.github.io/2017/06/30/ThisIsLinux1/"/>
     <id>http://KKimSangHeon.github.io/2017/06/30/ThisIsLinux1/</id>
     <published>2017-06-30T09:55:52.000Z</published>
-    <updated>2017-06-30T10:16:23.755Z</updated>
+    <updated>2017-07-01T05:00:55.624Z</updated>
     
     <content type="html"><![CDATA[<h3 id="리눅스"><a href="#리눅스" class="headerlink" title="리눅스"></a>리눅스</h3><hr>
 <h4 id="리눅스란"><a href="#리눅스란" class="headerlink" title="리눅스란?"></a>리눅스란?</h4><p>리눅스 = 무료 유닉스 라 생각하면 된다.<br>1991 ‘리누스 토르발스’가 버전 0.01을 최초로 완성. 리누스 토르발스는 커널(kernel)만 개발함(여기서 커널은 자동차 엔진이라고 보면된다.)<br>모든 배포판은 리누스 토르발스가 개발한 커널을 갖고 사람들이 만들어진것이다. CentOS 또한 마찬가지..자동차로 비유하자면 A,B,C 회사가 하나의 엔진을 사용하여 각기 다른 자동차를 만들어내놓음.<br>우리가 공부할 CentOS의 커널버전은 3.17.4인데 변경이 가능하다.!<br>자동차로 비교하면 자동차를 그대로 두고 엔진만 변경하는것.<br>이를 커널 업그레이드 라고 한다.</p>
