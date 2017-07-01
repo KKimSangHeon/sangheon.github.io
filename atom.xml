@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-07-01T05:11:08.743Z</updated>
+  <updated>2017-07-01T05:14:31.539Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://KKimSangHeon.github.io/2017/07/01/Instruction/"/>
     <id>http://KKimSangHeon.github.io/2017/07/01/Instruction/</id>
     <published>2017-07-01T04:57:06.000Z</published>
-    <updated>2017-07-01T05:11:08.743Z</updated>
+    <updated>2017-07-01T05:14:31.539Z</updated>
     
     <content type="html"><![CDATA[<h3 id="참고사항"><a href="#참고사항" class="headerlink" title="참고사항"></a>참고사항</h3><p> $: 일반사용자     </p>
 <p> #: 루트사용자</p>
@@ -51,7 +51,7 @@
     <link href="http://KKimSangHeon.github.io/2017/07/01/LinuxError/"/>
     <id>http://KKimSangHeon.github.io/2017/07/01/LinuxError/</id>
     <published>2017-07-01T04:45:37.000Z</published>
-    <updated>2017-07-01T04:55:59.119Z</updated>
+    <updated>2017-07-01T05:14:45.248Z</updated>
     
     <content type="html"><![CDATA[<p>증상:<br>Virtualized performance counters are not supported on the host CPU type. Module VPMC power on failed. Failed to start the virtual machine 이라는 에러메세지 출력.</p>
 <p>해결법:<br>.vmx 파일을 열고 vpmc.enable 부분을 “FALSE”로 수정.</p>
@@ -112,7 +112,7 @@
     <link href="http://KKimSangHeon.github.io/2017/06/30/ThisIsLinux1/"/>
     <id>http://KKimSangHeon.github.io/2017/06/30/ThisIsLinux1/</id>
     <published>2017-06-30T09:55:52.000Z</published>
-    <updated>2017-07-01T05:00:55.624Z</updated>
+    <updated>2017-07-01T05:14:51.441Z</updated>
     
     <content type="html"><![CDATA[<h3 id="리눅스"><a href="#리눅스" class="headerlink" title="리눅스"></a>리눅스</h3><hr>
 <h4 id="리눅스란"><a href="#리눅스란" class="headerlink" title="리눅스란?"></a>리눅스란?</h4><p>리눅스 = 무료 유닉스 라 생각하면 된다.<br>1991 ‘리누스 토르발스’가 버전 0.01을 최초로 완성. 리누스 토르발스는 커널(kernel)만 개발함(여기서 커널은 자동차 엔진이라고 보면된다.)<br>모든 배포판은 리누스 토르발스가 개발한 커널을 갖고 사람들이 만들어진것이다. CentOS 또한 마찬가지..자동차로 비유하자면 A,B,C 회사가 하나의 엔진을 사용하여 각기 다른 자동차를 만들어내놓음.<br>우리가 공부할 CentOS의 커널버전은 3.17.4인데 변경이 가능하다.!<br>자동차로 비교하면 자동차를 그대로 두고 엔진만 변경하는것.<br>이를 커널 업그레이드 라고 한다.</p>
