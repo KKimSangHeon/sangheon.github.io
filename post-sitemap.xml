@@ -7,6 +7,30 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2017/06/29/about-me/</loc>
+        <lastmod>2017-07-02T15:46:31.078Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/06/30/paper/</loc>
+        <lastmod>2017-07-02T15:39:35.296Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/07/02/ThisIsLinux4/</loc>
+        <lastmod>2017-07-02T08:19:39.298Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2017/07/02/ThisIsLinux3/</loc>
         <lastmod>2017-07-02T06:19:38.179Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -105,22 +129,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2017/06/30/BinarySearch/</loc>
         <lastmod>2017-06-30T11:01:37.840Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2017/06/30/paper/</loc>
-        <lastmod>2017-06-30T04:57:38.940Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2017/06/29/about-me/</loc>
-        <lastmod>2017-06-30T04:34:18.701Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
