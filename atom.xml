@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-07-02T08:19:39.298Z</updated>
+  <updated>2017-07-03T05:45:36.399Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,94 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>4장. 파일의 소유권/허가권, 링크</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/03/ThisIsLinux6/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/03/ThisIsLinux6/</id>
+    <published>2017-07-03T04:33:03.000Z</published>
+    <updated>2017-07-03T05:45:36.399Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># touch sample.txt  //빈 파일생성</div><div class="line"># ls -l</div><div class="line">-rw-r--r--  1 root   root         0  7월  3 13:35 sample.txt</div></pre></td></tr></table></figure>
+<p>1.맨앞의 -는 파일의 유형을 의미.<br>  -: 일반파일<br>  d: 디렉토리<br>  l: 링크파일</p>
+<p>2.rw-r–r–는 세개씩 끊어 읽으면 된다.<br>2-1.  맨앞 세개는 소유자의 파일접근권한 (rw-)<br>즉 소유자는 읽기, 쓰기 가능, 실행 불가</p>
+<p>2-2.  두번째는 그룹의 파일접근권한<br>읽기만 가능</p>
+<p>2-3.  세번째는 그 외의 사용자의 파일접근권한이다.<br>읽기만 가능<br>또한 rw-r–r–는 3자리씩 끊어서 보면 644로 볼수 있다.<br>rwxrwxrwx는? 666</p>
+<p>3.1은 링크의 수</p>
+<p>4.root는 파일 소유자 이름</p>
+<p>5.root는 파일 소유 그룹이름</p>
+<p>6.0은 파일의 크기</p>
+<p>7.7월  3 13:35는 마지막 변경 날짜/시간</p>
+<p>8.sample.txt는 파일이름</p>
+<h4 id="chmod-파일-허가권-변경"><a href="#chmod-파일-허가권-변경" class="headerlink" title="chmod 파일 허가권 변경"></a>chmod 파일 허가권 변경</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"># chmod 655 sample.txt</div><div class="line"># ls -l sample.txt</div><div class="line">-rw-r-xr-x 1 root root 0  7월  3 13:35 sample.txt</div><div class="line"></div><div class="line">$ chmod o-x  test      //일반사용자(o : ordinary)는 -x (x:execute) 실행 못하도록</div><div class="line">$ ls -l test</div><div class="line">-rwxrwxrw- 1 centos centos 52  7월  3 13:52 test</div><div class="line">        //마지막 x가 빠짐</div><div class="line"></div><div class="line">$ chmod ug-w test    //소유주(u: user), 소유그룹(g: group) 쓰기권한 제거</div><div class="line">$ ls -l test</div><div class="line">-r-xr-xrw- 1 centos centos 52  7월  3 13:52 test</div><div class="line">        //3번째 6번째 w가 빠짐</div><div class="line"></div><div class="line">$ chmod ugo-r test  //전부다 읽기권한 제거</div><div class="line">$ ls -l test   </div><div class="line">---x--x-w- 1 centos centos 52  7월  3 13:52 test</div><div class="line">        //r이 제거된것 확인</div><div class="line"></div><div class="line">$ chmod uo+rw test  //소유주, 기타사용자에게 읽기,쓰기 허용</div><div class="line">$ ls -l test  </div><div class="line">-rwx--xrw- 1 centos centos 52  7월  3 13:52 test</div><div class="line"></div><div class="line">//숫자를 넣지 않고 하는것을 심볼릭방법이라 하는데 이것이 더 편할 때가 있다.</div><div class="line">숫자로 할 경우 기존의 권한도 알아야 하기 때문에..</div><div class="line"></div></pre></td></tr></table></figure>
+<h4 id="chown-파일-소유자-변경"><a href="#chown-파일-소유자-변경" class="headerlink" title="chown 파일 소유자 변경"></a>chown 파일 소유자 변경</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># chown centos sample.txt   //centos로 소유권을 넘김</div><div class="line"># ls -l sample.txt</div><div class="line">-rw-r-xr-x 1 centos root 0  7월  3 13:35 sample.txt  //소유권 변경됨</div></pre></td></tr></table></figure>
+<h4 id="chgrp-파일-소유-그룹-변경"><a href="#chgrp-파일-소유-그룹-변경" class="headerlink" title="chgrp 파일 소유 그룹 변경"></a>chgrp 파일 소유 그룹 변경</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># chgrp centos sample.txt</div><div class="line"># ls -l sample.txt</div><div class="line">-rw-r-xr-x 1 centos centos 0  7월  3 13:35 sample.txt</div></pre></td></tr></table></figure>
+<h4 id="chown-파일-소유자-그룹-변경"><a href="#chown-파일-소유자-그룹-변경" class="headerlink" title="chown 파일 소유자, 그룹 변경"></a>chown 파일 소유자, 그룹 변경</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># chown root.root sample.txt</div><div class="line"># ls -l sample.txt</div><div class="line">-rw-r-xr-x 1 root root 0  7월  3 13:35 sample.txt</div></pre></td></tr></table></figure>
+<h4 id="에-대한-이해"><a href="#에-대한-이해" class="headerlink" title="./에 대한 이해"></a>./에 대한 이해</h4><p>파일을 실행하기 위해서는 아래의 명령어를 입력해야한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># ./파일명</div></pre></td></tr></table></figure><br>./는 왜 붙는것일까?<br>그냥 파일명만 입력하면 찾지못하는데 그 이유는 현재 디렉토리가 경로에 없어서 그렇다.<br>그래서 ./을 넣어주는 것이다. 앞에서 배웠듯이 . 은 현재 디렉토리를 의미하는것을 떠올려보자.<br>즉 ./파일명 는 현재 디렉터리 아래에 있는 파일명을 실행하라는 것이다.</p>
+<h4 id="su-해당사용자로-로그인"><a href="#su-해당사용자로-로그인" class="headerlink" title="su 해당사용자로 로그인"></a>su 해당사용자로 로그인</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># su - centos   //centos계정으로 로그인</div><div class="line">      //루트계정일 경우 암호를 묻지않는다.</div><div class="line">      //-를 붙이면 디렉토리가 centos디렉토리로 변경되가</div><div class="line">      //붙이지 않으면 변경되지 않는다.</div></pre></td></tr></table></figure>
+<h4 id="실습해보자"><a href="#실습해보자" class="headerlink" title="실습해보자."></a>실습해보자.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line"># touch test    //test 파일 생성</div><div class="line"></div><div class="line"># vi test     //이후 명령어(ex ls) 입력 그후 저장후 종료</div><div class="line"></div><div class="line"># ./test      //test 파일 실행</div><div class="line"></div><div class="line">실행되지 않음.   </div><div class="line"></div><div class="line"># chmod 755 test    //실행권한을 모두 준다.</div><div class="line"></div><div class="line"># ./test    //실행된다.</div><div class="line"></div><div class="line">현재 파일의 소유권은 root이다.</div><div class="line"></div><div class="line"># chown centos.centos test  //소유자,그룹을 변경</div><div class="line"></div><div class="line"># su - centos   //센토스 사용자로 접근</div><div class="line">              //이때 암호는 물어보지 않음. 루트에서 이동하는것이므로</div><div class="line"></div><div class="line">$ ls -l /root/test    //허가 거부가 된다.</div><div class="line">                    //왜냐하면 /root 디렉토리가 일반사용자는 들어올수 없게 되어있음.</div><div class="line">                    //그러므로 파일을 이동시키거나, /root 디렉토리에 다른사용자가 들어</div><div class="line">                    //올수 있게 허가해주어야 한다. 후자는 좋지 않은 방법이므로 전자를</div><div class="line">                    //활용하자</div><div class="line"></div><div class="line"># exit                //centos계정 로그아웃</div><div class="line"></div><div class="line"># mv test ~centos     //centos 홈폴더로 test파일이동.</div><div class="line"></div><div class="line"># su - centos   //다시 centos로 로그인</div><div class="line"></div><div class="line">$ chmod 777 test</div><div class="line"></div><div class="line">$ chown root.root test  //소유권을 다시 root로 변경</div><div class="line">                      //불가능하다. 어딜감히 root로 변경해</div><div class="line">                      //악성코드를 심고 할 수도 있고..위험함..</div><div class="line">                      //그래서 이 명령어는 루트사용자만 가능!!!</div><div class="line"></div><div class="line">$ chmod o-x  test      //일반사용자(o : ordinary)는 -x (x:execute) 실행 못하도록</div><div class="line">$ ls -l</div><div class="line">-rwxrwxrw- 1 centos centos 52  7월  3 13:52 test</div><div class="line">                    //마지막에 -가 들어간것을 확인</div><div class="line"></div><div class="line">$ chmod ug-w test    //소유주(u: user), 소유그룹(g: group) 쓰기권한 제거</div><div class="line">$ ls -l test</div><div class="line">-r-xr-xrw- 1 centos centos 52  7월  3 13:52 test</div><div class="line">                    //3번째 6번째 w가 빠짐</div><div class="line"></div><div class="line">$ chmod ugo-r test  //전부다 읽기권한 제거</div><div class="line">$ ls -l test   </div><div class="line">---x--x-w- 1 centos centos 52  7월  3 13:52 test</div><div class="line">        //r이 제거된것 확인</div><div class="line"></div><div class="line">$ chmod uo+rw test  //소유주, 기타사용자에게 읽기,쓰기 허용</div><div class="line">$ ls -l test  </div><div class="line">-rwx--xrw- 1 centos centos 52  7월  3 13:52 test</div><div class="line"></div><div class="line">//숫자를 넣지 않고 하는것을 심볼릭방법이라 하는데 이것이 더 편할 때가 있다.</div><div class="line">숫자로 할 경우 기존의 권한도 알아야 하기 때문에..                    </div></pre></td></tr></table></figure>
+<h4 id="링크"><a href="#링크" class="headerlink" title="링크"></a>링크</h4><p>파일의 링크는 하드링크, 심볼릭 링크가 있다.<br>윈도우의 바로가기처럼 연결되어있는것은 심볼릭링크 소프트 링크라 한다.</p>
+<p>원본파일이 inode블록(실제 파일정보를 갖고있는것)을 가르키고 inode블록은 원본파일 데이터를 가르킨다.</p>
+<p>하드링크파일은 inode를 직접 가르키며<br>심볼링크파일은 새로운 inode를 만들고 새로운 inode는 원본파일 포인터를 하나 더만들고 그것을 가르킨다. 원본파일 포인터는 원본파일을 가르킨다. 교재 201p를 참고하자.</p>
+<p>주로 하드링크보다는 심볼릭 링크를 생성한다.</p>
+<h5 id="실습해보기"><a href="#실습해보기" class="headerlink" title="실습해보기"></a>실습해보기</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"># mkdir linktest</div><div class="line"># cd linktest/</div><div class="line"># vi basefile //아무거나 입력후 저장후 종료</div><div class="line">//원본파일이 생겼으므로 inode 블록이 생성되었을것이다.</div><div class="line"># ls -il basefile //inode 번호 확인</div><div class="line">405679049 -rw-r--r-- 1 root root 34  7월  3 14:36 basefile</div><div class="line">  //405679049이 inode 번호</div><div class="line"></div><div class="line"># ln basefile hardlink  //하드링크 생성</div><div class="line"># ln -s basefile softlink //소프트링크생성</div><div class="line"># ls -il</div><div class="line"></div><div class="line">405679049 -rw-r--r-- 2 root root 34  7월  3 14:36 basefile</div><div class="line">405679049 -rw-r--r-- 2 root root 34  7월  3 14:36 hardlink</div><div class="line">405679048 lrwxrwxrwx 1 root root  8  7월  3 14:40 softlink -&gt; basefile</div><div class="line"></div><div class="line">//basefile inode와 hardlink inode가 같다. softlink의 inode는 새로 만들어서 basefile을 가르킨다.</div><div class="line"></div><div class="line"># mv basefile ../     //원본파일을 앞 디렉토리로 이동시킴</div><div class="line"># ls -il</div><div class="line"></div><div class="line"># cat hardlink  // 출력이 될까 안될까?</div><div class="line">        //출력이 된다. 그 이유는 원본 inode를 가르키기 때문에!</div><div class="line"></div><div class="line"># cat softlink  // 출력이 될까 안될까.?</div><div class="line">        //안된다. 원본파일이 없어졌기 때문에.</div><div class="line"></div><div class="line"># mv ../basefile    //다시 원상복구 시킴  (앞디렉토리로간 basefile 델꼬옴)</div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/di
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
+    
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>4장. 사용자 및 그룹 관리</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/03/ThisIsLinux5/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/03/ThisIsLinux5/</id>
+    <published>2017-07-03T02:29:09.000Z</published>
+    <updated>2017-07-03T04:32:32.265Z</updated>
+    
+    <content type="html"><![CDATA[<p>리눅스는 다중 사용자 시스템이다. 즉 서버 한대에 여러명이 접속한다. 그러므로 사용자를 관리하고 그룹을 관리하는게 중요한 이슈이다.<br>기본적으로 rootㄹ는 슈퍼유저가 관리하며 모든 사용자는 하나 이상의 그룹에 소속되어야 한다.<br>사용자는 /etc/passwd에 정의되어 있다.<br>아래의 명령문을 실행시켜 vi 에디터로 확인해보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># vi /etc/passwd</div></pre></td></tr></table></figure><br>마지막 줄엔 다음과같은 코드가 존재한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">centos:x:1000:1000:centos:/home/centos:/bin/bash</div></pre></td></tr></table></figure><br>이에 대해 자세히 알아보자.</p>
+<p>1.centos =<br>  사용자가 centos 이다.</p>
+<p>2.x =<br>  비밀번호</p>
+<p>3.1000 =<br>  centos라는 사용자의 ID</p>
+<p>4.1000 =<br>  centos사용자는 반드시 소속된 그룹이 있어야하는데 이는 소속된 그룹의 ID 즉 그룹번호이다.<br>어떻게 그룹번호를 갖고 그룹명을 알까? /etc/group 파일에 정의되어 있다. 이 파일을 vi 에디터로 열면 그룹이름:그룹비밀번호:그룹의ID(그룹번호)의 형식을 갖는다.<br>centos:x:1000:centos  // 그룹이름:그룹비밀번호:그룹의ID(그룹번호)<br>이게 무슨뜻일까? centos라는 사용자가 centos그룹에 속해 있다는 것이다. 마지막 centos 는 생략이 가능하며 신경쓰지 않아도 된다.<br>예를 들면 홍길동이라는 부서에 홍길동 사원이 존재하는것이다. 회사에서는 부서를 만들고 사원을 뽑는다. 마찬가지로 centos도 새로운 사용자를 만들면 사용자 이름과 같은 그룹을 만들고 이 그룹에 해당시킨다.<br>이것과 관련해 실습을 진행해보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># useradd myuser    //유저 등록</div><div class="line"># tail -5 /etc/passwd    //해당파일의 마지막 5줄만 보기</div><div class="line"></div><div class="line">myuser:x:1001:1001::/home/myuser:/bin/bash  //그룹번호 1001을 기억</div><div class="line"></div><div class="line"># tail -5 /etc/group    //해당파일의 마지막 5줄만 보기</div><div class="line"></div><div class="line">myuser:x:1001:  //사용자 이름과 같은 그룹이 만들어졌고 그 그룹에 사용자가 속해있다.</div></pre></td></tr></table></figure></p>
+<p>5.centos =<br>  전체이름이다. 생략이 가능하다</p>
+<p>6./home/centos centos =<br>  사용자의 홈 디렉토리</p>
+<p>7./bin/bash =<br>  사용할 기본 쉘</p>
+<h4 id="실습해보자"><a href="#실습해보자" class="headerlink" title="실습해보자"></a>실습해보자</h4><p>디렉토리 설명<br>/etc/passwd : 사용자 정보가 있음<br>/etc/shadow : 사용자 비밀번호가 있음(비밀번호는 암호화되어서 저장됨)<br>/etc/group  : 그룹정보가 있음</p>
+<h5 id="실습-1"><a href="#실습-1" class="headerlink" title="실습 1"></a>실습 1</h5><p>유저 생성, 유저 그룹지정, 그룹생성<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"># useradd user1         //user1생성</div><div class="line"># tail -5 /etc/passwd   //생성되었는지 확인</div><div class="line">user1:x:1001:1001::/home/user1:/bin/bash  //잘생성됨</div><div class="line"></div><div class="line"># tail -5 /etc/shadow     //사용자의 비밀번호를 확인해보자</div><div class="line">user1:!!:17350:0:99999:7:::   //비밀번호를 설정하지 않았지만 암호화 되어있다.</div><div class="line"></div><div class="line"># tail -5 /etc/group    //사용자의 그룹이 생성되었나 확인해보자</div><div class="line">user1:x:1001:           //잘 생성되었다</div><div class="line"></div><div class="line">하지만 바람직하지 않다.! user1의 그룹이 user1이라니 말이되나!</div><div class="line"></div><div class="line">다시실습해보자 이번에는 그룹을 먼저 생성하고 사용자를 소속시키자</div><div class="line"></div><div class="line"># userdel -r user1 //보통 현업에선 -r옵션을 넣어 디렉토리까진 지우지 않는다.</div><div class="line">                  //하지만 실습이므로 과감하게 지운다.</div><div class="line"># groupadd centosGroup    //그룹생성</div><div class="line"></div><div class="line"># tail -5 /etc/group    //잘생성되었나 확인</div><div class="line">centosGroup:x:1001:   //잘생성됨</div><div class="line"></div><div class="line"># useradd -g centosGroup user1  //centosGroup에 소속된 user1생성</div><div class="line"># useradd -g centosGroup user2  //centosGroup에 소속된 user2생성</div><div class="line"></div><div class="line"># tail -5 /etc/passwd     //잘 생성되었나 확인.</div><div class="line">user1:x:1001:1001::/home/user1:/bin/bash</div><div class="line">user2:x:1002:1001::/home/user2:/bin/bash</div><div class="line">  //잘 생성되었고 사용자 ID는 다르지만 같은 그룹ID를 갖는다.</div><div class="line"></div><div class="line"># passwd user1   //암호지정. 이후 1234 1234입력</div><div class="line">                //일반사용자는 암호를 8자 미만으로 지정못하지만</div><div class="line">                //루트사용자는 8자 미만으로 지정해줄수 있다.</div><div class="line"></div><div class="line"># passwd user2   //암호지정. 이후 1234 1234입력</div><div class="line"></div><div class="line"># tail -5 /etc/shadow   //user1,user2의 암호를 보자</div><div class="line">                      //user1,user2의 암호를 1234로 지정하였지만</div><div class="line">                      //암호화된 값이 다르다!!</div></pre></td></tr></table></figure></p>
+<h5 id="실습-2"><a href="#실습-2" class="headerlink" title="실습 2"></a>실습 2</h5><p>x윈도에서 사용자권한관리 - x윈도가 없으면 안되므로 비추<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># yum -y install system-config-users  //system-config-users패키지 설치</div><div class="line"># system-config-users   //x윈도우 상에서 사용자 관리가 가능하다!</div></pre></td></tr></table></figure></p>
+<h3 id="관련-명령어"><a href="#관련-명령어" class="headerlink" title="관련 명령어"></a>관련 명령어</h3><p>189p 참고<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">-u : ID 지정</div><div class="line">-g : 그룹지정</div><div class="line">-d : 홈디렉터리지정</div><div class="line">-s : 쉘 지정</div><div class="line"></div><div class="line"># useradd shkim //새로운 사용자를 추가</div><div class="line"></div><div class="line"># passwd shkim //사용자의 비밀번호를 지정하거나 변경</div><div class="line"></div><div class="line"># usermod -g root shkim  //사용자의 속성을 변경</div><div class="line"></div><div class="line"># userdel shkim //사용자는 지우나 디렉토리를 제거하지 않음.</div><div class="line">            //-r 옵션이 존재. 이는 사용자가 사용하던 디렉토리까지 제거</div><div class="line"></div><div class="line"># change -m 2 shkim  //사용자의 암호를 주기적으로 변경하도록 설정</div><div class="line">          //-m 2는 최소 이틀이상 써야한다.(189p 참고)</div><div class="line"></div><div class="line"># groups // 사용자가 속한 그룹을 보여줌</div><div class="line"></div><div class="line"># groupadd newgroup   //새로운 그룹을 새성          </div><div class="line"></div><div class="line"># groupmod  -n newgroup mygroup//그룹의 속성을 변경 newgroup을 mygroup로 변경</div><div class="line"></div><div class="line"># groupdel newgroup //그룹을 삭제</div><div class="line"></div><div class="line"># gpasswd newgroup  //그룹의 암호설정</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;리눅스는 다중 사용자 시스템이다. 즉 서버 한대에 여러명이 접속한다. 그러므로 사용자를 관리하고 그룹을 관리하는게 중요한 이슈이다.&lt;br&gt;기본적으로 rootㄹ는 슈퍼유저가 관리하며 모든 사용자는 하나 이상의 그룹에 소속되어야 한다.&lt;br&gt;사용자는
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
+    
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>4장. 리눅스 기본 명령어</title>
@@ -661,81 +749,6 @@
       <category term="Reco Beacon" scheme="http://KKimSangHeon.github.io/tags/Reco-Beacon/"/>
     
       <category term="Beacon" scheme="http://KKimSangHeon.github.io/tags/Beacon/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>안녕하세요!</title>
-    <link href="http://KKimSangHeon.github.io/2017/06/29/about-me/"/>
-    <id>http://KKimSangHeon.github.io/2017/06/29/about-me/</id>
-    <published>2017-06-29T09:58:22.000Z</published>
-    <updated>2017-07-02T15:57:59.299Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>안녕하세요. 항상 풀스택 개발자가 되고자 노력하는 취업준비생입니다. </p>
-<p>이 블로그는 제가 개인적으로 공부한 내용, 진행했던 프로젝트를 업로드하고, 공유하고자 만들었습니다.</p>
-<p>부족한 부분에 대한 태클은 언제든지 환영하며 빠르게 반영하도록 하겠습니다.</p>
-<p>부족하지만 방문해주셔서 감사드리며 앞으로 더욱 완벽한 블로그를 만들기 위해 노력하겠습니다!</p>
-<hr>
-<h1 id="Profile"><a href="#Profile" class="headerlink" title="Profile"></a>Profile</h1><ul>
-<li>부명고등학교 졸업 (2008.03~2011.02)</li>
-<li>동국대학교 경주캠퍼스 컴퓨터공학과 졸업 (2011.03~2017.02)</li>
-<li>아이티센 인턴수료 [공공2사업부문 개발2팀] (2016.12~2017.03)</li>
-</ul>
-<hr>
-<h1 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h1><p>제가 진행했었던 프로젝트는 다음과 같습니다. 클릭하시면 자세한 설명을 볼 수 있는 페이지로 이동합니다.</p>
-<p><a href="https://kkimsangheon.github.io/2017/06/29/where-are-you/">- 다수 사용자의 실시간 위치추적 어플리케이션(Android, Beacon, Socket)</a></p>
-<p><a href="https://kkimsangheon.github.io/2017/06/29/request-parent/">- 부모님을 부탁해(Android)</a></p>
-<p><a href="https://kkimsangheon.github.io/2017/06/30/music-share/">- Music Share(C, Socket)</a></p>
-<p><a href="https://kkimsangheon.github.io/2017/06/30/Dormitory-Sleep-Out/">- 기숙사 외박계(Node.js, kakao api)</a></p>
-<p><a href="https://kkimsangheon.github.io/2017/06/30/For-blind/">- 시각장애인을 위한 길안내 app제안(android)</a></p>
-<p><a href="https://kkimsangheon.github.io/2017/06/30/paper/">- 작성 논문</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h1&gt;&lt;p&gt;안녕하세요. 항상 풀스택 개발자가 되고자 노력하는 취업
-    
-    </summary>
-    
-      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
-    
-      <category term="Introduction" scheme="http://KKimSangHeon.github.io/categories/About-Me/Introduction/"/>
-    
-    
-      <category term="Sang Heon Kim" scheme="http://KKimSangHeon.github.io/tags/Sang-Heon-Kim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>부모님을 부탁해</title>
-    <link href="http://KKimSangHeon.github.io/2017/06/29/request-parent/"/>
-    <id>http://KKimSangHeon.github.io/2017/06/29/request-parent/</id>
-    <published>2017-06-29T09:52:18.000Z</published>
-    <updated>2017-06-29T16:11:45.718Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="App-소개-및-개발배경"><a href="#App-소개-및-개발배경" class="headerlink" title="App 소개 및 개발배경"></a>App 소개 및 개발배경</h1><p>-본 어플리케이션은 증가하는 고독사를 줄여보자는 취지에서 개발하게 된 어플리케이션입니다. 부재중 통화수가 사전에 등록해 놓은 n 개가 되었을 경우 사전에 등록해 놓은 지인에게 위치정보가 포함된 문자메세지가 송신되는 앱 입니다.</p>
-<img src="/2017/06/29/request-parent/request-parent-flow.png" alt="작동화면" title="작동화면">
-<p>초기화면에서 문자메세지를 수신할 번호, 부재중통화의 개수n을 입력하고 동작하기 버튼을 누릅니다.</p>
-<img src="/2017/06/29/request-parent/request-parent-received-message.png" alt="수신된 메세지" title="수신된 메세지">
-<p>어플리케이션을 설치한 스마트폰 주인이 부재중통화를 n번 받지 않을 경우 스마트폰의 현재 위치가 등록한 번호로 전송됩니다.</p>
-<p>-시연영상<br><div class="video-container"><iframe src="//www.youtube.com/embed/3JUTYHuzjdA" frameborder="0" allowfullscreen></iframe></div></p>
-<p><a href="https://play.google.com/store/apps/details?id=com.tkdgjs1501.RequestParent" target="_blank" rel="external">google play 방문</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;App-소개-및-개발배경&quot;&gt;&lt;a href=&quot;#App-소개-및-개발배경&quot; class=&quot;headerlink&quot; title=&quot;App 소개 및 개발배경&quot;&gt;&lt;/a&gt;App 소개 및 개발배경&lt;/h1&gt;&lt;p&gt;-본 어플리케이션은 증가하는 고독사를 줄여보자는
-    
-    </summary>
-    
-      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
-    
-      <category term="My Projects" scheme="http://KKimSangHeon.github.io/categories/About-Me/My-Projects/"/>
-    
-    
-      <category term="Android" scheme="http://KKimSangHeon.github.io/tags/Android/"/>
-    
-      <category term="고독사 감소" scheme="http://KKimSangHeon.github.io/tags/%EA%B3%A0%EB%8F%85%EC%82%AC-%EA%B0%90%EC%86%8C/"/>
     
   </entry>
   

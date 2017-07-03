@@ -3,25 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>2장. CentOS 리눅스 소개 | Kim Sang Heon&#39;s Bolg</title>
+    <title>4장. 사용자 및 그룹 관리 | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="Linux,This Is Linux" />
     
     
 
-      <meta name="description" content="리눅스 리눅스란?리눅스 = 무료 유닉스 라 생각하면 된다.1991 ‘리누스 토르발스’가 버전 0.01을 최초로 완성. 리누스 토르발스는 커널(kernel)만 개발함(여기서 커널은 자동차 엔진이라고 보면된다.)모든 배포판은 리누스 토르발스가 개발한 커널을 갖고 사람들이 만들어진것이다. CentOS 또한 마찬가지..자동차로 비유하자면 A,B,C 회사가 하나의">
+      <meta name="description" content="리눅스는 다중 사용자 시스템이다. 즉 서버 한대에 여러명이 접속한다. 그러므로 사용자를 관리하고 그룹을 관리하는게 중요한 이슈이다.기본적으로 rootㄹ는 슈퍼유저가 관리하며 모든 사용자는 하나 이상의 그룹에 소속되어야 한다.사용자는 /etc/passwd에 정의되어 있다.아래의 명령문을 실행시켜 vi 에디터로 확인해보자.1# vi /etc/passwd마지막">
 <meta name="keywords" content="Linux,This Is Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2장. CentOS 리눅스 소개">
-<meta property="og:url" content="http://KKimSangHeon.github.io/2017/06/30/ThisIsLinux1/index.html">
+<meta property="og:title" content="4장. 사용자 및 그룹 관리">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2017/07/03/ThisIsLinux5/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="리눅스 리눅스란?리눅스 = 무료 유닉스 라 생각하면 된다.1991 ‘리누스 토르발스’가 버전 0.01을 최초로 완성. 리누스 토르발스는 커널(kernel)만 개발함(여기서 커널은 자동차 엔진이라고 보면된다.)모든 배포판은 리누스 토르발스가 개발한 커널을 갖고 사람들이 만들어진것이다. CentOS 또한 마찬가지..자동차로 비유하자면 A,B,C 회사가 하나의">
+<meta property="og:description" content="리눅스는 다중 사용자 시스템이다. 즉 서버 한대에 여러명이 접속한다. 그러므로 사용자를 관리하고 그룹을 관리하는게 중요한 이슈이다.기본적으로 rootㄹ는 슈퍼유저가 관리하며 모든 사용자는 하나 이상의 그룹에 소속되어야 한다.사용자는 /etc/passwd에 정의되어 있다.아래의 명령문을 실행시켜 vi 에디터로 확인해보자.1# vi /etc/passwd마지막">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
-<meta property="og:updated_time" content="2017-07-01T05:14:51.441Z">
+<meta property="og:updated_time" content="2017-07-03T04:32:32.265Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2장. CentOS 리눅스 소개">
-<meta name="twitter:description" content="리눅스 리눅스란?리눅스 = 무료 유닉스 라 생각하면 된다.1991 ‘리누스 토르발스’가 버전 0.01을 최초로 완성. 리누스 토르발스는 커널(kernel)만 개발함(여기서 커널은 자동차 엔진이라고 보면된다.)모든 배포판은 리누스 토르발스가 개발한 커널을 갖고 사람들이 만들어진것이다. CentOS 또한 마찬가지..자동차로 비유하자면 A,B,C 회사가 하나의">
+<meta name="twitter:title" content="4장. 사용자 및 그룹 관리">
+<meta name="twitter:description" content="리눅스는 다중 사용자 시스템이다. 즉 서버 한대에 여러명이 접속한다. 그러므로 사용자를 관리하고 그룹을 관리하는게 중요한 이슈이다.기본적으로 rootㄹ는 슈퍼유저가 관리하며 모든 사용자는 하나 이상의 그룹에 소속되어야 한다.사용자는 /etc/passwd에 정의되어 있다.아래의 명령문을 실행시켜 vi 에디터로 확인해보자.1# vi /etc/passwd마지막">
 <meta name="twitter:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
@@ -138,14 +138,14 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-ThisIsLinux1" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-ThisIsLinux5" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        2장. CentOS 리눅스 소개
+        4장. 사용자 및 그룹 관리
         </h1>
     
 
@@ -155,8 +155,8 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/06/30/ThisIsLinux1/" class="article-date">
-            <time datetime="2017-06-30T09:55:52.000Z" itemprop="datePublished">2017-06-30</time>
+        <a href="/2017/07/03/ThisIsLinux5/" class="article-date">
+            <time datetime="2017-07-03T02:29:09.000Z" itemprop="datePublished">2017-07-03</time>
         </a>
     </div>
 
@@ -170,10 +170,18 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="리눅스"><a href="#리눅스" class="headerlink" title="리눅스"></a>리눅스</h3><hr>
-<h4 id="리눅스란"><a href="#리눅스란" class="headerlink" title="리눅스란?"></a>리눅스란?</h4><p>리눅스 = 무료 유닉스 라 생각하면 된다.<br>1991 ‘리누스 토르발스’가 버전 0.01을 최초로 완성. 리누스 토르발스는 커널(kernel)만 개발함(여기서 커널은 자동차 엔진이라고 보면된다.)<br>모든 배포판은 리누스 토르발스가 개발한 커널을 갖고 사람들이 만들어진것이다. CentOS 또한 마찬가지..자동차로 비유하자면 A,B,C 회사가 하나의 엔진을 사용하여 각기 다른 자동차를 만들어내놓음.<br>우리가 공부할 CentOS의 커널버전은 3.17.4인데 변경이 가능하다.!<br>자동차로 비교하면 자동차를 그대로 두고 엔진만 변경하는것.<br>이를 커널 업그레이드 라고 한다.</p>
-<h4 id="GNU-프로젝트"><a href="#GNU-프로젝트" class="headerlink" title="GNU 프로젝트?"></a>GNU 프로젝트?</h4><p>GNU 프로젝트 - GPL(General Public License[자유 소프트웨어의 수정과 공유의 자유를 보장하는것.]) 에 따라 소스를 배포하여 공개하고 그것을 더 개선하여 배포하고 의 반복.. 리눅스 또한 마찬가지. 그래서 현재는 유닉스 보다 더 좋다고 말하는 사람들이 많다. 여기서 재미있는점 하나. 소스코드를 무료로 얻어서 기능개선 후 판매는 가능하다. 그러나 GPL에 의해 소스코드는 공유해야한다는점.</p>
-<h4 id="레드햇-리눅스와-CentOS-리눅스"><a href="#레드햇-리눅스와-CentOS-리눅스" class="headerlink" title="레드햇 리눅스와 CentOS 리눅스?"></a>레드햇 리눅스와 CentOS 리눅스?</h4><p>전 세계적으로 유명하며 기업에서 많이쓴다. 무료버전은 없으며 상용버전만 존재한다. 하지만 GPL에 의해 소스코드는 공개되어 있어 레드햇 엔터프라이즈 리눅스의 소스코드를 그대로 가져와 로고만 바꾼것이 CentOS!!<br>결국 레드햇 리눅스 == CentOS 리눅스</p>
+            <p>리눅스는 다중 사용자 시스템이다. 즉 서버 한대에 여러명이 접속한다. 그러므로 사용자를 관리하고 그룹을 관리하는게 중요한 이슈이다.<br>기본적으로 rootㄹ는 슈퍼유저가 관리하며 모든 사용자는 하나 이상의 그룹에 소속되어야 한다.<br>사용자는 /etc/passwd에 정의되어 있다.<br>아래의 명령문을 실행시켜 vi 에디터로 확인해보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># vi /etc/passwd</div></pre></td></tr></table></figure><br>마지막 줄엔 다음과같은 코드가 존재한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">centos:x:1000:1000:centos:/home/centos:/bin/bash</div></pre></td></tr></table></figure><br>이에 대해 자세히 알아보자.</p>
+<p>1.centos =<br>  사용자가 centos 이다.</p>
+<p>2.x =<br>  비밀번호</p>
+<p>3.1000 =<br>  centos라는 사용자의 ID</p>
+<p>4.1000 =<br>  centos사용자는 반드시 소속된 그룹이 있어야하는데 이는 소속된 그룹의 ID 즉 그룹번호이다.<br>어떻게 그룹번호를 갖고 그룹명을 알까? /etc/group 파일에 정의되어 있다. 이 파일을 vi 에디터로 열면 그룹이름:그룹비밀번호:그룹의ID(그룹번호)의 형식을 갖는다.<br>centos:x:1000:centos  // 그룹이름:그룹비밀번호:그룹의ID(그룹번호)<br>이게 무슨뜻일까? centos라는 사용자가 centos그룹에 속해 있다는 것이다. 마지막 centos 는 생략이 가능하며 신경쓰지 않아도 된다.<br>예를 들면 홍길동이라는 부서에 홍길동 사원이 존재하는것이다. 회사에서는 부서를 만들고 사원을 뽑는다. 마찬가지로 centos도 새로운 사용자를 만들면 사용자 이름과 같은 그룹을 만들고 이 그룹에 해당시킨다.<br>이것과 관련해 실습을 진행해보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># useradd myuser    //유저 등록</div><div class="line"># tail -5 /etc/passwd    //해당파일의 마지막 5줄만 보기</div><div class="line"></div><div class="line">myuser:x:1001:1001::/home/myuser:/bin/bash  //그룹번호 1001을 기억</div><div class="line"></div><div class="line"># tail -5 /etc/group    //해당파일의 마지막 5줄만 보기</div><div class="line"></div><div class="line">myuser:x:1001:  //사용자 이름과 같은 그룹이 만들어졌고 그 그룹에 사용자가 속해있다.</div></pre></td></tr></table></figure></p>
+<p>5.centos =<br>  전체이름이다. 생략이 가능하다</p>
+<p>6./home/centos centos =<br>  사용자의 홈 디렉토리</p>
+<p>7./bin/bash =<br>  사용할 기본 쉘</p>
+<h4 id="실습해보자"><a href="#실습해보자" class="headerlink" title="실습해보자"></a>실습해보자</h4><p>디렉토리 설명<br>/etc/passwd : 사용자 정보가 있음<br>/etc/shadow : 사용자 비밀번호가 있음(비밀번호는 암호화되어서 저장됨)<br>/etc/group  : 그룹정보가 있음</p>
+<h5 id="실습-1"><a href="#실습-1" class="headerlink" title="실습 1"></a>실습 1</h5><p>유저 생성, 유저 그룹지정, 그룹생성<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"># useradd user1         //user1생성</div><div class="line"># tail -5 /etc/passwd   //생성되었는지 확인</div><div class="line">user1:x:1001:1001::/home/user1:/bin/bash  //잘생성됨</div><div class="line"></div><div class="line"># tail -5 /etc/shadow     //사용자의 비밀번호를 확인해보자</div><div class="line">user1:!!:17350:0:99999:7:::   //비밀번호를 설정하지 않았지만 암호화 되어있다.</div><div class="line"></div><div class="line"># tail -5 /etc/group    //사용자의 그룹이 생성되었나 확인해보자</div><div class="line">user1:x:1001:           //잘 생성되었다</div><div class="line"></div><div class="line">하지만 바람직하지 않다.! user1의 그룹이 user1이라니 말이되나!</div><div class="line"></div><div class="line">다시실습해보자 이번에는 그룹을 먼저 생성하고 사용자를 소속시키자</div><div class="line"></div><div class="line"># userdel -r user1 //보통 현업에선 -r옵션을 넣어 디렉토리까진 지우지 않는다.</div><div class="line">                  //하지만 실습이므로 과감하게 지운다.</div><div class="line"># groupadd centosGroup    //그룹생성</div><div class="line"></div><div class="line"># tail -5 /etc/group    //잘생성되었나 확인</div><div class="line">centosGroup:x:1001:   //잘생성됨</div><div class="line"></div><div class="line"># useradd -g centosGroup user1  //centosGroup에 소속된 user1생성</div><div class="line"># useradd -g centosGroup user2  //centosGroup에 소속된 user2생성</div><div class="line"></div><div class="line"># tail -5 /etc/passwd     //잘 생성되었나 확인.</div><div class="line">user1:x:1001:1001::/home/user1:/bin/bash</div><div class="line">user2:x:1002:1001::/home/user2:/bin/bash</div><div class="line">  //잘 생성되었고 사용자 ID는 다르지만 같은 그룹ID를 갖는다.</div><div class="line"></div><div class="line"># passwd user1   //암호지정. 이후 1234 1234입력</div><div class="line">                //일반사용자는 암호를 8자 미만으로 지정못하지만</div><div class="line">                //루트사용자는 8자 미만으로 지정해줄수 있다.</div><div class="line"></div><div class="line"># passwd user2   //암호지정. 이후 1234 1234입력</div><div class="line"></div><div class="line"># tail -5 /etc/shadow   //user1,user2의 암호를 보자</div><div class="line">                      //user1,user2의 암호를 1234로 지정하였지만</div><div class="line">                      //암호화된 값이 다르다!!</div></pre></td></tr></table></figure></p>
+<h5 id="실습-2"><a href="#실습-2" class="headerlink" title="실습 2"></a>실습 2</h5><p>x윈도에서 사용자권한관리 - x윈도가 없으면 안되므로 비추<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># yum -y install system-config-users  //system-config-users패키지 설치</div><div class="line"># system-config-users   //x윈도우 상에서 사용자 관리가 가능하다!</div></pre></td></tr></table></figure></p>
+<h3 id="관련-명령어"><a href="#관련-명령어" class="headerlink" title="관련 명령어"></a>관련 명령어</h3><p>189p 참고<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">-u : ID 지정</div><div class="line">-g : 그룹지정</div><div class="line">-d : 홈디렉터리지정</div><div class="line">-s : 쉘 지정</div><div class="line"></div><div class="line"># useradd shkim //새로운 사용자를 추가</div><div class="line"></div><div class="line"># passwd shkim //사용자의 비밀번호를 지정하거나 변경</div><div class="line"></div><div class="line"># usermod -g root shkim  //사용자의 속성을 변경</div><div class="line"></div><div class="line"># userdel shkim //사용자는 지우나 디렉토리를 제거하지 않음.</div><div class="line">            //-r 옵션이 존재. 이는 사용자가 사용하던 디렉토리까지 제거</div><div class="line"></div><div class="line"># change -m 2 shkim  //사용자의 암호를 주기적으로 변경하도록 설정</div><div class="line">          //-m 2는 최소 이틀이상 써야한다.(189p 참고)</div><div class="line"></div><div class="line"># groups // 사용자가 속한 그룹을 보여줌</div><div class="line"></div><div class="line"># groupadd newgroup   //새로운 그룹을 새성          </div><div class="line"></div><div class="line"># groupmod  -n newgroup mygroup//그룹의 속성을 변경 newgroup을 mygroup로 변경</div><div class="line"></div><div class="line"># groupdel newgroup //그룹을 삭제</div><div class="line"></div><div class="line"># gpasswd newgroup  //그룹의 암호설정</div></pre></td></tr></table></figure></p>
 
         </div>
         <footer class="article-footer">
@@ -181,7 +189,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/06/30/ThisIsLinux1/" data-id="cj4nq2go3000phwv7ja8j6lox" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/07/03/ThisIsLinux5/" data-id="cj4nq2gox001mhwv7xrzc89r5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -286,20 +294,20 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/06/30/BinarySearch/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2017/07/03/ThisIsLinux6/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            BinarySearch
+            4장. 파일의 소유권/허가권, 링크
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2017/06/30/RadixSort/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/07/02/ThisIsLinux4/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">기수정렬 (RadixSort)</p>
+        <p class="article-nav-title">4장. 리눅스 기본 명령어</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -345,7 +353,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'https-kkimsangheon-github-io-2';
     
     
-    var disqus_url = 'http://KKimSangHeon.github.io/2017/06/30/ThisIsLinux1/';
+    var disqus_url = 'http://KKimSangHeon.github.io/2017/07/03/ThisIsLinux5/';
     
     (function() {
     var dsq = document.createElement('script');

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>4장. 파일의 소유권/허가권, 링크 | Kim Sang Heon&#39;s Bolg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Linux,This Is Linux" />
+    
+    
+
+      <meta name="description" content="123# touch sample.txt  //빈 파일생성# ls -l-rw-r--r--  1 root   root         0  7월  3 13:35 sample.txt 1.맨앞의 -는 파일의 유형을 의미.  -: 일반파일  d: 디렉토리  l: 링크파일 2.rw-r–r–는 세개씩 끊어 읽으면 된다.2-1.  맨앞 세개는 소유자의 파일접근권한 (rw-">
+<meta name="keywords" content="Linux,This Is Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="4장. 파일의 소유권&#x2F;허가권, 링크">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2017/07/03/ThisIsLinux6/index.html">
+<meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
+<meta property="og:description" content="123# touch sample.txt  //빈 파일생성# ls -l-rw-r--r--  1 root   root         0  7월  3 13:35 sample.txt 1.맨앞의 -는 파일의 유형을 의미.  -: 일반파일  d: 디렉토리  l: 링크파일 2.rw-r–r–는 세개씩 끊어 읽으면 된다.2-1.  맨앞 세개는 소유자의 파일접근권한 (rw-">
+<meta property="og:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
+<meta property="og:updated_time" content="2017-07-03T05:45:36.399Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="4장. 파일의 소유권&#x2F;허가권, 링크">
+<meta name="twitter:description" content="123# touch sample.txt  //빈 파일생성# ls -l-rw-r--r--  1 root   root         0  7월  3 13:35 sample.txt 1.맨앞의 -는 파일의 유형을 의미.  -: 일반파일  d: 디렉토리  l: 링크파일 2.rw-r–r–는 세개씩 끊어 읽으면 된다.2-1.  맨앞 세개는 소유자의 파일접근권한 (rw-">
+<meta name="twitter:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
+        <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-101744076-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/2017/06/29/about-me/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/">About Me</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/Introduction/">Introduction</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/My-Projects/">My Projects</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/">Data Structure</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Search/">Search</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Sort/">Sort</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/">Linux</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/관련정보/">관련정보</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a></li></ul></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Linux/">Linux</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-ThisIsLinux6" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        4장. 파일의 소유권/허가권, 링크
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2017/07/03/ThisIsLinux6/" class="article-date">
+            <time datetime="2017-07-03T04:33:03.000Z" itemprop="datePublished">2017-07-03</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Linux/">Linux</a>, <a class="tag-link" href="/tags/This-Is-Linux/">This Is Linux</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># touch sample.txt  //빈 파일생성</div><div class="line"># ls -l</div><div class="line">-rw-r--r--  1 root   root         0  7월  3 13:35 sample.txt</div></pre></td></tr></table></figure>
+<p>1.맨앞의 -는 파일의 유형을 의미.<br>  -: 일반파일<br>  d: 디렉토리<br>  l: 링크파일</p>
+<p>2.rw-r–r–는 세개씩 끊어 읽으면 된다.<br>2-1.  맨앞 세개는 소유자의 파일접근권한 (rw-)<br>즉 소유자는 읽기, 쓰기 가능, 실행 불가</p>
+<p>2-2.  두번째는 그룹의 파일접근권한<br>읽기만 가능</p>
+<p>2-3.  세번째는 그 외의 사용자의 파일접근권한이다.<br>읽기만 가능<br>또한 rw-r–r–는 3자리씩 끊어서 보면 644로 볼수 있다.<br>rwxrwxrwx는? 666</p>
+<p>3.1은 링크의 수</p>
+<p>4.root는 파일 소유자 이름</p>
+<p>5.root는 파일 소유 그룹이름</p>
+<p>6.0은 파일의 크기</p>
+<p>7.7월  3 13:35는 마지막 변경 날짜/시간</p>
+<p>8.sample.txt는 파일이름</p>
+<h4 id="chmod-파일-허가권-변경"><a href="#chmod-파일-허가권-변경" class="headerlink" title="chmod 파일 허가권 변경"></a>chmod 파일 허가권 변경</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"># chmod 655 sample.txt</div><div class="line"># ls -l sample.txt</div><div class="line">-rw-r-xr-x 1 root root 0  7월  3 13:35 sample.txt</div><div class="line"></div><div class="line">$ chmod o-x  test      //일반사용자(o : ordinary)는 -x (x:execute) 실행 못하도록</div><div class="line">$ ls -l test</div><div class="line">-rwxrwxrw- 1 centos centos 52  7월  3 13:52 test</div><div class="line">        //마지막 x가 빠짐</div><div class="line"></div><div class="line">$ chmod ug-w test    //소유주(u: user), 소유그룹(g: group) 쓰기권한 제거</div><div class="line">$ ls -l test</div><div class="line">-r-xr-xrw- 1 centos centos 52  7월  3 13:52 test</div><div class="line">        //3번째 6번째 w가 빠짐</div><div class="line"></div><div class="line">$ chmod ugo-r test  //전부다 읽기권한 제거</div><div class="line">$ ls -l test   </div><div class="line">---x--x-w- 1 centos centos 52  7월  3 13:52 test</div><div class="line">        //r이 제거된것 확인</div><div class="line"></div><div class="line">$ chmod uo+rw test  //소유주, 기타사용자에게 읽기,쓰기 허용</div><div class="line">$ ls -l test  </div><div class="line">-rwx--xrw- 1 centos centos 52  7월  3 13:52 test</div><div class="line"></div><div class="line">//숫자를 넣지 않고 하는것을 심볼릭방법이라 하는데 이것이 더 편할 때가 있다.</div><div class="line">숫자로 할 경우 기존의 권한도 알아야 하기 때문에..</div><div class="line"></div></pre></td></tr></table></figure>
+<h4 id="chown-파일-소유자-변경"><a href="#chown-파일-소유자-변경" class="headerlink" title="chown 파일 소유자 변경"></a>chown 파일 소유자 변경</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># chown centos sample.txt   //centos로 소유권을 넘김</div><div class="line"># ls -l sample.txt</div><div class="line">-rw-r-xr-x 1 centos root 0  7월  3 13:35 sample.txt  //소유권 변경됨</div></pre></td></tr></table></figure>
+<h4 id="chgrp-파일-소유-그룹-변경"><a href="#chgrp-파일-소유-그룹-변경" class="headerlink" title="chgrp 파일 소유 그룹 변경"></a>chgrp 파일 소유 그룹 변경</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># chgrp centos sample.txt</div><div class="line"># ls -l sample.txt</div><div class="line">-rw-r-xr-x 1 centos centos 0  7월  3 13:35 sample.txt</div></pre></td></tr></table></figure>
+<h4 id="chown-파일-소유자-그룹-변경"><a href="#chown-파일-소유자-그룹-변경" class="headerlink" title="chown 파일 소유자, 그룹 변경"></a>chown 파일 소유자, 그룹 변경</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># chown root.root sample.txt</div><div class="line"># ls -l sample.txt</div><div class="line">-rw-r-xr-x 1 root root 0  7월  3 13:35 sample.txt</div></pre></td></tr></table></figure>
+<h4 id="에-대한-이해"><a href="#에-대한-이해" class="headerlink" title="./에 대한 이해"></a>./에 대한 이해</h4><p>파일을 실행하기 위해서는 아래의 명령어를 입력해야한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># ./파일명</div></pre></td></tr></table></figure><br>./는 왜 붙는것일까?<br>그냥 파일명만 입력하면 찾지못하는데 그 이유는 현재 디렉토리가 경로에 없어서 그렇다.<br>그래서 ./을 넣어주는 것이다. 앞에서 배웠듯이 . 은 현재 디렉토리를 의미하는것을 떠올려보자.<br>즉 ./파일명 는 현재 디렉터리 아래에 있는 파일명을 실행하라는 것이다.</p>
+<h4 id="su-해당사용자로-로그인"><a href="#su-해당사용자로-로그인" class="headerlink" title="su 해당사용자로 로그인"></a>su 해당사용자로 로그인</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># su - centos   //centos계정으로 로그인</div><div class="line">      //루트계정일 경우 암호를 묻지않는다.</div><div class="line">      //-를 붙이면 디렉토리가 centos디렉토리로 변경되가</div><div class="line">      //붙이지 않으면 변경되지 않는다.</div></pre></td></tr></table></figure>
+<h4 id="실습해보자"><a href="#실습해보자" class="headerlink" title="실습해보자."></a>실습해보자.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line"># touch test    //test 파일 생성</div><div class="line"></div><div class="line"># vi test     //이후 명령어(ex ls) 입력 그후 저장후 종료</div><div class="line"></div><div class="line"># ./test      //test 파일 실행</div><div class="line"></div><div class="line">실행되지 않음.   </div><div class="line"></div><div class="line"># chmod 755 test    //실행권한을 모두 준다.</div><div class="line"></div><div class="line"># ./test    //실행된다.</div><div class="line"></div><div class="line">현재 파일의 소유권은 root이다.</div><div class="line"></div><div class="line"># chown centos.centos test  //소유자,그룹을 변경</div><div class="line"></div><div class="line"># su - centos   //센토스 사용자로 접근</div><div class="line">              //이때 암호는 물어보지 않음. 루트에서 이동하는것이므로</div><div class="line"></div><div class="line">$ ls -l /root/test    //허가 거부가 된다.</div><div class="line">                    //왜냐하면 /root 디렉토리가 일반사용자는 들어올수 없게 되어있음.</div><div class="line">                    //그러므로 파일을 이동시키거나, /root 디렉토리에 다른사용자가 들어</div><div class="line">                    //올수 있게 허가해주어야 한다. 후자는 좋지 않은 방법이므로 전자를</div><div class="line">                    //활용하자</div><div class="line"></div><div class="line"># exit                //centos계정 로그아웃</div><div class="line"></div><div class="line"># mv test ~centos     //centos 홈폴더로 test파일이동.</div><div class="line"></div><div class="line"># su - centos   //다시 centos로 로그인</div><div class="line"></div><div class="line">$ chmod 777 test</div><div class="line"></div><div class="line">$ chown root.root test  //소유권을 다시 root로 변경</div><div class="line">                      //불가능하다. 어딜감히 root로 변경해</div><div class="line">                      //악성코드를 심고 할 수도 있고..위험함..</div><div class="line">                      //그래서 이 명령어는 루트사용자만 가능!!!</div><div class="line"></div><div class="line">$ chmod o-x  test      //일반사용자(o : ordinary)는 -x (x:execute) 실행 못하도록</div><div class="line">$ ls -l</div><div class="line">-rwxrwxrw- 1 centos centos 52  7월  3 13:52 test</div><div class="line">                    //마지막에 -가 들어간것을 확인</div><div class="line"></div><div class="line">$ chmod ug-w test    //소유주(u: user), 소유그룹(g: group) 쓰기권한 제거</div><div class="line">$ ls -l test</div><div class="line">-r-xr-xrw- 1 centos centos 52  7월  3 13:52 test</div><div class="line">                    //3번째 6번째 w가 빠짐</div><div class="line"></div><div class="line">$ chmod ugo-r test  //전부다 읽기권한 제거</div><div class="line">$ ls -l test   </div><div class="line">---x--x-w- 1 centos centos 52  7월  3 13:52 test</div><div class="line">        //r이 제거된것 확인</div><div class="line"></div><div class="line">$ chmod uo+rw test  //소유주, 기타사용자에게 읽기,쓰기 허용</div><div class="line">$ ls -l test  </div><div class="line">-rwx--xrw- 1 centos centos 52  7월  3 13:52 test</div><div class="line"></div><div class="line">//숫자를 넣지 않고 하는것을 심볼릭방법이라 하는데 이것이 더 편할 때가 있다.</div><div class="line">숫자로 할 경우 기존의 권한도 알아야 하기 때문에..                    </div></pre></td></tr></table></figure>
+<h4 id="링크"><a href="#링크" class="headerlink" title="링크"></a>링크</h4><p>파일의 링크는 하드링크, 심볼릭 링크가 있다.<br>윈도우의 바로가기처럼 연결되어있는것은 심볼릭링크 소프트 링크라 한다.</p>
+<p>원본파일이 inode블록(실제 파일정보를 갖고있는것)을 가르키고 inode블록은 원본파일 데이터를 가르킨다.</p>
+<p>하드링크파일은 inode를 직접 가르키며<br>심볼링크파일은 새로운 inode를 만들고 새로운 inode는 원본파일 포인터를 하나 더만들고 그것을 가르킨다. 원본파일 포인터는 원본파일을 가르킨다. 교재 201p를 참고하자.</p>
+<p>주로 하드링크보다는 심볼릭 링크를 생성한다.</p>
+<h5 id="실습해보기"><a href="#실습해보기" class="headerlink" title="실습해보기"></a>실습해보기</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"># mkdir linktest</div><div class="line"># cd linktest/</div><div class="line"># vi basefile //아무거나 입력후 저장후 종료</div><div class="line">//원본파일이 생겼으므로 inode 블록이 생성되었을것이다.</div><div class="line"># ls -il basefile //inode 번호 확인</div><div class="line">405679049 -rw-r--r-- 1 root root 34  7월  3 14:36 basefile</div><div class="line">  //405679049이 inode 번호</div><div class="line"></div><div class="line"># ln basefile hardlink  //하드링크 생성</div><div class="line"># ln -s basefile softlink //소프트링크생성</div><div class="line"># ls -il</div><div class="line"></div><div class="line">405679049 -rw-r--r-- 2 root root 34  7월  3 14:36 basefile</div><div class="line">405679049 -rw-r--r-- 2 root root 34  7월  3 14:36 hardlink</div><div class="line">405679048 lrwxrwxrwx 1 root root  8  7월  3 14:40 softlink -&gt; basefile</div><div class="line"></div><div class="line">//basefile inode와 hardlink inode가 같다. softlink의 inode는 새로 만들어서 basefile을 가르킨다.</div><div class="line"></div><div class="line"># mv basefile ../     //원본파일을 앞 디렉토리로 이동시킴</div><div class="line"># ls -il</div><div class="line"></div><div class="line"># cat hardlink  // 출력이 될까 안될까?</div><div class="line">        //출력이 된다. 그 이유는 원본 inode를 가르키기 때문에!</div><div class="line"></div><div class="line"># cat softlink  // 출력이 될까 안될까.?</div><div class="line">        //안된다. 원본파일이 없어졌기 때문에.</div><div class="line"></div><div class="line"># mv ../basefile    //다시 원상복구 시킴  (앞디렉토리로간 basefile 델꼬옴)</div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://KKimSangHeon.github.io/2017/07/03/ThisIsLinux6/" data-id="cj4nq2got001ghwv77dflu4vl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/KKimSangHeon/" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/tkdgjs1501/" target="_blank">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/07/03/ThisIsLinux5/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">4장. 사용자 및 그룹 관리</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">6</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 Kim Sang Heon</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'https-kkimsangheon-github-io-2';
+    
+    
+    var disqus_url = 'http://KKimSangHeon.github.io/2017/07/03/ThisIsLinux6/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

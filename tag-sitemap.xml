@@ -191,20 +191,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Linux/</loc>
-        <lastmod>2017-07-02T08:19:39.298Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/This-Is-Linux/</loc>
-        <lastmod>2017-07-02T08:19:39.298Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/%EC%9E%91%EC%84%B1-%EB%85%BC%EB%AC%B8/</loc>
         <lastmod>2017-07-02T15:39:35.296Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -214,6 +200,20 @@
     <url>
         <loc>http://KKimSangHeon.github.io/tags/Sang-Heon-Kim/</loc>
         <lastmod>2017-07-02T15:57:59.299Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Linux/</loc>
+        <lastmod>2017-07-03T05:45:36.399Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/This-Is-Linux/</loc>
+        <lastmod>2017-07-03T05:45:36.399Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
