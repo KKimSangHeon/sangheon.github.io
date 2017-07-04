@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-07-04T06:31:35.759Z</updated>
+  <updated>2017-07-04T10:23:36.099Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>응급복구, GRUB, 커널 컴파일</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux11/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux11/</id>
+    <published>2017-07-04T07:09:17.000Z</published>
+    <updated>2017-07-04T10:23:36.099Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="응급복구"><a href="#응급복구" class="headerlink" title="응급복구"></a>응급복구</h4><p>261p 참고<br>이게 문제가 될 소지가 있지않냐?<br>그래서 처음 켤때 선택하는거에서 암호를 걸어야 한다.</p>
+<h4 id="GRUB-부트로더"><a href="#GRUB-부트로더" class="headerlink" title="GRUB 부트로더"></a>GRUB 부트로더</h4><p>/etc/default/grub 파일과 /etc/grup.d/ 디렉터리의 파일을 수정한 후 ‘grub2-mkconfig’ 명령어를 실행해 설정함</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"># vi /etc/default/grub</div><div class="line">timeout = 30 으로 변경</div><div class="line">distributor = &quot;Hello&quot; 로 변경</div><div class="line"># grub2-mkconfig -o /boot/grub2/grub.cfg // 변경사항 반영</div><div class="line"></div><div class="line">//여기서 부터 선택하는 곳에서 e 키 못누르게 비번 설정하는것</div><div class="line"># vi /etc/grub.d/00_header</div><div class="line">맨 아래 가서 다음코드 추가</div><div class="line">cat &lt;&lt; EOF</div><div class="line">set superusers=&quot;thisuser&quot;</div><div class="line">password thisuser 4321</div><div class="line">EOF</div><div class="line">여기까지!</div><div class="line">vi 빠져나와서</div><div class="line"># grub2-mkconfig -o /boot/grub2/grub.cfg // 변경사항 반영</div><div class="line">$ reboot</div><div class="line">선택하는곳에서 e 누르면 암호 누르도록 함</div><div class="line"></div></pre></td></tr></table></figure>
+<h4 id="커널"><a href="#커널" class="headerlink" title="커널"></a>커널</h4><p>커널 : 하드웨어를 제어하는 기능<br>모든 하드웨어를 제어하는 코드를 다 넣으면 커널이 너무 커지고 무거워진다. 그러므로 잘 안쓰는 하드웨어 코드는 모듈에 빼내서 필요할때마다 사용<br>즉 모듈은 필요할때 쓸 수 있도록 커널의 코드를 밖으로 빼낸것이다!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">$ uname -r //커널버전확인</div><div class="line">$ wget &quot;https://kernel.org/pub/linux/kernel/v3.x/linux-3.17.4.tar.xz&quot;</div><div class="line">  //교재와 동일한 커널 설치</div><div class="line">$ mv linux-3.17.4.tar.xz /usr/src</div><div class="line">$ cd /usr/src</div><div class="line">$ tar xfJ linux-3.17.4.tar.xz   //압축을 풀자</div><div class="line">$ cd linux-3.17.4/</div><div class="line"></div><div class="line">커널은 c 코드이므로 설치를 위해 컴파일러를 깔자</div><div class="line">$ yum -y install gcc gcc-c++ qt qt-devel</div><div class="line">$ make mrproper // 커널설정 초기화</div><div class="line">$ make xconfig  //커널의 환경설정</div><div class="line">  설정 후</div><div class="line">$ make clean</div><div class="line">$make ;  make modules_install ; make install  //순서대로 진행됨.</div><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;응급복구&quot;&gt;&lt;a href=&quot;#응급복구&quot; class=&quot;headerlink&quot; title=&quot;응급복구&quot;&gt;&lt;/a&gt;응급복구&lt;/h4&gt;&lt;p&gt;261p 참고&lt;br&gt;이게 문제가 될 소지가 있지않냐?&lt;br&gt;그래서 처음 켤때 선택하는거에서 암호를 걸어야 한다.
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
+    
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>4장. 파이프/필터, 프로세스, 서비스/소켓</title>
@@ -712,43 +743,6 @@
       <category term="Sort" scheme="http://KKimSangHeon.github.io/tags/Sort/"/>
     
       <category term="Selection Sort" scheme="http://KKimSangHeon.github.io/tags/Selection-Sort/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>작성논문</title>
-    <link href="http://KKimSangHeon.github.io/2017/06/30/paper/"/>
-    <id>http://KKimSangHeon.github.io/2017/06/30/paper/</id>
-    <published>2017-06-30T04:40:14.000Z</published>
-    <updated>2017-07-02T15:39:35.296Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="A-Survey-of-Fingerprint-Indoor-Positioning-Techniques"><a href="#A-Survey-of-Fingerprint-Indoor-Positioning-Techniques" class="headerlink" title="A Survey of Fingerprint Indoor Positioning Techniques"></a>A Survey of Fingerprint Indoor Positioning Techniques</h3><h4 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>introduction</h4><p>The location based service (LBS) industry is so flourishing that enumerating all LBSs available now is almost impossible. In the marketing field, LBSs may recognize the current location of tenta-tive customers and push advertisement messages and coupons to them when they enter a predefined area. When a person makes a call to 911, the location of the person is identified by the emergency response agency so that help can be provided quickly. The location-based information service deliv-ers information of points of interests located near to the user. The navigation service is another well-known type of location-based services.<br>Location-based service cannot be realized unless the positioning problem is solved. The Global Positioning System (GPS) can be used as a general solution for outdoor positioning. However, posi-tioning for indoor area is still under development. We are especially interested in wireless local area network (WLAN)-based indoor positioning techniques because it is available in almost all huge man made constructions. Most of WLAN-based indoor positioning techniques use either the signal propa-gation model or fingerprints.<br>Implementation of the signal propagation model based indoor positioning method can be done quickly whereas implementation of the fingerprint method takes a long time. However, the finger-print method is more accurate than the signal propagation model based method. This paper surveys recently published fingerprint indoor positioning techniques.</p>
-<p><a href="http://asehl.org/vol9_2016/19.pdf" target="_blank" rel="external">자세히 보기</a></p>
-<hr>
-<h3 id="Review-of-the-Techniques-for-Smart-Learning-Systems"><a href="#Review-of-the-Techniques-for-Smart-Learning-Systems" class="headerlink" title="Review of the Techniques for Smart Learning Systems"></a>Review of the Techniques for Smart Learning Systems</h3><h4 id="introduction-1"><a href="#introduction-1" class="headerlink" title="introduction"></a>introduction</h4><p>Flipped learning is said to be one of the most efficient teaching and learning methods. In flipped learning, students watch lecture videos at home. In the class, they solve interesting problems under the teacher’s guide. Nowadays, students watch videos through smart devices while they are on the way home. Therefore, schools should provide a smart learning system.<br>A database of lecture videos, smart applications, content management systems, and streaming servers are essential parts of smart learning systems. There are many database management system (DBMS) with which we can develop database of lecture videos. Among them, this paper reviews techniques to use MySQL DBMS.</p>
-<p><a href="http://onlinepresent.org/proceedings/vol127_2016/1.pdf" target="_blank" rel="external">자세히 보기</a></p>
-<hr>
-<h3 id="Techniques-for-Group-Management-Application-Development"><a href="#Techniques-for-Group-Management-Application-Development" class="headerlink" title="Techniques for Group Management Application Development"></a>Techniques for Group Management Application Development</h3><h4 id="introduction-2"><a href="#introduction-2" class="headerlink" title="introduction"></a>introduction</h4><p>A group management system provides many types of valuable services. For example, a teacher can be aware of current locations of all the students in real time during a field trip using a group management mobile application. In the early stage of location based service, fleet management was one of the hottest research topics. This paper reviews group management related research results.<br>Positioning, handling maps, handling a database and mobile programming are indispensable technologies for the development of fleet management systems. Usages of these technologies in fleet management system development are discussed.<br><a href="http://onlinepresent.org/proceedings/vol143_2017/14.pdf" target="_blank" rel="external">자세히 보기
-</a></p>
-<hr>
-<h3 id="Survey-of-Techniques-for-Location-Based-Mobile-Campus-Guide-Systems"><a href="#Survey-of-Techniques-for-Location-Based-Mobile-Campus-Guide-Systems" class="headerlink" title="Survey of Techniques for Location-Based Mobile Campus Guide Systems"></a>Survey of Techniques for Location-Based Mobile Campus Guide Systems</h3><h4 id="introduction-3"><a href="#introduction-3" class="headerlink" title="introduction"></a>introduction</h4><p>Location-based service provides useful information based on the place where the user is located. Smart phones are ideal devices that provide location-based services because they are equipped with various sensors with which we can determine the location of smart phones.<br>As an example of location-based service, the authors of [1] introduced a campus guide mobile app. This paper surveys techniques needed in development of location-based mobile campus guide systems. Campus guide systems prints out texts and images. It also plays audios and videos. Therefore, video on demand (VOD) techniques will be discussed. Techniques to identify the context of user will also be discussed. Finally, this paper will propose a design of a campus guide</p>
-<p><a href="https://www.dropbox.com/s/4rrpp97xa7fgf68/Survey%20of%20Techniques%20for%20Location-Based%20Mobile%20Campus%20Guide%20Systems.doc?dl=0" target="_blank" rel="external">자세히 보기
-</a></p>
-<img src="/2017/06/30/paper/paper1.png" alt="상장" title="상장">
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;A-Survey-of-Fingerprint-Indoor-Positioning-Techniques&quot;&gt;&lt;a href=&quot;#A-Survey-of-Fingerprint-Indoor-Positioning-Techniques&quot; class=&quot;heade
-    
-    </summary>
-    
-      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
-    
-      <category term="My Projects" scheme="http://KKimSangHeon.github.io/categories/About-Me/My-Projects/"/>
-    
-    
-      <category term="작성 논문" scheme="http://KKimSangHeon.github.io/tags/%EC%9E%91%EC%84%B1-%EB%85%BC%EB%AC%B8/"/>
     
   </entry>
   

@@ -3,25 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>4장. 사용자 및 그룹 관리 | Kim Sang Heon&#39;s Bolg</title>
+    <title>응급복구, GRUB, 커널 컴파일 | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="Linux,This Is Linux" />
     
     
 
-      <meta name="description" content="리눅스는 다중 사용자 시스템이다. 즉 서버 한대에 여러명이 접속한다. 그러므로 사용자를 관리하고 그룹을 관리하는게 중요한 이슈이다.기본적으로 rootㄹ는 슈퍼유저가 관리하며 모든 사용자는 하나 이상의 그룹에 소속되어야 한다.사용자는 /etc/passwd에 정의되어 있다.아래의 명령문을 실행시켜 vi 에디터로 확인해보자.1# vi /etc/passwd마지막">
+      <meta name="description" content="응급복구261p 참고이게 문제가 될 소지가 있지않냐?그래서 처음 켤때 선택하는거에서 암호를 걸어야 한다. GRUB 부트로더/etc/default/grub 파일과 /etc/grup.d/ 디렉터리의 파일을 수정한 후 ‘grub2-mkconfig’ 명령어를 실행해 설정함 123456789101112131415161718# vi /etc/default/grubti">
 <meta name="keywords" content="Linux,This Is Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="4장. 사용자 및 그룹 관리">
-<meta property="og:url" content="http://KKimSangHeon.github.io/2017/07/03/ThisIsLinux5/index.html">
+<meta property="og:title" content="응급복구, GRUB, 커널 컴파일">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux11/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="리눅스는 다중 사용자 시스템이다. 즉 서버 한대에 여러명이 접속한다. 그러므로 사용자를 관리하고 그룹을 관리하는게 중요한 이슈이다.기본적으로 rootㄹ는 슈퍼유저가 관리하며 모든 사용자는 하나 이상의 그룹에 소속되어야 한다.사용자는 /etc/passwd에 정의되어 있다.아래의 명령문을 실행시켜 vi 에디터로 확인해보자.1# vi /etc/passwd마지막">
+<meta property="og:description" content="응급복구261p 참고이게 문제가 될 소지가 있지않냐?그래서 처음 켤때 선택하는거에서 암호를 걸어야 한다. GRUB 부트로더/etc/default/grub 파일과 /etc/grup.d/ 디렉터리의 파일을 수정한 후 ‘grub2-mkconfig’ 명령어를 실행해 설정함 123456789101112131415161718# vi /etc/default/grubti">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
-<meta property="og:updated_time" content="2017-07-03T04:32:32.265Z">
+<meta property="og:updated_time" content="2017-07-04T10:23:36.099Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="4장. 사용자 및 그룹 관리">
-<meta name="twitter:description" content="리눅스는 다중 사용자 시스템이다. 즉 서버 한대에 여러명이 접속한다. 그러므로 사용자를 관리하고 그룹을 관리하는게 중요한 이슈이다.기본적으로 rootㄹ는 슈퍼유저가 관리하며 모든 사용자는 하나 이상의 그룹에 소속되어야 한다.사용자는 /etc/passwd에 정의되어 있다.아래의 명령문을 실행시켜 vi 에디터로 확인해보자.1# vi /etc/passwd마지막">
+<meta name="twitter:title" content="응급복구, GRUB, 커널 컴파일">
+<meta name="twitter:description" content="응급복구261p 참고이게 문제가 될 소지가 있지않냐?그래서 처음 켤때 선택하는거에서 암호를 걸어야 한다. GRUB 부트로더/etc/default/grub 파일과 /etc/grup.d/ 디렉터리의 파일을 수정한 후 ‘grub2-mkconfig’ 명령어를 실행해 설정함 123456789101112131415161718# vi /etc/default/grubti">
 <meta name="twitter:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
@@ -138,14 +138,14 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-ThisIsLinux5" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-ThisIsLinux11" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        4장. 사용자 및 그룹 관리
+        응급복구, GRUB, 커널 컴파일
         </h1>
     
 
@@ -155,8 +155,8 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/07/03/ThisIsLinux5/" class="article-date">
-            <time datetime="2017-07-03T02:29:09.000Z" itemprop="datePublished">2017-07-03</time>
+        <a href="/2017/07/04/ThisIsLinux11/" class="article-date">
+            <time datetime="2017-07-04T07:09:17.000Z" itemprop="datePublished">2017-07-04</time>
         </a>
     </div>
 
@@ -170,18 +170,11 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>리눅스는 다중 사용자 시스템이다. 즉 서버 한대에 여러명이 접속한다. 그러므로 사용자를 관리하고 그룹을 관리하는게 중요한 이슈이다.<br>기본적으로 rootㄹ는 슈퍼유저가 관리하며 모든 사용자는 하나 이상의 그룹에 소속되어야 한다.<br>사용자는 /etc/passwd에 정의되어 있다.<br>아래의 명령문을 실행시켜 vi 에디터로 확인해보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># vi /etc/passwd</div></pre></td></tr></table></figure><br>마지막 줄엔 다음과같은 코드가 존재한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">centos:x:1000:1000:centos:/home/centos:/bin/bash</div></pre></td></tr></table></figure><br>이에 대해 자세히 알아보자.</p>
-<p>1.centos =<br>  사용자가 centos 이다.</p>
-<p>2.x =<br>  비밀번호</p>
-<p>3.1000 =<br>  centos라는 사용자의 ID</p>
-<p>4.1000 =<br>  centos사용자는 반드시 소속된 그룹이 있어야하는데 이는 소속된 그룹의 ID 즉 그룹번호이다.<br>어떻게 그룹번호를 갖고 그룹명을 알까? /etc/group 파일에 정의되어 있다. 이 파일을 vi 에디터로 열면 그룹이름:그룹비밀번호:그룹의ID(그룹번호)의 형식을 갖는다.<br>centos:x:1000:centos  // 그룹이름:그룹비밀번호:그룹의ID(그룹번호)<br>이게 무슨뜻일까? centos라는 사용자가 centos그룹에 속해 있다는 것이다. 마지막 centos 는 생략이 가능하며 신경쓰지 않아도 된다.<br>예를 들면 홍길동이라는 부서에 홍길동 사원이 존재하는것이다. 회사에서는 부서를 만들고 사원을 뽑는다. 마찬가지로 centos도 새로운 사용자를 만들면 사용자 이름과 같은 그룹을 만들고 이 그룹에 해당시킨다.<br>이것과 관련해 실습을 진행해보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># useradd myuser    //유저 등록</div><div class="line"># tail -5 /etc/passwd    //해당파일의 마지막 5줄만 보기</div><div class="line"></div><div class="line">myuser:x:1001:1001::/home/myuser:/bin/bash  //그룹번호 1001을 기억</div><div class="line"></div><div class="line"># tail -5 /etc/group    //해당파일의 마지막 5줄만 보기</div><div class="line"></div><div class="line">myuser:x:1001:  //사용자 이름과 같은 그룹이 만들어졌고 그 그룹에 사용자가 속해있다.</div></pre></td></tr></table></figure></p>
-<p>5.centos =<br>  전체이름이다. 생략이 가능하다</p>
-<p>6./home/centos centos =<br>  사용자의 홈 디렉토리</p>
-<p>7./bin/bash =<br>  사용할 기본 쉘</p>
-<h4 id="실습해보자"><a href="#실습해보자" class="headerlink" title="실습해보자"></a>실습해보자</h4><p>디렉토리 설명<br>/etc/passwd : 사용자 정보가 있음<br>/etc/shadow : 사용자 비밀번호가 있음(비밀번호는 암호화되어서 저장됨)<br>/etc/group  : 그룹정보가 있음</p>
-<h5 id="실습-1"><a href="#실습-1" class="headerlink" title="실습 1"></a>실습 1</h5><p>유저 생성, 유저 그룹지정, 그룹생성<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"># useradd user1         //user1생성</div><div class="line"># tail -5 /etc/passwd   //생성되었는지 확인</div><div class="line">user1:x:1001:1001::/home/user1:/bin/bash  //잘생성됨</div><div class="line"></div><div class="line"># tail -5 /etc/shadow     //사용자의 비밀번호를 확인해보자</div><div class="line">user1:!!:17350:0:99999:7:::   //비밀번호를 설정하지 않았지만 암호화 되어있다.</div><div class="line"></div><div class="line"># tail -5 /etc/group    //사용자의 그룹이 생성되었나 확인해보자</div><div class="line">user1:x:1001:           //잘 생성되었다</div><div class="line"></div><div class="line">하지만 바람직하지 않다.! user1의 그룹이 user1이라니 말이되나!</div><div class="line"></div><div class="line">다시실습해보자 이번에는 그룹을 먼저 생성하고 사용자를 소속시키자</div><div class="line"></div><div class="line"># userdel -r user1 //보통 현업에선 -r옵션을 넣어 디렉토리까진 지우지 않는다.</div><div class="line">                  //하지만 실습이므로 과감하게 지운다.</div><div class="line"># groupadd centosGroup    //그룹생성</div><div class="line"></div><div class="line"># tail -5 /etc/group    //잘생성되었나 확인</div><div class="line">centosGroup:x:1001:   //잘생성됨</div><div class="line"></div><div class="line"># useradd -g centosGroup user1  //centosGroup에 소속된 user1생성</div><div class="line"># useradd -g centosGroup user2  //centosGroup에 소속된 user2생성</div><div class="line"></div><div class="line"># tail -5 /etc/passwd     //잘 생성되었나 확인.</div><div class="line">user1:x:1001:1001::/home/user1:/bin/bash</div><div class="line">user2:x:1002:1001::/home/user2:/bin/bash</div><div class="line">  //잘 생성되었고 사용자 ID는 다르지만 같은 그룹ID를 갖는다.</div><div class="line"></div><div class="line"># passwd user1   //암호지정. 이후 1234 1234입력</div><div class="line">                //일반사용자는 암호를 8자 미만으로 지정못하지만</div><div class="line">                //루트사용자는 8자 미만으로 지정해줄수 있다.</div><div class="line"></div><div class="line"># passwd user2   //암호지정. 이후 1234 1234입력</div><div class="line"></div><div class="line"># tail -5 /etc/shadow   //user1,user2의 암호를 보자</div><div class="line">                      //user1,user2의 암호를 1234로 지정하였지만</div><div class="line">                      //암호화된 값이 다르다!!</div></pre></td></tr></table></figure></p>
-<h5 id="실습-2"><a href="#실습-2" class="headerlink" title="실습 2"></a>실습 2</h5><p>x윈도에서 사용자권한관리 - x윈도가 없으면 안되므로 비추<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># yum -y install system-config-users  //system-config-users패키지 설치</div><div class="line"># system-config-users   //x윈도우 상에서 사용자 관리가 가능하다!</div></pre></td></tr></table></figure></p>
-<h3 id="관련-명령어"><a href="#관련-명령어" class="headerlink" title="관련 명령어"></a>관련 명령어</h3><p>189p 참고<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">-u : ID 지정</div><div class="line">-g : 그룹지정</div><div class="line">-d : 홈디렉터리지정</div><div class="line">-s : 쉘 지정</div><div class="line"></div><div class="line"># useradd shkim //새로운 사용자를 추가</div><div class="line"></div><div class="line"># passwd shkim //사용자의 비밀번호를 지정하거나 변경</div><div class="line"></div><div class="line"># usermod -g root shkim  //사용자의 속성을 변경</div><div class="line"></div><div class="line"># userdel shkim //사용자는 지우나 디렉토리를 제거하지 않음.</div><div class="line">            //-r 옵션이 존재. 이는 사용자가 사용하던 디렉토리까지 제거</div><div class="line"></div><div class="line"># change -m 2 shkim  //사용자의 암호를 주기적으로 변경하도록 설정</div><div class="line">          //-m 2는 최소 이틀이상 써야한다.(189p 참고)</div><div class="line"></div><div class="line"># groups // 사용자가 속한 그룹을 보여줌</div><div class="line"></div><div class="line"># groupadd newgroup   //새로운 그룹을 새성          </div><div class="line"></div><div class="line"># groupmod  -n newgroup mygroup//그룹의 속성을 변경 newgroup을 mygroup로 변경</div><div class="line"></div><div class="line"># groupdel newgroup //그룹을 삭제</div><div class="line"></div><div class="line"># gpasswd newgroup  //그룹의 암호설정</div></pre></td></tr></table></figure></p>
+            <h4 id="응급복구"><a href="#응급복구" class="headerlink" title="응급복구"></a>응급복구</h4><p>261p 참고<br>이게 문제가 될 소지가 있지않냐?<br>그래서 처음 켤때 선택하는거에서 암호를 걸어야 한다.</p>
+<h4 id="GRUB-부트로더"><a href="#GRUB-부트로더" class="headerlink" title="GRUB 부트로더"></a>GRUB 부트로더</h4><p>/etc/default/grub 파일과 /etc/grup.d/ 디렉터리의 파일을 수정한 후 ‘grub2-mkconfig’ 명령어를 실행해 설정함</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"># vi /etc/default/grub</div><div class="line">timeout = 30 으로 변경</div><div class="line">distributor = &quot;Hello&quot; 로 변경</div><div class="line"># grub2-mkconfig -o /boot/grub2/grub.cfg // 변경사항 반영</div><div class="line"></div><div class="line">//여기서 부터 선택하는 곳에서 e 키 못누르게 비번 설정하는것</div><div class="line"># vi /etc/grub.d/00_header</div><div class="line">맨 아래 가서 다음코드 추가</div><div class="line">cat &lt;&lt; EOF</div><div class="line">set superusers=&quot;thisuser&quot;</div><div class="line">password thisuser 4321</div><div class="line">EOF</div><div class="line">여기까지!</div><div class="line">vi 빠져나와서</div><div class="line"># grub2-mkconfig -o /boot/grub2/grub.cfg // 변경사항 반영</div><div class="line">$ reboot</div><div class="line">선택하는곳에서 e 누르면 암호 누르도록 함</div><div class="line"></div></pre></td></tr></table></figure>
+<h4 id="커널"><a href="#커널" class="headerlink" title="커널"></a>커널</h4><p>커널 : 하드웨어를 제어하는 기능<br>모든 하드웨어를 제어하는 코드를 다 넣으면 커널이 너무 커지고 무거워진다. 그러므로 잘 안쓰는 하드웨어 코드는 모듈에 빼내서 필요할때마다 사용<br>즉 모듈은 필요할때 쓸 수 있도록 커널의 코드를 밖으로 빼낸것이다!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">$ uname -r //커널버전확인</div><div class="line">$ wget &quot;https://kernel.org/pub/linux/kernel/v3.x/linux-3.17.4.tar.xz&quot;</div><div class="line">  //교재와 동일한 커널 설치</div><div class="line">$ mv linux-3.17.4.tar.xz /usr/src</div><div class="line">$ cd /usr/src</div><div class="line">$ tar xfJ linux-3.17.4.tar.xz   //압축을 풀자</div><div class="line">$ cd linux-3.17.4/</div><div class="line"></div><div class="line">커널은 c 코드이므로 설치를 위해 컴파일러를 깔자</div><div class="line">$ yum -y install gcc gcc-c++ qt qt-devel</div><div class="line">$ make mrproper // 커널설정 초기화</div><div class="line">$ make xconfig  //커널의 환경설정</div><div class="line">  설정 후</div><div class="line">$ make clean</div><div class="line">$make ;  make modules_install ; make install  //순서대로 진행됨.</div><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
 
         </div>
         <footer class="article-footer">
@@ -189,7 +182,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/07/03/ThisIsLinux5/" data-id="cj4pfjj6r003kpcv7mdmicg8g" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux11/" data-id="cj4pfjj6k003dpcv7yamw7sag" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -294,20 +287,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/07/03/ThisIsLinux6/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            4장. 파일의 소유권/허가권, 링크
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/07/02/ThisIsLinux4/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/07/04/ThisIsLinux10/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">4장. 리눅스 기본 명령어</p>
+        <p class="article-nav-title">4장. 파이프/필터, 프로세스, 서비스/소켓</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -353,7 +336,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'https-kkimsangheon-github-io-2';
     
     
-    var disqus_url = 'http://KKimSangHeon.github.io/2017/07/03/ThisIsLinux5/';
+    var disqus_url = 'http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux11/';
     
     (function() {
     var dsq = document.createElement('script');
