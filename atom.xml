@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-07-03T23:54:40.304Z</updated>
+  <updated>2017-07-04T06:31:35.759Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,138 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>4장. 파이프/필터, 프로세스, 서비스/소켓</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux10/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux10/</id>
+    <published>2017-07-04T05:52:52.000Z</published>
+    <updated>2017-07-04T06:31:35.759Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="파이프"><a href="#파이프" class="headerlink" title="파이프"></a>파이프</h4><p>두개의 프로그램을 연결해주는 통로<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ls -l /etc | more   //앞에서 뒤로 넘김</div></pre></td></tr></table></figure></p>
+<h4 id="필터"><a href="#필터" class="headerlink" title="필터"></a>필터</h4><p>필요한것만 걸러주는 명령어</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ ps -ef //현재 작동중인 프로세스 보여줌</div><div class="line"></div><div class="line">$ ps -ef | grep bash    //bash와 관련된 프로세스만</div><div class="line">                      //보여줌</div><div class="line"></div><div class="line">$ rpm -qa | grep gedit  //gedit 관련된것만 보여줌</div></pre></td></tr></table></figure>
+<h4 id="리다이렉션-보내는-것"><a href="#리다이렉션-보내는-것" class="headerlink" title="리다이렉션(보내는 것)"></a>리다이렉션(보내는 것)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ ls -l &gt; file.txt //결과를file.txt로 만드는것</div><div class="line">              //file.txt가 존재할 경우 덮어쓰고</div><div class="line">              //존재하지 않을경우 새로 만들고 작성</div><div class="line"></div><div class="line">$ ls -l &gt;&gt; file.txt //결과를file.txt로 만드는것</div><div class="line">                    //file.txt가 존재할 경우 뒤에다 이어서 작성하고</div><div class="line">                    //존재하지 않을경우 새로만들고 작성</div><div class="line"></div><div class="line">$ cat sort &lt; file.txt &gt; out.txt //file.txt를 정렬해서 out.txt에 넣어라</div></pre></td></tr></table></figure>
+<h4 id="프로세스-데몬"><a href="#프로세스-데몬" class="headerlink" title="프로세스, 데몬"></a>프로세스, 데몬</h4><p>프로세스는 하드디스크에 저장된 실행코드가 메모리에 로딩되어 활성화 된것.</p>
+<h5 id="포그라운드-프로세스"><a href="#포그라운드-프로세스" class="headerlink" title="포그라운드 프로세스"></a>포그라운드 프로세스</h5><p>실행하면 화면에 나타나서 사용자와 상호작용을 하는 프로세스</p>
+<h5 id="백그라운드-프로세스"><a href="#백그라운드-프로세스" class="headerlink" title="백그라운드 프로세스"></a>백그라운드 프로세스</h5><p>화면에 나타나지 않고 실행되는 프로세스<br>백신 , 서버 데몬(=서비스,=서버 프로세스)등</p>
+<h4 id="프로세스번호"><a href="#프로세스번호" class="headerlink" title="프로세스번호"></a>프로세스번호</h4><p>각각의 프로세스는 할당된 번호가 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ ps -ef | grep bash    //bash관련된 프로세스만 보여줌</div><div class="line"></div><div class="line">root       693     1  0 13:43 ?        00:00:00 /bin/bash /usr/sbin/ksmtuned</div><div class="line"></div><div class="line">693은 자기 프로세스 번호고 1은 부모프로세스 번호이다.</div></pre></td></tr></table></figure></p>
+<h4 id="작업-번호"><a href="#작업-번호" class="headerlink" title="작업 번호"></a>작업 번호</h4><p>현재 실행되고 있는 백그라운드 프로세스의 순차번호</p>
+<h4 id="부모프로세스-자식프로세스"><a href="#부모프로세스-자식프로세스" class="headerlink" title="부모프로세스 ,자식프로세스"></a>부모프로세스 ,자식프로세스</h4><p>모든 프로세스는 부모프로세스를 갖는다.<br>부모 프로세스를 kill하면 자식프로세스도 자동으로 죽음.</p>
+<h4 id="프로세스-관련-명령"><a href="#프로세스-관련-명령" class="headerlink" title="프로세스 관련 명령"></a>프로세스 관련 명령</h4><h5 id="ps-프로세스-보기"><a href="#ps-프로세스-보기" class="headerlink" title="ps 프로세스 보기"></a>ps 프로세스 보기</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ps -ef | grep bash  //bash 관련 프로세스 보여줌</div></pre></td></tr></table></figure>
+<h5 id="kill-프로세스-종료"><a href="#kill-프로세스-종료" class="headerlink" title="kill 프로세스 종료"></a>kill 프로세스 종료</h5><p>파이어폭스 kill하기<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ ps -ef | grep fire  //파폭 관련 프로세스 보기</div><div class="line">root      2637  1934  0 13:49 ?        00:00:04 /usr/lib64/firefox/firefox</div><div class="line">//프로세스번호가 2637이다.</div><div class="line">$ kill 2637</div><div class="line">//가끔 킬 해도 죽지 않는 경우가 있는데 그경우 -9 옵션을 준다.</div><div class="line">$ kill -9 2637</div></pre></td></tr></table></figure></p>
+<h5 id="pstree-프로세스-트리로-보기"><a href="#pstree-프로세스-트리로-보기" class="headerlink" title="pstree 프로세스 트리로 보기"></a>pstree 프로세스 트리로 보기</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$pstree //프로세스 구조를 트리로 보여줌</div></pre></td></tr></table></figure>
+<h5 id="실습-포그라운드-gt-백그라운드-gt-포그라운드"><a href="#실습-포그라운드-gt-백그라운드-gt-포그라운드" class="headerlink" title="실습 (포그라운드-&gt;백그라운드-&gt;포그라운드)"></a>실습 (포그라운드-&gt;백그라운드-&gt;포그라운드)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ yes &gt; /dev/null   //y를 계속생성하는 프로세스 생성</div><div class="line">ctrl+ z 입력.</div><div class="line">$ bg //백그라운드 보는것.</div><div class="line">    //처음에 했던 동작이 남아있다.</div><div class="line">[1]+ yes &gt; /dev/null &amp;</div><div class="line"></div><div class="line">$ fg 1    //1번작업을 다시 포그라운드로 갖고와라</div></pre></td></tr></table></figure>
+<h5 id="실습-포그라운드-gt-백그라운드-gt-포그라운드-1"><a href="#실습-포그라운드-gt-백그라운드-gt-포그라운드-1" class="headerlink" title="실습 (포그라운드-&gt;백그라운드-&gt;포그라운드)"></a>실습 (포그라운드-&gt;백그라운드-&gt;포그라운드)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ gedit &amp; //지에딧을 백그라운드로 돌려라.</div><div class="line">        //콘솔을 계속 사용할 수 있게된다.</div><div class="line"></div><div class="line">$ vi &amp;  //백그라운드로 돌아가긴 하는데 의미없다.</div><div class="line">        //vi는 포그라운드로 돌려야 하므로  </div><div class="line">$ bg    //vi의 백그라운드 번호를 알고</div><div class="line">$ fg 1   //vi를 포그라운드로 갖고옴</div></pre></td></tr></table></figure>
+<h4 id="서비스와-소켓"><a href="#서비스와-소켓" class="headerlink" title="서비스와 소켓"></a>서비스와 소켓</h4><h5 id="서비스"><a href="#서비스" class="headerlink" title="서비스"></a>서비스</h5><p>웹 서버 = 웹 서비스<br>FTP 서버 = FTP 서비스</p>
+<p>서비스의 실행 스크립트 파일은 /usr/lib/systemd/system/ 디렉터리에 ‘서비스이름.service’라는 이름으로 확인할 수 있다. 예를들어 웹 서비스는 httpd.service라는 이름의 파일로 존재</p>
+<h5 id="소켓"><a href="#소켓" class="headerlink" title="소켓"></a>소켓</h5><p>서비스는 항상 가동되지만 소켓은 필요할 떄만 구동된다. 외부에서 특정 서비스가 요청되었을 때. 그래서 약간 느리다.<br>/usr/lib/systemd/system/ 디렉터리에 소켓이름.socket 이름으로 존재</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;파이프&quot;&gt;&lt;a href=&quot;#파이프&quot; class=&quot;headerlink&quot; title=&quot;파이프&quot;&gt;&lt;/a&gt;파이프&lt;/h4&gt;&lt;p&gt;두개의 프로그램을 연결해주는 통로&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
+    
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>4장. 네트워크 관련 개념과 명령어,SELinux</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux9/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux9/</id>
+    <published>2017-07-04T04:29:36.000Z</published>
+    <updated>2017-07-04T05:09:11.039Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h4><p>우리가 사용하는 인터넷은 tcp/ip 기반이다. 가장널리사용되는 프로토콜의 한 종류</p>
+<h4 id="호스트이름-도메인이름"><a href="#호스트이름-도메인이름" class="headerlink" title="호스트이름 도메인이름"></a>호스트이름 도메인이름</h4><p>호스트이름 : 컴퓨터에 지정된 이름<br>도메인 이름 : hanbit.co.kr rkxdms gudtlr</p>
+<h4 id="IP-주소"><a href="#IP-주소" class="headerlink" title="IP 주소"></a>IP 주소</h4><p>랜카드에 부여되는 중복되지 않는 유일한 주소</p>
+<h4 id="네트워크-주소"><a href="#네트워크-주소" class="headerlink" title="네트워크 주소"></a>네트워크 주소</h4><p>같은 네트워크에 속해있는 공통된 주소</p>
+<h4 id="브로드캐스트-주소"><a href="#브로드캐스트-주소" class="headerlink" title="브로드캐스트 주소"></a>브로드캐스트 주소</h4><p>제일 뒤가 255인 주소<br>내부 네트워크의 모든 컴퓨터가 듣게 되는 주소</p>
+<h4 id="게이트웨이-라우터"><a href="#게이트웨이-라우터" class="headerlink" title="게이트웨이, 라우터"></a>게이트웨이, 라우터</h4><p>라우터=게이트웨이<br>네트워크 간에 데이터를 전송하는 컴퓨터 또는 장비</p>
+<h4 id="넷마스크-클래스"><a href="#넷마스크-클래스" class="headerlink" title="넷마스크, 클래스"></a>넷마스크, 클래스</h4><p>넷마스크 : 네트워크의 규모를 결정<br>ex(255.255.255.0)</p>
+<h4 id="DNS-서버-네임서버"><a href="#DNS-서버-네임서버" class="headerlink" title="DNS 서버= 네임서버"></a>DNS 서버= 네임서버</h4><p>URL을 IP로 변환해주는 서버</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$ nmtui //네트워크와 관련된 작업진행</div><div class="line"></div><div class="line">$ rdate -s time.bora.net  //시간설정</div><div class="line">$ nmtui     //설정 변경후 종료 네트워크매니저텍스트ui</div><div class="line">$ systemctl restart network //네트워크 재시작 (해줘야함)</div><div class="line"></div><div class="line">$ ifconfig  //네트워크장치에 할당된 ip주소 확인</div><div class="line">$ ifdown ens32  //이거는 systemctl restart network</div><div class="line">                //보다 강력하게 서버를 끄는것.</div><div class="line">$ ifup ens32    //서버 재시작              </div><div class="line"></div><div class="line">$ nslookup  naver.com //DNS서버의 작동을 테스트</div><div class="line"></div><div class="line">$ ping www.yahoo.com //네트워크 응답 확인</div><div class="line">$ ping -3 www.yahoo.com   //세번만 피을 때려라</div><div class="line"></div></pre></td></tr></table></figure>
+<h4 id="주요-파일"><a href="#주요-파일" class="headerlink" title="주요 파일"></a>주요 파일</h4><p>네트워크 기본적인 정보가 설정되어 있는 파일<br>/etc/sysconfig/network  </p>
+<p>/etc/sysconfig/network-scripts/ifcfg-ens32<br>ens32 장치에 설정된 네트워크 정보가 모두 들어있는 파일<br>ens32가 아니라 eno일수도 있다.<br>BOOTPROTO = none 고정아이피를 쓰겠다.<br>DNS1  DNS가 여러개 나올 수 있으므로 1이 필요<br>ONBOOT =”yes” 네트워크를 쓰겠다</p>
+<p>/etc/resolv.conf<br>DNS 서버의 정보와 호스트 이름이 들어있다.<br>168.126.63.1 //kt에서 제공하는 네임서버이다<br>            //네임서버가 없을 때 사용가능</p>
+<h4 id="SELinux"><a href="#SELinux" class="headerlink" title="SELinux"></a>SELinux</h4><p>보안에 취약한 리눅스를 보호하기 위해 탄생<br>책에서는 실습을 위해 기능을 꺼두었다.<br>/etc/sysconfig/selinux를 편집하였다.<br>SELINUX=disabled 이렇게..</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;TCP-IP&quot;&gt;&lt;a href=&quot;#TCP-IP&quot; class=&quot;headerlink&quot; title=&quot;TCP/IP&quot;&gt;&lt;/a&gt;TCP/IP&lt;/h4&gt;&lt;p&gt;우리가 사용하는 인터넷은 tcp/ip 기반이다. 가장널리사용되는 프로토콜의 한 종류&lt;/p&gt;
+&lt;h4
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
+    
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>4장. 파일 압축과 묶기, CRON과 AT</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux8/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux8/</id>
+    <published>2017-07-04T00:26:28.000Z</published>
+    <updated>2017-07-04T01:55:03.268Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="파일-압축"><a href="#파일-압축" class="headerlink" title="파일 압축"></a>파일 압축</h3><p>유닉스는 압축하는 파일이 여러개이다. 그래서 확장자도 여러개이다. 점점 개선이 되면서 여러개가 생긴것이다. 예전것도 쓰고 최신것도 쓰므로 모두 사용할줄 알아야함<br>gzip-&gt;bzip2-&gt;xz 순으로 발전해옴 xz가 압축률도 제일좋다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"># cp glist.txt file1.txt    //파일 복사</div><div class="line"># cp glist.txt file2.txt</div><div class="line"># cp glist.txt file3.txt</div><div class="line"># xz file1.txt</div><div class="line"># bzip2 file2.txt</div><div class="line"># gzip file3.txt</div><div class="line"></div><div class="line"># ls-l file*</div><div class="line">-rw-r--r-- 1 root root 1080  7월  4 09:31 file1.txt.xz</div><div class="line">-rw-r--r-- 1 root root 1072  7월  4 09:31 file2.txt.bz2</div><div class="line">-rw-r--r-- 1 root root 1053  7월  4 09:31 file3.txt.gz</div><div class="line"></div><div class="line"># xz -d file.txt.xz   //압축해제</div><div class="line"></div><div class="line"># bzip2 -d file2.txt.bz2 //압축해제</div><div class="line"></div><div class="line"># gzip -d file3.txt.gz  //압축해제</div><div class="line"># gunzip file3.txt.gz //위와 같음</div><div class="line"></div></pre></td></tr></table></figure>
+<p>gz로 압축한게 제일작은데? 파일마다 다르다!! 일반적으로는 gz가 효울이 제일 떨어진다. 그래서 일반적으로 커널파일을 xz로 배포한다.<br>리눅스에서의 압축은 파일을 압축해서 원본파일이 사라진다는것을 주의하자.</p>
+<h4 id="파일-묶기"><a href="#파일-묶기" class="headerlink" title="파일 묶기"></a>파일 묶기</h4><p>리눅스는 압축, 묶기가 다르다<br>묶기는 원본파일이 유지되며 하나로 묶은것이라 보면된다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"># tar cvf bin.tar bin1 bin2 bin3    //bin1,2,3이 bin.tar로 묶임</div><div class="line"># rm -f bin?    //bin1,2,3 제거</div><div class="line"></div><div class="line"># tar xvf bin.tar //풀기</div><div class="line"># ls -l</div><div class="line">-rw-r--r--  1 root root 14714880  7월  4 09:41 bin.tar</div><div class="line">-rwxr-xr-x  1 root root  4902656  7월  4 09:40 bin1</div><div class="line">-rwxr-xr-x  1 root root  4902656  7월  4 09:40 bin2</div><div class="line">-rwxr-xr-x  1 root root  4902656  7월  4 09:40 bin3</div><div class="line"></div></pre></td></tr></table></figure><br>묶으면서 압축을 진행해보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># rm -f bin.tar</div><div class="line"># tar cvfj bin.tar.bz2 bin1 bin2 bin3  //bz2형식으로 압축하면서 묶어줌</div><div class="line"></div><div class="line"></div><div class="line"># rm -f bin.tar.bz2</div><div class="line"># tar cvfJ bin.tar.xz bin1 bin2 bin3  //xz형식으로 압축하면서 묶어줌</div><div class="line">                                      //J가 대문자이다.</div><div class="line"># tar xvfJ bin.tar.xz /etc/sysconfig  //xz압축해제 +tar 풀기</div></pre></td></tr></table></figure></p>
+<h4 id="파일-위치-검색"><a href="#파일-위치-검색" class="headerlink" title="파일 위치 검색"></a>파일 위치 검색</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"># find /etc  -name &quot;*.conf&quot;    //etc밑에 확장명이 conf 인것을 찾음</div><div class="line"># find /etc  -name &quot;*.conf&quot; &gt; conf.txt  //위 대상으로 conf.txt로 저장</div><div class="line"></div><div class="line"># find /home -user centos   //centos 사용자의 파일들 검색</div><div class="line"></div><div class="line"># find /usr/bin -size +95k -size -100k    //사이즈가 95kb 이상</div><div class="line">                                        //100kb 이하인것 검색</div><div class="line"># find /usr/bin -size +95k -size -100k</div><div class="line">          -exec ls -l &#123;&#125; \;  // 윗줄의 결과가 중괄호 속에 들어가서</div><div class="line">                            // ls -l 명령어 실행</div></pre></td></tr></table></figure>
+<h4 id="시스템-설정"><a href="#시스템-설정" class="headerlink" title="시스템 설정"></a>시스템 설정</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># yum -y install system-config-date</div><div class="line"># system-config-date  //날짜 설정 가능</div><div class="line"></div><div class="line"># nmtui   //네트워크 설정</div><div class="line"></div><div class="line"># firewall-config</div></pre></td></tr></table></figure>
+<h4 id="CRON과-AT"><a href="#CRON과-AT" class="headerlink" title="CRON과 AT"></a>CRON과 AT</h4><p>CRON : 주기적으로 반복되는 일을 자동적으로 실행될 수 있도록 실행</p>
+<p>42 4 1 ** root run-parts /etc/cron.hourly<br>42 : 42분<br>4 : 4시<br>1 : 1일<br>* : 매 월<br>* : 매 요일</p>
+<p>01 * * * * root run-parts  /etc/cron.daily<br>맨 뒤는 요일이므로 제외하고<br>매월<br>매일<br>매시<br>1분마다.</p>
+<p>02 4 * * * root run-parts  /etc/cron.weekly<br>매일 4시 2분마다 실행하라</p>
+<p>03 4 * * 0 root run-parts  /etc/cron.monthly<br>일요일 4시 3분마다 실행해라</p>
+<hr>
+<p>AT : 한번 실행되는것<br># at 3:00am tomorrow -&gt;내일 새벽 3시<br># at 11:00pm January 30 -&gt;1월 30일 오후 11시<br># at now + 1 hours -&gt;한시간 후<br>그 후 예약 명령어 입력후 엔터<br>완료되면 ctrl + d</p>
+<p>쉘 스크립트 : 윈도우의 배치파일처럼 실행할 명령어가 쭉 나열되어있는것</p>
+<h4 id="CRON-실습"><a href="#CRON-실습" class="headerlink" title="CRON 실습"></a>CRON 실습</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"># systemctl status crond  //크론이 돌고있는지 확인</div><div class="line"></div><div class="line"># vi /etc/crontab</div><div class="line">01 3 15 * * root run-parts /etc/cron.monthly</div><div class="line"> //한줄 추가 매달 매 요일 15일마다 3시 1분에</div><div class="line"></div><div class="line"># cd /etc/cron.monthly/</div><div class="line"></div><div class="line"># vi myBackup.sh</div><div class="line"></div><div class="line">다음을 입력</div><div class="line">#!/bin/sh   // 써줘야함</div><div class="line"></div><div class="line">set $(date)   //날짜를 읽어옴</div><div class="line">fname=&quot;backup-$2$3.tar.xz&quot;    //$2는 월 $3은 일</div><div class="line"></div><div class="line">tar cfJ /backup/$fname  /home   // /home폴더를 묶음</div><div class="line"></div><div class="line">vi 종료</div><div class="line"></div><div class="line"># chmod ugo+x myBackup.sh   //쉘스크립트 파일 실행권한부여</div><div class="line"></div><div class="line"># mkdir /backup   //백업파일 보관할 장소 생성</div><div class="line"></div><div class="line"># systemctl restart crond //예약하는 작업이 재시작된다.</div><div class="line"></div><div class="line"># date 011503002019       //테스트를 위해 시간을 변경</div><div class="line">    //월일시분년</div><div class="line">2019. 01. 15. (화) 03:00:00 KST 로 변경됨</div><div class="line"></div><div class="line"># systemctl restart crond  // 시간적용을 위해 재시작</div><div class="line"></div><div class="line">1분이 지나고</div><div class="line"></div><div class="line"># ls-l /backup/</div><div class="line"></div></pre></td></tr></table></figure>
+<h4 id="AT-실습"><a href="#AT-실습" class="headerlink" title="AT 실습"></a>AT 실습</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"># rdate -s time.bora.net  //서버에 가서 정확한 시간을 세팅함</div><div class="line"># at 4:00 am tomorrow   //내일 새벽 4시에 할 명령어 입력</div><div class="line"></div><div class="line">at&gt; yum -y update</div><div class="line">at&gt; reboot</div><div class="line"></div><div class="line">입력 후 ctrl + d</div><div class="line"></div><div class="line"># at -l 예약된것 확인</div><div class="line">1	Wed Jul  5 04:00:00 2017 a root</div><div class="line"></div><div class="line"># atrm 1  //1번 목록 제거</div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;파일-압축&quot;&gt;&lt;a href=&quot;#파일-압축&quot; class=&quot;headerlink&quot; title=&quot;파일 압축&quot;&gt;&lt;/a&gt;파일 압축&lt;/h3&gt;&lt;p&gt;유닉스는 압축하는 파일이 여러개이다. 그래서 확장자도 여러개이다. 점점 개선이 되면서 여러개가 생긴것이다
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
+    
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>4장. RPM 사용법, YUM 사용법</title>
     <link href="http://KKimSangHeon.github.io/2017/07/03/ThisIsLinux7/"/>
     <id>http://KKimSangHeon.github.io/2017/07/03/ThisIsLinux7/</id>
     <published>2017-07-03T09:58:51.000Z</published>
-    <updated>2017-07-03T23:54:40.304Z</updated>
+    <updated>2017-07-04T01:56:17.645Z</updated>
     
     <content type="html"><![CDATA[<h3 id="RPM"><a href="#RPM" class="headerlink" title="RPM"></a>RPM</h3><p>초창기 리눅스는 설치가 어려웠다 .소스코드를 갖고와서 적재적소에 컴파일을 해야했다. 그래서 일반사용자가 사용하기엔 거의 불가능했다. 이러한 이유로 외면을 받았었다. 결국 Redhat에서 RPM(Redhat Package Manager)을 내놓았다. 윈도우의 setup.exe 라고 생각하면 된다.</p>
 <p>gedit-3.8.3-6.el7.x86_64.rpm</p>
@@ -33,7 +160,8 @@
 <h4 id="yum의-동작과정"><a href="#yum의-동작과정" class="headerlink" title="yum의 동작과정"></a>yum의 동작과정</h4><p>1.yum install을 입력한다<br>2./etc/yum.repos.d/ 를 참고하여 URL을 확인하고<br>3.전체 패키지 목록 파일을 요청한다(CentOS 7 패키지 저장소로)<br>4.전체 패키지 목록 파일만 다운로드<br>5.설치할 패키지와 관련된 패키지의 이름을 화면에 출력<br>6.y를 입력하면 설치에 필요한 패키지 파일을 요청함<br>7.설치할 패키지 파일을 다운로드해서 자동 설치<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$ yum install 패키지이름   //패키지 설치</div><div class="line"></div><div class="line">$ yum -y install 패키지이름   //패키지 설치(y안눌러도 됨)</div><div class="line"></div><div class="line">$ yum remove 패키지이름  //패키지 제거</div><div class="line"></div><div class="line">$ yum localinstall rpm파일이름.rpm  //로컬에 존재하는 rpm으로 설치</div><div class="line">      // 만약 의존성이 있을경우 그 대상은 레파지토리에서 깐다.</div><div class="line"></div><div class="line">$ yum info mc   //mc패키지에 관한 정보확인      </div><div class="line"></div><div class="line">$ yum groupinstall &quot;패키지 그룹이름&quot; //예로 자바를 깐다면 jdk</div><div class="line">                          //이클립스 등 한꺼번에 설치됭</div><div class="line"></div><div class="line">$ yum clean all           //캐시를 지우는것.</div><div class="line">                      //yum이 이상할때 써보자                          </div></pre></td></tr></table></figure></p>
 <h4 id="yum고급실습"><a href="#yum고급실습" class="headerlink" title="yum고급실습"></a>yum고급실습</h4><p>네트워크를 거치지 않고 마운트 시킨 dvd에서 받는다. 교재 221참고<br>dvd에 없으면 네트워크에서 갖고온다.</p>
 <h4 id="yum-grouplist"><a href="#yum-grouplist" class="headerlink" title="yum grouplist"></a>yum grouplist</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$ yum grouplist   //그룹리스트 조회</div><div class="line">$ yum grouplist hidden //숨겨진것까지 조회</div><div class="line"></div><div class="line">//영어로 그룹을 설치하는것이 좋다.. 그러므로</div><div class="line"></div><div class="line">$ chvt 2 //2번 가상터미널로 이동</div><div class="line">$ root</div><div class="line"> password</div><div class="line"></div><div class="line">$ yum grouplist hidden &gt; glist.txt  //glist.txt로 생성</div><div class="line"></div><div class="line">$ chvt 1  //x 윈도모드로 이동</div></pre></td></tr></table></figure>
-]]></content>
+<h4 id="226p-비타민퀴즈"><a href="#226p-비타민퀴즈" class="headerlink" title="226p 비타민퀴즈"></a>226p 비타민퀴즈</h4><p>223p를 따라 설정 후</p>
+<h1 id="yum-groupinstall-“GNOME-Desktop”-입력"><a href="#yum-groupinstall-“GNOME-Desktop”-입력" class="headerlink" title="yum groupinstall “GNOME Desktop” 입력"></a>yum groupinstall “GNOME Desktop” 입력</h1>]]></content>
     
     <summary type="html">
     
@@ -621,130 +749,6 @@
     
     
       <category term="작성 논문" scheme="http://KKimSangHeon.github.io/tags/%EC%9E%91%EC%84%B1-%EB%85%BC%EB%AC%B8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>시각장애인을 위한 길안내 app</title>
-    <link href="http://KKimSangHeon.github.io/2017/06/30/For-blind/"/>
-    <id>http://KKimSangHeon.github.io/2017/06/30/For-blind/</id>
-    <published>2017-06-30T03:42:08.000Z</published>
-    <updated>2017-06-30T04:32:05.752Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="참가배경"><a href="#참가배경" class="headerlink" title="참가배경"></a>참가배경</h1><p>-교내 창업경진대회가 진행 중이라는 소식을 듣고 참가하게 되었습니다. 비콘과 관련된 프로젝트를 진행중이던 상황이라 비콘을 이용해서 창업아이템을 고안하게 되었습니다.</p>
-<h1 id="Idea를-떠올린-계기"><a href="#Idea를-떠올린-계기" class="headerlink" title="Idea를 떠올린 계기"></a>Idea를 떠올린 계기</h1><img src="/2017/06/30/For-blind/for-blind-img1.png" alt="점형블록실태 [그림1]" title="점형블록실태 [그림1]">
-<p>-지하철을 이용하던 어느 날 시각장애인이 길을 찾는데 어려움을 겪는 것을 보았습니다. 시각장애인이 길을 찾는데 어려움을 겪은 이유는 점형블록에 대한 인식이 부족한 상인이 올려둔 짐 때문이었고 결국 시각 장애인은 주변 사람들의 도움을 통해 올바른 길을 찾아 갈 수 있었습니다. 저는 그 이후 지하철 내 점형블록을 눈여겨보게 되었습니다. [그림1]의 좌측 사진과 같이 깨진 점형블록이 보수되지 않은 채 존재하며, 우측 사진과 같이 매트가 깔려있기도 했습니다.</p>
-<img src="/2017/06/30/For-blind/for-blind-img2.png" alt="음성유도기에 관한기사 [그림2]" title="음성유도기에 관한기사 [그림2]">
-<p>-또한 그들을 위한 시설인 음성유도기 또한 고장나있는경우가 많으며 가격이 비싸다는 단점이 존재하였습니다.(개당 약 270만원)</p>
-<h1 id="Idea-소개"><a href="#Idea-소개" class="headerlink" title="Idea 소개"></a>Idea 소개</h1><p>역사에 10m^2당 비콘을 하나씩 설치하여 핑거프린팅 알고리즘을 적용한 후 현재위치를 파악합니다. (<a href="https://kkimsangheon.github.io/2017/06/29/where-are-you/">FingerPrinting Algorithm(참고))</a></p>
-<img src="/2017/06/30/For-blind/for-blind-img3.png" alt="이동방향 파악 [그림3]" title="이동방향 파악 [그림3]">
-<p>그 후 [그림3]과 같이 이동방향을 파악 후 이동방향에 따른 음성안내를 실시합니다.<br><img src="/2017/06/30/For-blind/for-blind-img4.png" alt="음성안내를 실시하기 위한 방법 [그림4]" title="음성안내를 실시하기 위한 방법 [그림4]"><br>음성안내를 실시하기 위해서는 다음의 Newtone API 혹은 Naver의 음성합성 기능을 사용하면 가능합니다.</p>
-<h1 id="결과"><a href="#결과" class="headerlink" title="결과"></a>결과</h1><img src="/2017/06/30/For-blind/for-blind-img5.jpg" alt="장려상" title="장려상">
-<p>운이 좋게도 장려상과 30만원의 장학금을 지급받았습니다 !</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;참가배경&quot;&gt;&lt;a href=&quot;#참가배경&quot; class=&quot;headerlink&quot; title=&quot;참가배경&quot;&gt;&lt;/a&gt;참가배경&lt;/h1&gt;&lt;p&gt;-교내 창업경진대회가 진행 중이라는 소식을 듣고 참가하게 되었습니다. 비콘과 관련된 프로젝트를 진행중이던 상황이
-    
-    </summary>
-    
-      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
-    
-      <category term="My Projects" scheme="http://KKimSangHeon.github.io/categories/About-Me/My-Projects/"/>
-    
-    
-      <category term="Android" scheme="http://KKimSangHeon.github.io/tags/Android/"/>
-    
-      <category term="Beacon" scheme="http://KKimSangHeon.github.io/tags/Beacon/"/>
-    
-      <category term="창업경진대회" scheme="http://KKimSangHeon.github.io/tags/%EC%B0%BD%EC%97%85%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>기숙사 외박계</title>
-    <link href="http://KKimSangHeon.github.io/2017/06/30/Dormitory-Sleep-Out/"/>
-    <id>http://KKimSangHeon.github.io/2017/06/30/Dormitory-Sleep-Out/</id>
-    <published>2017-06-30T01:22:14.000Z</published>
-    <updated>2017-06-30T03:37:41.143Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="프로그램-개발배경"><a href="#프로그램-개발배경" class="headerlink" title="프로그램 개발배경"></a>프로그램 개발배경</h1><p>-교내 기숙사의 외박계 프로그램이 존재하지 않으며, 업체에 의뢰하여 제작하려했으나 비용상의 문제로 거절된것을 알게되었습니다. 그래서 직접 만들어서 제출하면 어떨까 라는 생각을 하게되어 개발하게 되었습니다.</p>
-<h1 id="프로그램-소개"><a href="#프로그램-소개" class="headerlink" title="프로그램 소개"></a>프로그램 소개</h1><p>CentOS상에 서버를 실행시켰으며, 카카오톡 옐로아이디 페이지에서 세팅을 진행하였습니다. 각 과정을 거친 후 자신의 외박계를 하나 작성할 수 있는 프로그램입니다.</p>
-<h1 id="프로그램-동작화면"><a href="#프로그램-동작화면" class="headerlink" title="프로그램 동작화면"></a>프로그램 동작화면</h1><img src="/2017/06/30/Dormitory-Sleep-Out/Dormitory-Sleep-Out1.png" alt="초기접속화면 [그림1]" title="초기접속화면 [그림1]">
-<p>초기 채팅방에 진입하였을 경우 외박계를 작성할 것인지, 작성한 외박계를 확인할 것인지 선택합니다.<br><img src="/2017/06/30/Dormitory-Sleep-Out/Dormitory-Sleep-Out2.png" alt="외박계 작성절차1 [그림2]" title="외박계 작성절차1 [그림2]"><br>외박계 작성을 선택하였을 경우 이름, 거주하는 동, 호수, 귀관일, 행선지를 입력하고<br><img src="/2017/06/30/Dormitory-Sleep-Out/Dormitory-Sleep-Out3.png" alt="외박계 작성절차2 [그림3]" title="외박계 작성절차2 [그림3]"><br>전화번호 또한 입력 후 아무키나 입력하면 등록이 완료됩니다.<br><img src="/2017/06/30/Dormitory-Sleep-Out/Dormitory-Sleep-Out4.png" alt="[그림1]에서 확인을 선택 [그림4]" title="[그림1]에서 확인을 선택 [그림4]"><br>[그림1]에서 확인버튼을 선택하였을 경우 [그림4]와 같이 입력한 내용을 확인할 수 있습니다.</p>
-<img src="/2017/06/30/Dormitory-Sleep-Out/Dormitory-Sleep-Out5.png" alt="관리자계정모드 [그림5]" title="관리자계정모드 [그림5]">
-<p>작성된 외박계를 관리자가 확인하기 위해서는 채팅방에서 supervisorgj@를 입력합니다. 그 후 [그림5]와 같이 외박계를 조회할 수 있습니다.</p>
-<h1 id="소스코드-Github-Repository"><a href="#소스코드-Github-Repository" class="headerlink" title="소스코드 (Github Repository)"></a>소스코드 (Github Repository)</h1><p><a href="https://github.com/KKimSangHeon/DormitorySleepOut" target="_blank" rel="external">-카카오톡 자동응답 서버 소스코드</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;프로그램-개발배경&quot;&gt;&lt;a href=&quot;#프로그램-개발배경&quot; class=&quot;headerlink&quot; title=&quot;프로그램 개발배경&quot;&gt;&lt;/a&gt;프로그램 개발배경&lt;/h1&gt;&lt;p&gt;-교내 기숙사의 외박계 프로그램이 존재하지 않으며, 업체에 의뢰하여 제작하려
-    
-    </summary>
-    
-      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
-    
-      <category term="My Projects" scheme="http://KKimSangHeon.github.io/categories/About-Me/My-Projects/"/>
-    
-    
-      <category term="Node.js" scheme="http://KKimSangHeon.github.io/tags/Node-js/"/>
-    
-      <category term="Kakao talk open API" scheme="http://KKimSangHeon.github.io/tags/Kakao-talk-open-API/"/>
-    
-      <category term="챗봇" scheme="http://KKimSangHeon.github.io/tags/%EC%B1%97%EB%B4%87/"/>
-    
-      <category term="MySQL" scheme="http://KKimSangHeon.github.io/tags/MySQL/"/>
-    
-      <category term="CentOS" scheme="http://KKimSangHeon.github.io/tags/CentOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Music Share</title>
-    <link href="http://KKimSangHeon.github.io/2017/06/30/music-share/"/>
-    <id>http://KKimSangHeon.github.io/2017/06/30/music-share/</id>
-    <published>2017-06-30T00:31:38.000Z</published>
-    <updated>2017-06-30T03:32:36.202Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="프로그램-개발배경"><a href="#프로그램-개발배경" class="headerlink" title="프로그램 개발배경"></a>프로그램 개발배경</h1><p>-C 소켓프로그래밍에 대한 이해를 높이고자 진행한 프로젝트입니다.</p>
-<h1 id="프로그램-소개"><a href="#프로그램-소개" class="headerlink" title="프로그램 소개"></a>프로그램 소개</h1><p>-본 프로그램은 회원가입기능, 로그인기능, 서버에 mp3파일을 올리는기능 등이 구현되어 있습니다. 회원가입을 하고 로그인 후 서버에 mp3파일을 올리거나 다운로드 받을 수 있습니다. 프로그램 개발환경은 우분투 14.04 LTS 입니다.</p>
-<h1 id="프로그램-기능"><a href="#프로그램-기능" class="headerlink" title="프로그램 기능"></a>프로그램 기능</h1><img src="/2017/06/30/music-share/music-share1.png" alt="서버에 접속한 클라이언트[그림1]" title="서버에 접속한 클라이언트[그림1]">
-<p>초기 서버에 접속하였을 경우 화면입니다. 서버에서는 클라이언트의 접속현황 및 상태를 확인할 수 있으며 클라이언트에서는 다음에 할 수 있는 일을 확인할 수 있습니다.</p>
-<img src="/2017/06/30/music-share/music-share2.png" alt="두 클라이언트가 회원가입[그림2]" title="두 클라이언트가 회원가입[그림2]">
-<p>두 클라이언트가 회원가입을 진행하고 있고 이에 대한 내용이 서버측 화면에 출력됩니다.</p>
-<img src="/2017/06/30/music-share/music-share3.png" alt="회원가입한 ID로 로그인[그림3]" title="회원가입한 ID로 로그인[그림3]">
-<p>클라이언트가 가입한 ID를 이용하여 로그인을 하였습니다. 로그인 후 에는 서버에 존재하는 mp3파일리스트를 조회하거나 mp3파일을 업로드, 다운로드 할 수있습니다.</p>
-<img src="/2017/06/30/music-share/music-share4.png" alt="로그인 후 mp3파일 업로드[그림4]" title="로그인 후 mp3파일 업로드[그림4]">
-<p>클라이언트가 로그인을 한 후 mp3파일을 업로드하는 화면입니다.</p>
-<img src="/2017/06/30/music-share/music-share5.png" alt="로그인 후 mp3파일 조회[그림5]" title="로그인 후 mp3파일 조회[그림5]">
-<p>클라이언트가 로그인을 한 후 서버에 존재하는 mp3파일을 조회하는 화면입니다.</p>
-<img src="/2017/06/30/music-share/music-share6.png" alt="mp3파일 다운로드[그림6]" title="mp3파일 다운로드[그림6]">
-<p>[그림4]에서 KSH클라이언트가 업로드한 hello.mp3 파일을 HRA클라이언트가 접속하여 다운로드 하는 화면입니다.</p>
-<img src="/2017/06/30/music-share/music-share7.png" alt="비밀번호 찾기기능[그림7]" title="비밀번호 찾기기능[그림7]">
-<p>비밀번호를 찾기위해 ID, Email을 입력하였고 이 후 비밀번호가 화면에 출력되는 모습입니다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;프로그램-개발배경&quot;&gt;&lt;a href=&quot;#프로그램-개발배경&quot; class=&quot;headerlink&quot; title=&quot;프로그램 개발배경&quot;&gt;&lt;/a&gt;프로그램 개발배경&lt;/h1&gt;&lt;p&gt;-C 소켓프로그래밍에 대한 이해를 높이고자 진행한 프로젝트입니다.&lt;/p&gt;
-&lt;
-    
-    </summary>
-    
-      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
-    
-      <category term="My Projects" scheme="http://KKimSangHeon.github.io/categories/About-Me/My-Projects/"/>
-    
-    
-      <category term="C" scheme="http://KKimSangHeon.github.io/tags/C/"/>
-    
-      <category term="Socket" scheme="http://KKimSangHeon.github.io/tags/Socket/"/>
-    
-      <category term="Music Share" scheme="http://KKimSangHeon.github.io/tags/Music-Share/"/>
-    
-      <category term="Ubuntu" scheme="http://KKimSangHeon.github.io/tags/Ubuntu/"/>
     
   </entry>
   
