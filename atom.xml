@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-07-04T10:23:36.099Z</updated>
+  <updated>2017-07-04T10:28:12.394Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>응급복구, GRUB, 커널 컴파일</title>
+    <title>4장. 응급복구, GRUB, 커널 컴파일</title>
     <link href="http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux11/"/>
     <id>http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux11/</id>
     <published>2017-07-04T07:09:17.000Z</published>
-    <updated>2017-07-04T10:23:36.099Z</updated>
+    <updated>2017-07-04T10:28:12.394Z</updated>
     
     <content type="html"><![CDATA[<h4 id="응급복구"><a href="#응급복구" class="headerlink" title="응급복구"></a>응급복구</h4><p>261p 참고<br>이게 문제가 될 소지가 있지않냐?<br>그래서 처음 켤때 선택하는거에서 암호를 걸어야 한다.</p>
 <h4 id="GRUB-부트로더"><a href="#GRUB-부트로더" class="headerlink" title="GRUB 부트로더"></a>GRUB 부트로더</h4><p>/etc/default/grub 파일과 /etc/grup.d/ 디렉터리의 파일을 수정한 후 ‘grub2-mkconfig’ 명령어를 실행해 설정함</p>
