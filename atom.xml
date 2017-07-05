@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-07-04T10:28:12.394Z</updated>
+  <updated>2017-07-05T07:33:59.622Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,123 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>6장. IDE/SCSI 장치 구성, 하드디스크 1개 추가</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/05/ThisIsLinux15/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/05/ThisIsLinux15/</id>
+    <published>2017-07-05T07:33:36.000Z</published>
+    <updated>2017-07-05T07:33:59.622Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
+    
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>5장 리눅스에 Windows 설치 KDE데스크톱 설치</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/05/ThisIsLinux14/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/05/ThisIsLinux14/</id>
+    <published>2017-07-05T06:37:05.000Z</published>
+    <updated>2017-07-05T07:33:26.433Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="리눅스-안에서-윈도우를-깔아보자"><a href="#리눅스-안에서-윈도우를-깔아보자" class="headerlink" title="리눅스 안에서 윈도우를 깔아보자"></a>리눅스 안에서 윈도우를 깔아보자</h4><p>CentOS에서 제공하는 가상머신을 이용하자<br>즉 가상머신에서 가상머신을 만드는…<br>램 올리고, 가상화 켜주고 311p참고</p>
+<p>iso 파일을 받고 내폴더에 붙여넣기 해준다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># mkdir /iso</div><div class="line"># mv 600* /iso    //파일이름이 600으로 시작함.</div><div class="line"># ls -l /iso</div></pre></td></tr></table></figure>
+<p>실습에서는 313p 의 2-0을 생략한다.<br>프로그램 -시스템 도구 -가상머진 관리자<br>로컬 선택 후 새가상머신 생성 왼쪽위 그림(노란색)<br>Win2008 입력후 로컬설치매체 선택후 앞으로<br>iso파일 선택하고 윈도우서버 2008 선택하고 앞으로<br>그대로 두고 앞으로<br>설치전에 사용자 설정 선택 후 완료<br>디스플레이를 VNC로 하고 적용<br>왼쪽 위 설치시작</p>
+<h4 id="KDE-데스크톱을-설치해보자"><a href="#KDE-데스크톱을-설치해보자" class="headerlink" title="KDE 데스크톱을 설치해보자"></a>KDE 데스크톱을 설치해보자</h4><p>센토스는 기본적으로 그놈데스크탑이 들어있다. 윈도우와 비슷한 KDE 데스크탑을 운영할 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ yum grouplist | grep KDE  //KDE 패키지그룹을 조회</div><div class="line">su -c &apos;yum -y groupinstall &quot;KDE Plasma Workspaces&quot;&apos;</div><div class="line">          //조회됨</div><div class="line"></div><div class="line">$ su -c &apos;yum -y groupinstall &quot;KDE Plasma Workspaces&quot;&apos;</div><div class="line">        //루트권한으로 &apos;&apos;안에 있는 명령어 실행(KDE 설치)</div></pre></td></tr></table></figure><br>자동로그인 해제 . 321p 참고<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ reboot</div></pre></td></tr></table></figure><br>톱니 누르고 KDE Plasma 작업공간 선택후 암호 입력 후 로그인</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;리눅스-안에서-윈도우를-깔아보자&quot;&gt;&lt;a href=&quot;#리눅스-안에서-윈도우를-깔아보자&quot; class=&quot;headerlink&quot; title=&quot;리눅스 안에서 윈도우를 깔아보자&quot;&gt;&lt;/a&gt;리눅스 안에서 윈도우를 깔아보자&lt;/h4&gt;&lt;p&gt;CentOS에서 제
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
+    
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>5장. 노틸러스, FireFox업그레이드, 기타 X윈도 유틸리티</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/05/ThisIsLinux13/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/05/ThisIsLinux13/</id>
+    <published>2017-07-05T04:47:34.000Z</published>
+    <updated>2017-07-05T06:36:48.389Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="노틸러스"><a href="#노틸러스" class="headerlink" title="노틸러스"></a>노틸러스</h4><p>윈도우 탐색기와 비슷하다.<br>실행법 : 프로그램-보조프로그램-파일</p>
+<p>내폴더가 홈 디렉토리이다.<br>컴퓨터가 / 폴더이다.<br>rpm 파일도 설치 가능<br>복붙도 가능 컨트롤 씨브이<br>289p 참고</p>
+<h4 id="파이어폭스-업그레이드"><a href="#파이어폭스-업그레이드" class="headerlink" title="파이어폭스 업그레이드"></a>파이어폭스 업그레이드</h4><p>설치하고<br>압축풀고</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"># mv firefox /usr/local   //압축푼것 위치이동</div><div class="line"># chown -R root.root /usr/local/firefox/ 루트에게 권한줌</div><div class="line"># cd /usr/local/bin</div><div class="line"># ln -s /usr/local/firefox/firefox . //링크를 걸어줌</div><div class="line"></div><div class="line">파폭을 실행하면 에러가 나는데</div><div class="line"></div><div class="line"># cd /usr/local/firefox/browser/extensions/</div><div class="line"># rm -rf *</div><div class="line">해주고 리부트</div></pre></td></tr></table></figure>
+<h4 id="어도비리더-설치"><a href="#어도비리더-설치" class="headerlink" title="어도비리더 설치"></a>어도비리더 설치</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># wget http://download.hanbit.co.kr/centos/7/AdobeReader_kor-8.1.7-1.i486.rpm</div><div class="line"></div><div class="line"># su -c &apos;yum -y localinstall Adobe*&apos;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;노틸러스&quot;&gt;&lt;a href=&quot;#노틸러스&quot; class=&quot;headerlink&quot; title=&quot;노틸러스&quot;&gt;&lt;/a&gt;노틸러스&lt;/h4&gt;&lt;p&gt;윈도우 탐색기와 비슷하다.&lt;br&gt;실행법 : 프로그램-보조프로그램-파일&lt;/p&gt;
+&lt;p&gt;내폴더가 홈 디렉토리이다.&lt;b
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
+    
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>5장. X윈도 테마, GRUB 배경화면</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/05/ThisIsLinux12/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/05/ThisIsLinux12/</id>
+    <published>2017-07-05T02:57:03.000Z</published>
+    <updated>2017-07-05T04:38:22.934Z</updated>
+    
+    <content type="html"><![CDATA[<p>이 챕터는 책에서 중요도가 가장 떨어진다!<br>서버관리자가 되었을 때 리눅스를 PC로 사용하는 사람에게 도움을 주기위해 알아둘 필요는 있다.</p>
+<h4 id="테마-설치하기"><a href="#테마-설치하기" class="headerlink" title="테마 설치하기"></a>테마 설치하기</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ rpm -qa gnome-tweak-tool  //설치되어있나 확인</div><div class="line">$ gnome-tweak-tool    //툴 켜서 설정변경</div></pre></td></tr></table></figure>
+<h4 id="GRUB-이미지-설정"><a href="#GRUB-이미지-설정" class="headerlink" title="GRUB 이미지 설정"></a>GRUB 이미지 설정</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$ su -c &apos;yum -y install grub2-starfield-theme&apos;</div><div class="line">  //암호입력    //su -c는 슈퍼바이저 권한으로 실행하는것</div><div class="line">$ vi /etc/default/grub</div><div class="line"></div><div class="line">GRUB_TIMEOUT=5</div><div class="line">GRUB_DISTRIBUTOR=&quot;$(sed &apos;s, release .*$,,g&apos; /etc/system-release)&quot;</div><div class="line">GRUB_DEFAULT=saved</div><div class="line">GRUB_DISABLE_SUBMENU=true</div><div class="line">#GRUB_TERMINAL_OUTPUT=&quot;console&quot;     //여기 주석처리</div><div class="line">GRUB_CMDLINE_LINUX=&quot;rd.lvm.lv=centos/swap vconsole.font=latarcyrheb-sun16 rd.lvm.lv=centos/root crashkernel=auto  vconsole.keymap=us rhgb quiet&quot;</div><div class="line">GRUB_DISABLE_RECOVERY=&quot;true&quot;</div><div class="line">GRUB_THEME=&quot;/boot/grub2/themes/system/theme.txt&quot;  //여기추가</div><div class="line"></div><div class="line">vi 저장후 종료</div></pre></td></tr></table></figure>
+<p>이미지 파일을 centos폴더에 저장 (ball.png)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mv /home/centos/ball.png /boot/grub2/themes/system</div></pre></td></tr></table></figure><br>실행하여 그림 이동</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># vi /boot/grub2/themes/system/theme.txt //</div><div class="line">:set number</div><div class="line"></div><div class="line">34행가서 이미지 파일이름 변경</div><div class="line"># grub2-mkconfig -o /boot/grub2/grub.cfg  //적용</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;이 챕터는 책에서 중요도가 가장 떨어진다!&lt;br&gt;서버관리자가 되었을 때 리눅스를 PC로 사용하는 사람에게 도움을 주기위해 알아둘 필요는 있다.&lt;/p&gt;
+&lt;h4 id=&quot;테마-설치하기&quot;&gt;&lt;a href=&quot;#테마-설치하기&quot; class=&quot;headerlink
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
+    
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>4장. 응급복구, GRUB, 커널 컴파일</title>
@@ -618,131 +735,6 @@
       <category term="Sort" scheme="http://KKimSangHeon.github.io/tags/Sort/"/>
     
       <category term="Quick Sort" scheme="http://KKimSangHeon.github.io/tags/Quick-Sort/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>병합정렬 (MergeSort)</title>
-    <link href="http://KKimSangHeon.github.io/2017/06/30/MergeSort/"/>
-    <id>http://KKimSangHeon.github.io/2017/06/30/MergeSort/</id>
-    <published>2017-06-30T05:36:10.000Z</published>
-    <updated>2017-06-30T11:02:44.760Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="병합정렬"><a href="#병합정렬" class="headerlink" title="병합정렬"></a>병합정렬</h3><p>재귀적으로 분할하여 병합하는 방식으로 재귀적으로 모든 요소들을 쪼갠 후 합쳐나간다. 시간복잡도는 O(nlog2n))이다.</p>
-<figure class="highlight c"><figcaption><span>MergeSort.c</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">MergeTwoArea</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> left, <span class="keyword">int</span> mid, <span class="keyword">int</span> right)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> fIdx = left;</div><div class="line">	<span class="keyword">int</span> rIdx = mid+<span class="number">1</span>;</div><div class="line">	<span class="keyword">int</span> i;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> * sortArr = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>)*(right+<span class="number">1</span>));</div><div class="line">	<span class="keyword">int</span> sIdx = left;</div><div class="line"></div><div class="line">	<span class="keyword">while</span>(fIdx&lt;=mid &amp;&amp; rIdx&lt;=right)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">if</span>(arr[fIdx] &lt;= arr[rIdx])</div><div class="line">			sortArr[sIdx] = arr[fIdx++];</div><div class="line">		<span class="keyword">else</span></div><div class="line">			sortArr[sIdx] = arr[rIdx++];</div><div class="line"></div><div class="line">		sIdx++;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(fIdx &gt; mid)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">for</span>(i=rIdx; i&lt;=right; i++, sIdx++)</div><div class="line">			sortArr[sIdx] = arr[i];</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">for</span>(i=fIdx; i&lt;=mid; i++, sIdx++)</div><div class="line">			sortArr[sIdx] = arr[i];</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">for</span>(i=left; i&lt;=right; i++)</div><div class="line">		arr[i] = sortArr[i];</div><div class="line"></div><div class="line">	<span class="built_in">free</span>(sortArr);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">MergeSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> mid;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(left &lt; right)</div><div class="line">	&#123;</div><div class="line">		<span class="comment">// 중간 지점을 계산한다.</span></div><div class="line">		mid = (left+right) / <span class="number">2</span>;</div><div class="line"></div><div class="line">		<span class="comment">// 둘로 나눠서 각각을 정렬한다.</span></div><div class="line">		MergeSort(arr, left, mid);</div><div class="line">		MergeSort(arr, mid+<span class="number">1</span>, right);</div><div class="line"></div><div class="line">		<span class="comment">// 정렬된 두 배열을 병합한다.</span></div><div class="line">		MergeTwoArea(arr, left, mid, right);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>참고 : 윤성우의 열혈 자료구조</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;병합정렬&quot;&gt;&lt;a href=&quot;#병합정렬&quot; class=&quot;headerlink&quot; title=&quot;병합정렬&quot;&gt;&lt;/a&gt;병합정렬&lt;/h3&gt;&lt;p&gt;재귀적으로 분할하여 병합하는 방식으로 재귀적으로 모든 요소들을 쪼갠 후 합쳐나간다. 시간복잡도는 O(nlog2n
-    
-    </summary>
-    
-      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/"/>
-    
-      <category term="Sort" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/Sort/"/>
-    
-    
-      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/tags/Data-Structure/"/>
-    
-      <category term="Sort" scheme="http://KKimSangHeon.github.io/tags/Sort/"/>
-    
-      <category term="Merge Sort" scheme="http://KKimSangHeon.github.io/tags/Merge-Sort/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>힙정렬 (HeapSort)</title>
-    <link href="http://KKimSangHeon.github.io/2017/06/30/HeapSort/"/>
-    <id>http://KKimSangHeon.github.io/2017/06/30/HeapSort/</id>
-    <published>2017-06-30T05:35:38.000Z</published>
-    <updated>2017-06-30T11:02:55.505Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="힙-정렬"><a href="#힙-정렬" class="headerlink" title="힙 정렬"></a>힙 정렬</h3><p>힙을 만들어서 힙에 넣고 빼는것으로서 시간복잡도는 O(nlog2n) 이다.</p>
-<figure class="highlight c"><figcaption><span>BubbleSort.c</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</div><div class="line">	HInsert(&amp;heap,arr[i]);</div><div class="line"></div><div class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</div><div class="line">	arr[i]=HDelete(&amp;heap);</div></pre></td></tr></table></figure>
-<p>참고 : 윤성우의 열혈 자료구조</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;힙-정렬&quot;&gt;&lt;a href=&quot;#힙-정렬&quot; class=&quot;headerlink&quot; title=&quot;힙 정렬&quot;&gt;&lt;/a&gt;힙 정렬&lt;/h3&gt;&lt;p&gt;힙을 만들어서 힙에 넣고 빼는것으로서 시간복잡도는 O(nlog2n) 이다.&lt;/p&gt;
-&lt;figure class=&quot;h
-    
-    </summary>
-    
-      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/"/>
-    
-      <category term="Sort" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/Sort/"/>
-    
-    
-      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/tags/Data-Structure/"/>
-    
-      <category term="Sort" scheme="http://KKimSangHeon.github.io/tags/Sort/"/>
-    
-      <category term="Heap Sort" scheme="http://KKimSangHeon.github.io/tags/Heap-Sort/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>삽입정렬 (InsertionSort)</title>
-    <link href="http://KKimSangHeon.github.io/2017/06/30/InsertionSort/"/>
-    <id>http://KKimSangHeon.github.io/2017/06/30/InsertionSort/</id>
-    <published>2017-06-30T05:35:28.000Z</published>
-    <updated>2017-06-30T11:03:11.884Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="삽입정렬"><a href="#삽입정렬" class="headerlink" title="삽입정렬"></a>삽입정렬</h3><p>1~n까지 정렬해 나감 1~2 정렬 12묶음 3정렬 13묶음 4정렬<br>첫 번째 데이터는 정렬이 되어있다고 봄. 그래서 i=0이아닌 1부터 시작.시간복잡도는 O(n^2) 이다.</p>
-<figure class="highlight c"><figcaption><span>InsertionSort.c</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</div><div class="line">&#123;</div><div class="line">	insData=arr[i];	<span class="comment">//정렬대상을 insData에 저장</span></div><div class="line">	<span class="keyword">for</span>(j=i<span class="number">-1</span>;i&gt;=<span class="number">0</span>;j--)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">if</span>(arr[j]&gt;insData)</div><div class="line">			arr[j+<span class="number">1</span>]=arr[j];</div><div class="line">		<span class="keyword">else</span></div><div class="line">			<span class="keyword">break</span>;</div><div class="line">	&#125;</div><div class="line">	arr[j+<span class="number">1</span>]=insData;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>참고 : 윤성우의 열혈 자료구조</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;삽입정렬&quot;&gt;&lt;a href=&quot;#삽입정렬&quot; class=&quot;headerlink&quot; title=&quot;삽입정렬&quot;&gt;&lt;/a&gt;삽입정렬&lt;/h3&gt;&lt;p&gt;1~n까지 정렬해 나감 1~2 정렬 12묶음 3정렬 13묶음 4정렬&lt;br&gt;첫 번째 데이터는 정렬이 되어있다고 봄
-    
-    </summary>
-    
-      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/"/>
-    
-      <category term="Sort" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/Sort/"/>
-    
-    
-      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/tags/Data-Structure/"/>
-    
-      <category term="Sort" scheme="http://KKimSangHeon.github.io/tags/Sort/"/>
-    
-      <category term="Insertion Sort" scheme="http://KKimSangHeon.github.io/tags/Insertion-Sort/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>선택정렬 (SelectionSort)</title>
-    <link href="http://KKimSangHeon.github.io/2017/06/30/SelectionSort/"/>
-    <id>http://KKimSangHeon.github.io/2017/06/30/SelectionSort/</id>
-    <published>2017-06-30T04:59:38.000Z</published>
-    <updated>2017-06-30T11:03:24.859Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="선택정렬"><a href="#선택정렬" class="headerlink" title="선택정렬"></a>선택정렬</h3><p>오름차순일 경우 작은걸 맨앞에 넣고 그 다음 작은걸 두 번째 넣고 ..<br>이 과정을 계속 반복한다. 시간복잡도는 O(n^2) 이다.</p>
-<figure class="highlight c"><figcaption><span>SelectionSort.c</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)</div><div class="line">&#123;</div><div class="line">	maxIdx=i;</div><div class="line">	<span class="keyword">for</span>(j=i+<span class="number">1</span>;j&lt;n;j++)	<span class="comment">//최소값 탐색</span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">if</span>(arr[i]&lt;arr[maxIdx])</div><div class="line">			maxIdx=j;</div><div class="line">	&#125;</div><div class="line">	swap;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>참고 : 윤성우의 열혈 자료구조</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;선택정렬&quot;&gt;&lt;a href=&quot;#선택정렬&quot; class=&quot;headerlink&quot; title=&quot;선택정렬&quot;&gt;&lt;/a&gt;선택정렬&lt;/h3&gt;&lt;p&gt;오름차순일 경우 작은걸 맨앞에 넣고 그 다음 작은걸 두 번째 넣고 ..&lt;br&gt;이 과정을 계속 반복한다. 시간복잡
-    
-    </summary>
-    
-      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/"/>
-    
-      <category term="Sort" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/Sort/"/>
-    
-    
-      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/tags/Data-Structure/"/>
-    
-      <category term="Sort" scheme="http://KKimSangHeon.github.io/tags/Sort/"/>
-    
-      <category term="Selection Sort" scheme="http://KKimSangHeon.github.io/tags/Selection-Sort/"/>
     
   </entry>
   
