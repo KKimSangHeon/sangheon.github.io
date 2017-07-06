@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="하드디스크 관리는 관리자 입장에서 기본적인것이다.디스크가 모자르면 디스크를 추가해야한다.. 이런걸 어떻게 할지 알아보자 IDE SCSI 장치에 대해IDE는 케이블을 2개 꽂을수가 있다. 여기에 하드디스크를 장착하거나 DVD롬을 장착할 수 있다. 즉 두개의 IDE가 있으면 4개를 장착할 수 있다. 0:0 , 0:1, 1:0 , 1:1 이렇게 구분된다(4개일">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
-<meta property="og:updated_time" content="2017-07-05T10:40:10.301Z">
+<meta property="og:updated_time" content="2017-07-05T11:05:49.132Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="6장. IDE&#x2F;SCSI 장치 구성, 하드디스크 1개 추가">
 <meta name="twitter:description" content="하드디스크 관리는 관리자 입장에서 기본적인것이다.디스크가 모자르면 디스크를 추가해야한다.. 이런걸 어떻게 할지 알아보자 IDE SCSI 장치에 대해IDE는 케이블을 2개 꽂을수가 있다. 여기에 하드디스크를 장착하거나 DVD롬을 장착할 수 있다. 즉 두개의 IDE가 있으면 4개를 장착할 수 있다. 0:0 , 0:1, 1:0 , 1:1 이렇게 구분된다(4개일">
@@ -197,7 +197,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/07/05/ThisIsLinux15/" data-id="cj4qvhaq7002e2cv7a8pf4hjz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/07/05/ThisIsLinux15/" data-id="cj4s89t420027u0v70b7tt1by" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -302,6 +302,16 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
+        <a href="/2017/07/06/ThisIsLinux16/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            6장. RAID 정의 및 개념,구현
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2017/07/05/ThisIsLinux14/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
@@ -319,7 +329,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">15</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">19</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">17</span></li></ul></li></ul>
         </div>
     </div>
 

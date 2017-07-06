@@ -3,25 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>4장. 응급복구, GRUB, 커널 컴파일 | Kim Sang Heon&#39;s Bolg</title>
+    <title>RAID 0,1,5 의 고장과 원상 복구 | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="Linux,This Is Linux" />
     
     
 
-      <meta name="description" content="응급복구261p 참고이게 문제가 될 소지가 있지않냐?그래서 처음 켤때 선택하는거에서 암호를 걸어야 한다. GRUB 부트로더/etc/default/grub 파일과 /etc/grup.d/ 디렉터리의 파일을 수정한 후 ‘grub2-mkconfig’ 명령어를 실행해 설정함 123456789101112131415161718# vi /etc/default/grubti">
+      <meta name="description" content="SCSI 2,4,6,9를 고장내 놓고 잘동작하는 지 확인 해 보겠다. 잘 동작하나 확인하기 위해 고장내기 전에 파일을 옮긴다.123456# cp /boot/vmlinuz-3*  /raidLinear/testFile# cp /boot/vmlinuz-3*  /raid0/testFile# cp /boot/vmlinuz-3*  /raid1/testFile# cp">
 <meta name="keywords" content="Linux,This Is Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="4장. 응급복구, GRUB, 커널 컴파일">
-<meta property="og:url" content="http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux11/index.html">
+<meta property="og:title" content="RAID 0,1,5 의 고장과 원상 복구">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2017/07/06/ThisIsLinux17/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="응급복구261p 참고이게 문제가 될 소지가 있지않냐?그래서 처음 켤때 선택하는거에서 암호를 걸어야 한다. GRUB 부트로더/etc/default/grub 파일과 /etc/grup.d/ 디렉터리의 파일을 수정한 후 ‘grub2-mkconfig’ 명령어를 실행해 설정함 123456789101112131415161718# vi /etc/default/grubti">
+<meta property="og:description" content="SCSI 2,4,6,9를 고장내 놓고 잘동작하는 지 확인 해 보겠다. 잘 동작하나 확인하기 위해 고장내기 전에 파일을 옮긴다.123456# cp /boot/vmlinuz-3*  /raidLinear/testFile# cp /boot/vmlinuz-3*  /raid0/testFile# cp /boot/vmlinuz-3*  /raid1/testFile# cp">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
-<meta property="og:updated_time" content="2017-07-04T10:28:12.394Z">
+<meta property="og:updated_time" content="2017-07-06T09:26:17.105Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="4장. 응급복구, GRUB, 커널 컴파일">
-<meta name="twitter:description" content="응급복구261p 참고이게 문제가 될 소지가 있지않냐?그래서 처음 켤때 선택하는거에서 암호를 걸어야 한다. GRUB 부트로더/etc/default/grub 파일과 /etc/grup.d/ 디렉터리의 파일을 수정한 후 ‘grub2-mkconfig’ 명령어를 실행해 설정함 123456789101112131415161718# vi /etc/default/grubti">
+<meta name="twitter:title" content="RAID 0,1,5 의 고장과 원상 복구">
+<meta name="twitter:description" content="SCSI 2,4,6,9를 고장내 놓고 잘동작하는 지 확인 해 보겠다. 잘 동작하나 확인하기 위해 고장내기 전에 파일을 옮긴다.123456# cp /boot/vmlinuz-3*  /raidLinear/testFile# cp /boot/vmlinuz-3*  /raid0/testFile# cp /boot/vmlinuz-3*  /raid1/testFile# cp">
 <meta name="twitter:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
@@ -138,14 +138,14 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-ThisIsLinux11" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-ThisIsLinux17" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        4장. 응급복구, GRUB, 커널 컴파일
+        RAID 0,1,5 의 고장과 원상 복구
         </h1>
     
 
@@ -155,8 +155,8 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/07/04/ThisIsLinux11/" class="article-date">
-            <time datetime="2017-07-04T07:09:17.000Z" itemprop="datePublished">2017-07-04</time>
+        <a href="/2017/07/06/ThisIsLinux17/" class="article-date">
+            <time datetime="2017-07-06T03:33:07.000Z" itemprop="datePublished">2017-07-06</time>
         </a>
     </div>
 
@@ -170,11 +170,25 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h4 id="응급복구"><a href="#응급복구" class="headerlink" title="응급복구"></a>응급복구</h4><p>261p 참고<br>이게 문제가 될 소지가 있지않냐?<br>그래서 처음 켤때 선택하는거에서 암호를 걸어야 한다.</p>
-<h4 id="GRUB-부트로더"><a href="#GRUB-부트로더" class="headerlink" title="GRUB 부트로더"></a>GRUB 부트로더</h4><p>/etc/default/grub 파일과 /etc/grup.d/ 디렉터리의 파일을 수정한 후 ‘grub2-mkconfig’ 명령어를 실행해 설정함</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"># vi /etc/default/grub</div><div class="line">timeout = 30 으로 변경</div><div class="line">distributor = &quot;Hello&quot; 로 변경</div><div class="line"># grub2-mkconfig -o /boot/grub2/grub.cfg // 변경사항 반영</div><div class="line"></div><div class="line">//여기서 부터 선택하는 곳에서 e 키 못누르게 비번 설정하는것</div><div class="line"># vi /etc/grub.d/00_header</div><div class="line">맨 아래 가서 다음코드 추가</div><div class="line">cat &lt;&lt; EOF</div><div class="line">set superusers=&quot;thisuser&quot;</div><div class="line">password thisuser 4321</div><div class="line">EOF</div><div class="line">여기까지!</div><div class="line">vi 빠져나와서</div><div class="line"># grub2-mkconfig -o /boot/grub2/grub.cfg // 변경사항 반영</div><div class="line">$ reboot</div><div class="line">선택하는곳에서 e 누르면 암호 누르도록 함</div><div class="line"></div></pre></td></tr></table></figure>
-<h4 id="커널"><a href="#커널" class="headerlink" title="커널"></a>커널</h4><p>커널 : 하드웨어를 제어하는 기능<br>모든 하드웨어를 제어하는 코드를 다 넣으면 커널이 너무 커지고 무거워진다. 그러므로 잘 안쓰는 하드웨어 코드는 모듈에 빼내서 필요할때마다 사용<br>즉 모듈은 필요할때 쓸 수 있도록 커널의 코드를 밖으로 빼낸것이다!</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">$ uname -r //커널버전확인</div><div class="line">$ wget &quot;https://kernel.org/pub/linux/kernel/v3.x/linux-3.17.4.tar.xz&quot;</div><div class="line">  //교재와 동일한 커널 설치</div><div class="line">$ mv linux-3.17.4.tar.xz /usr/src</div><div class="line">$ cd /usr/src</div><div class="line">$ tar xfJ linux-3.17.4.tar.xz   //압축을 풀자</div><div class="line">$ cd linux-3.17.4/</div><div class="line"></div><div class="line">커널은 c 코드이므로 설치를 위해 컴파일러를 깔자</div><div class="line">$ yum -y install gcc gcc-c++ qt qt-devel</div><div class="line">$ make mrproper // 커널설정 초기화</div><div class="line">$ make xconfig  //커널의 환경설정</div><div class="line">  설정 후</div><div class="line">$ make clean</div><div class="line">$make ;  make modules_install ; make install  //순서대로 진행됨.</div><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+            <p>SCSI 2,4,6,9를 고장내 놓고 잘동작하는 지 확인 해 보겠다.</p>
+<p>잘 동작하나 확인하기 위해 고장내기 전에 파일을 옮긴다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># cp /boot/vmlinuz-3*  /raidLinear/testFile</div><div class="line"># cp /boot/vmlinuz-3*  /raid0/testFile</div><div class="line"># cp /boot/vmlinuz-3*  /raid1/testFile</div><div class="line"># cp /boot/vmlinuz-3*  /raid5/testFile</div><div class="line"></div><div class="line"># halt -p</div></pre></td></tr></table></figure><br>vmplayer을 켜고 SCSI 2,4,6,9 디스크를 제거<br>쫌 지나면 응급복구모드로 실행이됨<br>암호를 입력해주자</p>
+<p>ls -l /dev/sd* 을 하니까 당겨져 있다. sdc가 sdb 이런식으로</p>
+<p>RAID 1, 5 는 데이터가 살아있어야 한다.</p>
+<h4 id="RAID-1-확인"><a href="#RAID-1-확인" class="headerlink" title="RAID 1 확인"></a>RAID 1 확인</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># df    //마운트가 다 끊겨있다.</div><div class="line"># mdadm --run /dev/md1   //강제로 가동시키는 것</div><div class="line">시작되었다.</div><div class="line"># df  //raid1가 마운트 된것을 확인.</div><div class="line"># ls -l /raid1    //데이터가 잘 있는지 확인</div><div class="line"># mdadm --detail /dev/md1   //하나는 살아있고 하나는 removed인것을 확인</div><div class="line"></div></pre></td></tr></table></figure>
+<h4 id="RAID-5-확인"><a href="#RAID-5-확인" class="headerlink" title="RAID 5 확인"></a>RAID 5 확인</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># mdadm --run /dev/md5   //강제로 가동시키는 것</div><div class="line">시작되었다.</div><div class="line"># df  //raid5가 마운트 된것을 확인.</div><div class="line"># ls -l /raid5    //데이터가 잘 있는지 확인</div><div class="line"># mdadm --detail /dev/md5   //하나는 살아있고 하나는 removed인것을 확인</div></pre></td></tr></table></figure>
+<h4 id="RAIDLinear-확인"><a href="#RAIDLinear-확인" class="headerlink" title="RAIDLinear  확인"></a>RAIDLinear  확인</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># mdadm --run /dev/md9   //강제로 가동시키는 것</div><div class="line">실행할 수 없다. 결함을 허용하지 않음</div></pre></td></tr></table></figure>
+<h4 id="RAID-0-확인"><a href="#RAID-0-확인" class="headerlink" title="RAID 0 확인"></a>RAID 0 확인</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># mdadm --run /dev/md0   //강제로 가동시키는 것</div><div class="line">실행할 수 없다. 결함을 허용하지 않음</div></pre></td></tr></table></figure>
+<h4 id="시스템이-재대로-실행되도록-해보자"><a href="#시스템이-재대로-실행되도록-해보자" class="headerlink" title="시스템이 재대로 실행되도록 해보자"></a>시스템이 재대로 실행되도록 해보자</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"># mdadm --stop /dev/md9     //종료</div><div class="line"># mdadm --stop /dev/md0     //종료</div><div class="line"></div><div class="line"># vi /etc/fstab</div><div class="line">md9,md0 주석 하고</div><div class="line"># reboot</div><div class="line"></div><div class="line">리부트를 했는데 복구모드로 실행이 된다면 컨트롤 D를 누르고</div><div class="line">실행한 다음에 재 마운트를 해주면 된다.</div><div class="line"></div><div class="line"># df    //마운트가 되어있는것 확인.</div></pre></td></tr></table></figure>
+<h4 id="새로운-디스크를-장착하여-원상복구를-시켜보자"><a href="#새로운-디스크를-장착하여-원상복구를-시켜보자" class="headerlink" title="새로운 디스크를 장착하여 원상복구를 시켜보자"></a>새로운 디스크를 장착하여 원상복구를 시켜보자</h4><p>Linear RAID, RAID 0 은 데이터를 살릴 순 없다.<br>그러나 RAID 1, RAID 5는 데이터를 살릴 수 있다.</p>
+<p>vmplayer에서 디스크 4개를 1기가씩 주고 추가하자. 알아서 빈곳을 잘 찾아간다.</p>
+<p>우리가 조금전 추가했던것은 sdc, sde, sdg, sdi 이다.<br>2,4,6,9 로 들어갔으므로..</p>
+<p>RAID 0, Linear Raid는 새로 만들어주어야 한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"># ls -l /dev/sd*    //</div><div class="line"># fdisk /dev/sdc~sdi 까지</div><div class="line">  n 입력</div><div class="line">  p 입력</div><div class="line">  엔터 엔터</div><div class="line">  t 입력</div><div class="line">  fd 입력</div><div class="line">  w 입력</div><div class="line"></div><div class="line"># mdadm --stop /dev/md9   //다시만들기위해 stop</div><div class="line"># mdadm --create /dev/md9 --level=linear --raid-devices=2 /dev/sdb1 /dev/sdc1</div><div class="line">#mdadm --detail /dev/md9 //확인해보자</div><div class="line"></div><div class="line"># mdadm --stop /dev/md0   //다시만들기위해 stop</div><div class="line"># mdadm --create /dev/md0 --level=0 --raid-devices=2 /dev/sdd1 /dev/sde1</div><div class="line"># mdadm --detail /dev/md9 //확인해보자</div></pre></td></tr></table></figure></p>
+<p>RAID 1, RAID 5는 새로만들면 안되고 추가해주어야 한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"># mdadm /dev/md1 --add /dev/sdg1</div><div class="line"></div><div class="line"># mdadm /dev/md5 --add /dev/sdi1</div><div class="line"></div><div class="line"># vi /etc/fstab</div><div class="line"></div><div class="line">/dev/md9    /raidLinear   ext4    defaults    1 2</div><div class="line">/dev/md0    /raid0   ext4         defaults    1 2</div><div class="line">/dev/md1    /raid1   ext4    defaults    1 2</div><div class="line">/dev/md5    /raid5   ext4    defaults    1 2</div><div class="line"></div><div class="line">이렇게 바꿔준다.</div><div class="line"># reboot</div><div class="line"># df      //마운트 확인.</div></pre></td></tr></table></figure></p>
+<p>데이터를 한번 확인해보자.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"># ls -l /raid0</div><div class="line">drwx------ 2 root root   16384  7월  6 17:26 lost+found</div><div class="line">-rwxr-xr-x 1 root root 4902656  7월  6 17:31 testFile</div><div class="line"></div><div class="line"># ls -l /raid1</div><div class="line">drwx------ 2 root root   16384  7월  6 17:27 lost+found</div><div class="line">-rwxr-xr-x 1 root root 4902656  7월  6 17:31 testFile</div><div class="line"></div><div class="line"># ls -l /raid5</div><div class="line">drwx------ 2 root root   16384  7월  6 17:29 lost+found</div><div class="line">-rwxr-xr-x 1 root root 4902656  7월  6 17:31 testFile</div><div class="line"></div><div class="line"># ls -l /raidLinear</div><div class="line">drwx------ 2 root root   16384  7월  6 17:25 lost+found</div><div class="line">-rwxr-xr-x 1 root root 4902656  7월  6 17:31 testFile</div></pre></td></tr></table></figure>
+<p>raid 1그리고 raid5 는 데이터가 있을것이라 예상했지만 raid0 그리고 raidLinear도 데이터가 존재한다. 어떻게 된 것일까? 운이 좋게 지워지지않은 영역에 존재하는 것일 것이다. 그러므로 데이터를 신뢰 할 수 없으며 이는 포멧을 해주는 것이 좋다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># umount /dev/md0   //포멧하기전에 마운트를 끊음</div><div class="line"># umount /dev/md9</div><div class="line"></div><div class="line"># mkfs.ext4 /dev/md0  //포멧</div><div class="line"># mkfs.ext4 /dev/md9</div><div class="line"></div><div class="line"># reboot    //리부트를 하지않고 바로 마운트를 해줘도됨.</div><div class="line">          //어차피 리부트하면 마운트되어있으니까 아무거나 선택!</div></pre></td></tr></table></figure>
+<p>raid 1, raid 5 의 고장난 디스크에 대해서 따로 작업을 해 줘야할줄 알았는데 –add만 하면 되어서 생각보다 간단하다고 생각했다.</p>
 
         </div>
         <footer class="article-footer">
@@ -182,7 +196,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux11/" data-id="cj4s89t3y001yu0v784wlg30z" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/07/06/ThisIsLinux17/" data-id="cj4s89t44002au0v7m4bk5e7q" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -287,20 +301,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/07/05/ThisIsLinux12/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            5장. X윈도 테마, GRUB 배경화면
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/07/04/ThisIsLinux10/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/07/06/ThisIsLinux16/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">4장. 파이프/필터, 프로세스, 서비스/소켓</p>
+        <p class="article-nav-title">6장. RAID 정의 및 개념,구현</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -346,7 +350,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'https-kkimsangheon-github-io-2';
     
     
-    var disqus_url = 'http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux11/';
+    var disqus_url = 'http://KKimSangHeon.github.io/2017/07/06/ThisIsLinux17/';
     
     (function() {
     var dsq = document.createElement('script');

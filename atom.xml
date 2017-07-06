@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-07-05T10:40:10.301Z</updated>
+  <updated>2017-07-06T09:26:17.105Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,108 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>RAID 0,1,5 의 고장과 원상 복구</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/06/ThisIsLinux17/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/06/ThisIsLinux17/</id>
+    <published>2017-07-06T03:33:07.000Z</published>
+    <updated>2017-07-06T09:26:17.105Z</updated>
+    
+    <content type="html"><![CDATA[<p>SCSI 2,4,6,9를 고장내 놓고 잘동작하는 지 확인 해 보겠다.</p>
+<p>잘 동작하나 확인하기 위해 고장내기 전에 파일을 옮긴다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># cp /boot/vmlinuz-3*  /raidLinear/testFile</div><div class="line"># cp /boot/vmlinuz-3*  /raid0/testFile</div><div class="line"># cp /boot/vmlinuz-3*  /raid1/testFile</div><div class="line"># cp /boot/vmlinuz-3*  /raid5/testFile</div><div class="line"></div><div class="line"># halt -p</div></pre></td></tr></table></figure><br>vmplayer을 켜고 SCSI 2,4,6,9 디스크를 제거<br>쫌 지나면 응급복구모드로 실행이됨<br>암호를 입력해주자</p>
+<p>ls -l /dev/sd* 을 하니까 당겨져 있다. sdc가 sdb 이런식으로</p>
+<p>RAID 1, 5 는 데이터가 살아있어야 한다.</p>
+<h4 id="RAID-1-확인"><a href="#RAID-1-확인" class="headerlink" title="RAID 1 확인"></a>RAID 1 확인</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># df    //마운트가 다 끊겨있다.</div><div class="line"># mdadm --run /dev/md1   //강제로 가동시키는 것</div><div class="line">시작되었다.</div><div class="line"># df  //raid1가 마운트 된것을 확인.</div><div class="line"># ls -l /raid1    //데이터가 잘 있는지 확인</div><div class="line"># mdadm --detail /dev/md1   //하나는 살아있고 하나는 removed인것을 확인</div><div class="line"></div></pre></td></tr></table></figure>
+<h4 id="RAID-5-확인"><a href="#RAID-5-확인" class="headerlink" title="RAID 5 확인"></a>RAID 5 확인</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># mdadm --run /dev/md5   //강제로 가동시키는 것</div><div class="line">시작되었다.</div><div class="line"># df  //raid5가 마운트 된것을 확인.</div><div class="line"># ls -l /raid5    //데이터가 잘 있는지 확인</div><div class="line"># mdadm --detail /dev/md5   //하나는 살아있고 하나는 removed인것을 확인</div></pre></td></tr></table></figure>
+<h4 id="RAIDLinear-확인"><a href="#RAIDLinear-확인" class="headerlink" title="RAIDLinear  확인"></a>RAIDLinear  확인</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># mdadm --run /dev/md9   //강제로 가동시키는 것</div><div class="line">실행할 수 없다. 결함을 허용하지 않음</div></pre></td></tr></table></figure>
+<h4 id="RAID-0-확인"><a href="#RAID-0-확인" class="headerlink" title="RAID 0 확인"></a>RAID 0 확인</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># mdadm --run /dev/md0   //강제로 가동시키는 것</div><div class="line">실행할 수 없다. 결함을 허용하지 않음</div></pre></td></tr></table></figure>
+<h4 id="시스템이-재대로-실행되도록-해보자"><a href="#시스템이-재대로-실행되도록-해보자" class="headerlink" title="시스템이 재대로 실행되도록 해보자"></a>시스템이 재대로 실행되도록 해보자</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"># mdadm --stop /dev/md9     //종료</div><div class="line"># mdadm --stop /dev/md0     //종료</div><div class="line"></div><div class="line"># vi /etc/fstab</div><div class="line">md9,md0 주석 하고</div><div class="line"># reboot</div><div class="line"></div><div class="line">리부트를 했는데 복구모드로 실행이 된다면 컨트롤 D를 누르고</div><div class="line">실행한 다음에 재 마운트를 해주면 된다.</div><div class="line"></div><div class="line"># df    //마운트가 되어있는것 확인.</div></pre></td></tr></table></figure>
+<h4 id="새로운-디스크를-장착하여-원상복구를-시켜보자"><a href="#새로운-디스크를-장착하여-원상복구를-시켜보자" class="headerlink" title="새로운 디스크를 장착하여 원상복구를 시켜보자"></a>새로운 디스크를 장착하여 원상복구를 시켜보자</h4><p>Linear RAID, RAID 0 은 데이터를 살릴 순 없다.<br>그러나 RAID 1, RAID 5는 데이터를 살릴 수 있다.</p>
+<p>vmplayer에서 디스크 4개를 1기가씩 주고 추가하자. 알아서 빈곳을 잘 찾아간다.</p>
+<p>우리가 조금전 추가했던것은 sdc, sde, sdg, sdi 이다.<br>2,4,6,9 로 들어갔으므로..</p>
+<p>RAID 0, Linear Raid는 새로 만들어주어야 한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"># ls -l /dev/sd*    //</div><div class="line"># fdisk /dev/sdc~sdi 까지</div><div class="line">  n 입력</div><div class="line">  p 입력</div><div class="line">  엔터 엔터</div><div class="line">  t 입력</div><div class="line">  fd 입력</div><div class="line">  w 입력</div><div class="line"></div><div class="line"># mdadm --stop /dev/md9   //다시만들기위해 stop</div><div class="line"># mdadm --create /dev/md9 --level=linear --raid-devices=2 /dev/sdb1 /dev/sdc1</div><div class="line">#mdadm --detail /dev/md9 //확인해보자</div><div class="line"></div><div class="line"># mdadm --stop /dev/md0   //다시만들기위해 stop</div><div class="line"># mdadm --create /dev/md0 --level=0 --raid-devices=2 /dev/sdd1 /dev/sde1</div><div class="line"># mdadm --detail /dev/md9 //확인해보자</div></pre></td></tr></table></figure></p>
+<p>RAID 1, RAID 5는 새로만들면 안되고 추가해주어야 한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"># mdadm /dev/md1 --add /dev/sdg1</div><div class="line"></div><div class="line"># mdadm /dev/md5 --add /dev/sdi1</div><div class="line"></div><div class="line"># vi /etc/fstab</div><div class="line"></div><div class="line">/dev/md9    /raidLinear   ext4    defaults    1 2</div><div class="line">/dev/md0    /raid0   ext4         defaults    1 2</div><div class="line">/dev/md1    /raid1   ext4    defaults    1 2</div><div class="line">/dev/md5    /raid5   ext4    defaults    1 2</div><div class="line"></div><div class="line">이렇게 바꿔준다.</div><div class="line"># reboot</div><div class="line"># df      //마운트 확인.</div></pre></td></tr></table></figure></p>
+<p>데이터를 한번 확인해보자.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"># ls -l /raid0</div><div class="line">drwx------ 2 root root   16384  7월  6 17:26 lost+found</div><div class="line">-rwxr-xr-x 1 root root 4902656  7월  6 17:31 testFile</div><div class="line"></div><div class="line"># ls -l /raid1</div><div class="line">drwx------ 2 root root   16384  7월  6 17:27 lost+found</div><div class="line">-rwxr-xr-x 1 root root 4902656  7월  6 17:31 testFile</div><div class="line"></div><div class="line"># ls -l /raid5</div><div class="line">drwx------ 2 root root   16384  7월  6 17:29 lost+found</div><div class="line">-rwxr-xr-x 1 root root 4902656  7월  6 17:31 testFile</div><div class="line"></div><div class="line"># ls -l /raidLinear</div><div class="line">drwx------ 2 root root   16384  7월  6 17:25 lost+found</div><div class="line">-rwxr-xr-x 1 root root 4902656  7월  6 17:31 testFile</div></pre></td></tr></table></figure>
+<p>raid 1그리고 raid5 는 데이터가 있을것이라 예상했지만 raid0 그리고 raidLinear도 데이터가 존재한다. 어떻게 된 것일까? 운이 좋게 지워지지않은 영역에 존재하는 것일 것이다. 그러므로 데이터를 신뢰 할 수 없으며 이는 포멧을 해주는 것이 좋다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># umount /dev/md0   //포멧하기전에 마운트를 끊음</div><div class="line"># umount /dev/md9</div><div class="line"></div><div class="line"># mkfs.ext4 /dev/md0  //포멧</div><div class="line"># mkfs.ext4 /dev/md9</div><div class="line"></div><div class="line"># reboot    //리부트를 하지않고 바로 마운트를 해줘도됨.</div><div class="line">          //어차피 리부트하면 마운트되어있으니까 아무거나 선택!</div></pre></td></tr></table></figure>
+<p>raid 1, raid 5 의 고장난 디스크에 대해서 따로 작업을 해 줘야할줄 알았는데 –add만 하면 되어서 생각보다 간단하다고 생각했다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;SCSI 2,4,6,9를 고장내 놓고 잘동작하는 지 확인 해 보겠다.&lt;/p&gt;
+&lt;p&gt;잘 동작하나 확인하기 위해 고장내기 전에 파일을 옮긴다.&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gu
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
+    
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>6장. RAID 정의 및 개념,구현</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/06/ThisIsLinux16/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/06/ThisIsLinux16/</id>
+    <published>2017-07-06T00:13:09.000Z</published>
+    <updated>2017-07-06T07:00:53.610Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="RAID"><a href="#RAID" class="headerlink" title="RAID"></a>RAID</h4><p>Redundant Array of Inexpensive Disks<br>여러개의 디스크를 하나처럼 사용하는 RAID를 알아보자<br>비용절감 + 신뢰성 향상 + 성능 향상<br>1테라 디스크 3개를 하나로 묶어서 3테라 디스크처럼 쓴다</p>
+<h5 id="하드웨어-RAID"><a href="#하드웨어-RAID" class="headerlink" title="하드웨어 RAID"></a>하드웨어 RAID</h5><p>여러개의 하드디스크를 가지고 장비를 만들어서 사용. 장비업체에서 제공하기 떄문에 사용법이 다를 수 있다. 그리고 상당히 고가이다. 하드웨어RAID가 안정성이 높다.</p>
+<h5 id="소프트웨어-RAID"><a href="#소프트웨어-RAID" class="headerlink" title="소프트웨어 RAID"></a>소프트웨어 RAID</h5><p>디스크를 장착만하면 운영체제 레벨에서 하나로 묶을 수 있다.</p>
+<h5 id="Linear-RAID-339p-그림보기"><a href="#Linear-RAID-339p-그림보기" class="headerlink" title="Linear RAID (339p 그림보기)"></a>Linear RAID (339p 그림보기)</h5><p>최소 2개이상의 디스크를 하나로 묶음<br>앞 디스크 부터 차례로 저장<br>100TB 100TB 100TB 를 사용하면 총 300TB가 된다. 즉 공간효율성이 100%임.</p>
+<h5 id="RAID-0-339p-그림보기"><a href="#RAID-0-339p-그림보기" class="headerlink" title="RAID 0 (339p 그림보기)"></a>RAID 0 (339p 그림보기)</h5><p>모든 디스크에 동시에 저장되는 개념<br>그러므로 하드디스크가 3개면 /3 시간으로 저장됨<br>신뢰성이 낮다.<br>빠르지만 전부 잃어버려도 큰 문제가 되지 않는 자료가 적당하다.<br>3TB 100TB 100TB 를 사용하면 총 9TB가 된다. 즉 디스크 크기가 다르면 공간효율성이 100%가 되지 않음.<br>그래서 RAID를 구성할 떈 같은회사 같은 용량의 디스크로 구성한다.<br>디스크 세개중에 하나만 고장나도 디스크를 못쓴다.</p>
+<h5 id="RAID-1"><a href="#RAID-1" class="headerlink" title="RAID 1"></a>RAID 1</h5><p>미러링이라 부름<br>1TB 1TB 를 사용하면 1TB 사용가능<br>결함 허용을 제공= 신뢰성 높음. 즉 둘중에 하나가 고장나도 데이터가 보존된다.<br>공간효율이 나쁘므로 비용이 비싸다는 단점이 있다.</p>
+<h5 id="RAID-5"><a href="#RAID-5" class="headerlink" title="RAID 5"></a>RAID 5</h5><p>RAID 2,3,4의 장점을 포용하기 때문에 2,3,4를 사용할 필요가 없다.<br>RAID1의 데이터 안정성 +RAID0의 공간 효율성을 추구 디스크 개수 -1개의 공간을 사용. 즉 4개일 경우 3개를 사용(75%) 100개일 경우 99개를 사용(99%)<br>즉 가격이 저렴하면서 안정적인것.<br>최소한 3개 이상의 하드디스크가 필요하며 오류가 발생했을 때는 패리티(Parity)를 이용해서 데이터를 복구<br>결함 허용을 제공 - 즉 디스크 하나가 고장나도 사용 복구 가능<br>하지만 디스크가 하나가 고장났을 때는 복구가 가능하지만 디스크가 2개가 고장날 경우에는 복구 불가능.<br>그래서 100개를 사용하였을 경우에는 불안하다.(2개 이상 고장날 확률이 높아지므로)<br>즉 적은 디스크를 활용할 경우 공간효율은 낮아지지만 신뢰도는 높아진다.<br>일반적으로 RAID 5는 7개에서 10개정도의 디스크로 구성</p>
+<h5 id="RAID-6"><a href="#RAID-6" class="headerlink" title="RAID 6"></a>RAID 6</h5><p>패리트를 2개 쓴다. 즉 디스크가 2개가 고장나도 복구가능. 최소 4개이상의 디스크가 필요함.(패리티를 2개 쓰므로)<br>패리티를 2개 쓰는 알고리즘의 효율성이 떨어져서 성능이 떨어지는 단점이 있어 많이 사용하지는 않음.</p>
+<h5 id="RAID1-0-RAID-RAID0"><a href="#RAID1-0-RAID-RAID0" class="headerlink" title="RAID1 + 0 = RAID + RAID0"></a>RAID1 + 0 = RAID + RAID0</h5><p>신뢰성(안정성)과 성능(속도)이 동시에 뛰어난 방법<br>RAID1로 구성된것을 RAID 0 으로 묶음. 그림참고</p>
+<h5 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h5><p>SCSI 0:1 부터 0:10 까지 진행.</p>
+<p>SCSI 0:1  SCSI 0:2 - Linear RAID</p>
+<p>SCSI 0:3  SCSI 0:4 - RAID 0</p>
+<p>SCSI 0:5  SCSI 0:6 - RAID 1</p>
+<p>SCSI 0:8  SCSI 0:9  SCSI 0:10 - RAID 5</p>
+<p>SCSI 0:1 만 2GB로 구성하고 나머지는 다 1GB로 구성</p>
+<p>에디트 쪽에서 디스크 2기가 1개 1기가 8개 추가.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># ls -l /dev/sd*      //장착이 잘 되었나 확인</div></pre></td></tr></table></figure>
+<p>9번 반복<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># fdisk /dev/sdb ~sdj 까지 반복</div><div class="line">n   p   엔터 엔터</div><div class="line">p //로 확인해보면 시스템이 리눅스인데 RAID로 변경해야한다.</div><div class="line">t 엔터</div><div class="line">L 누르면 도움말이 나온다.</div><div class="line">fd를 입력 후 엔터</div><div class="line">p를 눌러 확인</div><div class="line">w를 눌러 저장</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># ls -l /dev/sd*      //장착이 잘 되었나 확인</div></pre></td></tr></table></figure>
+<h4 id="과정-설명"><a href="#과정-설명" class="headerlink" title="과정 설명"></a>과정 설명</h4><p>1.mdadm 명령어로 논리 볼륨 생성<br>2.mkfs.ext4 명령어로 파일시스템 생성(포멧)<br>3.mount 적용<br>위 3가지 과정은 6장에서 하드디스크 1개추가 과정과 같다.</p>
+<h4 id="Linear-RAID-만들기"><a href="#Linear-RAID-만들기" class="headerlink" title="Linear RAID 만들기"></a>Linear RAID 만들기</h4><p>sdb1 sdc1 이용<br>mdadm RAID를 만들고 없애는 명령어</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"># fdisk -l /dev/sdb /dev/sdc // 아까 한것이 잘 적용되었나 확인</div><div class="line"></div><div class="line"># mdadm --create /dev/md9 --level=linear --raid-devices=2 /dev/sdb1 /dev/sdc1</div><div class="line">        //RAID md9를 만드는데 리니어로 디바이스는</div><div class="line">        //개수 2개로 2개는 /dev/sdb1 /dev/sdc1 로</div><div class="line"></div><div class="line"># mdadm --detail --scan     //돌고있는지 확인</div><div class="line"># mdadm --detail /dev/md9   //md9에 대해 자세히 보자</div><div class="line"></div><div class="line"># mkfs.ext4 /dev/md9    //포멧하자</div><div class="line"></div><div class="line"># mkdir /raidLinear   //디렉토리 생성</div><div class="line"></div><div class="line"># mount /dev/md9 /raidLinear/ //마운트</div><div class="line"></div><div class="line"># df      //마운트 확인</div><div class="line"># vi /etc/fstab     //재부팅하면 마운트가 풀리므로 설정</div><div class="line"></div><div class="line">/dev/md9    /raidLinear   ext4    defaults    0 0    </div><div class="line">맨 아래 추가</div><div class="line"></div><div class="line"># reboot</div><div class="line"># df    //마운트 확인</div></pre></td></tr></table></figure>
+<h4 id="RAID-0-만들기"><a href="#RAID-0-만들기" class="headerlink" title="RAID 0 만들기"></a>RAID 0 만들기</h4><p>sdd sde로 한다<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"># mdadm --create /dev/md0 --level=0 --raid-devices=2 /dev/sdd1 /dev/sde1</div><div class="line"></div><div class="line"># mdadm --detail --scan     //돌고있는지 확인</div><div class="line"># mdadm --detail /dev/md0   //md9에 대해 자세히 보자</div><div class="line"></div><div class="line"># mkfs.ext4 /dev/md0    //포멧하자</div><div class="line"></div><div class="line"># mkdir /raid0   //디렉토리 생성</div><div class="line"></div><div class="line"># mount /dev/md0 /raid0/ //마운트</div><div class="line"></div><div class="line"># df      //마운트 확인</div><div class="line"></div><div class="line"># vi /etc/fstab     //재부팅하면 마운트가 풀리므로 설정</div><div class="line"></div><div class="line">/dev/md0    /raid0   ext4    defaults    0 0   </div><div class="line">추가</div></pre></td></tr></table></figure></p>
+<h4 id="RAID-1-1"><a href="#RAID-1-1" class="headerlink" title="RAID 1"></a>RAID 1</h4><p>sdf sdg 사용<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"># mdadm --create /dev/md1 --level=1 --raid-devices=2 /dev/sdf1 /dev/sdg1</div><div class="line">y입력  // raid1은 부트 디바이스로 사용 할 수 없는데 만들겠냐는 뜻</div><div class="line"></div><div class="line"># mdadm --detail /dev/md1   //확인해보자</div><div class="line"></div><div class="line"># mkfs.ext4 /dev/md1    //포멧하자</div><div class="line"></div><div class="line"># mkdir /raid1   //디렉토리 생성</div><div class="line"></div><div class="line"># mount /dev/md1 /raid1/ //마운트</div><div class="line"></div><div class="line"># df      //마운트 확인</div><div class="line"></div><div class="line"># vi /etc/fstab     //재부팅하면 마운트가 풀리므로 설정</div><div class="line">/dev/md1    /raid1   ext4    defaults    0 0   </div><div class="line">추가</div></pre></td></tr></table></figure></p>
+<h4 id="RAID-5-1"><a href="#RAID-5-1" class="headerlink" title="RAID 5"></a>RAID 5</h4><p>sdh sdi sdj 사용<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"># mdadm --create /dev/md5 --level=5 --raid-devices=3 /dev/sdh1 /dev/sdi1 /dev/sdj1</div><div class="line"></div><div class="line">망가졌다는 메세지 나오는데 무시하면된다. (컴퓨터가 착각함!)</div><div class="line"></div><div class="line"># mdadm --detail /dev/md5   //확인해보자</div><div class="line"></div><div class="line"># mkfs.ext4 /dev/md5    //포멧하자</div><div class="line"></div><div class="line"># mkdir /raid5   //디렉토리 생성</div><div class="line"></div><div class="line"># mount /dev/md5 /raid5/ //마운트</div><div class="line"></div><div class="line"># df      //마운트 확인</div><div class="line"></div><div class="line"># vi /etc/fstab     //재부팅하면 마운트가 풀리므로 설정</div><div class="line"></div><div class="line">/dev/md5    /raid5   ext4    defaults    0 0  </div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;RAID&quot;&gt;&lt;a href=&quot;#RAID&quot; class=&quot;headerlink&quot; title=&quot;RAID&quot;&gt;&lt;/a&gt;RAID&lt;/h4&gt;&lt;p&gt;Redundant Array of Inexpensive Disks&lt;br&gt;여러개의 디스크를 하나처럼 사용하는 RA
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
+    
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>6장. IDE/SCSI 장치 구성, 하드디스크 1개 추가</title>
     <link href="http://KKimSangHeon.github.io/2017/07/05/ThisIsLinux15/"/>
     <id>http://KKimSangHeon.github.io/2017/07/05/ThisIsLinux15/</id>
     <published>2017-07-05T07:33:36.000Z</published>
-    <updated>2017-07-05T10:40:10.301Z</updated>
+    <updated>2017-07-05T11:05:49.132Z</updated>
     
     <content type="html"><![CDATA[<p>하드디스크 관리는 관리자 입장에서 기본적인것이다.<br>디스크가 모자르면 디스크를 추가해야한다..</p>
 <p>이런걸 어떻게 할지 알아보자</p>
@@ -693,74 +790,6 @@
       <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
     
       <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>기수정렬 (RadixSort)</title>
-    <link href="http://KKimSangHeon.github.io/2017/06/30/RadixSort/"/>
-    <id>http://KKimSangHeon.github.io/2017/06/30/RadixSort/</id>
-    <published>2017-06-30T05:36:34.000Z</published>
-    <updated>2017-06-30T11:02:17.317Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="기수정렬"><a href="#기수정렬" class="headerlink" title="기수정렬"></a>기수정렬</h3><p>버켓에 데이터를 작은 수 부터 넣고 빼내어 정렬하는 방식이다.<br>기수정렬의 시간복잡도는 O(ln)이며 l은 버켓의 크기를 의미한다.</p>
-<p>red, why, few 정렬가능    - 버킷 3개 필요<br>10,161,18,1 가능 - 버킷 3개 필요<br>proffesor , red , why 불가능<br>125 , -101, 167, -505 불가능</p>
-<p>##참고사항</p>
-<p>1의자리 수 구하기-num/1%10<br>10의자리 수 구하기 -num/10%10<br>100의 자리 수 구하기 -num/100%10</p>
-<figure class="highlight c"><figcaption><span>InsertionSort.c</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">RadixSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> num, <span class="keyword">int</span> maxLen)</span>   <span class="comment">// maxLen은 가장 긴 데이터의 길이</span></span></div><div class="line">&#123;</div><div class="line">	Queue buckets[BUCKET_NUM];</div><div class="line">	<span class="keyword">int</span> bi;</div><div class="line">	<span class="keyword">int</span> pos;</div><div class="line">	<span class="keyword">int</span> di;</div><div class="line">	<span class="keyword">int</span> divfac = <span class="number">1</span>;</div><div class="line">	<span class="keyword">int</span> radix;</div><div class="line"></div><div class="line">	<span class="comment">// 총 10개의 버킷 초기화</span></div><div class="line">	<span class="keyword">for</span>(bi=<span class="number">0</span>; bi&lt;BUCKET_NUM; bi++)</div><div class="line">		QueueInit(&amp;buckets[bi]);</div><div class="line"></div><div class="line">	<span class="comment">// 가장 긴 데이터의 길이만큼 반복</span></div><div class="line">	<span class="keyword">for</span>(pos=<span class="number">0</span>; pos&lt;maxLen; pos++)</div><div class="line">	&#123;</div><div class="line">		<span class="comment">// 정렬 대상의 수만큼 반복</span></div><div class="line">		<span class="keyword">for</span>(di=<span class="number">0</span>; di&lt;num; di++)</div><div class="line">		&#123;</div><div class="line">			<span class="comment">// N번째 자리의 숫자 추출</span></div><div class="line">			radix = (arr[di] / divfac) % <span class="number">10</span>;</div><div class="line"></div><div class="line">			<span class="comment">// 추출한 숫자를 근거로 데이터 버킷에 저장</span></div><div class="line">			Enqueue(&amp;buckets[radix], arr[di]);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="comment">// 버킷 수만큼 반복</span></div><div class="line">		<span class="keyword">for</span>(bi=<span class="number">0</span>, di=<span class="number">0</span>; bi&lt;BUCKET_NUM; bi++)</div><div class="line">		&#123;</div><div class="line">			<span class="comment">// 버킷에 저장된 것 순서대로 다 꺼내서 다시 arr에 저장</span></div><div class="line">			<span class="keyword">while</span>(!QIsEmpty(&amp;buckets[bi]))</div><div class="line">				arr[di++] = Dequeue(&amp;buckets[bi]);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="comment">// N번째 자리의 숫자 추출을 위한 피제수의 증가</span></div><div class="line">		divfac *= <span class="number">10</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
-<p>참고 : 윤성우의 열혈 자료구조</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;기수정렬&quot;&gt;&lt;a href=&quot;#기수정렬&quot; class=&quot;headerlink&quot; title=&quot;기수정렬&quot;&gt;&lt;/a&gt;기수정렬&lt;/h3&gt;&lt;p&gt;버켓에 데이터를 작은 수 부터 넣고 빼내어 정렬하는 방식이다.&lt;br&gt;기수정렬의 시간복잡도는 O(ln)이며 l은 
-    
-    </summary>
-    
-      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/"/>
-    
-      <category term="Sort" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/Sort/"/>
-    
-    
-      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/tags/Data-Structure/"/>
-    
-      <category term="Sort" scheme="http://KKimSangHeon.github.io/tags/Sort/"/>
-    
-      <category term="Radix Sort" scheme="http://KKimSangHeon.github.io/tags/Radix-Sort/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>퀵정렬 (QuickSort)</title>
-    <link href="http://KKimSangHeon.github.io/2017/06/30/QuickSort/"/>
-    <id>http://KKimSangHeon.github.io/2017/06/30/QuickSort/</id>
-    <published>2017-06-30T05:36:18.000Z</published>
-    <updated>2017-06-30T11:02:24.397Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="퀵정렬"><a href="#퀵정렬" class="headerlink" title="퀵정렬"></a>퀵정렬</h3><p>퀵 정렬 O(nlog2n)- 피벗을 정하여 분할하여 정복.. 피벗을 선택 할때 3개를 선택하여 평균치를 구하여 구하면 더 효율적으로 피벗을 정할 수 있다.<br>피벗이 잘 선택될 경우 시간복잡도가 줄어든다.</p>
-<p>최악의 경우 O(n^2)이 될 수 있다  (피벗값이 많이 안좋을 경우)</p>
-<p>O(nlog2n)의 시간복잡도를 갖는 다른 정렬 알고리즘 보다 평균적으로 빠르다.<br>why ? 데이터 이동이 상대적으로 작고 병합정렬과 같이 별도의 메모리 공간을 요구하지 않기 때문에..</p>
-<p>나만의 요약! : 피벗값을 기준으로 처음지점부터 시작한 반복문은 피벗보다 작은값을 찾고 뒤에서 시작한 반복문은 피벗보다 큰값을 찾아 서로 바꾼다. ( 단 피벗을 지나치치 않음)</p>
-<figure class="highlight c"><figcaption><span>QuickSort.c</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Swap</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> idx1, <span class="keyword">int</span> idx2)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> temp = arr[idx1];</div><div class="line">	arr[idx1] = arr[idx2];</div><div class="line">	arr[idx2] = temp;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">Partition</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> pivot = arr[left];    <span class="comment">// 피벗의 위치는 가장 왼쪽!</span></div><div class="line">	<span class="keyword">int</span> low = left+<span class="number">1</span>;</div><div class="line">	<span class="keyword">int</span> high = right;</div><div class="line"></div><div class="line">	<span class="keyword">while</span>(low &lt;= high)    <span class="comment">// 교차되지 않을 때까지 반복</span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">while</span>(pivot &gt; arr[low])</div><div class="line">			low++;</div><div class="line"></div><div class="line">		<span class="keyword">while</span>(pivot &lt; arr[high])</div><div class="line">			high--;</div><div class="line"></div><div class="line">		<span class="comment">/*</span></div><div class="line">		while(pivot &gt;= arr[low] &amp;&amp; low &lt;= right)</div><div class="line">			low++;</div><div class="line"></div><div class="line">		while(pivot &lt;= arr[high] &amp;&amp; high &gt;= (left+1))</div><div class="line">			high--;</div><div class="line">		*/</div><div class="line"></div><div class="line">		<span class="keyword">if</span>(low &lt;= high)    <span class="comment">// 교차되지 않은 상태라면 Swap 실행</span></div><div class="line">			Swap(arr, low, high);    <span class="comment">// low와 high가 가리키는 대상 교환</span></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	Swap(arr, left, high);    <span class="comment">// 피벗과 high가 가리키는 대상 교환</span></div><div class="line">	<span class="keyword">return</span> high;    <span class="comment">// 옮겨진 피벗의 위치 정보 반환</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">QuickSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">if</span>(left &lt;= right)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">int</span> pivot = Partition(arr, left, right);    <span class="comment">// 둘로 나눠서</span></div><div class="line">		QuickSort(arr, left, pivot<span class="number">-1</span>);    <span class="comment">// 왼쪽 영역을 정렬</span></div><div class="line">		QuickSort(arr, pivot+<span class="number">1</span>, right);    <span class="comment">// 오른쪽 영역을 정렬</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>참고 : 윤성우의 열혈 자료구조</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;퀵정렬&quot;&gt;&lt;a href=&quot;#퀵정렬&quot; class=&quot;headerlink&quot; title=&quot;퀵정렬&quot;&gt;&lt;/a&gt;퀵정렬&lt;/h3&gt;&lt;p&gt;퀵 정렬 O(nlog2n)- 피벗을 정하여 분할하여 정복.. 피벗을 선택 할때 3개를 선택하여 평균치를 구하여 구하면 
-    
-    </summary>
-    
-      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/"/>
-    
-      <category term="Sort" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/Sort/"/>
-    
-    
-      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/tags/Data-Structure/"/>
-    
-      <category term="Sort" scheme="http://KKimSangHeon.github.io/tags/Sort/"/>
-    
-      <category term="Quick Sort" scheme="http://KKimSangHeon.github.io/tags/Quick-Sort/"/>
     
   </entry>
   
