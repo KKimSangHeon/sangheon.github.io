@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2017/06/30/paper/</loc>
+        <lastmod>2017-07-07T00:51:51.519Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2017/07/07/ThisIsLinux18/</loc>
         <lastmod>2017-07-07T00:49:43.069Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -129,14 +137,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2017/06/29/about-me/</loc>
         <lastmod>2017-07-02T15:57:59.299Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2017/06/30/paper/</loc>
-        <lastmod>2017-07-02T15:39:35.296Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
