@@ -3,25 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>ThisIsLinux18 | Kim Sang Heon&#39;s Bolg</title>
+    <title>6장. RAID6 와 RAID 1+0 | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="Linux,This Is Linux" />
     
     
 
-      <meta name="description" content="1">
+      <meta name="description" content="RAID6패리티가 2개이기 때문에 신뢰성이 높다 RAID 1+0RAID 0,1 쓰는것 실습디스크 10개 스냅샷으로 돌아온 후 2기가 짜리 하나를 지워버린다. RAID 6 생성123456789# mdadm --create /dev/md6 --level=6 --raid-devices=4 /dev/sdb1 /dev/sdc1 /dev/sdd1 /dev/sde1#">
 <meta name="keywords" content="Linux,This Is Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ThisIsLinux18">
+<meta property="og:title" content="6장. RAID6 와 RAID 1+0">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2017/07/07/ThisIsLinux18/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="1">
+<meta property="og:description" content="RAID6패리티가 2개이기 때문에 신뢰성이 높다 RAID 1+0RAID 0,1 쓰는것 실습디스크 10개 스냅샷으로 돌아온 후 2기가 짜리 하나를 지워버린다. RAID 6 생성123456789# mdadm --create /dev/md6 --level=6 --raid-devices=4 /dev/sdb1 /dev/sdc1 /dev/sdd1 /dev/sde1#">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
-<meta property="og:updated_time" content="2017-07-07T00:49:43.069Z">
+<meta property="og:updated_time" content="2017-07-07T02:18:58.856Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ThisIsLinux18">
-<meta name="twitter:description" content="1">
+<meta name="twitter:title" content="6장. RAID6 와 RAID 1+0">
+<meta name="twitter:description" content="RAID6패리티가 2개이기 때문에 신뢰성이 높다 RAID 1+0RAID 0,1 쓰는것 실습디스크 10개 스냅샷으로 돌아온 후 2기가 짜리 하나를 지워버린다. RAID 6 생성123456789# mdadm --create /dev/md6 --level=6 --raid-devices=4 /dev/sdb1 /dev/sdc1 /dev/sdd1 /dev/sde1#">
 <meta name="twitter:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
@@ -145,7 +145,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        ThisIsLinux18
+        6장. RAID6 와 RAID 1+0
         </h1>
     
 
@@ -170,7 +170,17 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"></div></pre></td></tr></table></figure>
+            <h4 id="RAID6"><a href="#RAID6" class="headerlink" title="RAID6"></a>RAID6</h4><p>패리티가 2개이기 때문에 신뢰성이 높다</p>
+<h4 id="RAID-1-0"><a href="#RAID-1-0" class="headerlink" title="RAID 1+0"></a>RAID 1+0</h4><p>RAID 0,1 쓰는것</p>
+<h4 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h4><p>디스크 10개 스냅샷으로 돌아온 후 2기가 짜리 하나를 지워버린다.</p>
+<h5 id="RAID-6-생성"><a href="#RAID-6-생성" class="headerlink" title="RAID 6 생성"></a>RAID 6 생성</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># mdadm --create /dev/md6 --level=6 --raid-devices=4 /dev/sdb1 /dev/sdc1 /dev/sdd1 /dev/sde1</div><div class="line"></div><div class="line"># mkfs.ext4 /dev/md6    //포멧</div><div class="line"></div><div class="line"># mkdir /raid6</div><div class="line"></div><div class="line"># mount /dev/md6 /raid6</div><div class="line"></div><div class="line"># df    //2기가 확인</div></pre></td></tr></table></figure>
+<h5 id="RAID-1-0-생성"><a href="#RAID-1-0-생성" class="headerlink" title="RAID 1+0 생성"></a>RAID 1+0 생성</h5><p>이는 RAID 1을 두개 먼저 생성해야한다.</p>
+<p>md2 ,md3를 RAID1으로 만들고 이 두개를 RAID 0으로 묶는다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"># mdadm --create /dev/md2 --level=1 --raid-devices=2 /dev/sdf1 /dev/sdg1    </div><div class="line">            //raid1 md2로 생성</div><div class="line"></div><div class="line"># mdadm --create /dev/md3 --level=1 --raid-devices=2 /dev/sdh1 /dev/sdi1    </div><div class="line">            //raid1 md3로 생성</div><div class="line"></div><div class="line"># mdadm --create /dev/md10 --level=0 --raid-devices=2 /dev/md2 /dev/md3   </div><div class="line">            //md2, md3로 raid0 생성</div><div class="line"></div><div class="line"># mkfs.ext4 /dev/md10   //포멧</div><div class="line"></div><div class="line"># mkdir /raid10</div><div class="line"></div><div class="line"># mount /dev/md10  /raid10</div><div class="line"></div><div class="line"># df</div></pre></td></tr></table></figure>
+<h5 id="잘동작하나-확인"><a href="#잘동작하나-확인" class="headerlink" title="잘동작하나 확인"></a>잘동작하나 확인</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># cp /boot/vmlinuz-3.10.0-123.el7.x86_64 /raid6/testFile</div><div class="line"># cp /boot/vmlinuz-3.10.0-123.el7.x86_64 /raid10/testFile</div><div class="line"></div><div class="line"># vi /etc/fstab</div><div class="line"></div><div class="line">/dev/md6    /raid6   ext4   defaults    1     2</div><div class="line">/dev/md10   /raid10  ext4   defaults    1     2</div><div class="line">//재부팅되도 마운트 유지하기 위해 추가</div></pre></td></tr></table></figure>
+<h5 id="고장내보자"><a href="#고장내보자" class="headerlink" title="고장내보자"></a>고장내보자</h5><p>SCSI 3, 5 ,8, 9 디스크 없애고 부트</p>
+<p>RAID 6 확인<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># mdadm --run /dev/md6    //md6 실행</div><div class="line"># df //확인</div><div class="line"># ls -l /raid6      //데이터 확인</div><div class="line"></div><div class="line"># mdadm --detail /dev/md6</div></pre></td></tr></table></figure></p>
+<p>RAID 1+0 확인<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># mdadm --run /dev/md2</div><div class="line"># mdadm --run /dev/md3</div><div class="line"></div><div class="line"># mdadm --detail /dev/md10</div></pre></td></tr></table></figure></p>
 
         </div>
         <footer class="article-footer">
@@ -178,7 +188,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/07/07/ThisIsLinux18/" data-id="cj4t5bzkk002p4gv7l4muucph" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/07/07/ThisIsLinux18/" data-id="cj4tbesdn002lkgv7d9odk338" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -282,6 +292,16 @@ ga('send', 'pageview');
     
         
 <nav id="article-nav">
+    
+        <a href="/2017/07/07/ThisIsLinux19/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            ThisIsLinux19
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
     
     
         <a href="/2017/07/06/ThisIsLinux17/" id="article-nav-older" class="article-nav-link-wrap">

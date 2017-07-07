@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-07-07T00:49:43.069Z</updated>
+  <updated>2017-07-07T03:42:04.301Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,18 +16,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>ThisIsLinux18</title>
+    <title>ThisIsLinux19</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/07/ThisIsLinux19/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/07/ThisIsLinux19/</id>
+    <published>2017-07-07T03:42:04.000Z</published>
+    <updated>2017-07-07T03:42:04.301Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>6장. RAID6 와 RAID 1+0</title>
     <link href="http://KKimSangHeon.github.io/2017/07/07/ThisIsLinux18/"/>
     <id>http://KKimSangHeon.github.io/2017/07/07/ThisIsLinux18/</id>
     <published>2017-07-07T00:47:34.000Z</published>
-    <updated>2017-07-07T00:49:43.069Z</updated>
+    <updated>2017-07-07T02:18:58.856Z</updated>
     
-    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"></div></pre></td></tr></table></figure>
+    <content type="html"><![CDATA[<h4 id="RAID6"><a href="#RAID6" class="headerlink" title="RAID6"></a>RAID6</h4><p>패리티가 2개이기 때문에 신뢰성이 높다</p>
+<h4 id="RAID-1-0"><a href="#RAID-1-0" class="headerlink" title="RAID 1+0"></a>RAID 1+0</h4><p>RAID 0,1 쓰는것</p>
+<h4 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h4><p>디스크 10개 스냅샷으로 돌아온 후 2기가 짜리 하나를 지워버린다.</p>
+<h5 id="RAID-6-생성"><a href="#RAID-6-생성" class="headerlink" title="RAID 6 생성"></a>RAID 6 생성</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># mdadm --create /dev/md6 --level=6 --raid-devices=4 /dev/sdb1 /dev/sdc1 /dev/sdd1 /dev/sde1</div><div class="line"></div><div class="line"># mkfs.ext4 /dev/md6    //포멧</div><div class="line"></div><div class="line"># mkdir /raid6</div><div class="line"></div><div class="line"># mount /dev/md6 /raid6</div><div class="line"></div><div class="line"># df    //2기가 확인</div></pre></td></tr></table></figure>
+<h5 id="RAID-1-0-생성"><a href="#RAID-1-0-생성" class="headerlink" title="RAID 1+0 생성"></a>RAID 1+0 생성</h5><p>이는 RAID 1을 두개 먼저 생성해야한다.</p>
+<p>md2 ,md3를 RAID1으로 만들고 이 두개를 RAID 0으로 묶는다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"># mdadm --create /dev/md2 --level=1 --raid-devices=2 /dev/sdf1 /dev/sdg1    </div><div class="line">            //raid1 md2로 생성</div><div class="line"></div><div class="line"># mdadm --create /dev/md3 --level=1 --raid-devices=2 /dev/sdh1 /dev/sdi1    </div><div class="line">            //raid1 md3로 생성</div><div class="line"></div><div class="line"># mdadm --create /dev/md10 --level=0 --raid-devices=2 /dev/md2 /dev/md3   </div><div class="line">            //md2, md3로 raid0 생성</div><div class="line"></div><div class="line"># mkfs.ext4 /dev/md10   //포멧</div><div class="line"></div><div class="line"># mkdir /raid10</div><div class="line"></div><div class="line"># mount /dev/md10  /raid10</div><div class="line"></div><div class="line"># df</div></pre></td></tr></table></figure>
+<h5 id="잘동작하나-확인"><a href="#잘동작하나-확인" class="headerlink" title="잘동작하나 확인"></a>잘동작하나 확인</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># cp /boot/vmlinuz-3.10.0-123.el7.x86_64 /raid6/testFile</div><div class="line"># cp /boot/vmlinuz-3.10.0-123.el7.x86_64 /raid10/testFile</div><div class="line"></div><div class="line"># vi /etc/fstab</div><div class="line"></div><div class="line">/dev/md6    /raid6   ext4   defaults    1     2</div><div class="line">/dev/md10   /raid10  ext4   defaults    1     2</div><div class="line">//재부팅되도 마운트 유지하기 위해 추가</div></pre></td></tr></table></figure>
+<h5 id="고장내보자"><a href="#고장내보자" class="headerlink" title="고장내보자"></a>고장내보자</h5><p>SCSI 3, 5 ,8, 9 디스크 없애고 부트</p>
+<p>RAID 6 확인<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># mdadm --run /dev/md6    //md6 실행</div><div class="line"># df //확인</div><div class="line"># ls -l /raid6      //데이터 확인</div><div class="line"></div><div class="line"># mdadm --detail /dev/md6</div></pre></td></tr></table></figure></p>
+<p>RAID 1+0 확인<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># mdadm --run /dev/md2</div><div class="line"># mdadm --run /dev/md3</div><div class="line"></div><div class="line"># mdadm --detail /dev/md10</div></pre></td></tr></table></figure></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;lin
+      &lt;h4 id=&quot;RAID6&quot;&gt;&lt;a href=&quot;#RAID6&quot; class=&quot;headerlink&quot; title=&quot;RAID6&quot;&gt;&lt;/a&gt;RAID6&lt;/h4&gt;&lt;p&gt;패리티가 2개이기 때문에 신뢰성이 높다&lt;/p&gt;
+&lt;h4 id=&quot;RAID-1-0&quot;&gt;&lt;a href=&quot;#RAID
     
     </summary>
     
@@ -751,41 +776,6 @@
     
     
       <category term="Linux Error" scheme="http://KKimSangHeon.github.io/tags/Linux-Error/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>BinarySearch</title>
-    <link href="http://KKimSangHeon.github.io/2017/06/30/BinarySearch/"/>
-    <id>http://KKimSangHeon.github.io/2017/06/30/BinarySearch/</id>
-    <published>2017-06-30T10:38:20.000Z</published>
-    <updated>2017-06-30T11:01:37.840Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="이진탐색"><a href="#이진탐색" class="headerlink" title="이진탐색"></a>이진탐색</h3><p>데이터의 정렬이 선행되어야 한다. 시간복잡도는 O(log2n) 이다.<br><figure class="highlight c"><figcaption><span>BinarySearch.c 재귀적인 방법</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">ISearch</span><span class="params">(<span class="keyword">int</span> ar[], <span class="keyword">int</span> first, <span class="keyword">int</span> last, <span class="keyword">int</span> target)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> mid;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(first &gt; last)</div><div class="line">		<span class="keyword">return</span> <span class="number">-1</span>;    <span class="comment">// -1의 반환은 탐색의 실패를 의미</span></div><div class="line"></div><div class="line">	mid=(first+last) / <span class="number">2</span> ;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(ar[mid] == target)</div><div class="line">		<span class="keyword">return</span> mid;    <span class="comment">// 탐색된 타겟의 인덱스 값 반환</span></div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(target &lt; ar[mid])</div><div class="line">		<span class="keyword">return</span> ISearch(ar, first, mid<span class="number">-1</span>, target);</div><div class="line">	<span class="keyword">else</span></div><div class="line">		<span class="keyword">return</span> ISearch(ar, mid+<span class="number">1</span>, last, target);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<figure class="highlight c"><figcaption><span>BinarySearch.c 반복문 이용</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">BinarySearch(<span class="keyword">int</span> DataSet[], <span class="keyword">int</span> Size, <span class="keyword">int</span> target)&#123;</div><div class="line">	<span class="keyword">int</span> Left,Right,Mid;</div><div class="line"></div><div class="line">	Left=<span class="number">0</span>;</div><div class="line">	Right=Size<span class="number">-1</span>;</div><div class="line"></div><div class="line">	<span class="keyword">while</span>(Left&lt;=Right)&#123;</div><div class="line">		Mid=(Left+Rigth) / <span class="number">2</span> ;</div><div class="line"></div><div class="line">		<span class="keyword">if</span>( Target==DataSet[Mid])</div><div class="line">			<span class="keyword">return</span> DataSet[Mid];</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(Target&gt;DataSet[Mid])</div><div class="line">			Left=Mid+<span class="number">1</span>;</div><div class="line">		<span class="keyword">else</span></div><div class="line">			Right=Mid<span class="number">-1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="literal">NULL</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>이진탐색의 경우 비교대상이 되는 mid값을 단순히 (first+last)/2로 설정한다.<br>그러나 보간 탐색의 경우 mid 값 설정방식이 다르며 이진탐색보다 우수한 성능을 보인다.</p>
-<h3 id="보간탐색"><a href="#보간탐색" class="headerlink" title="보간탐색"></a>보간탐색</h3><p>탐색대상이 앞쪽에 위치 할 경우 앞쪽에서 탐색을 시작하고 뒤쪽에 위치할 경우 뒤쪽에서 탐색을 시작한다.<br>이진탐색보다 우수하다.<br><figure class="highlight c"><figcaption><span>ISearch.c</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">ISearch</span><span class="params">(<span class="keyword">int</span> ar[], <span class="keyword">int</span> first, <span class="keyword">int</span> last, <span class="keyword">int</span> target)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> mid;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(ar[first]&gt;target || ar[last]&lt;target)</div><div class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">	<span class="comment">// 이진 탐색과의 차이점을 반영한 문장</span></div><div class="line">	mid = ((<span class="keyword">double</span>)(target-ar[first]) / (ar[last]-ar[first]) *(last-first)) + first;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(ar[mid] == target)</div><div class="line">		<span class="keyword">return</span> mid;    <span class="comment">// 탐색된 타겟의 인덱스 값 반환</span></div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(target &lt; ar[mid])</div><div class="line">		<span class="keyword">return</span> ISearch(ar, first, mid<span class="number">-1</span>, target);</div><div class="line">	<span class="keyword">else</span></div><div class="line">		<span class="keyword">return</span> ISearch(ar, mid+<span class="number">1</span>, last, target);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4 id="보간탐색의-mid값-계산-방법"><a href="#보간탐색의-mid값-계산-방법" class="headerlink" title="보간탐색의 mid값 계산 방법"></a>보간탐색의 mid값 계산 방법</h4><img src="/2017/06/30/BinarySearch/BinarySearch1.bmp" alt="보간탐색의 mid값 계산 방법 [그림1]" title="보간탐색의 mid값 계산 방법 [그림1]">
-<p>그림[1]에서 arr[s]는 찾는값을 의미함.</p>
-<p>참고 : 윤성우의 열혈 자료구조</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;이진탐색&quot;&gt;&lt;a href=&quot;#이진탐색&quot; class=&quot;headerlink&quot; title=&quot;이진탐색&quot;&gt;&lt;/a&gt;이진탐색&lt;/h3&gt;&lt;p&gt;데이터의 정렬이 선행되어야 한다. 시간복잡도는 O(log2n) 이다.&lt;br&gt;&lt;figure class=&quot;highl
-    
-    </summary>
-    
-      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/"/>
-    
-      <category term="Search" scheme="http://KKimSangHeon.github.io/categories/Data-Structure/Search/"/>
-    
-    
-      <category term="Data Structure" scheme="http://KKimSangHeon.github.io/tags/Data-Structure/"/>
-    
-      <category term="Search" scheme="http://KKimSangHeon.github.io/tags/Search/"/>
-    
-      <category term="BinarySearch" scheme="http://KKimSangHeon.github.io/tags/BinarySearch/"/>
     
   </entry>
   
