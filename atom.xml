@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-07-07T03:42:04.301Z</updated>
+  <updated>2017-07-07T15:54:10.207Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,16 +16,82 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>ThisIsLinux19</title>
-    <link href="http://KKimSangHeon.github.io/2017/07/07/ThisIsLinux19/"/>
-    <id>http://KKimSangHeon.github.io/2017/07/07/ThisIsLinux19/</id>
-    <published>2017-07-07T03:42:04.000Z</published>
-    <updated>2017-07-07T03:42:04.301Z</updated>
+    <title>6장 사용자별 공간 할당(쿼터)</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/07/ThisIsLinux20/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/07/ThisIsLinux20/</id>
+    <published>2017-07-07T14:55:51.000Z</published>
+    <updated>2017-07-07T15:54:10.207Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="쿼터"><a href="#쿼터" class="headerlink" title="쿼터"></a>쿼터</h4><p>사용자마다 용량 제한을 두는것이다.<br>ex.클라우드 서비스를 가입하면 데이터 양이 한정되어있음.</p>
+<h4 id="쿼터-실습"><a href="#쿼터-실습" class="headerlink" title="쿼터 실습"></a>쿼터 실습</h4><p>설치 직후로 초기화하자.</p>
+<p>새로운 디스크를 추가해서 쿼터 전용 디스크로 하자<br>사용자의 홈 디렉토리는 별도의 디스크로 하는것이 효과적이다. 그리고 사용자별 쿼터도 지정해보자</p>
+<h5 id="1-20기가짜리-하나-디스크-달자"><a href="#1-20기가짜리-하나-디스크-달자" class="headerlink" title="1. 20기가짜리 하나 디스크 달자"></a>1. 20기가짜리 하나 디스크 달자</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># fdisk /dev/sdb</div><div class="line"># mkfs.ext4 /dev/sdb1</div><div class="line"># mkdir /userHome     //앞으로 추가되는 사용자는</div><div class="line">              userHome를 홈 디렉토리로 함</div><div class="line"># mount /dev/sdb1  /userHome/</div><div class="line"># vi /etc/fstab</div><div class="line">/dev/sdb1     /userHome   ext4    defaults   1   2  추가</div></pre></td></tr></table></figure>
+<h5 id="2-유저-두명-추가하자"><a href="#2-유저-두명-추가하자" class="headerlink" title="2. 유저 두명 추가하자"></a>2. 유저 두명 추가하자</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"># useradd -d /userHome/john  john   </div><div class="line">          //홈디렉토리를 지정하면서 유저생성</div><div class="line"># useradd -d /userHome/bann  bann   </div><div class="line">                    //홈디렉토리를 지정하면서 유저생성   </div><div class="line"></div><div class="line"># ls -l /userHome     //확인</div><div class="line"></div><div class="line"># passwd john   //암호는 1234로 설정</div><div class="line"></div><div class="line"># passwd bann   //암호는 1234로 설정</div></pre></td></tr></table></figure>
+<h5 id="3-아까-추가한-디스크를-쿼터용으로-설정하자"><a href="#3-아까-추가한-디스크를-쿼터용으로-설정하자" class="headerlink" title="3. 아까 추가한 디스크를 쿼터용으로 설정하자"></a>3. 아까 추가한 디스크를 쿼터용으로 설정하자</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># vi /etc/fstab</div><div class="line">defaults 를 아래와 같이 변경</div><div class="line">defaults,usrjquota=aquota.user,jqfmt=vfsv0</div><div class="line"></div><div class="line">리부트 해도 되지만 귀찮으니까</div><div class="line"># mount --options remount  /userHome</div><div class="line"># mount  //맨아래서 확인</div></pre></td></tr></table></figure>
+<h5 id="4-쿼터디비생성"><a href="#4-쿼터디비생성" class="headerlink" title="4. 쿼터디비생성"></a>4. 쿼터디비생성</h5><p>명령어들에 대해 관심있으면 책을보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"># cd /userHome/</div><div class="line"># quotaoff -avug</div><div class="line"># quotacheck -augmn</div><div class="line"># rm -rf aquota.*</div><div class="line"># quotacheck -augmn</div><div class="line"># touch aquota.user aquota.group</div><div class="line"># chmod 600 aquota.*</div><div class="line"># quotacheck -augmn</div><div class="line"># quotaon -avug</div><div class="line"></div><div class="line"># ls -l   //aquota.group , user 생긴것 확인</div></pre></td></tr></table></figure></p>
+<h5 id="5-개인별-쿼터-설정"><a href="#5-개인별-쿼터-설정" class="headerlink" title="5. 개인별 쿼터 설정"></a>5. 개인별 쿼터 설정</h5><p>블록(block)이 현재 사용하는 키로바이트 수</p>
+<p>소프트제한(soft)- 넘어갈수 있지만 기간이 있음<br>하드제한(hard) -완전히 못넘어감</p>
+<p>소프트를 100으로 주고 하드를 150을 주었을 때<br>130을 저장하면 몇일 이내에 30메가를 줄여야함.</p>
+<p>inodes- 파일의 개수를 제한하는것<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"># edquota -u john //유저 존에 대해 쿼터를 수정하겠다.</div><div class="line"></div><div class="line">소프트 10240(10메가) 하드 15360(15메가)를 주고 저장</div><div class="line"></div><div class="line"># su - john  //존으로 로그인</div><div class="line"># cp /boot/vmlinuz-3.10.0-123.el7.x86_64 test1</div><div class="line">      // 파일 복사</div><div class="line"># cp /boot/vmlinuz-3.10.0-123.el7.x86_64 test2</div><div class="line"># cp /boot/vmlinuz-3.10.0-123.el7.x86_64 test3</div><div class="line">쿼터가 넘어갔다고 경고 뜸</div><div class="line"># ls -l     //데이터가 잘 들어갔다.</div><div class="line"></div><div class="line"># cp /boot/vmlinuz-3.10.0-123.el7.x86_64 test4</div><div class="line">sdb1: write failed, user block limit reached.</div><div class="line">cp: `test4&apos;에 쓰는 도중 오류 발생: 디스크 할당량이 초과됨</div><div class="line">cp: failed to extend `test4&apos;: 디스크 할당량이 초과됨</div><div class="line"> 오류뜬다.</div><div class="line"></div><div class="line"># ls -l</div><div class="line">//마지막 데이터는 용량이 다름 즉 짤려있음</div><div class="line"></div><div class="line"># quota  // 내가 얼마나쓰고 있는지 확인</div><div class="line">block 현재 사용량</div><div class="line">grace가 6일동안 봐준다는것.</div></pre></td></tr></table></figure></p>
+<h5 id="6-존이-한것을-밴한테-그대로-적용하기"><a href="#6-존이-한것을-밴한테-그대로-적용하기" class="headerlink" title="6. 존이 한것을 밴한테 그대로 적용하기"></a>6. 존이 한것을 밴한테 그대로 적용하기</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># exit    //존 로그아웃</div><div class="line"># repquota /userHome    //쿼터확인</div><div class="line"></div><div class="line"># edquota -p john bann</div></pre></td></tr></table></figure>
+]]></content>
     
     <summary type="html">
     
+      &lt;h4 id=&quot;쿼터&quot;&gt;&lt;a href=&quot;#쿼터&quot; class=&quot;headerlink&quot; title=&quot;쿼터&quot;&gt;&lt;/a&gt;쿼터&lt;/h4&gt;&lt;p&gt;사용자마다 용량 제한을 두는것이다.&lt;br&gt;ex.클라우드 서비스를 가입하면 데이터 양이 한정되어있음.&lt;/p&gt;
+&lt;h4 id=&quot;쿼터
+    
     </summary>
     
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
+    
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>6장. LVM 개념과 구현, RAID에 CentOS 설치</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/07/ThisIsLinux19/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/07/ThisIsLinux19/</id>
+    <published>2017-07-07T03:42:04.000Z</published>
+    <updated>2017-07-07T06:58:12.212Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="LVM"><a href="#LVM" class="headerlink" title="LVM"></a>LVM</h4><p>Logical Volume Manage<br>여러개의 하드디스크를 합쳐서 한 개의 파일 시스템으로 사용하는것으로 필요에 따라 다시 나눌 수 있다.<br>예로 2테라 두개를 합친 후 1테라 3테라로 나눠서 사용한다.</p>
+<h5 id="물리-볼륨"><a href="#물리-볼륨" class="headerlink" title="물리 볼륨:"></a>물리 볼륨:</h5><p>sda1, sdb1 등의 파티션</p>
+<h5 id="볼륨-그룹"><a href="#볼륨-그룹" class="headerlink" title="볼륨 그룹:"></a>볼륨 그룹:</h5><p>물리 볼륨을 합쳐서 1개의 물리그룹으로 만드는것.</p>
+<h5 id="논리-볼륨"><a href="#논리-볼륨" class="headerlink" title="논리 볼륨:"></a>논리 볼륨:</h5><p>볼륨 그룹을 1개 이상으로 나눠서 논리 그룹으로 나눈 것</p>
+<h4 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h4><p>3기가, 2기가를 볼륨 그룹으로 만들고<br>3기가, 1기가, 1기가 논리 볼륨으로 만들어보자</p>
+<h5 id="1-2기가-3기가-디스크-추가"><a href="#1-2기가-3기가-디스크-추가" class="headerlink" title="1. 2기가, 3기가 디스크 추가"></a>1. 2기가, 3기가 디스크 추가</h5><p>버츄어머신 에딧에서..</p>
+<h5 id="2-파티션-설정"><a href="#2-파티션-설정" class="headerlink" title="2. 파티션 설정"></a>2. 파티션 설정</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"># fdisk /dev/sdb</div><div class="line">n</div><div class="line">p</div><div class="line">1</div><div class="line">엔터</div><div class="line">엔터</div><div class="line">t</div><div class="line">8e</div><div class="line">w</div><div class="line"></div><div class="line"># fdisk /dev/sdc</div><div class="line">n</div><div class="line">p</div><div class="line">1</div><div class="line">엔터</div><div class="line">엔터</div><div class="line">t</div><div class="line">8e</div><div class="line">w</div></pre></td></tr></table></figure>
+<h5 id="3-피지컬-볼륨으로-만들기"><a href="#3-피지컬-볼륨으로-만들기" class="headerlink" title="3. 피지컬 볼륨으로 만들기"></a>3. 피지컬 볼륨으로 만들기</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># pvcreate /dev/sdb1</div><div class="line"># pvcreate /dev/sdc1</div></pre></td></tr></table></figure>
+<h5 id="4-볼륨-그룹으로-만들기"><a href="#4-볼륨-그룹으로-만들기" class="headerlink" title="4. 볼륨 그룹으로 만들기"></a>4. 볼륨 그룹으로 만들기</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># vgcreate myVG /dev/sdb1 /dev/sdc1</div><div class="line"></div><div class="line"># vgdisplay   //볼륨그룹 확인</div></pre></td></tr></table></figure>
+<h5 id="5-1기가-3기가-1기가로-나누자"><a href="#5-1기가-3기가-1기가로-나누자" class="headerlink" title="5. 1기가 3기가 1기가로 나누자"></a>5. 1기가 3기가 1기가로 나누자</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># lvcreate --size 1G --name myLG1 myVG</div><div class="line"># lvcreate --size 3G --name myLG2 myVG</div><div class="line"># lvcreate --extents 100%FREE --name myLG3 myVG</div><div class="line">        //나머지 다써라</div><div class="line"></div><div class="line"># ls -l /dev/myVG   //확인</div></pre></td></tr></table></figure>
+<h5 id="6-포멧하자"><a href="#6-포멧하자" class="headerlink" title="6. 포멧하자"></a>6. 포멧하자</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># mkfs.ext4 /dev/myVG/myLG1</div><div class="line"># mkfs.ext4 /dev/myVG/myLG2</div><div class="line"># mkfs.ext4 /dev/myVG/myLG3</div></pre></td></tr></table></figure>
+<h5 id="7-마운트하자"><a href="#7-마운트하자" class="headerlink" title="7. 마운트하자"></a>7. 마운트하자</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># mkdir /lvm1  /lvm2  /lvm3</div><div class="line"># mount /dev/myVG/myLG1 /lvm1</div><div class="line"># mount /dev/myVG/myLG2 /lvm2</div><div class="line"># mount /dev/myVG/myLG3 /lvm3</div><div class="line"></div><div class="line"># df //확인</div></pre></td></tr></table></figure>
+<h5 id="8-fstab에-등록하자"><a href="#8-fstab에-등록하자" class="headerlink" title="8. fstab에 등록하자"></a>8. fstab에 등록하자</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># vi /etc/fstab</div><div class="line"></div><div class="line">팁 yy 한다음에 pp하면 복붙이된다.</div><div class="line">/dev/myVG/myLG1         /lvm1    ext4     defaults      1 2</div><div class="line">/dev/myVG/myLG2         /lvm2    ext4     defaults      1 2</div><div class="line">/dev/myVG/myLG3         /lvm3    ext4     defaults      1 2</div></pre></td></tr></table></figure>
+<h3 id="RAID-1-방식으로-디스크에-CentOS를-설치하자"><a href="#RAID-1-방식으로-디스크에-CentOS를-설치하자" class="headerlink" title="RAID 1 방식으로 디스크에 CentOS를 설치하자"></a>RAID 1 방식으로 디스크에 CentOS를 설치하자</h3><p>392p 보고 하자</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># mdadm --detail -scan //확인해보자</div><div class="line"></div><div class="line"># mdadm --detail /dev/md/root   //자세히보자</div><div class="line"></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;LVM&quot;&gt;&lt;a href=&quot;#LVM&quot; class=&quot;headerlink&quot; title=&quot;LVM&quot;&gt;&lt;/a&gt;LVM&lt;/h4&gt;&lt;p&gt;Logical Volume Manage&lt;br&gt;여러개의 하드디스크를 합쳐서 한 개의 파일 시스템으로 사용하는것으로 필요에
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
+    
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
     
   </entry>
   
@@ -750,32 +816,6 @@
     
     
       <category term="리눅스 명령어" scheme="http://KKimSangHeon.github.io/tags/%EB%A6%AC%EB%88%85%EC%8A%A4-%EB%AA%85%EB%A0%B9%EC%96%B4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>리눅스 에러</title>
-    <link href="http://KKimSangHeon.github.io/2017/07/01/LinuxError/"/>
-    <id>http://KKimSangHeon.github.io/2017/07/01/LinuxError/</id>
-    <published>2017-07-01T04:45:37.000Z</published>
-    <updated>2017-07-01T14:39:51.881Z</updated>
-    
-    <content type="html"><![CDATA[<p>증상:<br>Virtualized performance counters are not supported on the host CPU type. Module VPMC power on failed. Failed to start the virtual machine 이라는 에러메세지 출력.</p>
-<p>해결법:<br>.vmx 파일을 열고 vpmc.enable 부분을 “FALSE”로 수정.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;증상:&lt;br&gt;Virtualized performance counters are not supported on the host CPU type. Module VPMC power on failed. Failed to start the virtual 
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
-    
-      <category term="관련정보" scheme="http://KKimSangHeon.github.io/categories/Linux/%EA%B4%80%EB%A0%A8%EC%A0%95%EB%B3%B4/"/>
-    
-    
-      <category term="Linux Error" scheme="http://KKimSangHeon.github.io/tags/Linux-Error/"/>
     
   </entry>
   

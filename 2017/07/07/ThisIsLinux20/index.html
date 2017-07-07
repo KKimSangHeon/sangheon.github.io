@@ -3,25 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>4장. 시작과종료, 가상콘솔, 런레벨, 자동완성 | Kim Sang Heon&#39;s Bolg</title>
+    <title>6장 사용자별 공간 할당(쿼터) | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="Linux,This Is Linux" />
     
     
 
-      <meta name="description" content="참고사항lrwxrwxrwx. 어쩌구가 있을경우 맨앞의 l은 링크파일임을 의미한다. 윈도우의 바로가기를 생각하자! 종료관련 명령어리눅스는 기본개념이 멀티유저 이므로 함부러 누군가 종료하거나 재시작하면 문제의 소지가 있다. ex) 네이버 서버를 누군가 종료시킨다면? 리눅스를 서버로 사용할 경우 리눅스는 종료가 아닌 로그아웃이 일반적인 개념이다! 12345678">
+      <meta name="description" content="쿼터사용자마다 용량 제한을 두는것이다.ex.클라우드 서비스를 가입하면 데이터 양이 한정되어있음. 쿼터 실습설치 직후로 초기화하자. 새로운 디스크를 추가해서 쿼터 전용 디스크로 하자사용자의 홈 디렉토리는 별도의 디스크로 하는것이 효과적이다. 그리고 사용자별 쿼터도 지정해보자 1. 20기가짜리 하나 디스크 달자1234567# fdisk /dev/sdb# mkf">
 <meta name="keywords" content="Linux,This Is Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="4장. 시작과종료, 가상콘솔, 런레벨, 자동완성">
-<meta property="og:url" content="http://KKimSangHeon.github.io/2017/07/01/ThisIsLinux2/index.html">
+<meta property="og:title" content="6장 사용자별 공간 할당(쿼터)">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2017/07/07/ThisIsLinux20/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="참고사항lrwxrwxrwx. 어쩌구가 있을경우 맨앞의 l은 링크파일임을 의미한다. 윈도우의 바로가기를 생각하자! 종료관련 명령어리눅스는 기본개념이 멀티유저 이므로 함부러 누군가 종료하거나 재시작하면 문제의 소지가 있다. ex) 네이버 서버를 누군가 종료시킨다면? 리눅스를 서버로 사용할 경우 리눅스는 종료가 아닌 로그아웃이 일반적인 개념이다! 12345678">
+<meta property="og:description" content="쿼터사용자마다 용량 제한을 두는것이다.ex.클라우드 서비스를 가입하면 데이터 양이 한정되어있음. 쿼터 실습설치 직후로 초기화하자. 새로운 디스크를 추가해서 쿼터 전용 디스크로 하자사용자의 홈 디렉토리는 별도의 디스크로 하는것이 효과적이다. 그리고 사용자별 쿼터도 지정해보자 1. 20기가짜리 하나 디스크 달자1234567# fdisk /dev/sdb# mkf">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
-<meta property="og:updated_time" content="2017-07-02T04:12:47.584Z">
+<meta property="og:updated_time" content="2017-07-07T15:54:10.207Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="4장. 시작과종료, 가상콘솔, 런레벨, 자동완성">
-<meta name="twitter:description" content="참고사항lrwxrwxrwx. 어쩌구가 있을경우 맨앞의 l은 링크파일임을 의미한다. 윈도우의 바로가기를 생각하자! 종료관련 명령어리눅스는 기본개념이 멀티유저 이므로 함부러 누군가 종료하거나 재시작하면 문제의 소지가 있다. ex) 네이버 서버를 누군가 종료시킨다면? 리눅스를 서버로 사용할 경우 리눅스는 종료가 아닌 로그아웃이 일반적인 개념이다! 12345678">
+<meta name="twitter:title" content="6장 사용자별 공간 할당(쿼터)">
+<meta name="twitter:description" content="쿼터사용자마다 용량 제한을 두는것이다.ex.클라우드 서비스를 가입하면 데이터 양이 한정되어있음. 쿼터 실습설치 직후로 초기화하자. 새로운 디스크를 추가해서 쿼터 전용 디스크로 하자사용자의 홈 디렉토리는 별도의 디스크로 하는것이 효과적이다. 그리고 사용자별 쿼터도 지정해보자 1. 20기가짜리 하나 디스크 달자1234567# fdisk /dev/sdb# mkf">
 <meta name="twitter:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
@@ -138,14 +138,14 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-ThisIsLinux2" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-ThisIsLinux20" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        4장. 시작과종료, 가상콘솔, 런레벨, 자동완성
+        6장 사용자별 공간 할당(쿼터)
         </h1>
     
 
@@ -155,8 +155,8 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/07/01/ThisIsLinux2/" class="article-date">
-            <time datetime="2017-07-01T13:53:50.000Z" itemprop="datePublished">2017-07-01</time>
+        <a href="/2017/07/07/ThisIsLinux20/" class="article-date">
+            <time datetime="2017-07-07T14:55:51.000Z" itemprop="datePublished">2017-07-07</time>
         </a>
     </div>
 
@@ -170,14 +170,18 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="참고사항"><a href="#참고사항" class="headerlink" title="참고사항"></a>참고사항</h3><p>lrwxrwxrwx. 어쩌구가 있을경우 맨앞의 l은 링크파일임을 의미한다. 윈도우의 바로가기를 생각하자!</p>
-<h3 id="종료관련-명령어"><a href="#종료관련-명령어" class="headerlink" title="종료관련 명령어"></a>종료관련 명령어</h3><p>리눅스는 기본개념이 멀티유저 이므로 함부러 누군가 종료하거나 재시작하면 문제의 소지가 있다. ex) 네이버 서버를 누군가 종료시킨다면?</p>
-<p>리눅스를 서버로 사용할 경우 리눅스는 종료가 아닌 로그아웃이 일반적인 개념이다!</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">$ shutdown -P now // 종료</div><div class="line"></div><div class="line">$ shutdown -P +10 //10분후에 종료</div><div class="line"></div><div class="line">$ shutdown -c //종료예약한것 취소</div><div class="line"></div><div class="line">$ shutdown -r 23:00 //23시에 재부팅</div><div class="line"></div><div class="line">$ shutdown -r +10 //10분후에 재부팅</div><div class="line"></div><div class="line">$ shutdown -c // 리부팅예약한것 취소</div><div class="line"></div><div class="line">$ shutdown -k +15  //20분 후에 종료된다는 메세지가 날라감</div><div class="line">                  //루트를 제외한 모든 사용자에게..</div><div class="line">                  //실제 종료는 안됨.</div><div class="line">                  //필요한 이유: 서버에 많은 사용자가 접속하였을 경우 사용자들의 로그아웃을 유도.</div><div class="line"></div><div class="line">$ init 0~6        // 0-종료모드 2-멀티유저모드 5-그래픽모드의 다중사용자모드 6-리부트모드</div><div class="line"></div><div class="line">$ startx      //x윈도우 모드로 변경</div><div class="line">              주의) 예로 단순히 init4에서 init1로가는것과 다르다.</div><div class="line">              //명령어 모드에서 x윈도우 모드로 변경되는것</div></pre></td></tr></table></figure>
-<h3 id="가상콘솔-명령어"><a href="#가상콘솔-명령어" class="headerlink" title="가상콘솔 명령어"></a>가상콘솔 명령어</h3><p>CentOS는 6개의 가상콘솔을 제공하는데 ctrl+alt+F2~F6으로 이동이 가능하다. F1은 X윈도우 모드이다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ chvt 1~6 입력 //가상콘솔 이동</div></pre></td></tr></table></figure>
-<h3 id="자동완성"><a href="#자동완성" class="headerlink" title="자동완성"></a>자동완성</h3><p>일부만 입력하고 탭을 누르면 자동완성된다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$ /abcdef</div><div class="line">를 입력하고자 할 경우</div><div class="line"></div><div class="line">$ /abc</div><div class="line">만 입력하고 탭키를 누르면</div><div class="line">$ /abcdef 가 입력된다.</div><div class="line"></div><div class="line">먄약 abcde, abcdef 라는 디렉토리가 존재할 경우에는</div><div class="line">$ /abc</div><div class="line">입력 후 탭키를 누르면 자동완성이 되지않는다. 이 경우 탭키를 두번누르면 abcde, abcdef 라는 디렉토리가 있다는 사실을 알려준다.</div></pre></td></tr></table></figure></p>
-<h3 id="히스토리"><a href="#히스토리" class="headerlink" title="히스토리"></a>히스토리</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ history //자신이 입력했던 명령어들이 출력된다.</div><div class="line"></div><div class="line">$ history //히스토리 리스트를 제거한다.</div></pre></td></tr></table></figure>
+            <h4 id="쿼터"><a href="#쿼터" class="headerlink" title="쿼터"></a>쿼터</h4><p>사용자마다 용량 제한을 두는것이다.<br>ex.클라우드 서비스를 가입하면 데이터 양이 한정되어있음.</p>
+<h4 id="쿼터-실습"><a href="#쿼터-실습" class="headerlink" title="쿼터 실습"></a>쿼터 실습</h4><p>설치 직후로 초기화하자.</p>
+<p>새로운 디스크를 추가해서 쿼터 전용 디스크로 하자<br>사용자의 홈 디렉토리는 별도의 디스크로 하는것이 효과적이다. 그리고 사용자별 쿼터도 지정해보자</p>
+<h5 id="1-20기가짜리-하나-디스크-달자"><a href="#1-20기가짜리-하나-디스크-달자" class="headerlink" title="1. 20기가짜리 하나 디스크 달자"></a>1. 20기가짜리 하나 디스크 달자</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># fdisk /dev/sdb</div><div class="line"># mkfs.ext4 /dev/sdb1</div><div class="line"># mkdir /userHome     //앞으로 추가되는 사용자는</div><div class="line">              userHome를 홈 디렉토리로 함</div><div class="line"># mount /dev/sdb1  /userHome/</div><div class="line"># vi /etc/fstab</div><div class="line">/dev/sdb1     /userHome   ext4    defaults   1   2  추가</div></pre></td></tr></table></figure>
+<h5 id="2-유저-두명-추가하자"><a href="#2-유저-두명-추가하자" class="headerlink" title="2. 유저 두명 추가하자"></a>2. 유저 두명 추가하자</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"># useradd -d /userHome/john  john   </div><div class="line">          //홈디렉토리를 지정하면서 유저생성</div><div class="line"># useradd -d /userHome/bann  bann   </div><div class="line">                    //홈디렉토리를 지정하면서 유저생성   </div><div class="line"></div><div class="line"># ls -l /userHome     //확인</div><div class="line"></div><div class="line"># passwd john   //암호는 1234로 설정</div><div class="line"></div><div class="line"># passwd bann   //암호는 1234로 설정</div></pre></td></tr></table></figure>
+<h5 id="3-아까-추가한-디스크를-쿼터용으로-설정하자"><a href="#3-아까-추가한-디스크를-쿼터용으로-설정하자" class="headerlink" title="3. 아까 추가한 디스크를 쿼터용으로 설정하자"></a>3. 아까 추가한 디스크를 쿼터용으로 설정하자</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># vi /etc/fstab</div><div class="line">defaults 를 아래와 같이 변경</div><div class="line">defaults,usrjquota=aquota.user,jqfmt=vfsv0</div><div class="line"></div><div class="line">리부트 해도 되지만 귀찮으니까</div><div class="line"># mount --options remount  /userHome</div><div class="line"># mount  //맨아래서 확인</div></pre></td></tr></table></figure>
+<h5 id="4-쿼터디비생성"><a href="#4-쿼터디비생성" class="headerlink" title="4. 쿼터디비생성"></a>4. 쿼터디비생성</h5><p>명령어들에 대해 관심있으면 책을보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"># cd /userHome/</div><div class="line"># quotaoff -avug</div><div class="line"># quotacheck -augmn</div><div class="line"># rm -rf aquota.*</div><div class="line"># quotacheck -augmn</div><div class="line"># touch aquota.user aquota.group</div><div class="line"># chmod 600 aquota.*</div><div class="line"># quotacheck -augmn</div><div class="line"># quotaon -avug</div><div class="line"></div><div class="line"># ls -l   //aquota.group , user 생긴것 확인</div></pre></td></tr></table></figure></p>
+<h5 id="5-개인별-쿼터-설정"><a href="#5-개인별-쿼터-설정" class="headerlink" title="5. 개인별 쿼터 설정"></a>5. 개인별 쿼터 설정</h5><p>블록(block)이 현재 사용하는 키로바이트 수</p>
+<p>소프트제한(soft)- 넘어갈수 있지만 기간이 있음<br>하드제한(hard) -완전히 못넘어감</p>
+<p>소프트를 100으로 주고 하드를 150을 주었을 때<br>130을 저장하면 몇일 이내에 30메가를 줄여야함.</p>
+<p>inodes- 파일의 개수를 제한하는것<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"># edquota -u john //유저 존에 대해 쿼터를 수정하겠다.</div><div class="line"></div><div class="line">소프트 10240(10메가) 하드 15360(15메가)를 주고 저장</div><div class="line"></div><div class="line"># su - john  //존으로 로그인</div><div class="line"># cp /boot/vmlinuz-3.10.0-123.el7.x86_64 test1</div><div class="line">      // 파일 복사</div><div class="line"># cp /boot/vmlinuz-3.10.0-123.el7.x86_64 test2</div><div class="line"># cp /boot/vmlinuz-3.10.0-123.el7.x86_64 test3</div><div class="line">쿼터가 넘어갔다고 경고 뜸</div><div class="line"># ls -l     //데이터가 잘 들어갔다.</div><div class="line"></div><div class="line"># cp /boot/vmlinuz-3.10.0-123.el7.x86_64 test4</div><div class="line">sdb1: write failed, user block limit reached.</div><div class="line">cp: `test4&apos;에 쓰는 도중 오류 발생: 디스크 할당량이 초과됨</div><div class="line">cp: failed to extend `test4&apos;: 디스크 할당량이 초과됨</div><div class="line"> 오류뜬다.</div><div class="line"></div><div class="line"># ls -l</div><div class="line">//마지막 데이터는 용량이 다름 즉 짤려있음</div><div class="line"></div><div class="line"># quota  // 내가 얼마나쓰고 있는지 확인</div><div class="line">block 현재 사용량</div><div class="line">grace가 6일동안 봐준다는것.</div></pre></td></tr></table></figure></p>
+<h5 id="6-존이-한것을-밴한테-그대로-적용하기"><a href="#6-존이-한것을-밴한테-그대로-적용하기" class="headerlink" title="6. 존이 한것을 밴한테 그대로 적용하기"></a>6. 존이 한것을 밴한테 그대로 적용하기</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># exit    //존 로그아웃</div><div class="line"># repquota /userHome    //쿼터확인</div><div class="line"></div><div class="line"># edquota -p john bann</div></pre></td></tr></table></figure>
 
         </div>
         <footer class="article-footer">
@@ -185,7 +189,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/07/01/ThisIsLinux2/" data-id="cj4u1kea80013y4v7ck2iz436" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/07/07/ThisIsLinux20/" data-id="cj4u1keba002ry4v7ga7wio81" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -290,20 +294,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/07/02/ThisIsLinux3/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            4장. vi에디터, CD/DVD마운트
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/07/01/Instruction/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/07/07/ThisIsLinux19/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">리눅스 명령어</p>
+        <p class="article-nav-title">6장. LVM 개념과 구현, RAID에 CentOS 설치</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -349,7 +343,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'https-kkimsangheon-github-io-2';
     
     
-    var disqus_url = 'http://KKimSangHeon.github.io/2017/07/01/ThisIsLinux2/';
+    var disqus_url = 'http://KKimSangHeon.github.io/2017/07/07/ThisIsLinux20/';
     
     (function() {
     var dsq = document.createElement('script');

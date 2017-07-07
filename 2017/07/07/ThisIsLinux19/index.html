@@ -3,23 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>ThisIsLinux19 | Kim Sang Heon&#39;s Bolg</title>
+    <title>6장. LVM 개념과 구현, RAID에 CentOS 설치 | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="" />
+        <meta name="keywords" content="Linux,This Is Linux" />
     
     
 
-      <meta name="description" content="Welcome to Sang Heon&apos;s Blog.">
+      <meta name="description" content="LVMLogical Volume Manage여러개의 하드디스크를 합쳐서 한 개의 파일 시스템으로 사용하는것으로 필요에 따라 다시 나눌 수 있다.예로 2테라 두개를 합친 후 1테라 3테라로 나눠서 사용한다. 물리 볼륨:sda1, sdb1 등의 파티션 볼륨 그룹:물리 볼륨을 합쳐서 1개의 물리그룹으로 만드는것. 논리 볼륨:볼륨 그룹을 1개 이상으로 나눠서 논리">
+<meta name="keywords" content="Linux,This Is Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ThisIsLinux19">
+<meta property="og:title" content="6장. LVM 개념과 구현, RAID에 CentOS 설치">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2017/07/07/ThisIsLinux19/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="Welcome to Sang Heon&apos;s Blog.">
-<meta property="og:updated_time" content="2017-07-07T03:42:04.301Z">
+<meta property="og:description" content="LVMLogical Volume Manage여러개의 하드디스크를 합쳐서 한 개의 파일 시스템으로 사용하는것으로 필요에 따라 다시 나눌 수 있다.예로 2테라 두개를 합친 후 1테라 3테라로 나눠서 사용한다. 물리 볼륨:sda1, sdb1 등의 파티션 볼륨 그룹:물리 볼륨을 합쳐서 1개의 물리그룹으로 만드는것. 논리 볼륨:볼륨 그룹을 1개 이상으로 나눠서 논리">
+<meta property="og:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
+<meta property="og:updated_time" content="2017-07-07T06:58:12.212Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ThisIsLinux19">
-<meta name="twitter:description" content="Welcome to Sang Heon&apos;s Blog.">
+<meta name="twitter:title" content="6장. LVM 개념과 구현, RAID에 CentOS 설치">
+<meta name="twitter:description" content="LVMLogical Volume Manage여러개의 하드디스크를 합쳐서 한 개의 파일 시스템으로 사용하는것으로 필요에 따라 다시 나눌 수 있다.예로 2테라 두개를 합친 후 1테라 3테라로 나눠서 사용한다. 물리 볼륨:sda1, sdb1 등의 파티션 볼륨 그룹:물리 볼륨을 합쳐서 1개의 물리그룹으로 만드는것. 논리 볼륨:볼륨 그룹을 1개 이상으로 나눠서 논리">
+<meta name="twitter:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
 
@@ -131,7 +134,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    uncategorized
+    <a class="page-title-link" href="/categories/Linux/">Linux</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a>
     </h1>
 </div>
                         <div class="main-body-content">
@@ -142,7 +145,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        ThisIsLinux19
+        6장. LVM 개념과 구현, RAID에 CentOS 설치
         </h1>
     
 
@@ -158,18 +161,38 @@ ga('send', 'pageview');
     </div>
 
                 
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Linux/">Linux</a>, <a class="tag-link" href="/tags/This-Is-Linux/">This Is Linux</a>
+    </div>
+
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <h4 id="LVM"><a href="#LVM" class="headerlink" title="LVM"></a>LVM</h4><p>Logical Volume Manage<br>여러개의 하드디스크를 합쳐서 한 개의 파일 시스템으로 사용하는것으로 필요에 따라 다시 나눌 수 있다.<br>예로 2테라 두개를 합친 후 1테라 3테라로 나눠서 사용한다.</p>
+<h5 id="물리-볼륨"><a href="#물리-볼륨" class="headerlink" title="물리 볼륨:"></a>물리 볼륨:</h5><p>sda1, sdb1 등의 파티션</p>
+<h5 id="볼륨-그룹"><a href="#볼륨-그룹" class="headerlink" title="볼륨 그룹:"></a>볼륨 그룹:</h5><p>물리 볼륨을 합쳐서 1개의 물리그룹으로 만드는것.</p>
+<h5 id="논리-볼륨"><a href="#논리-볼륨" class="headerlink" title="논리 볼륨:"></a>논리 볼륨:</h5><p>볼륨 그룹을 1개 이상으로 나눠서 논리 그룹으로 나눈 것</p>
+<h4 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h4><p>3기가, 2기가를 볼륨 그룹으로 만들고<br>3기가, 1기가, 1기가 논리 볼륨으로 만들어보자</p>
+<h5 id="1-2기가-3기가-디스크-추가"><a href="#1-2기가-3기가-디스크-추가" class="headerlink" title="1. 2기가, 3기가 디스크 추가"></a>1. 2기가, 3기가 디스크 추가</h5><p>버츄어머신 에딧에서..</p>
+<h5 id="2-파티션-설정"><a href="#2-파티션-설정" class="headerlink" title="2. 파티션 설정"></a>2. 파티션 설정</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"># fdisk /dev/sdb</div><div class="line">n</div><div class="line">p</div><div class="line">1</div><div class="line">엔터</div><div class="line">엔터</div><div class="line">t</div><div class="line">8e</div><div class="line">w</div><div class="line"></div><div class="line"># fdisk /dev/sdc</div><div class="line">n</div><div class="line">p</div><div class="line">1</div><div class="line">엔터</div><div class="line">엔터</div><div class="line">t</div><div class="line">8e</div><div class="line">w</div></pre></td></tr></table></figure>
+<h5 id="3-피지컬-볼륨으로-만들기"><a href="#3-피지컬-볼륨으로-만들기" class="headerlink" title="3. 피지컬 볼륨으로 만들기"></a>3. 피지컬 볼륨으로 만들기</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># pvcreate /dev/sdb1</div><div class="line"># pvcreate /dev/sdc1</div></pre></td></tr></table></figure>
+<h5 id="4-볼륨-그룹으로-만들기"><a href="#4-볼륨-그룹으로-만들기" class="headerlink" title="4. 볼륨 그룹으로 만들기"></a>4. 볼륨 그룹으로 만들기</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># vgcreate myVG /dev/sdb1 /dev/sdc1</div><div class="line"></div><div class="line"># vgdisplay   //볼륨그룹 확인</div></pre></td></tr></table></figure>
+<h5 id="5-1기가-3기가-1기가로-나누자"><a href="#5-1기가-3기가-1기가로-나누자" class="headerlink" title="5. 1기가 3기가 1기가로 나누자"></a>5. 1기가 3기가 1기가로 나누자</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># lvcreate --size 1G --name myLG1 myVG</div><div class="line"># lvcreate --size 3G --name myLG2 myVG</div><div class="line"># lvcreate --extents 100%FREE --name myLG3 myVG</div><div class="line">        //나머지 다써라</div><div class="line"></div><div class="line"># ls -l /dev/myVG   //확인</div></pre></td></tr></table></figure>
+<h5 id="6-포멧하자"><a href="#6-포멧하자" class="headerlink" title="6. 포멧하자"></a>6. 포멧하자</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># mkfs.ext4 /dev/myVG/myLG1</div><div class="line"># mkfs.ext4 /dev/myVG/myLG2</div><div class="line"># mkfs.ext4 /dev/myVG/myLG3</div></pre></td></tr></table></figure>
+<h5 id="7-마운트하자"><a href="#7-마운트하자" class="headerlink" title="7. 마운트하자"></a>7. 마운트하자</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># mkdir /lvm1  /lvm2  /lvm3</div><div class="line"># mount /dev/myVG/myLG1 /lvm1</div><div class="line"># mount /dev/myVG/myLG2 /lvm2</div><div class="line"># mount /dev/myVG/myLG3 /lvm3</div><div class="line"></div><div class="line"># df //확인</div></pre></td></tr></table></figure>
+<h5 id="8-fstab에-등록하자"><a href="#8-fstab에-등록하자" class="headerlink" title="8. fstab에 등록하자"></a>8. fstab에 등록하자</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># vi /etc/fstab</div><div class="line"></div><div class="line">팁 yy 한다음에 pp하면 복붙이된다.</div><div class="line">/dev/myVG/myLG1         /lvm1    ext4     defaults      1 2</div><div class="line">/dev/myVG/myLG2         /lvm2    ext4     defaults      1 2</div><div class="line">/dev/myVG/myLG3         /lvm3    ext4     defaults      1 2</div></pre></td></tr></table></figure>
+<h3 id="RAID-1-방식으로-디스크에-CentOS를-설치하자"><a href="#RAID-1-방식으로-디스크에-CentOS를-설치하자" class="headerlink" title="RAID 1 방식으로 디스크에 CentOS를 설치하자"></a>RAID 1 방식으로 디스크에 CentOS를 설치하자</h3><p>392p 보고 하자</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># mdadm --detail -scan //확인해보자</div><div class="line"></div><div class="line"># mdadm --detail /dev/md/root   //자세히보자</div><div class="line"></div></pre></td></tr></table></figure>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/07/07/ThisIsLinux19/" data-id="cj4tbesdp002okgv7rt3006ow" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/07/07/ThisIsLinux19/" data-id="cj4u1keb9002py4v7f0anw6to" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -274,6 +297,16 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
+        <a href="/2017/07/07/ThisIsLinux20/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            6장 사용자별 공간 할당(쿼터)
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2017/07/07/ThisIsLinux18/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
@@ -291,7 +324,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">20</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">18</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">22</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">20</span></li></ul></li></ul>
         </div>
     </div>
 
