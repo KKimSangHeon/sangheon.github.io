@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="증상:Virtualized performance counters are not supported on the host CPU type. Module VPMC power on failed. Failed to start the virtual machine 이라는 에러메세지 출력. 해결법:.vmx 파일을 열고 vpmc.enable 부분을 “FALSE”로 수정.">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
-<meta property="og:updated_time" content="2017-07-08T02:14:56.808Z">
+<meta property="og:updated_time" content="2017-07-08T09:35:10.043Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="리눅스 에러">
 <meta name="twitter:description" content="증상:Virtualized performance counters are not supported on the host CPU type. Module VPMC power on failed. Failed to start the virtual machine 이라는 에러메세지 출력. 해결법:.vmx 파일을 열고 vpmc.enable 부분을 “FALSE”로 수정.">
@@ -174,7 +174,9 @@ ga('send', 'pageview');
 <p>해결법:<br>.vmx 파일을 열고 vpmc.enable 부분을 “FALSE”로 수정.</p>
 <hr>
 <p>증상:<br>quotaoff: command not found    , 쿼터에 대한 명령어가 실행이 안됨.</p>
-<p>해결법:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># yum install quota</div></pre></td></tr></table></figure></p>
+<p>해결법:</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># yum install quota</div></pre></td></tr></table></figure></h2><p>증상:<br>ifconfig가 먹히질 않는다.</p>
+<p>해결법<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># yum install net-tools</div></pre></td></tr></table></figure></p>
 
         </div>
         <footer class="article-footer">
@@ -182,7 +184,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/07/01/LinuxError/" data-id="cj4v2ihs60018cov7y4og7r2p" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/07/01/LinuxError/" data-id="cj4v5xaz700161cv7vfwi3soq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

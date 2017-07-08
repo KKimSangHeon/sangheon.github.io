@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-07-08T09:08:30.455Z</updated>
+  <updated>2017-07-08T10:43:13.255Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>8장. SSH서버, VNC서버</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/08/ThisIsLinux23/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/08/ThisIsLinux23/</id>
+    <published>2017-07-08T09:16:00.000Z</published>
+    <updated>2017-07-08T10:43:13.255Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="SSH서버"><a href="#SSH서버" class="headerlink" title="SSH서버"></a>SSH서버</h3><p>텔넷과 용도는 동일하지만 보안이 강화되어있음<br>명령문을 입력 시 암호화 되어서 날라간다. SSH서버를 쓰는것이 권장사항이다. CentOS에서 쓰는 SSH서느는 openSSH 서버라 함.</p>
+<h4 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h4><p>#####1.서버가 설치되었는지 확인<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># rpm -qa | grep openssh</div><div class="line">설치되어있다.</div></pre></td></tr></table></figure></p>
+<p>#####2.가동되고 있는지 확인<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># systemctl status sshd</div><div class="line">Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled)      //enable는 상시가동이라는 뜻</div><div class="line">Active: active (running) since 토 2017-07-08 17:43:06 KST; 1h 5min ago //돌고 있다.</div><div class="line">즉 ssh는 기본적으로 centos에서 깔려있고 가동되어 있다.</div><div class="line">기본적으로 쓰인다!!!</div></pre></td></tr></table></figure></p>
+<p>#####3.방화벽 열렸는지 여부 확인<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># firewall-config</div><div class="line">쭉 내리면 ssh가 켜져있다.</div></pre></td></tr></table></figure></p>
+<p>#####4.새로운 리눅스(Client)에서 접속해보자<br>클라이언트 켜자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># rpm -qa | grep openssh  //깔려있나확인</div><div class="line"></div><div class="line"># ssh teluser@192.168.111.100   //telnet와 접속방법이 다름</div><div class="line"># ifconfig  //서버컴퓨터의 아이피 확인</div></pre></td></tr></table></figure></p>
+<p>#####5.윈도우에서 접속해보자<br>Putty 설치<br>192.168.111.100 접속<br>참고로 ssh는 포트 22 telnet는 23<br>한글이 깨지면 오른쪽 누르고 유니코드로 전환<br>abc.txt를 하나 만들고 gedit abc.txt를 실행하면 되질 않는다.<br>왜냐하면 텔넷,SSH는 텍스트 모드로만 전송이 되기 때문에.<br>즉 그래픽 명령어는 아얘 쓸 수 없다.</p>
+<p>####그럼 telnet ssh 다른점이 없는건가?<br>그렇다. 기능은 같으나 ssh가 보안이 추가된 것이다.</p>
+<h3 id="VNC-서버"><a href="#VNC-서버" class="headerlink" title="VNC 서버"></a>VNC 서버</h3><p>X 윈도우 환경으로 원격접속을 사용하고 싶을 때.<br>telnet ,ssh 보다 많이 느리다. 그래픽이 왔다갔다하기 때문에!</p>
+<p>####1.VNC 설치 및 설정</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># rpm -qa | grep tiger  //설치유무 확인</div><div class="line">//미니멈 버전이 깔려있다. 다시깔자</div><div class="line"># yum -y install tigervnc-server</div></pre></td></tr></table></figure>
+<p>VNC는 사용자한테 너 접속해, 너 화면번호 몇번 써 를 지정해야한다.</p>
+<p>####2.센토스 사용자 너 1번화면으로 접속해를 설정<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service</div><div class="line">//1번화면을 쓰기위한 작업</div><div class="line"># vi /etc/systemd/system/vncserver@\:1.service</div><div class="line"> :set number</div><div class="line">40행,41행 의 &lt;USER&gt;을 지워버리고 centos로 고침</div><div class="line"> 그리고 저장 후 종료</div></pre></td></tr></table></figure></p>
+<p>####3.방화벽 열기</p>
+<h1 id="firewall-config"><a href="#firewall-config" class="headerlink" title="firewall-config"></a>firewall-config</h1><p>설정에서 영구적 선택<br>쭉 내려서 vnc-server체크<br>옵션에서 firewalld 다시불러오기 클릭</p>
+<p>####4.centos사용자가 1번화면으로 들어올 때 전용 비밀번호를 생성<br>즉 vnc 전용 비밀번호 생성<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># su - centos</div><div class="line"># vncserver</div><div class="line">암호는 123456으로 설정</div></pre></td></tr></table></figure></p>
+<p>####5.접속해보자<br>리눅스 클라이언트에서 접속<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># rpm -qa | grep tiger  //깔려있지 않은것을 확인</div><div class="line"></div><div class="line"># su -c &apos;yum -y install tigervnc&apos;   //루트 권한으로 실행하는것.</div><div class="line"># vncviewer 192.168.111.100:1   //1은 디스플레이 번호</div><div class="line">  password 입력</div></pre></td></tr></table></figure><br>윈도우 클라이언트에서 접속<br>카페이서 tigervnc 설치파일 깔기<br>옵션해서 해상도를 낮추면 사용할만 함(color level)<br>tigervnc vncviewer을 켜고<br>192.168.111.100:1 입력하고 암호 123456</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;SSH서버&quot;&gt;&lt;a href=&quot;#SSH서버&quot; class=&quot;headerlink&quot; title=&quot;SSH서버&quot;&gt;&lt;/a&gt;SSH서버&lt;/h3&gt;&lt;p&gt;텔넷과 용도는 동일하지만 보안이 강화되어있음&lt;br&gt;명령문을 입력 시 암호화 되어서 날라간다. SSH서버를
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>8장. 텔넷서버</title>
@@ -760,53 +798,6 @@
     
       &lt;h3 id=&quot;기본명령어&quot;&gt;&lt;a href=&quot;#기본명령어&quot; class=&quot;headerlink&quot; title=&quot;기본명령어&quot;&gt;&lt;/a&gt;기본명령어&lt;/h3&gt;&lt;p&gt;당연히 알고있어야 하는것들이다! 자연스럽게 사용할줄 알아야함!&lt;/p&gt;
 &lt;p&gt;폴더 == 디렉토리&lt;br&gt;리눅
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
-    
-      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
-    
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
-    
-      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>4장. vi에디터, CD/DVD마운트</title>
-    <link href="http://KKimSangHeon.github.io/2017/07/02/ThisIsLinux3/"/>
-    <id>http://KKimSangHeon.github.io/2017/07/02/ThisIsLinux3/</id>
-    <published>2017-07-02T04:13:19.000Z</published>
-    <updated>2017-07-02T06:19:38.179Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="에디터"><a href="#에디터" class="headerlink" title="에디터"></a>에디터</h3><p>gedit / vi 로 나뉜다. gedit는 윈도우의 메모장으로 생각하면 되며 단순하다. vi는 리눅스에서 자주 사용되므로 반드시 익혀야 한다.</p>
-<h4 id="gedit"><a href="#gedit" class="headerlink" title="gedit"></a>gedit</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ gedit //gedit 실행</div><div class="line">        //윈도우 + 스페이스 : 한영전환</div><div class="line"></div><div class="line">$ gedit 파일명 // 파일열기</div></pre></td></tr></table></figure>
-<h4 id="vi-에디터"><a href="#vi-에디터" class="headerlink" title="vi 에디터"></a>vi 에디터</h4><p>x윈도우가 설치되지 않은곳에서도 사용 가능하기에 공통적으로 사용가능하다!<br>초기 실행시 vi에디터는 명령모드이다. 즉 입력이 불가능한 상태이다.</p>
-<p>새파일 작성시  , 수정시</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ vi 파일명 //vi 에디터가 실행된다.</div><div class="line"></div><div class="line">i 또는 a 입력 //이후 편집, 입력작업진행</div><div class="line"></div><div class="line">esc   //작업이 끝난 후 명령모드로 변경</div><div class="line"></div><div class="line">:wq   //저장하고 종료한다.</div><div class="line">:q!   //수정사항 무시하고 종료.</div></pre></td></tr></table></figure></h2><p>코드의 행 번호를 확인하고 싶을경우<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ :set number</div></pre></td></tr></table></figure></p>
-<hr>
-<h3 id="swp-파일"><a href="#swp-파일" class="headerlink" title="swp 파일?"></a>swp 파일?</h3><p>중간에 작업을 하다 터미널이 비정상적으로 종료될 경우 swp파일이 생성된다. vi를 실행하면 에러가 뜨는데 엔터를 누르면 작업이 가능하다.</p>
-<p>이 파일을 확인하기 위해서는 다음명령어를 입력한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ls -a //숨김파일까지 조회</div></pre></td></tr></table></figure></p>
-<p>그 후 파일을 swp 파일을 지우려면 다음을 입력한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rm .myfile3.txt.swp</div></pre></td></tr></table></figure></p>
-<h3 id="도움말기능"><a href="#도움말기능" class="headerlink" title="도움말기능"></a>도움말기능</h3><p>도움말 사용방법<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mas ls //ls에 대한 도움말을 확인 . 스페이스바로 페이지 이동가능</div></pre></td></tr></table></figure></p>
-<h3 id="마운트"><a href="#마운트" class="headerlink" title="마운트"></a>마운트</h3><p>물리적인 장치와 디렉터리를 연결시켜주는 과정<br>무슨소리지? 윈도우는 CD를 넣으면 D 드라이드 등으로 연결시켜 주지만 리눅스는 이과정이 없어서 특정 디렉토리로 연결시켜 주는것이다.</p>
-<p>X윈도우에서 가능하며, 텍스트 모드에서 가능하다<br>1.<br>우선 vmware상으로 cd를 삽입해야 하므로 그 과정을 거친다. 좌측상단 Player을 누르고 Removable Decices -&gt; CD/DVD -&gt; Setting 을 들어간다.<br>혹은 우측상단 CD 모양 누르고 Setting</p>
-<p>2.<br>CD/DVD 탭으로 가서 Connected 키고 Use ISO…. 에 iso 이미지 선택</p>
-<p>3.<br>자동으로 인식이 되는데???? 리눅스는 자동으로 안된다며…<br>하지만 이게 되는 리눅스가 있고 안되는게 있다. 또한 텍스트 모드는 자동으로 인식이 되지 않으므로 수동으로 연습하는 것이 필요!</p>
-<h4 id="마운트-사용법"><a href="#마운트-사용법" class="headerlink" title="마운트 사용법"></a>마운트 사용법</h4><p>사전지식 :<br>dvd장치의 경로 : /dev/cdrom<br>보통 /media/cdrom 디렉토리를 마운트 할 떄 많이씀</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">$ umount /dev/cdrom   //마운트 된것을 끊는것. 연결이 되지 않았을 경우 오류메시지가 나온다. 하지만 상관없다.</div><div class="line"></div><div class="line">$ ls /media   //마운트 대상 디렉터리를 생성하기 전에 존재유무 확인</div><div class="line">$ mkdir /media/cdrom    //마운트 대상 디렉토리 생성</div><div class="line"></div><div class="line">$ mount /dev/cdrom  /media/cdrom    //마운트!</div><div class="line"></div><div class="line">$ cd /media/cdrom //디렉토리 이동</div><div class="line"></div><div class="line">$ ls  //마운트가 잘 되었는지 확인</div><div class="line"></div><div class="line">$ umount /dev/cdrom   //마운트 끊기 하지만 에러가 난다. 현재 cdrom 안에 존재하기 때문에.</div><div class="line"></div><div class="line">$ cd      // 홈디렉토리로 이동</div><div class="line"></div><div class="line">$ umount /dev/cdrom   //마운트 끊기 재시도</div><div class="line"></div><div class="line">$ ls /media/cdrom   //정상적으로 끊어진것을 확인</div><div class="line"></div></pre></td></tr></table></figure>
-<h3 id="ISO-파일-제작"><a href="#ISO-파일-제작" class="headerlink" title="ISO 파일 제작"></a>ISO 파일 제작</h3><p>p180 보고 진행하세요~ 앞으로 사용할 일은 없지만 가볍게 실습해보세요<br>ISO 파일을 생성하는 명령어는 genisoimage 이다. 또 iso 파일을 CD로 굽기 위한 명령어는 cdrecord이며 DVD로 굽는 명령어는 growisofs 이다.</p>
-<p>먼저 아래의 명령어로 패키지가 설치되어있는지 확인해보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rpm -qa 패키지이름</div></pre></td></tr></table></figure><br>설치되어있지 않다면<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yum -y install 패키지명 으로 설치를 한다.</div></pre></td></tr></table></figure></p>
-<p>그 후 아래와 같이 입력하자. /boot디렉토리의 모든 파일을 test1.iso파일로 만드는 것이다.<br>-r -J 는 8글자 이상의 파일 이름 및 대소문자를 구분해서 인식하는 옵션이며 -o는 출력할 파일을 위한 옵션이다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ genisoimage -r -J -o test1.iso /boot  </div></pre></td></tr></table></figure></p>
-<p>테스트 해보기 위해 디렉토리를 만들고 마운트 시킨다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ mkdir /media/iso</div><div class="line">$ mount -o loop test1.iso /media/iso</div><div class="line">$ ls -l /media/iso</div><div class="line">$ ls -l /boot</div></pre></td></tr></table></figure></p>
-<p>테스트를 했으면 마운트를 취소시켜준다<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ umount /media/iso  </div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;에디터&quot;&gt;&lt;a href=&quot;#에디터&quot; class=&quot;headerlink&quot; title=&quot;에디터&quot;&gt;&lt;/a&gt;에디터&lt;/h3&gt;&lt;p&gt;gedit / vi 로 나뉜다. gedit는 윈도우의 메모장으로 생각하면 되며 단순하다. vi는 리눅스에서 자주 사용되
     
     </summary>
     

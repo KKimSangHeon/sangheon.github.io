@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2017/07/08/ThisIsLinux23/</loc>
+        <lastmod>2017-07-08T10:43:13.255Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/07/01/LinuxError/</loc>
+        <lastmod>2017-07-08T09:35:10.043Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2017/07/08/ThisIsLinux22/</loc>
         <lastmod>2017-07-08T09:08:30.455Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -17,14 +33,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2017/07/08/ThisIsLinux21/</loc>
         <lastmod>2017-07-08T05:39:45.800Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2017/07/01/LinuxError/</loc>
-        <lastmod>2017-07-08T02:14:56.808Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
