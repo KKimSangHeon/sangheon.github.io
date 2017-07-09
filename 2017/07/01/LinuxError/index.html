@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="증상:Virtualized performance counters are not supported on the host CPU type. Module VPMC power on failed. Failed to start the virtual machine 이라는 에러메세지 출력. 해결법:.vmx 파일을 열고 vpmc.enable 부분을 “FALSE”로 수정.">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
-<meta property="og:updated_time" content="2017-07-08T09:35:10.043Z">
+<meta property="og:updated_time" content="2017-07-09T13:05:51.840Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="리눅스 에러">
 <meta name="twitter:description" content="증상:Virtualized performance counters are not supported on the host CPU type. Module VPMC power on failed. Failed to start the virtual machine 이라는 에러메세지 출력. 해결법:.vmx 파일을 열고 vpmc.enable 부분을 “FALSE”로 수정.">
@@ -177,6 +177,9 @@ ga('send', 'pageview');
 <p>해결법:</p>
 <h2 id=""><a href="#" class="headerlink" title=""></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># yum install quota</div></pre></td></tr></table></figure></h2><p>증상:<br>ifconfig가 먹히질 않는다.</p>
 <p>해결법<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># yum install net-tools</div></pre></td></tr></table></figure></p>
+<hr>
+<p>방화벽 설정<br>dns 방화벽 설정을 허용한다고 가정.</p>
+<p>해결법<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># firewall-cmd --permanent --add-service=dns  //방화벽 설정 허용</div><div class="line"># firewall-cmd --reload     //설정내용 적용</div></pre></td></tr></table></figure></p>
 
         </div>
         <footer class="article-footer">
@@ -184,7 +187,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/07/01/LinuxError/" data-id="cj4wibpf800136cv7471w2sc9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/07/01/LinuxError/" data-id="cj4wqgtg10013n0v71mbtws7o" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
