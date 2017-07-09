@@ -3,25 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>5장. X윈도 테마, GRUB 배경화면 | Kim Sang Heon&#39;s Bolg</title>
+    <title>9장. 도메인 이름 체계 개념, 캐싱 전용 네임서버 구축 | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="Linux,This Is Linux" />
     
     
 
-      <meta name="description" content="이 챕터는 책에서 중요도가 가장 떨어진다!서버관리자가 되었을 때 리눅스를 PC로 사용하는 사람에게 도움을 주기위해 알아둘 필요는 있다. 테마 설치하기12$ rpm -qa gnome-tweak-tool  //설치되어있나 확인$ gnome-tweak-tool    //툴 켜서 설정변경 GRUB 이미지 설정1234567891011121314$ su -c &amp;apo">
+      <meta name="description" content="초창기 인터넷에서는 1대의 네임 서버만으로 충분히 IP주소와 이름의 관리가 가능했다. 하지만 인터넷이 확장되면서 그것이 도메인 이름 체계가 고안되었다. 원칙은 www.nate.com. 이다. 맨 뒤에 .을 붙여줘야 한다. 로컬 네임서버가 작동하는 순서www.nate.com. 접속과정1./etc/hosts 를 보고 없으면 /etc/resolv.conf 에 있">
 <meta name="keywords" content="Linux,This Is Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="5장. X윈도 테마, GRUB 배경화면">
-<meta property="og:url" content="http://KKimSangHeon.github.io/2017/07/05/ThisIsLinux12/index.html">
+<meta property="og:title" content="9장. 도메인 이름 체계 개념, 캐싱 전용 네임서버 구축">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2017/07/09/ThisIsLinux25/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="이 챕터는 책에서 중요도가 가장 떨어진다!서버관리자가 되었을 때 리눅스를 PC로 사용하는 사람에게 도움을 주기위해 알아둘 필요는 있다. 테마 설치하기12$ rpm -qa gnome-tweak-tool  //설치되어있나 확인$ gnome-tweak-tool    //툴 켜서 설정변경 GRUB 이미지 설정1234567891011121314$ su -c &amp;apo">
+<meta property="og:description" content="초창기 인터넷에서는 1대의 네임 서버만으로 충분히 IP주소와 이름의 관리가 가능했다. 하지만 인터넷이 확장되면서 그것이 도메인 이름 체계가 고안되었다. 원칙은 www.nate.com. 이다. 맨 뒤에 .을 붙여줘야 한다. 로컬 네임서버가 작동하는 순서www.nate.com. 접속과정1./etc/hosts 를 보고 없으면 /etc/resolv.conf 에 있">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
-<meta property="og:updated_time" content="2017-07-05T04:38:22.934Z">
+<meta property="og:updated_time" content="2017-07-09T02:32:01.124Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="5장. X윈도 테마, GRUB 배경화면">
-<meta name="twitter:description" content="이 챕터는 책에서 중요도가 가장 떨어진다!서버관리자가 되었을 때 리눅스를 PC로 사용하는 사람에게 도움을 주기위해 알아둘 필요는 있다. 테마 설치하기12$ rpm -qa gnome-tweak-tool  //설치되어있나 확인$ gnome-tweak-tool    //툴 켜서 설정변경 GRUB 이미지 설정1234567891011121314$ su -c &amp;apo">
+<meta name="twitter:title" content="9장. 도메인 이름 체계 개념, 캐싱 전용 네임서버 구축">
+<meta name="twitter:description" content="초창기 인터넷에서는 1대의 네임 서버만으로 충분히 IP주소와 이름의 관리가 가능했다. 하지만 인터넷이 확장되면서 그것이 도메인 이름 체계가 고안되었다. 원칙은 www.nate.com. 이다. 맨 뒤에 .을 붙여줘야 한다. 로컬 네임서버가 작동하는 순서www.nate.com. 접속과정1./etc/hosts 를 보고 없으면 /etc/resolv.conf 에 있">
 <meta name="twitter:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
@@ -134,18 +134,18 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Linux/">Linux</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a>
+    uncategorized
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-ThisIsLinux12" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-ThisIsLinux25" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        5장. X윈도 테마, GRUB 배경화면
+        9장. 도메인 이름 체계 개념, 캐싱 전용 네임서버 구축
         </h1>
     
 
@@ -155,8 +155,8 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/07/05/ThisIsLinux12/" class="article-date">
-            <time datetime="2017-07-05T02:57:03.000Z" itemprop="datePublished">2017-07-05</time>
+        <a href="/2017/07/09/ThisIsLinux25/" class="article-date">
+            <time datetime="2017-07-09T01:29:00.000Z" itemprop="datePublished">2017-07-09</time>
         </a>
     </div>
 
@@ -170,11 +170,20 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>이 챕터는 책에서 중요도가 가장 떨어진다!<br>서버관리자가 되었을 때 리눅스를 PC로 사용하는 사람에게 도움을 주기위해 알아둘 필요는 있다.</p>
-<h4 id="테마-설치하기"><a href="#테마-설치하기" class="headerlink" title="테마 설치하기"></a>테마 설치하기</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ rpm -qa gnome-tweak-tool  //설치되어있나 확인</div><div class="line">$ gnome-tweak-tool    //툴 켜서 설정변경</div></pre></td></tr></table></figure>
-<h4 id="GRUB-이미지-설정"><a href="#GRUB-이미지-설정" class="headerlink" title="GRUB 이미지 설정"></a>GRUB 이미지 설정</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$ su -c &apos;yum -y install grub2-starfield-theme&apos;</div><div class="line">  //암호입력    //su -c는 슈퍼바이저 권한으로 실행하는것</div><div class="line">$ vi /etc/default/grub</div><div class="line"></div><div class="line">GRUB_TIMEOUT=5</div><div class="line">GRUB_DISTRIBUTOR=&quot;$(sed &apos;s, release .*$,,g&apos; /etc/system-release)&quot;</div><div class="line">GRUB_DEFAULT=saved</div><div class="line">GRUB_DISABLE_SUBMENU=true</div><div class="line">#GRUB_TERMINAL_OUTPUT=&quot;console&quot;     //여기 주석처리</div><div class="line">GRUB_CMDLINE_LINUX=&quot;rd.lvm.lv=centos/swap vconsole.font=latarcyrheb-sun16 rd.lvm.lv=centos/root crashkernel=auto  vconsole.keymap=us rhgb quiet&quot;</div><div class="line">GRUB_DISABLE_RECOVERY=&quot;true&quot;</div><div class="line">GRUB_THEME=&quot;/boot/grub2/themes/system/theme.txt&quot;  //여기추가</div><div class="line"></div><div class="line">vi 저장후 종료</div></pre></td></tr></table></figure>
-<p>이미지 파일을 centos폴더에 저장 (ball.png)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mv /home/centos/ball.png /boot/grub2/themes/system</div></pre></td></tr></table></figure><br>실행하여 그림 이동</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># vi /boot/grub2/themes/system/theme.txt //</div><div class="line">:set number</div><div class="line"></div><div class="line">34행가서 이미지 파일이름 변경</div><div class="line"># grub2-mkconfig -o /boot/grub2/grub.cfg  //적용</div></pre></td></tr></table></figure>
+            <p>초창기 인터넷에서는 1대의 네임 서버만으로 충분히 IP주소와 이름의 관리가 가능했다.</p>
+<p>하지만 인터넷이 확장되면서 그것이 도메인 이름 체계가 고안되었다.</p>
+<p>원칙은 www.nate.com. 이다. 맨 뒤에 .을 붙여줘야 한다.</p>
+<h4 id="로컬-네임서버가-작동하는-순서"><a href="#로컬-네임서버가-작동하는-순서" class="headerlink" title="로컬 네임서버가 작동하는 순서"></a>로컬 네임서버가 작동하는 순서</h4><h5 id="www-nate-com-접속과정"><a href="#www-nate-com-접속과정" class="headerlink" title="www.nate.com. 접속과정"></a>www.nate.com. 접속과정</h5><p>1./etc/hosts 를 보고 없으면 /etc/resolv.conf 에 있는 로컬 네임서버를 참고한다.<br>2.하지만 이 로컬네임서버도 많은것을 알지 못하므로 얘도 루트 네임서버한테 물어본다. 이렇게. “내가지금 www.nate.com으로 가려한다.”<br>3.그러면 루트네임서버가 “그건 내가 모르지만 내가 관리하는 com의 네임서버 ip를 줄게”<br>4.그러면 로컬네임서버는 다시 com네임서버에게 다시 물어본다<br>5.그러면 com네임서버가 nate ip를 알려준다. 그러면 nate.com아이피는 www의 ip를 응답해준다.</p>
+<h5 id="www-daum-net-접속과정"><a href="#www-daum-net-접속과정" class="headerlink" title="www.daum.net. 접속과정"></a>www.daum.net. 접속과정</h5><p>루트네임서버 -&gt; net 네임서버 -&gt;daum네임서버 -&gt;www네임서버</p>
+<h4 id="이제-우리가-할-실습"><a href="#이제-우리가-할-실습" class="headerlink" title="이제 우리가 할 실습!"></a>이제 우리가 할 실습!</h4><p>/etc/resolv.conf  에 있는 로컬네임서버를 만드는것.<br>서버컴퓨터 : 캐싱전용 네임서버 (PC에서 URL로 IP주소를 얻고자 할 때 해당하는 URL의 IP주소를 알려주는 네임 서버를 말함)</p>
+<p>클라이언트,서버B 에서 /etc/resolv.conf의 주소를 서버컴퓨터로 한다.</p>
+<h4 id="서버-설정"><a href="#서버-설정" class="headerlink" title="서버 설정"></a>서버 설정</h4><h5 id="1-관련-패키지-설치"><a href="#1-관련-패키지-설치" class="headerlink" title="1. 관련 패키지 설치"></a>1. 관련 패키지 설치</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># yum -y install bind bind-chroot</div></pre></td></tr></table></figure>
+<h5 id="2-누가-서버컴퓨터로-물어보든-응답해주게-설정"><a href="#2-누가-서버컴퓨터로-물어보든-응답해주게-설정" class="headerlink" title="2. 누가 서버컴퓨터로 물어보든 응답해주게 설정"></a>2. 누가 서버컴퓨터로 물어보든 응답해주게 설정</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># vi /etc/named.conf     //캐싱정보관련 설정파일</div><div class="line">:set number</div><div class="line">11행 보면 127.0.0.1 지우고 any로 변경 //누가 서비스를 요청하던 제공하겠다</div><div class="line">12행 ::1 지우고 none로 변경</div><div class="line">17행 localhost any로 변경</div><div class="line">named.conf 파일을 수정함으로서 누가 서버컴퓨터가 누가물어보든 응답을 해준다.</div></pre></td></tr></table></figure>
+<h5 id="3-서비스-재시작-및-환경설정"><a href="#3-서비스-재시작-및-환경설정" class="headerlink" title="3. 서비스 재시작 및 환경설정"></a>3. 서비스 재시작 및 환경설정</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"># systemctl restart named //네임서버의 서비스 이름은 named</div><div class="line"># systemctl status named    //작동여부 확인</div><div class="line">disable 가 있다는건 껏다켜도 동작하지 않는다는것.</div><div class="line"># systemctl enable named   //껏다켜도 작동하도록 설정</div><div class="line"></div><div class="line"># firewall-config</div><div class="line">영구적 선택 -&gt; dns 선택-&gt; 옵션/firewalld다시불러오기</div><div class="line"></div><div class="line"># nslookup    //내부적으로 잘돌아가는지 테스트</div><div class="line">&gt;server 192.168.111.100</div><div class="line">&gt;www.daum.net</div><div class="line">&gt;exit</div></pre></td></tr></table></figure>
+<h4 id="클라이언트-설정"><a href="#클라이언트-설정" class="headerlink" title="클라이언트 설정"></a>클라이언트 설정</h4><p>Client 켜고 실행<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># su -c &apos;vi /etc/resolv.conf&apos;</div><div class="line">password 입력</div><div class="line"></div><div class="line">192.168.111.100 으로 수정</div><div class="line"></div><div class="line">파이어폭스로 아무데나 접속해보자</div></pre></td></tr></table></figure><br>Server B 켜고 실행<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># vi /etc/resolv.conf</div><div class="line">password 입력</div><div class="line"></div><div class="line">192.168.111.100 으로 수정</div><div class="line"></div><div class="line"># ping -c 3 www.yahoo.com</div><div class="line"></div><div class="line"># yum -y install elinks //텍스트모드의 웹브라우져</div><div class="line"># elinks    //실행</div></pre></td></tr></table></figure></p>
+<h5 id="윈도우에서-설정"><a href="#윈도우에서-설정" class="headerlink" title="윈도우에서 설정"></a>윈도우에서 설정</h5><p>제어판 열기<br>네트워크 상태 및 작업보기<br>로컬영역 연결 클릭<br>속성<br>IPv4 속성<br>다음 dns 서버 주소 사용<br>기본 설정 DNS 서버에 192.168.111.100 입력</p>
+<h5 id="윈도우에서-원래대로-돌리기"><a href="#윈도우에서-원래대로-돌리기" class="headerlink" title="윈도우에서 원래대로 돌리기"></a>윈도우에서 원래대로 돌리기</h5><p>cmd 열고<br>ipconfig 입력<br>이더넷 어댑터 뒤에있는 글자 복사.</p>
+<p>netsh interface ip set dns “로컬 영역 연결” dhcp<br>//로컬 영역 연결은 (이더넷 어댑터 뒤에있는 글자)</p>
 
         </div>
         <footer class="article-footer">
@@ -182,7 +191,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/07/05/ThisIsLinux12/" data-id="cj4w3tl1n0025vsv7ywv527to" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/07/09/ThisIsLinux25/" data-id="cj4w3tl2b003cvsv7jz8soq2q" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -287,20 +296,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/07/05/ThisIsLinux13/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            5장. 노틸러스, FireFox업그레이드, 기타 X윈도 유틸리티
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/07/04/ThisIsLinux11/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/07/09/ThisIsLinux24/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">4장. 응급복구, GRUB, 커널 컴파일</p>
+        <p class="article-nav-title">9장. 네임서버 개념, IP주소 획득 흐름</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -346,7 +345,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'https-kkimsangheon-github-io-2';
     
     
-    var disqus_url = 'http://KKimSangHeon.github.io/2017/07/05/ThisIsLinux12/';
+    var disqus_url = 'http://KKimSangHeon.github.io/2017/07/09/ThisIsLinux25/';
     
     (function() {
     var dsq = document.createElement('script');
