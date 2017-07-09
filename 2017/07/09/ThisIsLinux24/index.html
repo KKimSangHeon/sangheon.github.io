@@ -3,26 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>퀵정렬 (QuickSort) | Kim Sang Heon&#39;s Bolg</title>
+    <title>9장. 네임서버 개념, IP주소 획득 흐름 | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Data Structure,Sort,Quick Sort" />
+        <meta name="keywords" content="Linux,This Is Linux" />
     
     
 
-      <meta name="description" content="퀵정렬퀵 정렬 O(nlog2n)- 피벗을 정하여 분할하여 정복.. 피벗을 선택 할때 3개를 선택하여 평균치를 구하여 구하면 더 효율적으로 피벗을 정할 수 있다.피벗이 잘 선택될 경우 시간복잡도가 줄어든다. 최악의 경우 O(n^2)이 될 수 있다  (피벗값이 많이 안좋을 경우) O(nlog2n)의 시간복잡도를 갖는 다른 정렬 알고리즘 보다 평균적으로 빠르다.">
-<meta name="keywords" content="Data Structure,Sort,Quick Sort">
+      <meta name="description" content="네임서배 개요네임서버=DNS(Domain Name System)서버도메인 이름을 IP주소로 변환시켜 주는 역할 = 이름해석12345678910# nslookup    //컴퓨터에 연결된 네임서버를 조회&amp;gt; server    //도메인 이름을 칠 때 물어보는 주소 조회Default server: 192.168.111.2Address: 192.168.111">
+<meta name="keywords" content="Linux,This Is Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="퀵정렬 (QuickSort)">
-<meta property="og:url" content="http://KKimSangHeon.github.io/2017/06/30/QuickSort/index.html">
+<meta property="og:title" content="9장. 네임서버 개념, IP주소 획득 흐름">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2017/07/09/ThisIsLinux24/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="퀵정렬퀵 정렬 O(nlog2n)- 피벗을 정하여 분할하여 정복.. 피벗을 선택 할때 3개를 선택하여 평균치를 구하여 구하면 더 효율적으로 피벗을 정할 수 있다.피벗이 잘 선택될 경우 시간복잡도가 줄어든다. 최악의 경우 O(n^2)이 될 수 있다  (피벗값이 많이 안좋을 경우) O(nlog2n)의 시간복잡도를 갖는 다른 정렬 알고리즘 보다 평균적으로 빠르다.">
-<meta property="og:image" content="http://kkimsangheon.github.io/images/datastructure.jpg">
-<meta property="og:updated_time" content="2017-06-30T11:02:24.397Z">
+<meta property="og:description" content="네임서배 개요네임서버=DNS(Domain Name System)서버도메인 이름을 IP주소로 변환시켜 주는 역할 = 이름해석12345678910# nslookup    //컴퓨터에 연결된 네임서버를 조회&amp;gt; server    //도메인 이름을 칠 때 물어보는 주소 조회Default server: 192.168.111.2Address: 192.168.111">
+<meta property="og:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
+<meta property="og:updated_time" content="2017-07-09T00:36:08.280Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="퀵정렬 (QuickSort)">
-<meta name="twitter:description" content="퀵정렬퀵 정렬 O(nlog2n)- 피벗을 정하여 분할하여 정복.. 피벗을 선택 할때 3개를 선택하여 평균치를 구하여 구하면 더 효율적으로 피벗을 정할 수 있다.피벗이 잘 선택될 경우 시간복잡도가 줄어든다. 최악의 경우 O(n^2)이 될 수 있다  (피벗값이 많이 안좋을 경우) O(nlog2n)의 시간복잡도를 갖는 다른 정렬 알고리즘 보다 평균적으로 빠르다.">
-<meta name="twitter:image" content="http://kkimsangheon.github.io/images/datastructure.jpg">
+<meta name="twitter:title" content="9장. 네임서버 개념, IP주소 획득 흐름">
+<meta name="twitter:description" content="네임서배 개요네임서버=DNS(Domain Name System)서버도메인 이름을 IP주소로 변환시켜 주는 역할 = 이름해석12345678910# nslookup    //컴퓨터에 연결된 네임서버를 조회&amp;gt; server    //도메인 이름을 칠 때 물어보는 주소 조회Default server: 192.168.111.2Address: 192.168.111">
+<meta name="twitter:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
 
@@ -134,18 +134,18 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Data-Structure/">Data Structure</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Data-Structure/Sort/">Sort</a>
+    uncategorized
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-QuickSort" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-ThisIsLinux24" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        퀵정렬 (QuickSort)
+        9장. 네임서버 개념, IP주소 획득 흐름
         </h1>
     
 
@@ -155,27 +155,25 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/06/30/QuickSort/" class="article-date">
-            <time datetime="2017-06-30T05:36:18.000Z" itemprop="datePublished">2017-06-30</time>
+        <a href="/2017/07/09/ThisIsLinux24/" class="article-date">
+            <time datetime="2017-07-09T00:07:45.000Z" itemprop="datePublished">2017-07-09</time>
         </a>
     </div>
 
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Data-Structure/">Data Structure</a>, <a class="tag-link" href="/tags/Quick-Sort/">Quick Sort</a>, <a class="tag-link" href="/tags/Sort/">Sort</a>
+        <a class="tag-link" href="/tags/Linux/">Linux</a>, <a class="tag-link" href="/tags/This-Is-Linux/">This Is Linux</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="퀵정렬"><a href="#퀵정렬" class="headerlink" title="퀵정렬"></a>퀵정렬</h3><p>퀵 정렬 O(nlog2n)- 피벗을 정하여 분할하여 정복.. 피벗을 선택 할때 3개를 선택하여 평균치를 구하여 구하면 더 효율적으로 피벗을 정할 수 있다.<br>피벗이 잘 선택될 경우 시간복잡도가 줄어든다.</p>
-<p>최악의 경우 O(n^2)이 될 수 있다  (피벗값이 많이 안좋을 경우)</p>
-<p>O(nlog2n)의 시간복잡도를 갖는 다른 정렬 알고리즘 보다 평균적으로 빠르다.<br>why ? 데이터 이동이 상대적으로 작고 병합정렬과 같이 별도의 메모리 공간을 요구하지 않기 때문에..</p>
-<p>나만의 요약! : 피벗값을 기준으로 처음지점부터 시작한 반복문은 피벗보다 작은값을 찾고 뒤에서 시작한 반복문은 피벗보다 큰값을 찾아 서로 바꾼다. ( 단 피벗을 지나치치 않음)</p>
-<figure class="highlight c"><figcaption><span>QuickSort.c</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Swap</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> idx1, <span class="keyword">int</span> idx2)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> temp = arr[idx1];</div><div class="line">	arr[idx1] = arr[idx2];</div><div class="line">	arr[idx2] = temp;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">Partition</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> pivot = arr[left];    <span class="comment">// 피벗의 위치는 가장 왼쪽!</span></div><div class="line">	<span class="keyword">int</span> low = left+<span class="number">1</span>;</div><div class="line">	<span class="keyword">int</span> high = right;</div><div class="line"></div><div class="line">	<span class="keyword">while</span>(low &lt;= high)    <span class="comment">// 교차되지 않을 때까지 반복</span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">while</span>(pivot &gt; arr[low])</div><div class="line">			low++;</div><div class="line"></div><div class="line">		<span class="keyword">while</span>(pivot &lt; arr[high])</div><div class="line">			high--;</div><div class="line"></div><div class="line">		<span class="comment">/*</span></div><div class="line">		while(pivot &gt;= arr[low] &amp;&amp; low &lt;= right)</div><div class="line">			low++;</div><div class="line"></div><div class="line">		while(pivot &lt;= arr[high] &amp;&amp; high &gt;= (left+1))</div><div class="line">			high--;</div><div class="line">		*/</div><div class="line"></div><div class="line">		<span class="keyword">if</span>(low &lt;= high)    <span class="comment">// 교차되지 않은 상태라면 Swap 실행</span></div><div class="line">			Swap(arr, low, high);    <span class="comment">// low와 high가 가리키는 대상 교환</span></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	Swap(arr, left, high);    <span class="comment">// 피벗과 high가 가리키는 대상 교환</span></div><div class="line">	<span class="keyword">return</span> high;    <span class="comment">// 옮겨진 피벗의 위치 정보 반환</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">QuickSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">if</span>(left &lt;= right)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">int</span> pivot = Partition(arr, left, right);    <span class="comment">// 둘로 나눠서</span></div><div class="line">		QuickSort(arr, left, pivot<span class="number">-1</span>);    <span class="comment">// 왼쪽 영역을 정렬</span></div><div class="line">		QuickSort(arr, pivot+<span class="number">1</span>, right);    <span class="comment">// 오른쪽 영역을 정렬</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>참고 : 윤성우의 열혈 자료구조</p>
+            <h3 id="네임서배-개요"><a href="#네임서배-개요" class="headerlink" title="네임서배 개요"></a>네임서배 개요</h3><p>네임서버=DNS(Domain Name System)서버<br>도메인 이름을 IP주소로 변환시켜 주는 역할 = 이름해석<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"># nslookup    //컴퓨터에 연결된 네임서버를 조회</div><div class="line">&gt; server    //도메인 이름을 칠 때 물어보는 주소 조회</div><div class="line">Default server: 192.168.111.2</div><div class="line">Address: 192.168.111.2#53</div><div class="line"></div><div class="line">&gt; www.nate.com</div><div class="line">Server:		192.168.111.2</div><div class="line">Address:	192.168.111.2#53</div><div class="line"></div><div class="line">exit</div></pre></td></tr></table></figure></p>
+<h4 id="네임서버의-위치를-저장해-놓는곳은"><a href="#네임서버의-위치를-저장해-놓는곳은" class="headerlink" title="네임서버의 위치를 저장해 놓는곳은?"></a>네임서버의 위치를 저장해 놓는곳은?</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># cat /etc/resolv.conf</div><div class="line">Generated by NetworkManager</div><div class="line">nameserver 192.168.111.2</div></pre></td></tr></table></figure>
+<h4 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"># vi /etc/resolv.conf</div><div class="line">#을 넣어 두줄 다 주석처리.</div><div class="line">저장 후 종료</div><div class="line">www.nate.com 접속되지 않음</div><div class="line"></div><div class="line"># vi /etc/hosts</div><div class="line">211.234.241.205    www.nate.com 추가</div><div class="line">저장 후 종료</div><div class="line"></div><div class="line">www.nate.com 접속 가능</div><div class="line"></div><div class="line">네임서버가 죽어있는데 열린다. /etc/hosts에 먼저 접근 후</div><div class="line">resolv.conf파일에 접근한다.</div><div class="line">즉 수첩에 전화번호가 적혀있으면 114에 전화하지 않는것.</div><div class="line"></div></pre></td></tr></table></figure>
+<h4 id="nate-com-접속방식"><a href="#nate-com-접속방식" class="headerlink" title="nate.com 접속방식"></a>nate.com 접속방식</h4><p>웹브라우저에서 www.nate.com을 치면 /etc/hosts에 접근하여 해당 ip가 있는지 확인을 한다. 존재 할 경우 그 ip로 접속하고 존재하지 않을 경우 /etc/resolv.conf 로 가서 네임서버를 확인하고 해당 ip주소를 알아온다.</p>
 
         </div>
         <footer class="article-footer">
@@ -183,7 +181,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/06/30/QuickSort/" data-id="cj4vzogll000jpsv7rq5xcgyq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/07/09/ThisIsLinux24/" data-id="cj4vzogng0038psv7h0fq4zl4" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -288,20 +286,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/06/30/RadixSort/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            기수정렬 (RadixSort)
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/06/30/MergeSort/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/07/08/ThisIsLinux23/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">병합정렬 (MergeSort)</p>
+        <p class="article-nav-title">8장. SSH서버, VNC서버</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -347,7 +335,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'https-kkimsangheon-github-io-2';
     
     
-    var disqus_url = 'http://KKimSangHeon.github.io/2017/06/30/QuickSort/';
+    var disqus_url = 'http://KKimSangHeon.github.io/2017/07/09/ThisIsLinux24/';
     
     (function() {
     var dsq = document.createElement('script');
