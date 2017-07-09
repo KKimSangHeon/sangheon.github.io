@@ -3,25 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>8장. SSH서버, VNC서버 | Kim Sang Heon&#39;s Bolg</title>
+    <title>9장. 마스터 네임서버 구축, 라운드 로빈 방식 네임서버 | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="Linux,This Is Linux" />
     
     
 
-      <meta name="description" content="SSH서버텔넷과 용도는 동일하지만 보안이 강화되어있음명령문을 입력 시 암호화 되어서 날라간다. SSH서버를 쓰는것이 권장사항이다. CentOS에서 쓰는 SSH서느는 openSSH 서버라 함. 실습1.서버가 설치되었는지 확인12# rpm -qa | grep openssh설치되어있다. 2.가동되고 있는지 확인12345# systemctl status sshdL">
+      <meta name="description" content="앞에한건 캐싱전용이었다.캐싱전용네임서버 - 자기가 관리하는건 없고 무조건 밖에 나가서 알아다가 알려줌. 마스터 네임 서버 - 자기가 관리하는 것들이 있다. 마스터 네임 서버 구축1. 웹서버 하나 간단하게 만들자(서버)1234567# rpm -qa httpd   //설치가 되어있다.# systemctl status httpd  //시작되어있나 확인# syst">
 <meta name="keywords" content="Linux,This Is Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="8장. SSH서버, VNC서버">
-<meta property="og:url" content="http://KKimSangHeon.github.io/2017/07/08/ThisIsLinux23/index.html">
+<meta property="og:title" content="9장. 마스터 네임서버 구축, 라운드 로빈 방식 네임서버">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2017/07/09/ThisIsLinux26/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="SSH서버텔넷과 용도는 동일하지만 보안이 강화되어있음명령문을 입력 시 암호화 되어서 날라간다. SSH서버를 쓰는것이 권장사항이다. CentOS에서 쓰는 SSH서느는 openSSH 서버라 함. 실습1.서버가 설치되었는지 확인12# rpm -qa | grep openssh설치되어있다. 2.가동되고 있는지 확인12345# systemctl status sshdL">
+<meta property="og:description" content="앞에한건 캐싱전용이었다.캐싱전용네임서버 - 자기가 관리하는건 없고 무조건 밖에 나가서 알아다가 알려줌. 마스터 네임 서버 - 자기가 관리하는 것들이 있다. 마스터 네임 서버 구축1. 웹서버 하나 간단하게 만들자(서버)1234567# rpm -qa httpd   //설치가 되어있다.# systemctl status httpd  //시작되어있나 확인# syst">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
-<meta property="og:updated_time" content="2017-07-08T12:45:04.982Z">
+<meta property="og:updated_time" content="2017-07-09T09:16:44.127Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="8장. SSH서버, VNC서버">
-<meta name="twitter:description" content="SSH서버텔넷과 용도는 동일하지만 보안이 강화되어있음명령문을 입력 시 암호화 되어서 날라간다. SSH서버를 쓰는것이 권장사항이다. CentOS에서 쓰는 SSH서느는 openSSH 서버라 함. 실습1.서버가 설치되었는지 확인12# rpm -qa | grep openssh설치되어있다. 2.가동되고 있는지 확인12345# systemctl status sshdL">
+<meta name="twitter:title" content="9장. 마스터 네임서버 구축, 라운드 로빈 방식 네임서버">
+<meta name="twitter:description" content="앞에한건 캐싱전용이었다.캐싱전용네임서버 - 자기가 관리하는건 없고 무조건 밖에 나가서 알아다가 알려줌. 마스터 네임 서버 - 자기가 관리하는 것들이 있다. 마스터 네임 서버 구축1. 웹서버 하나 간단하게 만들자(서버)1234567# rpm -qa httpd   //설치가 되어있다.# systemctl status httpd  //시작되어있나 확인# syst">
 <meta name="twitter:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
@@ -138,14 +138,14 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-ThisIsLinux23" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-ThisIsLinux26" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        8장. SSH서버, VNC서버
+        9장. 마스터 네임서버 구축, 라운드 로빈 방식 네임서버
         </h1>
     
 
@@ -155,8 +155,8 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/07/08/ThisIsLinux23/" class="article-date">
-            <time datetime="2017-07-08T09:16:00.000Z" itemprop="datePublished">2017-07-08</time>
+        <a href="/2017/07/09/ThisIsLinux26/" class="article-date">
+            <time datetime="2017-07-09T05:49:08.000Z" itemprop="datePublished">2017-07-09</time>
         </a>
     </div>
 
@@ -170,21 +170,18 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="SSH서버"><a href="#SSH서버" class="headerlink" title="SSH서버"></a>SSH서버</h3><p>텔넷과 용도는 동일하지만 보안이 강화되어있음<br>명령문을 입력 시 암호화 되어서 날라간다. SSH서버를 쓰는것이 권장사항이다. CentOS에서 쓰는 SSH서느는 openSSH 서버라 함.</p>
-<h4 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h4><h5 id="1-서버가-설치되었는지-확인"><a href="#1-서버가-설치되었는지-확인" class="headerlink" title="1.서버가 설치되었는지 확인"></a>1.서버가 설치되었는지 확인</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># rpm -qa | grep openssh</div><div class="line">설치되어있다.</div></pre></td></tr></table></figure>
-<h5 id="2-가동되고-있는지-확인"><a href="#2-가동되고-있는지-확인" class="headerlink" title="2.가동되고 있는지 확인"></a>2.가동되고 있는지 확인</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># systemctl status sshd</div><div class="line">Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled)      //enable는 상시가동이라는 뜻</div><div class="line">Active: active (running) since 토 2017-07-08 17:43:06 KST; 1h 5min ago //돌고 있다.</div><div class="line">즉 ssh는 기본적으로 centos에서 깔려있고 가동되어 있다.</div><div class="line">기본적으로 쓰인다!!!</div></pre></td></tr></table></figure>
-<h5 id="3-방화벽-열렸는지-여부-확인"><a href="#3-방화벽-열렸는지-여부-확인" class="headerlink" title="3.방화벽 열렸는지 여부 확인"></a>3.방화벽 열렸는지 여부 확인</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># firewall-config</div><div class="line">쭉 내리면 ssh가 켜져있다.</div></pre></td></tr></table></figure>
-<h5 id="4-새로운-리눅스-Client-에서-접속해보자"><a href="#4-새로운-리눅스-Client-에서-접속해보자" class="headerlink" title="4.새로운 리눅스(Client)에서 접속해보자"></a>4.새로운 리눅스(Client)에서 접속해보자</h5><p>클라이언트 켜자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># rpm -qa | grep openssh  //깔려있나확인</div><div class="line"></div><div class="line"># ssh teluser@192.168.111.100   //telnet와 접속방법이 다름</div><div class="line"># ifconfig  //서버컴퓨터의 아이피 확인</div></pre></td></tr></table></figure></p>
-<h5 id="5-윈도우에서-접속해보자"><a href="#5-윈도우에서-접속해보자" class="headerlink" title="5.윈도우에서 접속해보자"></a>5.윈도우에서 접속해보자</h5><p>Putty 설치<br>192.168.111.100 접속<br>참고로 ssh는 포트 22 telnet는 23<br>한글이 깨지면 오른쪽 누르고 유니코드로 전환<br>abc.txt를 하나 만들고 gedit abc.txt를 실행하면 되질 않는다.<br>왜냐하면 텔넷,SSH는 텍스트 모드로만 전송이 되기 때문에.<br>즉 그래픽 명령어는 아얘 쓸 수 없다.</p>
-<h4 id="그럼-telnet-ssh-다른점이-없는건가"><a href="#그럼-telnet-ssh-다른점이-없는건가" class="headerlink" title="그럼 telnet ssh 다른점이 없는건가?"></a>그럼 telnet ssh 다른점이 없는건가?</h4><p>그렇다. 기능은 같으나 ssh가 보안이 추가된 것이다.</p>
-<h3 id="VNC-서버"><a href="#VNC-서버" class="headerlink" title="VNC 서버"></a>VNC 서버</h3><p>X 윈도우 환경으로 원격접속을 사용하고 싶을 때.<br>telnet ,ssh 보다 많이 느리다. 그래픽이 왔다갔다하기 때문에!</p>
-<h4 id="1-VNC-설치-및-설정"><a href="#1-VNC-설치-및-설정" class="headerlink" title="1.VNC 설치 및 설정"></a>1.VNC 설치 및 설정</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># rpm -qa | grep tiger  //설치유무 확인</div><div class="line">//미니멈 버전이 깔려있다. 다시깔자</div><div class="line"># yum -y install tigervnc-server</div></pre></td></tr></table></figure>
-<p>VNC는 사용자한테 너 접속해, 너 화면번호 몇번 써 를 지정해야한다.</p>
-<h4 id="2-센토스-사용자-너-1번화면으로-접속해를-설정"><a href="#2-센토스-사용자-너-1번화면으로-접속해를-설정" class="headerlink" title="2.센토스 사용자 너 1번화면으로 접속해를 설정"></a>2.센토스 사용자 너 1번화면으로 접속해를 설정</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service</div><div class="line">//1번화면을 쓰기위한 작업</div><div class="line"># vi /etc/systemd/system/vncserver@\:1.service</div><div class="line"> :set number</div><div class="line">40행,41행 의 &lt;USER&gt;을 지워버리고 centos로 고침</div><div class="line"> 그리고 저장 후 종료</div></pre></td></tr></table></figure>
-<h4 id="3-방화벽-열기"><a href="#3-방화벽-열기" class="headerlink" title="3.방화벽 열기"></a>3.방화벽 열기</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># firewall-config</div></pre></td></tr></table></figure>
-<p>설정에서 영구적 선택<br>쭉 내려서 vnc-server체크<br>옵션에서 firewalld 다시불러오기 클릭</p>
-<h4 id="4-centos사용자가-1번화면으로-들어올-때-전용-비밀번호를-생성"><a href="#4-centos사용자가-1번화면으로-들어올-때-전용-비밀번호를-생성" class="headerlink" title="4.centos사용자가 1번화면으로 들어올 때 전용 비밀번호를 생성"></a>4.centos사용자가 1번화면으로 들어올 때 전용 비밀번호를 생성</h4><p>즉 vnc 전용 비밀번호 생성<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># su - centos</div><div class="line"># vncserver</div><div class="line">암호는 123456으로 설정</div></pre></td></tr></table></figure></p>
-<h4 id="5-접속해보자"><a href="#5-접속해보자" class="headerlink" title="5.접속해보자"></a>5.접속해보자</h4><p>리눅스 클라이언트에서 접속<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># rpm -qa | grep tiger  //깔려있지 않은것을 확인</div><div class="line"></div><div class="line"># su -c &apos;yum -y install tigervnc&apos;   //루트 권한으로 실행하는것.</div><div class="line"># vncviewer 192.168.111.100:1   //1은 디스플레이 번호</div><div class="line">  password 입력</div></pre></td></tr></table></figure><br>윈도우 클라이언트에서 접속<br>카페이서 tigervnc 설치파일 깔기<br>옵션해서 해상도를 낮추면 사용할만 함(color level)<br>tigervnc vncviewer을 켜고<br>192.168.111.100:1 입력하고 암호 123456</p>
+            <p>앞에한건 캐싱전용이었다.<br>캐싱전용네임서버 - 자기가 관리하는건 없고 무조건 밖에 나가서 알아다가 알려줌.</p>
+<p>마스터 네임 서버 - 자기가 관리하는 것들이 있다.</p>
+<h4 id="마스터-네임-서버-구축"><a href="#마스터-네임-서버-구축" class="headerlink" title="마스터 네임 서버 구축"></a>마스터 네임 서버 구축</h4><h5 id="1-웹서버-하나-간단하게-만들자-서버"><a href="#1-웹서버-하나-간단하게-만들자-서버" class="headerlink" title="1. 웹서버 하나 간단하게 만들자(서버)"></a>1. 웹서버 하나 간단하게 만들자(서버)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># rpm -qa httpd   //설치가 되어있다.</div><div class="line"># systemctl status httpd  //시작되어있나 확인</div><div class="line"># systemctl restart httpd //시작</div><div class="line"># firewall-config</div><div class="line">영구적 - http 체크 - firewalld 다시불러오기</div><div class="line"># vi /var/www/html/index.html</div><div class="line">&lt;h1&gt; CentOS 7 홈피 입니다&lt;/h1&gt; //삽입</div></pre></td></tr></table></figure>
+<h5 id="2-ftp서버-간단하게-만들자-서버B"><a href="#2-ftp서버-간단하게-만들자-서버B" class="headerlink" title="2. ftp서버 간단하게 만들자(서버B)"></a>2. ftp서버 간단하게 만들자(서버B)</h5><p>서버 B를 켠다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># yum -y install vsftpd</div><div class="line"># firewall-cmd --permanent --add-service=ftp  //방화벽설정</div><div class="line"># firewall-cmd --reload</div></pre></td></tr></table></figure></p>
+<h5 id="3-환경설정을-해주자-서버"><a href="#3-환경설정을-해주자-서버" class="headerlink" title="3. 환경설정을 해주자(서버)"></a>3. 환경설정을 해주자(서버)</h5><p>서버에서<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"># vi /etc/named.conf</div><div class="line">:set number</div><div class="line">맨아래 가서</div><div class="line">zone &quot;centos.com&quot; IN &#123;type master;</div><div class="line">                      file &quot;centos.com.db&quot;;</div><div class="line">                      allow-update&#123;none;&#125;;</div><div class="line">&#125;;</div><div class="line">입력. 이 의미는 서버컴퓨터는 centos.com의 마스터 네임서버다. 그리고 상세정보는 centos.com.db(임의로 지은것)에 들어있다.</div><div class="line"></div><div class="line"># named-checkconf   //방금작성한것 문법적으로 잘못된것 없나 확인</div></pre></td></tr></table></figure></p>
+<h5 id="4-centos-com-db를-만들자-서버"><a href="#4-centos-com-db를-만들자-서버" class="headerlink" title="4. centos.com.db를 만들자(서버)"></a>4. centos.com.db를 만들자(서버)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"># cd /var/named</div><div class="line"># pwd</div><div class="line"># ls</div><div class="line"># touch centos.com.db</div><div class="line"># vi centos.com.db</div><div class="line">아래 추가</div><div class="line">$TTL 3H</div><div class="line">@    SOA  @   root. (2 1D 1H 1W 1H)</div><div class="line">     IN   NS  @</div><div class="line">     IN   A   192.168.111.100</div><div class="line"></div><div class="line">www  IN   A   192.168.111.100</div><div class="line">ftp  IN   A   192.168.111.200</div><div class="line"></div><div class="line">위 세줄은 항상 써주는것.</div><div class="line">네번째는 자기 자신의 ip 입력</div><div class="line">나머지 아래 두줄은 알려줄것.</div><div class="line"></div><div class="line"># named-checkzone centos.com centos.com.db   //오류있는지 확인</div><div class="line"># systemctl restart named</div><div class="line">방화벽 설정은 앞에서 해줬으니 안해도됨</div></pre></td></tr></table></figure>
+<h5 id="5-접속-테스트해보자"><a href="#5-접속-테스트해보자" class="headerlink" title="5. 접속 테스트해보자"></a>5. 접속 테스트해보자</h5><p>클라이언트 켜자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ su -</div><div class="line">$ vi /etc/resolv.conf</div><div class="line">맨 아래 192.168.111.100 으로 수정</div><div class="line"></div><div class="line">www.centos.com 접속해보자</div></pre></td></tr></table></figure><br>ftp 접속해보자<br>서버 B에서 다음을 실행하자(ftp서비스 시작)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># systemctl restart vsftpd</div><div class="line"># systemctl status vsftpd</div></pre></td></tr></table></figure><br>클라이언트에서 접속해보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># ftp ftp.centos.com</div><div class="line"> // anonymous</div><div class="line"> //엔터</div></pre></td></tr></table></figure></p>
+<h4 id="라운드-로빈-방식의-네임-서버"><a href="#라운드-로빈-방식의-네임-서버" class="headerlink" title="라운드 로빈 방식의 네임 서버"></a>라운드 로빈 방식의 네임 서버</h4><p>이전에 실습한 방식은 여러명이 동시에 접속할 경우 서버 하나에 부하가 걸린다. 그래서 웹 서버를 여러개 만들어서 요청이 들어올 때마다 번갈아가면서 요청처리.</p>
+<h5 id="네이버가-이-방식을-쓴다"><a href="#네이버가-이-방식을-쓴다" class="headerlink" title="네이버가 이 방식을 쓴다."></a>네이버가 이 방식을 쓴다.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># nslookup</div><div class="line">www.naver.com</div><div class="line">두개가 넘어온다.</div></pre></td></tr></table></figure>
+<h4 id="실습"><a href="#실습" class="headerlink" title="실습."></a>실습.</h4><p>www.john.com 으로 접속 했을 때 각각 다른 페이지를 뿌려주는실습.(라운드로빈 방식 확인가능)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># nslookup</div><div class="line">&gt; www.yes24.com     //아이피 주소를 확인하기위해</div><div class="line">&gt; www.danawa.com   //아이피 주소를 확인하기위해</div><div class="line">&gt; www.nate.com     //아이피 주소를 확인하기위해</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"># cd /var/named</div><div class="line"># vi centos.com.db</div><div class="line"></div><div class="line">아래 두줄 지우고 다음으로 대체</div><div class="line">www          IN      CNAME       webserver.centos.com.</div><div class="line">webserver    100     IN          A     61.111.13.51</div><div class="line">             200     IN          A     119.205.194.11</div><div class="line">             300     IN          A     120.50.131.112</div><div class="line"></div><div class="line">순차적으로 주소를 알려준다. 100,200,300 은 순차번호이다.</div><div class="line"></div><div class="line"># systemctl restart named</div><div class="line"># nslookup</div><div class="line">&gt;server 192.168.111.100</div><div class="line">&gt;www.centos.com</div><div class="line">결과가 세개가 온다.</div><div class="line"></div><div class="line">&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;##### 클라이언트에서 접속해보자&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</div><div class="line">&lt;h1 id=&quot;vi-etc-resolv-conf&quot;&gt;&lt;a href=&quot;#vi-etc-resolv-conf&quot; class=&quot;headerlink&quot; title=&quot;vi /etc/resolv.conf&quot;&gt;&lt;/a&gt;vi /etc/resolv.conf&lt;/h1&gt;&lt;p&gt;//192.168.111.100 이 맞나 확인&lt;br&gt;//아니면 설정하기&lt;br&gt;</div></pre></td></tr></table></figure><br>웹 브라우져 닫고<br>www.centos.com 들어가보자(여러번)<p></p>
 
         </div>
         <footer class="article-footer">
@@ -192,7 +189,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/07/08/ThisIsLinux23/" data-id="cj4wi7fed00335cv7nt2u3ugh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/07/09/ThisIsLinux26/" data-id="cj4wi7fei00395cv7jkxzn402" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -297,20 +294,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/07/09/ThisIsLinux24/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            9장. 네임서버 개념, IP주소 획득 흐름
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/07/08/ThisIsLinux22/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/07/09/ThisIsLinux25/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">8장. 텔넷서버</p>
+        <p class="article-nav-title">9장. 도메인 이름 체계 개념, 캐싱 전용 네임서버 구축</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -356,7 +343,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'https-kkimsangheon-github-io-2';
     
     
-    var disqus_url = 'http://KKimSangHeon.github.io/2017/07/08/ThisIsLinux23/';
+    var disqus_url = 'http://KKimSangHeon.github.io/2017/07/09/ThisIsLinux26/';
     
     (function() {
     var dsq = document.createElement('script');

@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="초창기 인터넷에서는 1대의 네임 서버만으로 충분히 IP주소와 이름의 관리가 가능했다. 하지만 인터넷이 확장되면서 그것이 도메인 이름 체계가 고안되었다. 원칙은 www.nate.com. 이다. 맨 뒤에 .을 붙여줘야 한다. 로컬 네임서버가 작동하는 순서www.nate.com. 접속과정1./etc/hosts 를 보고 없으면 /etc/resolv.conf 에 있">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
-<meta property="og:updated_time" content="2017-07-09T02:32:01.124Z">
+<meta property="og:updated_time" content="2017-07-09T07:21:14.880Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="9장. 도메인 이름 체계 개념, 캐싱 전용 네임서버 구축">
 <meta name="twitter:description" content="초창기 인터넷에서는 1대의 네임 서버만으로 충분히 IP주소와 이름의 관리가 가능했다. 하지만 인터넷이 확장되면서 그것이 도메인 이름 체계가 고안되었다. 원칙은 www.nate.com. 이다. 맨 뒤에 .을 붙여줘야 한다. 로컬 네임서버가 작동하는 순서www.nate.com. 접속과정1./etc/hosts 를 보고 없으면 /etc/resolv.conf 에 있">
@@ -180,7 +180,8 @@ ga('send', 'pageview');
 <h4 id="서버-설정"><a href="#서버-설정" class="headerlink" title="서버 설정"></a>서버 설정</h4><h5 id="1-관련-패키지-설치"><a href="#1-관련-패키지-설치" class="headerlink" title="1. 관련 패키지 설치"></a>1. 관련 패키지 설치</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># yum -y install bind bind-chroot</div></pre></td></tr></table></figure>
 <h5 id="2-누가-서버컴퓨터로-물어보든-응답해주게-설정"><a href="#2-누가-서버컴퓨터로-물어보든-응답해주게-설정" class="headerlink" title="2. 누가 서버컴퓨터로 물어보든 응답해주게 설정"></a>2. 누가 서버컴퓨터로 물어보든 응답해주게 설정</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># vi /etc/named.conf     //캐싱정보관련 설정파일</div><div class="line">:set number</div><div class="line">11행 보면 127.0.0.1 지우고 any로 변경 //누가 서비스를 요청하던 제공하겠다</div><div class="line">12행 ::1 지우고 none로 변경</div><div class="line">17행 localhost any로 변경</div><div class="line">named.conf 파일을 수정함으로서 누가 서버컴퓨터가 누가물어보든 응답을 해준다.</div></pre></td></tr></table></figure>
 <h5 id="3-서비스-재시작-및-환경설정"><a href="#3-서비스-재시작-및-환경설정" class="headerlink" title="3. 서비스 재시작 및 환경설정"></a>3. 서비스 재시작 및 환경설정</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"># systemctl restart named //네임서버의 서비스 이름은 named</div><div class="line"># systemctl status named    //작동여부 확인</div><div class="line">disable 가 있다는건 껏다켜도 동작하지 않는다는것.</div><div class="line"># systemctl enable named   //껏다켜도 작동하도록 설정</div><div class="line"></div><div class="line"># firewall-config</div><div class="line">영구적 선택 -&gt; dns 선택-&gt; 옵션/firewalld다시불러오기</div><div class="line"></div><div class="line"># nslookup    //내부적으로 잘돌아가는지 테스트</div><div class="line">&gt;server 192.168.111.100</div><div class="line">&gt;www.daum.net</div><div class="line">&gt;exit</div></pre></td></tr></table></figure>
-<h4 id="클라이언트-설정"><a href="#클라이언트-설정" class="headerlink" title="클라이언트 설정"></a>클라이언트 설정</h4><p>Client 켜고 실행<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># su -c &apos;vi /etc/resolv.conf&apos;</div><div class="line">password 입력</div><div class="line"></div><div class="line">192.168.111.100 으로 수정</div><div class="line"></div><div class="line">파이어폭스로 아무데나 접속해보자</div></pre></td></tr></table></figure><br>Server B 켜고 실행<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># vi /etc/resolv.conf</div><div class="line">password 입력</div><div class="line"></div><div class="line">192.168.111.100 으로 수정</div><div class="line"></div><div class="line"># ping -c 3 www.yahoo.com</div><div class="line"></div><div class="line"># yum -y install elinks //텍스트모드의 웹브라우져</div><div class="line"># elinks    //실행</div></pre></td></tr></table></figure></p>
+<h4 id="클라이언트-설정"><a href="#클라이언트-설정" class="headerlink" title="클라이언트 설정"></a>클라이언트 설정</h4><h5 id="Client-켜고-실행"><a href="#Client-켜고-실행" class="headerlink" title="Client 켜고 실행"></a>Client 켜고 실행</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># su -c &apos;vi /etc/resolv.conf&apos;</div><div class="line">password 입력</div><div class="line"></div><div class="line">192.168.111.100 으로 수정</div><div class="line"></div><div class="line">파이어폭스로 아무데나 접속해보자</div></pre></td></tr></table></figure>
+<h5 id="Server-B-켜고-실행"><a href="#Server-B-켜고-실행" class="headerlink" title="Server B 켜고 실행"></a>Server B 켜고 실행</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># vi /etc/resolv.conf</div><div class="line">password 입력</div><div class="line"></div><div class="line">192.168.111.100 으로 수정</div><div class="line"></div><div class="line"># ping -c 3 www.yahoo.com</div><div class="line"></div><div class="line"># yum -y install elinks //텍스트모드의 웹브라우져</div><div class="line"># elinks    //실행</div></pre></td></tr></table></figure>
 <h5 id="윈도우에서-설정"><a href="#윈도우에서-설정" class="headerlink" title="윈도우에서 설정"></a>윈도우에서 설정</h5><p>제어판 열기<br>네트워크 상태 및 작업보기<br>로컬영역 연결 클릭<br>속성<br>IPv4 속성<br>다음 dns 서버 주소 사용<br>기본 설정 DNS 서버에 192.168.111.100 입력</p>
 <h5 id="윈도우에서-원래대로-돌리기"><a href="#윈도우에서-원래대로-돌리기" class="headerlink" title="윈도우에서 원래대로 돌리기"></a>윈도우에서 원래대로 돌리기</h5><p>cmd 열고<br>ipconfig 입력<br>이더넷 어댑터 뒤에있는 글자 복사.</p>
 <p>netsh interface ip set dns “로컬 영역 연결” dhcp<br>//로컬 영역 연결은 (이더넷 어댑터 뒤에있는 글자)</p>
@@ -191,7 +192,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/07/09/ThisIsLinux25/" data-id="cj4w3tl2b003cvsv7jz8soq2q" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/07/09/ThisIsLinux25/" data-id="cj4wi7fen003d5cv7vybstyzx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -295,6 +296,16 @@ ga('send', 'pageview');
     
         
 <nav id="article-nav">
+    
+        <a href="/2017/07/09/ThisIsLinux26/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            9장. 마스터 네임서버 구축, 라운드 로빈 방식 네임서버
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
     
     
         <a href="/2017/07/09/ThisIsLinux24/" id="article-nav-older" class="article-nav-link-wrap">
