@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-07-11T18:16:32.668Z</updated>
+  <updated>2017-07-11T19:40:02.450Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>ThisIsLinux28</title>
+    <title>10장. 웹 메일의 설치 및 사용</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/12/ThisIsLinux29/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/12/ThisIsLinux29/</id>
+    <published>2017-07-11T18:40:05.000Z</published>
+    <updated>2017-07-11T19:40:02.450Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="웹-메일의-설치-및-사용"><a href="#웹-메일의-설치-및-사용" class="headerlink" title="웹 메일의 설치 및 사용"></a>웹 메일의 설치 및 사용</h3><p>10장의 지금까지의 구현내용은 문제가 있다. 일반사용자는 POP3, SMTP 등에 대한 설정하는것에 대한 지식이 없으며 원하지도 않는다.<br>즉. 이메일 서버를 구축하려면 웹 메일까지 설정을 해주어야 한다.<br>우리는 이를 위해 다람쥐 메일이라고 불리는 squirrelmail을 사용한다.</p>
+<h4 id="다람쥐-메일-설치-서버"><a href="#다람쥐-메일-설치-서버" class="headerlink" title="다람쥐 메일 설치(서버)"></a>다람쥐 메일 설치(서버)</h4><p>센토스에서 다람쥐는 제공하지 않으므로 페도라것을 사용해야한다. (페도라의 거의 모든 패키지는 센토스에서 돌아간다.)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"># wget http://download.hanbit.co.kr/centos/7/squirrelmail-1.4.22-13.fc20.noarch.rpm</div><div class="line"># yum -y localinstall squi*     //로컬설치</div><div class="line"># chown apache.apache -R /usr/share/squirrelmail/  //웹사용자인 아파치로 소유주 변경</div><div class="line"># chown apache.apache -R /var/lib/squirrelmail/</div><div class="line"># chown apache.apache -R /var/spool/squirrelmail/</div><div class="line"># chown apache.apache /etc/squirrelmail/config.php</div><div class="line"></div><div class="line"># /usr/share/squirrelmail/config/conf.pl    //설정할 수 있는 실행파일</div><div class="line">2입력</div><div class="line">1 (도메인 변경)</div><div class="line">naver.com</div><div class="line">A</div><div class="line">4</div><div class="line">mail.naver.com</div><div class="line">8</div><div class="line">other</div><div class="line">s</div><div class="line">r</div><div class="line">10</div><div class="line">1</div><div class="line">ko_KR</div><div class="line">2</div><div class="line">euc-kr</div><div class="line">s</div><div class="line">r</div><div class="line">s</div><div class="line">q</div><div class="line"></div><div class="line">간단하게 다람쥐 메일을 들어올 수 있게 설정</div><div class="line"># vi /etc/httpd/conf/httpd.conf 맨위에 다음 한줄 추가</div><div class="line">Alias /webmail/   /usr/share/squirrelmail/</div><div class="line"># systemctl restart httpd  </div><div class="line"># systemctl enable httpd   </div><div class="line">포트를 추가해야하는데 방화벽을 아까 꺼놨기 때문에 따로 하지 않겠다.</div><div class="line"></div><div class="line"></div><div class="line">웹을 www로 들어가기 떄문에 웹주소도 네임서버에 추가</div><div class="line"># vi /var/named/naver.com.db    맨뒤에 다음 한줄 추가</div><div class="line">www           IN     A  192.168.111.100</div><div class="line"># systemctl restart named</div><div class="line"></div></pre></td></tr></table></figure></p>
+<h4 id="클라이언트에서-테스트-해보자"><a href="#클라이언트에서-테스트-해보자" class="headerlink" title="클라이언트에서 테스트 해보자"></a>클라이언트에서 테스트 해보자</h4><p>파이어폭스에서 www.naver.com/webmail/ 입력<br>맨아래 예외 추가 -&gt; 보안예외 확인<br>lee / lee 입력<br>편지쓰기-&gt;  kim@daum.net  -&gt;전송<br>윈도우 클라이언트에서 받기를 눌러보자, 그 후 답장을 눌러 보내보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"></div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;웹-메일의-설치-및-사용&quot;&gt;&lt;a href=&quot;#웹-메일의-설치-및-사용&quot; class=&quot;headerlink&quot; title=&quot;웹 메일의 설치 및 사용&quot;&gt;&lt;/a&gt;웹 메일의 설치 및 사용&lt;/h3&gt;&lt;p&gt;10장의 지금까지의 구현내용은 문제가 있다. 일
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
+    
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>10장. 센드메일 서버의 구현</title>
     <link href="http://KKimSangHeon.github.io/2017/07/11/ThisIsLinux28/"/>
     <id>http://KKimSangHeon.github.io/2017/07/11/ThisIsLinux28/</id>
     <published>2017-07-11T08:30:49.000Z</published>
-    <updated>2017-07-11T18:16:32.668Z</updated>
+    <updated>2017-07-11T18:19:07.383Z</updated>
     
     <content type="html"><![CDATA[<p>네임서버를 만들었으니 이메일을 보내는 메일서버를 만들어 보자.</p>
 <h3 id="1-서버-메일서버를-만들자-naver"><a href="#1-서버-메일서버를-만들자-naver" class="headerlink" title="1.서버 메일서버를 만들자(naver)"></a>1.서버 메일서버를 만들자(naver)</h3><h4 id="1-1-서버에서-메일-서버를-만들자-서버에서-진행"><a href="#1-1-서버에서-메일-서버를-만들자-서버에서-진행" class="headerlink" title="1.1 서버에서 메일 서버를 만들자(서버에서 진행)"></a>1.1 서버에서 메일 서버를 만들자(서버에서 진행)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"># yum -y install sendmail-cf dovecot  </div><div class="line">          //sendmail-cf 보내는메일서버</div><div class="line">          //devoct 받는 메일서버</div><div class="line"></div><div class="line"># vi /etc/mail/sendmail.cf          </div><div class="line">:set number</div><div class="line">85를 Cwnaver.com 으로 수정</div><div class="line">264  Addr=127.0.0.1 를 지운다</div><div class="line">저장</div><div class="line"></div><div class="line">외부 호스트가 메일을 전달할 수 있도록 허가</div><div class="line"># vi /etc/mail/access  다음을 추가</div><div class="line">naver.com       RELAY</div><div class="line">daum.net        RELAY</div><div class="line">192.168.111     RELAY</div><div class="line"></div><div class="line"># makemap hash /etc/mail/access &lt; /etc/mail/access  //변경내용 적용</div><div class="line"></div><div class="line">사용자의 메일박스에서 메일을 꺼내 사용자에게 전달하는 도베캇 설정</div><div class="line"># vi /etc/dovecot/dovecot.conf</div><div class="line">:set number</div><div class="line">24행 30행 33행 주석제거</div><div class="line">저장</div><div class="line"># vi /etc/dovecot/conf.d/10-ssl.conf</div><div class="line">:set number</div><div class="line">8행 ssl=yes로 수정</div><div class="line">저장</div><div class="line"># vi /etc/dovecot/conf.d/10-mail.conf</div><div class="line">:set number</div><div class="line">25행 주석제거</div><div class="line">119행 mail_access_groups =mail 으로 수정</div><div class="line">159행 주석제거</div><div class="line">저장</div></pre></td></tr></table></figure>
@@ -736,46 +765,6 @@
     <summary type="html">
     
       &lt;h4 id=&quot;파이프&quot;&gt;&lt;a href=&quot;#파이프&quot; class=&quot;headerlink&quot; title=&quot;파이프&quot;&gt;&lt;/a&gt;파이프&lt;/h4&gt;&lt;p&gt;두개의 프로그램을 연결해주는 통로&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
-    
-      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
-    
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
-    
-      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>4장. 네트워크 관련 개념과 명령어,SELinux</title>
-    <link href="http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux9/"/>
-    <id>http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux9/</id>
-    <published>2017-07-04T04:29:36.000Z</published>
-    <updated>2017-07-04T05:09:11.039Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h4><p>우리가 사용하는 인터넷은 tcp/ip 기반이다. 가장널리사용되는 프로토콜의 한 종류</p>
-<h4 id="호스트이름-도메인이름"><a href="#호스트이름-도메인이름" class="headerlink" title="호스트이름 도메인이름"></a>호스트이름 도메인이름</h4><p>호스트이름 : 컴퓨터에 지정된 이름<br>도메인 이름 : hanbit.co.kr rkxdms gudtlr</p>
-<h4 id="IP-주소"><a href="#IP-주소" class="headerlink" title="IP 주소"></a>IP 주소</h4><p>랜카드에 부여되는 중복되지 않는 유일한 주소</p>
-<h4 id="네트워크-주소"><a href="#네트워크-주소" class="headerlink" title="네트워크 주소"></a>네트워크 주소</h4><p>같은 네트워크에 속해있는 공통된 주소</p>
-<h4 id="브로드캐스트-주소"><a href="#브로드캐스트-주소" class="headerlink" title="브로드캐스트 주소"></a>브로드캐스트 주소</h4><p>제일 뒤가 255인 주소<br>내부 네트워크의 모든 컴퓨터가 듣게 되는 주소</p>
-<h4 id="게이트웨이-라우터"><a href="#게이트웨이-라우터" class="headerlink" title="게이트웨이, 라우터"></a>게이트웨이, 라우터</h4><p>라우터=게이트웨이<br>네트워크 간에 데이터를 전송하는 컴퓨터 또는 장비</p>
-<h4 id="넷마스크-클래스"><a href="#넷마스크-클래스" class="headerlink" title="넷마스크, 클래스"></a>넷마스크, 클래스</h4><p>넷마스크 : 네트워크의 규모를 결정<br>ex(255.255.255.0)</p>
-<h4 id="DNS-서버-네임서버"><a href="#DNS-서버-네임서버" class="headerlink" title="DNS 서버= 네임서버"></a>DNS 서버= 네임서버</h4><p>URL을 IP로 변환해주는 서버</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$ nmtui //네트워크와 관련된 작업진행</div><div class="line"></div><div class="line">$ rdate -s time.bora.net  //시간설정</div><div class="line">$ nmtui     //설정 변경후 종료 네트워크매니저텍스트ui</div><div class="line">$ systemctl restart network //네트워크 재시작 (해줘야함)</div><div class="line"></div><div class="line">$ ifconfig  //네트워크장치에 할당된 ip주소 확인</div><div class="line">$ ifdown ens32  //이거는 systemctl restart network</div><div class="line">                //보다 강력하게 서버를 끄는것.</div><div class="line">$ ifup ens32    //서버 재시작              </div><div class="line"></div><div class="line">$ nslookup  naver.com //DNS서버의 작동을 테스트</div><div class="line"></div><div class="line">$ ping www.yahoo.com //네트워크 응답 확인</div><div class="line">$ ping -3 www.yahoo.com   //세번만 피을 때려라</div><div class="line"></div></pre></td></tr></table></figure>
-<h4 id="주요-파일"><a href="#주요-파일" class="headerlink" title="주요 파일"></a>주요 파일</h4><p>네트워크 기본적인 정보가 설정되어 있는 파일<br>/etc/sysconfig/network  </p>
-<p>/etc/sysconfig/network-scripts/ifcfg-ens32<br>ens32 장치에 설정된 네트워크 정보가 모두 들어있는 파일<br>ens32가 아니라 eno일수도 있다.<br>BOOTPROTO = none 고정아이피를 쓰겠다.<br>DNS1  DNS가 여러개 나올 수 있으므로 1이 필요<br>ONBOOT =”yes” 네트워크를 쓰겠다</p>
-<p>/etc/resolv.conf<br>DNS 서버의 정보와 호스트 이름이 들어있다.<br>168.126.63.1 //kt에서 제공하는 네임서버이다<br>            //네임서버가 없을 때 사용가능</p>
-<h4 id="SELinux"><a href="#SELinux" class="headerlink" title="SELinux"></a>SELinux</h4><p>보안에 취약한 리눅스를 보호하기 위해 탄생<br>책에서는 실습을 위해 기능을 꺼두었다.<br>/etc/sysconfig/selinux를 편집하였다.<br>SELINUX=disabled 이렇게..</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;TCP-IP&quot;&gt;&lt;a href=&quot;#TCP-IP&quot; class=&quot;headerlink&quot; title=&quot;TCP/IP&quot;&gt;&lt;/a&gt;TCP/IP&lt;/h4&gt;&lt;p&gt;우리가 사용하는 인터넷은 tcp/ip 기반이다. 가장널리사용되는 프로토콜의 한 종류&lt;/p&gt;
-&lt;h4
     
     </summary>
     
