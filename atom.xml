@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-07-11T19:40:02.450Z</updated>
+  <updated>2017-07-14T02:14:43.006Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,15 +16,108 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>11장. Visual Studio와 MariaDB의 연동</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/14/ThisIsLinux32/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/14/ThisIsLinux32/</id>
+    <published>2017-07-14T02:14:09.000Z</published>
+    <updated>2017-07-14T02:14:43.006Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
+    
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>11장. 쇼핑몰 데이터베이스 구축, Oracle 설치, Oracle에서 쇼핑몰 DB 구축</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/13/ThisIsLinux31/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/13/ThisIsLinux31/</id>
+    <published>2017-07-13T09:09:57.000Z</published>
+    <updated>2017-07-13T12:22:00.473Z</updated>
+    
+    <content type="html"><![CDATA[<p>서버에서 실행해도 되고 윈 클라이언트에서 해도된다. 그러나 윈 클라이언트에서 해보자</p>
+<h4 id="윈도우에서-실행"><a href="#윈도우에서-실행" class="headerlink" title="윈도우에서 실행"></a>윈도우에서 실행</h4><p>cmd 열기<br>cd “c:\Program Files (x86)”<br>cd “MariaDB 10.0”<br>cd MariaDB 10.0<br>cd bin</p>
+<p>mysql -h 192.168.111.100 -u winuser -p<br>4321 입력<br>쿼리문은 책을 참조하자…..</p>
+<h4 id="오라클을-설치해보자"><a href="#오라클을-설치해보자" class="headerlink" title="오라클을 설치해보자"></a>오라클을 설치해보자</h4><p>서버에서 실행하자</p>
+<p>카페에서 링크타고 오라클을 들어가서 깔자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"># cd 다운로드/</div><div class="line"># ls -l</div><div class="line"># unzip oracle* //압축을 풀자</div><div class="line"># ls -l Disk1/</div><div class="line"># cd Disk1/</div><div class="line"></div><div class="line">오라클을 설치하기 위해서는 가상메모리 2기가가 필요함.</div><div class="line">그래서 추가적으로 2기가를 추가한다.</div><div class="line"># dd if=/dev/zero of=/swapfile bs=1024 count=4194304</div><div class="line"># mkswap /swapfile     //스왑메모리로 만들자</div><div class="line"># swapon /swapfile     //스왑을 키자</div><div class="line"># swapon -s //스왑 확인 총 (6기가 임을 확인)</div><div class="line"></div><div class="line">스왑을 껏다 켜도 유지되도록 하자</div><div class="line"># cd /etc/rc.d    </div><div class="line"># chmod 755 rc.local</div><div class="line"># vi rc.local</div><div class="line">맨 밑에</div><div class="line">swapon /swapfile 추가</div><div class="line"># reboot</div><div class="line"># swapon -s //스왑 확인 총 (6기가 임을 확인)</div><div class="line"></div><div class="line">오라클을 본격적으로 설치하자</div><div class="line"># cd 다운로드/Disk1/</div><div class="line"># pwd</div><div class="line"># ls -l</div><div class="line"># yum -y localinstall oracle*</div></pre></td></tr></table></figure></p>
+<h4 id="오라클을-설정하자"><a href="#오라클을-설정하자" class="headerlink" title="오라클을 설정하자"></a>오라클을 설정하자</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># service oracle-xe configure</div><div class="line">엔터(8080은 외부로 접속하는 포트)</div><div class="line">엔터(1521은 sql+로 접속하는 포트)</div><div class="line">1234엔터</div><div class="line">1234엔터</div><div class="line">y 엔터(자동으로 실행할꺼냐)</div></pre></td></tr></table></figure>
+<h4 id="오라클-서비스를-시작하자"><a href="#오라클-서비스를-시작하자" class="headerlink" title="오라클 서비스를 시작하자"></a>오라클 서비스를 시작하자</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"># /etc/init.d/oracle-xe start   //오라클 시작</div><div class="line"></div><div class="line"># vi /etc/bashrc    //맨아래 다음을 입력.</div><div class="line"># . /u01/app//oracle/product/11.2.0/xe/bin/oracle_env.sh      </div><div class="line">                  //오라클 환경설정하는 스크립트 실행하는것.</div><div class="line">                  //껏다켜면 이 한줄을 입력해야 하지만</div><div class="line">                  //그 과정을 없애기 위해 /etc/bashrc에 추가</div><div class="line"></div><div class="line"># firewall-config</div><div class="line">영구적 선택.</div><div class="line">포트 탭 선택</div><div class="line">추가 8080 tcp</div><div class="line">추가 1521 tcp</div><div class="line">(오라클을 센토스에서 만든것이 아니라 등록이 되어있지 않다.)</div><div class="line">옵션 - Firewalld 다시불러오기</div></pre></td></tr></table></figure>
+<h4 id="오라클에-접속해보자"><a href="#오라클에-접속해보자" class="headerlink" title="오라클에 접속해보자"></a>오라클에 접속해보자</h4><p>웹브라우저 실행<br>192.168.111.100:8080/apex<br>internal<br>admin<br>1234<br>로그인<br>1234<br>1234<br>1234<br>apply<br>return<br>1234 로그인</p>
+<h4 id="마리아db에서-입력한-쿼리문을-오라클에서-실행해보자"><a href="#마리아db에서-입력한-쿼리문을-오라클에서-실행해보자" class="headerlink" title="마리아db에서 입력한 쿼리문을 오라클에서 실행해보자."></a>마리아db에서 입력한 쿼리문을 오라클에서 실행해보자.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># mkdir /oradata    //데이터베이스가 생성될 디렉토리</div><div class="line"># chmod 777 /oradata</div><div class="line"># sqlplus   //오라클에서 데이터베이스 시작</div><div class="line">system 입력 //오라클에서 가장 높은 관리자는 system</div><div class="line">1234 입력</div><div class="line">책보고 쿼리 입력</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;서버에서 실행해도 되고 윈 클라이언트에서 해도된다. 그러나 윈 클라이언트에서 해보자&lt;/p&gt;
+&lt;h4 id=&quot;윈도우에서-실행&quot;&gt;&lt;a href=&quot;#윈도우에서-실행&quot; class=&quot;headerlink&quot; title=&quot;윈도우에서 실행&quot;&gt;&lt;/a&gt;윈도우에서 실행
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
+    
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>11장. MariaDB 설치/운영 , Windows에서 접속</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/12/ThisIsLinux30/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/12/ThisIsLinux30/</id>
+    <published>2017-07-12T09:21:35.000Z</published>
+    <updated>2017-07-13T10:13:55.239Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="마리아-DB-운영"><a href="#마리아-DB-운영" class="headerlink" title="마리아 DB 운영"></a>마리아 DB 운영</h3><h4 id="DBMS-설치"><a href="#DBMS-설치" class="headerlink" title="DBMS 설치"></a>DBMS 설치</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">카페에 올려놓은 마리아 db를 세개 다 받자.</div><div class="line"># yum -y remove mariadb-libs    // 버전이 달라 새로 설치하면 충돌우려..</div><div class="line"></div><div class="line"># yum -y localinstall Maria*</div><div class="line"># systemctl restart mysql //mysql이 오라클로 들어가자</div><div class="line">  //개발자들이 마리아를 만들어냄..  </div><div class="line"></div><div class="line"># systemctl status mysql</div><div class="line"># checkconfig mysql on  // systemctl enable mysql 과 동일</div><div class="line">              //상시가동하도록 설정</div><div class="line"></div><div class="line"># firewall-config   //방화벽 열기</div><div class="line">영구적 탭 -&gt; 다시불러오기</div><div class="line"># mysql   // 마리아디비 실행</div><div class="line">&gt; showdatabases;    //그냥 확인차</div><div class="line"></div><div class="line">원칙은</div><div class="line"># mysql -u root -p 라고 입력 후 비번입력해야함</div><div class="line">지금은 비번을 설정 하지 않았으므로 엔터만 누르면 된다.</div></pre></td></tr></table></figure>
+<h4 id="마리아-디비-암호-설정"><a href="#마리아-디비-암호-설정" class="headerlink" title="마리아 디비 암호 설정"></a>마리아 디비 암호 설정</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># mysqladmin -u root password &apos;1234&apos;</div><div class="line">마리아 디비 사용자인 root는 비번이 1234</div><div class="line"></div><div class="line"># mysql -u root -p //로그인</div><div class="line">1234 입력</div><div class="line">&gt;exit</div></pre></td></tr></table></figure>
+<h4 id="윈도우-클라이언트에서-마리아DB-접속"><a href="#윈도우-클라이언트에서-마리아DB-접속" class="headerlink" title="윈도우 클라이언트에서 마리아DB 접속"></a>윈도우 클라이언트에서 마리아DB 접속</h4><p>카페 접속해서 마리아디비 설치<br>리눅스는 서버 클라이언트 따로지만 윈도우용은 하나다.<br>다른건 설치하지 말고 클라이언트만 설치하자</p>
+<h5 id="서버에서-실행"><a href="#서버에서-실행" class="headerlink" title="서버에서 실행"></a>서버에서 실행</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># mysql -u root -p</div><div class="line">&gt; USE mysql</div><div class="line">&gt;SELECT user,host FROM user WHERE user NOT LIKE &apos;&apos;;</div><div class="line">루트 사용자는 외부에서 접속할 수 없다는 것을 확인.</div><div class="line"></div><div class="line">&gt;GRANT ALL PRIVILEGES ON *.* TO winuser@&apos;192.168.111.%&apos; IDENTIFIED BY &apos;4321&apos;;</div><div class="line">    //192.168.111.XXX 는 허용하겠다.(윈도우 유저의 아이피의 마지막이 변동가능성이 있기 때문에 %로 처리)</div></pre></td></tr></table></figure>
+<h5 id="윈도우에서-실행"><a href="#윈도우에서-실행" class="headerlink" title="윈도우에서 실행"></a>윈도우에서 실행</h5><p>cmd 열기<br>cd “c:\Program Files (x86)”<br>cd “MariaDB 10.0”<br>cd MariaDB 10.0<br>cd bin</p>
+<p>mysql -h 192.168.111.100 -u winuser -p<br>4321 입력</p>
+<blockquote>
+<p>show databases;</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;마리아-DB-운영&quot;&gt;&lt;a href=&quot;#마리아-DB-운영&quot; class=&quot;headerlink&quot; title=&quot;마리아 DB 운영&quot;&gt;&lt;/a&gt;마리아 DB 운영&lt;/h3&gt;&lt;h4 id=&quot;DBMS-설치&quot;&gt;&lt;a href=&quot;#DBMS-설치&quot; class=&quot;he
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
+    
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>10장. 웹 메일의 설치 및 사용</title>
     <link href="http://KKimSangHeon.github.io/2017/07/12/ThisIsLinux29/"/>
     <id>http://KKimSangHeon.github.io/2017/07/12/ThisIsLinux29/</id>
     <published>2017-07-11T18:40:05.000Z</published>
-    <updated>2017-07-11T19:40:02.450Z</updated>
+    <updated>2017-07-12T11:10:14.549Z</updated>
     
     <content type="html"><![CDATA[<h3 id="웹-메일의-설치-및-사용"><a href="#웹-메일의-설치-및-사용" class="headerlink" title="웹 메일의 설치 및 사용"></a>웹 메일의 설치 및 사용</h3><p>10장의 지금까지의 구현내용은 문제가 있다. 일반사용자는 POP3, SMTP 등에 대한 설정하는것에 대한 지식이 없으며 원하지도 않는다.<br>즉. 이메일 서버를 구축하려면 웹 메일까지 설정을 해주어야 한다.<br>우리는 이를 위해 다람쥐 메일이라고 불리는 squirrelmail을 사용한다.</p>
 <h4 id="다람쥐-메일-설치-서버"><a href="#다람쥐-메일-설치-서버" class="headerlink" title="다람쥐 메일 설치(서버)"></a>다람쥐 메일 설치(서버)</h4><p>센토스에서 다람쥐는 제공하지 않으므로 페도라것을 사용해야한다. (페도라의 거의 모든 패키지는 센토스에서 돌아간다.)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"># wget http://download.hanbit.co.kr/centos/7/squirrelmail-1.4.22-13.fc20.noarch.rpm</div><div class="line"># yum -y localinstall squi*     //로컬설치</div><div class="line"># chown apache.apache -R /usr/share/squirrelmail/  //웹사용자인 아파치로 소유주 변경</div><div class="line"># chown apache.apache -R /var/lib/squirrelmail/</div><div class="line"># chown apache.apache -R /var/spool/squirrelmail/</div><div class="line"># chown apache.apache /etc/squirrelmail/config.php</div><div class="line"></div><div class="line"># /usr/share/squirrelmail/config/conf.pl    //설정할 수 있는 실행파일</div><div class="line">2입력</div><div class="line">1 (도메인 변경)</div><div class="line">naver.com</div><div class="line">A</div><div class="line">4</div><div class="line">mail.naver.com</div><div class="line">8</div><div class="line">other</div><div class="line">s</div><div class="line">r</div><div class="line">10</div><div class="line">1</div><div class="line">ko_KR</div><div class="line">2</div><div class="line">euc-kr</div><div class="line">s</div><div class="line">r</div><div class="line">s</div><div class="line">q</div><div class="line"></div><div class="line">간단하게 다람쥐 메일을 들어올 수 있게 설정</div><div class="line"># vi /etc/httpd/conf/httpd.conf 맨위에 다음 한줄 추가</div><div class="line">Alias /webmail/   /usr/share/squirrelmail/</div><div class="line"># systemctl restart httpd  </div><div class="line"># systemctl enable httpd   </div><div class="line">포트를 추가해야하는데 방화벽을 아까 꺼놨기 때문에 따로 하지 않겠다.</div><div class="line"></div><div class="line"></div><div class="line">웹을 www로 들어가기 떄문에 웹주소도 네임서버에 추가</div><div class="line"># vi /var/named/naver.com.db    맨뒤에 다음 한줄 추가</div><div class="line">www           IN     A  192.168.111.100</div><div class="line"># systemctl restart named</div><div class="line"></div></pre></td></tr></table></figure></p>
-<h4 id="클라이언트에서-테스트-해보자"><a href="#클라이언트에서-테스트-해보자" class="headerlink" title="클라이언트에서 테스트 해보자"></a>클라이언트에서 테스트 해보자</h4><p>파이어폭스에서 www.naver.com/webmail/ 입력<br>맨아래 예외 추가 -&gt; 보안예외 확인<br>lee / lee 입력<br>편지쓰기-&gt;  kim@daum.net  -&gt;전송<br>윈도우 클라이언트에서 받기를 눌러보자, 그 후 답장을 눌러 보내보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"></div></pre></td></tr></table></figure></p>
+<h4 id="클라이언트에서-테스트-해보자"><a href="#클라이언트에서-테스트-해보자" class="headerlink" title="클라이언트에서 테스트 해보자"></a>클라이언트에서 테스트 해보자</h4><p>파이어폭스에서 www.naver.com/webmail/ 입력<br>맨아래 예외 추가 -&gt; 보안예외 확인<br>lee / lee 입력<br>편지쓰기-&gt;  kim@daum.net  -&gt;전송<br>윈도우 클라이언트에서 받기를 눌러보자, 그 후 답장을 눌러 보내보자</p>
 ]]></content>
     
     <summary type="html">
@@ -658,113 +751,6 @@
     
       &lt;h4 id=&quot;노틸러스&quot;&gt;&lt;a href=&quot;#노틸러스&quot; class=&quot;headerlink&quot; title=&quot;노틸러스&quot;&gt;&lt;/a&gt;노틸러스&lt;/h4&gt;&lt;p&gt;윈도우 탐색기와 비슷하다.&lt;br&gt;실행법 : 프로그램-보조프로그램-파일&lt;/p&gt;
 &lt;p&gt;내폴더가 홈 디렉토리이다.&lt;b
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
-    
-      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
-    
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
-    
-      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>5장. X윈도 테마, GRUB 배경화면</title>
-    <link href="http://KKimSangHeon.github.io/2017/07/05/ThisIsLinux12/"/>
-    <id>http://KKimSangHeon.github.io/2017/07/05/ThisIsLinux12/</id>
-    <published>2017-07-05T02:57:03.000Z</published>
-    <updated>2017-07-05T04:38:22.934Z</updated>
-    
-    <content type="html"><![CDATA[<p>이 챕터는 책에서 중요도가 가장 떨어진다!<br>서버관리자가 되었을 때 리눅스를 PC로 사용하는 사람에게 도움을 주기위해 알아둘 필요는 있다.</p>
-<h4 id="테마-설치하기"><a href="#테마-설치하기" class="headerlink" title="테마 설치하기"></a>테마 설치하기</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ rpm -qa gnome-tweak-tool  //설치되어있나 확인</div><div class="line">$ gnome-tweak-tool    //툴 켜서 설정변경</div></pre></td></tr></table></figure>
-<h4 id="GRUB-이미지-설정"><a href="#GRUB-이미지-설정" class="headerlink" title="GRUB 이미지 설정"></a>GRUB 이미지 설정</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$ su -c &apos;yum -y install grub2-starfield-theme&apos;</div><div class="line">  //암호입력    //su -c는 슈퍼바이저 권한으로 실행하는것</div><div class="line">$ vi /etc/default/grub</div><div class="line"></div><div class="line">GRUB_TIMEOUT=5</div><div class="line">GRUB_DISTRIBUTOR=&quot;$(sed &apos;s, release .*$,,g&apos; /etc/system-release)&quot;</div><div class="line">GRUB_DEFAULT=saved</div><div class="line">GRUB_DISABLE_SUBMENU=true</div><div class="line">#GRUB_TERMINAL_OUTPUT=&quot;console&quot;     //여기 주석처리</div><div class="line">GRUB_CMDLINE_LINUX=&quot;rd.lvm.lv=centos/swap vconsole.font=latarcyrheb-sun16 rd.lvm.lv=centos/root crashkernel=auto  vconsole.keymap=us rhgb quiet&quot;</div><div class="line">GRUB_DISABLE_RECOVERY=&quot;true&quot;</div><div class="line">GRUB_THEME=&quot;/boot/grub2/themes/system/theme.txt&quot;  //여기추가</div><div class="line"></div><div class="line">vi 저장후 종료</div></pre></td></tr></table></figure>
-<p>이미지 파일을 centos폴더에 저장 (ball.png)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mv /home/centos/ball.png /boot/grub2/themes/system</div></pre></td></tr></table></figure><br>실행하여 그림 이동</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># vi /boot/grub2/themes/system/theme.txt //</div><div class="line">:set number</div><div class="line"></div><div class="line">34행가서 이미지 파일이름 변경</div><div class="line"># grub2-mkconfig -o /boot/grub2/grub.cfg  //적용</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;이 챕터는 책에서 중요도가 가장 떨어진다!&lt;br&gt;서버관리자가 되었을 때 리눅스를 PC로 사용하는 사람에게 도움을 주기위해 알아둘 필요는 있다.&lt;/p&gt;
-&lt;h4 id=&quot;테마-설치하기&quot;&gt;&lt;a href=&quot;#테마-설치하기&quot; class=&quot;headerlink
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
-    
-      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
-    
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
-    
-      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>4장. 응급복구, GRUB, 커널 컴파일</title>
-    <link href="http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux11/"/>
-    <id>http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux11/</id>
-    <published>2017-07-04T07:09:17.000Z</published>
-    <updated>2017-07-04T10:28:12.394Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="응급복구"><a href="#응급복구" class="headerlink" title="응급복구"></a>응급복구</h4><p>261p 참고<br>이게 문제가 될 소지가 있지않냐?<br>그래서 처음 켤때 선택하는거에서 암호를 걸어야 한다.</p>
-<h4 id="GRUB-부트로더"><a href="#GRUB-부트로더" class="headerlink" title="GRUB 부트로더"></a>GRUB 부트로더</h4><p>/etc/default/grub 파일과 /etc/grup.d/ 디렉터리의 파일을 수정한 후 ‘grub2-mkconfig’ 명령어를 실행해 설정함</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"># vi /etc/default/grub</div><div class="line">timeout = 30 으로 변경</div><div class="line">distributor = &quot;Hello&quot; 로 변경</div><div class="line"># grub2-mkconfig -o /boot/grub2/grub.cfg // 변경사항 반영</div><div class="line"></div><div class="line">//여기서 부터 선택하는 곳에서 e 키 못누르게 비번 설정하는것</div><div class="line"># vi /etc/grub.d/00_header</div><div class="line">맨 아래 가서 다음코드 추가</div><div class="line">cat &lt;&lt; EOF</div><div class="line">set superusers=&quot;thisuser&quot;</div><div class="line">password thisuser 4321</div><div class="line">EOF</div><div class="line">여기까지!</div><div class="line">vi 빠져나와서</div><div class="line"># grub2-mkconfig -o /boot/grub2/grub.cfg // 변경사항 반영</div><div class="line">$ reboot</div><div class="line">선택하는곳에서 e 누르면 암호 누르도록 함</div><div class="line"></div></pre></td></tr></table></figure>
-<h4 id="커널"><a href="#커널" class="headerlink" title="커널"></a>커널</h4><p>커널 : 하드웨어를 제어하는 기능<br>모든 하드웨어를 제어하는 코드를 다 넣으면 커널이 너무 커지고 무거워진다. 그러므로 잘 안쓰는 하드웨어 코드는 모듈에 빼내서 필요할때마다 사용<br>즉 모듈은 필요할때 쓸 수 있도록 커널의 코드를 밖으로 빼낸것이다!</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">$ uname -r //커널버전확인</div><div class="line">$ wget &quot;https://kernel.org/pub/linux/kernel/v3.x/linux-3.17.4.tar.xz&quot;</div><div class="line">  //교재와 동일한 커널 설치</div><div class="line">$ mv linux-3.17.4.tar.xz /usr/src</div><div class="line">$ cd /usr/src</div><div class="line">$ tar xfJ linux-3.17.4.tar.xz   //압축을 풀자</div><div class="line">$ cd linux-3.17.4/</div><div class="line"></div><div class="line">커널은 c 코드이므로 설치를 위해 컴파일러를 깔자</div><div class="line">$ yum -y install gcc gcc-c++ qt qt-devel</div><div class="line">$ make mrproper // 커널설정 초기화</div><div class="line">$ make xconfig  //커널의 환경설정</div><div class="line">  설정 후</div><div class="line">$ make clean</div><div class="line">$make ;  make modules_install ; make install  //순서대로 진행됨.</div><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;응급복구&quot;&gt;&lt;a href=&quot;#응급복구&quot; class=&quot;headerlink&quot; title=&quot;응급복구&quot;&gt;&lt;/a&gt;응급복구&lt;/h4&gt;&lt;p&gt;261p 참고&lt;br&gt;이게 문제가 될 소지가 있지않냐?&lt;br&gt;그래서 처음 켤때 선택하는거에서 암호를 걸어야 한다.
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
-    
-      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
-    
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
-    
-      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>4장. 파이프/필터, 프로세스, 서비스/소켓</title>
-    <link href="http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux10/"/>
-    <id>http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux10/</id>
-    <published>2017-07-04T05:52:52.000Z</published>
-    <updated>2017-07-04T06:31:35.759Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="파이프"><a href="#파이프" class="headerlink" title="파이프"></a>파이프</h4><p>두개의 프로그램을 연결해주는 통로<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ls -l /etc | more   //앞에서 뒤로 넘김</div></pre></td></tr></table></figure></p>
-<h4 id="필터"><a href="#필터" class="headerlink" title="필터"></a>필터</h4><p>필요한것만 걸러주는 명령어</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ ps -ef //현재 작동중인 프로세스 보여줌</div><div class="line"></div><div class="line">$ ps -ef | grep bash    //bash와 관련된 프로세스만</div><div class="line">                      //보여줌</div><div class="line"></div><div class="line">$ rpm -qa | grep gedit  //gedit 관련된것만 보여줌</div></pre></td></tr></table></figure>
-<h4 id="리다이렉션-보내는-것"><a href="#리다이렉션-보내는-것" class="headerlink" title="리다이렉션(보내는 것)"></a>리다이렉션(보내는 것)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ ls -l &gt; file.txt //결과를file.txt로 만드는것</div><div class="line">              //file.txt가 존재할 경우 덮어쓰고</div><div class="line">              //존재하지 않을경우 새로 만들고 작성</div><div class="line"></div><div class="line">$ ls -l &gt;&gt; file.txt //결과를file.txt로 만드는것</div><div class="line">                    //file.txt가 존재할 경우 뒤에다 이어서 작성하고</div><div class="line">                    //존재하지 않을경우 새로만들고 작성</div><div class="line"></div><div class="line">$ cat sort &lt; file.txt &gt; out.txt //file.txt를 정렬해서 out.txt에 넣어라</div></pre></td></tr></table></figure>
-<h4 id="프로세스-데몬"><a href="#프로세스-데몬" class="headerlink" title="프로세스, 데몬"></a>프로세스, 데몬</h4><p>프로세스는 하드디스크에 저장된 실행코드가 메모리에 로딩되어 활성화 된것.</p>
-<h5 id="포그라운드-프로세스"><a href="#포그라운드-프로세스" class="headerlink" title="포그라운드 프로세스"></a>포그라운드 프로세스</h5><p>실행하면 화면에 나타나서 사용자와 상호작용을 하는 프로세스</p>
-<h5 id="백그라운드-프로세스"><a href="#백그라운드-프로세스" class="headerlink" title="백그라운드 프로세스"></a>백그라운드 프로세스</h5><p>화면에 나타나지 않고 실행되는 프로세스<br>백신 , 서버 데몬(=서비스,=서버 프로세스)등</p>
-<h4 id="프로세스번호"><a href="#프로세스번호" class="headerlink" title="프로세스번호"></a>프로세스번호</h4><p>각각의 프로세스는 할당된 번호가 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ ps -ef | grep bash    //bash관련된 프로세스만 보여줌</div><div class="line"></div><div class="line">root       693     1  0 13:43 ?        00:00:00 /bin/bash /usr/sbin/ksmtuned</div><div class="line"></div><div class="line">693은 자기 프로세스 번호고 1은 부모프로세스 번호이다.</div></pre></td></tr></table></figure></p>
-<h4 id="작업-번호"><a href="#작업-번호" class="headerlink" title="작업 번호"></a>작업 번호</h4><p>현재 실행되고 있는 백그라운드 프로세스의 순차번호</p>
-<h4 id="부모프로세스-자식프로세스"><a href="#부모프로세스-자식프로세스" class="headerlink" title="부모프로세스 ,자식프로세스"></a>부모프로세스 ,자식프로세스</h4><p>모든 프로세스는 부모프로세스를 갖는다.<br>부모 프로세스를 kill하면 자식프로세스도 자동으로 죽음.</p>
-<h4 id="프로세스-관련-명령"><a href="#프로세스-관련-명령" class="headerlink" title="프로세스 관련 명령"></a>프로세스 관련 명령</h4><h5 id="ps-프로세스-보기"><a href="#ps-프로세스-보기" class="headerlink" title="ps 프로세스 보기"></a>ps 프로세스 보기</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ps -ef | grep bash  //bash 관련 프로세스 보여줌</div></pre></td></tr></table></figure>
-<h5 id="kill-프로세스-종료"><a href="#kill-프로세스-종료" class="headerlink" title="kill 프로세스 종료"></a>kill 프로세스 종료</h5><p>파이어폭스 kill하기<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ ps -ef | grep fire  //파폭 관련 프로세스 보기</div><div class="line">root      2637  1934  0 13:49 ?        00:00:04 /usr/lib64/firefox/firefox</div><div class="line">//프로세스번호가 2637이다.</div><div class="line">$ kill 2637</div><div class="line">//가끔 킬 해도 죽지 않는 경우가 있는데 그경우 -9 옵션을 준다.</div><div class="line">$ kill -9 2637</div></pre></td></tr></table></figure></p>
-<h5 id="pstree-프로세스-트리로-보기"><a href="#pstree-프로세스-트리로-보기" class="headerlink" title="pstree 프로세스 트리로 보기"></a>pstree 프로세스 트리로 보기</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$pstree //프로세스 구조를 트리로 보여줌</div></pre></td></tr></table></figure>
-<h5 id="실습-포그라운드-gt-백그라운드-gt-포그라운드"><a href="#실습-포그라운드-gt-백그라운드-gt-포그라운드" class="headerlink" title="실습 (포그라운드-&gt;백그라운드-&gt;포그라운드)"></a>실습 (포그라운드-&gt;백그라운드-&gt;포그라운드)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ yes &gt; /dev/null   //y를 계속생성하는 프로세스 생성</div><div class="line">ctrl+ z 입력.</div><div class="line">$ bg //백그라운드 보는것.</div><div class="line">    //처음에 했던 동작이 남아있다.</div><div class="line">[1]+ yes &gt; /dev/null &amp;</div><div class="line"></div><div class="line">$ fg 1    //1번작업을 다시 포그라운드로 갖고와라</div></pre></td></tr></table></figure>
-<h5 id="실습-포그라운드-gt-백그라운드-gt-포그라운드-1"><a href="#실습-포그라운드-gt-백그라운드-gt-포그라운드-1" class="headerlink" title="실습 (포그라운드-&gt;백그라운드-&gt;포그라운드)"></a>실습 (포그라운드-&gt;백그라운드-&gt;포그라운드)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ gedit &amp; //지에딧을 백그라운드로 돌려라.</div><div class="line">        //콘솔을 계속 사용할 수 있게된다.</div><div class="line"></div><div class="line">$ vi &amp;  //백그라운드로 돌아가긴 하는데 의미없다.</div><div class="line">        //vi는 포그라운드로 돌려야 하므로  </div><div class="line">$ bg    //vi의 백그라운드 번호를 알고</div><div class="line">$ fg 1   //vi를 포그라운드로 갖고옴</div></pre></td></tr></table></figure>
-<h4 id="서비스와-소켓"><a href="#서비스와-소켓" class="headerlink" title="서비스와 소켓"></a>서비스와 소켓</h4><h5 id="서비스"><a href="#서비스" class="headerlink" title="서비스"></a>서비스</h5><p>웹 서버 = 웹 서비스<br>FTP 서버 = FTP 서비스</p>
-<p>서비스의 실행 스크립트 파일은 /usr/lib/systemd/system/ 디렉터리에 ‘서비스이름.service’라는 이름으로 확인할 수 있다. 예를들어 웹 서비스는 httpd.service라는 이름의 파일로 존재</p>
-<h5 id="소켓"><a href="#소켓" class="headerlink" title="소켓"></a>소켓</h5><p>서비스는 항상 가동되지만 소켓은 필요할 떄만 구동된다. 외부에서 특정 서비스가 요청되었을 때. 그래서 약간 느리다.<br>/usr/lib/systemd/system/ 디렉터리에 소켓이름.socket 이름으로 존재</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;파이프&quot;&gt;&lt;a href=&quot;#파이프&quot; class=&quot;headerlink&quot; title=&quot;파이프&quot;&gt;&lt;/a&gt;파이프&lt;/h4&gt;&lt;p&gt;두개의 프로그램을 연결해주는 통로&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;
     
     </summary>
     
