@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="마리아 DB 운영DBMS 설치12345678910111213141516171819카페에 올려놓은 마리아 db를 세개 다 받자.# yum -y remove mariadb-libs    // 버전이 달라 새로 설치하면 충돌우려..# yum -y localinstall Maria*# systemctl restart mysql //mysql이 오라클로 들어가자">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
-<meta property="og:updated_time" content="2017-07-13T10:13:55.239Z">
+<meta property="og:updated_time" content="2017-07-14T02:38:30.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="11장. MariaDB 설치&#x2F;운영 , Windows에서 접속">
 <meta name="twitter:description" content="마리아 DB 운영DBMS 설치12345678910111213141516171819카페에 올려놓은 마리아 db를 세개 다 받자.# yum -y remove mariadb-libs    // 버전이 달라 새로 설치하면 충돌우려..# yum -y localinstall Maria*# systemctl restart mysql //mysql이 오라클로 들어가자">
@@ -175,10 +175,7 @@ ga('send', 'pageview');
 <h4 id="윈도우-클라이언트에서-마리아DB-접속"><a href="#윈도우-클라이언트에서-마리아DB-접속" class="headerlink" title="윈도우 클라이언트에서 마리아DB 접속"></a>윈도우 클라이언트에서 마리아DB 접속</h4><p>카페 접속해서 마리아디비 설치<br>리눅스는 서버 클라이언트 따로지만 윈도우용은 하나다.<br>다른건 설치하지 말고 클라이언트만 설치하자</p>
 <h5 id="서버에서-실행"><a href="#서버에서-실행" class="headerlink" title="서버에서 실행"></a>서버에서 실행</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># mysql -u root -p</div><div class="line">&gt; USE mysql</div><div class="line">&gt;SELECT user,host FROM user WHERE user NOT LIKE &apos;&apos;;</div><div class="line">루트 사용자는 외부에서 접속할 수 없다는 것을 확인.</div><div class="line"></div><div class="line">&gt;GRANT ALL PRIVILEGES ON *.* TO winuser@&apos;192.168.111.%&apos; IDENTIFIED BY &apos;4321&apos;;</div><div class="line">    //192.168.111.XXX 는 허용하겠다.(윈도우 유저의 아이피의 마지막이 변동가능성이 있기 때문에 %로 처리)</div></pre></td></tr></table></figure>
 <h5 id="윈도우에서-실행"><a href="#윈도우에서-실행" class="headerlink" title="윈도우에서 실행"></a>윈도우에서 실행</h5><p>cmd 열기<br>cd “c:\Program Files (x86)”<br>cd “MariaDB 10.0”<br>cd MariaDB 10.0<br>cd bin</p>
-<p>mysql -h 192.168.111.100 -u winuser -p<br>4321 입력</p>
-<blockquote>
-<p>show databases;</p>
-</blockquote>
+<p>mysql -h 192.168.111.100 -u winuser -p<br>4321 입력<br>show databases;</p>
 
         </div>
         <footer class="article-footer">
@@ -186,7 +183,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/07/12/ThisIsLinux30/" data-id="cj5391j94003tt8v7gotb2hya" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/07/12/ThisIsLinux30/" data-id="cj54gt2r3003u7cv7lwlzii42" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -318,7 +315,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">34</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">32</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">37</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">35</span></li></ul></li></ul>
         </div>
     </div>
 
