@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-07-14T11:16:13.990Z</updated>
+  <updated>2017-07-15T05:38:04.676Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,21 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>12장. 웹서버 설정파일,APM 컴파일 설치</title>
-    <link href="http://KKimSangHeon.github.io/2017/07/14/ThisIsLinux35/"/>
-    <id>http://KKimSangHeon.github.io/2017/07/14/ThisIsLinux35/</id>
-    <published>2017-07-14T09:45:57.000Z</published>
-    <updated>2017-07-14T11:16:13.990Z</updated>
-    
-    <content type="html"><![CDATA[<p>httpd.conf는 웹서버 설정파일이다. 책을 통해 이 내용을 알아보자.</p>
-<h4 id="x윈도를-통해-httpd-conf파일을-설정해보자"><a href="#x윈도를-통해-httpd-conf파일을-설정해보자" class="headerlink" title="x윈도를 통해 httpd.conf파일을 설정해보자"></a>x윈도를 통해 httpd.conf파일을 설정해보자</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">카페에서 system-config-httpd 파일을 받자.</div><div class="line"># yum -y localinstall system-config-httpd-1.5.5-6.fc20.noarch.rpm</div><div class="line"></div><div class="line"># system-config-httpd</div></pre></td></tr></table></figure>
-<h4 id="소스를-컴파일해서-APM을-설치"><a href="#소스를-컴파일해서-APM을-설치" class="headerlink" title="소스를 컴파일해서 APM을 설치"></a>소스를 컴파일해서 APM을 설치</h4><p>최적화된 APM을 구성할 수 있는 장점.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"># yum -y remove httpd   //컴파일 한것을 쓰기위해 깔린것을 지움</div><div class="line"></div><div class="line"># yum -y install gcc gcc-c++  //컴파일러 설치</div><div class="line"></div><div class="line"># cd 다운로드/</div><div class="line"></div><div class="line"># tar xfj pcre*   //압축풀기</div><div class="line"># cd pcre-8.36/</div><div class="line"># ./configure ; make; make install //세개의 명령어 한꺼번에</div><div class="line"></div><div class="line"># cd 다운로드/</div><div class="line"># tar xfj httpd-2.4.10.tar.bz2</div><div class="line"># tar xfj apr-1.5.1.tar.bz2</div><div class="line"># tar xfj apr-util-1.5.4.tar.bz2</div><div class="line"></div></pre></td></tr></table></figure></p>
-]]></content>
+    <title>15장. Samba 서버 설치와 운영</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/15/ThisIsLinux38/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/15/ThisIsLinux38/</id>
+    <published>2017-07-15T05:37:36.000Z</published>
+    <updated>2017-07-15T05:38:04.676Z</updated>
     
     <summary type="html">
-    
-      &lt;p&gt;httpd.conf는 웹서버 설정파일이다. 책을 통해 이 내용을 알아보자.&lt;/p&gt;
-&lt;h4 id=&quot;x윈도를-통해-httpd-conf파일을-설정해보자&quot;&gt;&lt;a href=&quot;#x윈도를-통해-httpd-conf파일을-설정해보자&quot; class=&quot;headerli
     
     </summary>
     
@@ -46,11 +38,109 @@
   </entry>
   
   <entry>
-    <title>3장. 클라우드 서비스 구축</title>
+    <title>14장. NFS 서버 설치와 운영</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/15/ThisIsLinux37/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/15/ThisIsLinux37/</id>
+    <published>2017-07-15T03:11:36.000Z</published>
+    <updated>2017-07-15T05:37:18.579Z</updated>
+    
+    <content type="html"><![CDATA[<p>NFS 서버리눅스 사이에 파일이나 폴더를 공유하는것<br>NFS를 구현하면 다양한 클라이언트가 공유 디렉터리에 접근할 수 있다.<br>서버에서는 서버를 구현하고 클라이언트는 그것을 마운트하여 사용한다.</p>
+<h4 id="서버를-NFS-서버로-구현-서버로-실행"><a href="#서버를-NFS-서버로-구현-서버로-실행" class="headerlink" title="서버를 NFS 서버로 구현(서버로 실행)"></a>서버를 NFS 서버로 구현(서버로 실행)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"># rpm -qa nfs-utils   //설치 확인(깔려있다.)</div><div class="line"># vi /etc/exports //공유할 폴더를 지정하는 파일</div><div class="line">/share          192.168.111.*(rw,sync) 입력</div><div class="line">    //리드 라이트, 싱크까지 시킴</div><div class="line"># mkdir /share</div><div class="line"># chmod 707 /share/</div><div class="line"># cp /boot/vmlinuz-3* /share/file1</div><div class="line"># ls -l /share/</div><div class="line"># systemctl restart nfs-server    //서비스 시작</div><div class="line"># systemctl enable nfs-server   //상시가동</div><div class="line"># exportfs -v    //공개된 폴더 보임</div><div class="line"></div><div class="line"># systemctl stop firewalld //방화벽 끄기..</div><div class="line">      //관련된 것이 많아서 끄는게 낫다.</div></pre></td></tr></table></figure>
+<h4 id="클라이언트로-NFS-접속-클라이언트로-실행"><a href="#클라이언트로-NFS-접속-클라이언트로-실행" class="headerlink" title="클라이언트로 NFS 접속(클라이언트로 실행)"></a>클라이언트로 NFS 접속(클라이언트로 실행)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"># rpm -qa nfs-utils //패키지 설치여부 확인(깔려있다)</div><div class="line"></div><div class="line"># showmount -e 192.168.111.100    //서버에서 마운트한 폴더 조회</div><div class="line"></div><div class="line"># cd</div><div class="line"># mkdir myShare</div><div class="line"># su</div><div class="line"> password 입력</div><div class="line"># cd /home/centos</div><div class="line"># mount -t nfs 192.168.111.100:/share myShare //마운트</div><div class="line"># ls -l myShare</div><div class="line"></div><div class="line"># cd myShare/</div><div class="line"># touch abc</div><div class="line"># touch bcd</div></pre></td></tr></table></figure>
+<h4 id="클라이언트가-생성한게-서버에도-있나-확인"><a href="#클라이언트가-생성한게-서버에도-있나-확인" class="headerlink" title="클라이언트가 생성한게 서버에도 있나 확인"></a>클라이언트가 생성한게 서버에도 있나 확인</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># ls -l /share    //abc,bcd 파일이 존재한다</div></pre></td></tr></table></figure>
+<h4 id="윈도우로-접속해보자"><a href="#윈도우로-접속해보자" class="headerlink" title="윈도우로 접속해보자"></a>윈도우로 접속해보자</h4><p>일반적으로는 NFS는 제공을 안하지만 엔터프라이즈의 경우엔 제공해준다.<br>제어판 - 프로그램 - 기능 사용/사용안함 클릭- nfs용 클라이언트 체크<br>확인<br>재부팅<br>관리자로 cmd를 열자<br>mount 192.168.111.100:/share *<br>내컴퓨터를 누르면 접속 가능</p>
+<h4 id="NFS서버의-그래픽-설정도구를-사용해보자"><a href="#NFS서버의-그래픽-설정도구를-사용해보자" class="headerlink" title="NFS서버의 그래픽 설정도구를 사용해보자"></a>NFS서버의 그래픽 설정도구를 사용해보자</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">페도라20에서 제공하므로 카페에서 다운받자</div><div class="line"># yum -y install</div><div class="line"># cd 다운로드</div><div class="line"># yum -y localinstall system-config-nfs-1.4.2-1.fc20.noarch.rpm</div><div class="line"></div><div class="line"># mkdir /share2</div><div class="line"># system-config-nfs</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;NFS 서버리눅스 사이에 파일이나 폴더를 공유하는것&lt;br&gt;NFS를 구현하면 다양한 클라이언트가 공유 디렉터리에 접근할 수 있다.&lt;br&gt;서버에서는 서버를 구현하고 클라이언트는 그것을 마운트하여 사용한다.&lt;/p&gt;
+&lt;h4 id=&quot;서버를-NFS-서버로-
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
+    
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>13장. FTP 서버 설치와 운영</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/15/ThisIsLinux36/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/15/ThisIsLinux36/</id>
+    <published>2017-07-15T02:04:42.000Z</published>
+    <updated>2017-07-15T03:11:20.611Z</updated>
+    
+    <content type="html"><![CDATA[<p>네임서버, 이메일서버, 웹서버 보다는 훨신 간단하다.<br>FTP 는 file transfer protocol의 약자로 파일을 전송하기 위한 서비스. 대용량 파일을 전송 할 때 FTP 서버는 성능이 좋다. ftp서버의 종류는 몇가지가 있는데 CentOS에서는 vsftpd를 제공한다. 페도라, 레드헷 엔터프라이즈 쪽에서 인기가 좋다.<br>proftpd는 주로 대형 사이트에서 오래동안 인기가 많았다.<br>pure-ftpd는 Troll-FTPd를 기반으로 프랭크 데니스가 2001년에 제작함.<br>사실 사용자입장에서는 어떤 ftp이든 관계가 없다.</p>
+<h3 id="1-vsftpd"><a href="#1-vsftpd" class="headerlink" title="1.vsftpd"></a>1.vsftpd</h3><h4 id="실습1-1-vsftpd-설치-및-운영-서버실행"><a href="#실습1-1-vsftpd-설치-및-운영-서버실행" class="headerlink" title="실습1.1 vsftpd 설치 및 운영(서버실행)"></a>실습1.1 vsftpd 설치 및 운영(서버실행)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"># yum -y install vsftpd</div><div class="line">      //165kb 밖에 안되는데 성능이 좋다!</div><div class="line"># cd /var/ftp    //vsftpd의 홈 디렉토리</div><div class="line"># ls -l     //일반적으로 pub라는 디렉토리에 파일을 넣어놓는다.</div><div class="line">            //우리회사가 A라는 파일을 배포해야하면 일반적으로 pub폴더에 넣음.</div><div class="line"># cd pub</div><div class="line"># ls</div><div class="line"># cp /boot/vmlinuz-3* file1</div><div class="line"></div><div class="line"># systemctl restart vsftpd   //ftp 시작</div><div class="line"># systemctl enable vsftpd    //상시가동</div><div class="line"># firewall-config     //방화벽 열기</div><div class="line">영구적탭 . ftp 선택 . 옵션 firewalld다시불러오기  </div></pre></td></tr></table></figure>
+<h4 id="실습1-2-vsftpd-윈도우에서-접속해보자-윈클라이언트실행"><a href="#실습1-2-vsftpd-윈도우에서-접속해보자-윈클라이언트실행" class="headerlink" title="실습1.2 vsftpd 윈도우에서 접속해보자(윈클라이언트실행)"></a>실습1.2 vsftpd 윈도우에서 접속해보자(윈클라이언트실행)</h4><p>알드라이브 설치<br>192.168.111.100 입력<br>포트 21<br>익명로그인 체크<br>연결<br>파일 업로드가 안된다. 이유 : ftp는 기본적으로 다운로드만 가능하다. 아무나 업로드 가능하면 악성코드를 올릴 수 도 있다!<br>하지만 허용할 수 있다.</p>
+<h4 id="실습1-3-vsftpd-업로드-가능하게-변경-서버에서-실행"><a href="#실습1-3-vsftpd-업로드-가능하게-변경-서버에서-실행" class="headerlink" title="실습1.3 vsftpd 업로드 가능하게 변경(서버에서 실행)"></a>실습1.3 vsftpd 업로드 가능하게 변경(서버에서 실행)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># vi /etc/vsftpd/vsftpd.conf</div><div class="line">29행 어나니머스가 업로드하는것을 허락한다. 주석해제</div><div class="line">33행 어나니머스가 디렉토리를 만드는것을 허락한다. 주석해제</div><div class="line"></div><div class="line"># chown ftp.ftp /var/ftp/pub  //펍 소유주 변경</div><div class="line"># ls -l</div><div class="line"></div><div class="line"># systemctl restart vsftpd //서비스재시작</div></pre></td></tr></table></figure>
+<h4 id="실습1-4-vsftpd-명령어로-파일을-올리고-받아보자-서버B에서-실행"><a href="#실습1-4-vsftpd-명령어로-파일을-올리고-받아보자-서버B에서-실행" class="headerlink" title="실습1.4 vsftpd 명령어로 파일을 올리고 받아보자(서버B에서 실행)"></a>실습1.4 vsftpd 명령어로 파일을 올리고 받아보자(서버B에서 실행)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"># yum -y install epel-release   //레드헷에 접속해서 다운받을수 있도록 설치</div><div class="line"># yum -y install ncftp</div><div class="line"></div><div class="line"># ncftp 192.168.111.100</div><div class="line">&gt;cd pub</div><div class="line">&gt;get file1    //file1 다운로드</div><div class="line"></div><div class="line">&gt;put anaconda-ks.cfg  //아나콘다파일 업로드</div><div class="line"></div><div class="line">&gt;ls -l  </div><div class="line"></div><div class="line">&gt;bye //종료</div></pre></td></tr></table></figure>
+<h3 id="2-proftpd"><a href="#2-proftpd" class="headerlink" title="2.proftpd"></a>2.proftpd</h3><h4 id="실습2-1-proftpd-설치-서버실행"><a href="#실습2-1-proftpd-설치-서버실행" class="headerlink" title="실습2.1 proftpd 설치(서버실행)"></a>실습2.1 proftpd 설치(서버실행)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"># yum -y remove vsftpd //충돌 나니까 제거</div><div class="line"></div><div class="line"># yum -y install epel-release //proftpd도 레드헷에 있어서 해줘야함.</div><div class="line"></div><div class="line"># yum -y install proftpd    //proftpd 설치</div><div class="line"></div><div class="line"># vi /etc/proftpd.conf    //설정파일 열기</div><div class="line">:set nu   </div><div class="line">:356 주석처리</div><div class="line">:425 주석처리 &lt;/IfDefine&gt;</div><div class="line">:383 DenyAll을 AllowAll로 변경</div><div class="line">//이제 어나니머스도 접속 가능</div><div class="line"></div><div class="line"># systemctl restart proftpd   </div><div class="line"># systemctl enable proftpd</div><div class="line"></div><div class="line">  방화벽은 아까 열었으므로 안열어도 된다.</div></pre></td></tr></table></figure>
+<h4 id="실습2-2-윈클라이언트에서-접속-윈클라이언트-실행"><a href="#실습2-2-윈클라이언트에서-접속-윈클라이언트-실행" class="headerlink" title="실습2.2 윈클라이언트에서 접속(윈클라이언트 실행)"></a>실습2.2 윈클라이언트에서 접속(윈클라이언트 실행)</h4><h3 id="3-pure-ftpd"><a href="#3-pure-ftpd" class="headerlink" title="3. pure-ftpd"></a>3. pure-ftpd</h3><h4 id="실습3-1-pure-ftpd-설치-서버실행"><a href="#실습3-1-pure-ftpd-설치-서버실행" class="headerlink" title="실습3.1 pure-ftpd 설치(서버실행)"></a>실습3.1 pure-ftpd 설치(서버실행)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># yum -y remove proftpd</div><div class="line"># yum -y install pure-ftpd  //레드햇에서 제공한다.</div><div class="line"># vi /etc/pure-ftpd/pure-ftpd.conf</div><div class="line">:set nu</div><div class="line">:77 익명사용자가 허용이 되어있다.</div><div class="line">:286 yes를 no로 변경</div><div class="line"></div><div class="line"># systemctl restart pure-ftpd</div><div class="line"># systemctl enable pure-ftpd</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;네임서버, 이메일서버, 웹서버 보다는 훨신 간단하다.&lt;br&gt;FTP 는 file transfer protocol의 약자로 파일을 전송하기 위한 서비스. 대용량 파일을 전송 할 때 FTP 서버는 성능이 좋다. ftp서버의 종류는 몇가지가 있는데 Ce
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
+    
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>12장. 웹서버 설정파일,APM 컴파일 설치</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/14/ThisIsLinux35/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/14/ThisIsLinux35/</id>
+    <published>2017-07-14T09:45:57.000Z</published>
+    <updated>2017-07-15T00:48:58.606Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="x윈도를-통해-httpd-conf파일을-설정해보자"><a href="#x윈도를-통해-httpd-conf파일을-설정해보자" class="headerlink" title="x윈도를 통해 httpd.conf파일을 설정해보자"></a>x윈도를 통해 httpd.conf파일을 설정해보자</h3><p>httpd.conf는 웹서버 설정파일이다. 책을 통해 이 내용을 알아보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">카페에서 system-config-httpd 파일을 받자.</div><div class="line"># yum -y localinstall system-config-httpd-1.5.5-6.fc20.noarch.rpm</div><div class="line"></div><div class="line"># system-config-httpd</div></pre></td></tr></table></figure></p>
+<h3 id="소스를-컴파일해서-APM을-설치"><a href="#소스를-컴파일해서-APM을-설치" class="headerlink" title="소스를 컴파일해서 APM을 설치"></a>소스를 컴파일해서 APM을 설치</h3><p>최적화된 APM을 구성할 수 있는 장점.</p>
+<h4 id="아파치-설치"><a href="#아파치-설치" class="headerlink" title="아파치 설치"></a>아파치 설치</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"># yum -y remove httpd   //컴파일 한것을 쓰기위해 깔린것을 지움</div><div class="line"></div><div class="line"># yum -y install gcc gcc-c++  //컴파일러 설치</div><div class="line"></div><div class="line"># cd 다운로드/</div><div class="line"></div><div class="line"># tar xfj pcre*   //압축풀기</div><div class="line"># cd pcre-8.36/</div><div class="line"># ./configure ; make; make install //세개의 명령어 한꺼번에</div><div class="line"></div><div class="line"># cd 다운로드/</div><div class="line"># tar xfj httpd-2.4.10.tar.bz2</div><div class="line"># tar xfj apr-1.5.1.tar.bz2</div><div class="line"># tar xfj apr-util-1.5.4.tar.bz2</div><div class="line"></div><div class="line"># mv apr-1.5.1 httpd-2.4.10/srclib/apr  </div><div class="line">          //파일이름을 apr로 srclib에저장</div><div class="line"># mv apr-util-1.5.4 httpd-2.4.10/srclib/apr-util</div><div class="line">          //파일이름을 apr-util로 srclib에 저장</div><div class="line"># ls httpd-2.4.10/srclib</div><div class="line"></div><div class="line"># cd httpd-2.4.10/</div><div class="line"># ./configure  --with-included-apr --with-pcre=/usr/local/bin/pcre-config --prefix=/web/httpd2/  ; make ; make install      </div><div class="line"># vi /etc/ld.so.conf</div><div class="line">마지막에 다음 두줄 추가</div><div class="line">/web/httpd2/lib</div><div class="line">/web/httpd2/modules</div><div class="line"># ldconfig //방금 추가한 내용 적용</div><div class="line"># cp /web/httpd2/bin/apachectl /etc/init.d/httpd2  //아파치 시작스크립트 복사</div><div class="line"># vi /etc/init.d/httpd2</div><div class="line">맨 아래 다음 두줄 추가</div><div class="line"># chkconfig: -85 15</div><div class="line"># description: 아파치 웹서버 입니다.</div><div class="line"></div><div class="line"># chkconfig httpd2 on //부팅될때마다 시작되도록</div><div class="line"># systemctl restart httpd2</div><div class="line"># systemctl status httpd2</div><div class="line">localhost로 접속해보자</div><div class="line"></div><div class="line">APM 중 아파치 설치 완료!</div></pre></td></tr></table></figure>
+<h4 id="마리아-db-설치"><a href="#마리아-db-설치" class="headerlink" title="마리아 db 설치"></a>마리아 db 설치</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">두번째 마리아 db는 컴파일된 바이너리 코드를 설치하자</div><div class="line">(카페에서 미리 받아놓자)</div><div class="line"># cd /root/다운로드</div><div class="line"># tar xfz mariadb-10.0.15-linux-x86_64.tar.gz</div><div class="line"># mv mariadb-10.0.15-linux-x86_64 /web/mariadb</div><div class="line"></div><div class="line"># groupadd mysql  //mysql 그룹 추가</div><div class="line"># adduser -M -d /web/mariadb -g mysql -s /bin/false -r mysql</div><div class="line">    //실제 사용하지 않는 유저 생성</div><div class="line"></div><div class="line"># /web/mariadb/scripts/mysql_install_db --user=mysql --basedir=/web/mariadb --datadir=/web/mariadb/data</div><div class="line">//마리아 디비 초기화</div><div class="line"></div><div class="line"># cp -a /web/mariadb/support-files/my-huge.cnf /etc/my.cnf</div><div class="line">y</div><div class="line"># vi /etc/my.cnf</div><div class="line">29행에 다음 두줄 추가</div><div class="line">basedir         = /web/mariadb</div><div class="line">datadir         = /web/mariadb/data</div><div class="line"></div><div class="line"># cp -a /web/mariadb/support-files/mysql.server /etc/init.d/mariadb</div><div class="line">  //실행스크립트 복사</div><div class="line"># systemctl restart mariadb</div><div class="line"># chkconfig mariadb on //상시가동되도록</div><div class="line"></div><div class="line"># /web/mariadb/bin/mysqladmin -u root -p password</div><div class="line">엔터</div><div class="line">1234</div><div class="line">1234</div><div class="line">//마리아 디비 관리자 암호 변경</div><div class="line"></div><div class="line"># PATH=$PATH:/web/mariadb/bin</div><div class="line"># mysql -u root -p</div><div class="line">1234 입력</div><div class="line">//정상작동하는지 접속</div><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<h4 id="php-설치"><a href="#php-설치" class="headerlink" title="php 설치"></a>php 설치</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"># cd /root/다운로드</div><div class="line"># yum -y install libxml2-devel openssl-devel libjpeg-devel libpng-devel</div><div class="line">//관련 패키지 설치</div><div class="line"></div><div class="line"># tar xfj php-5.6.4.tar.bz2</div><div class="line"># cd php-5.6.4</div><div class="line"># ./configure --with-mysql=/web/mariadb --with-apxs2=/web/httpd2/bin/apxs --with-mysqli=/web/mariadb/bin/mysql_config --with-imap-ssl --disable-debug --with-iconv --with-gd --with-jpeg-dir --with-png-dir --with-libxml-dir --with-openssl ; make ; make install  </div><div class="line">//컴파일 및 설치</div><div class="line"></div><div class="line"># ls -l /web/httpd2/modules/libphp5.so</div><div class="line">//제일 중요한 파일. 이파일을 위해 컴파일을 했다.</div><div class="line"># vi /web/httpd2/conf/httpd.conf</div><div class="line">147행에 모듈이 추가 된것을 확인</div><div class="line">376행에 AddType application/x-httpd-php .php .php3 .php4 .php5 .htm .html .inc</div><div class="line">아파치 웹서버가 376행의 타입까지 인식을 하도록 만듬</div><div class="line"></div><div class="line"># cp php.ini-production /etc/php.ini</div><div class="line"># systemctl stop httpd2</div><div class="line"># systemctl start httpd2</div><div class="line"># systemctl status httpd2</div><div class="line"></div><div class="line"># firewall-config</div><div class="line">영구적 . http 선택 옵션 firewalld 다시불러오기</div><div class="line"></div><div class="line"># cd /web/httpd2/htdocs/ //웹서버의 홈폴더</div><div class="line"># vi phpinfo.php      //샘플파일 만들기</div><div class="line">다음 한줄 추가</div><div class="line">&lt;?php phpinfo(); ?&gt;</div><div class="line"></div><div class="line">http://192.168.111.100/phpinfo.php 접속해보자</div></pre></td></tr></table></figure>
+<p>과연 이 과정들을 거쳐 만들어진것들이 최고의 성능을 낼까?<br>그것은 확실히 모른다. 현재 패키지들이 잘 만들어져 나오기 때문에 굳이 컴파일을 통해 진행된것들이 훨신 좋은 성능을 얻거나 하지는 않는다.<br>학습차원에서 컴파일을 진행해 보았다.</p>
+<h5 id="12장은-활용도가-높으므로-익혀두자"><a href="#12장은-활용도가-높으므로-익혀두자" class="headerlink" title="12장은 활용도가 높으므로 익혀두자"></a>12장은 활용도가 높으므로 익혀두자</h5>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;x윈도를-통해-httpd-conf파일을-설정해보자&quot;&gt;&lt;a href=&quot;#x윈도를-통해-httpd-conf파일을-설정해보자&quot; class=&quot;headerlink&quot; title=&quot;x윈도를 통해 httpd.conf파일을 설정해보자&quot;&gt;&lt;/a&gt;x윈도를 
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
+    
+      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
+    
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>12장. 클라우드 서비스 구축</title>
     <link href="http://KKimSangHeon.github.io/2017/07/14/ThisIsLinux34/"/>
     <id>http://KKimSangHeon.github.io/2017/07/14/ThisIsLinux34/</id>
     <published>2017-07-14T08:04:41.000Z</published>
-    <updated>2017-07-14T09:46:26.528Z</updated>
+    <updated>2017-07-14T23:02:10.912Z</updated>
     
     <content type="html"><![CDATA[<p>클라우드 서비스를 구축해봅시다.<br>클라우드 서비스는 서버에 파일이 있고 각각의 PC마다 폴더를 지정하여 동기화가 된다. 즉 웹하드는 업로드 다운로드를 하지만 클라우드는 자동으로 동기화가 되는점이 다르다.</p>
 <p>카페에서 관련 서버 두개를 깔자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># cd /root/다운로드</div><div class="line"># yum -y localinstall owncloud- *</div><div class="line"></div><div class="line"># ls -l /var/www/html // owncloud가 깔렸나 확인</div><div class="line"></div><div class="line"># systemctl restart httpd //서비스 재시작</div><div class="line"># firewall-config</div><div class="line">//영구적 선택 - http,https//방화벽 설정 열기</div><div class="line"></div></pre></td></tr></table></figure><br>클라이언트에서 192.168.111.100/owncloud 접속<br>admin 1234 입력<br>자세한 사용법은 책을 참고하자!</p>
@@ -613,141 +703,6 @@
     <summary type="html">
     
       &lt;h4 id=&quot;LVM&quot;&gt;&lt;a href=&quot;#LVM&quot; class=&quot;headerlink&quot; title=&quot;LVM&quot;&gt;&lt;/a&gt;LVM&lt;/h4&gt;&lt;p&gt;Logical Volume Manage&lt;br&gt;여러개의 하드디스크를 합쳐서 한 개의 파일 시스템으로 사용하는것으로 필요에
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
-    
-      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
-    
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
-    
-      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>6장. RAID6 와 RAID 1+0</title>
-    <link href="http://KKimSangHeon.github.io/2017/07/07/ThisIsLinux18/"/>
-    <id>http://KKimSangHeon.github.io/2017/07/07/ThisIsLinux18/</id>
-    <published>2017-07-07T00:47:34.000Z</published>
-    <updated>2017-07-07T02:18:58.856Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="RAID6"><a href="#RAID6" class="headerlink" title="RAID6"></a>RAID6</h4><p>패리티가 2개이기 때문에 신뢰성이 높다</p>
-<h4 id="RAID-1-0"><a href="#RAID-1-0" class="headerlink" title="RAID 1+0"></a>RAID 1+0</h4><p>RAID 0,1 쓰는것</p>
-<h4 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h4><p>디스크 10개 스냅샷으로 돌아온 후 2기가 짜리 하나를 지워버린다.</p>
-<h5 id="RAID-6-생성"><a href="#RAID-6-생성" class="headerlink" title="RAID 6 생성"></a>RAID 6 생성</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># mdadm --create /dev/md6 --level=6 --raid-devices=4 /dev/sdb1 /dev/sdc1 /dev/sdd1 /dev/sde1</div><div class="line"></div><div class="line"># mkfs.ext4 /dev/md6    //포멧</div><div class="line"></div><div class="line"># mkdir /raid6</div><div class="line"></div><div class="line"># mount /dev/md6 /raid6</div><div class="line"></div><div class="line"># df    //2기가 확인</div></pre></td></tr></table></figure>
-<h5 id="RAID-1-0-생성"><a href="#RAID-1-0-생성" class="headerlink" title="RAID 1+0 생성"></a>RAID 1+0 생성</h5><p>이는 RAID 1을 두개 먼저 생성해야한다.</p>
-<p>md2 ,md3를 RAID1으로 만들고 이 두개를 RAID 0으로 묶는다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"># mdadm --create /dev/md2 --level=1 --raid-devices=2 /dev/sdf1 /dev/sdg1    </div><div class="line">            //raid1 md2로 생성</div><div class="line"></div><div class="line"># mdadm --create /dev/md3 --level=1 --raid-devices=2 /dev/sdh1 /dev/sdi1    </div><div class="line">            //raid1 md3로 생성</div><div class="line"></div><div class="line"># mdadm --create /dev/md10 --level=0 --raid-devices=2 /dev/md2 /dev/md3   </div><div class="line">            //md2, md3로 raid0 생성</div><div class="line"></div><div class="line"># mkfs.ext4 /dev/md10   //포멧</div><div class="line"></div><div class="line"># mkdir /raid10</div><div class="line"></div><div class="line"># mount /dev/md10  /raid10</div><div class="line"></div><div class="line"># df</div></pre></td></tr></table></figure>
-<h5 id="잘동작하나-확인"><a href="#잘동작하나-확인" class="headerlink" title="잘동작하나 확인"></a>잘동작하나 확인</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># cp /boot/vmlinuz-3.10.0-123.el7.x86_64 /raid6/testFile</div><div class="line"># cp /boot/vmlinuz-3.10.0-123.el7.x86_64 /raid10/testFile</div><div class="line"></div><div class="line"># vi /etc/fstab</div><div class="line"></div><div class="line">/dev/md6    /raid6   ext4   defaults    1     2</div><div class="line">/dev/md10   /raid10  ext4   defaults    1     2</div><div class="line">//재부팅되도 마운트 유지하기 위해 추가</div></pre></td></tr></table></figure>
-<h5 id="고장내보자"><a href="#고장내보자" class="headerlink" title="고장내보자"></a>고장내보자</h5><p>SCSI 3, 5 ,8, 9 디스크 없애고 부트</p>
-<p>RAID 6 확인<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># mdadm --run /dev/md6    //md6 실행</div><div class="line"># df //확인</div><div class="line"># ls -l /raid6      //데이터 확인</div><div class="line"></div><div class="line"># mdadm --detail /dev/md6</div></pre></td></tr></table></figure></p>
-<p>RAID 1+0 확인<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># mdadm --run /dev/md2</div><div class="line"># mdadm --run /dev/md3</div><div class="line"></div><div class="line"># mdadm --detail /dev/md10</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;RAID6&quot;&gt;&lt;a href=&quot;#RAID6&quot; class=&quot;headerlink&quot; title=&quot;RAID6&quot;&gt;&lt;/a&gt;RAID6&lt;/h4&gt;&lt;p&gt;패리티가 2개이기 때문에 신뢰성이 높다&lt;/p&gt;
-&lt;h4 id=&quot;RAID-1-0&quot;&gt;&lt;a href=&quot;#RAID
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
-    
-      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
-    
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
-    
-      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>RAID 0,1,5 의 고장과 원상 복구</title>
-    <link href="http://KKimSangHeon.github.io/2017/07/06/ThisIsLinux17/"/>
-    <id>http://KKimSangHeon.github.io/2017/07/06/ThisIsLinux17/</id>
-    <published>2017-07-06T03:33:07.000Z</published>
-    <updated>2017-07-06T09:26:17.105Z</updated>
-    
-    <content type="html"><![CDATA[<p>SCSI 2,4,6,9를 고장내 놓고 잘동작하는 지 확인 해 보겠다.</p>
-<p>잘 동작하나 확인하기 위해 고장내기 전에 파일을 옮긴다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># cp /boot/vmlinuz-3*  /raidLinear/testFile</div><div class="line"># cp /boot/vmlinuz-3*  /raid0/testFile</div><div class="line"># cp /boot/vmlinuz-3*  /raid1/testFile</div><div class="line"># cp /boot/vmlinuz-3*  /raid5/testFile</div><div class="line"></div><div class="line"># halt -p</div></pre></td></tr></table></figure><br>vmplayer을 켜고 SCSI 2,4,6,9 디스크를 제거<br>쫌 지나면 응급복구모드로 실행이됨<br>암호를 입력해주자</p>
-<p>ls -l /dev/sd* 을 하니까 당겨져 있다. sdc가 sdb 이런식으로</p>
-<p>RAID 1, 5 는 데이터가 살아있어야 한다.</p>
-<h4 id="RAID-1-확인"><a href="#RAID-1-확인" class="headerlink" title="RAID 1 확인"></a>RAID 1 확인</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># df    //마운트가 다 끊겨있다.</div><div class="line"># mdadm --run /dev/md1   //강제로 가동시키는 것</div><div class="line">시작되었다.</div><div class="line"># df  //raid1가 마운트 된것을 확인.</div><div class="line"># ls -l /raid1    //데이터가 잘 있는지 확인</div><div class="line"># mdadm --detail /dev/md1   //하나는 살아있고 하나는 removed인것을 확인</div><div class="line"></div></pre></td></tr></table></figure>
-<h4 id="RAID-5-확인"><a href="#RAID-5-확인" class="headerlink" title="RAID 5 확인"></a>RAID 5 확인</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># mdadm --run /dev/md5   //강제로 가동시키는 것</div><div class="line">시작되었다.</div><div class="line"># df  //raid5가 마운트 된것을 확인.</div><div class="line"># ls -l /raid5    //데이터가 잘 있는지 확인</div><div class="line"># mdadm --detail /dev/md5   //하나는 살아있고 하나는 removed인것을 확인</div></pre></td></tr></table></figure>
-<h4 id="RAIDLinear-확인"><a href="#RAIDLinear-확인" class="headerlink" title="RAIDLinear  확인"></a>RAIDLinear  확인</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># mdadm --run /dev/md9   //강제로 가동시키는 것</div><div class="line">실행할 수 없다. 결함을 허용하지 않음</div></pre></td></tr></table></figure>
-<h4 id="RAID-0-확인"><a href="#RAID-0-확인" class="headerlink" title="RAID 0 확인"></a>RAID 0 확인</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># mdadm --run /dev/md0   //강제로 가동시키는 것</div><div class="line">실행할 수 없다. 결함을 허용하지 않음</div></pre></td></tr></table></figure>
-<h4 id="시스템이-재대로-실행되도록-해보자"><a href="#시스템이-재대로-실행되도록-해보자" class="headerlink" title="시스템이 재대로 실행되도록 해보자"></a>시스템이 재대로 실행되도록 해보자</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"># mdadm --stop /dev/md9     //종료</div><div class="line"># mdadm --stop /dev/md0     //종료</div><div class="line"></div><div class="line"># vi /etc/fstab</div><div class="line">md9,md0 주석 하고</div><div class="line"># reboot</div><div class="line"></div><div class="line">리부트를 했는데 복구모드로 실행이 된다면 컨트롤 D를 누르고</div><div class="line">실행한 다음에 재 마운트를 해주면 된다.</div><div class="line"></div><div class="line"># df    //마운트가 되어있는것 확인.</div></pre></td></tr></table></figure>
-<h4 id="새로운-디스크를-장착하여-원상복구를-시켜보자"><a href="#새로운-디스크를-장착하여-원상복구를-시켜보자" class="headerlink" title="새로운 디스크를 장착하여 원상복구를 시켜보자"></a>새로운 디스크를 장착하여 원상복구를 시켜보자</h4><p>Linear RAID, RAID 0 은 데이터를 살릴 순 없다.<br>그러나 RAID 1, RAID 5는 데이터를 살릴 수 있다.</p>
-<p>vmplayer에서 디스크 4개를 1기가씩 주고 추가하자. 알아서 빈곳을 잘 찾아간다.</p>
-<p>우리가 조금전 추가했던것은 sdc, sde, sdg, sdi 이다.<br>2,4,6,9 로 들어갔으므로..</p>
-<p>RAID 0, Linear Raid는 새로 만들어주어야 한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"># ls -l /dev/sd*    //</div><div class="line"># fdisk /dev/sdc~sdi 까지</div><div class="line">  n 입력</div><div class="line">  p 입력</div><div class="line">  엔터 엔터</div><div class="line">  t 입력</div><div class="line">  fd 입력</div><div class="line">  w 입력</div><div class="line"></div><div class="line"># mdadm --stop /dev/md9   //다시만들기위해 stop</div><div class="line"># mdadm --create /dev/md9 --level=linear --raid-devices=2 /dev/sdb1 /dev/sdc1</div><div class="line">#mdadm --detail /dev/md9 //확인해보자</div><div class="line"></div><div class="line"># mdadm --stop /dev/md0   //다시만들기위해 stop</div><div class="line"># mdadm --create /dev/md0 --level=0 --raid-devices=2 /dev/sdd1 /dev/sde1</div><div class="line"># mdadm --detail /dev/md9 //확인해보자</div></pre></td></tr></table></figure></p>
-<p>RAID 1, RAID 5는 새로만들면 안되고 추가해주어야 한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"># mdadm /dev/md1 --add /dev/sdg1</div><div class="line"></div><div class="line"># mdadm /dev/md5 --add /dev/sdi1</div><div class="line"></div><div class="line"># vi /etc/fstab</div><div class="line"></div><div class="line">/dev/md9    /raidLinear   ext4    defaults    1 2</div><div class="line">/dev/md0    /raid0   ext4         defaults    1 2</div><div class="line">/dev/md1    /raid1   ext4    defaults    1 2</div><div class="line">/dev/md5    /raid5   ext4    defaults    1 2</div><div class="line"></div><div class="line">이렇게 바꿔준다.</div><div class="line"># reboot</div><div class="line"># df      //마운트 확인.</div></pre></td></tr></table></figure></p>
-<p>데이터를 한번 확인해보자.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"># ls -l /raid0</div><div class="line">drwx------ 2 root root   16384  7월  6 17:26 lost+found</div><div class="line">-rwxr-xr-x 1 root root 4902656  7월  6 17:31 testFile</div><div class="line"></div><div class="line"># ls -l /raid1</div><div class="line">drwx------ 2 root root   16384  7월  6 17:27 lost+found</div><div class="line">-rwxr-xr-x 1 root root 4902656  7월  6 17:31 testFile</div><div class="line"></div><div class="line"># ls -l /raid5</div><div class="line">drwx------ 2 root root   16384  7월  6 17:29 lost+found</div><div class="line">-rwxr-xr-x 1 root root 4902656  7월  6 17:31 testFile</div><div class="line"></div><div class="line"># ls -l /raidLinear</div><div class="line">drwx------ 2 root root   16384  7월  6 17:25 lost+found</div><div class="line">-rwxr-xr-x 1 root root 4902656  7월  6 17:31 testFile</div></pre></td></tr></table></figure>
-<p>raid 1그리고 raid5 는 데이터가 있을것이라 예상했지만 raid0 그리고 raidLinear도 데이터가 존재한다. 어떻게 된 것일까? 운이 좋게 지워지지않은 영역에 존재하는 것일 것이다. 그러므로 데이터를 신뢰 할 수 없으며 이는 포멧을 해주는 것이 좋다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># umount /dev/md0   //포멧하기전에 마운트를 끊음</div><div class="line"># umount /dev/md9</div><div class="line"></div><div class="line"># mkfs.ext4 /dev/md0  //포멧</div><div class="line"># mkfs.ext4 /dev/md9</div><div class="line"></div><div class="line"># reboot    //리부트를 하지않고 바로 마운트를 해줘도됨.</div><div class="line">          //어차피 리부트하면 마운트되어있으니까 아무거나 선택!</div></pre></td></tr></table></figure>
-<p>raid 1, raid 5 의 고장난 디스크에 대해서 따로 작업을 해 줘야할줄 알았는데 –add만 하면 되어서 생각보다 간단하다고 생각했다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;SCSI 2,4,6,9를 고장내 놓고 잘동작하는 지 확인 해 보겠다.&lt;/p&gt;
-&lt;p&gt;잘 동작하나 확인하기 위해 고장내기 전에 파일을 옮긴다.&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gu
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
-    
-      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
-    
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
-    
-      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>6장. RAID 정의 및 개념,구현</title>
-    <link href="http://KKimSangHeon.github.io/2017/07/06/ThisIsLinux16/"/>
-    <id>http://KKimSangHeon.github.io/2017/07/06/ThisIsLinux16/</id>
-    <published>2017-07-06T00:13:09.000Z</published>
-    <updated>2017-07-06T07:00:53.610Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="RAID"><a href="#RAID" class="headerlink" title="RAID"></a>RAID</h4><p>Redundant Array of Inexpensive Disks<br>여러개의 디스크를 하나처럼 사용하는 RAID를 알아보자<br>비용절감 + 신뢰성 향상 + 성능 향상<br>1테라 디스크 3개를 하나로 묶어서 3테라 디스크처럼 쓴다</p>
-<h5 id="하드웨어-RAID"><a href="#하드웨어-RAID" class="headerlink" title="하드웨어 RAID"></a>하드웨어 RAID</h5><p>여러개의 하드디스크를 가지고 장비를 만들어서 사용. 장비업체에서 제공하기 떄문에 사용법이 다를 수 있다. 그리고 상당히 고가이다. 하드웨어RAID가 안정성이 높다.</p>
-<h5 id="소프트웨어-RAID"><a href="#소프트웨어-RAID" class="headerlink" title="소프트웨어 RAID"></a>소프트웨어 RAID</h5><p>디스크를 장착만하면 운영체제 레벨에서 하나로 묶을 수 있다.</p>
-<h5 id="Linear-RAID-339p-그림보기"><a href="#Linear-RAID-339p-그림보기" class="headerlink" title="Linear RAID (339p 그림보기)"></a>Linear RAID (339p 그림보기)</h5><p>최소 2개이상의 디스크를 하나로 묶음<br>앞 디스크 부터 차례로 저장<br>100TB 100TB 100TB 를 사용하면 총 300TB가 된다. 즉 공간효율성이 100%임.</p>
-<h5 id="RAID-0-339p-그림보기"><a href="#RAID-0-339p-그림보기" class="headerlink" title="RAID 0 (339p 그림보기)"></a>RAID 0 (339p 그림보기)</h5><p>모든 디스크에 동시에 저장되는 개념<br>그러므로 하드디스크가 3개면 /3 시간으로 저장됨<br>신뢰성이 낮다.<br>빠르지만 전부 잃어버려도 큰 문제가 되지 않는 자료가 적당하다.<br>3TB 100TB 100TB 를 사용하면 총 9TB가 된다. 즉 디스크 크기가 다르면 공간효율성이 100%가 되지 않음.<br>그래서 RAID를 구성할 떈 같은회사 같은 용량의 디스크로 구성한다.<br>디스크 세개중에 하나만 고장나도 디스크를 못쓴다.</p>
-<h5 id="RAID-1"><a href="#RAID-1" class="headerlink" title="RAID 1"></a>RAID 1</h5><p>미러링이라 부름<br>1TB 1TB 를 사용하면 1TB 사용가능<br>결함 허용을 제공= 신뢰성 높음. 즉 둘중에 하나가 고장나도 데이터가 보존된다.<br>공간효율이 나쁘므로 비용이 비싸다는 단점이 있다.</p>
-<h5 id="RAID-5"><a href="#RAID-5" class="headerlink" title="RAID 5"></a>RAID 5</h5><p>RAID 2,3,4의 장점을 포용하기 때문에 2,3,4를 사용할 필요가 없다.<br>RAID1의 데이터 안정성 +RAID0의 공간 효율성을 추구 디스크 개수 -1개의 공간을 사용. 즉 4개일 경우 3개를 사용(75%) 100개일 경우 99개를 사용(99%)<br>즉 가격이 저렴하면서 안정적인것.<br>최소한 3개 이상의 하드디스크가 필요하며 오류가 발생했을 때는 패리티(Parity)를 이용해서 데이터를 복구<br>결함 허용을 제공 - 즉 디스크 하나가 고장나도 사용 복구 가능<br>하지만 디스크가 하나가 고장났을 때는 복구가 가능하지만 디스크가 2개가 고장날 경우에는 복구 불가능.<br>그래서 100개를 사용하였을 경우에는 불안하다.(2개 이상 고장날 확률이 높아지므로)<br>즉 적은 디스크를 활용할 경우 공간효율은 낮아지지만 신뢰도는 높아진다.<br>일반적으로 RAID 5는 7개에서 10개정도의 디스크로 구성</p>
-<h5 id="RAID-6"><a href="#RAID-6" class="headerlink" title="RAID 6"></a>RAID 6</h5><p>패리트를 2개 쓴다. 즉 디스크가 2개가 고장나도 복구가능. 최소 4개이상의 디스크가 필요함.(패리티를 2개 쓰므로)<br>패리티를 2개 쓰는 알고리즘의 효율성이 떨어져서 성능이 떨어지는 단점이 있어 많이 사용하지는 않음.</p>
-<h5 id="RAID1-0-RAID-RAID0"><a href="#RAID1-0-RAID-RAID0" class="headerlink" title="RAID1 + 0 = RAID + RAID0"></a>RAID1 + 0 = RAID + RAID0</h5><p>신뢰성(안정성)과 성능(속도)이 동시에 뛰어난 방법<br>RAID1로 구성된것을 RAID 0 으로 묶음. 그림참고</p>
-<h5 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h5><p>SCSI 0:1 부터 0:10 까지 진행.</p>
-<p>SCSI 0:1  SCSI 0:2 - Linear RAID</p>
-<p>SCSI 0:3  SCSI 0:4 - RAID 0</p>
-<p>SCSI 0:5  SCSI 0:6 - RAID 1</p>
-<p>SCSI 0:8  SCSI 0:9  SCSI 0:10 - RAID 5</p>
-<p>SCSI 0:1 만 2GB로 구성하고 나머지는 다 1GB로 구성</p>
-<p>에디트 쪽에서 디스크 2기가 1개 1기가 8개 추가.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># ls -l /dev/sd*      //장착이 잘 되었나 확인</div></pre></td></tr></table></figure>
-<p>9번 반복<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># fdisk /dev/sdb ~sdj 까지 반복</div><div class="line">n   p   엔터 엔터</div><div class="line">p //로 확인해보면 시스템이 리눅스인데 RAID로 변경해야한다.</div><div class="line">t 엔터</div><div class="line">L 누르면 도움말이 나온다.</div><div class="line">fd를 입력 후 엔터</div><div class="line">p를 눌러 확인</div><div class="line">w를 눌러 저장</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># ls -l /dev/sd*      //장착이 잘 되었나 확인</div></pre></td></tr></table></figure>
-<h4 id="과정-설명"><a href="#과정-설명" class="headerlink" title="과정 설명"></a>과정 설명</h4><p>1.mdadm 명령어로 논리 볼륨 생성<br>2.mkfs.ext4 명령어로 파일시스템 생성(포멧)<br>3.mount 적용<br>위 3가지 과정은 6장에서 하드디스크 1개추가 과정과 같다.</p>
-<h4 id="Linear-RAID-만들기"><a href="#Linear-RAID-만들기" class="headerlink" title="Linear RAID 만들기"></a>Linear RAID 만들기</h4><p>sdb1 sdc1 이용<br>mdadm RAID를 만들고 없애는 명령어</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"># fdisk -l /dev/sdb /dev/sdc // 아까 한것이 잘 적용되었나 확인</div><div class="line"></div><div class="line"># mdadm --create /dev/md9 --level=linear --raid-devices=2 /dev/sdb1 /dev/sdc1</div><div class="line">        //RAID md9를 만드는데 리니어로 디바이스는</div><div class="line">        //개수 2개로 2개는 /dev/sdb1 /dev/sdc1 로</div><div class="line"></div><div class="line"># mdadm --detail --scan     //돌고있는지 확인</div><div class="line"># mdadm --detail /dev/md9   //md9에 대해 자세히 보자</div><div class="line"></div><div class="line"># mkfs.ext4 /dev/md9    //포멧하자</div><div class="line"></div><div class="line"># mkdir /raidLinear   //디렉토리 생성</div><div class="line"></div><div class="line"># mount /dev/md9 /raidLinear/ //마운트</div><div class="line"></div><div class="line"># df      //마운트 확인</div><div class="line"># vi /etc/fstab     //재부팅하면 마운트가 풀리므로 설정</div><div class="line"></div><div class="line">/dev/md9    /raidLinear   ext4    defaults    0 0    </div><div class="line">맨 아래 추가</div><div class="line"></div><div class="line"># reboot</div><div class="line"># df    //마운트 확인</div></pre></td></tr></table></figure>
-<h4 id="RAID-0-만들기"><a href="#RAID-0-만들기" class="headerlink" title="RAID 0 만들기"></a>RAID 0 만들기</h4><p>sdd sde로 한다<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"># mdadm --create /dev/md0 --level=0 --raid-devices=2 /dev/sdd1 /dev/sde1</div><div class="line"></div><div class="line"># mdadm --detail --scan     //돌고있는지 확인</div><div class="line"># mdadm --detail /dev/md0   //md9에 대해 자세히 보자</div><div class="line"></div><div class="line"># mkfs.ext4 /dev/md0    //포멧하자</div><div class="line"></div><div class="line"># mkdir /raid0   //디렉토리 생성</div><div class="line"></div><div class="line"># mount /dev/md0 /raid0/ //마운트</div><div class="line"></div><div class="line"># df      //마운트 확인</div><div class="line"></div><div class="line"># vi /etc/fstab     //재부팅하면 마운트가 풀리므로 설정</div><div class="line"></div><div class="line">/dev/md0    /raid0   ext4    defaults    0 0   </div><div class="line">추가</div></pre></td></tr></table></figure></p>
-<h4 id="RAID-1-1"><a href="#RAID-1-1" class="headerlink" title="RAID 1"></a>RAID 1</h4><p>sdf sdg 사용<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"># mdadm --create /dev/md1 --level=1 --raid-devices=2 /dev/sdf1 /dev/sdg1</div><div class="line">y입력  // raid1은 부트 디바이스로 사용 할 수 없는데 만들겠냐는 뜻</div><div class="line"></div><div class="line"># mdadm --detail /dev/md1   //확인해보자</div><div class="line"></div><div class="line"># mkfs.ext4 /dev/md1    //포멧하자</div><div class="line"></div><div class="line"># mkdir /raid1   //디렉토리 생성</div><div class="line"></div><div class="line"># mount /dev/md1 /raid1/ //마운트</div><div class="line"></div><div class="line"># df      //마운트 확인</div><div class="line"></div><div class="line"># vi /etc/fstab     //재부팅하면 마운트가 풀리므로 설정</div><div class="line">/dev/md1    /raid1   ext4    defaults    0 0   </div><div class="line">추가</div></pre></td></tr></table></figure></p>
-<h4 id="RAID-5-1"><a href="#RAID-5-1" class="headerlink" title="RAID 5"></a>RAID 5</h4><p>sdh sdi sdj 사용<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"># mdadm --create /dev/md5 --level=5 --raid-devices=3 /dev/sdh1 /dev/sdi1 /dev/sdj1</div><div class="line"></div><div class="line">망가졌다는 메세지 나오는데 무시하면된다. (컴퓨터가 착각함!)</div><div class="line"></div><div class="line"># mdadm --detail /dev/md5   //확인해보자</div><div class="line"></div><div class="line"># mkfs.ext4 /dev/md5    //포멧하자</div><div class="line"></div><div class="line"># mkdir /raid5   //디렉토리 생성</div><div class="line"></div><div class="line"># mount /dev/md5 /raid5/ //마운트</div><div class="line"></div><div class="line"># df      //마운트 확인</div><div class="line"></div><div class="line"># vi /etc/fstab     //재부팅하면 마운트가 풀리므로 설정</div><div class="line"></div><div class="line">/dev/md5    /raid5   ext4    defaults    0 0  </div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;RAID&quot;&gt;&lt;a href=&quot;#RAID&quot; class=&quot;headerlink&quot; title=&quot;RAID&quot;&gt;&lt;/a&gt;RAID&lt;/h4&gt;&lt;p&gt;Redundant Array of Inexpensive Disks&lt;br&gt;여러개의 디스크를 하나처럼 사용하는 RA
     
     </summary>
     
