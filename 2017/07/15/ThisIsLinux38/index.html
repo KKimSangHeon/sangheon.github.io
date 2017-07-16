@@ -10,18 +10,18 @@
     
     
 
-      <meta name="description" content="Welcome to Sang Heon&apos;s Blog.">
+      <meta name="description" content="NFS 유닉스와 유닉스 유닉스와 리눅스간 파일공유이고삼바는 유닉스(리눅스)와 윈도우즈간에 공유하는것. 1.윈도우가 삼바 서버1.1 윈도우 클라이언트를 삼바 서버로 만들자(윈클라이언트실행)C 드라이브에 smbShare 폴더만든다. 그 폴더 속성 들어가서 공유탭의 공유버튼 누르고 Everyone 선택하고 추가 그 후 Everyone은 읽기/쓰기로 선택 명령프롬">
 <meta name="keywords" content="Linux,This Is Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="15장. Samba 서버 설치와 운영">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2017/07/15/ThisIsLinux38/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="Welcome to Sang Heon&apos;s Blog.">
+<meta property="og:description" content="NFS 유닉스와 유닉스 유닉스와 리눅스간 파일공유이고삼바는 유닉스(리눅스)와 윈도우즈간에 공유하는것. 1.윈도우가 삼바 서버1.1 윈도우 클라이언트를 삼바 서버로 만들자(윈클라이언트실행)C 드라이브에 smbShare 폴더만든다. 그 폴더 속성 들어가서 공유탭의 공유버튼 누르고 Everyone 선택하고 추가 그 후 Everyone은 읽기/쓰기로 선택 명령프롬">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
-<meta property="og:updated_time" content="2017-07-15T05:38:04.676Z">
+<meta property="og:updated_time" content="2017-07-15T07:08:30.947Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="15장. Samba 서버 설치와 운영">
-<meta name="twitter:description" content="Welcome to Sang Heon&apos;s Blog.">
+<meta name="twitter:description" content="NFS 유닉스와 유닉스 유닉스와 리눅스간 파일공유이고삼바는 유닉스(리눅스)와 윈도우즈간에 공유하는것. 1.윈도우가 삼바 서버1.1 윈도우 클라이언트를 삼바 서버로 만들자(윈클라이언트실행)C 드라이브에 smbShare 폴더만든다. 그 폴더 속성 들어가서 공유탭의 공유버튼 누르고 Everyone 선택하고 추가 그 후 Everyone은 읽기/쓰기로 선택 명령프롬">
 <meta name="twitter:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
@@ -170,14 +170,22 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p>NFS 유닉스와 유닉스 유닉스와 리눅스간 파일공유이고<br>삼바는 유닉스(리눅스)와 윈도우즈간에 공유하는것.</p>
+<h3 id="1-윈도우가-삼바-서버"><a href="#1-윈도우가-삼바-서버" class="headerlink" title="1.윈도우가 삼바 서버"></a>1.윈도우가 삼바 서버</h3><h4 id="1-1-윈도우-클라이언트를-삼바-서버로-만들자-윈클라이언트실행"><a href="#1-1-윈도우-클라이언트를-삼바-서버로-만들자-윈클라이언트실행" class="headerlink" title="1.1 윈도우 클라이언트를 삼바 서버로 만들자(윈클라이언트실행)"></a>1.1 윈도우 클라이언트를 삼바 서버로 만들자(윈클라이언트실행)</h4><p>C 드라이브에 smbShare 폴더만든다. 그 폴더 속성 들어가서 공유탭의 공유버튼 누르고 Everyone 선택하고 추가 그 후 Everyone은 읽기/쓰기로 선택</p>
+<p>명령프롬프트 관리자 모드로 열고 net user root 1234 /add 입력.<br>    //윈도우즈 사용자 추가<br>ipconfig<br>192.168.11.131임을 기억하자</p>
+<h4 id="1-2-삼바-클라이언트로-접속해보자-서버에서-실행"><a href="#1-2-삼바-클라이언트로-접속해보자-서버에서-실행" class="headerlink" title="1.2 삼바 클라이언트로 접속해보자(서버에서 실행)"></a>1.2 삼바 클라이언트로 접속해보자(서버에서 실행)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"># rpm -qa | grep samba</div><div class="line"># smbclient -L 192.168.111.131</div><div class="line">1234입력</div><div class="line"></div><div class="line"># mkdir /sambaMount</div><div class="line"># mount -t cifs //192.168.111.131/smbShare /sambaMount</div><div class="line">        //윈도우는 //로 해야함</div><div class="line">1234입력</div><div class="line"></div><div class="line"># ls -l /sambaMount</div><div class="line"></div><div class="line"># cp /boot/vmlinuz-* /sambaMount</div></pre></td></tr></table></figure>
+<h3 id="2-리눅스가-삼바-서버"><a href="#2-리눅스가-삼바-서버" class="headerlink" title="2. 리눅스가 삼바 서버"></a>2. 리눅스가 삼바 서버</h3><p>윈도우는 삼바 클라이언트라는 개념이 없다. 그래서 리눅스가 윈도우인척 폴더를 공유해 놓으면 윈도우 클라이언트는 해당폴더가 윈도우가 공유했는지 리눅스가 공유한지 모르고 그냥 쓰게 된다.</p>
+<h4 id="2-1-리눅스-서버를-삼바-서버로-만들자-서버에서-실행"><a href="#2-1-리눅스-서버를-삼바-서버로-만들자-서버에서-실행" class="headerlink" title="2.1 리눅스 서버를 삼바 서버로 만들자(서버에서 실행)"></a>2.1 리눅스 서버를 삼바 서버로 만들자(서버에서 실행)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"># yum -y install samba</div><div class="line">관련파일 카페에서 받자</div><div class="line"># cd 다운로드</div><div class="line"># yum -y localinstall system-config-samba*</div><div class="line">여기서 에러날 경우 카페 자료실을 참고하자</div><div class="line"></div><div class="line"># systemctl restart smb</div><div class="line"># systemctl enable smb</div><div class="line"></div><div class="line"># ls /share     / //share 폴더를 공유하자</div><div class="line"># chmod 707 /share</div><div class="line"># system-config-samba</div><div class="line">설정- 서버설정 - workgroup/centOS 7 입력-</div><div class="line">              보안탭가서 인증모드 공유로 하고 확인</div><div class="line">workgroup은 윈도우의 그룹이다.</div><div class="line"></div><div class="line">+를 누르고 폴더는 /share로 하고 쓰기가능,보이기 체크</div><div class="line">접근탭을 눌러서 모든사용자에게 접근부여 선택</div><div class="line"></div><div class="line">설정 - samba사용자 눌러서 사용자 추가.</div><div class="line">유닉스 사용자명은 centOS / winuser /1234 /1234 입력 후 확인</div><div class="line"></div><div class="line"># systemctl stop firewalld</div><div class="line"></div><div class="line"># firewall-config //삼바, 삼바 클라이언트 열기</div><div class="line">          //지금은 방화벽을 꺼둔상태라 하지 않아도 된다.</div><div class="line"></div><div class="line"># systemctl restart smb</div></pre></td></tr></table></figure>
+<h4 id="2-2-윈도우에서-접속해보자"><a href="#2-2-윈도우에서-접속해보자" class="headerlink" title="2.2 윈도우에서 접속해보자"></a>2.2 윈도우에서 접속해보자</h4><p>컴퓨터 -&gt; 네트워크 드라이브 연결<br>드라이브 Q로 선택<br>폴더에  \\192.168.111.100\share 입력<br>centos<br>1234</p>
+<h4 id="2-3-서버에-접속한-사용자를-보자-서버에서-실행"><a href="#2-3-서버에-접속한-사용자를-보자-서버에서-실행" class="headerlink" title="2.3 서버에 접속한 사용자를 보자(서버에서 실행)"></a>2.3 서버에 접속한 사용자를 보자(서버에서 실행)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># smbstatus</div></pre></td></tr></table></figure>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/07/15/ThisIsLinux38/" data-id="cj54v4gcm004h7ov7m3pyv12i" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/07/15/ThisIsLinux38/" data-id="cj5623siq00899sv7phqjewo5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -282,6 +290,16 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
+        <a href="/2017/07/15/ThisIsLinux39/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            16장. DHCP 서버 설치와 운영
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2017/07/15/ThisIsLinux37/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
@@ -299,7 +317,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">40</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">38</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">42</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">40</span></li></ul></li></ul>
         </div>
     </div>
 
