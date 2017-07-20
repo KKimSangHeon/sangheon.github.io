@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-07-16T14:03:03.582Z</updated>
+  <updated>2017-07-20T07:06:31.615Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Chat-Bot</title>
+    <link href="http://KKimSangHeon.github.io/2017/07/17/Chat-Bot/"/>
+    <id>http://KKimSangHeon.github.io/2017/07/17/Chat-Bot/</id>
+    <published>2017-07-17T08:49:17.000Z</published>
+    <updated>2017-07-20T07:06:31.615Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="과정"><a href="#과정" class="headerlink" title="과정"></a>과정</h4><p>기본적인 틀 구축</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save cheerio</div></pre></td></tr></table></figure>
+<h2 id="node-js에서-제이쿼리의-선택자를-쓸-수-있게되어-설치"><a href="#node-js에서-제이쿼리의-선택자를-쓸-수-있게되어-설치" class="headerlink" title="node.js에서 제이쿼리의 선택자를 쓸 수 있게되어 설치."></a>node.js에서 제이쿼리의 선택자를 쓸 수 있게되어 설치.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save request</div></pre></td></tr></table></figure>
+<p>url에 접속하여 html을 다운받을 수 있게된다.</p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save async</div></pre></td></tr></table></figure>
+<h2 id="비동기-방식을-사용할-수-있게-된다"><a href="#비동기-방식을-사용할-수-있게-된다" class="headerlink" title="비동기 방식을 사용할 수 있게 된다."></a>비동기 방식을 사용할 수 있게 된다.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save node-cron</div></pre></td></tr></table></figure>
+<h2 id="주기적인-작업을-실행시키기-위해-설치하였다"><a href="#주기적인-작업을-실행시키기-위해-설치하였다" class="headerlink" title="주기적인 작업을 실행시키기 위해 설치하였다."></a>주기적인 작업을 실행시키기 위해 설치하였다.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save iconv</div></pre></td></tr></table></figure>
+<h2 id="html을-가져-왔을-때-한글-깨짐을-막을-수-있다"><a href="#html을-가져-왔을-때-한글-깨짐을-막을-수-있다" class="headerlink" title="html을 가져 왔을 때 한글 깨짐을 막을 수 있다."></a>html을 가져 왔을 때 한글 깨짐을 막을 수 있다.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install pm2 -g</div></pre></td></tr></table></figure>
+<p>서버가 문제가 생겼을 경우 재시작 시켜주며 성능향상에 기여한다.<br>pm2의 명령어는 다음과 같다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">pm2 start 서버.js --name 별칭     //실행하면서 별칭을 붙여준다.</div><div class="line">pm2 list  //실행되고 있는 pm2리스트를 조회</div><div class="line"></div><div class="line">pm2 stop 별칭   // pm2를 중지한다.</div><div class="line">pm2 restart 별칭    //pm2 재시작한다.</div><div class="line">pm2 delete 별칭     //pm2 종료</div><div class="line"></div><div class="line">pm2 show 별칭// 정보확인</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;과정&quot;&gt;&lt;a href=&quot;#과정&quot; class=&quot;headerlink&quot; title=&quot;과정&quot;&gt;&lt;/a&gt;과정&lt;/h4&gt;&lt;p&gt;기본적인 틀 구축&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gu
+    
+    </summary>
+    
+      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
+    
+      <category term="My Projects" scheme="http://KKimSangHeon.github.io/categories/About-Me/My-Projects/"/>
+    
+    
+      <category term="Node.js" scheme="http://KKimSangHeon.github.io/tags/Node-js/"/>
+    
+      <category term="Kakao talk open API" scheme="http://KKimSangHeon.github.io/tags/Kakao-talk-open-API/"/>
+    
+      <category term="챗봇" scheme="http://KKimSangHeon.github.io/tags/%EC%B1%97%EB%B4%87/"/>
+    
+      <category term="MySQL" scheme="http://KKimSangHeon.github.io/tags/MySQL/"/>
+    
+      <category term="CentOS" scheme="http://KKimSangHeon.github.io/tags/CentOS/"/>
+    
+  </entry>
   
   <entry>
     <title>19장. PXE 서버, 킥스타트</title>
@@ -674,47 +717,6 @@
     <summary type="html">
     
       &lt;h3 id=&quot;네임서배-개요&quot;&gt;&lt;a href=&quot;#네임서배-개요&quot; class=&quot;headerlink&quot; title=&quot;네임서배 개요&quot;&gt;&lt;/a&gt;네임서배 개요&lt;/h3&gt;&lt;p&gt;네임서버=DNS(Domain Name System)서버&lt;br&gt;도메인 이름을 IP주소로 변환
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
-    
-      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
-    
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
-    
-      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>8장. SSH서버, VNC서버</title>
-    <link href="http://KKimSangHeon.github.io/2017/07/08/ThisIsLinux23/"/>
-    <id>http://KKimSangHeon.github.io/2017/07/08/ThisIsLinux23/</id>
-    <published>2017-07-08T09:16:00.000Z</published>
-    <updated>2017-07-10T15:51:06.159Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="SSH서버"><a href="#SSH서버" class="headerlink" title="SSH서버"></a>SSH서버</h3><p>텔넷과 용도는 동일하지만 보안이 강화되어있음<br>명령문을 입력 시 암호화 되어서 날라간다. SSH서버를 쓰는것이 권장사항이다. CentOS에서 쓰는 SSH서느는 openSSH 서버라 함.</p>
-<h4 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h4><h5 id="1-서버가-설치되었는지-확인"><a href="#1-서버가-설치되었는지-확인" class="headerlink" title="1.서버가 설치되었는지 확인"></a>1.서버가 설치되었는지 확인</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># rpm -qa | grep openssh</div><div class="line">설치되어있다.</div></pre></td></tr></table></figure>
-<h5 id="2-가동되고-있는지-확인"><a href="#2-가동되고-있는지-확인" class="headerlink" title="2.가동되고 있는지 확인"></a>2.가동되고 있는지 확인</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># systemctl status sshd</div><div class="line">Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled)      //enable는 상시가동이라는 뜻</div><div class="line">Active: active (running) since 토 2017-07-08 17:43:06 KST; 1h 5min ago //돌고 있다.</div><div class="line">즉 ssh는 기본적으로 centos에서 깔려있고 가동되어 있다.</div><div class="line">기본적으로 쓰인다!!!</div></pre></td></tr></table></figure>
-<h5 id="3-방화벽-열렸는지-여부-확인"><a href="#3-방화벽-열렸는지-여부-확인" class="headerlink" title="3.방화벽 열렸는지 여부 확인"></a>3.방화벽 열렸는지 여부 확인</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># firewall-config</div><div class="line">쭉 내리면 ssh가 켜져있다.</div></pre></td></tr></table></figure>
-<h5 id="4-새로운-리눅스-Client-에서-접속해보자"><a href="#4-새로운-리눅스-Client-에서-접속해보자" class="headerlink" title="4.새로운 리눅스(Client)에서 접속해보자"></a>4.새로운 리눅스(Client)에서 접속해보자</h5><p>클라이언트 켜자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># rpm -qa | grep openssh  //깔려있나확인</div><div class="line"></div><div class="line"># ssh teluser@192.168.111.100   //telnet와 접속방법이 다름</div><div class="line"># ifconfig  //서버컴퓨터의 아이피 확인</div></pre></td></tr></table></figure></p>
-<h5 id="5-윈도우에서-접속해보자"><a href="#5-윈도우에서-접속해보자" class="headerlink" title="5.윈도우에서 접속해보자"></a>5.윈도우에서 접속해보자</h5><p>Putty 설치<br>192.168.111.100 접속<br>참고로 ssh는 포트 22 telnet는 23<br>한글이 깨지면 오른쪽 누르고 유니코드로 전환<br>abc.txt를 하나 만들고 gedit abc.txt를 실행하면 되질 않는다.<br>왜냐하면 텔넷,SSH는 텍스트 모드로만 전송이 되기 때문에.<br>즉 그래픽 명령어는 아얘 쓸 수 없다.</p>
-<h4 id="그럼-telnet-ssh-다른점이-없는건가"><a href="#그럼-telnet-ssh-다른점이-없는건가" class="headerlink" title="그럼 telnet ssh 다른점이 없는건가?"></a>그럼 telnet ssh 다른점이 없는건가?</h4><p>그렇다. 기능은 같으나 ssh가 보안이 추가된 것이다.</p>
-<h3 id="VNC-서버"><a href="#VNC-서버" class="headerlink" title="VNC 서버"></a>VNC 서버</h3><p>X 윈도우 환경으로 원격접속을 사용하고 싶을 때.<br>telnet ,ssh 보다 많이 느리다. 그래픽이 왔다갔다하기 때문에!</p>
-<h4 id="1-VNC-설치-및-설정"><a href="#1-VNC-설치-및-설정" class="headerlink" title="1.VNC 설치 및 설정"></a>1.VNC 설치 및 설정</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># rpm -qa | grep tiger  //설치유무 확인</div><div class="line">//미니멈 버전이 깔려있다. 다시깔자</div><div class="line"># yum -y install tigervnc-server</div></pre></td></tr></table></figure>
-<p>VNC는 사용자한테 너 접속해, 너 화면번호 몇번 써 를 지정해야한다.</p>
-<h4 id="2-센토스-사용자-너-1번화면으로-접속해를-설정"><a href="#2-센토스-사용자-너-1번화면으로-접속해를-설정" class="headerlink" title="2.센토스 사용자 너 1번화면으로 접속해를 설정"></a>2.센토스 사용자 너 1번화면으로 접속해를 설정</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service</div><div class="line">//1번화면을 쓰기위한 작업</div><div class="line"># vi /etc/systemd/system/vncserver@\:1.service</div><div class="line"> :set number</div><div class="line">40행,41행 의 &lt;USER&gt;을 지워버리고 centos로 고침</div><div class="line"> 그리고 저장 후 종료</div></pre></td></tr></table></figure>
-<h4 id="3-방화벽-열기"><a href="#3-방화벽-열기" class="headerlink" title="3.방화벽 열기"></a>3.방화벽 열기</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># firewall-config</div></pre></td></tr></table></figure>
-<p>설정에서 영구적 선택<br>쭉 내려서 vnc-server체크<br>옵션에서 firewalld 다시불러오기 클릭</p>
-<h4 id="4-centos사용자가-1번화면으로-들어올-때-전용-비밀번호를-생성"><a href="#4-centos사용자가-1번화면으로-들어올-때-전용-비밀번호를-생성" class="headerlink" title="4.centos사용자가 1번화면으로 들어올 때 전용 비밀번호를 생성"></a>4.centos사용자가 1번화면으로 들어올 때 전용 비밀번호를 생성</h4><p>즉 vnc 전용 비밀번호 생성<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># su - centos</div><div class="line"># vncserver</div><div class="line">암호는 123456으로 설정</div></pre></td></tr></table></figure></p>
-<h4 id="5-접속해보자"><a href="#5-접속해보자" class="headerlink" title="5.접속해보자"></a>5.접속해보자</h4><p>리눅스 클라이언트에서 접속<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># rpm -qa | grep tiger  //깔려있지 않은것을 확인</div><div class="line"></div><div class="line"># su -c &apos;yum -y install tigervnc&apos;   //루트 권한으로 실행하는것.</div><div class="line"># vncviewer 192.168.111.100:1   //1은 디스플레이 번호</div><div class="line">  password 입력</div></pre></td></tr></table></figure><br>윈도우 클라이언트에서 접속<br>카페이서 tigervnc 설치파일 깔기<br>옵션해서 해상도를 낮추면 사용할만 함(color level)<br>tigervnc vncviewer을 켜고<br>192.168.111.100:1 입력하고 암호 123456</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;SSH서버&quot;&gt;&lt;a href=&quot;#SSH서버&quot; class=&quot;headerlink&quot; title=&quot;SSH서버&quot;&gt;&lt;/a&gt;SSH서버&lt;/h3&gt;&lt;p&gt;텔넷과 용도는 동일하지만 보안이 강화되어있음&lt;br&gt;명령문을 입력 시 암호화 되어서 날라간다. SSH서버를
     
     </summary>
     

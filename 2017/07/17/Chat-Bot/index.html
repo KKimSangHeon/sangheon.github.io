@@ -3,26 +3,24 @@
 <head>
     <meta charset="utf-8">
     
-    <title>15장. Samba 서버 설치와 운영 | Kim Sang Heon&#39;s Bolg</title>
+    <title>Chat-Bot | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Linux,This Is Linux" />
+        <meta name="keywords" content="Node.js,Kakao talk open API,챗봇,MySQL,CentOS" />
     
     
 
-      <meta name="description" content="NFS 유닉스와 유닉스 유닉스와 리눅스간 파일공유이고삼바는 유닉스(리눅스)와 윈도우즈간에 공유하는것. 1.윈도우가 삼바 서버1.1 윈도우 클라이언트를 삼바 서버로 만들자(윈클라이언트실행)C 드라이브에 smbShare 폴더만든다. 그 폴더 속성 들어가서 공유탭의 공유버튼 누르고 Everyone 선택하고 추가 그 후 Everyone은 읽기/쓰기로 선택 명령프롬">
-<meta name="keywords" content="Linux,This Is Linux">
+      <meta name="description" content="과정기본적인 틀 구축 1npm install --save cheerio node.js에서 제이쿼리의 선택자를 쓸 수 있게되어 설치.1npm install --save request url에 접속하여 html을 다운받을 수 있게된다.  1npm install --save async 비동기 방식을 사용할 수 있게 된다.1npm install --save nod">
+<meta name="keywords" content="Node.js,Kakao talk open API,챗봇,MySQL,CentOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="15장. Samba 서버 설치와 운영">
-<meta property="og:url" content="http://KKimSangHeon.github.io/2017/07/15/ThisIsLinux38/index.html">
+<meta property="og:title" content="Chat-Bot">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2017/07/17/Chat-Bot/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="NFS 유닉스와 유닉스 유닉스와 리눅스간 파일공유이고삼바는 유닉스(리눅스)와 윈도우즈간에 공유하는것. 1.윈도우가 삼바 서버1.1 윈도우 클라이언트를 삼바 서버로 만들자(윈클라이언트실행)C 드라이브에 smbShare 폴더만든다. 그 폴더 속성 들어가서 공유탭의 공유버튼 누르고 Everyone 선택하고 추가 그 후 Everyone은 읽기/쓰기로 선택 명령프롬">
-<meta property="og:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
-<meta property="og:updated_time" content="2017-07-15T07:08:30.947Z">
+<meta property="og:description" content="과정기본적인 틀 구축 1npm install --save cheerio node.js에서 제이쿼리의 선택자를 쓸 수 있게되어 설치.1npm install --save request url에 접속하여 html을 다운받을 수 있게된다.  1npm install --save async 비동기 방식을 사용할 수 있게 된다.1npm install --save nod">
+<meta property="og:updated_time" content="2017-07-20T07:06:31.615Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="15장. Samba 서버 설치와 운영">
-<meta name="twitter:description" content="NFS 유닉스와 유닉스 유닉스와 리눅스간 파일공유이고삼바는 유닉스(리눅스)와 윈도우즈간에 공유하는것. 1.윈도우가 삼바 서버1.1 윈도우 클라이언트를 삼바 서버로 만들자(윈클라이언트실행)C 드라이브에 smbShare 폴더만든다. 그 폴더 속성 들어가서 공유탭의 공유버튼 누르고 Everyone 선택하고 추가 그 후 Everyone은 읽기/쓰기로 선택 명령프롬">
-<meta name="twitter:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
+<meta name="twitter:title" content="Chat-Bot">
+<meta name="twitter:description" content="과정기본적인 틀 구축 1npm install --save cheerio node.js에서 제이쿼리의 선택자를 쓸 수 있게되어 설치.1npm install --save request url에 접속하여 html을 다운받을 수 있게된다.  1npm install --save async 비동기 방식을 사용할 수 있게 된다.1npm install --save nod">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
 
@@ -134,18 +132,18 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Linux/">Linux</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a>
+    <a class="page-title-link" href="/categories/About-Me/">About Me</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/About-Me/My-Projects/">My Projects</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-ThisIsLinux38" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-Chat-Bot" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        15장. Samba 서버 설치와 운영
+        Chat-Bot
         </h1>
     
 
@@ -155,29 +153,31 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/07/15/ThisIsLinux38/" class="article-date">
-            <time datetime="2017-07-15T05:37:36.000Z" itemprop="datePublished">2017-07-15</time>
+        <a href="/2017/07/17/Chat-Bot/" class="article-date">
+            <time datetime="2017-07-17T08:49:17.000Z" itemprop="datePublished">2017-07-17</time>
         </a>
     </div>
 
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Linux/">Linux</a>, <a class="tag-link" href="/tags/This-Is-Linux/">This Is Linux</a>
+        <a class="tag-link" href="/tags/CentOS/">CentOS</a>, <a class="tag-link" href="/tags/Kakao-talk-open-API/">Kakao talk open API</a>, <a class="tag-link" href="/tags/MySQL/">MySQL</a>, <a class="tag-link" href="/tags/Node-js/">Node.js</a>, <a class="tag-link" href="/tags/챗봇/">챗봇</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>NFS 유닉스와 유닉스 유닉스와 리눅스간 파일공유이고<br>삼바는 유닉스(리눅스)와 윈도우즈간에 공유하는것.</p>
-<h3 id="1-윈도우가-삼바-서버"><a href="#1-윈도우가-삼바-서버" class="headerlink" title="1.윈도우가 삼바 서버"></a>1.윈도우가 삼바 서버</h3><h4 id="1-1-윈도우-클라이언트를-삼바-서버로-만들자-윈클라이언트실행"><a href="#1-1-윈도우-클라이언트를-삼바-서버로-만들자-윈클라이언트실행" class="headerlink" title="1.1 윈도우 클라이언트를 삼바 서버로 만들자(윈클라이언트실행)"></a>1.1 윈도우 클라이언트를 삼바 서버로 만들자(윈클라이언트실행)</h4><p>C 드라이브에 smbShare 폴더만든다. 그 폴더 속성 들어가서 공유탭의 공유버튼 누르고 Everyone 선택하고 추가 그 후 Everyone은 읽기/쓰기로 선택</p>
-<p>명령프롬프트 관리자 모드로 열고 net user root 1234 /add 입력.<br>    //윈도우즈 사용자 추가<br>ipconfig<br>192.168.11.131임을 기억하자</p>
-<h4 id="1-2-삼바-클라이언트로-접속해보자-서버에서-실행"><a href="#1-2-삼바-클라이언트로-접속해보자-서버에서-실행" class="headerlink" title="1.2 삼바 클라이언트로 접속해보자(서버에서 실행)"></a>1.2 삼바 클라이언트로 접속해보자(서버에서 실행)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"># rpm -qa | grep samba</div><div class="line"># smbclient -L 192.168.111.131</div><div class="line">1234입력</div><div class="line"></div><div class="line"># mkdir /sambaMount</div><div class="line"># mount -t cifs //192.168.111.131/smbShare /sambaMount</div><div class="line">        //윈도우는 //로 해야함</div><div class="line">1234입력</div><div class="line"></div><div class="line"># ls -l /sambaMount</div><div class="line"></div><div class="line"># cp /boot/vmlinuz-* /sambaMount</div></pre></td></tr></table></figure>
-<h3 id="2-리눅스가-삼바-서버"><a href="#2-리눅스가-삼바-서버" class="headerlink" title="2. 리눅스가 삼바 서버"></a>2. 리눅스가 삼바 서버</h3><p>윈도우는 삼바 클라이언트라는 개념이 없다. 그래서 리눅스가 윈도우인척 폴더를 공유해 놓으면 윈도우 클라이언트는 해당폴더가 윈도우가 공유했는지 리눅스가 공유한지 모르고 그냥 쓰게 된다.</p>
-<h4 id="2-1-리눅스-서버를-삼바-서버로-만들자-서버에서-실행"><a href="#2-1-리눅스-서버를-삼바-서버로-만들자-서버에서-실행" class="headerlink" title="2.1 리눅스 서버를 삼바 서버로 만들자(서버에서 실행)"></a>2.1 리눅스 서버를 삼바 서버로 만들자(서버에서 실행)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"># yum -y install samba</div><div class="line">관련파일 카페에서 받자</div><div class="line"># cd 다운로드</div><div class="line"># yum -y localinstall system-config-samba*</div><div class="line">여기서 에러날 경우 카페 자료실을 참고하자</div><div class="line"></div><div class="line"># systemctl restart smb</div><div class="line"># systemctl enable smb</div><div class="line"></div><div class="line"># ls /share     / //share 폴더를 공유하자</div><div class="line"># chmod 707 /share</div><div class="line"># system-config-samba</div><div class="line">설정- 서버설정 - workgroup/centOS 7 입력-</div><div class="line">              보안탭가서 인증모드 공유로 하고 확인</div><div class="line">workgroup은 윈도우의 그룹이다.</div><div class="line"></div><div class="line">+를 누르고 폴더는 /share로 하고 쓰기가능,보이기 체크</div><div class="line">접근탭을 눌러서 모든사용자에게 접근부여 선택</div><div class="line"></div><div class="line">설정 - samba사용자 눌러서 사용자 추가.</div><div class="line">유닉스 사용자명은 centOS / winuser /1234 /1234 입력 후 확인</div><div class="line"></div><div class="line"># systemctl stop firewalld</div><div class="line"></div><div class="line"># firewall-config //삼바, 삼바 클라이언트 열기</div><div class="line">          //지금은 방화벽을 꺼둔상태라 하지 않아도 된다.</div><div class="line"></div><div class="line"># systemctl restart smb</div></pre></td></tr></table></figure>
-<h4 id="2-2-윈도우에서-접속해보자"><a href="#2-2-윈도우에서-접속해보자" class="headerlink" title="2.2 윈도우에서 접속해보자"></a>2.2 윈도우에서 접속해보자</h4><p>컴퓨터 -&gt; 네트워크 드라이브 연결<br>드라이브 Q로 선택<br>폴더에  \\192.168.111.100\share 입력<br>centos<br>1234</p>
-<h4 id="2-3-서버에-접속한-사용자를-보자-서버에서-실행"><a href="#2-3-서버에-접속한-사용자를-보자-서버에서-실행" class="headerlink" title="2.3 서버에 접속한 사용자를 보자(서버에서 실행)"></a>2.3 서버에 접속한 사용자를 보자(서버에서 실행)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># smbstatus</div></pre></td></tr></table></figure>
+            <h4 id="과정"><a href="#과정" class="headerlink" title="과정"></a>과정</h4><p>기본적인 틀 구축</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save cheerio</div></pre></td></tr></table></figure>
+<h2 id="node-js에서-제이쿼리의-선택자를-쓸-수-있게되어-설치"><a href="#node-js에서-제이쿼리의-선택자를-쓸-수-있게되어-설치" class="headerlink" title="node.js에서 제이쿼리의 선택자를 쓸 수 있게되어 설치."></a>node.js에서 제이쿼리의 선택자를 쓸 수 있게되어 설치.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save request</div></pre></td></tr></table></figure>
+<p>url에 접속하여 html을 다운받을 수 있게된다.</p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save async</div></pre></td></tr></table></figure>
+<h2 id="비동기-방식을-사용할-수-있게-된다"><a href="#비동기-방식을-사용할-수-있게-된다" class="headerlink" title="비동기 방식을 사용할 수 있게 된다."></a>비동기 방식을 사용할 수 있게 된다.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save node-cron</div></pre></td></tr></table></figure>
+<h2 id="주기적인-작업을-실행시키기-위해-설치하였다"><a href="#주기적인-작업을-실행시키기-위해-설치하였다" class="headerlink" title="주기적인 작업을 실행시키기 위해 설치하였다."></a>주기적인 작업을 실행시키기 위해 설치하였다.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save iconv</div></pre></td></tr></table></figure>
+<h2 id="html을-가져-왔을-때-한글-깨짐을-막을-수-있다"><a href="#html을-가져-왔을-때-한글-깨짐을-막을-수-있다" class="headerlink" title="html을 가져 왔을 때 한글 깨짐을 막을 수 있다."></a>html을 가져 왔을 때 한글 깨짐을 막을 수 있다.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install pm2 -g</div></pre></td></tr></table></figure>
+<p>서버가 문제가 생겼을 경우 재시작 시켜주며 성능향상에 기여한다.<br>pm2의 명령어는 다음과 같다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">pm2 start 서버.js --name 별칭     //실행하면서 별칭을 붙여준다.</div><div class="line">pm2 list  //실행되고 있는 pm2리스트를 조회</div><div class="line"></div><div class="line">pm2 stop 별칭   // pm2를 중지한다.</div><div class="line">pm2 restart 별칭    //pm2 재시작한다.</div><div class="line">pm2 delete 별칭     //pm2 종료</div><div class="line"></div><div class="line">pm2 show 별칭// 정보확인</div></pre></td></tr></table></figure></p>
 
         </div>
         <footer class="article-footer">
@@ -185,7 +185,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/07/15/ThisIsLinux38/" data-id="cj5c6aamv004950v72npicaaf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/07/17/Chat-Bot/" data-id="cj5c6ab6m00ef50v7mk8h1i8w" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -290,20 +290,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/07/15/ThisIsLinux39/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            16장. DHCP 서버 설치와 운영
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/07/15/ThisIsLinux37/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/07/16/ThisIsLinux42/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">14장. NFS 서버 설치와 운영</p>
+        <p class="article-nav-title">19장. PXE 서버, 킥스타트</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -349,7 +339,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'https-kkimsangheon-github-io-2';
     
     
-    var disqus_url = 'http://KKimSangHeon.github.io/2017/07/15/ThisIsLinux38/';
+    var disqus_url = 'http://KKimSangHeon.github.io/2017/07/17/Chat-Bot/';
     
     (function() {
     var dsq = document.createElement('script');
