@@ -57,14 +57,28 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/categories/Linux/</loc>
-        <lastmod>2017-07-20T08:25:21.727Z</lastmod>
+        <lastmod>2017-07-21T05:56:56.452Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://KKimSangHeon.github.io/categories/Linux/%EA%B4%80%EB%A0%A8%EC%A0%95%EB%B3%B4/</loc>
-        <lastmod>2017-07-20T08:25:21.727Z</lastmod>
+        <lastmod>2017-07-21T05:56:56.452Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/</loc>
+        <lastmod>2017-08-01T00:18:19.132Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Java/</loc>
+        <lastmod>2017-08-01T00:18:19.132Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
