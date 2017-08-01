@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-08-01T00:18:19.132Z</updated>
+  <updated>2017-08-01T04:44:32.957Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,21 +16,78 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>깃허브 사용</title>
+    <link href="http://KKimSangHeon.github.io/2017/08/01/bigdata2/"/>
+    <id>http://KKimSangHeon.github.io/2017/08/01/bigdata2/</id>
+    <published>2017-08-01T04:04:28.000Z</published>
+    <updated>2017-08-01T04:44:32.957Z</updated>
+    
+    <content type="html"><![CDATA[<p>깃허브란 형상관리 툴이다.</p>
+<p>A(팀장,a모듈담당) B(b모듈담당) C(c모듈담당) 개발자가 하나의 프로젝트를 개발중이다.</p>
+<p>A 가 프로젝트(모듈 a,b,c 포함)를 올린다.</p>
+<p>그 후 B C 에게 그 사실을 알린다.</p>
+<p>B C 는 프로젝트를 내려받고</p>
+<p>B,C가 자신의 모듈을 수정 후 커밋을 한다.</p>
+<p>A,B,C는 수정된 것을 내려 받은 후 테스트를 한다.</p>
+<p>git가 있으며 내부에는 Repository가 있다.</p>
+<p>git는 레파지토리가 2개 존재한다.<br>하나는 로컬이고 하나는 원격이다.</p>
+<p>로컬 레파지토리에 프로젝트를 올리는것을 commit 라고 하며 로컬 레파지토리를 원격 레파지토리에 맞추는 것을 push 라고 한다.</p>
+<p>원격 레파지토리에서 프로젝트를 로컬레파지토리로 갖고오는것을 full 내 프로젝트로 반영하는것은 fetch라고 한다.</p>
+<h4 id="하지만-보통-로컬레파지토리와-프로젝트를-같이-놓는다-편의상"><a href="#하지만-보통-로컬레파지토리와-프로젝트를-같이-놓는다-편의상" class="headerlink" title="하지만 보통 로컬레파지토리와 프로젝트를 같이 놓는다.(편의상)"></a>하지만 보통 로컬레파지토리와 프로젝트를 같이 놓는다.(편의상)</h4><h3 id="내-프로젝트-올리기"><a href="#내-프로젝트-올리기" class="headerlink" title="내 프로젝트 올리기"></a>내 프로젝트 올리기</h3><h5 id="이클립스에서-실행"><a href="#이클립스에서-실행" class="headerlink" title="이클립스에서 실행"></a>이클립스에서 실행</h5><p>1.이클립스 - show view - git Repository 선택<br>2.프로젝트 우클릭 후 - team - share …-체크(로컬레파지토리 프로젝트를 같이하는것.)</p>
+<h5 id="깃허브에서-실행"><a href="#깃허브에서-실행" class="headerlink" title="깃허브에서 실행"></a>깃허브에서 실행</h5><p>1.레파지토리 new - 프로젝트 이름이랑 동일하게 생성(굳이 안해도되나 편의상)<br>2.깃 주소를 복사</p>
+<h5 id="이클립스에서-실행-1"><a href="#이클립스에서-실행-1" class="headerlink" title="이클립스에서 실행"></a>이클립스에서 실행</h5><p>1.git Repository탭 - remote - Configure fetch 체크(push 체크하면 올리기만 되고 받기는 안된다.) - change 버튼 클릭 - save Fetch 클릭<br>2.project explorer탭으로 - team - commit - Unsatage Changes에 있는 것들을 staged Changed로 내림. 커밋메세지는 추가할 수 있도록 하자. - commit and push 클릭 - next - finish</p>
+<h3 id="타-프로젝트-받기"><a href="#타-프로젝트-받기" class="headerlink" title="타 프로젝트 받기."></a>타 프로젝트 받기.</h3><p>방법1. 깃허브에서 다운받아서 임포트하기.</p>
+<p>방법2. 프로젝트를 fork한다.</p>
+<h4 id="깃허브에서-실행-1"><a href="#깃허브에서-실행-1" class="headerlink" title="깃허브에서 실행"></a>깃허브에서 실행</h4><p>원하는 프로젝트로 가서 fork를 누르고<br>내 레파지토리로 가보자.<br>이제 자기 레파지토리에 있는것을 잡아 땡겨보자<br>clone or download 에서 url 복사</p>
+<h4 id="이클립스에서-실행-2"><a href="#이클립스에서-실행-2" class="headerlink" title="이클립스에서 실행"></a>이클립스에서 실행</h4><p>git Repository탭으로 가서 컨트롤+v<br>next-next - browse 눌러서 자기 워크스페이스 선택 (로컬 레파지토리와 프로젝트저장소를 하나로 합치는것.)<br>working tree 선택 후 오른쪽 누르고 import .. 클릭 후 finish</p>
+<p>Project explorer 탭으로 가서 보면 에러가 난다. (환경설정이 달라서 나는 에러이다.)<br>프로젝트 우클릭 후 - properties - java build path 선택- Libraries 탭 선택 - 더블클릭 후 - alternate JRE 에서 선택</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;깃허브란 형상관리 툴이다.&lt;/p&gt;
+&lt;p&gt;A(팀장,a모듈담당) B(b모듈담당) C(c모듈담당) 개발자가 하나의 프로젝트를 개발중이다.&lt;/p&gt;
+&lt;p&gt;A 가 프로젝트(모듈 a,b,c 포함)를 올린다.&lt;/p&gt;
+&lt;p&gt;그 후 B C 에게 그 사실을 알린다.
+    
+    </summary>
+    
+      <category term="빅데이터 전문가과정" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/"/>
+    
+      <category term="기타" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/%EA%B8%B0%ED%83%80/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>1.자바프로그래밍</title>
     <link href="http://KKimSangHeon.github.io/2017/08/01/bigdata1/"/>
     <id>http://KKimSangHeon.github.io/2017/08/01/bigdata1/</id>
     <published>2017-08-01T00:05:28.000Z</published>
-    <updated>2017-08-01T00:18:19.132Z</updated>
+    <updated>2017-08-01T04:04:03.805Z</updated>
     
-    <content type="html"><![CDATA[<p>생산성을 높이기 위해 JUnit, TDD를 활용하자.</p>
-<p>####특징<br>많은 클래스, 파일로 프로그램이 구성된다. 클래스는 데이터를 갖고 있고 메소드는 데이터를 다루게 된다. 객체의 데이터를 다루기 위해서는 외부에서 메소드를 호출해야 한다.</p>
+    <content type="html"><![CDATA[<h4 id="특징"><a href="#특징" class="headerlink" title="특징"></a>특징</h4><p>많은 클래스, 파일로 프로그램이 구성된다. 클래스는 데이터를 갖고 있고 메소드는 데이터를 다루게 된다. 객체의 데이터를 다루기 위해서는 외부에서 메소드를 호출해야 한다.</p>
+<p>하드웨어는 컴포넌트화로 인해 빠른 발전이 이루어졌다. 소프트웨어 또한 이에 따라 컴포넌트화로 발전하게 되었다.</p>
+<p>객체지향은 설계분석이 가능하다. 요구사항 분석-&gt;추상화-&gt;객체관계 분석(상속,의존 등)</p>
+<p>캡슐화, 상속, 다형성의 특징을 갖는다.</p>
+<p>코드의 재사용성이 높다. 추상화 과정으로 인해 가능해지는것. 상속을 통해 부모에 존재하는 메소드 사용가능.<br>잘못된 예: 홈쇼핑 프로젝트에서 만든 Person 클래스를 ERP를 만드는곳에서 Person을 만드는데 사용한다.</p>
+<p>예외처리를 통해 신뢰성이 높아진다.</p>
+<p>java는 운영체제에 영향을 받지 않는다는 특징.</p>
+<p>JRE + API + javac + rt.jar = JDK</p>
+<h4 id="객체와-클래스"><a href="#객체와-클래스" class="headerlink" title="객체와 클래스"></a>객체와 클래스</h4><p>객체는 정보를 효율적으로 관리하기 위하여 의미를 부여하고 분류하는 논리적 단위<br>클래스를 사용자 데이터 타입 이라고도 한다.</p>
+<p>객체의 구성요서는 속성(필드,인스턴스 변수)이 필요하다.<br>클래스 내부에 있는 변수는 필드 혹은 속성이라 한다.!<br>기능은 메소드라 한다.</p>
+<h4 id="컴파일-과정"><a href="#컴파일-과정" class="headerlink" title="컴파일 과정"></a>컴파일 과정</h4><p>네비게이터로 bin 폴더를 보자.<br>코들를 짜면 bin 폴더 내부에 클래스파일이 컴파일되어 생성된다.</p>
+<p>메소드 영역 - 필드정보, 메소드 코드, main메소드, static 변수<br>stack - 지역변수. 자바는 전역변수의 개념이 없으므로 모든 변수는 여기에 생성됨.<br>heap - 객체</p>
+<h4 id="접근자"><a href="#접근자" class="headerlink" title="접근자"></a>접근자</h4><p>public - 내부, 같은 패키지, 자식접근, 외부 가능.</p>
+<p>protected - 내부, 같은 패키지, 자식접근 가능.</p>
+<p>(default) - 쓰지않는것을 권고한다. 내부, 같은 패키지에서 접근가능.</p>
+<p>private - 내부에서만 접근 가능.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"></div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;생산성을 높이기 위해 JUnit, TDD를 활용하자.&lt;/p&gt;
-&lt;p&gt;####특징&lt;br&gt;많은 클래스, 파일로 프로그램이 구성된다. 클래스는 데이터를 갖고 있고 메소드는 데이터를 다루게 된다. 객체의 데이터를 다루기 위해서는 외부에서 메소드를 호출해야
+      &lt;h4 id=&quot;특징&quot;&gt;&lt;a href=&quot;#특징&quot; class=&quot;headerlink&quot; title=&quot;특징&quot;&gt;&lt;/a&gt;특징&lt;/h4&gt;&lt;p&gt;많은 클래스, 파일로 프로그램이 구성된다. 클래스는 데이터를 갖고 있고 메소드는 데이터를 다루게 된다. 객체의 데이터를 다루기
     
     </summary>
     
@@ -39,15 +96,7 @@
       <category term="Java" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Java/"/>
     
     
-      <category term="Node.js" scheme="http://KKimSangHeon.github.io/tags/Node-js/"/>
-    
-      <category term="Kakao talk open API" scheme="http://KKimSangHeon.github.io/tags/Kakao-talk-open-API/"/>
-    
-      <category term="챗봇" scheme="http://KKimSangHeon.github.io/tags/%EC%B1%97%EB%B4%87/"/>
-    
-      <category term="MySQL" scheme="http://KKimSangHeon.github.io/tags/MySQL/"/>
-    
-      <category term="CentOS" scheme="http://KKimSangHeon.github.io/tags/CentOS/"/>
+      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
     
   </entry>
   
@@ -680,49 +729,6 @@
       &lt;p&gt;앞에한건 캐싱전용이었다.&lt;br&gt;캐싱전용네임서버 - 자기가 관리하는건 없고 무조건 밖에 나가서 알아다가 알려줌.&lt;/p&gt;
 &lt;p&gt;마스터 네임 서버 - 자기가 관리하는 것들이 있다.&lt;/p&gt;
 &lt;h4 id=&quot;마스터-네임-서버-구축&quot;&gt;&lt;a href=&quot;#마스터
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
-    
-      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
-    
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
-    
-      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>9장. 도메인 이름 체계 개념, 캐싱 전용 네임서버 구축</title>
-    <link href="http://KKimSangHeon.github.io/2017/07/09/ThisIsLinux25/"/>
-    <id>http://KKimSangHeon.github.io/2017/07/09/ThisIsLinux25/</id>
-    <published>2017-07-09T01:29:00.000Z</published>
-    <updated>2017-07-10T15:51:05.334Z</updated>
-    
-    <content type="html"><![CDATA[<p>초창기 인터넷에서는 1대의 네임 서버만으로 충분히 IP주소와 이름의 관리가 가능했다.</p>
-<p>하지만 인터넷이 확장되면서 그것이 도메인 이름 체계가 고안되었다.</p>
-<p>원칙은 www.nate.com. 이다. 맨 뒤에 .을 붙여줘야 한다.</p>
-<h4 id="로컬-네임서버가-작동하는-순서"><a href="#로컬-네임서버가-작동하는-순서" class="headerlink" title="로컬 네임서버가 작동하는 순서"></a>로컬 네임서버가 작동하는 순서</h4><h5 id="www-nate-com-접속과정"><a href="#www-nate-com-접속과정" class="headerlink" title="www.nate.com. 접속과정"></a>www.nate.com. 접속과정</h5><p>1./etc/hosts 를 보고 없으면 /etc/resolv.conf 에 있는 로컬 네임서버를 참고한다.<br>2.하지만 이 로컬네임서버도 많은것을 알지 못하므로 얘도 루트 네임서버한테 물어본다. 이렇게. “내가지금 www.nate.com으로 가려한다.”<br>3.그러면 루트네임서버가 “그건 내가 모르지만 내가 관리하는 com의 네임서버 ip를 줄게”<br>4.그러면 로컬네임서버는 다시 com네임서버에게 다시 물어본다<br>5.그러면 com네임서버가 nate ip를 알려준다. 그러면 nate.com아이피는 www의 ip를 응답해준다.</p>
-<h5 id="www-daum-net-접속과정"><a href="#www-daum-net-접속과정" class="headerlink" title="www.daum.net. 접속과정"></a>www.daum.net. 접속과정</h5><p>루트네임서버 -&gt; net 네임서버 -&gt;daum네임서버 -&gt;www네임서버</p>
-<h4 id="이제-우리가-할-실습"><a href="#이제-우리가-할-실습" class="headerlink" title="이제 우리가 할 실습!"></a>이제 우리가 할 실습!</h4><p>/etc/resolv.conf  에 있는 로컬네임서버를 만드는것.<br>서버컴퓨터 : 캐싱전용 네임서버 (PC에서 URL로 IP주소를 얻고자 할 때 해당하는 URL의 IP주소를 알려주는 네임 서버를 말함)</p>
-<p>클라이언트,서버B 에서 /etc/resolv.conf의 주소를 서버컴퓨터로 한다.</p>
-<h4 id="서버-설정"><a href="#서버-설정" class="headerlink" title="서버 설정"></a>서버 설정</h4><h5 id="1-관련-패키지-설치"><a href="#1-관련-패키지-설치" class="headerlink" title="1. 관련 패키지 설치"></a>1. 관련 패키지 설치</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># yum -y install bind bind-chroot</div></pre></td></tr></table></figure>
-<h5 id="2-누가-서버컴퓨터로-물어보든-응답해주게-설정"><a href="#2-누가-서버컴퓨터로-물어보든-응답해주게-설정" class="headerlink" title="2. 누가 서버컴퓨터로 물어보든 응답해주게 설정"></a>2. 누가 서버컴퓨터로 물어보든 응답해주게 설정</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># vi /etc/named.conf     //캐싱정보관련 설정파일</div><div class="line">:set number</div><div class="line">11행 보면 127.0.0.1 지우고 any로 변경 //누가 서비스를 요청하던 제공하겠다</div><div class="line">12행 ::1 지우고 none로 변경</div><div class="line">17행 localhost any로 변경</div><div class="line">named.conf 파일을 수정함으로서 누가 서버컴퓨터가 누가물어보든 응답을 해준다.</div></pre></td></tr></table></figure>
-<h5 id="3-서비스-재시작-및-환경설정"><a href="#3-서비스-재시작-및-환경설정" class="headerlink" title="3. 서비스 재시작 및 환경설정"></a>3. 서비스 재시작 및 환경설정</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"># systemctl restart named //네임서버의 서비스 이름은 named</div><div class="line"># systemctl status named    //작동여부 확인</div><div class="line">disable 가 있다는건 껏다켜도 동작하지 않는다는것.</div><div class="line"># systemctl enable named   //껏다켜도 작동하도록 설정</div><div class="line"></div><div class="line"># firewall-config</div><div class="line">영구적 선택 -&gt; dns 선택-&gt; 옵션/firewalld다시불러오기</div><div class="line"></div><div class="line"># nslookup    //내부적으로 잘돌아가는지 테스트</div><div class="line">&gt;server 192.168.111.100</div><div class="line">&gt;www.daum.net</div><div class="line">&gt;exit</div></pre></td></tr></table></figure>
-<h4 id="클라이언트-설정"><a href="#클라이언트-설정" class="headerlink" title="클라이언트 설정"></a>클라이언트 설정</h4><h5 id="Client-켜고-실행"><a href="#Client-켜고-실행" class="headerlink" title="Client 켜고 실행"></a>Client 켜고 실행</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># su -c &apos;vi /etc/resolv.conf&apos;</div><div class="line">password 입력</div><div class="line"></div><div class="line">192.168.111.100 으로 수정</div><div class="line"></div><div class="line">파이어폭스로 아무데나 접속해보자</div></pre></td></tr></table></figure>
-<h5 id="Server-B-켜고-실행"><a href="#Server-B-켜고-실행" class="headerlink" title="Server B 켜고 실행"></a>Server B 켜고 실행</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># vi /etc/resolv.conf</div><div class="line">password 입력</div><div class="line"></div><div class="line">192.168.111.100 으로 수정</div><div class="line"></div><div class="line"># ping -c 3 www.yahoo.com</div><div class="line"></div><div class="line"># yum -y install elinks //텍스트모드의 웹브라우져</div><div class="line"># elinks    //실행</div></pre></td></tr></table></figure>
-<h5 id="윈도우에서-설정"><a href="#윈도우에서-설정" class="headerlink" title="윈도우에서 설정"></a>윈도우에서 설정</h5><p>제어판 열기<br>네트워크 상태 및 작업보기<br>로컬영역 연결 클릭<br>속성<br>IPv4 속성<br>다음 dns 서버 주소 사용<br>기본 설정 DNS 서버에 192.168.111.100 입력</p>
-<h5 id="윈도우에서-원래대로-돌리기"><a href="#윈도우에서-원래대로-돌리기" class="headerlink" title="윈도우에서 원래대로 돌리기"></a>윈도우에서 원래대로 돌리기</h5><p>cmd 열고<br>ipconfig 입력<br>이더넷 어댑터 뒤에있는 글자 복사.</p>
-<p>netsh interface ip set dns “로컬 영역 연결” dhcp<br>//로컬 영역 연결은 (이더넷 어댑터 뒤에있는 글자)</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;초창기 인터넷에서는 1대의 네임 서버만으로 충분히 IP주소와 이름의 관리가 가능했다.&lt;/p&gt;
-&lt;p&gt;하지만 인터넷이 확장되면서 그것이 도메인 이름 체계가 고안되었다.&lt;/p&gt;
-&lt;p&gt;원칙은 www.nate.com. 이다. 맨 뒤에 .을 붙여줘야 한다.
     
     </summary>
     
