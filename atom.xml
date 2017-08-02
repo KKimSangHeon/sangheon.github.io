@@ -66,7 +66,7 @@
     <link href="http://KKimSangHeon.github.io/2017/08/01/bigdata1/"/>
     <id>http://KKimSangHeon.github.io/2017/08/01/bigdata1/</id>
     <published>2017-08-01T00:05:28.000Z</published>
-    <updated>2017-08-01T04:04:03.805Z</updated>
+    <updated>2017-08-02T05:12:45.764Z</updated>
     
     <content type="html"><![CDATA[<h4 id="특징"><a href="#특징" class="headerlink" title="특징"></a>특징</h4><p>많은 클래스, 파일로 프로그램이 구성된다. 클래스는 데이터를 갖고 있고 메소드는 데이터를 다루게 된다. 객체의 데이터를 다루기 위해서는 외부에서 메소드를 호출해야 한다.</p>
 <p>하드웨어는 컴포넌트화로 인해 빠른 발전이 이루어졌다. 소프트웨어 또한 이에 따라 컴포넌트화로 발전하게 되었다.</p>
@@ -79,11 +79,24 @@
 <h4 id="객체와-클래스"><a href="#객체와-클래스" class="headerlink" title="객체와 클래스"></a>객체와 클래스</h4><p>객체는 정보를 효율적으로 관리하기 위하여 의미를 부여하고 분류하는 논리적 단위<br>클래스를 사용자 데이터 타입 이라고도 한다.</p>
 <p>객체의 구성요서는 속성(필드,인스턴스 변수)이 필요하다.<br>클래스 내부에 있는 변수는 필드 혹은 속성이라 한다.!<br>기능은 메소드라 한다.</p>
 <h4 id="컴파일-과정"><a href="#컴파일-과정" class="headerlink" title="컴파일 과정"></a>컴파일 과정</h4><p>네비게이터로 bin 폴더를 보자.<br>코들를 짜면 bin 폴더 내부에 클래스파일이 컴파일되어 생성된다.</p>
-<p>메소드 영역 - 필드정보, 메소드 코드, main메소드, static 변수<br>stack - 지역변수. 자바는 전역변수의 개념이 없으므로 모든 변수는 여기에 생성됨.<br>heap - 객체</p>
+<h4 id="메소드-영역"><a href="#메소드-영역" class="headerlink" title="메소드 영역"></a>메소드 영역</h4><p>필드정보(클래스에 대한 정보. getClass() 메소드를 통해 얻을 수 있다.), 메소드 코드, main메소드, static 변수, static 메소드</p>
+<h4 id="stack"><a href="#stack" class="headerlink" title="stack"></a>stack</h4><p>지역변수. 자바는 전역변수의 개념이 없으므로 모든 변수는 여기에 생성됨.</p>
+<h4 id="heap"><a href="#heap" class="headerlink" title="heap"></a>heap</h4><p>객체</p>
 <h4 id="접근자"><a href="#접근자" class="headerlink" title="접근자"></a>접근자</h4><p>public - 내부, 같은 패키지, 자식접근, 외부 가능.</p>
 <p>protected - 내부, 같은 패키지, 자식접근 가능.</p>
 <p>(default) - 쓰지않는것을 권고한다. 내부, 같은 패키지에서 접근가능.</p>
 <p>private - 내부에서만 접근 가능.</p>
+<h4 id="정보은닉"><a href="#정보은닉" class="headerlink" title="정보은닉"></a>정보은닉</h4><p>데이터는 private를 넣고 접근할 때 메소드를 쓴다. 엔터프라이즈에서는 이러한 메소드를 빈이라고 부른다.</p>
+<h4 id="final"><a href="#final" class="headerlink" title="final"></a>final</h4><p>final은 클래스 앞, 변수앞 , 필드 앞에도 정의할 수 있다.<br>final은 여기가 마지막이라는 뜻.<br>상수는 대문자로 만들라는 관례가 있다.!<br>따지고 보면 변수와는 별 다른게 없지만 알아보기 편하게!<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">final</span> <span class="keyword">int</span> VALUE = <span class="number">10</span>;</div><div class="line"></div><div class="line">VALUE = <span class="number">30</span>; <span class="comment">//에러발생</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</div><div class="line">.....</div><div class="line">&#125;</div><div class="line">이 경우 다른클래스가 Test클래스를 상속할 수 없음.</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> Sring <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line">  <span class="keyword">return</span> name;</div><div class="line">&#125;</div><div class="line">오버라이딩 금지!!</div></pre></td></tr></table></figure>
+<h4 id="오버로드"><a href="#오버로드" class="headerlink" title="오버로드"></a>오버로드</h4><p>아래는 다 다른 메소드이다.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">a</span> <span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></div><div class="line">..</div><div class="line"></div><div class="line"><span class="keyword">void</span> <span class="title">a</span> <span class="params">(<span class="keyword">int</span> a, <span class="keyword">float</span> b)</span></div><div class="line">...</div><div class="line"></div><div class="line"><span class="keyword">void</span> <span class="title">a</span> <span class="params">(<span class="keyword">float</span> a, <span class="keyword">int</span> b)</span></div><div class="line">...</div></pre></td></tr></table></figure></p>
+<h4 id="아규먼트-파라미터"><a href="#아규먼트-파라미터" class="headerlink" title="아규먼트 , 파라미터"></a>아규먼트 , 파라미터</h4><p>아규먼트는 int ,float 등 형을 의미<br>파라미터는 실제적인 데이터 10, 0.5 등을 의미.</p>
+<h4 id="식별자"><a href="#식별자" class="headerlink" title="식별자"></a>식별자</h4><p>클래스 이름, 변수이름, 메소드 이름을 식별자라 한다.<br>대소문자 가능 숫자 가능 하지만 앞에는 안되고 특수문자는 $ _ 만 사용가능.</p>
+<h4 id="생성자"><a href="#생성자" class="headerlink" title="생성자"></a>생성자</h4><p>기본으로 디폴트 생성자가 만들어지지만 생성자가 하나라도 정의되어 있으면 디폴트 생성자가 생성되지 않는다.</p>
+<h4 id="다형성"><a href="#다형성" class="headerlink" title="다형성"></a>다형성</h4><p>외부에서 사용할 땐 일관되게 사용하는것.<br>오버로딩, 오버라이딩을 통해 구현</p>
+<h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><p>this 키워드는 메소드 호출을 받는 객체를 의미한다.<br>현재 사용중인 객체 그 자체를 의미한다.<br>this() 는  클래스의 한 생성자에서 다른 생성자를 호출 할 때 사용할 수 있다</p>
+<h4 id="오버로딩"><a href="#오버로딩" class="headerlink" title="오버로딩"></a>오버로딩</h4><p>부모에있는 메소드와 시그니쳐가 동일(접근제어자 , 반환형, 메소드이름, 아규먼트)</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"></div></pre></td></tr></table></figure>
 ]]></content>
     
