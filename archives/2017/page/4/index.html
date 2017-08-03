@@ -151,6 +151,150 @@ ga('send', 'pageview');
         <article class="article article-summary">
     <div class="article-summary-inner">
         
+        <a href="/2017/07/07/ThisIsLinux18/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/centoslogo.png)" alt="6장. RAID6 와 RAID 1+0" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2017/07/07/ThisIsLinux18/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Linux/">Linux</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a>
+            </div>
+            <div class="date"><time datetime="2017-07-07T00:47:34.000Z" itemprop="datePublished">2017-07-07</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2017/07/07/ThisIsLinux18/">6장. RAID6 와 RAID 1+0</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            RAID6패리티가 2개이기 때문에 신뢰성이 높다
+RAID 1+0RAID 0,1 쓰는것
+실습디스크 10개 스냅샷으로 돌아온 후 2기가 짜리 하나를 지워버린다.
+RAID 6 생성123456789# mdadm --create /dev/md6 --level=6 --raid-devices=4 /dev/sdb1 /dev/sdc1 /dev/sdd1 /dev/sde1# 
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2017/07/06/ThisIsLinux17/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/centoslogo.png)" alt="RAID 0,1,5 의 고장과 원상 복구" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2017/07/06/ThisIsLinux17/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Linux/">Linux</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a>
+            </div>
+            <div class="date"><time datetime="2017-07-06T03:33:07.000Z" itemprop="datePublished">2017-07-06</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2017/07/06/ThisIsLinux17/">RAID 0,1,5 의 고장과 원상 복구</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            SCSI 2,4,6,9를 고장내 놓고 잘동작하는 지 확인 해 보겠다.
+잘 동작하나 확인하기 위해 고장내기 전에 파일을 옮긴다.123456# cp /boot/vmlinuz-3*  /raidLinear/testFile# cp /boot/vmlinuz-3*  /raid0/testFile# cp /boot/vmlinuz-3*  /raid1/testFile# cp 
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2017/07/06/ThisIsLinux16/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/centoslogo.png)" alt="6장. RAID 정의 및 개념,구현" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2017/07/06/ThisIsLinux16/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Linux/">Linux</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a>
+            </div>
+            <div class="date"><time datetime="2017-07-06T00:13:09.000Z" itemprop="datePublished">2017-07-06</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2017/07/06/ThisIsLinux16/">6장. RAID 정의 및 개념,구현</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            RAIDRedundant Array of Inexpensive Disks여러개의 디스크를 하나처럼 사용하는 RAID를 알아보자비용절감 + 신뢰성 향상 + 성능 향상1테라 디스크 3개를 하나로 묶어서 3테라 디스크처럼 쓴다
+하드웨어 RAID여러개의 하드디스크를 가지고 장비를 만들어서 사용. 장비업체에서 제공하기 떄문에 사용법이 다를 수 있다. 그리고 상당히 
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
         <a href="/2017/07/05/ThisIsLinux15/" class="thumbnail">
     
     
@@ -190,10 +334,14 @@ IDE SCSI 장치에 대해IDE는 케이블을 2개 꽂을수가 있다. 여기에
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -238,14 +386,10 @@ iso 파일을 받고 내폴더에 붙여넣기 해준다.
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -290,10 +434,14 @@ iso 파일을 받고 내폴더에 붙여넣기 해준다.
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -337,14 +485,10 @@ GRUB 이미지 설정1234567891011121314$ su -c &apo
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -388,10 +532,14 @@ GRUB 부트로더/etc/default/grub 파일과 /etc/grup.d/ 디렉터리의 파일
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -435,14 +583,10 @@ GRUB 부트로더/etc/default/grub 파일과 /etc/grup.d/ 디렉터리의 파일
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -484,150 +628,6 @@ GRUB 부트로더/etc/default/grub 파일과 /etc/grup.d/ 디렉터리의 파일
 IP 주소랜카드에 부여되는 중복되지 않는 유일한 주소
 네트워크 주소같은 네트워크에 속해있는 공통된 주소
 브로드캐스트 주소제일 뒤가 255인 주소내
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/07/04/ThisIsLinux8/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/centoslogo.png)" alt="4장. 파일 압축과 묶기, CRON과 AT" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux8/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Linux/">Linux</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a>
-            </div>
-            <div class="date"><time datetime="2017-07-04T00:26:28.000Z" itemprop="datePublished">2017-07-04</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/07/04/ThisIsLinux8/">4장. 파일 압축과 묶기, CRON과 AT</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            파일 압축유닉스는 압축하는 파일이 여러개이다. 그래서 확장자도 여러개이다. 점점 개선이 되면서 여러개가 생긴것이다. 예전것도 쓰고 최신것도 쓰므로 모두 사용할줄 알아야함gzip-&gt;bzip2-&gt;xz 순으로 발전해옴 xz가 압축률도 제일좋다.
-12345678910111213141516171819# cp glist.txt file1.txt    //파
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/07/03/ThisIsLinux7/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/centoslogo.png)" alt="4장. RPM 사용법, YUM 사용법" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2017/07/03/ThisIsLinux7/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Linux/">Linux</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a>
-            </div>
-            <div class="date"><time datetime="2017-07-03T09:58:51.000Z" itemprop="datePublished">2017-07-03</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/07/03/ThisIsLinux7/">4장. RPM 사용법, YUM 사용법</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            RPM초창기 리눅스는 설치가 어려웠다 .소스코드를 갖고와서 적재적소에 컴파일을 해야했다. 그래서 일반사용자가 사용하기엔 거의 불가능했다. 이러한 이유로 외면을 받았었다. 결국 Redhat에서 RPM(Redhat Package Manager)을 내놓았다. 윈도우의 setup.exe 라고 생각하면 된다.
-gedit-3.8.3-6.el7.x86_64.rpm
-패키
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/07/03/ThisIsLinux6/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/centoslogo.png)" alt="4장. 파일의 소유권/허가권, 링크" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2017/07/03/ThisIsLinux6/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Linux/">Linux</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a>
-            </div>
-            <div class="date"><time datetime="2017-07-03T04:33:03.000Z" itemprop="datePublished">2017-07-03</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/07/03/ThisIsLinux6/">4장. 파일의 소유권/허가권, 링크</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            123# touch sample.txt  //빈 파일생성# ls -l-rw-r--r--  1 root   root         0  7월  3 13:35 sample.txt
-1.맨앞의 -는 파일의 유형을 의미.  -: 일반파일  d: 디렉토리  l: 링크파일
-2.rw-r–r–는 세개씩 끊어 읽으면 된다.2-1.  맨앞 세개는 소유자의 파일접근권한 (rw-
         </p>
     </div>
 </article>
@@ -679,7 +679,7 @@ gedit-3.8.3-6.el7.x86_64.rpm
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 

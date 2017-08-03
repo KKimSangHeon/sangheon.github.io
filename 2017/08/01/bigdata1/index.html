@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     
-    <title>1.자바프로그래밍 | Kim Sang Heon&#39;s Bolg</title>
+    <title>1.자바프로그래밍 기본 | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="Java" />
@@ -13,13 +13,13 @@
       <meta name="description" content="특징많은 클래스, 파일로 프로그램이 구성된다. 클래스는 데이터를 갖고 있고 메소드는 데이터를 다루게 된다. 객체의 데이터를 다루기 위해서는 외부에서 메소드를 호출해야 한다. 하드웨어는 컴포넌트화로 인해 빠른 발전이 이루어졌다. 소프트웨어 또한 이에 따라 컴포넌트화로 발전하게 되었다. 객체지향은 설계분석이 가능하다. 요구사항 분석-&amp;gt;추상화-&amp;gt;객체관">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1.자바프로그래밍">
+<meta property="og:title" content="1.자바프로그래밍 기본">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2017/08/01/bigdata1/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="특징많은 클래스, 파일로 프로그램이 구성된다. 클래스는 데이터를 갖고 있고 메소드는 데이터를 다루게 된다. 객체의 데이터를 다루기 위해서는 외부에서 메소드를 호출해야 한다. 하드웨어는 컴포넌트화로 인해 빠른 발전이 이루어졌다. 소프트웨어 또한 이에 따라 컴포넌트화로 발전하게 되었다. 객체지향은 설계분석이 가능하다. 요구사항 분석-&amp;gt;추상화-&amp;gt;객체관">
-<meta property="og:updated_time" content="2017-08-02T05:12:45.764Z">
+<meta property="og:updated_time" content="2017-08-03T01:00:24.829Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="1.자바프로그래밍">
+<meta name="twitter:title" content="1.자바프로그래밍 기본">
 <meta name="twitter:description" content="특징많은 클래스, 파일로 프로그램이 구성된다. 클래스는 데이터를 갖고 있고 메소드는 데이터를 다루게 된다. 객체의 데이터를 다루기 위해서는 외부에서 메소드를 호출해야 한다. 하드웨어는 컴포넌트화로 인해 빠른 발전이 이루어졌다. 소프트웨어 또한 이에 따라 컴포넌트화로 발전하게 되었다. 객체지향은 설계분석이 가능하다. 요구사항 분석-&amp;gt;추상화-&amp;gt;객체관">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
@@ -143,7 +143,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        1.자바프로그래밍
+        1.자바프로그래밍 기본
         </h1>
     
 
@@ -190,14 +190,8 @@ ga('send', 'pageview');
 <h4 id="final"><a href="#final" class="headerlink" title="final"></a>final</h4><p>final은 클래스 앞, 변수앞 , 필드 앞에도 정의할 수 있다.<br>final은 여기가 마지막이라는 뜻.<br>상수는 대문자로 만들라는 관례가 있다.!<br>따지고 보면 변수와는 별 다른게 없지만 알아보기 편하게!<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">final</span> <span class="keyword">int</span> VALUE = <span class="number">10</span>;</div><div class="line"></div><div class="line">VALUE = <span class="number">30</span>; <span class="comment">//에러발생</span></div></pre></td></tr></table></figure></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</div><div class="line">.....</div><div class="line">&#125;</div><div class="line">이 경우 다른클래스가 Test클래스를 상속할 수 없음.</div></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> Sring <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line">  <span class="keyword">return</span> name;</div><div class="line">&#125;</div><div class="line">오버라이딩 금지!!</div></pre></td></tr></table></figure>
-<h4 id="오버로드"><a href="#오버로드" class="headerlink" title="오버로드"></a>오버로드</h4><p>아래는 다 다른 메소드이다.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">a</span> <span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></div><div class="line">..</div><div class="line"></div><div class="line"><span class="keyword">void</span> <span class="title">a</span> <span class="params">(<span class="keyword">int</span> a, <span class="keyword">float</span> b)</span></div><div class="line">...</div><div class="line"></div><div class="line"><span class="keyword">void</span> <span class="title">a</span> <span class="params">(<span class="keyword">float</span> a, <span class="keyword">int</span> b)</span></div><div class="line">...</div></pre></td></tr></table></figure></p>
-<h4 id="아규먼트-파라미터"><a href="#아규먼트-파라미터" class="headerlink" title="아규먼트 , 파라미터"></a>아규먼트 , 파라미터</h4><p>아규먼트는 int ,float 등 형을 의미<br>파라미터는 실제적인 데이터 10, 0.5 등을 의미.</p>
-<h4 id="식별자"><a href="#식별자" class="headerlink" title="식별자"></a>식별자</h4><p>클래스 이름, 변수이름, 메소드 이름을 식별자라 한다.<br>대소문자 가능 숫자 가능 하지만 앞에는 안되고 특수문자는 $ _ 만 사용가능.</p>
-<h4 id="생성자"><a href="#생성자" class="headerlink" title="생성자"></a>생성자</h4><p>기본으로 디폴트 생성자가 만들어지지만 생성자가 하나라도 정의되어 있으면 디폴트 생성자가 생성되지 않는다.</p>
-<h4 id="다형성"><a href="#다형성" class="headerlink" title="다형성"></a>다형성</h4><p>외부에서 사용할 땐 일관되게 사용하는것.<br>오버로딩, 오버라이딩을 통해 구현</p>
-<h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><p>this 키워드는 메소드 호출을 받는 객체를 의미한다.<br>현재 사용중인 객체 그 자체를 의미한다.<br>this() 는  클래스의 한 생성자에서 다른 생성자를 호출 할 때 사용할 수 있다</p>
-<h4 id="오버로딩"><a href="#오버로딩" class="headerlink" title="오버로딩"></a>오버로딩</h4><p>부모에있는 메소드와 시그니쳐가 동일(접근제어자 , 반환형, 메소드이름, 아규먼트)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"></div></pre></td></tr></table></figure>
+<h5 id="생각해보자"><a href="#생각해보자" class="headerlink" title="생각해보자"></a>생각해보자</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</div><div class="line">    System.out.println( <span class="string">"점[x="</span> + x + <span class="string">",y="</span> + y +<span class="string">"]을 그렸습니다."</span>);			</div><div class="line">  &#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">boolean</span> visible)</span> </span>&#123;	<span class="comment">//외부에서 매개변수를 통해 보이고 안보이고를 show메소드로만 통제</span></div><div class="line">  <span class="keyword">if</span>(visible) &#123;</div><div class="line">    show();</div><div class="line">  &#125;<span class="keyword">else</span> &#123;</div><div class="line">    System.out.println( <span class="string">"점[x="</span> + x + <span class="string">",y="</span> + y +<span class="string">"]을 지움."</span>);			</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>코드를 위와 같이 구현 시 사용자는 show라는 메소드에 접근하고 boolean 값만을 통해 출력 미출력을 통제할 수 있다. 이 형태가 좋은 이유는 show , notShow 와 같은 메소드를 만들어서 사용자가 모든 메소드를 알고 있어야하는 상황을 없앨 수 있다.</p>
 
         </div>
         <footer class="article-footer">
@@ -205,7 +199,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/08/01/bigdata1/" data-id="cj5t3rfhd00as4cv7evl43cas" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/08/01/bigdata1/" data-id="cj5vtmqop004z9gv7un8n3vli" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -337,7 +331,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
