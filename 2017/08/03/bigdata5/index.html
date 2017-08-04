@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     
-    <title>4. 자바기본 API | Kim Sang Heon&#39;s Bolg</title>
+    <title>4. 자바기본 API(equals, wrapper클래스) | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="Java" />
@@ -13,13 +13,13 @@
       <meta name="description" content="StringString 인스턴스 안에는 char 배열이 존재하는것이다.String은 toString를 오버라이딩 하여 안에 내용이 출력된다.toString를 오버라이딩 하여 인스턴스에 대한 정보를 확인할 수 있게 만드는 것은 좋은 습관이다. 디버깅할때 편하다는 장점이 있다. equals결과를 예측해보자1234567891011121314151617181920">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="4. 자바기본 API">
+<meta property="og:title" content="4. 자바기본 API(equals, wrapper클래스)">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2017/08/03/bigdata5/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="StringString 인스턴스 안에는 char 배열이 존재하는것이다.String은 toString를 오버라이딩 하여 안에 내용이 출력된다.toString를 오버라이딩 하여 인스턴스에 대한 정보를 확인할 수 있게 만드는 것은 좋은 습관이다. 디버깅할때 편하다는 장점이 있다. equals결과를 예측해보자1234567891011121314151617181920">
-<meta property="og:updated_time" content="2017-08-04T04:54:13.645Z">
+<meta property="og:updated_time" content="2017-08-04T05:32:06.605Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="4. 자바기본 API">
+<meta name="twitter:title" content="4. 자바기본 API(equals, wrapper클래스)">
 <meta name="twitter:description" content="StringString 인스턴스 안에는 char 배열이 존재하는것이다.String은 toString를 오버라이딩 하여 안에 내용이 출력된다.toString를 오버라이딩 하여 인스턴스에 대한 정보를 확인할 수 있게 만드는 것은 좋은 습관이다. 디버깅할때 편하다는 장점이 있다. equals결과를 예측해보자1234567891011121314151617181920">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
@@ -143,7 +143,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        4. 자바기본 API
+        4. 자바기본 API(equals, wrapper클래스)
         </h1>
     
 
@@ -179,7 +179,6 @@ ga('send', 'pageview');
 <h4 id="Wrapper-클래스"><a href="#Wrapper-클래스" class="headerlink" title="Wrapper 클래스"></a>Wrapper 클래스</h4><p>기본형 보다는 Wrapper 클래스를 쓰고자하는 움직임이 많이 발생하고 있다.</p>
 <figure class="highlight java"><figcaption><span>WrapperClassTest.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WrapperClassTest</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Integer i = <span class="keyword">new</span> Integer(<span class="number">10</span>);</div><div class="line">		Character c = <span class="keyword">new</span> Character( <span class="string">'c'</span> );</div><div class="line">		Float f = <span class="keyword">new</span> Float ( <span class="number">3.14</span> );</div><div class="line">		Boolean b = <span class="keyword">new</span> Boolean( <span class="keyword">true</span> );</div><div class="line"></div><div class="line">		<span class="comment">//Auto Boxing</span></div><div class="line">		Integer j = <span class="number">10</span>;</div><div class="line"></div><div class="line"></div><div class="line">		<span class="comment">//int k = 20 + j.intValue();</span></div><div class="line">		<span class="comment">//Auto Unboxing</span></div><div class="line">		<span class="keyword">int</span> k = <span class="number">20</span> + j;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">( Integer a, Integer b )</span> </span>&#123;</div><div class="line">		<span class="comment">// 상수풀 운영원칙 때문에 객체이지만 내부를 수정할 수 없다.</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h5 id="정규식을활용하여-정수인지-확인"><a href="#정규식을활용하여-정수인지-확인" class="headerlink" title="정규식을활용하여 정수인지 확인"></a>정규식을활용하여 정수인지 확인</h5><figure class="highlight java"><figcaption><span>WrapperClassTest2.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WrapperClassTest2</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		System.out.println( Character.toLowerCase( <span class="string">'a'</span> ));</div><div class="line">		System.out.println( Character.isDigit( <span class="string">'1'</span> ));</div><div class="line">		System.out.println( Character.isDigit( <span class="string">'@'</span> ));</div><div class="line"></div><div class="line">		<span class="comment">//String는 isdigit가 존재하지 않는다.</span></div><div class="line">		String s = <span class="string">"1234"</span>;</div><div class="line">		<span class="keyword">if</span>(s.matches(<span class="string">"-?\\d+"</span>) == <span class="keyword">false</span> ) &#123;</div><div class="line">			System.out.println(<span class="string">"숫자가 아닙니다"</span>);</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">int</span> i = Integer.parseInt(s);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="comment">// 프로그램 로직(변수 검증) 할 때는</span></div><div class="line">		<span class="comment">// try - catch 문으로 하지 말것.</span></div><div class="line">		<span class="comment">// 비용이 많이든다.</span></div><div class="line"></div><div class="line">		<span class="comment">//정규식을 활용하자</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
-<figure class="highlight java"><figcaption><span>WrapperClassTest.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"></div></pre></td></tr></table></figure>
 
         </div>
         <footer class="article-footer">
@@ -187,7 +186,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/08/03/bigdata5/" data-id="cj5vtmqoz005f9gv7lqch7e94" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/08/03/bigdata5/" data-id="cj5xexo89005bsgv7902qv1gv" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -292,6 +291,16 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
+        <a href="/2017/08/04/bigdata6/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            6.자바기본API(유틸리티API)
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2017/08/03/bigdata4/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
@@ -309,7 +318,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
