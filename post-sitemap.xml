@@ -7,24 +7,16 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/2017/08/07/bigdata7/</loc>
-        <lastmod>2017-08-07T02:53:32.885Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/2017/08/07/bigdata8/</loc>
-        <lastmod>2017-08-07T02:30:47.135Z</lastmod>
+        <lastmod>2017-08-07T06:59:27.057Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/2017/08/03/bigdata5/</loc>
-        <lastmod>2017-08-04T08:29:39.067Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/2017/08/07/bigdata7/</loc>
+        <lastmod>2017-08-07T06:04:14.976Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -32,7 +24,15 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2017/08/04/bigdata6/</loc>
-        <lastmod>2017-08-04T08:29:31.006Z</lastmod>
+        <lastmod>2017-08-07T06:04:11.439Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/08/03/bigdata5/</loc>
+        <lastmod>2017-08-07T06:04:11.018Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -40,7 +40,7 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2017/08/03/bigdata4/</loc>
-        <lastmod>2017-08-03T05:29:50.277Z</lastmod>
+        <lastmod>2017-08-07T06:04:10.611Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -48,15 +48,15 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2017/08/03/bigdata3/</loc>
-        <lastmod>2017-08-03T02:28:07.158Z</lastmod>
+        <lastmod>2017-08-07T06:04:10.175Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/2017/08/01/bigdata1/</loc>
-        <lastmod>2017-08-03T01:00:24.829Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/2017/08/07/bigdata9/</loc>
+        <lastmod>2017-08-07T06:03:59.494Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -64,7 +64,15 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2017/08/01/bigdata2/</loc>
-        <lastmod>2017-08-01T05:41:40.908Z</lastmod>
+        <lastmod>2017-08-07T06:03:38.957Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/08/01/bigdata1/</loc>
+        <lastmod>2017-08-07T06:03:34.364Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
