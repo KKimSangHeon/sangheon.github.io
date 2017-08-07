@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-08-04T08:29:31.006Z</updated>
+  <updated>2017-08-07T00:17:29.642Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>bigdata8</title>
+    <link href="http://KKimSangHeon.github.io/2017/08/07/bigdata8/"/>
+    <id>http://KKimSangHeon.github.io/2017/08/07/bigdata8/</id>
+    <published>2017-08-07T00:17:29.000Z</published>
+    <updated>2017-08-07T00:17:29.642Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>bigdata7</title>
+    <link href="http://KKimSangHeon.github.io/2017/08/07/bigdata7/"/>
+    <id>http://KKimSangHeon.github.io/2017/08/07/bigdata7/</id>
+    <published>2017-08-07T00:04:17.000Z</published>
+    <updated>2017-08-07T00:51:36.455Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="제네릭"><a href="#제네릭" class="headerlink" title="제네릭"></a>제네릭</h3><p>오버로딩을 대체할 수 있으며 유용하다.</p>
+<p>메소드에 제네릭을 적용<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> &lt;T,P,Q,R&gt; <span class="function"><span class="keyword">void</span> <span class="title">println</span><span class="params">( T t )</span> </span>&#123;</div><div class="line">  System.out.println(t);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</div><div class="line">  println( <span class="number">10</span> );</div><div class="line">  println( <span class="keyword">true</span> );</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>메소드 반환형에 제네릭 적용<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> &lt;T, P&gt; <span class="function">List&lt;P&gt; <span class="title">println</span><span class="params">( T t )</span> </span>&#123;</div><div class="line">  System.out.println( t );</div><div class="line"></div><div class="line">  List&lt;P&gt; list = <span class="keyword">new</span> ArrayList&lt;P&gt;();</div><div class="line"></div><div class="line">  <span class="keyword">return</span> list;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>제네릭 배열을 어떻게 동적으로 생성하느냐<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">MyStack</span><span class="params">( E[] objects, <span class="keyword">int</span> capacity )</span> </span>&#123;</div><div class="line">  <span class="comment">//buffer = new E[ capacity ];	오류발생</span></div><div class="line">  <span class="comment">//방법1.</span></div><div class="line">  buffer = ( E[] ) Array.newInstance(objects.getClass(), capacity);</div><div class="line">  <span class="comment">//방법2. 방법2가 더 선호된다. 객체를 생성하지 않아도 된다는점 때문에</span></div><div class="line">  buffer = ( E[] )Array.newInstance(Object.class, capacity);</div><div class="line">  <span class="comment">//방법3. 방법 2와 일치하는방식이다.</span></div><div class="line">  buffer = ( E[] )<span class="keyword">new</span> Object[capacity];</div><div class="line">  <span class="comment">//방법 3을 제일 많이 쓴다.</span></div><div class="line"></div><div class="line">  <span class="keyword">this</span>.capacity = capacity;</div><div class="line">  currentIndex = <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>제네릭 호출 방식<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line"></div><div class="line">    MyStack&lt;String&gt; stack = <span class="keyword">new</span> MyStack&lt;String&gt;(<span class="number">3</span>);</div><div class="line">    <span class="comment">//String의 스택을 생성한다.</span></div><div class="line"></div><div class="line">    MyStack&lt;?&gt; stack = <span class="keyword">new</span> MyStack&lt;String&gt;(<span class="number">3</span>);</div><div class="line">    <span class="comment">//모든 타입의 객체를 생성하겠다.</span></div><div class="line"></div><div class="line">    MyStack&lt;? extends Number&gt; stack = <span class="keyword">new</span> MyStack&lt;Integer&gt;(<span class="number">3</span>);</div><div class="line">    <span class="comment">//Number를 상속한 애들만 제네릭 타입으로 쓰겠다.</span></div><div class="line">    <span class="comment">//와일드 카드를 사용해서 제네릭 타입 제한하기.</span></div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="comment">//응용해서</span></div><div class="line">  <span class="keyword">public</span> .... f(List&lt;? extends Shape&gt;)&#123;</div><div class="line">    <span class="comment">// Shape를 상속한 것들의 리스트를 파라미터로 받음</span></div><div class="line">      ...</div><div class="line">  &#125;  </div><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
+<h3 id="가변변수"><a href="#가변변수" class="headerlink" title="가변변수"></a>가변변수</h3><p>가변변수를 배우기 전에는 파라미터에 배열을 넣을 생각을 할 것이다. 하지만 이를 대체할 수 있는것이 가변변수이다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</div><div class="line">  println2( <span class="string">"둘리"</span> );</div><div class="line">  println2( <span class="string">"둘리"</span>, <span class="string">"마이콜"</span> );</div><div class="line">  println2( <span class="string">"둘리"</span>, <span class="string">"마이콜"</span>, <span class="string">"또치"</span>);</div><div class="line"></div><div class="line">  <span class="comment">//println3( new String[]&#123;"둘리", "마이콜", "또치"&#125;); 배열사용</span></div><div class="line"></div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">println2</span><span class="params">(String ... params)</span> </span>&#123;</div><div class="line">    <span class="keyword">for</span>( String s : params)&#123;</div><div class="line">      System.out.println(s);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<p>아래의 경우 Object를 파라미터로 주면 캐스팅을 계속 해줘야한다.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> &lt;T&gt; <span class="function"><span class="keyword">void</span> <span class="title">println</span><span class="params">( T t)</span> </span>&#123;</div><div class="line">  System.out.println(t);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">println</span><span class="params">(Object o )</span> </span>&#123;</div><div class="line">  System.out.println(o);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;제네릭&quot;&gt;&lt;a href=&quot;#제네릭&quot; class=&quot;headerlink&quot; title=&quot;제네릭&quot;&gt;&lt;/a&gt;제네릭&lt;/h3&gt;&lt;p&gt;오버로딩을 대체할 수 있으며 유용하다.&lt;/p&gt;
+&lt;p&gt;메소드에 제네릭을 적용&lt;br&gt;&lt;figure class=&quot;highli
+    
+    </summary>
+    
+      <category term="빅데이터 전문가과정" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/"/>
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Java/"/>
+    
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>5.자바기본API(유틸리티API)</title>
@@ -50,7 +97,7 @@
     <link href="http://KKimSangHeon.github.io/2017/08/03/bigdata5/"/>
     <id>http://KKimSangHeon.github.io/2017/08/03/bigdata5/</id>
     <published>2017-08-03T02:25:31.000Z</published>
-    <updated>2017-08-04T05:32:06.605Z</updated>
+    <updated>2017-08-04T08:29:39.067Z</updated>
     
     <content type="html"><![CDATA[<h4 id="String"><a href="#String" class="headerlink" title="String"></a>String</h4><p>String 인스턴스 안에는 char 배열이 존재하는것이다.<br>String은 toString를 오버라이딩 하여 안에 내용이 출력된다.<br>toString를 오버라이딩 하여 인스턴스에 대한 정보를 확인할 수 있게 만드는 것은 좋은 습관이다. 디버깅할때 편하다는 장점이 있다.</p>
 <h4 id="equals"><a href="#equals" class="headerlink" title="equals"></a>equals</h4><h5 id="결과를-예측해보자"><a href="#결과를-예측해보자" class="headerlink" title="결과를 예측해보자"></a>결과를 예측해보자</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EqualsTest</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Point point1 = <span class="keyword">new</span> Point(<span class="number">10</span>, <span class="number">20</span>);</div><div class="line">		Point point2 = <span class="keyword">new</span> Point(<span class="number">10</span>, <span class="number">20</span>);</div><div class="line">		Point point3 = point2;</div><div class="line"></div><div class="line">		<span class="comment">// ==연산자에서 두 개의 항이 객체 참조 변수 인 경우</span></div><div class="line">		<span class="comment">// 두 개체의 동일 여부(동일성)</span></div><div class="line">		System.out.println( point1 == point2 );	<span class="comment">//false</span></div><div class="line">		System.out.println( point2 == point3 );	<span class="comment">//true</span></div><div class="line"></div><div class="line">		<span class="comment">//equals는 오버라이딩이 되지 않았을 경우 참조값 비교를 함.(동질성 비교)</span></div><div class="line">		<span class="comment">//해쉬코드를 갖고와서 비교를함(해쉬코드==참조값)</span></div><div class="line">		System.out.println( point1.equals(point2) ); <span class="comment">//false</span></div><div class="line">		System.out.println( point2.equals(point3) ); <span class="comment">//true</span></div><div class="line"></div><div class="line">		System.out.println(<span class="string">"================"</span>);</div><div class="line"></div><div class="line">		<span class="comment">//String 객체와 비교</span></div><div class="line">		<span class="comment">//String는 equals가 오버라이딩 되어있다.</span></div><div class="line">		String s1 = <span class="keyword">new</span> String( <span class="string">"hello"</span> );</div><div class="line">		String s2 = <span class="keyword">new</span> String( <span class="string">"hello"</span> );</div><div class="line">		String s3 = s2;</div><div class="line"></div><div class="line">		System.out.println( s1 == s2 );		<span class="comment">//false</span></div><div class="line">		System.out.println( s2 == s3 );		<span class="comment">//true</span></div><div class="line">		System.out.println( s1.equals(s2) );	<span class="comment">//true</span></div><div class="line">		System.out.println( s2.equals(s3) );	<span class="comment">//true</span></div><div class="line"></div><div class="line">	&#125;</div></pre></td></tr></table></figure>
@@ -685,74 +732,6 @@
     <summary type="html">
     
       &lt;p&gt;리눅스에서 가장 많이 활용하는것중 하나가 웹서버이다.&lt;br&gt;APM = Apache 웹서버 + 프로그래밍언어 PHP + 데이터베이스 MaraiaDB&lt;br&gt;리눅스 환경에서 사용될 경우 LAPM(Linux Apache,PHP,MariaDB)라고도 부름
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
-    
-      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
-    
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
-    
-      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>11장. 쇼핑몰 데이터베이스 구축, Oracle 설치, Oracle에서 쇼핑몰 DB 구축</title>
-    <link href="http://KKimSangHeon.github.io/2017/07/13/ThisIsLinux31/"/>
-    <id>http://KKimSangHeon.github.io/2017/07/13/ThisIsLinux31/</id>
-    <published>2017-07-13T09:09:57.000Z</published>
-    <updated>2017-07-13T12:22:00.473Z</updated>
-    
-    <content type="html"><![CDATA[<p>서버에서 실행해도 되고 윈 클라이언트에서 해도된다. 그러나 윈 클라이언트에서 해보자</p>
-<h4 id="윈도우에서-실행"><a href="#윈도우에서-실행" class="headerlink" title="윈도우에서 실행"></a>윈도우에서 실행</h4><p>cmd 열기<br>cd “c:\Program Files (x86)”<br>cd “MariaDB 10.0”<br>cd MariaDB 10.0<br>cd bin</p>
-<p>mysql -h 192.168.111.100 -u winuser -p<br>4321 입력<br>쿼리문은 책을 참조하자…..</p>
-<h4 id="오라클을-설치해보자"><a href="#오라클을-설치해보자" class="headerlink" title="오라클을 설치해보자"></a>오라클을 설치해보자</h4><p>서버에서 실행하자</p>
-<p>카페에서 링크타고 오라클을 들어가서 깔자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"># cd 다운로드/</div><div class="line"># ls -l</div><div class="line"># unzip oracle* //압축을 풀자</div><div class="line"># ls -l Disk1/</div><div class="line"># cd Disk1/</div><div class="line"></div><div class="line">오라클을 설치하기 위해서는 가상메모리 2기가가 필요함.</div><div class="line">그래서 추가적으로 2기가를 추가한다.</div><div class="line"># dd if=/dev/zero of=/swapfile bs=1024 count=4194304</div><div class="line"># mkswap /swapfile     //스왑메모리로 만들자</div><div class="line"># swapon /swapfile     //스왑을 키자</div><div class="line"># swapon -s //스왑 확인 총 (6기가 임을 확인)</div><div class="line"></div><div class="line">스왑을 껏다 켜도 유지되도록 하자</div><div class="line"># cd /etc/rc.d    </div><div class="line"># chmod 755 rc.local</div><div class="line"># vi rc.local</div><div class="line">맨 밑에</div><div class="line">swapon /swapfile 추가</div><div class="line"># reboot</div><div class="line"># swapon -s //스왑 확인 총 (6기가 임을 확인)</div><div class="line"></div><div class="line">오라클을 본격적으로 설치하자</div><div class="line"># cd 다운로드/Disk1/</div><div class="line"># pwd</div><div class="line"># ls -l</div><div class="line"># yum -y localinstall oracle*</div></pre></td></tr></table></figure></p>
-<h4 id="오라클을-설정하자"><a href="#오라클을-설정하자" class="headerlink" title="오라클을 설정하자"></a>오라클을 설정하자</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># service oracle-xe configure</div><div class="line">엔터(8080은 외부로 접속하는 포트)</div><div class="line">엔터(1521은 sql+로 접속하는 포트)</div><div class="line">1234엔터</div><div class="line">1234엔터</div><div class="line">y 엔터(자동으로 실행할꺼냐)</div></pre></td></tr></table></figure>
-<h4 id="오라클-서비스를-시작하자"><a href="#오라클-서비스를-시작하자" class="headerlink" title="오라클 서비스를 시작하자"></a>오라클 서비스를 시작하자</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"># /etc/init.d/oracle-xe start   //오라클 시작</div><div class="line"></div><div class="line"># vi /etc/bashrc    //맨아래 다음을 입력.</div><div class="line"># . /u01/app//oracle/product/11.2.0/xe/bin/oracle_env.sh      </div><div class="line">                  //오라클 환경설정하는 스크립트 실행하는것.</div><div class="line">                  //껏다켜면 이 한줄을 입력해야 하지만</div><div class="line">                  //그 과정을 없애기 위해 /etc/bashrc에 추가</div><div class="line"></div><div class="line"># firewall-config</div><div class="line">영구적 선택.</div><div class="line">포트 탭 선택</div><div class="line">추가 8080 tcp</div><div class="line">추가 1521 tcp</div><div class="line">(오라클을 센토스에서 만든것이 아니라 등록이 되어있지 않다.)</div><div class="line">옵션 - Firewalld 다시불러오기</div></pre></td></tr></table></figure>
-<h4 id="오라클에-접속해보자"><a href="#오라클에-접속해보자" class="headerlink" title="오라클에 접속해보자"></a>오라클에 접속해보자</h4><p>웹브라우저 실행<br>192.168.111.100:8080/apex<br>internal<br>admin<br>1234<br>로그인<br>1234<br>1234<br>1234<br>apply<br>return<br>1234 로그인</p>
-<h4 id="마리아db에서-입력한-쿼리문을-오라클에서-실행해보자"><a href="#마리아db에서-입력한-쿼리문을-오라클에서-실행해보자" class="headerlink" title="마리아db에서 입력한 쿼리문을 오라클에서 실행해보자."></a>마리아db에서 입력한 쿼리문을 오라클에서 실행해보자.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># mkdir /oradata    //데이터베이스가 생성될 디렉토리</div><div class="line"># chmod 777 /oradata</div><div class="line"># sqlplus   //오라클에서 데이터베이스 시작</div><div class="line">system 입력 //오라클에서 가장 높은 관리자는 system</div><div class="line">1234 입력</div><div class="line">책보고 쿼리 입력</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;서버에서 실행해도 되고 윈 클라이언트에서 해도된다. 그러나 윈 클라이언트에서 해보자&lt;/p&gt;
-&lt;h4 id=&quot;윈도우에서-실행&quot;&gt;&lt;a href=&quot;#윈도우에서-실행&quot; class=&quot;headerlink&quot; title=&quot;윈도우에서 실행&quot;&gt;&lt;/a&gt;윈도우에서 실행
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
-    
-      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
-    
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
-    
-      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>11장. MariaDB 설치/운영 , Windows에서 접속</title>
-    <link href="http://KKimSangHeon.github.io/2017/07/12/ThisIsLinux30/"/>
-    <id>http://KKimSangHeon.github.io/2017/07/12/ThisIsLinux30/</id>
-    <published>2017-07-12T09:21:35.000Z</published>
-    <updated>2017-07-14T02:38:30.299Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="마리아-DB-운영"><a href="#마리아-DB-운영" class="headerlink" title="마리아 DB 운영"></a>마리아 DB 운영</h3><h4 id="DBMS-설치"><a href="#DBMS-설치" class="headerlink" title="DBMS 설치"></a>DBMS 설치</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">카페에 올려놓은 마리아 db를 세개 다 받자.</div><div class="line"># yum -y remove mariadb-libs    // 버전이 달라 새로 설치하면 충돌우려..</div><div class="line"></div><div class="line"># yum -y localinstall Maria*</div><div class="line"># systemctl restart mysql //mysql이 오라클로 들어가자</div><div class="line">  //개발자들이 마리아를 만들어냄..  </div><div class="line"></div><div class="line"># systemctl status mysql</div><div class="line"># checkconfig mysql on  // systemctl enable mysql 과 동일</div><div class="line">              //상시가동하도록 설정</div><div class="line"></div><div class="line"># firewall-config   //방화벽 열기</div><div class="line">영구적 탭 -&gt; 다시불러오기</div><div class="line"># mysql   // 마리아디비 실행</div><div class="line">&gt; showdatabases;    //그냥 확인차</div><div class="line"></div><div class="line">원칙은</div><div class="line"># mysql -u root -p 라고 입력 후 비번입력해야함</div><div class="line">지금은 비번을 설정 하지 않았으므로 엔터만 누르면 된다.</div></pre></td></tr></table></figure>
-<h4 id="마리아-디비-암호-설정"><a href="#마리아-디비-암호-설정" class="headerlink" title="마리아 디비 암호 설정"></a>마리아 디비 암호 설정</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># mysqladmin -u root password &apos;1234&apos;</div><div class="line">마리아 디비 사용자인 root는 비번이 1234</div><div class="line"></div><div class="line"># mysql -u root -p //로그인</div><div class="line">1234 입력</div><div class="line">&gt;exit</div></pre></td></tr></table></figure>
-<h4 id="윈도우-클라이언트에서-마리아DB-접속"><a href="#윈도우-클라이언트에서-마리아DB-접속" class="headerlink" title="윈도우 클라이언트에서 마리아DB 접속"></a>윈도우 클라이언트에서 마리아DB 접속</h4><p>카페 접속해서 마리아디비 설치<br>리눅스는 서버 클라이언트 따로지만 윈도우용은 하나다.<br>다른건 설치하지 말고 클라이언트만 설치하자</p>
-<h5 id="서버에서-실행"><a href="#서버에서-실행" class="headerlink" title="서버에서 실행"></a>서버에서 실행</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># mysql -u root -p</div><div class="line">&gt; USE mysql</div><div class="line">&gt;SELECT user,host FROM user WHERE user NOT LIKE &apos;&apos;;</div><div class="line">루트 사용자는 외부에서 접속할 수 없다는 것을 확인.</div><div class="line"></div><div class="line">&gt;GRANT ALL PRIVILEGES ON *.* TO winuser@&apos;192.168.111.%&apos; IDENTIFIED BY &apos;4321&apos;;</div><div class="line">    //192.168.111.XXX 는 허용하겠다.(윈도우 유저의 아이피의 마지막이 변동가능성이 있기 때문에 %로 처리)</div></pre></td></tr></table></figure>
-<h5 id="윈도우에서-실행"><a href="#윈도우에서-실행" class="headerlink" title="윈도우에서 실행"></a>윈도우에서 실행</h5><p>cmd 열기<br>cd “c:\Program Files (x86)”<br>cd “MariaDB 10.0”<br>cd MariaDB 10.0<br>cd bin</p>
-<p>mysql -h 192.168.111.100 -u winuser -p<br>4321 입력<br>show databases;</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;마리아-DB-운영&quot;&gt;&lt;a href=&quot;#마리아-DB-운영&quot; class=&quot;headerlink&quot; title=&quot;마리아 DB 운영&quot;&gt;&lt;/a&gt;마리아 DB 운영&lt;/h3&gt;&lt;h4 id=&quot;DBMS-설치&quot;&gt;&lt;a href=&quot;#DBMS-설치&quot; class=&quot;he
     
     </summary>
     
