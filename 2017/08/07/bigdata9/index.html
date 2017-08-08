@@ -3,25 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>bigdata9 | Kim Sang Heon&#39;s Bolg</title>
+    <title>8. 네트워크와 소켓의 이해 | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="Java" />
     
     
 
-      <meta name="description" content="Welcome to Sang Heon&apos;s Blog.">
+      <meta name="description" content="네트워크란?“유/무선 으로 연결되어 있는  Device들의  집합 ” 네트워킹?디바이스들 간에 미리 정의된 프로토콜을 사용하여 데이터를 교환 하는것.이를위해서는 프로토콜이 필요하다. 클라이언트 서버구조Client  -&amp;gt; Serverrequest Server -&amp;gt; Clientresponse(ACK) 서버 : 서버프로그램이 돌고있는 장비 프로토콜디바">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="bigdata9">
+<meta property="og:title" content="8. 네트워크와 소켓의 이해">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2017/08/07/bigdata9/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="Welcome to Sang Heon&apos;s Blog.">
+<meta property="og:description" content="네트워크란?“유/무선 으로 연결되어 있는  Device들의  집합 ” 네트워킹?디바이스들 간에 미리 정의된 프로토콜을 사용하여 데이터를 교환 하는것.이를위해서는 프로토콜이 필요하다. 클라이언트 서버구조Client  -&amp;gt; Serverrequest Server -&amp;gt; Clientresponse(ACK) 서버 : 서버프로그램이 돌고있는 장비 프로토콜디바">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/java.png">
-<meta property="og:updated_time" content="2017-08-07T06:03:59.494Z">
+<meta property="og:updated_time" content="2017-08-08T07:09:50.450Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="bigdata9">
-<meta name="twitter:description" content="Welcome to Sang Heon&apos;s Blog.">
+<meta name="twitter:title" content="8. 네트워크와 소켓의 이해">
+<meta name="twitter:description" content="네트워크란?“유/무선 으로 연결되어 있는  Device들의  집합 ” 네트워킹?디바이스들 간에 미리 정의된 프로토콜을 사용하여 데이터를 교환 하는것.이를위해서는 프로토콜이 필요하다. 클라이언트 서버구조Client  -&amp;gt; Serverrequest Server -&amp;gt; Clientresponse(ACK) 서버 : 서버프로그램이 돌고있는 장비 프로토콜디바">
 <meta name="twitter:image" content="http://kkimsangheon.github.io/images/java.png">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
@@ -145,7 +145,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        bigdata9
+        8. 네트워크와 소켓의 이해
         </h1>
     
 
@@ -170,7 +170,21 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <h5 id="네트워크란"><a href="#네트워크란" class="headerlink" title="네트워크란?"></a>네트워크란?</h5><p>“유/무선 으로 연결되어 있는  Device들의  집합 ”</p>
+<h5 id="네트워킹"><a href="#네트워킹" class="headerlink" title="네트워킹?"></a>네트워킹?</h5><p>디바이스들 간에 미리 정의된 프로토콜을 사용하여 데이터를 교환 하는것.<br>이를위해서는 프로토콜이 필요하다.</p>
+<h5 id="클라이언트-서버구조"><a href="#클라이언트-서버구조" class="headerlink" title="클라이언트 서버구조"></a>클라이언트 서버구조</h5><p>Client  -&gt; Server<br>request</p>
+<p>Server -&gt; Client<br>response(ACK)</p>
+<p>서버 : 서버프로그램이 돌고있는 장비</p>
+<h5 id="프로토콜"><a href="#프로토콜" class="headerlink" title="프로토콜"></a>프로토콜</h5><p>디바이스간 데이터 통신을 위해 필요한 규약<br>Hyper Text Transfer Protocol<br>File Transfer Protocol<br>SMTP 등등.</p>
+<h5 id="패킷"><a href="#패킷" class="headerlink" title="패킷"></a>패킷</h5><p>패킷은 Header, Body부분으로 나뉜다.<br>Header은 Address, checksum 등 으로 구성되고<br>Body는 Data로 구성된다.</p>
+<h4 id="소켓"><a href="#소켓" class="headerlink" title="소켓"></a>소켓</h4><h5 id="소켓-1"><a href="#소켓-1" class="headerlink" title="소켓?"></a>소켓?</h5><p>TCP / IP 프로토콜의 프로그래머 인터페이스를 의미<br>네트워크 프로그래밍에서 개발자에게 네트워크에 접근할 수  있는 인터페이스 제공</p>
+<h5 id="포트"><a href="#포트" class="headerlink" title="포트?"></a>포트?</h5><p>프로세스를 구분할 수 있는 주소<br>16비트 정수를 사용한다.</p>
+<p>Address =&gt; IP Address</p>
+<p>Socket Address =&gt; IP Address + Port</p>
+<figure class="highlight java"><figcaption><span>LocalHost.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LocalHost</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			InetAddress inetAddress = InetAddress.getLocalHost();</div><div class="line">			String hostName = inetAddress.getHostName();</div><div class="line">			String hostAddress = inetAddress.getHostAddress();</div><div class="line">			<span class="keyword">byte</span>[] addresses = inetAddress.getAddress();	<span class="comment">//byte배열로 ip 받아오는 함수</span></div><div class="line"></div><div class="line">			System.out.println(hostName);	<span class="comment">//컴퓨터이름</span></div><div class="line">			System.out.println(hostAddress); <span class="comment">//ipconfig의 결과와 같음</span></div><div class="line"></div><div class="line">			<span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; addresses.length ; i++) &#123;</div><div class="line">				System.out.print( addresses[i] &amp; <span class="number">0x000000ff</span>);</div><div class="line">					<span class="comment">//MSB로 인해 음수가 나와 마스킹을 해주는것.</span></div><div class="line">				<span class="keyword">if</span>( i &lt; <span class="number">3</span> ) &#123;</div><div class="line">					System.out.print(<span class="string">"."</span>);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125; <span class="keyword">catch</span> (UnknownHostException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>NSLookup기능을 구현해보자.</p>
+<figure class="highlight java"><figcaption><span>NSLookup.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NSLookup</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line"></div><div class="line">		String host = <span class="string">""</span>;</div><div class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</div><div class="line"></div><div class="line">		<span class="keyword">while</span> (!(host.equals(<span class="string">"exit"</span>))) &#123;</div><div class="line"></div><div class="line">			<span class="keyword">try</span> &#123;</div><div class="line">				System.out.print(<span class="string">"&gt;"</span>);</div><div class="line">				host = sc.nextLine();</div><div class="line"></div><div class="line"></div><div class="line">				InetAddress[] inetAddresses = InetAddress.getAllByName(host);</div><div class="line"></div><div class="line">				<span class="keyword">for</span> (InetAddress inetAddress : inetAddresses) &#123;</div><div class="line">					System.out.println(inetAddress.getHostAddress());</div><div class="line">				&#125;</div><div class="line"></div><div class="line">			&#125; <span class="keyword">catch</span> (UnknownHostException e) &#123;</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line"></div><div class="line">			System.out.println();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+
         </div>
         <footer class="article-footer">
             
