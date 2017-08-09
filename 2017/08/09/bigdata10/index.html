@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>9. TCP 소켓 프로그래밍1 | Kim Sang Heon&#39;s Bolg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Java" />
+    
+    
+
+      <meta name="description" content="TCPTCP : 스트림(stream) 통신 프로토콜양쪽의 소켓이 연결된 상태에서 통신이 가능하다. (연결지향 프로토콜)신뢰성 있는 데이터 통신한 번 연결이 되면 연결이 끊어 질 때까지 송신한 데이터는 차례대로 목적지의 소켓에 전달자바는  java.net 패키지에  TCP 소켓 프로그래밍을  쉽게 하도록  관련 클래스를  제공하고 있다.라이브러리의 사용법과">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="9. TCP 소켓 프로그래밍1">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2017/08/09/bigdata10/index.html">
+<meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
+<meta property="og:description" content="TCPTCP : 스트림(stream) 통신 프로토콜양쪽의 소켓이 연결된 상태에서 통신이 가능하다. (연결지향 프로토콜)신뢰성 있는 데이터 통신한 번 연결이 되면 연결이 끊어 질 때까지 송신한 데이터는 차례대로 목적지의 소켓에 전달자바는  java.net 패키지에  TCP 소켓 프로그래밍을  쉽게 하도록  관련 클래스를  제공하고 있다.라이브러리의 사용법과">
+<meta property="og:image" content="http://kkimsangheon.github.io/images/java.png">
+<meta property="og:updated_time" content="2017-08-09T02:42:16.840Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="9. TCP 소켓 프로그래밍1">
+<meta name="twitter:description" content="TCPTCP : 스트림(stream) 통신 프로토콜양쪽의 소켓이 연결된 상태에서 통신이 가능하다. (연결지향 프로토콜)신뢰성 있는 데이터 통신한 번 연결이 되면 연결이 끊어 질 때까지 송신한 데이터는 차례대로 목적지의 소켓에 전달자바는  java.net 패키지에  TCP 소켓 프로그래밍을  쉽게 하도록  관련 클래스를  제공하고 있다.라이브러리의 사용법과">
+<meta name="twitter:image" content="http://kkimsangheon.github.io/images/java.png">
+        <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-101744076-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/2017/06/29/about-me/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/">About Me</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/Introduction/">Introduction</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/My-Projects/">My Projects</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/">Data Structure</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Search/">Search</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Sort/">Sort</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/">Linux</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/관련정보/">관련정보</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a></li></ul></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/빅데이터-전문가과정/Java/">Java</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-bigdata10" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        9. TCP 소켓 프로그래밍1
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2017/08/09/bigdata10/" class="article-date">
+            <time datetime="2017-08-09T00:05:06.000Z" itemprop="datePublished">2017-08-09</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Java/">Java</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h4 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h4><p>TCP : 스트림(stream) 통신 프로토콜<br>양쪽의 소켓이 연결된 상태에서 통신이 가능하다. (연결지향 프로토콜)<br>신뢰성 있는 데이터 통신<br>한 번 연결이 되면 연결이 끊어 질 때까지 송신한 데이터는 차례대로 목적지의 소켓에 전달<br>자바는  java.net 패키지에  TCP 소켓 프로그래밍을  쉽게 하도록  관련 클래스를  제공하고 있다.<br>라이브러리의 사용법과  동작순서를 정확하게 이해하고 있어야 한다.<br>ServerSocket과 Socket 클래스를 사용하게 된다.  </p>
+<figure class="highlight java"><figcaption><span>TCPServer.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TCPSever</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> SERVER_PORT = <span class="number">5000</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line"></div><div class="line">		ServerSocket serverSocket = <span class="keyword">null</span>;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			<span class="comment">// 1. 서버 소켓 생성</span></div><div class="line">			serverSocket = <span class="keyword">new</span> ServerSocket();</div><div class="line"></div><div class="line">			<span class="comment">// 2. 바인딩( Binding )</span></div><div class="line">			InetAddress inetAddress = InetAddress.getLocalHost();</div><div class="line">			String localhostAddress = inetAddress.getHostAddress();</div><div class="line"></div><div class="line">			serverSocket.bind(<span class="keyword">new</span> InetSocketAddress(localhostAddress, SERVER_PORT));</div><div class="line">			System.out.println(<span class="string">"[Server] binding "</span> + localhostAddress);</div><div class="line"></div><div class="line">			<span class="comment">// 3. 연결 요청 기다림( accept)</span></div><div class="line">			Socket socket = serverSocket.accept(); <span class="comment">// blocking</span></div><div class="line"></div><div class="line">			<span class="comment">// 4. 연결성공</span></div><div class="line">			InetSocketAddress remoteSocketAddress = (InetSocketAddress) socket.getRemoteSocketAddress();</div><div class="line"></div><div class="line">			<span class="keyword">int</span> remoteHostPort = remoteSocketAddress.getPort();</div><div class="line">			String remoteHostAddress = remoteSocketAddress.getAddress().getHostAddress();</div><div class="line">			System.out.println(<span class="string">"[server] connected from "</span> + remoteHostAddress + remoteHostPort);</div><div class="line">			<span class="keyword">try</span> &#123;</div><div class="line">				<span class="comment">// 5. I/O Stream 받아오기</span></div><div class="line">				InputStream is = socket.getInputStream();</div><div class="line">				OutputStream os = socket.getOutputStream();</div><div class="line"></div><div class="line">				<span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</div><div class="line">					<span class="comment">// 6. 데이터 읽기</span></div><div class="line">					<span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">256</span>];</div><div class="line">					<span class="keyword">int</span> readByteCount = is.read(buffer); <span class="comment">// block</span></div><div class="line"></div><div class="line">					<span class="keyword">if</span> (readByteCount &lt;= -<span class="number">1</span>) &#123;	<span class="comment">//정상종료</span></div><div class="line">						System.out.println(<span class="string">"[server] disconnection by client"</span>);</div><div class="line">						<span class="keyword">break</span>;</div><div class="line">					&#125;</div><div class="line"></div><div class="line">					String data = <span class="keyword">new</span> String(buffer, <span class="number">0</span>, readByteCount, <span class="string">"utf-8"</span>);</div><div class="line">					System.out.println(<span class="string">"[server] received : "</span> + data);</div><div class="line"></div><div class="line">					<span class="comment">// 7. 데이터 쓰기</span></div><div class="line">					os.write(data.getBytes(<span class="string">"utf-8"</span>));</div><div class="line">				&#125;</div><div class="line"></div><div class="line">			&#125; <span class="keyword">catch</span>(SocketException e) &#123;</div><div class="line">				<span class="comment">// 상대편이 소켓을 정상적으로 닫지 않고 종료한 경우</span></div><div class="line">				System.out.println(<span class="string">"[server] sudden closed by client"</span>);</div><div class="line"></div><div class="line">			&#125;<span class="keyword">catch</span> (IOException e) &#123; <span class="comment">// 소켓과 관련된 캐치</span></div><div class="line">				e.printStackTrace();</div><div class="line">			&#125; <span class="keyword">finally</span> &#123;</div><div class="line">				<span class="keyword">try</span> &#123;</div><div class="line">					<span class="keyword">if</span> (socket != <span class="keyword">null</span> &amp;&amp; socket.isClosed() == <span class="keyword">false</span>) &#123;</div><div class="line">						socket.close();</div><div class="line">					&#125;</div><div class="line">				&#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">					e.printStackTrace();</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line"></div><div class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123; <span class="comment">// 서버소켓과 관련된 캐치</span></div><div class="line">			e.printStackTrace();</div><div class="line">		&#125; <span class="keyword">finally</span> &#123;</div><div class="line">			<span class="keyword">try</span> &#123;</div><div class="line">				<span class="keyword">if</span> (serverSocket != <span class="keyword">null</span> &amp;&amp; serverSocket.isClosed() == <span class="keyword">false</span>) &#123;</div><div class="line">					serverSocket.close();</div><div class="line">				&#125;</div><div class="line">			&#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight java"><figcaption><span>TCPClient.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TCPClient</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String SERVER_IP = <span class="string">"192.168.111.1"</span>;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> SERVER_PORT = <span class="number">5000</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Socket socket = <span class="keyword">null</span>;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line"></div><div class="line">			<span class="comment">// 1. Socket 생성</span></div><div class="line">			socket = <span class="keyword">new</span> Socket();</div><div class="line"></div><div class="line">			<span class="comment">// 2. 서버 연결</span></div><div class="line">			socket.connect(<span class="keyword">new</span> InetSocketAddress(SERVER_IP, SERVER_PORT));</div><div class="line"></div><div class="line">			<span class="comment">// 3. I/O 받아오기</span></div><div class="line">			InputStream is = socket.getInputStream();</div><div class="line">			OutputStream os = socket.getOutputStream();</div><div class="line"></div><div class="line">			<span class="comment">// 4. 쓰기 / 읽기</span></div><div class="line">			String data = <span class="string">"hello"</span>;</div><div class="line">			os.write( data.getBytes( <span class="string">"utf-8"</span> ));</div><div class="line"></div><div class="line">			<span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">256</span>];</div><div class="line">			<span class="keyword">int</span> readByteCount = is.read( buffer );</div><div class="line">			<span class="keyword">if</span>( readByteCount &lt;= -<span class="number">1</span>) &#123;</div><div class="line">				System.out.println( <span class="string">"[client] disconnection by server"</span>);				</div><div class="line">				<span class="keyword">return</span>;</div><div class="line">			&#125;</div><div class="line"></div><div class="line">			data = <span class="keyword">new</span> String( buffer, <span class="number">0</span>, readByteCount, <span class="string">"utf-8"</span>);</div><div class="line">			System.out.println(<span class="string">"[client] received:"</span>+ data);</div><div class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125; <span class="keyword">finally</span> &#123;</div><div class="line">			<span class="keyword">try</span> &#123;</div><div class="line">				<span class="keyword">if</span> (socket != <span class="keyword">null</span> &amp;&amp; socket.isClosed() == <span class="keyword">false</span>) &#123;</div><div class="line">					socket.close();</div><div class="line">				&#125;</div><div class="line">			&#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<p>에코서버, 클라이언트 만들기</p>
+<figure class="highlight java"><figcaption><span>EchoServer.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EchoServer</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> SERVER_PORT = <span class="number">5000</span>;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		ServerSocket serverSocket = <span class="keyword">null</span>;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			<span class="comment">// 1. 서버 소켓 생성</span></div><div class="line">			serverSocket = <span class="keyword">new</span> ServerSocket();</div><div class="line"></div><div class="line">			<span class="comment">// 2. 바인딩( Binding )</span></div><div class="line">			InetAddress inetAddress = InetAddress.getLocalHost();</div><div class="line">			String localhostAddress = inetAddress.getHostAddress();</div><div class="line"></div><div class="line">			serverSocket.bind(<span class="keyword">new</span> InetSocketAddress(localhostAddress, SERVER_PORT));</div><div class="line">			System.out.println(<span class="string">"[Server] binding "</span> + localhostAddress);</div><div class="line"></div><div class="line">			<span class="comment">// 3. 연결 요청 기다림( accept)</span></div><div class="line">			Socket socket = serverSocket.accept(); <span class="comment">// blocking</span></div><div class="line"></div><div class="line">			<span class="comment">// 4. 연결성공</span></div><div class="line">			InetSocketAddress remoteSocketAddress = (InetSocketAddress) socket.getRemoteSocketAddress();</div><div class="line"></div><div class="line">			<span class="keyword">int</span> remoteHostPort = remoteSocketAddress.getPort();</div><div class="line">			String remoteHostAddress = remoteSocketAddress.getAddress().getHostAddress();</div><div class="line">			System.out.println(<span class="string">"[server] connected from "</span> + remoteHostAddress + remoteHostPort);</div><div class="line">			<span class="keyword">try</span> &#123;</div><div class="line">				<span class="comment">// 5. I/O Stream 받아오기</span></div><div class="line">				InputStream is = socket.getInputStream();</div><div class="line"></div><div class="line"></div><div class="line">				BufferedReader br = <span class="keyword">new</span> BufferedReader( <span class="keyword">new</span> InputStreamReader( is, <span class="string">"UTF-8"</span> ));</div><div class="line"></div><div class="line">				PrintWriter pw = <span class="keyword">new</span> PrintWriter(socket.getOutputStream(), <span class="keyword">true</span>);</div><div class="line">												<span class="comment">// auto flush를 true로 한다. true로 안하면</span></div><div class="line">												<span class="comment">//버퍼가 다찬다음 나가기 때문에 늦게나간다.</span></div><div class="line">				<span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</div><div class="line">					<span class="comment">// 6. 데이터 읽기</span></div><div class="line">					String message = br.readLine();</div><div class="line"></div><div class="line">					<span class="keyword">if</span> ( message == <span class="keyword">null</span> ) &#123;	<span class="comment">//정상종료</span></div><div class="line">						System.out.println(<span class="string">"[server] disconnection by client"</span>);</div><div class="line">						<span class="keyword">break</span>;</div><div class="line">					&#125;</div><div class="line"></div><div class="line">					System.out.println(<span class="string">"[server] received : "</span> + message);</div><div class="line"></div><div class="line">					<span class="comment">// 7. 데이터 쓰기</span></div><div class="line">					pw.println(message);</div><div class="line">				&#125;</div><div class="line"></div><div class="line">			&#125; <span class="keyword">catch</span>(SocketException e) &#123;</div><div class="line">				<span class="comment">// 상대편이 소켓을 정상적으로 닫지 않고 종료한 경우</span></div><div class="line">				System.out.println(<span class="string">"[server] sudden closed by client"</span>);</div><div class="line"></div><div class="line">			&#125;<span class="keyword">catch</span> (IOException e) &#123; <span class="comment">// 소켓과 관련된 캐치</span></div><div class="line">				e.printStackTrace();</div><div class="line">			&#125; <span class="keyword">finally</span> &#123;</div><div class="line">				<span class="keyword">try</span> &#123;</div><div class="line">					<span class="keyword">if</span> (socket != <span class="keyword">null</span> &amp;&amp; socket.isClosed() == <span class="keyword">false</span>) &#123;</div><div class="line">						socket.close();</div><div class="line">					&#125;</div><div class="line">				&#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">					e.printStackTrace();</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line"></div><div class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123; <span class="comment">// 서버소켓과 관련된 캐치</span></div><div class="line">			e.printStackTrace();</div><div class="line">		&#125; <span class="keyword">finally</span> &#123;</div><div class="line">			<span class="keyword">try</span> &#123;</div><div class="line">				<span class="keyword">if</span> (serverSocket != <span class="keyword">null</span> &amp;&amp; serverSocket.isClosed() == <span class="keyword">false</span>) &#123;</div><div class="line">					serverSocket.close();</div><div class="line">				&#125;</div><div class="line">			&#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><figcaption><span>EchoClient.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EchoClient</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String SERVER_IP = <span class="string">"192.168.111.1"</span>;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> SERVER_PORT = <span class="number">5000</span>;</div><div class="line">	<span class="keyword">static</span> Scanner scanner;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Socket socket = <span class="keyword">null</span>;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line"></div><div class="line">			<span class="comment">// 1. Socket 생성</span></div><div class="line">			socket = <span class="keyword">new</span> Socket();</div><div class="line"></div><div class="line">			<span class="comment">// 2. 서버 연결</span></div><div class="line">			socket.connect(<span class="keyword">new</span> InetSocketAddress(SERVER_IP, SERVER_PORT));</div><div class="line"></div><div class="line">			<span class="comment">// 3. I/O 받아오기</span></div><div class="line">			BufferedReader br =</div><div class="line">					<span class="keyword">new</span> BufferedReader( <span class="keyword">new</span> InputStreamReader(socket.getInputStream()));</div><div class="line">			PrintWriter pw = <span class="keyword">new</span> PrintWriter( <span class="keyword">new</span> OutputStreamWriter(socket.getOutputStream(),<span class="string">"UTF-8"</span>),<span class="keyword">true</span>);</div><div class="line"></div><div class="line">			<span class="comment">// 4. 쓰기 / 읽기</span></div><div class="line">			 scanner = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">			<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</div><div class="line">				System.out.print( <span class="string">"&gt;&gt;"</span> );</div><div class="line">				String message = scanner.nextLine();</div><div class="line"></div><div class="line">				<span class="keyword">if</span>(<span class="string">"exit"</span>.equals(message)) &#123;</div><div class="line">					<span class="keyword">break</span>;</div><div class="line">				&#125;</div><div class="line"></div><div class="line">				<span class="comment">//메세지 보내기</span></div><div class="line">				pw.println( message );</div><div class="line"></div><div class="line">				<span class="comment">//에코 메시지 받기</span></div><div class="line">				String echoMessage = br.readLine();</div><div class="line">				<span class="keyword">if</span>( echoMessage == <span class="keyword">null</span>) &#123;</div><div class="line">					System.out.println(<span class="string">"[client] Disconnection by Server"</span>);</div><div class="line">				&#125;</div><div class="line"></div><div class="line">				<span class="comment">//출력</span></div><div class="line">				System.out.println( <span class="string">"&lt;&lt;"</span> + echoMessage );</div><div class="line"></div><div class="line">			&#125;</div><div class="line"></div><div class="line"></div><div class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125; <span class="keyword">finally</span> &#123;</div><div class="line">			<span class="keyword">try</span> &#123;</div><div class="line">				<span class="keyword">if</span> (socket != <span class="keyword">null</span> &amp;&amp; socket.isClosed() == <span class="keyword">false</span>) &#123;</div><div class="line">					socket.close();</div><div class="line">				&#125;</div><div class="line">			&#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line">			scanner.close();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://KKimSangHeon.github.io/2017/08/09/bigdata10/" data-id="cj64tb808005ilcv7p1u1t6te" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/KKimSangHeon/" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/tkdgjs1501/" target="_blank">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/08/09/bigdata11/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            10.쓰레드
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2017/08/07/bigdata9/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">8. 네트워크와 소켓의 이해</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 Kim Sang Heon</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'https-kkimsangheon-github-io-2';
+    
+    
+    var disqus_url = 'http://KKimSangHeon.github.io/2017/08/09/bigdata10/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
