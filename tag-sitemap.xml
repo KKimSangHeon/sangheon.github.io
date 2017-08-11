@@ -2,34 +2,6 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/C/</loc>
-        <lastmod>2017-06-30T03:32:36.202Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/Socket/</loc>
-        <lastmod>2017-06-30T03:32:36.202Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/Music-Share/</loc>
-        <lastmod>2017-06-30T03:32:36.202Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/Ubuntu/</loc>
-        <lastmod>2017-06-30T03:32:36.202Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/%EC%B0%BD%EC%97%85%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C/</loc>
         <lastmod>2017-06-30T04:32:05.752Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -135,13 +107,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Linux/</loc>
-        <lastmod>2017-07-16T14:03:03.582Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/This-Is-Linux/</loc>
         <lastmod>2017-07-16T14:03:03.582Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -149,50 +114,8 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Node-js/</loc>
-        <lastmod>2017-07-20T07:06:31.615Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/Kakao-talk-open-API/</loc>
-        <lastmod>2017-07-20T07:06:31.615Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/%EC%B1%97%EB%B4%87/</loc>
-        <lastmod>2017-07-20T07:06:31.615Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/MySQL/</loc>
-        <lastmod>2017-07-20T07:06:31.615Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/CentOS/</loc>
-        <lastmod>2017-07-20T07:06:31.615Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/Linux-Error/</loc>
         <lastmod>2017-07-21T05:56:56.452Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/Java/</loc>
-        <lastmod>2017-08-09T04:41:54.150Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -212,15 +135,113 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/tags/Java/</loc>
+        <lastmod>2017-08-11T04:36:14.025Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Data-Base/</loc>
+        <lastmod>2017-08-11T05:34:50.447Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/%EC%97%90%EB%84%88%EC%A7%80-%ED%95%B4%EC%BB%A4%ED%86%A4/</loc>
+        <lastmod>2017-08-11T06:06:16.469Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/ID-%ED%95%B4%EC%BB%A4%ED%86%A4/</loc>
+        <lastmod>2017-08-11T06:15:14.135Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/C/</loc>
+        <lastmod>2017-08-11T06:17:27.853Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Socket/</loc>
+        <lastmod>2017-08-11T06:17:27.853Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Music-Share/</loc>
+        <lastmod>2017-08-11T06:17:27.853Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Ubuntu/</loc>
+        <lastmod>2017-08-11T06:17:27.853Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/tags/Android/</loc>
-        <lastmod>2017-08-09T09:28:09.395Z</lastmod>
+        <lastmod>2017-08-11T06:19:57.080Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://KKimSangHeon.github.io/tags/%EA%B3%A0%EB%8F%85%EC%82%AC-%EA%B0%90%EC%86%8C/</loc>
-        <lastmod>2017-08-09T09:28:09.395Z</lastmod>
+        <lastmod>2017-08-11T06:19:57.080Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Node-js/</loc>
+        <lastmod>2017-08-11T06:28:04.258Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Kakao-talk-open-API/</loc>
+        <lastmod>2017-08-11T06:28:04.258Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/%EC%B1%97%EB%B4%87/</loc>
+        <lastmod>2017-08-11T06:28:04.258Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/MySQL/</loc>
+        <lastmod>2017-08-11T06:28:04.258Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/CentOS/</loc>
+        <lastmod>2017-08-11T06:28:04.258Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Linux/</loc>
+        <lastmod>2017-08-11T06:28:37.858Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
