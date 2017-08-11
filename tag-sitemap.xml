@@ -135,13 +135,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Data-Base/</loc>
-        <lastmod>2017-08-11T05:34:50.447Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/%EC%97%90%EB%84%88%EC%A7%80-%ED%95%B4%EC%BB%A4%ED%86%A4/</loc>
         <lastmod>2017-08-11T06:06:16.469Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -249,6 +242,13 @@
     <url>
         <loc>http://KKimSangHeon.github.io/tags/Sang-Heon-Kim/</loc>
         <lastmod>2017-08-11T07:21:52.350Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Data-Base/</loc>
+        <lastmod>2017-08-11T07:36:08.203Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
