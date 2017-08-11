@@ -184,13 +184,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Android/</loc>
-        <lastmod>2017-08-11T06:19:57.080Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/%EA%B3%A0%EB%8F%85%EC%82%AC-%EA%B0%90%EC%86%8C/</loc>
         <lastmod>2017-08-11T06:19:57.080Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -242,6 +235,20 @@
     <url>
         <loc>http://KKimSangHeon.github.io/tags/CentOS/</loc>
         <lastmod>2017-08-11T06:45:52.459Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Android/</loc>
+        <lastmod>2017-08-11T07:13:18.046Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/NFC/</loc>
+        <lastmod>2017-08-11T07:13:18.046Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

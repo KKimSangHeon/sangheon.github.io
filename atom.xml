@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-08-11T06:45:52.459Z</updated>
+  <updated>2017-08-11T07:13:18.046Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Whole in 밴드</title>
+    <link href="http://KKimSangHeon.github.io/2017/08/11/wholin/"/>
+    <id>http://KKimSangHeon.github.io/2017/08/11/wholin/</id>
+    <published>2017-08-11T06:55:24.000Z</published>
+    <updated>2017-08-11T07:13:18.046Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="App-소개-및-개발배경"><a href="#App-소개-및-개발배경" class="headerlink" title="App 소개 및 개발배경"></a>App 소개 및 개발배경</h1><p>-GIF 2016 에 참가하면서 개발하였던 어플리케이션 입니다. 주제는 성공적인 개최를 위한 IOT 서비스 활용방안이였으며 저희팀은 NFC를 이용하여 국적별 다용도로 활용할 수 있는 팔찌(Wholin 밴드)를 제작하였습니다.<br>프로토 타입 어플리케이션이므로 밴드를 통한 국적별 메뉴판 조회, 음식주문 기능을 구현하였습니다.</p>
+<h1 id="밴드소개"><a href="#밴드소개" class="headerlink" title="밴드소개"></a>밴드소개</h1><img src="/2017/08/11/wholin/band.PNG" alt="밴드소개" title="밴드소개">
+<p>밴드 속에는 NFC칩이 존재하며 메뉴주문 및 결제, 사각지대 VR 생중계 등의 기능을 제공하며 프로토 타입이므로 국적별 메뉴판 조회기능만 제공합니다.</p>
+<h1 id="작동화면"><a href="#작동화면" class="headerlink" title="작동화면"></a>작동화면</h1><img src="/2017/08/11/wholin/work1.PNG" alt="작동화면" title="작동화면">
+<p>처음 언어를 설정하고 자신의 기본정보를 입력하고 추가정보를 입력후 밴드를 스마트폰에 갖다대면 밴드 등록이 완료됩니다.</p>
+<p>-시연영상<br><div class="video-container"><iframe src="//www.youtube.com/embed/eBBswuTXMxY" frameborder="0" allowfullscreen></iframe></div><br><a href="https://github.com/KKimSangHeon/Wholin_Band" target="_blank" rel="external">github Repository</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;App-소개-및-개발배경&quot;&gt;&lt;a href=&quot;#App-소개-및-개발배경&quot; class=&quot;headerlink&quot; title=&quot;App 소개 및 개발배경&quot;&gt;&lt;/a&gt;App 소개 및 개발배경&lt;/h1&gt;&lt;p&gt;-GIF 2016 에 참가하면서 개발하였던 어플
+    
+    </summary>
+    
+      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
+    
+      <category term="My Projects" scheme="http://KKimSangHeon.github.io/categories/About-Me/My-Projects/"/>
+    
+    
+      <category term="Android" scheme="http://KKimSangHeon.github.io/tags/Android/"/>
+    
+      <category term="NFC" scheme="http://KKimSangHeon.github.io/tags/NFC/"/>
+    
+  </entry>
   
   <entry>
     <title>동국대학교 경주캠퍼스 채팅봇</title>
@@ -705,52 +737,6 @@
     <summary type="html">
     
       &lt;p&gt;Centos를 100개 깔아야 하는 상황에는 여러가지 방법이 있겠지만 PXE 설치서버를 구성해놓는다면 쉽게 설치가 가능하다!&lt;br&gt;1.DHCP 서버, TFTP 서버, syslinux부팅파일, FTP 또는 웹서버를 PXE 설치 서버에 구성해 놓는다
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
-    
-      <category term="이것이 리눅스다" scheme="http://KKimSangHeon.github.io/categories/Linux/%EC%9D%B4%EA%B2%83%EC%9D%B4-%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8B%A4/"/>
-    
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
-    
-      <category term="This Is Linux" scheme="http://KKimSangHeon.github.io/tags/This-Is-Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>18장. 방화벽 컴퓨터를 만들자</title>
-    <link href="http://KKimSangHeon.github.io/2017/07/16/ThisIsLinux41/"/>
-    <id>http://KKimSangHeon.github.io/2017/07/16/ThisIsLinux41/</id>
-    <published>2017-07-16T02:04:12.000Z</published>
-    <updated>2017-07-16T04:31:45.506Z</updated>
-    
-    <content type="html"><![CDATA[<p>방화벽은 내부, 외부를 차단해주는 장비 또는 컴퓨터라고 생각하면 된다. 방화벽으로 인해 외부에서 내부 네트워크로 함부러 침입할 수 없다. 그 기법중 많이 쓰이는 것이 사설IP이다.<br>방화벽 컴퓨터는 랜카드가 두개여야 된다. 내부와 결합되는(사설 IP) 랜카드 외부와 연결되는 랜카드(공인IP)</p>
-<p>실습에서 192.168.xxx는 공인 ip<br>10.1.xxx 는 내부ip로 사용한다<br>책 737을 통해 네트워크 구성을 확인하자</p>
-<h4 id="1-서버-B-설정-웹서버로-사용할것임"><a href="#1-서버-B-설정-웹서버로-사용할것임" class="headerlink" title="1. 서버 B 설정(웹서버로 사용할것임)"></a>1. 서버 B 설정(웹서버로 사용할것임)</h4><p>서버B의 네트워크 세팅에 들어가서 네트워크 어댑터 클릭 후 Bridged 클릭<br>그러면 네트워크가 Bridged네트워크 안으로 들어옴(사설ip로 사용하기로 함)<br>그 후 ip를 변경하자</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># nmtui edit ens32</div><div class="line">Address를 10.1.1.20/24로 변경</div><div class="line">Gateway를 10.1.1.1로 변경</div><div class="line">Dns 168.126.63.1로 변경  //kt에서 운영하는 dns 서버</div><div class="line">ok버튼</div><div class="line"># reboot</div><div class="line"></div><div class="line"># ip addr</div><div class="line"> inet이 10.1.1.20 인지 확인</div></pre></td></tr></table></figure>
-<h4 id="2-클라이언트-설정-클라이언트에서-실행"><a href="#2-클라이언트-설정-클라이언트에서-실행" class="headerlink" title="2. 클라이언트 설정(클라이언트에서 실행)"></a>2. 클라이언트 설정(클라이언트에서 실행)</h4><p>클라이언트의 네트워크 세팅에 들어가서 네트워크 어댑터 클릭 후 Bridged 클릭 그러면 네트워크가 Bridged네트워크 안으로 들어옴<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># nmtui edit ens33</div><div class="line">IPv4 CONFIGURATION을 Manual로 바꾸고 Show 엔터</div><div class="line">Address를 10.1.1.10/24</div><div class="line">Gateway는 10.1.1.1</div><div class="line">DNS Server는 168.126.63.1  </div><div class="line">OK 엔터</div><div class="line"># reboot</div><div class="line"></div><div class="line"># ip addr</div></pre></td></tr></table></figure></p>
-<h4 id="3-서버B-클라이언트-사설네트워크-테스트"><a href="#3-서버B-클라이언트-사설네트워크-테스트" class="headerlink" title="3. 서버B,클라이언트 사설네트워크 테스트"></a>3. 서버B,클라이언트 사설네트워크 테스트</h4><p>현재까지 구현한것(서버B,클라이언트)은 게이트웨이가 구현되어있지 않으므로 외부로 나갈 수 없다. 하지만 사설네트워크로 안에서는 연결되어 있으므로 ping이 왔다갔다 하는지 확인해보자</p>
-<p>클라이언트에서 실행<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># ping -c 3  10.1.1.20</div></pre></td></tr></table></figure></p>
-<h4 id="4-서버-구성-서버에서-실행"><a href="#4-서버-구성-서버에서-실행" class="headerlink" title="4. 서버 구성(서버에서 실행)"></a>4. 서버 구성(서버에서 실행)</h4><h4 id="4-1-랜카드-하나가-외부로-연결-잘-되어있는지-확인해보자"><a href="#4-1-랜카드-하나가-외부로-연결-잘-되어있는지-확인해보자" class="headerlink" title="4.1 랜카드 하나가 외부로 연결 잘 되어있는지 확인해보자"></a>4.1 랜카드 하나가 외부로 연결 잘 되어있는지 확인해보자</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># nmtui edit ens32</div><div class="line">게이트웨이, DNS Servers가 192.168.111.2로 잘 되어있다.</div><div class="line"># halt -p</div></pre></td></tr></table></figure>
-<p>서버에 랜카드를 하나 더 달자.<br>vmware 워크스테이션에서 Edit virtual machins settings를 눌러 Add 후 Network Adapter 선택 다음 후 Bridged 선택하고 Finish 그 후 부팅<br>추가한 장치가 ens32인지 확인해보자<br>날짜 옆에 랜카드 모양을 누르면 ens34가 추가되어 있다. 네트워크설정 클릭 후 오른쪽 아래 톱니모양(유선연결1)을 누르고 신원을 누르자. 그 후 ens34로 입력하자<br>다음 IPv4를 선택하여 자동을 수동으로 변경하자<br>그 후 주소 10.1.1.1<br>네트마스크 255.255.255.0<br>게이트웨이 10.1.1.1<br>네임서버 끄자<br>IPv6로 가서 끄자<br>이제 적용을 누르고 재부팅하자</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># vi /etc/sysconfig/network-scripts/ifcfg-ens34</div><div class="line">6,7행 지워버리기</div><div class="line"># systemctl restart network</div><div class="line"># ifconfig</div><div class="line">ens32 는 192.168.111.100번으로 ens34는 10.1.1.1</div></pre></td></tr></table></figure>
-<p>이제 하드웨어 설정은 끝났다</p>
-<h4 id="5-클라이언트에서-핑을-날려보자"><a href="#5-클라이언트에서-핑을-날려보자" class="headerlink" title="5. 클라이언트에서 핑을 날려보자"></a>5. 클라이언트에서 핑을 날려보자</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># ping 10.1.1.1</div></pre></td></tr></table></figure>
-<h4 id="6-서버에-정책을-적용시켜보자"><a href="#6-서버에-정책을-적용시켜보자" class="headerlink" title="6. 서버에 정책을 적용시켜보자"></a>6. 서버에 정책을 적용시켜보자</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"># vi /etc/sysctl.conf</div><div class="line">net.ipv4.ip_foward=1 맨아래 입력</div><div class="line"></div><div class="line"># echo 1 &gt; /proc/sys/net/ipv4/ip_forward</div><div class="line">      //아무 메세지 안나오면 성공</div><div class="line"># cat /proc/sys/net/ipv4/ip_forward</div><div class="line">      //1출력됨</div><div class="line"></div><div class="line">포워딩성공!</div><div class="line"></div><div class="line"># iptables --policy FORWARD DROP</div><div class="line"># iptables --policy INPUT DROP</div><div class="line"># iptables --policy OUTPUT DROP</div><div class="line"></div><div class="line">ens34 장치를 설정해주자</div><div class="line">input 설정</div><div class="line"># iptables --append INPUT --in-interface ens34 --source 10.1.1.0/24 --match state --state NEW,ESTABLISHED --jump ACCEPT</div><div class="line"></div><div class="line">output 설정</div><div class="line"># iptables --append OUTPUT --out-interface ens34 --destination 10.1.1.0/24 --match state --state NEW,ESTABLISHED --jump ACCEPT</div><div class="line"></div><div class="line"># iptables --append FORWARD --in-interface ens34 --source 10.1.1.0/24 --destination 0.0.0.0/0 --match state --state NEW,ESTABLISHED --jump ACCEPT</div><div class="line"></div><div class="line">ens32 설정</div><div class="line"># iptables --append FORWARD --in-interface ens32 --destination 10.1.1.0/24 --match state --state ESTABLISHED --jump ACCEPT</div><div class="line"></div><div class="line"># iptables --table nat --append POSTROUTING --out-interface ens32 --jump MASQUERADE</div><div class="line"></div><div class="line">설정한것 저장</div><div class="line"># service iptables save</div><div class="line"># firewall-config</div><div class="line">영구적 - 마스커레이딩 - 마스커레이딩영역 체크 - 옵션 다시불러오기</div></pre></td></tr></table></figure>
-<h4 id="7-클라이언트에서-인터넷-해보자"><a href="#7-클라이언트에서-인터넷-해보자" class="headerlink" title="7.클라이언트에서 인터넷 해보자"></a>7.클라이언트에서 인터넷 해보자</h4><p>이 경우 클라이언트는 자신의 ip(10.1.1.0)이 아닌 Server IP(192.168.111.100)으로 접속하게 된다. 이를 확인해보자</p>
-<h4 id="7-1-윈-클라이언트를-켜자"><a href="#7-1-윈-클라이언트를-켜자" class="headerlink" title="7.1 윈 클라이언트를 켜자"></a>7.1 윈 클라이언트를 켜자</h4><p>파일질라서버를 카페에서 받자<br>에딧 -유저- 오른쪽add -centos 입력- password centos -ok<br>왼쪽 add 아무 디렉토리 선택- write/delete 선택 -ok<br>cmd 열고 netsh advfirewall firewall add rule name=”FTP서버” dir=in action=allow protocol=tcp localport=21<br>방화벽 설정 입력<br>ipconfig<br>아이피를 기억하자 (지금은 192.168.111.128임)</p>
-<h4 id="7-2-클라이언트에서-FTP-접속해보자"><a href="#7-2-클라이언트에서-FTP-접속해보자" class="headerlink" title="7.2 클라이언트에서 FTP 접속해보자"></a>7.2 클라이언트에서 FTP 접속해보자</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># su</div><div class="line"># yum -y install ftp</div><div class="line"># ftp 192.168.111.128</div><div class="line">centos</div><div class="line">centos</div><div class="line">&gt;pwd</div><div class="line">&gt;ls</div></pre></td></tr></table></figure>
-<h4 id="7-3-윈도우-클라이언트에서-누가-접속했는지-확인해보자"><a href="#7-3-윈도우-클라이언트에서-누가-접속했는지-확인해보자" class="headerlink" title="7.3 윈도우 클라이언트에서 누가 접속했는지 확인해보자"></a>7.3 윈도우 클라이언트에서 누가 접속했는지 확인해보자</h4><p>netstat /an<br>찾다 보면 192.168.111.100이 들어온것을 확인할 수 있다.<br>즉 사설네트워크 컴퓨터는 외부로 나갈 때 192.168.111.100으로 나간다!</p>
-<h4 id="8-서버B를-웹서버로-만들고-윈-클라이언트로-접속해보자"><a href="#8-서버B를-웹서버로-만들고-윈-클라이언트로-접속해보자" class="headerlink" title="8. 서버B를 웹서버로 만들고 윈 클라이언트로 접속해보자"></a>8. 서버B를 웹서버로 만들고 윈 클라이언트로 접속해보자</h4><h4 id="8-1-서버-B에서-실행"><a href="#8-1-서버-B에서-실행" class="headerlink" title="8.1 서버 B에서 실행"></a>8.1 서버 B에서 실행</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"># yum -y install httpd</div><div class="line"># firewall-cmd --add-service=http    //포트열자</div><div class="line"># cd /var/www/html</div><div class="line"># touch index.html</div><div class="line"># vi index.html</div><div class="line">Centos7-Web Server 입력</div><div class="line">저장 후 종료</div><div class="line"></div><div class="line"># systemctl restart httpd</div><div class="line"># systemctl enable httpd</div></pre></td></tr></table></figure>
-<h4 id="8-2-서버에서-80번-포트로-연결오면-서버-B로-연결해라를-설정"><a href="#8-2-서버에서-80번-포트로-연결오면-서버-B로-연결해라를-설정" class="headerlink" title="8.2 서버에서 80번 포트로 연결오면 서버 B로 연결해라를 설정"></a>8.2 서버에서 80번 포트로 연결오면 서버 B로 연결해라를 설정</h4><p>서버에서 실행<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># iptables --table nat --append PREROUTING --proto tcp --in-interface ens32 --dport 80 --jump DNAT --to-destination 10.1.1.20</div><div class="line"># service iptables save   //저장</div></pre></td></tr></table></figure></p>
-<h4 id="8-3-윈도우-클라이언트에서-접속해보자"><a href="#8-3-윈도우-클라이언트에서-접속해보자" class="headerlink" title="8.3 윈도우 클라이언트에서 접속해보자"></a>8.3 윈도우 클라이언트에서 접속해보자</h4><p>192.168.111.100 으로 접속하자</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;방화벽은 내부, 외부를 차단해주는 장비 또는 컴퓨터라고 생각하면 된다. 방화벽으로 인해 외부에서 내부 네트워크로 함부러 침입할 수 없다. 그 기법중 많이 쓰이는 것이 사설IP이다.&lt;br&gt;방화벽 컴퓨터는 랜카드가 두개여야 된다. 내부와 결합되는(사
     
     </summary>
     
