@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2017/06/29/about-me/</loc>
+        <lastmod>2017-08-11T07:21:52.350Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2017/08/11/wholin/</loc>
         <lastmod>2017-08-11T07:13:18.046Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -17,14 +25,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2017/08/11/dg-chat-bot/</loc>
         <lastmod>2017-08-11T06:45:52.459Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2017/06/29/about-me/</loc>
-        <lastmod>2017-08-11T06:36:17.538Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

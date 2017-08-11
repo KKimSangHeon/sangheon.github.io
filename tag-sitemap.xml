@@ -198,13 +198,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Sang-Heon-Kim/</loc>
-        <lastmod>2017-08-11T06:36:17.538Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/Node-js/</loc>
         <lastmod>2017-08-11T06:45:52.459Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -249,6 +242,13 @@
     <url>
         <loc>http://KKimSangHeon.github.io/tags/NFC/</loc>
         <lastmod>2017-08-11T07:13:18.046Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Sang-Heon-Kim/</loc>
+        <lastmod>2017-08-11T07:21:52.350Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
