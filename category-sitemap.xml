@@ -63,13 +63,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/About-Me/My-Projects/</loc>
-        <lastmod>2017-08-11T06:28:04.258Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/categories/Linux/</loc>
         <lastmod>2017-08-11T06:28:37.858Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -84,15 +77,22 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/About-Me/</loc>
+        <loc>http://KKimSangHeon.github.io/categories/About-Me/Introduction/</loc>
         <lastmod>2017-08-11T06:36:17.538Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/About-Me/Introduction/</loc>
-        <lastmod>2017-08-11T06:36:17.538Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/categories/About-Me/</loc>
+        <lastmod>2017-08-11T06:45:52.459Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/About-Me/My-Projects/</loc>
+        <lastmod>2017-08-11T06:45:52.459Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
