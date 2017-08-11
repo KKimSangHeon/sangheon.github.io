@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2017/06/29/about-me/</loc>
+        <lastmod>2017-08-11T06:36:17.538Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2017/07/17/Chat-Bot/</loc>
         <lastmod>2017-08-11T06:28:37.858Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -497,14 +505,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2017/07/03/ThisIsLinux5/</loc>
         <lastmod>2017-07-03T04:32:32.265Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2017/06/29/about-me/</loc>
-        <lastmod>2017-07-02T15:57:59.299Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

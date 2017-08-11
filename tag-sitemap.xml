@@ -86,13 +86,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Sang-Heon-Kim/</loc>
-        <lastmod>2017-07-02T15:57:59.299Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/%EC%9E%91%EC%84%B1-%EB%85%BC%EB%AC%B8/</loc>
         <lastmod>2017-07-07T00:51:51.519Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -242,6 +235,13 @@
     <url>
         <loc>http://KKimSangHeon.github.io/tags/Linux/</loc>
         <lastmod>2017-08-11T06:28:37.858Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Sang-Heon-Kim/</loc>
+        <lastmod>2017-08-11T06:36:17.538Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
