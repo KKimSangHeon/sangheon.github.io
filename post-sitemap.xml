@@ -7,8 +7,8 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/2017/06/29/about-me/</loc>
-        <lastmod>2017-08-11T13:11:59.886Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/2017/08/16/database2/</loc>
+        <lastmod>2017-08-16T01:58:34.050Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +16,15 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2017/08/11/database1/</loc>
-        <lastmod>2017-08-11T07:36:08.203Z</lastmod>
+        <lastmod>2017-08-16T00:08:01.330Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/06/29/about-me/</loc>
+        <lastmod>2017-08-11T13:11:59.886Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
