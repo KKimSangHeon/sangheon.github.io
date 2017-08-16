@@ -3,26 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>4장. 시작과종료, 가상콘솔, 런레벨, 자동완성 | Kim Sang Heon&#39;s Bolg</title>
+    <title>SELECT문 | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Linux,This Is Linux" />
+        <meta name="keywords" content="Data Base" />
     
     
 
-      <meta name="description" content="참고사항lrwxrwxrwx. 어쩌구가 있을경우 맨앞의 l은 링크파일임을 의미한다. 윈도우의 바로가기를 생각하자! 종료관련 명령어리눅스는 기본개념이 멀티유저 이므로 함부러 누군가 종료하거나 재시작하면 문제의 소지가 있다. ex) 네이버 서버를 누군가 종료시킨다면? 리눅스를 서버로 사용할 경우 리눅스는 종료가 아닌 로그아웃이 일반적인 개념이다! 12345678">
-<meta name="keywords" content="Linux,This Is Linux">
+      <meta name="description" content="SELECT FIRST_NAME || ‘ ‘ || LAST_NAME AS NAME FROM EMPLOYEES;                           ||은 CONCAT SELECT SALARY AS “본봉”, SALARY + SALARY * 0.3 AS “보너스”FROM EMPLOYEES; SELECT -SALARY FROM EMPLOYEES; N">
+<meta name="keywords" content="Data Base">
 <meta property="og:type" content="article">
-<meta property="og:title" content="4장. 시작과종료, 가상콘솔, 런레벨, 자동완성">
-<meta property="og:url" content="http://KKimSangHeon.github.io/2017/07/01/ThisIsLinux2/index.html">
+<meta property="og:title" content="SELECT문">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2017/08/16/database3/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="참고사항lrwxrwxrwx. 어쩌구가 있을경우 맨앞의 l은 링크파일임을 의미한다. 윈도우의 바로가기를 생각하자! 종료관련 명령어리눅스는 기본개념이 멀티유저 이므로 함부러 누군가 종료하거나 재시작하면 문제의 소지가 있다. ex) 네이버 서버를 누군가 종료시킨다면? 리눅스를 서버로 사용할 경우 리눅스는 종료가 아닌 로그아웃이 일반적인 개념이다! 12345678">
-<meta property="og:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
-<meta property="og:updated_time" content="2017-07-02T04:12:47.584Z">
+<meta property="og:description" content="SELECT FIRST_NAME || ‘ ‘ || LAST_NAME AS NAME FROM EMPLOYEES;                           ||은 CONCAT SELECT SALARY AS “본봉”, SALARY + SALARY * 0.3 AS “보너스”FROM EMPLOYEES; SELECT -SALARY FROM EMPLOYEES; N">
+<meta property="og:image" content="http://kkimsangheon.github.io/images/db.jpg">
+<meta property="og:updated_time" content="2017-08-16T06:43:57.501Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="4장. 시작과종료, 가상콘솔, 런레벨, 자동완성">
-<meta name="twitter:description" content="참고사항lrwxrwxrwx. 어쩌구가 있을경우 맨앞의 l은 링크파일임을 의미한다. 윈도우의 바로가기를 생각하자! 종료관련 명령어리눅스는 기본개념이 멀티유저 이므로 함부러 누군가 종료하거나 재시작하면 문제의 소지가 있다. ex) 네이버 서버를 누군가 종료시킨다면? 리눅스를 서버로 사용할 경우 리눅스는 종료가 아닌 로그아웃이 일반적인 개념이다! 12345678">
-<meta name="twitter:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
+<meta name="twitter:title" content="SELECT문">
+<meta name="twitter:description" content="SELECT FIRST_NAME || ‘ ‘ || LAST_NAME AS NAME FROM EMPLOYEES;                           ||은 CONCAT SELECT SALARY AS “본봉”, SALARY + SALARY * 0.3 AS “보너스”FROM EMPLOYEES; SELECT -SALARY FROM EMPLOYEES; N">
+<meta name="twitter:image" content="http://kkimsangheon.github.io/images/db.jpg">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
 
@@ -134,18 +134,18 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Linux/">Linux</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a>
+    <a class="page-title-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-ThisIsLinux2" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-database3" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        4장. 시작과종료, 가상콘솔, 런레벨, 자동완성
+        SELECT문
         </h1>
     
 
@@ -155,29 +155,41 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/07/01/ThisIsLinux2/" class="article-date">
-            <time datetime="2017-07-01T13:53:50.000Z" itemprop="datePublished">2017-07-01</time>
+        <a href="/2017/08/16/database3/" class="article-date">
+            <time datetime="2017-08-16T04:19:24.000Z" itemprop="datePublished">2017-08-16</time>
         </a>
     </div>
 
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Linux/">Linux</a>, <a class="tag-link" href="/tags/This-Is-Linux/">This Is Linux</a>
+        <a class="tag-link" href="/tags/Data-Base/">Data Base</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="참고사항"><a href="#참고사항" class="headerlink" title="참고사항"></a>참고사항</h3><p>lrwxrwxrwx. 어쩌구가 있을경우 맨앞의 l은 링크파일임을 의미한다. 윈도우의 바로가기를 생각하자!</p>
-<h3 id="종료관련-명령어"><a href="#종료관련-명령어" class="headerlink" title="종료관련 명령어"></a>종료관련 명령어</h3><p>리눅스는 기본개념이 멀티유저 이므로 함부러 누군가 종료하거나 재시작하면 문제의 소지가 있다. ex) 네이버 서버를 누군가 종료시킨다면?</p>
-<p>리눅스를 서버로 사용할 경우 리눅스는 종료가 아닌 로그아웃이 일반적인 개념이다!</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">$ shutdown -P now // 종료</div><div class="line"></div><div class="line">$ shutdown -P +10 //10분후에 종료</div><div class="line"></div><div class="line">$ shutdown -c //종료예약한것 취소</div><div class="line"></div><div class="line">$ shutdown -r 23:00 //23시에 재부팅</div><div class="line"></div><div class="line">$ shutdown -r +10 //10분후에 재부팅</div><div class="line"></div><div class="line">$ shutdown -c // 리부팅예약한것 취소</div><div class="line"></div><div class="line">$ shutdown -k +15  //20분 후에 종료된다는 메세지가 날라감</div><div class="line">                  //루트를 제외한 모든 사용자에게..</div><div class="line">                  //실제 종료는 안됨.</div><div class="line">                  //필요한 이유: 서버에 많은 사용자가 접속하였을 경우 사용자들의 로그아웃을 유도.</div><div class="line"></div><div class="line">$ init 0~6        // 0-종료모드 2-멀티유저모드 5-그래픽모드의 다중사용자모드 6-리부트모드</div><div class="line"></div><div class="line">$ startx      //x윈도우 모드로 변경</div><div class="line">              주의) 예로 단순히 init4에서 init1로가는것과 다르다.</div><div class="line">              //명령어 모드에서 x윈도우 모드로 변경되는것</div></pre></td></tr></table></figure>
-<h3 id="가상콘솔-명령어"><a href="#가상콘솔-명령어" class="headerlink" title="가상콘솔 명령어"></a>가상콘솔 명령어</h3><p>CentOS는 6개의 가상콘솔을 제공하는데 ctrl+alt+F2~F6으로 이동이 가능하다. F1은 X윈도우 모드이다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ chvt 1~6 입력 //가상콘솔 이동</div></pre></td></tr></table></figure>
-<h3 id="자동완성"><a href="#자동완성" class="headerlink" title="자동완성"></a>자동완성</h3><p>일부만 입력하고 탭을 누르면 자동완성된다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$ /abcdef</div><div class="line">를 입력하고자 할 경우</div><div class="line"></div><div class="line">$ /abc</div><div class="line">만 입력하고 탭키를 누르면</div><div class="line">$ /abcdef 가 입력된다.</div><div class="line"></div><div class="line">먄약 abcde, abcdef 라는 디렉토리가 존재할 경우에는</div><div class="line">$ /abc</div><div class="line">입력 후 탭키를 누르면 자동완성이 되지않는다. 이 경우 탭키를 두번누르면 abcde, abcdef 라는 디렉토리가 있다는 사실을 알려준다.</div></pre></td></tr></table></figure></p>
-<h3 id="히스토리"><a href="#히스토리" class="headerlink" title="히스토리"></a>히스토리</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ history //자신이 입력했던 명령어들이 출력된다.</div><div class="line"></div><div class="line">$ history //히스토리 리스트를 제거한다.</div></pre></td></tr></table></figure>
+            <p>SELECT FIRST_NAME || ‘ ‘ || LAST_NAME AS NAME FROM EMPLOYEES;<br>                           ||은 CONCAT</p>
+<p>SELECT SALARY AS “본봉”, SALARY + SALARY * 0.3 AS “보너스”<br>FROM EMPLOYEES;</p>
+<p>SELECT -SALARY FROM EMPLOYEES;</p>
+<h4 id="NVL-NVL2"><a href="#NVL-NVL2" class="headerlink" title="NVL, NVL2"></a>NVL, NVL2</h4><p>SELECT EMPLOYEE_ID,<br>       NVL(MANAGER_ID,’0’)<br>FROM EMPLOYEES;<br>        NVL함수 내의 두 형태는 같아야함</p>
+<p>SELECT NVL(NULL, ‘0’) FROM DUAL;</p>
+<p>SELECT NVL2(NULL,10, 20) FROM DUAL;<br>–NULL이면 10</p>
+<p>SELECT NVL2(0, 10, 20) FROM DUAL;<br>–NULL이 아니면 20</p>
+<p>SELECT SALARY AS “본봉”,<br>       SALARY + SALARY * NVL(COMMISSION_PCT,0)<br>       AS “보너스”<br>FROM EMPLOYEES;</p>
+<p>SELECT SALARY AS “본봉”,<br>       NVL2(COMMISSION_PCT,SALARY + SALARY * COMMISSION_PCT, SALARY)<br>       AS “보너스”<br>FROM EMPLOYEES;</p>
+<h4 id="SYSDATE"><a href="#SYSDATE" class="headerlink" title="SYSDATE"></a>SYSDATE</h4><p>SELECT SYSDATE FROM DUAL;</p>
+<p>SELECT JOB_ID<br>FROM EMPLOYEES<br>WHERE JOB_ID = ‘AD_PRES’<br>   OR JOB_ID = ‘AD_VP’;</p>
+<h4 id="IN"><a href="#IN" class="headerlink" title="IN"></a>IN</h4><p>SELECT JOB_ID<br>FROM EMPLOYEES<br>WHERE JOB_ID IN(‘AD_PRES’,’AD_VP’);</p>
+<h4 id="BETWEEN"><a href="#BETWEEN" class="headerlink" title="BETWEEN"></a>BETWEEN</h4><p>SELECT EMPLOYEE_ID,<br>         SALARY<br>FROM   EMPLOYEES<br>WHERE  SALARY BETWEEN 10000  AND SALARY  ;</p>
+<h4 id="IS-NULL"><a href="#IS-NULL" class="headerlink" title="IS NULL"></a>IS NULL</h4><p>SELECT EMPLOYEE_ID,<br>       COMMISSION_PCT<br>FROM   EMPLOYEES<br>WHERE  COMMISSION_PCT IS NULL;        </p>
+<h4 id="LIKE"><a href="#LIKE" class="headerlink" title="LIKE"></a>LIKE</h4><p>SELECT FIRST_NAME<br>FROM   EMPLOYEES<br>WHERE  FIRST_NAME LIKE ‘A%’;<br>–A로 시작하는 문자열에 대해서</p>
+<p>SELECT FIRST_NAME<br>FROM   EMPLOYEES<br>WHERE  FIRST<em>NAME LIKE ‘A</em>‘;<br>–A로시작하는 두글자 검색</p>
+<p>SELECT EMPLOYEE_ID,<br>       FIRST_NAME<br>FROM   EMPLOYEES<br>ORDER BY FIRST_NAME DESC;</p>
+<p>SELECT EMPLOYEE_ID, HIRE_DATE<br>FROM   EMPLOYEES;</p>
+<p>SELECT FIRST_NAME<br>FROM EMPLOYEES<br>WHERE LOWER(FIRST_NAME) LIKE ‘al%’;</p>
+<p>SELECT INITCAP(‘database managemaent system’) from dual;<br>–맨앞만 대문자로</p>
 
         </div>
         <footer class="article-footer">
@@ -185,7 +197,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/07/01/ThisIsLinux2/" data-id="cj6einkyq0019ccv78o71kzbu" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/08/16/database3/" data-id="cj6einl2n006eccv7o0r143rd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -290,20 +302,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/07/02/ThisIsLinux3/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            4장. vi에디터, CD/DVD마운트
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/07/01/Instruction/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/08/16/database2/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">리눅스 명령어</p>
+        <p class="article-nav-title">2. 데이터베이스 기본</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -349,7 +351,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'https-kkimsangheon-github-io-2';
     
     
-    var disqus_url = 'http://KKimSangHeon.github.io/2017/07/01/ThisIsLinux2/';
+    var disqus_url = 'http://KKimSangHeon.github.io/2017/08/16/database3/';
     
     (function() {
     var dsq = document.createElement('script');
