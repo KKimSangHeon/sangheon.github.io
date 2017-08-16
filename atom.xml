@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-08-16T06:43:57.501Z</updated>
+  <updated>2017-08-16T10:55:56.630Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>SELECT문</title>
+    <title>3. SELECT문</title>
     <link href="http://KKimSangHeon.github.io/2017/08/16/database3/"/>
     <id>http://KKimSangHeon.github.io/2017/08/16/database3/</id>
     <published>2017-08-16T04:19:24.000Z</published>
-    <updated>2017-08-16T06:43:57.501Z</updated>
+    <updated>2017-08-16T10:55:56.630Z</updated>
     
     <content type="html"><![CDATA[<p>SELECT FIRST_NAME || ‘ ‘ || LAST_NAME AS NAME FROM EMPLOYEES;<br>                           ||은 CONCAT</p>
 <p>SELECT SALARY AS “본봉”, SALARY + SALARY * 0.3 AS “보너스”<br>FROM EMPLOYEES;</p>
