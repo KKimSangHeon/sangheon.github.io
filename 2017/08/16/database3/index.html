@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     
-    <title>3. SELECT문 | Kim Sang Heon&#39;s Bolg</title>
+    <title>3. 함수 NVL,SYSDATE,IN,BETWEEN,IS NULL,LIKE,LOWER,INITCAP,LPAD,TRIM,REPLACE,CEIL,FLOOR,ROUND,TRUNC,MOD,POWER,SIGN,ADD_MONTHS,TO_CHAR | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="Data Base" />
@@ -13,14 +13,14 @@
       <meta name="description" content="SELECT FIRST_NAME || ‘ ‘ || LAST_NAME AS NAME FROM EMPLOYEES;                           ||은 CONCAT SELECT SALARY AS “본봉”, SALARY + SALARY * 0.3 AS “보너스”FROM EMPLOYEES; SELECT -SALARY FROM EMPLOYEES; N">
 <meta name="keywords" content="Data Base">
 <meta property="og:type" content="article">
-<meta property="og:title" content="3. SELECT문">
+<meta property="og:title" content="3. 함수 NVL,SYSDATE,IN,BETWEEN,IS NULL,LIKE,LOWER,INITCAP,LPAD,TRIM,REPLACE,CEIL,FLOOR,ROUND,TRUNC,MOD,POWER,SIGN,ADD_MONTHS,TO_CHAR">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2017/08/16/database3/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="SELECT FIRST_NAME || ‘ ‘ || LAST_NAME AS NAME FROM EMPLOYEES;                           ||은 CONCAT SELECT SALARY AS “본봉”, SALARY + SALARY * 0.3 AS “보너스”FROM EMPLOYEES; SELECT -SALARY FROM EMPLOYEES; N">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/db.jpg">
-<meta property="og:updated_time" content="2017-08-16T10:55:56.630Z">
+<meta property="og:updated_time" content="2017-08-17T02:00:09.102Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="3. SELECT문">
+<meta name="twitter:title" content="3. 함수 NVL,SYSDATE,IN,BETWEEN,IS NULL,LIKE,LOWER,INITCAP,LPAD,TRIM,REPLACE,CEIL,FLOOR,ROUND,TRUNC,MOD,POWER,SIGN,ADD_MONTHS,TO_CHAR">
 <meta name="twitter:description" content="SELECT FIRST_NAME || ‘ ‘ || LAST_NAME AS NAME FROM EMPLOYEES;                           ||은 CONCAT SELECT SALARY AS “본봉”, SALARY + SALARY * 0.3 AS “보너스”FROM EMPLOYEES; SELECT -SALARY FROM EMPLOYEES; N">
 <meta name="twitter:image" content="http://kkimsangheon.github.io/images/db.jpg">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
@@ -145,7 +145,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        3. SELECT문
+        3. 함수 NVL,SYSDATE,IN,BETWEEN,IS NULL,LIKE,LOWER,INITCAP,LPAD,TRIM,REPLACE,CEIL,FLOOR,ROUND,TRUNC,MOD,POWER,SIGN,ADD_MONTHS,TO_CHAR
         </h1>
     
 
@@ -188,8 +188,56 @@ ga('send', 'pageview');
 <p>SELECT FIRST_NAME<br>FROM   EMPLOYEES<br>WHERE  FIRST<em>NAME LIKE ‘A</em>‘;<br>–A로시작하는 두글자 검색</p>
 <p>SELECT EMPLOYEE_ID,<br>       FIRST_NAME<br>FROM   EMPLOYEES<br>ORDER BY FIRST_NAME DESC;</p>
 <p>SELECT EMPLOYEE_ID, HIRE_DATE<br>FROM   EMPLOYEES;</p>
-<p>SELECT FIRST_NAME<br>FROM EMPLOYEES<br>WHERE LOWER(FIRST_NAME) LIKE ‘al%’;</p>
-<p>SELECT INITCAP(‘database managemaent system’) from dual;<br>–맨앞만 대문자로</p>
+<h4 id="LOWER"><a href="#LOWER" class="headerlink" title="LOWER"></a>LOWER</h4><p>SELECT FIRST_NAME<br>FROM EMPLOYEES<br>WHERE LOWER(FIRST_NAME) LIKE ‘al%’;</p>
+<h4 id="INITCAP"><a href="#INITCAP" class="headerlink" title="INITCAP"></a>INITCAP</h4><p>SELECT INITCAP(‘database managemaent system’) from dual;<br>–맨앞만 대문자로</p>
+<p>SELECT INSTR( ‘DATABASE MANAGEMENT SYSTEM’ , ‘BASE’ ) FROM DUAL;<br>– BASE의 위치 찾기 (DB는 대부분 시작 인덱스가 1이다. )<br>SELECT CEIL( 4.99) FROM DUAL;<br>SELECT CEIL( 4.01) FROM DUAL;<br>– 해당 수보다 큰 정수값 (5 출력됨)</p>
+<p>SELECT FLOOR( 4.99 ) FROM DUAL;<br>SELECT FLOOR( 4.00001) FROM DUAL;<br>– 해당 수보다 작은 정수값</p>
+<p>SELECT ROUND(3.3364,3) FROM DUAL;<br>– 넷째자리에서 반올림함(3.336 출력됨)</p>
+<p>SELECT MOD (9999,6) FROM DUAL;<br>– 나머지<br>SELECT POWER ( 2,10) FROM DUAL;<br>–2의 10승</p>
+<h4 id="LPAD"><a href="#LPAD" class="headerlink" title="LPAD"></a>LPAD</h4><p>SELECT EMPLOYEE_ID, LPAD(SALARY, 10 , ‘<em>‘) FROM EMPLOYEES;<br>– 10칸을만들되 왼쪽 나머지는 </em>로 채울것</p>
+<h4 id="TRIM"><a href="#TRIM" class="headerlink" title="TRIM"></a>TRIM</h4><p>SELECT TRIM( ‘#’ FROM ‘####DATA#BASE####’) FROM DUAL;<br>– 앞뒤 특정문자 제거</p>
+<p>SELECT TRIM( ‘ ‘ FROM ‘  DATA  BASE    ‘) FROM DUAL;<br>– 앞뒤 공백 제거</p>
+<p>SELECT  LTRIM(‘   DATA BASE   ‘,’ ‘) FROM DUAL;<br>– 왼쪽 공백 제거</p>
+<h4 id="REPLACE"><a href="#REPLACE" class="headerlink" title="REPLACE"></a>REPLACE</h4><p>SELECT REPLACE(‘  DATA BASE  ‘, ‘ ‘ ,’’) FROM DUAL;<br>– 공백 제거</p>
+<h4 id="CEIL"><a href="#CEIL" class="headerlink" title="CEIL"></a>CEIL</h4><p>SELECT CEIL( 4.99) FROM DUAL;<br>SELECT CEIL( 4.01) FROM DUAL;<br>– 해당 수보다 큰 정수값 (5 출력됨)</p>
+<h4 id="FLOOR"><a href="#FLOOR" class="headerlink" title="FLOOR"></a>FLOOR</h4><p>SELECT FLOOR( 4.99 ) FROM DUAL;<br>SELECT FLOOR( 4.00001) FROM DUAL;<br>– 해당 수보다 작은 정수값</p>
+<h4 id="ROUND"><a href="#ROUND" class="headerlink" title="ROUND"></a>ROUND</h4><p>SELECT ROUND(3.3364,3) FROM DUAL;<br>– 넷째자리에서 반올림함(3.336 출력됨)</p>
+<h4 id="TRUNC"><a href="#TRUNC" class="headerlink" title="TRUNC"></a>TRUNC</h4><p>SELECT TRUNC( 3.3864,1) FROM DUAL;<br>– 1자리만 남기고 버림(3.3나옴)</p>
+<h4 id="MOD"><a href="#MOD" class="headerlink" title="MOD"></a>MOD</h4><p>SELECT MOD (9999,6) FROM DUAL;<br>– 나머지</p>
+<h4 id="POWER"><a href="#POWER" class="headerlink" title="POWER"></a>POWER</h4><p>SELECT POWER ( 2,10) FROM DUAL;<br>–2의 10승</p>
+<h4 id="SIGN"><a href="#SIGN" class="headerlink" title="SIGN"></a>SIGN</h4><p>SELECT SIGN(9999) FROM DUAL;<br>–   1나옴</p>
+<p>SELECT SIGN(-9999) FROM DUAL;<br>–  -1나옴</p>
+<p>SELECT SIGN(0) FROM DUAL;<br>–  0나옴</p>
+<h4 id="ADD-MONTHS"><a href="#ADD-MONTHS" class="headerlink" title="ADD_MONTHS"></a>ADD_MONTHS</h4><p>SELECT ADD_MONTHS( SYSDATE, 3 ) FROM DUAL;<br>SELECT ADD_MONTHS( ‘15/01/01’,3 ) FROM DUAL;</p>
+<p>SELECT LAST_DAY( SYSDATE ) FROM DUAL;<br>–해당월에 마지막 일</p>
+<p>SELECT MONTHS_BETWEEN( ADD_MONTHS(SYSDATE,3), SYSDATE) FROM DUAL;</p>
+<p>SELECT EMPLOYEE_ID,<br>       JOB_ID,<br>       ROUND(MONTHS_BETWEEN( END_DATE, START_DATE))<br>FROM   JOB_HISTORY;</p>
+<p>SELECT NEXT_DAY( SYSDATE, 7) FROM DUAL;<br>–    1-&gt;SUN  7-&gt;SAT</p>
+<h4 id="TO-CHAR"><a href="#TO-CHAR" class="headerlink" title="TO_CHAR"></a>TO_CHAR</h4><p>SELECT EMPLOYEE_ID,<br>       TO_CHAR(SALARY, ‘99999’ )<br>FROM EMPLOYEES;<br>– 숫자 &lt;-&gt; 문자<br>– 5자리가 넘어가면 #####으로 표시된다.</p>
+<p>SELECT EMPLOYEE_ID,<br>       TO_CHAR(SALARY, ‘000099999’ )<br>FROM EMPLOYEES;<br>– 숫자 &lt;-&gt; 문자<br>–앞에 0000으로 채운다.</p>
+<p>SELECT EMPLOYEE_ID,<br>       TO_CHAR(SALARY, ‘999,999’ )<br>FROM EMPLOYEES;<br>– 숫자 &lt;-&gt; 문자</p>
+<p>SELECT TO_CHAR( 3.141592, ‘9.99’) FROM DUAL;<br>– 3.14 나옴</p>
+<p>SELECT TO_CHAR( 3.141592, ‘9999.9999’) FROM DUAL;<br>–     3.1416 나옴</p>
+<p>SELECT EMPLOYEE_ID,<br>       TO_CHAR(SALARY,’FM99999999’)<br>FROM   EMPLOYEES;<br>– 왼쪽으로 다 땡겨준다</p>
+<p>SELECT EMPLOYEE_ID,<br>       TO_CHAR(SALARY,’FM$99999999’)<br>FROM   EMPLOYEES;<br>– 왼쪽으로 다 땡겨준다</p>
+<p>SELECT EMPLOYEE_ID,<br>       TO_CHAR(SALARY,’FML99999999’)<br>FROM   EMPLOYEES;<br>– 왼쪽으로 다 땡기고 원화를 넣어준다.</p>
+<p>SELECT TO_CHAR(-12345,’99999MI’) FROM DUAL;<br>– 12345-  </p>
+<p>SELECT TO_CHAR(-12345,’S99999’) FROM DUAL;<br>– -12345 출력</p>
+<p>SELECT TO_CHAR(12345,’S99999’) FROM DUAL;<br>– +12345 출력</p>
+<p>SELECT TO_CHAR(-12345,’99999PR’) FROM DUAL;<br>– <12345> 출력</12345></p>
+<p>SELECT TO_CHAR(12345,’99999PR’) FROM DUAL;</p>
+<p>SELECT TO_CHAR( 1234, ‘RN’) FROM DUAL;<br>–로마자로 표기</p>
+<p>SELECT TO_CHAR( 1234, ‘XXXX’ ) FROM DUAL;<br>–16진수 대문자로 표기</p>
+<p>SELECT TO_CHAR( 1234, ‘xxxx’ ) FROM DUAL;<br>–16진수 소문자로 표기</p>
+<p>SELECT TO_NUMBER( ‘1234567’,’99999999’) FROM DUAL;</p>
+<p>SELECT EMPLOYEE_ID,<br>TO_CHAR(HIRE_DATE, ‘yyyy-mm-dd’)<br>FROM EMPLOYEES;</p>
+<p>SELECT EMPLOYEE_ID,<br>TO_CHAR(HIRE_DATE, ‘yyyy”년”-mm”월”-dd”일”‘)<br>FROM EMPLOYEES;</p>
+<p>SELECT EMPLOYEE_ID,<br>TO_CHAR(HIRE_DATE, ‘yyyy”년”-mm”월”-dd”일” hh24”시”:mi:ss’)<br>FROM EMPLOYEES;</p>
+<p>SELECT EMPLOYEE_ID,<br>TO_CHAR(HIRE_DATE, ‘yyyy”년”-mm”월”-dd”일” day pm hh:mi:ss’)<br>FROM EMPLOYEES;</p>
+<p>SELECT<br>TO_CHAR(SYSDATE, ‘yyyy”년”-mm”월”-dd”일” ddd”일째 되는날”‘)<br>FROM DUAL;</p>
+<p>SELECT TO_CHAR(SYSDATE, ‘RR’)<br>FROM DUAL;</p>
+<p>SELECT TO_CHAR(TO_DATE(‘30’,’RR’), ‘YYYY’) FROM DUAL;<br>– 현재 세기</p>
+<p>SELECT TO_CHAR(TO_DATE(‘60’,’RR’), ‘YYYY’) FROM DUAL;<br>– 이전 세기</p>
 
         </div>
         <footer class="article-footer">
@@ -197,7 +245,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/08/16/database3/" data-id="cj6einl2n006eccv7o0r143rd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/08/16/database3/" data-id="cj6fstw7u006jvcv7bsc7jahh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -302,6 +350,16 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
+        <a href="/2017/08/17/database4/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            4. 함수
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2017/08/16/database2/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
@@ -319,7 +377,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">16</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
