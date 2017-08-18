@@ -3,23 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>database7 | Kim Sang Heon&#39;s Bolg</title>
+    <title>7. TOP - K | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="" />
+        <meta name="keywords" content="Data Base" />
     
     
 
-      <meta name="description" content="Welcome to Sang Heon&apos;s Blog.">
+      <meta name="description" content="– TOP -KSELECT ROWNUM,EMPLOYEE_ID, SALARY  FROM EMPLOYEES WHERE HIRE_DATE LIKE ‘06%’ ORDER BY SALARY원하는대로 출력이 되지 않을 것이다. 이를 원하는대로 출력하기 위해서는 다음과 같이!SELECT ROWNUM, EMPLOYEE_ID, SALARYFROM (      SELECT">
+<meta name="keywords" content="Data Base">
 <meta property="og:type" content="article">
-<meta property="og:title" content="database7">
+<meta property="og:title" content="7. TOP - K">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2017/08/18/database7/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="Welcome to Sang Heon&apos;s Blog.">
-<meta property="og:updated_time" content="2017-08-18T04:04:24.520Z">
+<meta property="og:description" content="– TOP -KSELECT ROWNUM,EMPLOYEE_ID, SALARY  FROM EMPLOYEES WHERE HIRE_DATE LIKE ‘06%’ ORDER BY SALARY원하는대로 출력이 되지 않을 것이다. 이를 원하는대로 출력하기 위해서는 다음과 같이!SELECT ROWNUM, EMPLOYEE_ID, SALARYFROM (      SELECT">
+<meta property="og:image" content="http://kkimsangheon.github.io/images/db.jpg">
+<meta property="og:updated_time" content="2017-08-18T04:36:18.826Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="database7">
-<meta name="twitter:description" content="Welcome to Sang Heon&apos;s Blog.">
+<meta name="twitter:title" content="7. TOP - K">
+<meta name="twitter:description" content="– TOP -KSELECT ROWNUM,EMPLOYEE_ID, SALARY  FROM EMPLOYEES WHERE HIRE_DATE LIKE ‘06%’ ORDER BY SALARY원하는대로 출력이 되지 않을 것이다. 이를 원하는대로 출력하기 위해서는 다음과 같이!SELECT ROWNUM, EMPLOYEE_ID, SALARYFROM (      SELECT">
+<meta name="twitter:image" content="http://kkimsangheon.github.io/images/db.jpg">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
 
@@ -131,7 +134,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    uncategorized
+    <a class="page-title-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a>
     </h1>
 </div>
                         <div class="main-body-content">
@@ -142,7 +145,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        database7
+        7. TOP - K
         </h1>
     
 
@@ -158,11 +161,21 @@ ga('send', 'pageview');
     </div>
 
                 
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Data-Base/">Data Base</a>
+    </div>
+
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p>– TOP -K<br>SELECT ROWNUM,EMPLOYEE_ID, SALARY<br>  FROM EMPLOYEES<br> WHERE HIRE_DATE LIKE ‘06%’<br> ORDER BY SALARY<br>원하는대로 출력이 되지 않을 것이다.</p>
+<p>이를 원하는대로 출력하기 위해서는 다음과 같이!<br>SELECT ROWNUM, EMPLOYEE_ID, SALARY<br>FROM (<br>      SELECT EMPLOYEE_ID, SALARY<br>      FROM EMPLOYEES<br>      WHERE HIRE_DATE LIKE ‘06%’<br>      ORDER BY SALARY<br>      );</p>
+<p>SELECT ROWNUM, EMPLOYEE_ID, SALARY<br>FROM (<br>      SELECT EMPLOYEE_ID, SALARY<br>      FROM EMPLOYEES<br>      WHERE HIRE_DATE LIKE ‘06%’<br>      ORDER BY SALARY<br>      )<br> WHERE ROWNUM &lt;= 3     ;<br>–앞에서 3개 뽑는것</p>
+<p>SELECT ROWNUM, EMPLOYEE_ID, SALARY<br>FROM (<br>      SELECT EMPLOYEE_ID, SALARY<br>      FROM EMPLOYEES<br>      WHERE HIRE_DATE LIKE ‘06%’<br>      ORDER BY SALARY<br>      )<br> WHERE 6 &gt;= ROWNUM AND ROWNUM &lt;= 10;<br>–이것은 원하는 결과가 나오지 않는다.<br>1이  찍히지 않으므로 그렇다. 이로인해 ROWNUM이 증가하지 않음</p>
+<p>SELECT * FROM<br>        (<br>        SELECT ROWNUM AS RN, EMPLOYEE_ID, SALARY<br>        FROM (<br>              SELECT EMPLOYEE_ID, SALARY<br>              FROM EMPLOYEES<br>              WHERE HIRE_DATE LIKE ‘06%’<br>              ORDER BY SALARY<br>              )<br>         )<br> WHERE RN &gt;=6 AND RN &lt;=10;<br> – 위의 문제를 이렇게 해결함.</p>
+
         </div>
         <footer class="article-footer">
             
@@ -291,7 +304,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">19</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">20</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 

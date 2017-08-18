@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-08-18T04:04:24.520Z</updated>
+  <updated>2017-08-18T04:36:18.826Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,16 +16,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>database7</title>
+    <title>7. TOP - K</title>
     <link href="http://KKimSangHeon.github.io/2017/08/18/database7/"/>
     <id>http://KKimSangHeon.github.io/2017/08/18/database7/</id>
     <published>2017-08-18T04:04:24.000Z</published>
-    <updated>2017-08-18T04:04:24.520Z</updated>
+    <updated>2017-08-18T04:36:18.826Z</updated>
+    
+    <content type="html"><![CDATA[<p>– TOP -K<br>SELECT ROWNUM,EMPLOYEE_ID, SALARY<br>  FROM EMPLOYEES<br> WHERE HIRE_DATE LIKE ‘06%’<br> ORDER BY SALARY<br>원하는대로 출력이 되지 않을 것이다.</p>
+<p>이를 원하는대로 출력하기 위해서는 다음과 같이!<br>SELECT ROWNUM, EMPLOYEE_ID, SALARY<br>FROM (<br>      SELECT EMPLOYEE_ID, SALARY<br>      FROM EMPLOYEES<br>      WHERE HIRE_DATE LIKE ‘06%’<br>      ORDER BY SALARY<br>      );</p>
+<p>SELECT ROWNUM, EMPLOYEE_ID, SALARY<br>FROM (<br>      SELECT EMPLOYEE_ID, SALARY<br>      FROM EMPLOYEES<br>      WHERE HIRE_DATE LIKE ‘06%’<br>      ORDER BY SALARY<br>      )<br> WHERE ROWNUM &lt;= 3     ;<br>–앞에서 3개 뽑는것</p>
+<p>SELECT ROWNUM, EMPLOYEE_ID, SALARY<br>FROM (<br>      SELECT EMPLOYEE_ID, SALARY<br>      FROM EMPLOYEES<br>      WHERE HIRE_DATE LIKE ‘06%’<br>      ORDER BY SALARY<br>      )<br> WHERE 6 &gt;= ROWNUM AND ROWNUM &lt;= 10;<br>–이것은 원하는 결과가 나오지 않는다.<br>1이  찍히지 않으므로 그렇다. 이로인해 ROWNUM이 증가하지 않음</p>
+<p>SELECT * FROM<br>        (<br>        SELECT ROWNUM AS RN, EMPLOYEE_ID, SALARY<br>        FROM (<br>              SELECT EMPLOYEE_ID, SALARY<br>              FROM EMPLOYEES<br>              WHERE HIRE_DATE LIKE ‘06%’<br>              ORDER BY SALARY<br>              )<br>         )<br> WHERE RN &gt;=6 AND RN &lt;=10;<br> – 위의 문제를 이렇게 해결함.</p>
+]]></content>
     
     <summary type="html">
     
+      &lt;p&gt;– TOP -K&lt;br&gt;SELECT ROWNUM,EMPLOYEE_ID, SALARY&lt;br&gt;  FROM EMPLOYEES&lt;br&gt; WHERE HIRE_DATE LIKE ‘06%’&lt;br&gt; ORDER BY SALARY&lt;br&gt;원하는대로 출력이 되지 않을 것
+    
     </summary>
     
+      <category term="빅데이터 전문가과정" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/"/>
+    
+      <category term="Data Base" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Data-Base/"/>
+    
+    
+      <category term="Data Base" scheme="http://KKimSangHeon.github.io/tags/Data-Base/"/>
     
   </entry>
   
