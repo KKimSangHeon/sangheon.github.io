@@ -3,25 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>4. 함수 | Kim Sang Heon&#39;s Bolg</title>
+    <title>4. CASE, DECODE, GROUP BY | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="Data Base" />
     
     
 
-      <meta name="description" content="Welcome to Sang Heon&apos;s Blog.">
+      <meta name="description" content="CASESELECT EMPLOYEE_ID,       SALARY,       JOB_ID,       CASE JOB_ID            WHEN ‘AC_ACCOUNT’ THEN SALARY + SALARY  0.5            WHEN ‘AC_MGR’ THEN SALARY + SALARY  0.3            WHEN ‘AD_VP’">
 <meta name="keywords" content="Data Base">
 <meta property="og:type" content="article">
-<meta property="og:title" content="4. 함수">
+<meta property="og:title" content="4. CASE, DECODE, GROUP BY">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2017/08/17/database4/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="Welcome to Sang Heon&apos;s Blog.">
+<meta property="og:description" content="CASESELECT EMPLOYEE_ID,       SALARY,       JOB_ID,       CASE JOB_ID            WHEN ‘AC_ACCOUNT’ THEN SALARY + SALARY  0.5            WHEN ‘AC_MGR’ THEN SALARY + SALARY  0.3            WHEN ‘AD_VP’">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/db.jpg">
-<meta property="og:updated_time" content="2017-08-17T02:00:52.960Z">
+<meta property="og:updated_time" content="2017-08-18T00:05:05.111Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="4. 함수">
-<meta name="twitter:description" content="Welcome to Sang Heon&apos;s Blog.">
+<meta name="twitter:title" content="4. CASE, DECODE, GROUP BY">
+<meta name="twitter:description" content="CASESELECT EMPLOYEE_ID,       SALARY,       JOB_ID,       CASE JOB_ID            WHEN ‘AC_ACCOUNT’ THEN SALARY + SALARY  0.5            WHEN ‘AC_MGR’ THEN SALARY + SALARY  0.3            WHEN ‘AD_VP’">
 <meta name="twitter:image" content="http://kkimsangheon.github.io/images/db.jpg">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
@@ -145,7 +145,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        4. 함수
+        4. CASE, DECODE, GROUP BY
         </h1>
     
 
@@ -170,14 +170,18 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <h4 id="CASE"><a href="#CASE" class="headerlink" title="CASE"></a>CASE</h4><p>SELECT EMPLOYEE_ID,<br>       SALARY,<br>       JOB_ID,<br>       CASE JOB_ID<br>            WHEN ‘AC_ACCOUNT’ THEN SALARY + SALARY <em> 0.5<br>            WHEN ‘AC_MGR’ THEN SALARY + SALARY </em> 0.3<br>            WHEN ‘AD_VP’ THEN SALARY + SALARY * 0.2<br>            ELSE  SALARY<br>       END AS SALARY<br>FROM EMPLOYEES;        </p>
+<h4 id="DECODE"><a href="#DECODE" class="headerlink" title="DECODE"></a>DECODE</h4><p>SELECT EMPLOYEE_ID,<br>       SALARY,<br>       JOB_ID,<br>       DECODE( JOB_ID ,<br>                ‘AC_ACCOUNT’ , SALARY + SALARY <em> 0.5 ,<br>                ‘AC_MGR’ ,SALARY + SALARY </em> 0.3 ,<br>                ‘AD_VP’ , SALARY + SALARY * 0.2 ,<br>                 SALARY) AS “이번달 월급”<br>FROM EMPLOYEES;        </p>
+<p>SELECT EMPLOYEE_ID,AVG(SALARY) , MAX(SALARY)<br>FROM EMPLOYEES;<br>– ERROR<br>– 집계함수 이외의 칼럼은 프로젝션 될 수 없다</p>
+<h4 id="GROUP-BY"><a href="#GROUP-BY" class="headerlink" title="GROUP BY"></a>GROUP BY</h4><p>SELECT JOB_ID,AVG(SALARY), MAX(SALARY)<br>FROM   EMPLOYEES<br>WHERE  MANAGER_ID IS NOT NULL<br>GROUP BY JOB_ID;<br>– GROUP BY 절에 참여하고 있는 컬럼은 프로젝션 할 수 있다.</p>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/08/17/database4/" data-id="cj6fstw8a006ovcv79jd6xrx6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/08/17/database4/" data-id="cj6hcrgcr006fq4v7prswf5c9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -282,6 +286,16 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
+        <a href="/2017/08/18/database5/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            5. ROLLUP, CUBE
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2017/08/16/database3/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
@@ -299,7 +313,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">19</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 

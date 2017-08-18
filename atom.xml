@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-08-17T02:00:52.960Z</updated>
+  <updated>2017-08-18T04:04:24.520Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,13 +16,130 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>4. 함수</title>
+    <title>database7</title>
+    <link href="http://KKimSangHeon.github.io/2017/08/18/database7/"/>
+    <id>http://KKimSangHeon.github.io/2017/08/18/database7/</id>
+    <published>2017-08-18T04:04:24.000Z</published>
+    <updated>2017-08-18T04:04:24.520Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>6. SUBQUERY</title>
+    <link href="http://KKimSangHeon.github.io/2017/08/18/database6/"/>
+    <id>http://KKimSangHeon.github.io/2017/08/18/database6/</id>
+    <published>2017-08-18T01:22:43.000Z</published>
+    <updated>2017-08-18T04:04:17.946Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="서브쿼리"><a href="#서브쿼리" class="headerlink" title="서브쿼리"></a>서브쿼리</h4><p>Lex보다 많이 받는 사원 구하기</p>
+<p>SELECT FIRST_NAME, SALARY<br>FROM   EMPLOYEES<br>WHERE  SALARY &gt; (SELECT<br>                    SALARY<br>                 FROM EMPLOYEES<br>                 WHERE FIRST_NAME = ‘Lex’);</p>
+<p>SELECT A.FIRST_NAME, B.SALARY<br>FROM   EMPLOYEES A,<br>       (SELECT<br>           SALARY<br>        FROM EMPLOYEES<br>        WHERE FIRST_NAME = ‘Lex’) B<br>WHERE A.SALARY &gt; B.SALARY;<br>– 조인으로도 처리 가능                </p>
+<p>SELECT FIRST_NAME, SALARY<br>FROM   EMPLOYEES<br>WHERE   SALARY &gt; (SELECT AVG(SALARY)<br>                  FROM EMPLOYEES );         </p>
+<p>–SINGLE LOW SUB QUERY</p>
+<hr>
+<p>– 문_ JOB_ID가 ‘IT_PROG’인 직원이 받는 월급보다 많이 받고 있는 직원의 이름과 월급</p>
+<p>SELECT FIRST_NAME,<br>       SALARY<br>FROM   EMPLOYEES<br>WHERE  SALARY &gt; ALL (SELECT SALARY<br>                     FROM EMPLOYEES<br>                     WHERE JOB_ID = ‘IT_PROG’)</p>
+<p>– MULTI ROW SUB QUERY</p>
+<hr>
+<p>–문) 각 부서별로 최고 월급을 받는 직원의 이름과 직원의 이름과 월급 출력</p>
+<p>WHERE을 활용</p>
+<p>SELECT FIRST_NAME<br>FROM   EMPLOYEES<br>WHERE  (SALARY,DEPARTMENT_ID) IN (<br>                                SELECT MAX(SALARY),DEPARTMENT_ID<br>                                FROM EMPLOYEES<br>                                GROUP BY DEPARTMENT_ID<br>                                );</p>
+<p>FROM을 활용<br>SELECT A.DEPARTMENT_ID, FIRST_NAME, SALARY<br>FROM   EMPLOYEES A,<br>    ( SELECT DEPARTMENT_ID,<br>             MAX(SALARY) AS MAX_SALARY<br>      FROM EMPLOYEES<br>      GROUP BY DEPARTMENT_ID<br>    ) B<br>WHERE A.DEPARTMENT_ID = B.DEPARTMENT_ID<br>AND   A.SALARY = B.MAX_SALARY;        </p>
+<p>CORELATED 활용<br>SELECT DEPARTMENT_ID, FIRST_NAME, SALARY<br>FROM EMPLOYEES A<br>WHERE SALARY = ( SELECT MAX(SALARY)<br>                 FROM EMPLOYEES<br>                 WHERE A.DEPARTMENT_ID = DEPARTMENT_ID);</p>
+<p>– CORELATED SUBQUERY</p>
+<hr>
+<p>자기 부서의 평균월급 보다 적은 월급을 받는 사원을 구하라</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;서브쿼리&quot;&gt;&lt;a href=&quot;#서브쿼리&quot; class=&quot;headerlink&quot; title=&quot;서브쿼리&quot;&gt;&lt;/a&gt;서브쿼리&lt;/h4&gt;&lt;p&gt;Lex보다 많이 받는 사원 구하기&lt;/p&gt;
+&lt;p&gt;SELECT FIRST_NAME, SALARY&lt;br&gt;FROM   
+    
+    </summary>
+    
+      <category term="빅데이터 전문가과정" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/"/>
+    
+      <category term="Data Base" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Data-Base/"/>
+    
+    
+      <category term="Data Base" scheme="http://KKimSangHeon.github.io/tags/Data-Base/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>5. ROLLUP, CUBE</title>
+    <link href="http://KKimSangHeon.github.io/2017/08/18/database5/"/>
+    <id>http://KKimSangHeon.github.io/2017/08/18/database5/</id>
+    <published>2017-08-18T00:05:47.000Z</published>
+    <updated>2017-08-18T01:22:37.148Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="ROWNUM"><a href="#ROWNUM" class="headerlink" title="ROWNUM"></a>ROWNUM</h4><p>SELECT ROWNUM, EMPLOYEE_ID<br>FROM EMPLOYEES;</p>
+<h4 id="트리-형태-구조를-추출하기-위한-질의"><a href="#트리-형태-구조를-추출하기-위한-질의" class="headerlink" title="트리 형태 구조를 추출하기 위한 질의"></a>트리 형태 구조를 추출하기 위한 질의</h4><p>– START WITH ~ CONNECT BY 절<br>SELECT LEVEL MANAGER_ID, EMPLOYEE_ID<br>FROM EMPLOYEES<br>START WITH MANAGER_ID IS NULL<br>CONNECT BY PRIOR EMPLOYEE_ID = MANAGER_ID<br>ORDER BY LEVEL, MANAGER_ID, EMPLOYEE_ID;</p>
+<h4 id="ROLLUP"><a href="#ROLLUP" class="headerlink" title="ROLLUP"></a>ROLLUP</h4><p>부서별 직책별 평균월급, 사원수 평균월급을 출력하시오<br>ROLLUP (A, B):  group by (A, B) &amp; group by (A) &amp; ALL</p>
+<p>SELECT CASE GROUPING(DEPARTMENT_ID)<br>            WHEN 1 THEN ‘모든 부서’<br>            ELSE NVL(TO_CHAR(DEPARTMENT_ID),’없음’)<br>       END AS “부서”,</p>
+<pre><code>CASE GROUPING(JOB_ID)
+     WHEN 1 THEN &apos;모든 직업&apos;
+     ELSE NVL(TO_CHAR(JOB_ID),&apos;없음&apos;)
+END AS &quot;직업&quot;
+
+,COUNT(*),ROUND(AVG(SALARY),0)
+</code></pre><p>FROM EMPLOYEES<br>GROUP BY ROLLUP(DEPARTMENT_ID, JOB_ID)<br>ORDER BY DEPARTMENT_ID, JOB_ID</p>
+<h4 id="GROUPING"><a href="#GROUPING" class="headerlink" title="GROUPING"></a>GROUPING</h4><p>SELECT CASE GROUPING(DEPARTMENT_ID)<br>            WHEN 1 THEN ‘모든 부서’<br>            ELSE NVL(TO_CHAR(DEPARTMENT_ID),’없음’)<br>       END AS “부서”,</p>
+<pre><code>CASE GROUPING(JOB_ID)
+     WHEN 1 THEN &apos;모든 직업&apos;
+     ELSE NVL(TO_CHAR(JOB_ID),&apos;없음&apos;)
+END AS &quot;직업&quot;
+
+,COUNT(*),ROUND(AVG(SALARY),0)
+</code></pre><p>FROM EMPLOYEES<br>GROUP BY CUBE(DEPARTMENT_ID, JOB_ID)<br>ORDER BY DEPARTMENT_ID, JOB_ID</p>
+<h4 id="CUBE"><a href="#CUBE" class="headerlink" title="CUBE"></a>CUBE</h4><p>group by (A,B) &amp; group by (A) &amp; group by (B) &amp; ALL<br>SELECT CASE GROUPING(DEPARTMENT_ID)<br>            WHEN 1 THEN ‘모든 부서’<br>            ELSE NVL(TO_CHAR(DEPARTMENT_ID),’없음’)<br>       END AS “부서”,</p>
+<pre><code>CASE GROUPING(JOB_ID)
+     WHEN 1 THEN &apos;모든 직업&apos;
+     ELSE NVL(TO_CHAR(JOB_ID),&apos;없음&apos;)
+END AS &quot;직업&quot;
+
+,COUNT(*),ROUND(AVG(SALARY),0)
+</code></pre><p>FROM EMPLOYEES<br>GROUP BY CUBE(DEPARTMENT_ID, JOB_ID)<br>ORDER BY DEPARTMENT_ID, JOB_ID</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;ROWNUM&quot;&gt;&lt;a href=&quot;#ROWNUM&quot; class=&quot;headerlink&quot; title=&quot;ROWNUM&quot;&gt;&lt;/a&gt;ROWNUM&lt;/h4&gt;&lt;p&gt;SELECT ROWNUM, EMPLOYEE_ID&lt;br&gt;FROM EMPLOYEES;&lt;/p&gt;
+&lt;h4 
+    
+    </summary>
+    
+      <category term="빅데이터 전문가과정" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/"/>
+    
+      <category term="Data Base" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Data-Base/"/>
+    
+    
+      <category term="Data Base" scheme="http://KKimSangHeon.github.io/tags/Data-Base/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>4. CASE, DECODE, GROUP BY</title>
     <link href="http://KKimSangHeon.github.io/2017/08/17/database4/"/>
     <id>http://KKimSangHeon.github.io/2017/08/17/database4/</id>
     <published>2017-08-17T01:59:31.000Z</published>
-    <updated>2017-08-17T02:00:52.960Z</updated>
+    <updated>2017-08-18T00:05:05.111Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="CASE"><a href="#CASE" class="headerlink" title="CASE"></a>CASE</h4><p>SELECT EMPLOYEE_ID,<br>       SALARY,<br>       JOB_ID,<br>       CASE JOB_ID<br>            WHEN ‘AC_ACCOUNT’ THEN SALARY + SALARY <em> 0.5<br>            WHEN ‘AC_MGR’ THEN SALARY + SALARY </em> 0.3<br>            WHEN ‘AD_VP’ THEN SALARY + SALARY * 0.2<br>            ELSE  SALARY<br>       END AS SALARY<br>FROM EMPLOYEES;        </p>
+<h4 id="DECODE"><a href="#DECODE" class="headerlink" title="DECODE"></a>DECODE</h4><p>SELECT EMPLOYEE_ID,<br>       SALARY,<br>       JOB_ID,<br>       DECODE( JOB_ID ,<br>                ‘AC_ACCOUNT’ , SALARY + SALARY <em> 0.5 ,<br>                ‘AC_MGR’ ,SALARY + SALARY </em> 0.3 ,<br>                ‘AD_VP’ , SALARY + SALARY * 0.2 ,<br>                 SALARY) AS “이번달 월급”<br>FROM EMPLOYEES;        </p>
+<p>SELECT EMPLOYEE_ID,AVG(SALARY) , MAX(SALARY)<br>FROM EMPLOYEES;<br>– ERROR<br>– 집계함수 이외의 칼럼은 프로젝션 될 수 없다</p>
+<h4 id="GROUP-BY"><a href="#GROUP-BY" class="headerlink" title="GROUP BY"></a>GROUP BY</h4><p>SELECT JOB_ID,AVG(SALARY), MAX(SALARY)<br>FROM   EMPLOYEES<br>WHERE  MANAGER_ID IS NOT NULL<br>GROUP BY JOB_ID;<br>– GROUP BY 절에 참여하고 있는 컬럼은 프로젝션 할 수 있다.</p>
+]]></content>
     
     <summary type="html">
+    
+      &lt;h4 id=&quot;CASE&quot;&gt;&lt;a href=&quot;#CASE&quot; class=&quot;headerlink&quot; title=&quot;CASE&quot;&gt;&lt;/a&gt;CASE&lt;/h4&gt;&lt;p&gt;SELECT EMPLOYEE_ID,&lt;br&gt;       SALARY,&lt;br&gt;       JOB_ID,&lt;br&gt;   
     
     </summary>
     
@@ -40,7 +157,7 @@
     <link href="http://KKimSangHeon.github.io/2017/08/16/database3/"/>
     <id>http://KKimSangHeon.github.io/2017/08/16/database3/</id>
     <published>2017-08-16T04:19:24.000Z</published>
-    <updated>2017-08-17T02:00:09.102Z</updated>
+    <updated>2017-08-17T02:29:49.538Z</updated>
     
     <content type="html"><![CDATA[<p>SELECT FIRST_NAME || ‘ ‘ || LAST_NAME AS NAME FROM EMPLOYEES;<br>                           ||은 CONCAT</p>
 <p>SELECT SALARY AS “본봉”, SALARY + SALARY * 0.3 AS “보너스”<br>FROM EMPLOYEES;</p>
@@ -51,6 +168,8 @@
 <p>SELECT NVL2(0, 10, 20) FROM DUAL;<br>–NULL이 아니면 20</p>
 <p>SELECT SALARY AS “본봉”,<br>       SALARY + SALARY * NVL(COMMISSION_PCT,0)<br>       AS “보너스”<br>FROM EMPLOYEES;</p>
 <p>SELECT SALARY AS “본봉”,<br>       NVL2(COMMISSION_PCT,SALARY + SALARY * COMMISSION_PCT, SALARY)<br>       AS “보너스”<br>FROM EMPLOYEES;</p>
+<h4 id="NULLIF"><a href="#NULLIF" class="headerlink" title="NULLIF"></a>NULLIF</h4><p>SELECT NULLIF( 10 , 5 + 5 ) FROM DUAL;</p>
+<h4 id="COALESCE"><a href="#COALESCE" class="headerlink" title="COALESCE"></a>COALESCE</h4><p>SELECT COALESCE(NULL, NULL,1,2,3) FROM DUAL;<br>– 1출력</p>
 <h4 id="SYSDATE"><a href="#SYSDATE" class="headerlink" title="SYSDATE"></a>SYSDATE</h4><p>SELECT SYSDATE FROM DUAL;</p>
 <p>SELECT JOB_ID<br>FROM EMPLOYEES<br>WHERE JOB_ID = ‘AD_PRES’<br>   OR JOB_ID = ‘AD_VP’;</p>
 <h4 id="IN"><a href="#IN" class="headerlink" title="IN"></a>IN</h4><p>SELECT JOB_ID<br>FROM EMPLOYEES<br>WHERE JOB_ID IN(‘AD_PRES’,’AD_VP’);</p>
@@ -630,148 +749,6 @@
     
     
       <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>3. 패키지, 예외</title>
-    <link href="http://KKimSangHeon.github.io/2017/08/03/bigdata4/"/>
-    <id>http://KKimSangHeon.github.io/2017/08/03/bigdata4/</id>
-    <published>2017-08-03T01:41:54.000Z</published>
-    <updated>2017-08-07T06:04:10.611Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h4><p>탐색의 경우 O(n)   / 삽입 삭제의 경우 간단.</p>
-<h4 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h4><p>탐색의 경우 O(1)   / 삽입 삭제의 경우 쭉~ 밀려남</p>
-<h4 id="패키지"><a href="#패키지" class="headerlink" title="패키지"></a>패키지</h4><p>java.lang.* - 명시적으로 지정하지 않아도 자동으로 import 되는 패키지.<br>자바 프로그램이 기본적으로 필요로 하는 클래스와 인터페이스 포함</p>
-<p>java.io.* - 데이터를 입력받고 출력할 수 있도록 하는 클래스 포함</p>
-<p>java.net.* - 네트워크를 통하여 통신할 수 있도록 해주는 클래스 포함</p>
-<p>java.util.* - 날짜/시간 조작, 난수 발생 등 각종 유틸리티 클래스와 인터페이스 포함</p>
-<h4 id="예외처리"><a href="#예외처리" class="headerlink" title="예외처리"></a>예외처리</h4><h5 id="예외"><a href="#예외" class="headerlink" title="예외"></a>예외</h5><p>프로그램이 실행되는 동안 발생할 수 있는 비정상적인 조건<br>번역시의 에러가 아닌 실행시의 에러를 예외라 함</p>
-<h5 id="자바에서의-예외처리"><a href="#자바에서의-예외처리" class="headerlink" title="자바에서의 예외처리"></a>자바에서의 예외처리</h5><p>예외처리를 위한 Exception 클래스 정의<br>기본적인 예외는 자바에 미리 정의된 예외를 통해 처리 가능<br>사용자가 필요한 예외를 직접 정의할 수 있음<br>예상되는 예외는 미리 처리해주면 무조건적인 프로그램의 종료를 피할 수 있음<br>예외처리의 사용은 프로그램의 신뢰성을 높여줌</p>
-<h5 id="try-catch-문"><a href="#try-catch-문" class="headerlink" title="try catch 문"></a>try catch 문</h5><p>catch문에서 예외가 발생하면 복구시키는게 목표이다. 하지만 그게 말이 쉽지 복구라는건 불가능한 경우가 많이있다.<br>try catch는 가독성을 떨어뜨린다는 단점이 있다.<br>ex) 상대방이 랜선을 뽑아서 캐치에 왔다면 어쩔래</p>
-<p>finally는 옵션이다.<br>주로 자원정리가 목적이다. 예외가 발생하던 안하던 들어감.<br>심지어 try에서 return 을 해도 finally가 실행된다.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> result=<span class="number">0</span>;</div><div class="line"><span class="keyword">int</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">  result = <span class="number">1000</span> / a;</div><div class="line">  <span class="keyword">return</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">catch</span>(ArithmeticException e) &#123;</div><div class="line">  System.out.println(<span class="string">"예외발생"</span>);</div><div class="line">  <span class="keyword">return</span>;</div><div class="line">&#125; <span class="keyword">finally</span> &#123;</div><div class="line">  System.out.println(<span class="string">"자원정리"</span>);   <span class="comment">//실행된다.</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="checked-Exception"><a href="#checked-Exception" class="headerlink" title="checked Exception"></a>checked Exception</h5><p>메소드를 사용하기 위해서는 반드시 예외를 처리해 줘야함 (ex&gt; FileInputStream)</p>
-<h4 id="실습1"><a href="#실습1" class="headerlink" title="실습1."></a>실습1.</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">  FileInputStream fis = <span class="keyword">null</span>;</div><div class="line">  <span class="keyword">try</span> &#123;</div><div class="line">    fis = <span class="keyword">new</span> FileInputStream( <span class="string">"./hello.txt"</span> );</div><div class="line">    <span class="keyword">int</span> data = fis.read();</div><div class="line"></div><div class="line">  &#125;</div><div class="line">  <span class="keyword">catch</span>(FileNotFoundException|NullPointerException e) &#123;</div><div class="line">    <span class="comment">/*여러개의 예외를 처리*/</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">  <span class="comment">/*모든예외를 처리하고 싶을 때*/</span></div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<h4 id="실습2-나의-Exception-정의"><a href="#실습2-나의-Exception-정의" class="headerlink" title="실습2. 나의 Exception 정의"></a>실습2. 나의 Exception 정의</h4><p>MyException 정의<br><figure class="highlight java"><figcaption><span>MyException.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyException</span> <span class="keyword">extends</span> <span class="title">Exception</span></span>&#123;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MyException</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">super</span>( <span class="string">"MyException Occurs"</span> );		</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MyException</span><span class="params">( String message )</span> </span>&#123;</div><div class="line">		<span class="keyword">super</span>( message );</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>MyClass 정의</p>
-<figure class="highlight java"><figcaption><span>MyClass.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">danger</span><span class="params">()</span> <span class="keyword">throws</span> MyException </span>&#123;</div><div class="line"></div><div class="line"></div><div class="line">		System.out.println( <span class="string">"some code1"</span> );</div><div class="line">		System.out.println( <span class="string">"some code2"</span> );</div><div class="line"></div><div class="line">		<span class="keyword">if</span>( <span class="number">1</span>==<span class="number">1</span> ) &#123;</div><div class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> MyException(<span class="string">"MyClass Exception 발행"</span>);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		System.out.println( <span class="string">"some code3"</span> );</div><div class="line">		System.out.println( <span class="string">"some code4"</span> );</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>MyClassTest 정의<br><figure class="highlight java"><figcaption><span>MyClassTest.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyClassTest</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			MyClass myClass = <span class="keyword">new</span> MyClass();</div><div class="line">			myClass.danger();</div><div class="line">		&#125; <span class="keyword">catch</span> (MyException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;		</div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;LinkedList&quot;&gt;&lt;a href=&quot;#LinkedList&quot; class=&quot;headerlink&quot; title=&quot;LinkedList&quot;&gt;&lt;/a&gt;LinkedList&lt;/h4&gt;&lt;p&gt;탐색의 경우 O(n)   / 삽입 삭제의 경우 간단.&lt;/p&gt;
-&lt;h4 
-    
-    </summary>
-    
-      <category term="빅데이터 전문가과정" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2. 오버로드,오버로딩,추상클래스,인터페이스</title>
-    <link href="http://KKimSangHeon.github.io/2017/08/03/bigdata3/"/>
-    <id>http://KKimSangHeon.github.io/2017/08/03/bigdata3/</id>
-    <published>2017-08-03T00:27:12.000Z</published>
-    <updated>2017-08-07T06:04:10.175Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="오버로드"><a href="#오버로드" class="headerlink" title="오버로드"></a>오버로드</h4><p>아래는 다 다른 메소드이다.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">a</span> <span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></div><div class="line">..</div><div class="line"></div><div class="line"><span class="keyword">void</span> <span class="title">a</span> <span class="params">(<span class="keyword">int</span> a, <span class="keyword">float</span> b)</span></div><div class="line">...</div><div class="line"></div><div class="line"><span class="keyword">void</span> <span class="title">a</span> <span class="params">(<span class="keyword">float</span> a, <span class="keyword">int</span> b)</span></div><div class="line">...</div></pre></td></tr></table></figure></p>
-<h4 id="아규먼트-파라미터"><a href="#아규먼트-파라미터" class="headerlink" title="아규먼트 , 파라미터"></a>아규먼트 , 파라미터</h4><p>아규먼트는 int ,float 등 형을 의미<br>파라미터는 실제적인 데이터 10, 0.5 등을 의미.</p>
-<h4 id="식별자"><a href="#식별자" class="headerlink" title="식별자"></a>식별자</h4><p>클래스 이름, 변수이름, 메소드 이름을 식별자라 한다.<br>대소문자 가능 숫자 가능 하지만 앞에는 안되고 특수문자는 $ _ 만 사용가능.</p>
-<h4 id="생성자"><a href="#생성자" class="headerlink" title="생성자"></a>생성자</h4><p>기본으로 디폴트 생성자가 만들어지지만 생성자가 하나라도 정의되어 있으면 디폴트 생성자가 생성되지 않는다.</p>
-<h4 id="다형성"><a href="#다형성" class="headerlink" title="다형성"></a>다형성</h4><p>외부에서 사용할 땐 일관되게 사용하는것.<br>오버로딩, 오버라이딩을 통해 구현</p>
-<h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><p>this 키워드는 메소드 호출을 받는 객체를 의미한다.<br>현재 사용중인 객체 그 자체를 의미한다.<br>this() 는  클래스의 한 생성자에서 다른 생성자를 호출 할 때 사용할 수 있다</p>
-<h4 id="오버로딩"><a href="#오버로딩" class="headerlink" title="오버로딩"></a>오버로딩</h4><p>부모에있는 메소드와 시그니쳐가 동일(접근제어자 , 반환형, 메소드이름, 아규먼트)</p>
-<h4 id="생성자-관련-문제"><a href="#생성자-관련-문제" class="headerlink" title="생성자 관련 문제"></a>생성자 관련 문제</h4><p>상속관계에서 자식 클래스의 인스턴스를 생성하면 부모 혹은 자식 생성자중 어떤것이 먼저 호출될까?</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">부모 생성자</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">Parent</span><span class="params">()</span></span>&#123;</div><div class="line">  syso(<span class="string">"부모 호출됨"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">자식 생성자</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">Child</span><span class="params">()</span></span>&#123;</div><div class="line"></div><div class="line">  syso(<span class="string">"자식 호출됨"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>부모 생성자가 먼저 호출된다.<br>즉 자식 메소드의 생성자 안에(8행) super(); (기본생성자 호출)가 자동으로 삽입된것이다.</p>
-<p>int형 매개변수가 존재하는 부모 생성자를 호출하려면 8행에 super(35); 를 넣어주면 된다.</p>
-<h4 id="캐스팅"><a href="#캐스팅" class="headerlink" title="캐스팅"></a>캐스팅</h4><p>형은 높은데에서 낮은곳으로 가면 명시적으로 알려줘야 하지만 , 인스턴스는높은곳(부모)  낮은곳(자식) 으로 가려면 명시를 해줘야 한다.<br>다운캐스팅의 예(Explicity Casting 명시적 캐스팅)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//방법 1</span></div><div class="line">Person p = <span class="keyword">new</span> Student();</div><div class="line">Student s1 = (Student)p;</div><div class="line"></div><div class="line"><span class="comment">//방법 2</span></div><div class="line">((Student)p).set();   </div></pre></td></tr></table></figure></p>
-<p>업캐스팅의 예(Implicity Casting 암시적 캐스팅)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Person p2 = s1;</div></pre></td></tr></table></figure></p>
-<h4 id="추상클래스"><a href="#추상클래스" class="headerlink" title="추상클래스"></a>추상클래스</h4><h5 id="추상화"><a href="#추상화" class="headerlink" title="추상화"></a>추상화</h5><p>객체들이 가지고 있는 속성과 기능 중에 중요한 것들은 남기고 필요 없는 불필요한 것은 없애는것. 또는 공통된 것들을 그룹핑해서 한곳에다 모아놓는것.</p>
-<h5 id="추상클래스-1"><a href="#추상클래스-1" class="headerlink" title="추상클래스"></a>추상클래스</h5><p>new를 통해 객체를 생성하지는 못한다.<br>필드를 갖을 수 있고, 구현된 메소드를 갖을 수 있다.<br>추상 클래스를 상속하는 클래스는 반드시 추상 클래스의 추상 메소드를 구현해야 함<br>추상 클래스간의 상속에서는 추상클래스를 구현하지 않아도 됨<br>추상 클래스의 활용<br>여러 클래스들이 상당수 공통점을 가지고 있으나 부분적으로 그 처리 방식이 다를 경우 부모 클래스를 추상 클래스로 정의하여 자식 클래스들이 각각 해당 메소드를 구현</p>
-<h5 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h5><p>부모클래스<br><figure class="highlight java"><figcaption><span>Shape.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Shape</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> String fillColor;</div><div class="line">	<span class="keyword">private</span> String lineColor;</div><div class="line"></div><div class="line">..</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">int</span> <span class="title">calcArea</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>Shape 클래스를 상속<br><figure class="highlight java"><figcaption><span>Rectangle.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span> <span class="keyword">extends</span> <span class="title">Shape</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> x1;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> y1;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> x2;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> y2;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"사각형을 그렸습니다."</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">calcArea</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> ((x1+x2)*(y1+y2));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>Shape 클래스를 상속<br><figure class="highlight java"><figcaption><span>Circle.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Circle</span> <span class="keyword">extends</span> <span class="title">Shape</span></span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> x1;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> y1;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> radius;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Circle</span><span class="params">(<span class="keyword">int</span> x1, <span class="keyword">int</span> y1, <span class="keyword">int</span> radius)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.x1 = x1;</div><div class="line">		<span class="keyword">this</span>.y1 = y1;</div><div class="line">		<span class="keyword">this</span>.radius = radius;		</div><div class="line">	&#125;</div><div class="line"></div><div class="line">..</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"원을 그렸습니다."</span>);</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">calcArea</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> (<span class="keyword">int</span>)(Math.PI * radius * radius);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>main 메소드<br><figure class="highlight java"><figcaption><span>PaintApp.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> paint;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PaintApp</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line"></div><div class="line">		drawShape( <span class="keyword">new</span> Rectangle());</div><div class="line">		drawShape( <span class="keyword">new</span> Circle(<span class="number">10</span>, <span class="number">20</span>, <span class="number">5</span>));</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">drawShape</span><span class="params">( Shape shape )</span> </span>&#123;</div><div class="line">		shape.draw();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4 id="인터페이스"><a href="#인터페이스" class="headerlink" title="인터페이스"></a>인터페이스</h4><p>객체를 사용할 수 있는 목록. 즉 메소드 목록이다.<br>UML 에서는 &lt;<interface>&gt; 라고 하고 그림.<br>기능의 명세이다. Drawable라는 인터페이스를 구현하여 draw 메소드를 오버라이딩하여 사용.<br>Drawable 인터페이스를 구현하면 그릴수 있다는 것을 암시.<br>서로 관계가 없는 물체들이 상호 작용을 하기 위해서 사용하는 장치나 시스템<br>클래스 구조상의 관계와 상관 없이 클래스들에 의해 구현되어질 수 있는 규약<br>인터페이스 안에서는 인터페이스 끼리 다중상속이 된다.<br>public interface Drivable extends A,B{…..}</interface></p>
-<h5 id="실습-1"><a href="#실습-1" class="headerlink" title="실습"></a>실습</h5><p>인터페이스 정의<br><figure class="highlight java"><figcaption><span>Drawable.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Drawable</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span></span>;		<span class="comment">//자동으로 abstract가 됨</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>Point클래스가 Drawable 인터페이스를 구현함<br><figure class="highlight java"><figcaption><span>Paint.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Point</span> <span class="keyword">implements</span> <span class="title">Drawable</span></span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> x;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> y;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Point</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">	&#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</div><div class="line">    System.out.println( <span class="string">"점[x="</span> + x + <span class="string">",y="</span> + y +<span class="string">"]을 그렸습니다."</span>);			</div><div class="line">  &#125;</div><div class="line">  ...</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</div><div class="line">		show();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>ColorPoint가 Point클래스를 상속하여 Drawable를 구현한 효과를 갖음<br><figure class="highlight java"><figcaption><span>ColorPoint.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> paint;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ColorPoint</span> <span class="keyword">extends</span> <span class="title">Point</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> String color;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ColorPoint</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, String color)</span> </span>&#123;</div><div class="line">		<span class="keyword">super</span>(x, y);</div><div class="line">		<span class="keyword">this</span>.color = color;		</div><div class="line">	&#125;</div><div class="line"></div><div class="line">..</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="comment">//완전</span></div><div class="line">		<span class="keyword">super</span>.show();</div><div class="line">		System.out.println( <span class="string">"color "</span> + color);</div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>메인메소드<br><figure class="highlight java"><figcaption><span>PaintApp.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PaintApp</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line"></div><div class="line">		draw(<span class="keyword">new</span> ColorPoint(<span class="number">200</span>,<span class="number">200</span>,<span class="string">"yellow"</span>));</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">( Drawable drawable )</span> </span>&#123;<span class="comment">//Drawable를 구현하고 있으면 draw를 해줄게</span></div><div class="line">		drawable.draw();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h5 id="인터페이스-추상클래스-차이"><a href="#인터페이스-추상클래스-차이" class="headerlink" title="인터페이스 추상클래스 차이"></a>인터페이스 추상클래스 차이</h5><p>인터페이스는<br>서로 관계가 없는 물체들이 상호 작용을 하기 위해서 사용하는 장치나 시스템<br>클래스 구조상의 관계와 상관 없이 클래스들에 의해 구현되어질 수 있는 규약<br>하나 또는 그 이상의 클래스들에서 똑같이 구현되어질 법한 메소드를 선언하는 경우</p>
-<p>추상클래스는<br>객체들이 가지고 있는 속성과 기능 중에 중요한 것들은 남기고 필요 없는 불필요한 것은 없애는것. 또는 공통된 것들을 그룹핑해서 한곳에다 모아놓는것.</p>
-<h4 id="정리"><a href="#정리" class="headerlink" title="정리"></a>정리</h4><p>일반클래스 : 모두 완결한 메소드  /  필드를 가질 수 있음 / 객체화 가능</p>
-<p>추상클래스 : 완결한 메소드, 추상메소드 / 필드 가질 수 있음 / 객체화 불가</p>
-<p>인터페이스 : 모든 추상 메소드 / 필드 가질 수 없음 / 객체화 불가</p>
-<h4 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 객체가 Circle 클래스의 인스턴스 인가?</div><div class="line">System.out.println( c instanceof Circle );</div><div class="line"></div><div class="line">// 객체가 Drawable 인터페이스를 구현하였는가?</div><div class="line">System.out.println( c instanceof Drawable );</div><div class="line"></div><div class="line">// 객체가 Rectangle 클래스의 인스턴스 인가?</div><div class="line">System.out.println( c instanceof Rectangle );</div><div class="line"></div><div class="line">// 객체가 Shape 클래스의 인스턴스 인가?</div><div class="line">System.out.println( c instanceof Shape );</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;오버로드&quot;&gt;&lt;a href=&quot;#오버로드&quot; class=&quot;headerlink&quot; title=&quot;오버로드&quot;&gt;&lt;/a&gt;오버로드&lt;/h4&gt;&lt;p&gt;아래는 다 다른 메소드이다.&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;
-    
-    </summary>
-    
-      <category term="빅데이터 전문가과정" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>깃허브 사용</title>
-    <link href="http://KKimSangHeon.github.io/2017/08/01/bigdata2/"/>
-    <id>http://KKimSangHeon.github.io/2017/08/01/bigdata2/</id>
-    <published>2017-08-01T04:04:28.000Z</published>
-    <updated>2017-08-07T06:03:38.957Z</updated>
-    
-    <content type="html"><![CDATA[<p>깃허브란 형상관리 툴이다.</p>
-<p>A(팀장,a모듈담당) B(b모듈담당) C(c모듈담당) 개발자가 하나의 프로젝트를 개발중이다.</p>
-<p>A 가 프로젝트(모듈 a,b,c 포함)를 올린다.</p>
-<p>그 후 B C 에게 그 사실을 알린다.</p>
-<p>B C 는 프로젝트를 내려받고</p>
-<p>B,C가 자신의 모듈을 수정 후 커밋을 한다.</p>
-<p>A,B,C는 수정된 것을 내려 받은 후 테스트를 한다.</p>
-<p>git가 있으며 내부에는 Repository가 있다.</p>
-<p>git는 레파지토리가 2개 존재한다.<br>하나는 로컬이고 하나는 원격이다.</p>
-<p>로컬 레파지토리에 프로젝트를 올리는것을 commit 라고 하며 로컬 레파지토리를 원격 레파지토리에 맞추는 것을 push 라고 한다.</p>
-<p>원격 레파지토리에서 프로젝트를 로컬레파지토리로 갖고오는것을 full 내 프로젝트로 반영하는것은 fetch라고 한다.</p>
-<h4 id="하지만-보통-로컬레파지토리와-프로젝트를-같이-놓는다-편의상"><a href="#하지만-보통-로컬레파지토리와-프로젝트를-같이-놓는다-편의상" class="headerlink" title="하지만 보통 로컬레파지토리와 프로젝트를 같이 놓는다.(편의상)"></a>하지만 보통 로컬레파지토리와 프로젝트를 같이 놓는다.(편의상)</h4><h3 id="1-내-프로젝트-올리기"><a href="#1-내-프로젝트-올리기" class="headerlink" title="1.내 프로젝트 올리기"></a>1.내 프로젝트 올리기</h3><h5 id="이클립스에서-실행"><a href="#이클립스에서-실행" class="headerlink" title="이클립스에서 실행"></a>이클립스에서 실행</h5><p>1.이클립스 - show view - git Repository 선택<br>2.프로젝트 우클릭 후 - team - share …-체크-create누름(로컬레파지토리 프로젝트를 같이하는것.)</p>
-<h5 id="깃허브에서-실행"><a href="#깃허브에서-실행" class="headerlink" title="깃허브에서 실행"></a>깃허브에서 실행</h5><p>1.레파지토리 new - 프로젝트 이름이랑 동일하게 생성(굳이 안해도되나 편의상)<br>2.깃 주소를 복사</p>
-<h5 id="이클립스에서-실행-1"><a href="#이클립스에서-실행-1" class="headerlink" title="이클립스에서 실행"></a>이클립스에서 실행</h5><p>1.git Repository탭 - remote - Configure fetch 체크(push 체크하면 올리기만 되고 받기는 안된다.) - change 버튼 클릭 - save Fetch 클릭<br>2.project explorer탭으로 - team - commit - Unsatage Changes에 있는 것들을 staged Changed로 내림. 커밋메세지는 추가할 수 있도록 하자. - commit and push 클릭 - next - finish</p>
-<h3 id="2-타-프로젝트-받기"><a href="#2-타-프로젝트-받기" class="headerlink" title="2.타 프로젝트 받기."></a>2.타 프로젝트 받기.</h3><p>방법1. 깃허브에서 다운받아서 임포트하기.</p>
-<p>방법2. 프로젝트를 fork한다.</p>
-<h4 id="깃허브에서-실행-1"><a href="#깃허브에서-실행-1" class="headerlink" title="깃허브에서 실행"></a>깃허브에서 실행</h4><p>원하는 프로젝트로 가서 fork를 누르고<br>내 레파지토리로 가보자. 자신의 레파지토리에 생성되있는게 있을것임.<br>이제 자기 레파지토리에 있는것을 잡아 땡겨보자<br>clone or download 에서 url 복사</p>
-<h4 id="이클립스에서-실행-2"><a href="#이클립스에서-실행-2" class="headerlink" title="이클립스에서 실행"></a>이클립스에서 실행</h4><p>git Repository탭으로 가서 컨트롤+v<br>next-next - browse 눌러서 자기 워크스페이스 선택 (로컬 레파지토리와 프로젝트저장소를 하나로 합치는것.)<br>working tree 선택 후 오른쪽 누르고 import .. 클릭 후 finish</p>
-<p>Project explorer 탭으로 가서 보면 에러가 난다. (환경설정이 달라서 나는 에러이다.)<br>프로젝트 우클릭 후 - properties - java build path 선택- Libraries 탭 선택 - 더블클릭 후 - alternate JRE 에서 선택</p>
-<h3 id="3-레파지토리-삭제"><a href="#3-레파지토리-삭제" class="headerlink" title="3.레파지토리 삭제"></a>3.레파지토리 삭제</h3><p>해당레파지토리로 가서 - 세팅 - 레파지토리 이름 입력</p>
-<p>이클립스에서 실행<br>team - disconnect  후 delete Repository 클릭<br>하나로 뭉쳐놨기 때문에 맨위 하나만 선택하면 된다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;깃허브란 형상관리 툴이다.&lt;/p&gt;
-&lt;p&gt;A(팀장,a모듈담당) B(b모듈담당) C(c모듈담당) 개발자가 하나의 프로젝트를 개발중이다.&lt;/p&gt;
-&lt;p&gt;A 가 프로젝트(모듈 a,b,c 포함)를 올린다.&lt;/p&gt;
-&lt;p&gt;그 후 B C 에게 그 사실을 알린다.
-    
-    </summary>
-    
-      <category term="빅데이터 전문가과정" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/"/>
-    
-      <category term="기타" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/%EA%B8%B0%ED%83%80/"/>
-    
     
   </entry>
   

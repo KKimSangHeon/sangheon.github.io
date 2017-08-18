@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="SELECT FIRST_NAME || ‘ ‘ || LAST_NAME AS NAME FROM EMPLOYEES;                           ||은 CONCAT SELECT SALARY AS “본봉”, SALARY + SALARY * 0.3 AS “보너스”FROM EMPLOYEES; SELECT -SALARY FROM EMPLOYEES; N">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/db.jpg">
-<meta property="og:updated_time" content="2017-08-17T02:00:09.102Z">
+<meta property="og:updated_time" content="2017-08-17T02:29:49.538Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="3. 함수 NVL,SYSDATE,IN,BETWEEN,IS NULL,LIKE,LOWER,INITCAP,LPAD,TRIM,REPLACE,CEIL,FLOOR,ROUND,TRUNC,MOD,POWER,SIGN,ADD_MONTHS,TO_CHAR">
 <meta name="twitter:description" content="SELECT FIRST_NAME || ‘ ‘ || LAST_NAME AS NAME FROM EMPLOYEES;                           ||은 CONCAT SELECT SALARY AS “본봉”, SALARY + SALARY * 0.3 AS “보너스”FROM EMPLOYEES; SELECT -SALARY FROM EMPLOYEES; N">
@@ -179,6 +179,8 @@ ga('send', 'pageview');
 <p>SELECT NVL2(0, 10, 20) FROM DUAL;<br>–NULL이 아니면 20</p>
 <p>SELECT SALARY AS “본봉”,<br>       SALARY + SALARY * NVL(COMMISSION_PCT,0)<br>       AS “보너스”<br>FROM EMPLOYEES;</p>
 <p>SELECT SALARY AS “본봉”,<br>       NVL2(COMMISSION_PCT,SALARY + SALARY * COMMISSION_PCT, SALARY)<br>       AS “보너스”<br>FROM EMPLOYEES;</p>
+<h4 id="NULLIF"><a href="#NULLIF" class="headerlink" title="NULLIF"></a>NULLIF</h4><p>SELECT NULLIF( 10 , 5 + 5 ) FROM DUAL;</p>
+<h4 id="COALESCE"><a href="#COALESCE" class="headerlink" title="COALESCE"></a>COALESCE</h4><p>SELECT COALESCE(NULL, NULL,1,2,3) FROM DUAL;<br>– 1출력</p>
 <h4 id="SYSDATE"><a href="#SYSDATE" class="headerlink" title="SYSDATE"></a>SYSDATE</h4><p>SELECT SYSDATE FROM DUAL;</p>
 <p>SELECT JOB_ID<br>FROM EMPLOYEES<br>WHERE JOB_ID = ‘AD_PRES’<br>   OR JOB_ID = ‘AD_VP’;</p>
 <h4 id="IN"><a href="#IN" class="headerlink" title="IN"></a>IN</h4><p>SELECT JOB_ID<br>FROM EMPLOYEES<br>WHERE JOB_ID IN(‘AD_PRES’,’AD_VP’);</p>
@@ -245,7 +247,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/08/16/database3/" data-id="cj6fstw7u006jvcv7bsc7jahh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/08/16/database3/" data-id="cj6hcrgcr006cq4v7wz7x1kvm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -354,7 +356,7 @@ ga('send', 'pageview');
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            4. 함수
+            4. CASE, DECODE, GROUP BY
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
@@ -377,7 +379,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">19</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
