@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Commit, Transaction, Delete, Update, CONSTRAINT | Kim Sang Heon&#39;s Bolg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Data Base" />
+    
+    
+
+      <meta name="description" content="Commit일련의 과정을 거친 후 커밋을 해줘야 데이터베이스에 반영이 된다.오라클의 경우 DDL은 자동으로 커밋이 되며 DML은 직접 커밋을 해줘야 한다.커밋의 과정중 에러가 나면 롤백시킨다. Transaction여러개의 job를 묶어 놓은것을 Transaction이라 한다. DELETEDELETEFROM BOOKWHERE NO = 1; COMMIT;">
+<meta name="keywords" content="Data Base">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Commit, Transaction, Delete, Update, CONSTRAINT">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2017/08/21/database8/index.html">
+<meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
+<meta property="og:description" content="Commit일련의 과정을 거친 후 커밋을 해줘야 데이터베이스에 반영이 된다.오라클의 경우 DDL은 자동으로 커밋이 되며 DML은 직접 커밋을 해줘야 한다.커밋의 과정중 에러가 나면 롤백시킨다. Transaction여러개의 job를 묶어 놓은것을 Transaction이라 한다. DELETEDELETEFROM BOOKWHERE NO = 1; COMMIT;">
+<meta property="og:image" content="http://kkimsangheon.github.io/images/db.jpg">
+<meta property="og:updated_time" content="2017-08-21T05:17:49.295Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Commit, Transaction, Delete, Update, CONSTRAINT">
+<meta name="twitter:description" content="Commit일련의 과정을 거친 후 커밋을 해줘야 데이터베이스에 반영이 된다.오라클의 경우 DDL은 자동으로 커밋이 되며 DML은 직접 커밋을 해줘야 한다.커밋의 과정중 에러가 나면 롤백시킨다. Transaction여러개의 job를 묶어 놓은것을 Transaction이라 한다. DELETEDELETEFROM BOOKWHERE NO = 1; COMMIT;">
+<meta name="twitter:image" content="http://kkimsangheon.github.io/images/db.jpg">
+        <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-101744076-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/2017/06/29/about-me/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/">About Me</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/Introduction/">Introduction</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/My-Projects/">My Projects</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/">Data Structure</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Search/">Search</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Sort/">Sort</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/">Linux</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/관련정보/">관련정보</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a></li></ul></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-database8" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Commit, Transaction, Delete, Update, CONSTRAINT
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2017/08/21/database8/" class="article-date">
+            <time datetime="2017-08-21T00:23:06.000Z" itemprop="datePublished">2017-08-21</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Data-Base/">Data Base</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h4 id="Commit"><a href="#Commit" class="headerlink" title="Commit"></a>Commit</h4><p>일련의 과정을 거친 후 커밋을 해줘야 데이터베이스에 반영이 된다.<br>오라클의 경우 DDL은 자동으로 커밋이 되며 DML은 직접 커밋을 해줘야 한다.<br>커밋의 과정중 에러가 나면 롤백시킨다.</p>
+<h4 id="Transaction"><a href="#Transaction" class="headerlink" title="Transaction"></a>Transaction</h4><p>여러개의 job를 묶어 놓은것을 Transaction이라 한다.</p>
+<h4 id="DELETE"><a href="#DELETE" class="headerlink" title="DELETE"></a>DELETE</h4><p>DELETE<br>FROM BOOK<br>WHERE NO = 1;</p>
+<p>COMMIT;   // 커밋한다.<br>ROLLBACK;   //다시 롤백한다.</p>
+<h4 id="UPDATE"><a href="#UPDATE" class="headerlink" title="UPDATE"></a>UPDATE</h4><p>UPDATE BOOK<br>SET TITLE = ‘토지2’<br>WHERE NO = 1;</p>
+<h4 id="Subquery를-이용한-테이블-생성"><a href="#Subquery를-이용한-테이블-생성" class="headerlink" title="Subquery를 이용한 테이블 생성"></a>Subquery를 이용한 테이블 생성</h4><p>백업용 테스트용으로 많이 쓰인다.</p>
+<p>Subquery의 결과와 동일한 테이블 생성됨<br>질의 결과 레코드들이 포함됨<br>NOT NULL 제약 조건 만 상속됨</p>
+<p>CREATE TABLE EMPLOYEES_BAK01<br>AS ( SELECT *<br>     FROM EMPLOYEES<br>     WHERE JOB_ID = ‘FI_ACCOUNT’<br>);</p>
+<h4 id="char-varchar"><a href="#char-varchar" class="headerlink" title="char, varchar"></a>char, varchar</h4><p>char - 10바이트를 만들고 ‘ab’를 입력하면 10바이트 할당됨<br>varchar - 10바이트를 만들고 ‘ab’를 입력하면 2바이트 할당됨</p>
+<p>모든 데이터가 고정크기일 때 (ex 주민번호, 학번) - char<br>모든 데이터가 고정크기가 아닐 때 (ex 이메일) - varchar</p>
+<h4 id="varchar-varchar2"><a href="#varchar-varchar2" class="headerlink" title="varchar, varchar2"></a>varchar, varchar2</h4><p>기능상의 다른점은 없지만 varchar2에서 성능개선이 이뤄짐.<br>varchar는 곧 없어질 것이라 예고를 하고있다.</p>
+<h4 id="NUMBER-x-y"><a href="#NUMBER-x-y" class="headerlink" title="NUMBER(x,y)"></a>NUMBER(x,y)</h4><p>y는 실수부분을 의미한다.</p>
+<h4 id="varchar2-5-nvarchar2-5"><a href="#varchar2-5-nvarchar2-5" class="headerlink" title="varchar2(5), nvarchar2(5)"></a>varchar2(5), nvarchar2(5)</h4><p>varchar2(5)는 5바이트를 할당<br>nvarchar2(5) 는 5글자를 할당<br>한글은 UTF-8을 사용하기 떄문에 문제가 된다.</p>
+<p>–NVARCHAR2 , VARCHAR2와 비교</p>
+<p>CREATE TABLE BOOK(<br>    NO NUMBER(10),<br>    TITLE VARCHAR2(120),<br>    AUTHOR VARCHAR2(5), –MAX 4000 BYTE<br>    TEST NVARCHAR2(2000), –MAX 2000자( 내부적으로 6000 BYTE )<br>    PUB_DTAE DATE<br>);</p>
+<p>INSERT INTO BOOK VALUES(1, ‘토지’, ‘가나’, SYSDATE);<br>– 가나가 6바이트라 에러가 발생..</p>
+<p>INSERT INTO BOOK VALUES(1, ‘토지’, ‘가’, SYSDATE);<br>– 정상적으로 INSERT 가능</p>
+<h4 id="ALTER"><a href="#ALTER" class="headerlink" title="ALTER"></a>ALTER</h4><p>ALTER TABLE BOOK ADD(PUBS VARCHAR(120));<br>–컬럼추가<br>ALTER TABLE BOOK MODIFY(PUBS VARCHAR(200));<br>–컬럼 변경<br>ALTER TABLE BOOK RENAME COLUMN PUBS TO PUBLISHINGS;<br>–컬럼명 변경<br>ALTER TABLE BOOK DROP(PUBLISHINGS);<br>–컬럼 제거<br>ALTER TABLE BOOK MODIFY(AUTHOR VARCHAR(300) NOT NULL);<br>–컬럼 변경<br>ALTER TABLE BOOK SET UNUSED(AUTHOR);<br>–컬럼을 보이지 않게 만듦<br>ALTER TABLE BOOK DROP UNUSED COLUMNS;<br>–보이지 않게 만든 컬럼을 삭제함</p>
+<h4 id="SEQUENCE"><a href="#SEQUENCE" class="headerlink" title="SEQUENCE"></a>SEQUENCE</h4><p>값이 1씩 증가한다<br>CREATE TABLE BOOK(<br>    NO NUMBER(10),<br>    TITLE VARCHAR2(200) NOT NULL,<br>    AUTHOR VARCHAR2(50) NOT NULL, –MAX 4000 BYTE<br>    PUB_DATE DATE,</p>
+<pre><code>PRIMARY KEY(NO)
+</code></pre><p>);</p>
+<p>CREATE SEQUENCE SEQ_BOOK<br>START WITH 1    –1부터 시작<br>INCREMENT BY 1  –1씩 증가<br>MAXVALUE 999999999  –MAX가 다차면 1로 돌아감<br>–PRIMARY KEY 자동증가</p>
+<p>SELECT SEQ_BOOK.NEXTVAL FROM DUAL;  –증가<br>SELECT SEQ_BOOK.CURRVAL FROM DUAL;  –최근값</p>
+<p>INSERT INTO BOOK VALUES(<br>    SEQ_BOOK.NEXTVAL,<br>    ‘토지2’,<br>    ‘박경리’,<br>    SYSDATE<br>);<br>–INSERT 문에서의 시퀀스 활용</p>
+<h4 id="CHECK"><a href="#CHECK" class="headerlink" title="CHECK"></a>CHECK</h4><p>CREATE TABLE BOOK(<br>    NO NUMBER(10),<br>    TITLE VARCHAR2(200) NOT NULL,<br>    AUTHOR VARCHAR2(50) NOT NULL, –MAX 4000 BYTE<br>    PUB_DATE DATE,<br>    STATE VARCHAR2(12) NOT NULL,<br>    PRIMARY KEY(NO),<br>    CONSTRAINT C_BOOK_CHECK CHECK(STATE IN (‘대여중’, ‘대여가능’))<br>);</p>
+<p>INSERT INTO BOOK VALUES(<br>    SEQ_BOOK.NEXTVAL,<br>    ‘토지2’,<br>    ‘박경리’,<br>     SYSDATE,<br>    ‘대여가능’   –대여중, 대여가능만 들어갈 수 있다.<br>    );   </p>
+<h4 id="외부키"><a href="#외부키" class="headerlink" title="외부키"></a>외부키</h4><p>CREATE SEQUENCE SEQ_AUTHOR<br>START WITH 1<br>INCREMENT BY 1<br>MAXVALUE 999999999<br>–시퀀스 생성</p>
+<p>CREATE TABLE AUTHOR(<br>    NO NUMBER(10),<br>    NAME VARCHAR2(200) NOT NULL,<br>    PROFILE VARCHAR2(2000),<br>    PRIMARY KEY(NO)<br>)</p>
+<p>CREATE TABLE BOOK(<br>    NO NUMBER(10),<br>    TITLE VARCHAR2(200) NOT NULL,<br>    AUTHOR_NO NUMBER(10) , –MAX 4000 BYTE<br>    STATE VARCHAR2(12) NOT NULL,<br>    PUB_DATE DATE,<br>    PRIMARY KEY(NO),<br>    CONSTRAINT C_BOOK_FK FOREIGN KEY (AUTHOR_NO) REFERENCES AUTHOR(NO)<br>    ON DELETE CASCADE  , –AUTHOR 테이블의 박경리 데이터가 삭제도면 BOOK테이블의 토지 데이터도 삭제된다.<br>    ON DELETE SET NULL, –AUTHOR 테이블의 박경리 데이터가 삭제도면 BOOK테이블의 AUTHOR_NO는 NULL이 된다..<br>    CONSTRAINT C_BOOK_CHECK CHECK(STATE IN (‘대여중’, ‘대여가능’))<br>);</p>
+<p>INSERT INTO AUTHOR VALUES(<br>SEQ_AUTHOR.NEXTVAL,<br>‘박경리’,<br>NULL);</p>
+<p>INSERT INTO BOOK VALUES(<br>SEQ_BOOK.NEXTVAL,<br>‘토지’,<br>1,<br>‘대여가능’,<br>SYSDATE);</p>
+<h4 id="CONSTRAINT"><a href="#CONSTRAINT" class="headerlink" title="CONSTRAINT"></a>CONSTRAINT</h4><p>제약조건은 보통 ALTER테이블을 통해 모아서 준다.<br>아래와 같이..<br>CREATE TABLE AUTHOR(<br>    NO NUMBER(10),<br>    NAME VARCHAR2(200) NOT NULL,<br>    PROFILE VARCHAR2(2000)<br>)</p>
+<p>ALTER TABLE AUTHOR<br>ADD CONSTRAINT C_AUTHOR_PK<br>PRIMARY KEY(NO);</p>
+<p>CREATE TABLE BOOK(<br>    NO NUMBER(10),<br>    TITLE VARCHAR2(200) NOT NULL,<br>    AUTHOR_NO NUMBER(10) NOT NULL, –MAX 4000 BYTE<br>    STATE VARCHAR2(12) NOT NULL,<br>    PUB_DATE DATE<br>);</p>
+<p>ALTER TABLE BOOK<br>ADD CONSTRAINT C_BOOK_PK<br>PRIMARY KEY(NO);</p>
+<p>ALTER TABLE BOOK<br>ADD CONSTRAINT C_BOOK_CHECK<br>CHECK(STATE IN (‘대여중’, ‘대여가능’));</p>
+<p>ALTER TABLE BOOK<br>ADD CONSTRAINT C_BOOK_FK<br>FOREIGN KEY (AUTHOR_NO) REFERENCES AUTHOR(NO) ON DELETE CASCADE ;</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://KKimSangHeon.github.io/2017/08/21/database8/" data-id="cj6lqvj5c006y3kv7roq1f1jw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/KKimSangHeon/" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/tkdgjs1501/" target="_blank">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/08/21/database9/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Data Dictionary, DCL, ROLE
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2017/08/18/database7/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">7. TOP - K</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">22</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 Kim Sang Heon</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'https-kkimsangheon-github-io-2';
+    
+    
+    var disqus_url = 'http://KKimSangHeon.github.io/2017/08/21/database8/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
