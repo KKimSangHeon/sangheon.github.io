@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>10. JDBC | Kim Sang Heon&#39;s Bolg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Data Base" />
+    
+    
+
+      <meta name="description" content="JDBC-자바를 이용한 데이터베이스 접속과 SQL 문장의  실행, 그리고  실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약-자바 프로그램내에서 SQL문을 실행하기 위한 자바 API-SQL과 프로그래밍 언어의 통합 접근 중 한 형태 Class.forName메소드란?클래스를 로딩하는 메소드이다.//왜 new OralcDriver()을 하">
+<meta name="keywords" content="Data Base">
+<meta property="og:type" content="article">
+<meta property="og:title" content="10. JDBC">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2017/08/22/database10/index.html">
+<meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
+<meta property="og:description" content="JDBC-자바를 이용한 데이터베이스 접속과 SQL 문장의  실행, 그리고  실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약-자바 프로그램내에서 SQL문을 실행하기 위한 자바 API-SQL과 프로그래밍 언어의 통합 접근 중 한 형태 Class.forName메소드란?클래스를 로딩하는 메소드이다.//왜 new OralcDriver()을 하">
+<meta property="og:image" content="http://kkimsangheon.github.io/images/db.jpg">
+<meta property="og:updated_time" content="2017-08-22T02:43:08.970Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="10. JDBC">
+<meta name="twitter:description" content="JDBC-자바를 이용한 데이터베이스 접속과 SQL 문장의  실행, 그리고  실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약-자바 프로그램내에서 SQL문을 실행하기 위한 자바 API-SQL과 프로그래밍 언어의 통합 접근 중 한 형태 Class.forName메소드란?클래스를 로딩하는 메소드이다.//왜 new OralcDriver()을 하">
+<meta name="twitter:image" content="http://kkimsangheon.github.io/images/db.jpg">
+        <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-101744076-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/2017/06/29/about-me/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/">About Me</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/Introduction/">Introduction</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/My-Projects/">My Projects</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/">Data Structure</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Search/">Search</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Sort/">Sort</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/">Linux</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/관련정보/">관련정보</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a></li></ul></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-database10" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        10. JDBC
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2017/08/22/database10/" class="article-date">
+            <time datetime="2017-08-22T00:08:22.000Z" itemprop="datePublished">2017-08-22</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Data-Base/">Data Base</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h4 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h4><p>-자바를 이용한 데이터베이스 접속과 SQL 문장의  실행, 그리고  실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약<br>-자바 프로그램내에서 SQL문을 실행하기 위한 자바 API<br>-SQL과 프로그래밍 언어의 통합 접근 중 한 형태</p>
+<h4 id="Class-forName메소드란"><a href="#Class-forName메소드란" class="headerlink" title="Class.forName메소드란?"></a>Class.forName메소드란?</h4><p>클래스를 로딩하는 메소드이다.<br>//왜 new OralcDriver()을 하지 않고 forName() 메소드를 사용할 까?<br>//new 를 이용할 경우 벤더별로 다를것이므로!</p>
+<figure class="highlight java"><figcaption><span>MyDriver.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.bigdata2017.jdbc;</div><div class="line"></div><div class="line">...</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyDriver</span> <span class="keyword">implements</span> <span class="title">Driver</span></span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">static</span> &#123;</div><div class="line">		System.out.println( <span class="string">"static code area"</span> );</div><div class="line"></div><div class="line">		<span class="comment">//외부에서 드라이버 접근이 가능토록 드라이버 등록</span></div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			DriverManager.registerDriver(<span class="keyword">new</span> MyDriver());</div><div class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">acceptsURL</span><span class="params">(String arg0)</span> <span class="keyword">throws</span> SQLException </span>&#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> Connection <span class="title">connect</span><span class="params">(String url, Properties info)</span> <span class="keyword">throws</span> SQLException </span>&#123;</div><div class="line"></div><div class="line">		System.out.println( url );</div><div class="line">		System.out.println( info );</div><div class="line">		<span class="comment">//이작업은 DB마다 다를것이다.</span></div><div class="line">		<span class="comment">/*연결 작업*/</span></div><div class="line">		<span class="keyword">return</span> <span class="keyword">new</span> MyConnection();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight java"><figcaption><span>ConnectionTest.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.sql.DriverManager;</div><div class="line"><span class="keyword">import</span> java.sql.SQLException;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConnectionTest</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line"></div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			<span class="comment">//1. JDBC 드라이버 로딩</span></div><div class="line"><span class="comment">//			Class.forName( "oracle.jdbc.driver.OracleDriver" );</span></div><div class="line">			Class.forName( <span class="string">"com.bigdata2017.jdbc.MyDriver"</span> );</div><div class="line">			<span class="comment">//클래스를 강제 로딩</span></div><div class="line">			<span class="comment">//왜 new OralcDriver()을 하지 않고 forName() 메소드를 사용할 까?</span></div><div class="line">			<span class="comment">//new 를 이용할 경우 벤더별로 다를것이므로!</span></div><div class="line"></div><div class="line">			<span class="comment">//2. Connection 얻어오기</span></div><div class="line">			String url = <span class="string">"jdbc:oracle:thin:@localhost:1521:xe"</span>;</div><div class="line">			DriverManager.getConnection(url, <span class="string">"hr"</span>, <span class="string">"hr"</span>);</div><div class="line"></div><div class="line">		&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</div><div class="line">			System.out.println( <span class="string">"드라이버 로딩 실패:"</span> + e );</div><div class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">			System.out.println( <span class="string">"연결실패"</span> + e );</div><div class="line">		&#125;</div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight java"><figcaption><span>MyConnection.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.bigdata2017.jdbc;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyConnection</span> <span class="keyword">implements</span> <span class="title">Connection</span></span>&#123;</div><div class="line"></div><div class="line">	...</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<h4 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h4><p>프로젝트 우클릭 - 자바 빌드 패스 - 라이브러리탭- add library - user library 선택 -new - jdbc(아무거나 가능) - add external jar - ojdbc 파일 찾기 - apply - finish</p>
+<h4 id="SelectTest"><a href="#SelectTest" class="headerlink" title="SelectTest"></a>SelectTest</h4><figure class="highlight java"><figcaption><span>SelectTest.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.sql.Connection;</div><div class="line"><span class="keyword">import</span> java.sql.DriverManager;</div><div class="line"><span class="keyword">import</span> java.sql.ResultSet;</div><div class="line"><span class="keyword">import</span> java.sql.SQLException;</div><div class="line"><span class="keyword">import</span> java.sql.Statement;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SelectTest</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Connection conn = <span class="keyword">null</span> ;</div><div class="line">		Statement stmt = <span class="keyword">null</span>;</div><div class="line">		ResultSet rs = <span class="keyword">null</span>;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			<span class="comment">//1. JDBC 드라이버 로딩</span></div><div class="line">			Class.forName( <span class="string">"oracle.jdbc.driver.OracleDriver"</span> );</div><div class="line"></div><div class="line">			<span class="comment">//2. Connection 얻어오기</span></div><div class="line">			String url = <span class="string">"jdbc:oracle:thin:@localhost:1521:xe"</span>;</div><div class="line">			conn = DriverManager.getConnection(url, <span class="string">"hr"</span>, <span class="string">"hr"</span>);</div><div class="line"></div><div class="line">			<span class="comment">//3. Statement 객체 생성</span></div><div class="line">			stmt = conn.createStatement();</div><div class="line"></div><div class="line">			<span class="comment">//4. SQL문 실행</span></div><div class="line">			String sql = <span class="string">"select EMPLOYEE_ID,"</span></div><div class="line">					+ <span class="string">"	  FIRST_NAME,"</span></div><div class="line">					+ <span class="string">"   LAST_NAME,"</span></div><div class="line">					+ <span class="string">"   SALARY "</span></div><div class="line">					+ <span class="string">"   from employees"</span>;</div><div class="line">			rs = stmt.executeQuery(sql);</div><div class="line"></div><div class="line">			System.out.println(<span class="string">"connection 성공"</span>);</div><div class="line"></div><div class="line">			<span class="comment">//5. 결과 사용하기</span></div><div class="line">			<span class="keyword">while</span>( rs.next() ) &#123;</div><div class="line">				Long employee_id = rs.getLong( <span class="number">1</span> );</div><div class="line">				String first_Name = rs.getString( <span class="number">2</span> );</div><div class="line">				String last_Name = rs.getString( <span class="number">3</span> );</div><div class="line">				<span class="keyword">int</span> salary = rs.getInt(<span class="number">4</span>);</div><div class="line">				System.out.println( employee_id+</div><div class="line">						first_Name +</div><div class="line">						last_Name +</div><div class="line">						salary);</div><div class="line">			&#125;</div><div class="line"></div><div class="line">		&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</div><div class="line">			System.out.println( <span class="string">"드라이버 로딩 실패:"</span> + e );</div><div class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">			System.out.println( <span class="string">"error"</span> + e );</div><div class="line">		&#125; <span class="keyword">finally</span> &#123;</div><div class="line">			<span class="comment">//3. 자원정리</span></div><div class="line">			<span class="keyword">try</span> &#123;</div><div class="line">				<span class="keyword">if</span>( rs != <span class="keyword">null</span> ) &#123;</div><div class="line">					rs.close();</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">if</span>( stmt != <span class="keyword">null</span> ) &#123;</div><div class="line">					stmt.close();</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">if</span>( conn != <span class="keyword">null</span> ) &#123;</div><div class="line">					conn.close();</div><div class="line">				&#125;</div><div class="line">			&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<h4 id="UpdateTest"><a href="#UpdateTest" class="headerlink" title="UpdateTest"></a>UpdateTest</h4><p>Statement를 사용함. 아래 Insert에서는 Prepared Statement를 사용 한다.<br>비교해보자<br><figure class="highlight java"><figcaption><span>UpdateTest.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UpdateTest</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">	Connection conn = <span class="keyword">null</span> ;</div><div class="line">	Statement stmt = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">	<span class="keyword">try</span> &#123;</div><div class="line">		<span class="comment">//1. JDBC 드라이버 로딩</span></div><div class="line">		Class.forName( <span class="string">"oracle.jdbc.driver.OracleDriver"</span> );</div><div class="line"></div><div class="line">		<span class="comment">//2. Connection 얻어오기</span></div><div class="line">		String url = <span class="string">"jdbc:oracle:thin:@localhost:1521:xe"</span>;</div><div class="line">		conn = DriverManager.getConnection(url, <span class="string">"dev"</span>, <span class="string">"dev"</span>);</div><div class="line"></div><div class="line">		<span class="comment">//3. Statement 객체 생성</span></div><div class="line">		stmt = conn.createStatement();</div><div class="line"></div><div class="line">		<span class="comment">//4. SQL문 실행</span></div><div class="line">		String name = <span class="string">"도우넛"</span>;</div><div class="line">		Long no = <span class="number">12L</span>;</div><div class="line"></div><div class="line">		String sql = <span class="string">"update author "</span></div><div class="line">				+ <span class="string">"      set name = '"</span>+ name +<span class="string">"'"</span></div><div class="line">				+ <span class="string">"	  where no = "</span>+ no;</div><div class="line"></div><div class="line">		<span class="comment">//쿼리문이 복잡한데 Prepared Statement를 통해 좀더 수월하게 할 수 있다.</span></div><div class="line"></div><div class="line">		<span class="keyword">int</span> count = stmt.executeUpdate(sql);</div><div class="line"></div><div class="line">		<span class="comment">//5. 성공유무</span></div><div class="line">		System.out.println( count == <span class="number">1</span> ? <span class="string">"성공"</span> : <span class="string">"실패"</span>);</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">	&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</div><div class="line">		System.out.println( <span class="string">"드라이버 로딩 실패:"</span> + e );</div><div class="line">	&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">		System.out.println( <span class="string">"error"</span> + e );</div><div class="line">	&#125; <span class="keyword">finally</span> &#123;</div><div class="line">		<span class="comment">//3. 자원정리</span></div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			<span class="keyword">if</span>( stmt != <span class="keyword">null</span> ) &#123;</div><div class="line">				stmt.close();</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">if</span>( conn != <span class="keyword">null</span> ) &#123;</div><div class="line">				conn.close();</div><div class="line">			&#125;</div><div class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure></p>
+<h4 id="InsertTest"><a href="#InsertTest" class="headerlink" title="InsertTest"></a>InsertTest</h4><figure class="highlight java"><figcaption><span>InsertTest.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.sql.Connection;</div><div class="line"><span class="keyword">import</span> java.sql.DriverManager;</div><div class="line"><span class="keyword">import</span> java.sql.PreparedStatement;</div><div class="line"><span class="keyword">import</span> java.sql.SQLException;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InsertTest</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">	Connection conn = <span class="keyword">null</span> ;</div><div class="line">	PreparedStatement pstmt = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">	<span class="keyword">try</span> &#123;</div><div class="line">		<span class="comment">//1. JDBC 드라이버 로딩</span></div><div class="line">		Class.forName( <span class="string">"oracle.jdbc.driver.OracleDriver"</span> );</div><div class="line"></div><div class="line">		<span class="comment">//2. Connection 얻어오기</span></div><div class="line">		String url = <span class="string">"jdbc:oracle:thin:@localhost:1521:xe"</span>;</div><div class="line">		conn = DriverManager.getConnection(url, <span class="string">"dev"</span>, <span class="string">"dev"</span>);</div><div class="line"></div><div class="line">		<span class="comment">//3. Statement 준비</span></div><div class="line">		String sql = <span class="string">"insert"</span></div><div class="line">				+ <span class="string">"into author"</span></div><div class="line">				+ <span class="string">"values(seq_author.nextval,?,?)"</span>;</div><div class="line"></div><div class="line">		pstmt = conn.prepareStatement(sql);</div><div class="line"></div><div class="line">		<span class="comment">//4. 바인딩</span></div><div class="line">		pstmt.setString( <span class="number">1</span>, <span class="string">"공자"</span>);</div><div class="line">		pstmt.setString( <span class="number">2</span>, <span class="string">"어쩌구저쩌구"</span>);</div><div class="line"></div><div class="line">		<span class="comment">//5. SQL문 실행</span></div><div class="line">		<span class="keyword">int</span> count = pstmt.executeUpdate();	<span class="comment">//파라미터로 sql이 들어가면 안된다.</span></div><div class="line"></div><div class="line">		<span class="comment">//5. 성공유무</span></div><div class="line">		System.out.println( count == <span class="number">1</span> ? <span class="string">"성공"</span> : <span class="string">"실패"</span>);</div><div class="line"></div><div class="line">	&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</div><div class="line">		System.out.println( <span class="string">"드라이버 로딩 실패:"</span> + e );</div><div class="line">	&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">		System.out.println( <span class="string">"error"</span> + e );</div><div class="line">	&#125; <span class="keyword">finally</span> &#123;</div><div class="line">		<span class="comment">//3. 자원정리</span></div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			<span class="keyword">if</span>( pstmt != <span class="keyword">null</span> ) &#123;</div><div class="line">				pstmt.close();</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">if</span>( conn != <span class="keyword">null</span> ) &#123;</div><div class="line">				conn.close();</div><div class="line">			&#125;</div><div class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://KKimSangHeon.github.io/2017/08/22/database10/" data-id="cj6mwa8oi006v9wv77ax9tmy0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/KKimSangHeon/" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/tkdgjs1501/" target="_blank">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/08/21/database9/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">9. Data Dictionary, DCL, ROLE</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 Kim Sang Heon</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'https-kkimsangheon-github-io-2';
+    
+    
+    var disqus_url = 'http://KKimSangHeon.github.io/2017/08/22/database10/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

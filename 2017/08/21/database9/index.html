@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="Data Dictionary란?모든 스키마 객체 정보, 스키마 객체의 공간 정보, 컬럼의 기본값, 제약조건 정보, 오라클 사용자 정보, 권한 및 롤 정보, 기타 데이터베이스 정보 … SELECT * FROM DICTIONARY;–데이터 딕셔너리 조회 SELECT * FROM USER_OBJECTS; SELECT * FROM USER_OBJECTS WHERE">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/db.jpg">
-<meta property="og:updated_time" content="2017-08-21T06:55:26.184Z">
+<meta property="og:updated_time" content="2017-08-22T00:43:10.111Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="9. Data Dictionary, DCL, ROLE">
 <meta name="twitter:description" content="Data Dictionary란?모든 스키마 객체 정보, 스키마 객체의 공간 정보, 컬럼의 기본값, 제약조건 정보, 오라클 사용자 정보, 권한 및 롤 정보, 기타 데이터베이스 정보 … SELECT * FROM DICTIONARY;–데이터 딕셔너리 조회 SELECT * FROM USER_OBJECTS; SELECT * FROM USER_OBJECTS WHERE">
@@ -190,11 +190,12 @@ ga('send', 'pageview');
 <p>REVOKE CONNECT RESOURCE FROM SHKIM;</p>
 <h4 id="ROLE-생성"><a href="#ROLE-생성" class="headerlink" title="ROLE 생성"></a>ROLE 생성</h4><p>여러개의 권한을 묶어놓은것!<br>CONN /AS SYSDBA<br>CREATE ROLE VIEWER;<br>GRANT CREATE SESSION TO VIEWER;<br>GRANT SELECT ON DEV.BOOK TO VIEWER;<br>GRANT VIEWER TO SHKIM;<br>CONN SHKIN/SHKIM;<br>SELECT * FROM DEV.BOOK;</p>
 <p>CONN /AS SYSDBA;<br>REVOKE VIWER FROM SHKIM;</p>
-<h4 id="transaction"><a href="#transaction" class="headerlink" title="transaction"></a>transaction</h4><p>트랜잭션은 DML의 집합으로 이루어진다.</p>
+<h4 id="transaction"><a href="#transaction" class="headerlink" title="transaction"></a>transaction</h4><p>트랜잭션은 DML의 집합으로 이루어진다.<br>논리적 작업단위, 일련의 연산 집합을 의미한다.</p>
 <p>–DML<br>–암시적(컬럼 지정X) 인 경우에는 순서와 , 개수 정확해야 함<br>INSERT INTO AUTHOR VALUES(SEQ_AUTHOR.NEXTVAL, ‘둘리’,NULL);</p>
 <p>–명시적(컬럼 지정O)인 경우 지정한 순서와 개수 대로 입력해야 한다.<br>INSERT INTO AUTHOR(NAME, NO) VALUES(‘둘리’,SEQ_AUTHOR.NEXTVAL);</p>
 <p>트랜잭션은 다음과 같은 특징을 가져야 한다.<br>Atomicity: all or nothing. 하나의 단위로 처리되어야 함. (중간까지만 처리됨은 불가)<br>Consistency: 데이터베이스의 일관성(무결성)을 깨지 않아야 함<br>Isolation: 다른 transaction과 동시에 수행되더라도 독립적으로 영향을 받지 않아야 함<br>Durability: 한번 수행 완료(commit)되면 영원히 반영되어 있어야 함 (시스템 crash에서라도)</p>
 <p>DDL이나 DCL은 한 문장이 트랜잭션으로 처리됨</p>
+<h4 id="DeadLock"><a href="#DeadLock" class="headerlink" title="DeadLock"></a>DeadLock</h4><p>둘 이상의 트랜잭션이 서로 상대방의 Lock을 순환 대기하여 어떤 트랜잭션도 더 이상 진행할 수 없는 상태</p>
 
         </div>
         <footer class="article-footer">
@@ -202,7 +203,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/08/21/database9/" data-id="cj6lqvj5a006u3kv7w94km6iq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/08/21/database9/" data-id="cj6mwa8og006t9wv7dyu9s5cv" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -307,6 +308,16 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
+        <a href="/2017/08/22/database10/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            10. JDBC
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2017/08/21/database8/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
@@ -324,7 +335,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">22</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
