@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="데이터 베이스 설계의 주된 목적중복성 제거, 정규화 데이터 모델데이터베이스 설계를 도식화한 도표로서 엔티티, 속성, 관계 3가지 요소로 구성 정규화갱신이상, 데이터의 중복성을 제거. 데이터 모델을 좀 더 구체적으로 해준다. 제 1 정규형(1NF)모든속성이 하나의 값을 가질 때 제 1 정규형이라 한다.(도메인이 원자값 임) 제 2 정규형(2NF)하나의 엔티티">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/db.jpg">
-<meta property="og:updated_time" content="2017-08-23T02:46:54.961Z">
+<meta property="og:updated_time" content="2017-08-23T03:36:08.807Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="12. 정규화">
 <meta name="twitter:description" content="데이터 베이스 설계의 주된 목적중복성 제거, 정규화 데이터 모델데이터베이스 설계를 도식화한 도표로서 엔티티, 속성, 관계 3가지 요소로 구성 정규화갱신이상, 데이터의 중복성을 제거. 데이터 모델을 좀 더 구체적으로 해준다. 제 1 정규형(1NF)모든속성이 하나의 값을 가질 때 제 1 정규형이라 한다.(도메인이 원자값 임) 제 2 정규형(2NF)하나의 엔티티">
@@ -79,7 +79,7 @@ ga('send', 'pageview');
                                     <a class="main-nav-list-link" href="/2017/06/29/about-me/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/">About Me</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/Introduction/">Introduction</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/My-Projects/">My Projects</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/">Data Structure</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Search/">Search</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Sort/">Sort</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/">Linux</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/관련정보/">관련정보</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a></li></ul></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/">About Me</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/Introduction/">Introduction</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/My-Projects/">My Projects</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/">Data Structure</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Search/">Search</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Sort/">Sort</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/">Linux</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/관련정보/">관련정보</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Servlet/">Servlet</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a></li></ul></li></ul>
                                     
                         </ul>
                         <nav id="sub-nav">
@@ -175,7 +175,7 @@ ga('send', 'pageview');
 <h4 id="정규화"><a href="#정규화" class="headerlink" title="정규화"></a>정규화</h4><p>갱신이상, 데이터의 중복성을 제거. 데이터 모델을 좀 더 구체적으로 해준다.</p>
 <h5 id="제-1-정규형-1NF"><a href="#제-1-정규형-1NF" class="headerlink" title="제 1 정규형(1NF)"></a>제 1 정규형(1NF)</h5><p>모든속성이 하나의 값을 가질 때 제 1 정규형이라 한다.<br>(도메인이 원자값 임)</p>
 <h5 id="제-2-정규형-2NF"><a href="#제-2-정규형-2NF" class="headerlink" title="제 2 정규형(2NF)"></a>제 2 정규형(2NF)</h5><p>하나의 엔티티가 이미 1NF로 되어 있고 모든 식별되지 않은 속성들이 엔티티의 유일한 식별자에 종속적이면 “제 2 정규형(2nd Normal form)” 이라 한다.<br>(부분적 함수 종속 제거 됨)</p>
-<h5 id="제-3-정규형-3NF"><a href="#제-3-정규형-3NF" class="headerlink" title="제 3 정규형(3NF)"></a>제 3 정규형(3NF)</h5><p>하나의 엔티티가 이미 2NF로 되어 있고 식별할 수 없는 어떠한 속성도 어떤 다른 식별할 수 없는 속성들에게 종속적이지 않으면 “제 3 정규형(3nd Normal form)” 이라 한다.<br>(이행적 함수 종속 제거 됨)<br><figure class="highlight java"><figcaption><span>AuthorDao.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"></div></pre></td></tr></table></figure></p>
+<h5 id="제-3-정규형-3NF"><a href="#제-3-정규형-3NF" class="headerlink" title="제 3 정규형(3NF)"></a>제 3 정규형(3NF)</h5><p>하나의 엔티티가 이미 2NF로 되어 있고 식별할 수 없는 어떠한 속성도 어떤 다른 식별할 수 없는 속성들에게 종속적이지 않으면 “제 3 정규형(3nd Normal form)” 이라 한다.<br>(이행적 함수 종속 제거 됨)</p>
 
         </div>
         <footer class="article-footer">
@@ -183,7 +183,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/08/23/database12/" data-id="cj6o9g4au007k4gv7kah1p9x8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/08/23/database12/" data-id="cj6oirdok007ijsv7ppvcqfgk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -288,6 +288,16 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
+        <a href="/2017/08/23/servlet1/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            servlet1
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2017/08/22/database11/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
@@ -305,7 +315,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">25</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">26</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Servlet/">Servlet</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
