@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-08-22T10:08:51.122Z</updated>
+  <updated>2017-08-23T02:46:54.961Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>12. 정규화</title>
+    <link href="http://KKimSangHeon.github.io/2017/08/23/database12/"/>
+    <id>http://KKimSangHeon.github.io/2017/08/23/database12/</id>
+    <published>2017-08-23T00:07:28.000Z</published>
+    <updated>2017-08-23T02:46:54.961Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="데이터-베이스-설계의-주된-목적"><a href="#데이터-베이스-설계의-주된-목적" class="headerlink" title="데이터 베이스 설계의 주된 목적"></a>데이터 베이스 설계의 주된 목적</h4><p>중복성 제거, 정규화</p>
+<h4 id="데이터-모델"><a href="#데이터-모델" class="headerlink" title="데이터 모델"></a>데이터 모델</h4><p>데이터베이스 설계를 도식화한 도표로서 엔티티, 속성, 관계 3가지 요소로 구성</p>
+<h4 id="정규화"><a href="#정규화" class="headerlink" title="정규화"></a>정규화</h4><p>갱신이상, 데이터의 중복성을 제거. 데이터 모델을 좀 더 구체적으로 해준다.</p>
+<h5 id="제-1-정규형-1NF"><a href="#제-1-정규형-1NF" class="headerlink" title="제 1 정규형(1NF)"></a>제 1 정규형(1NF)</h5><p>모든속성이 하나의 값을 가질 때 제 1 정규형이라 한다.<br>(도메인이 원자값 임)</p>
+<h5 id="제-2-정규형-2NF"><a href="#제-2-정규형-2NF" class="headerlink" title="제 2 정규형(2NF)"></a>제 2 정규형(2NF)</h5><p>하나의 엔티티가 이미 1NF로 되어 있고 모든 식별되지 않은 속성들이 엔티티의 유일한 식별자에 종속적이면 “제 2 정규형(2nd Normal form)” 이라 한다.<br>(부분적 함수 종속 제거 됨)</p>
+<h5 id="제-3-정규형-3NF"><a href="#제-3-정규형-3NF" class="headerlink" title="제 3 정규형(3NF)"></a>제 3 정규형(3NF)</h5><p>하나의 엔티티가 이미 2NF로 되어 있고 식별할 수 없는 어떠한 속성도 어떤 다른 식별할 수 없는 속성들에게 종속적이지 않으면 “제 3 정규형(3nd Normal form)” 이라 한다.<br>(이행적 함수 종속 제거 됨)<br><figure class="highlight java"><figcaption><span>AuthorDao.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"></div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;데이터-베이스-설계의-주된-목적&quot;&gt;&lt;a href=&quot;#데이터-베이스-설계의-주된-목적&quot; class=&quot;headerlink&quot; title=&quot;데이터 베이스 설계의 주된 목적&quot;&gt;&lt;/a&gt;데이터 베이스 설계의 주된 목적&lt;/h4&gt;&lt;p&gt;중복성 제거, 정규
+    
+    </summary>
+    
+      <category term="빅데이터 전문가과정" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/"/>
+    
+      <category term="Data Base" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Data-Base/"/>
+    
+    
+      <category term="Data Base" scheme="http://KKimSangHeon.github.io/tags/Data-Base/"/>
+    
+  </entry>
   
   <entry>
     <title>11. DAO</title>
@@ -731,45 +761,6 @@ END AS &quot;직업&quot;
     <summary type="html">
     
       &lt;h4 id=&quot;TCP&quot;&gt;&lt;a href=&quot;#TCP&quot; class=&quot;headerlink&quot; title=&quot;TCP&quot;&gt;&lt;/a&gt;TCP&lt;/h4&gt;&lt;p&gt;TCP : 스트림(stream) 통신 프로토콜&lt;br&gt;양쪽의 소켓이 연결된 상태에서 통신이 가능하다. (연결지향 프로토콜
-    
-    </summary>
-    
-      <category term="빅데이터 전문가과정" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>8. 네트워크와 소켓의 이해</title>
-    <link href="http://KKimSangHeon.github.io/2017/08/07/bigdata9/"/>
-    <id>http://KKimSangHeon.github.io/2017/08/07/bigdata9/</id>
-    <published>2017-08-07T05:01:36.000Z</published>
-    <updated>2017-08-08T07:09:50.450Z</updated>
-    
-    <content type="html"><![CDATA[<h5 id="네트워크란"><a href="#네트워크란" class="headerlink" title="네트워크란?"></a>네트워크란?</h5><p>“유/무선 으로 연결되어 있는  Device들의  집합 ”</p>
-<h5 id="네트워킹"><a href="#네트워킹" class="headerlink" title="네트워킹?"></a>네트워킹?</h5><p>디바이스들 간에 미리 정의된 프로토콜을 사용하여 데이터를 교환 하는것.<br>이를위해서는 프로토콜이 필요하다.</p>
-<h5 id="클라이언트-서버구조"><a href="#클라이언트-서버구조" class="headerlink" title="클라이언트 서버구조"></a>클라이언트 서버구조</h5><p>Client  -&gt; Server<br>request</p>
-<p>Server -&gt; Client<br>response(ACK)</p>
-<p>서버 : 서버프로그램이 돌고있는 장비</p>
-<h5 id="프로토콜"><a href="#프로토콜" class="headerlink" title="프로토콜"></a>프로토콜</h5><p>디바이스간 데이터 통신을 위해 필요한 규약<br>Hyper Text Transfer Protocol<br>File Transfer Protocol<br>SMTP 등등.</p>
-<h5 id="패킷"><a href="#패킷" class="headerlink" title="패킷"></a>패킷</h5><p>패킷은 Header, Body부분으로 나뉜다.<br>Header은 Address, checksum 등 으로 구성되고<br>Body는 Data로 구성된다.</p>
-<h4 id="소켓"><a href="#소켓" class="headerlink" title="소켓"></a>소켓</h4><h5 id="소켓-1"><a href="#소켓-1" class="headerlink" title="소켓?"></a>소켓?</h5><p>TCP / IP 프로토콜의 프로그래머 인터페이스를 의미<br>네트워크 프로그래밍에서 개발자에게 네트워크에 접근할 수  있는 인터페이스 제공</p>
-<h5 id="포트"><a href="#포트" class="headerlink" title="포트?"></a>포트?</h5><p>프로세스를 구분할 수 있는 주소<br>16비트 정수를 사용한다.</p>
-<p>Address =&gt; IP Address</p>
-<p>Socket Address =&gt; IP Address + Port</p>
-<figure class="highlight java"><figcaption><span>LocalHost.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LocalHost</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			InetAddress inetAddress = InetAddress.getLocalHost();</div><div class="line">			String hostName = inetAddress.getHostName();</div><div class="line">			String hostAddress = inetAddress.getHostAddress();</div><div class="line">			<span class="keyword">byte</span>[] addresses = inetAddress.getAddress();	<span class="comment">//byte배열로 ip 받아오는 함수</span></div><div class="line"></div><div class="line">			System.out.println(hostName);	<span class="comment">//컴퓨터이름</span></div><div class="line">			System.out.println(hostAddress); <span class="comment">//ipconfig의 결과와 같음</span></div><div class="line"></div><div class="line">			<span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; addresses.length ; i++) &#123;</div><div class="line">				System.out.print( addresses[i] &amp; <span class="number">0x000000ff</span>);</div><div class="line">					<span class="comment">//MSB로 인해 음수가 나와 마스킹을 해주는것.</span></div><div class="line">				<span class="keyword">if</span>( i &lt; <span class="number">3</span> ) &#123;</div><div class="line">					System.out.print(<span class="string">"."</span>);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125; <span class="keyword">catch</span> (UnknownHostException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>NSLookup기능을 구현해보자.</p>
-<figure class="highlight java"><figcaption><span>NSLookup.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NSLookup</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line"></div><div class="line">		String host = <span class="string">""</span>;</div><div class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</div><div class="line"></div><div class="line">		<span class="keyword">while</span> (!(host.equals(<span class="string">"exit"</span>))) &#123;</div><div class="line"></div><div class="line">			<span class="keyword">try</span> &#123;</div><div class="line">				System.out.print(<span class="string">"&gt;"</span>);</div><div class="line">				host = sc.nextLine();</div><div class="line"></div><div class="line"></div><div class="line">				InetAddress[] inetAddresses = InetAddress.getAllByName(host);</div><div class="line"></div><div class="line">				<span class="keyword">for</span> (InetAddress inetAddress : inetAddresses) &#123;</div><div class="line">					System.out.println(inetAddress.getHostAddress());</div><div class="line">				&#125;</div><div class="line"></div><div class="line">			&#125; <span class="keyword">catch</span> (UnknownHostException e) &#123;</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line"></div><div class="line">			System.out.println();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h5 id=&quot;네트워크란&quot;&gt;&lt;a href=&quot;#네트워크란&quot; class=&quot;headerlink&quot; title=&quot;네트워크란?&quot;&gt;&lt;/a&gt;네트워크란?&lt;/h5&gt;&lt;p&gt;“유/무선 으로 연결되어 있는  Device들의  집합 ”&lt;/p&gt;
-&lt;h5 id=&quot;네트워킹&quot;&gt;&lt;a hr
     
     </summary>
     
