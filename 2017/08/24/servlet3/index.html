@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Servlet &amp; JSP 응용실습 | Kim Sang Heon&#39;s Bolg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Servlet" />
+    
+    
+
+      <meta name="description" content="다이나믹 웹 프로젝트 생성-서버우클릭 add and remove 프로젝트 추가 프로젝트 우클릭 후 - 프로퍼티스 -JAVA BUILD PATH - add library 후 ojdbc 추가프로젝트 우클릭 후 - 프로퍼티스 -deployment assembly - add -jdbc 추가 후 apply JSTLjsp standard tag library Emai">
+<meta name="keywords" content="Servlet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Servlet &amp; JSP 응용실습">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2017/08/24/servlet3/index.html">
+<meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
+<meta property="og:description" content="다이나믹 웹 프로젝트 생성-서버우클릭 add and remove 프로젝트 추가 프로젝트 우클릭 후 - 프로퍼티스 -JAVA BUILD PATH - add library 후 ojdbc 추가프로젝트 우클릭 후 - 프로퍼티스 -deployment assembly - add -jdbc 추가 후 apply JSTLjsp standard tag library Emai">
+<meta property="og:image" content="http://kkimsangheon.github.io/images/servlet.png">
+<meta property="og:updated_time" content="2017-08-24T07:28:34.731Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Servlet &amp; JSP 응용실습">
+<meta name="twitter:description" content="다이나믹 웹 프로젝트 생성-서버우클릭 add and remove 프로젝트 추가 프로젝트 우클릭 후 - 프로퍼티스 -JAVA BUILD PATH - add library 후 ojdbc 추가프로젝트 우클릭 후 - 프로퍼티스 -deployment assembly - add -jdbc 추가 후 apply JSTLjsp standard tag library Emai">
+<meta name="twitter:image" content="http://kkimsangheon.github.io/images/servlet.png">
+        <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-101744076-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/2017/06/29/about-me/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/">About Me</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/Introduction/">Introduction</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/My-Projects/">My Projects</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/">Data Structure</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Search/">Search</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Sort/">Sort</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/">Linux</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/관련정보/">관련정보</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Servlet/">Servlet</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a></li></ul></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/빅데이터-전문가과정/Servlet/">Servlet</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-servlet3" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Servlet &amp; JSP 응용실습
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2017/08/24/servlet3/" class="article-date">
+            <time datetime="2017-08-24T02:07:50.000Z" itemprop="datePublished">2017-08-24</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Servlet/">Servlet</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>다이나믹 웹 프로젝트 생성<br>-서버우클릭 add and remove 프로젝트 추가</p>
+<p>프로젝트 우클릭 후 - 프로퍼티스 -JAVA BUILD PATH - add library 후 ojdbc 추가<br>프로젝트 우클릭 후 - 프로퍼티스 -deployment assembly - add -jdbc 추가 후 apply</p>
+<p>JSTL<br>jsp standard tag library</p>
+<figure class="highlight java"><figcaption><span>EmailListDao.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.bigdata2017.emaillist.dao;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.sql.Connection;</div><div class="line"><span class="keyword">import</span> java.sql.DriverManager;</div><div class="line"><span class="keyword">import</span> java.sql.PreparedStatement;</div><div class="line"><span class="keyword">import</span> java.sql.ResultSet;</div><div class="line"><span class="keyword">import</span> java.sql.SQLException;</div><div class="line"><span class="keyword">import</span> java.sql.Statement;</div><div class="line"><span class="keyword">import</span> java.util.ArrayList;</div><div class="line"><span class="keyword">import</span> java.util.List;</div><div class="line"></div><div class="line"><span class="keyword">import</span> com.bigdata2017.emaillist.vo.EmailListVo;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EmailListDao</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">insert</span><span class="params">( EmailListVo vo)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line"></div><div class="line">		Connection conn= <span class="keyword">null</span>;</div><div class="line">		PreparedStatement pstmt = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			conn = getConnection();</div><div class="line">			String sql = <span class="string">"INSERT "</span></div><div class="line">						+<span class="string">"INTO EMAILLIST "</span> +</div><div class="line">						 <span class="string">"VALUES (SEQ_EMAILLIST.NEXTVAL,?,?,?)"</span>;</div><div class="line"></div><div class="line">			pstmt = conn.prepareStatement(sql);</div><div class="line">			pstmt.setString(<span class="number">1</span>, vo.getFirstName());</div><div class="line">			pstmt.setString(<span class="number">2</span>, vo.getLastName());</div><div class="line">			pstmt.setString(<span class="number">3</span>, vo.getEmail());</div><div class="line"></div><div class="line">			count = pstmt.executeUpdate();</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">			System.out.println( <span class="string">"error"</span> + e );</div><div class="line">		&#125; <span class="keyword">finally</span> &#123;</div><div class="line">			<span class="comment">//3. 자원정리</span></div><div class="line">			<span class="keyword">try</span> &#123;</div><div class="line"></div><div class="line">				<span class="keyword">if</span>( pstmt != <span class="keyword">null</span> ) &#123;</div><div class="line">					pstmt.close();</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">if</span>( conn != <span class="keyword">null</span> ) &#123;</div><div class="line">					conn.close();</div><div class="line">				&#125;</div><div class="line">			&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> count;</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> List&lt;EmailListVo&gt; <span class="title">getList</span><span class="params">()</span></span>&#123;</div><div class="line">		List&lt;EmailListVo&gt; list = <span class="keyword">new</span> ArrayList&lt;EmailListVo&gt;();</div><div class="line"></div><div class="line">		Connection conn = <span class="keyword">null</span> ;</div><div class="line">		Statement stmt = <span class="keyword">null</span>;</div><div class="line">		ResultSet rs = <span class="keyword">null</span>;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			conn = getConnection();</div><div class="line"></div><div class="line">			<span class="comment">//3. Statement 객체 생성</span></div><div class="line">			stmt = conn.createStatement();</div><div class="line"></div><div class="line">			<span class="comment">//4. SQL문 실행</span></div><div class="line">			String sql =<span class="string">"SELECT NO,FIRST_NAME,LAST_NAME,EMAIL\r\n"</span> +</div><div class="line">						<span class="string">"FROM EMAILLIST ORDER BY NO DESC"</span>;</div><div class="line">			rs = stmt.executeQuery(sql);</div><div class="line"></div><div class="line">			System.out.println(<span class="string">"connection 성공"</span>);</div><div class="line"></div><div class="line">			<span class="comment">//5. 결과 사용하기</span></div><div class="line">			<span class="keyword">while</span>( rs.next() ) &#123;</div><div class="line">				Long no = rs.getLong( <span class="number">1</span> );</div><div class="line">				String firstName = rs.getString(<span class="number">2</span>);</div><div class="line">				String lastName = rs.getString(<span class="number">3</span>);</div><div class="line">				String email = rs.getString(<span class="number">4</span>);</div><div class="line"></div><div class="line">				EmailListVo vo = <span class="keyword">new</span> EmailListVo();</div><div class="line">				vo.setNo(no);</div><div class="line">				vo.setFirstName(firstName);</div><div class="line">				vo.setLastName(lastName);</div><div class="line">				vo.setEmail(email);</div><div class="line">				list.add(vo);</div><div class="line">			&#125;</div><div class="line"></div><div class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">			System.out.println( <span class="string">"error"</span> + e );</div><div class="line">		&#125; <span class="keyword">finally</span> &#123;</div><div class="line">			<span class="comment">//3. 자원정리</span></div><div class="line">			<span class="keyword">try</span> &#123;</div><div class="line">				<span class="keyword">if</span>( rs != <span class="keyword">null</span> ) &#123;</div><div class="line">					rs.close();</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">if</span>( stmt != <span class="keyword">null</span> ) &#123;</div><div class="line">					stmt.close();</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">if</span>( conn != <span class="keyword">null</span> ) &#123;</div><div class="line">					conn.close();</div><div class="line">				&#125;</div><div class="line">			&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> list;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">private</span> Connection <span class="title">getConnection</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</div><div class="line"></div><div class="line">		Connection conn = <span class="keyword">null</span> ;</div><div class="line">		<span class="comment">//1. JDBC 드라이버 로딩</span></div><div class="line"></div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			Class.forName( <span class="string">"oracle.jdbc.driver.OracleDriver"</span> );</div><div class="line"></div><div class="line">			<span class="comment">//2. Connection 얻어오기</span></div><div class="line">			String url = <span class="string">"jdbc:oracle:thin:@localhost:1521:xe"</span>;</div><div class="line">			conn = DriverManager.getConnection(url, <span class="string">"webdb"</span>, <span class="string">"webdb"</span>);</div><div class="line"></div><div class="line">		&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">return</span> conn;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight"><figcaption><span>form.jsp</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;</div><div class="line">&lt;title&gt;Insert title here&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;h1&gt;메일 리스트 가입&lt;/h1&gt;</div><div class="line">	&lt;p&gt;</div><div class="line">		메일 리스트에 가입하려면,&lt;br&gt;</div><div class="line">		아래 항목을 기입하고 등록 버튼을 클릭하세요.</div><div class="line">	&lt;/p&gt;</div><div class="line">	&lt;form method="post" action="&lt;%=request.getContextPath() %&gt;/insert.jsp" &gt;</div><div class="line">	    First name: &lt;input type="text" name="fn" value="" /&gt;&lt;br&gt;</div><div class="line">	    Last name: &lt;input type="text" name="ln" value="" /&gt;&lt;br&gt;</div><div class="line">	    Email address: &lt;input type="text" name="email" value=""/&gt;&lt;br&gt;</div><div class="line">	    &lt;input type="submit" value="submit"&gt;</div><div class="line">	&lt;/form&gt;</div><div class="line">	&lt;br&gt;</div><div class="line">	&lt;p&gt;</div><div class="line">	&lt;a href = "&lt;%=request.getContextPath()%&gt;"&gt;리스트 바로가기&lt;/a&gt;</div><div class="line">	&lt;/p&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight"><figcaption><span>index.jsp</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">&lt;%@page import="com.bigdata2017.emaillist.vo.EmailListVo"%&gt;</div><div class="line">&lt;%@page import="java.util.List"%&gt;</div><div class="line">&lt;%@page import="com.bigdata2017.emaillist.dao.EmailListDao"%&gt;</div><div class="line">&lt;%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%&gt;</div><div class="line">&lt;%</div><div class="line"></div><div class="line">	EmailListDao dao = new EmailListDao();</div><div class="line">	List&lt;EmailListVo&gt; list = dao.getList();</div><div class="line">%&gt;</div><div class="line"></div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;</div><div class="line">&lt;title&gt;Insert title here&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;h1&gt;메일 리스트에 가입되었습니다.&lt;/h1&gt;</div><div class="line">	&lt;p&gt;입력한 정보 내역입니다.&lt;/p&gt;</div><div class="line">	&lt;!-- 메일정보 리스트 --&gt;</div><div class="line">	&lt;%-- list에서 하나씩 빼서 테이블를 채운다--%&gt;</div><div class="line"></div><div class="line">	&lt;% for(EmailListVo vo : list )&#123; %&gt;</div><div class="line"></div><div class="line">	&lt;table border="1" cellpadding="5" cellspacing="2"&gt;</div><div class="line">		&lt;tr&gt;</div><div class="line">			&lt;td align=right&gt;First name: &lt;/td&gt;</div><div class="line">			&lt;td&gt;&lt;%=vo.getFirstName() %&gt;&lt;/td&gt;</div><div class="line">		&lt;/tr&gt;</div><div class="line">		&lt;tr&gt;</div><div class="line">			&lt;td align=right width="110"&gt;Last name: &lt;/td&gt;</div><div class="line">			&lt;td width="110"&gt;&lt;%=vo.getLastName()%&gt;&lt;/td&gt;</div><div class="line">		&lt;/tr&gt;</div><div class="line">		&lt;tr&gt;</div><div class="line">			&lt;td align=right&gt;Email address: &lt;/td&gt;</div><div class="line">			&lt;td&gt;&lt;%=vo.getEmail()%&gt;&lt;/td&gt;</div><div class="line">		&lt;/tr&gt;</div><div class="line">	&lt;/table&gt;</div><div class="line">	&lt;br&gt;</div><div class="line">	&lt;%&#125; %&gt;</div><div class="line">	&lt;p&gt;</div><div class="line">		&lt;a href="&lt;%=request.getContextPath() %&gt;/form.jsp" &gt;추가메일 등록&lt;/a&gt;</div><div class="line">	&lt;/p&gt;</div><div class="line">	&lt;br&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight"><figcaption><span>insert.jsp</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;%@page import="com.bigdata2017.emaillist.dao.EmailListDao"%&gt;</div><div class="line">&lt;%@page import="com.bigdata2017.emaillist.vo.EmailListVo"%&gt;</div><div class="line">&lt;%@ page language="java" contentType="text/html; charset=UTF-8"</div><div class="line">    pageEncoding="UTF-8"%&gt;</div><div class="line"> &lt;%</div><div class="line">	 request.setCharacterEncoding( "utf-8");</div><div class="line">	 String firstName = request.getParameter( "fn" );</div><div class="line">	 String lastName = request.getParameter( "ln" );</div><div class="line">	 String email = request.getParameter("email");</div><div class="line"></div><div class="line">	 EmailListVo vo = new EmailListVo();</div><div class="line">	 vo.setFirstName(firstName);</div><div class="line">	 vo.setLastName(lastName);</div><div class="line">	 vo.setEmail(email);</div><div class="line"></div><div class="line">	 new EmailListDao().insert(vo);</div><div class="line"></div><div class="line">	 response.sendRedirect( request.getContextPath() );</div><div class="line"> %&gt;</div><div class="line">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;</div><div class="line">&lt;title&gt;Insert title here&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;h1&gt;성공적으로 등록되었습니다.&lt;/h1&gt;</div><div class="line">	&lt;a href="index.jsp"&gt;리스트 돌아가기&lt;/a&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://KKimSangHeon.github.io/2017/08/24/servlet3/" data-id="cj6pyffly00jnm0v71e3anj2r" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/KKimSangHeon/" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/tkdgjs1501/" target="_blank">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/08/24/servlet2/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Servlet &amp; JSP 기본실습</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">28</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Servlet/">Servlet</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 Kim Sang Heon</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'https-kkimsangheon-github-io-2';
+    
+    
+    var disqus_url = 'http://KKimSangHeon.github.io/2017/08/24/servlet3/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
