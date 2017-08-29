@@ -7,8 +7,16 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/2017/08/24/servlet2/</loc>
-        <lastmod>2017-08-24T07:28:43.225Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/2017/08/28/servlet5/</loc>
+        <lastmod>2017-08-29T00:39:54.344Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/08/25/servlet4/</loc>
+        <lastmod>2017-08-29T00:05:16.843Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +24,15 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2017/08/24/servlet3/</loc>
-        <lastmod>2017-08-24T07:28:34.731Z</lastmod>
+        <lastmod>2017-08-28T00:40:02.626Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/08/24/servlet2/</loc>
+        <lastmod>2017-08-28T00:08:27.625Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -24,7 +40,7 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2017/08/23/servlet1/</loc>
-        <lastmod>2017-08-24T00:02:49.904Z</lastmod>
+        <lastmod>2017-08-28T00:08:23.089Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
