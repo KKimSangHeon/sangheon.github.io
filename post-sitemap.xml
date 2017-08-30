@@ -7,32 +7,8 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/2017/08/28/servlet5/</loc>
-        <lastmod>2017-08-29T00:39:54.344Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2017/08/25/servlet4/</loc>
-        <lastmod>2017-08-29T00:05:16.843Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2017/08/24/servlet3/</loc>
-        <lastmod>2017-08-28T00:40:02.626Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2017/08/24/servlet2/</loc>
-        <lastmod>2017-08-28T00:08:27.625Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/2017/08/30/servlet6/</loc>
+        <lastmod>2017-08-30T05:38:20.038Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -40,7 +16,39 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2017/08/23/servlet1/</loc>
-        <lastmod>2017-08-28T00:08:23.089Z</lastmod>
+        <lastmod>2017-08-30T00:15:20.033Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/08/24/servlet2/</loc>
+        <lastmod>2017-08-30T00:15:19.427Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/08/24/servlet3/</loc>
+        <lastmod>2017-08-30T00:15:18.922Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/08/25/servlet4/</loc>
+        <lastmod>2017-08-30T00:15:18.375Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/08/28/servlet5/</loc>
+        <lastmod>2017-08-30T00:15:16.201Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

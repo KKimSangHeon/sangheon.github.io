@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>6.웹표준 | Kim Sang Heon&#39;s Bolg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Servlet" />
+    
+    
+
+      <meta name="description" content="초창기 웹은 넷스케이프가 독주하는 상황이었지만,  윈도우98 부터 IE브라우저가  기본 탑재되어  IE6.0는 브라우저 시장의 90%를 점유 했었다. IE의 ActiveX (자사 기술 독점)에 따른 웹 환경의 폐해MS는 COM(Component Object Model)이라는 기술 제공한다. 이 중 UI가 있는 컴포넌트를 ActiveX라 한다.   IE이외의">
+<meta name="keywords" content="Servlet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="6.웹표준">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2017/08/30/servlet6/index.html">
+<meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
+<meta property="og:description" content="초창기 웹은 넷스케이프가 독주하는 상황이었지만,  윈도우98 부터 IE브라우저가  기본 탑재되어  IE6.0는 브라우저 시장의 90%를 점유 했었다. IE의 ActiveX (자사 기술 독점)에 따른 웹 환경의 폐해MS는 COM(Component Object Model)이라는 기술 제공한다. 이 중 UI가 있는 컴포넌트를 ActiveX라 한다.   IE이외의">
+<meta property="og:image" content="http://kkimsangheon.github.io/images/web.png">
+<meta property="og:updated_time" content="2017-08-30T05:38:20.038Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="6.웹표준">
+<meta name="twitter:description" content="초창기 웹은 넷스케이프가 독주하는 상황이었지만,  윈도우98 부터 IE브라우저가  기본 탑재되어  IE6.0는 브라우저 시장의 90%를 점유 했었다. IE의 ActiveX (자사 기술 독점)에 따른 웹 환경의 폐해MS는 COM(Component Object Model)이라는 기술 제공한다. 이 중 UI가 있는 컴포넌트를 ActiveX라 한다.   IE이외의">
+<meta name="twitter:image" content="http://kkimsangheon.github.io/images/web.png">
+        <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-101744076-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/2017/06/29/about-me/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/">About Me</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/Introduction/">Introduction</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/My-Projects/">My Projects</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/">Data Structure</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Search/">Search</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Sort/">Sort</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/">Linux</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/관련정보/">관련정보</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Servlet/">Servlet</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a></li></ul></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/빅데이터-전문가과정/Servlet/">Servlet</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-servlet6" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        6.웹표준
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2017/08/30/servlet6/" class="article-date">
+            <time datetime="2017-08-30T00:00:10.000Z" itemprop="datePublished">2017-08-30</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Servlet/">Servlet</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>초창기 웹은 넷스케이프가 독주하는 상황이었지만,  윈도우98 부터 IE브라우저가  기본 탑재되어  IE6.0는 브라우저 시장의 90%를 점유 했었다.</p>
+<p>IE의 ActiveX (자사 기술 독점)에 따른 웹 환경의 폐해<br>MS는 COM(Component Object Model)이라는 기술 제공한다. 이 중 UI가 있는 컴포넌트를 ActiveX라 한다.  </p>
+<p>IE이외의 사파리, 크롬, 파이어폭스, 오페라 등  다양한 브라우저가  데스트탑  환경에서 영향력이  커졌다<br>특히,  모바일 환경에서는 사파리,  크롬,  파이어폭스가  주도권을 잡았다.<br>특정 웹 브라우저에  종속되는 웹 페이지는 더 이상 설 자리가 없음을  의미<br>웹 페이지 제작 기술에  표준의 필요성이 대두</p>
+<h4 id="웹-표준을-주도하는-W3C-World-Wide-Web-Consortium"><a href="#웹-표준을-주도하는-W3C-World-Wide-Web-Consortium" class="headerlink" title="웹 표준을 주도하는 W3C( World Wide Web Consortium )"></a>웹 표준을 주도하는 W3C( World Wide Web Consortium )</h4><p>-<a href="http://www.w3.org" target="_blank" rel="external">http://www.w3.org</a><br>-웹 기술의 표준화를 담당하는 기구<br>-HTML, CSS, XML 등 웹과 관련된 다양한 기술에 대해  논의하며 관련기술 표준 재정<br>-웹 표준은 W3C의 목표와 비전에 따라 연구한 결과를  웹에 반영시키기 위한 권고 사항</p>
+<h4 id="웹-접근성"><a href="#웹-접근성" class="headerlink" title="웹 접근성"></a>웹 접근성</h4><p>어떤 장비, 어떤 브라우저를 사용하던지 해당 사이트를 얼마나 볼 수 있는냐를 의미<br>일반인이건 장애인이건 어떤 사용자도 해당 사이트 사용에 어려움이 없어야 한다는 의미<br>웹 표준을 지켜 작성한 HTML 문서는 웹 접근성을 준수하는 데 비표준 문서들 보다 쉽다.<br>표현을 CSS로 분리 시킨 HTML 문서는 웹 접근성을 준수하는 데  표현과 정보가 섞여 있는 문서들 보다 쉽다.</p>
+<h4 id="웹-2-0의-개념"><a href="#웹-2-0의-개념" class="headerlink" title="웹 2.0의 개념"></a>웹 2.0의 개념</h4><p>-웹2.0이란 이용자가 적극적으로 참여하여 정보/지식을 만들고 공유하는 열린 인터넷을 의미한다<br>-웹 2.0은 웹과 관련된 새로운 기술, 문화, 그리고 경제 현상의 복합적인 변화를 포함하는 개념이다. 즉, 사용자 편의성을 강화한 새로운 기술의 활용, 정보의 생성 및 개방/ 공유를 통한 직접적 가치 창출, 이를 통해 만들어진 새로운 문화 및 경제 현상을 통틀어 웹2.0으로 이해할 수 있다</p>
+<h4 id="웹-2-0의-목표"><a href="#웹-2-0의-목표" class="headerlink" title="웹 2.0의 목표"></a>웹 2.0의 목표</h4><p>앞서 웹2.0의 개념을 살펴보았습니다. 그렇다면 웹2.0은 어떤 배경에서 등장하게 되었고, 이 새로운 패러다임으로 이루고자하는 것은 무엇일까요? 웹2.0의 기본적인 목적은 ‘사람들을 다양하고 새로운 방식으로 연결하고 연결 된 사람들의 집단지성을 활용하는 것’입니다.<br><img src="/2017/08/30/servlet6/web2.png" alt="web1.0 web2.0의 차이" title="web1.0 web2.0의 차이"></p>
+<p>웹 2.0 출처 : <a href="http://visualize.tistory.com/267" target="_blank" rel="external">http://visualize.tistory.com/267</a></p>
+<h4 id="웹언어-HTML"><a href="#웹언어-HTML" class="headerlink" title="웹언어 ( = HTML )"></a>웹언어 ( = HTML )</h4><pre><code>-웹페이지를 만들기 위해 HTML(Hyper Text Markup Language)를 사용하여 파일을 생성하고, 웹 서버에 그 파일을 올려 놓아야 한다.
+-HTML은 페이지를 보여주기 위해서 알아야 할 필요가 있는 모든 것을 브라우저에게 알려준다.
+</code></pre><h4 id="하이퍼텍스트-HTML"><a href="#하이퍼텍스트-HTML" class="headerlink" title="하이퍼텍스트 (HTML)"></a>하이퍼텍스트 (HTML)</h4><p>-웹 전체의 기초가 되는 것<br>-단일 페이지에서 벗어나 다른 페이지와 연결할 수 있게 해주는 것<br>-<a> 엘리멘트에 의해 구현<br>-<a href="‘’">콘텐츠</a>  이런 식으로 링크가 걸리며, href 속성은 목적지를 명시    </a></p>
+<h4 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h4><p>Document Object Model로 웹페이지를 자바스크립트로 제어하기 위한 객체 모델을 의미한다. window 객체의 document 프로퍼티를 통해서 사용할 수 있다. Window 객체가 창을 의미한다면 Document 객체는 윈도우에 로드된 문서를 의미한다고 할 수 있다. DOM의 하위 수업에서는 문서를 제어하는 방법에 대한 내용을 다룬다.</p>
+<p>DOM 출처 : <a href="https://opentutorials.org/course/1375/6655" target="_blank" rel="external">https://opentutorials.org/course/1375/6655</a></p>
+<h4 id="시맨틱-검색"><a href="#시맨틱-검색" class="headerlink" title="시맨틱 검색"></a>시맨틱 검색</h4><p>시맨틱 검색은 검색로봇이 검색어 의미를 스스로 분석하고 추리해 원하는 정보를 더 정교하게 찾아주는 검색방식</p>
+<h4 id="시맨틱-마크업"><a href="#시맨틱-마크업" class="headerlink" title="시맨틱 마크업"></a>시맨틱 마크업</h4><p>시맨틱 마크업이란 HTML의 태그를 사용하여 문서 안의 내용이 담고 있는 의미가 무엇인지 표현할 수 있도록 구조를 작성하는 것을 말함</p>
+<p><a href="http://www.greeneclipse.com/eclipsepalette.html" target="_blank" rel="external">http://www.greeneclipse.com/eclipsepalette.html</a> 에 접속해서 설치하면</p>
+<h4 id="DOCTYPE"><a href="#DOCTYPE" class="headerlink" title="DOCTYPE"></a>DOCTYPE</h4><p>-DOCTYPE은 html의 태그는 아니지만 웹페이지에서 맨 처음에 선언되어 어떤 종류의 html을 사용할지 웹브라우저에게 알려줄 목적으로 사용<br>-브라우저는 DOCTYPE 선언을 확인하고 브라우저 모드를 결정한다.<br>-브라우저 모드는 표준 호환 모드,  비표준 호환 모드<br>-웹 표준에서는 웹 페이지를 제대로 표현하기 위해서는 올바른 문서 형태를 정의해주어야 한다.<br>-가장 많이 사용되고 있는 HTML 버전은 HTML4.01  과  XHTML1.0<br>-최신 버전인 HTML5를 문서형식으로 사용하는 웹사이트도 증가 추세</p>
+<h4 id="CSS-Cascading-Style-Sheet-이해"><a href="#CSS-Cascading-Style-Sheet-이해" class="headerlink" title="CSS ( Cascading Style Sheet ) 이해"></a>CSS ( Cascading Style Sheet ) 이해</h4><p>-워드프로세스의 스타일 적용과 유사<br>-cascading : ‘계단형’ 의 의미로  스타일 적용에 특정도, 또는 우선순위가  있고 우선 순위가 정해지는 것이 계단식 스타일 시트라는 의미<br>무조건 맨 아래 있는게 적용되는게 아니라 P{…}   body P{….}   body P.aaa{…} 일 경우 가장 길이가 긴 body P.aaa{…} 가 적용됨</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://KKimSangHeon.github.io/2017/08/30/servlet6/" data-id="cj6ytpjpv00krn0v71iuw90ju" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/KKimSangHeon/" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/tkdgjs1501/" target="_blank">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/08/28/servlet5/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">5. EL, JSTL</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">31</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Servlet/">Servlet</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Web/">Web</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 Kim Sang Heon</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'https-kkimsangheon-github-io-2';
+    
+    
+    var disqus_url = 'http://KKimSangHeon.github.io/2017/08/30/servlet6/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

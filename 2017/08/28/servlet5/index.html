@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="EL기존에 사용하는 스크립트릿을 &amp;lt;%= %&amp;gt;를 대체할 수 있따.&amp;lt;%= vo.getName %&amp;gt;를 $ { vo.name } 으로 대체 가능하다 이를 EL(Expression Language)이라 한다.웹 페이지에  값을  표시(표현),하는 데 사용되는 태그JSP의 출력 문법을 보완하는 역할${} 를 사용한다.표현언어의 식을 계산해서 출력">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/servlet.png">
-<meta property="og:updated_time" content="2017-08-29T00:39:54.344Z">
+<meta property="og:updated_time" content="2017-08-30T00:15:16.201Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="5. EL, JSTL">
 <meta name="twitter:description" content="EL기존에 사용하는 스크립트릿을 &amp;lt;%= %&amp;gt;를 대체할 수 있따.&amp;lt;%= vo.getName %&amp;gt;를 $ { vo.name } 으로 대체 가능하다 이를 EL(Expression Language)이라 한다.웹 페이지에  값을  표시(표현),하는 데 사용되는 태그JSP의 출력 문법을 보완하는 역할${} 를 사용한다.표현언어의 식을 계산해서 출력">
@@ -79,7 +79,7 @@ ga('send', 'pageview');
                                     <a class="main-nav-list-link" href="/2017/06/29/about-me/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/">About Me</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/Introduction/">Introduction</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/My-Projects/">My Projects</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/">Data Structure</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Search/">Search</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Sort/">Sort</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/">Linux</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/관련정보/">관련정보</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Servlet/">Servlet</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a></li></ul></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/">About Me</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/Introduction/">Introduction</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/My-Projects/">My Projects</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/">Data Structure</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Search/">Search</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Sort/">Sort</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/">Linux</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/관련정보/">관련정보</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Servlet/">Servlet</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a></li></ul></li></ul>
                                     
                         </ul>
                         <nav id="sub-nav">
@@ -134,7 +134,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/빅데이터-전문가과정/Servlet/">Servlet</a>
+    <a class="page-title-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/빅데이터-전문가과정/Web/">Web</a>
     </h1>
 </div>
                         <div class="main-body-content">
@@ -174,20 +174,24 @@ ga('send', 'pageview');
 <p>$ { vo.name } 으로 대체 가능하다</p>
 <p>이를 EL(Expression Language)이라 한다.<br>웹 페이지에  값을  표시(표현),하는 데 사용되는 태그<br>JSP의 출력 문법을 보완하는 역할<br>${} 를 사용한다.<br>표현언어의 식을 계산해서 출력한다.<br>null 는 공백으로  출력한다.</p>
 <figure class="highlight"><figcaption><span>스클릿틀릿 사용예시</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;%</div><div class="line">    if( null == session.getAttribute( "authUser" ) ) &#123;</div><div class="line">%&gt;</div><div class="line">    &lt;p&gt;로그인을 하지 않았습니다.&lt;/p&gt;</div><div class="line">&lt;%</div><div class="line">    &#125;</div><div class="line">%&gt;</div></pre></td></tr></table></figure>
-<p>위의 코드는 다음과 같다<br><figure class="highlight"><figcaption><span>EL의 사용예시</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;c:if test="$&#123; empty authUser &#125;"&gt;</div><div class="line">    &lt;p&gt;로그인을 하지 않았습니다.&lt;/p&gt;</div><div class="line">&lt;/c:if&gt;</div></pre></td></tr></table></figure></p>
-<p><c:if> </c:if></p>
-<p><c:foreach></c:foreach></p>
-<p><c:when>~<c:chhoose></c:chhoose></c:when></p>
-<p>여러 커스텀 태그를 통합한다!.</p>
-<p> 이를 JSTL JSP standard Tag Library 이라 한다.</p>
-
+<p>위의 코드는 다음과 같다<br><figure class="highlight"><figcaption><span>EL의 사용예시</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;c:if test="$&#123; empty authUser &#125;"&gt;</div><div class="line">    &lt;p&gt;로그인을 하지 않았습니다.&lt;/p&gt;</div><div class="line">&lt;/c:if&gt;</div></pre></td></tr></table></figure><br>EL로 내장객체  접근하기<br>-pageScope             :  페이지 범위에 빈을 저장<br>-requestScope          :  요청 범위에서 빈을 저장<br>-sessionScope          :  세션 범위에서 빈을 저장<br>-applicationScope     :  어플리케이션 범위에서 빈을 저장</p>
+<h4 id="JSTL"><a href="#JSTL" class="headerlink" title="JSTL"></a>JSTL</h4><p>JSP에서 사용 가능한 표준 태그 라이브러리<br>JSP 코드가 깔끔해지고 가독성이 좋아진다.<br>JSTL 라이브러리<br>    -기본기능 ( core )<br>    -형식화(format)<br>    -데이터베이스(sql)<br>    -XML 처리(xml)<br>    -함수처리(function)</p>
+<p>jstl.jar 파일을 구해서 프로젝트 우클릭 후 자바빌드패스의 라이브러리탭에서 추가하고 deployment assembly에 추가</p>
+<p>아래 3개는 추가해놓고 사용하여야 한다.<br>-기본기능 ( core ) :<br>&lt;%@ taglib uri=”<a href="http://java.sun.com/jsp/jstl/core" target="_blank" rel="external">http://java.sun.com/jsp/jstl/core</a>“ prefix=”c”%&gt;</p>
+<p>-형식화(format) :<br>&lt;%@ taglib uri=”<a href="http://java.sun.com/jsp/jstl/fmt" target="_blank" rel="external">http://java.sun.com/jsp/jstl/fmt</a>“ prefix=”fmt”%&gt;</p>
+<p>-함수처리(function) :<br>&lt;%@ taglib uri=”<a href="http://java.sun.com/jsp/jstl/functions" target="_blank" rel="external">http://java.sun.com/jsp/jstl/functions</a>“ prefix=”fn”%&gt;  </p>
+<p>JSTL은 if문을 제공하나 else if , else를 제공하지 않는다. 이를 대체하여 사용할 수 있는것이 choose이다.</p>
+<figure class="highlight"><figcaption><span>choose사용예시</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;c:choose&gt;</div><div class="line">  &lt;c:when test="$&#123;param.color == 1&#125;"&gt;</div><div class="line">    &lt;span style="color: red"&gt;빨강&lt;/span&gt;</div><div class="line">  &lt;/c:when&gt;</div><div class="line"></div><div class="line">  &lt;c:when test="$&#123;param.color == 2&#125;"&gt;</div><div class="line">    &lt;span style="color: green"&gt;초록&lt;/span&gt;</div><div class="line">  &lt;/c:when&gt;</div><div class="line"></div><div class="line">  &lt;c:when test="$&#123;param.color == 3&#125;"&gt;</div><div class="line">    &lt;span style="color: blue"&gt;파랑&lt;/span&gt;</div><div class="line">  &lt;/c:when&gt;</div><div class="line"></div><div class="line">  &lt;c:otherwise&gt;</div><div class="line">    &lt;span style="color: black"&gt;검정&lt;/span&gt;		</div><div class="line">  &lt;/c:otherwise&gt;</div><div class="line">&lt;/c:choose&gt;</div></pre></td></tr></table></figure>
+<p>-변수에  값을  설정한다.</p>
+<c:set var="count" value="10" scope="page">
+</c:set>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/08/28/servlet5/" data-id="cj6wv7ur0007lcov7fht6xc34" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2017/08/28/servlet5/" data-id="cj6ytpjga007qn0v7syftwpzd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -292,6 +296,16 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
+        <a href="/2017/08/30/servlet6/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            6.웹표준
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2017/08/25/servlet4/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
@@ -309,7 +323,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Servlet/">Servlet</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">31</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Servlet/">Servlet</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Web/">Web</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
