@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-08-30T05:38:20.038Z</updated>
+  <updated>2017-09-05T05:21:59.160Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>jquery</title>
+    <link href="http://KKimSangHeon.github.io/2017/09/05/jquery1/"/>
+    <id>http://KKimSangHeon.github.io/2017/09/05/jquery1/</id>
+    <published>2017-09-05T00:09:56.000Z</published>
+    <updated>2017-09-05T05:21:59.160Z</updated>
+    
+    <content type="html"><![CDATA[<p>2006년 Mozila의 자바스크립트 에반젤리스 Jhon Resig에 의해 개발 / 공개<br>여러 자바스크립트 라이브러리 ( prototype.js, Mootool.js 등) 중에 가장 주목 받고 있다.<br>jQuery로 코딩하면 자바스크립트 코드가  간결해 진다.<br>가볍다 ( 90KB)<br>IE6.0 이상,  Firefox2.0 이상,  Safari 3 이상, Opera 9이상,  Google Chrome등의 주요 브라우저를 지원하여 클로스브라우징을 가능케 한다.</p>
+<figure class="highlight java"><figcaption><span>엘리먼트를 골라야 하는 시점들</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//엘리먼트를 골라야 하는 시점 1(Vanilla JS)</span></div><div class="line">window.onload = function()&#123;</div><div class="line">	console.log(document.getElementBy(<span class="string">"my-p"</span>));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//엘리먼트를 골라야 하는 시점 2 (jQuery)</span></div><div class="line">jQuery( document ).ready( function()&#123;</div><div class="line">	console.log( document.getElementById(<span class="string">"my-p"</span>));</div><div class="line"></div><div class="line"><span class="comment">//엘리먼트를 골라야 하는 시점 3 (jQuery)</span></div><div class="line">$( document ).ready( function()&#123;</div><div class="line">	console.log(document.getElementById(<span class="string">"my-p"</span>));</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//엘리먼트를 골라야 하는 시점 4 (jQuery)</span></div><div class="line">$(function()&#123;</div><div class="line">	console.log(document.getElementById(<span class="string">"my-p"</span>));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight java"><figcaption><span>jQuery 함수를 이용한 색 변경</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">$(function()&#123;</div><div class="line">  setTimeout( function()&#123;</div><div class="line">  var $li = $(<span class="string">"li"</span>);</div><div class="line">  $li.css(<span class="string">"color"</span>,<span class="string">"#f00"</span> );</div><div class="line"></div><div class="line">  <span class="comment">//jQuery Object 뭐냐?</span></div><div class="line">  console.log($li.length);</div><div class="line">  console.log($li[<span class="number">0</span>]); <span class="comment">//HTMLElement Object</span></div><div class="line"></div><div class="line">  <span class="comment">//에러유발</span></div><div class="line">  <span class="comment">//$li[0].css("font-weigth","bold")</span></div><div class="line"></div><div class="line">  $li[<span class="number">0</span>].style.fontWeight = <span class="string">"bold"</span>;</div><div class="line"></div><div class="line">  <span class="comment">//jQuery API를 호출 하고 싶으면</span></div><div class="line">  <span class="comment">//jQuery 함수(=$)로 매핑한다</span></div><div class="line">  $($li[<span class="number">0</span>]).css(<span class="string">"text-decoration"</span>,<span class="string">"underline"</span>)</div><div class="line"></div><div class="line"></div><div class="line">  <span class="comment">//get api함수를 사용해서 HTMLElement 가져오기</span></div><div class="line"></div><div class="line">  $($li.get(<span class="number">1</span>)).css(<span class="string">"backgroundColor"</span>,<span class="string">"#ccc"</span>);</div><div class="line"></div><div class="line">  &#125;,<span class="number">2000</span>)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight java"><figcaption><span>jQuery 활용방법</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"#first"</span>).css(<span class="string">"color"</span>,<span class="string">"red"</span>);</div><div class="line"></div><div class="line"></div><div class="line">$(<span class="string">"#secnod"</span>).css(<span class="string">"color"</span>,<span class="string">"blue"</span>);</div><div class="line">$(<span class="string">"#second"</span>).css(<span class="string">"fontWeight"</span>,<span class="string">"bold"</span>);</div><div class="line"></div><div class="line">var $li3 = $(<span class="string">"#third"</span>);</div><div class="line">$li3.css(<span class="string">"color"</span>,<span class="string">"blue"</span>);</div><div class="line">$li3.css(<span class="string">"fontWeigth"</span>,<span class="string">"bold"</span>);</div><div class="line"></div><div class="line"><span class="comment">//메소드 체인</span></div><div class="line">$(<span class="string">"#third"</span>).css(<span class="string">"color"</span>,<span class="string">"blue"</span>).css(<span class="string">"fontWeight"</span>,<span class="string">"bold"</span>);</div><div class="line"></div><div class="line"><span class="comment">// 파라미터로 JSON을 사용하는 방법</span></div><div class="line">$(<span class="string">"#fifth"</span>).css(&#123;</div><div class="line">  <span class="string">"color"</span>:<span class="string">"blue"</span>,</div><div class="line">  <span class="string">"fontWeight"</span>:<span class="string">"bold"</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight java"><figcaption><span>다양한 선택방법</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".red strong"</span>).css(<span class="string">"color"</span>,<span class="string">"red"</span>).text(<span class="string">"text"</span>);</div><div class="line"></div><div class="line">$(<span class="string">".blue #s1"</span>).css(<span class="string">"color"</span>,<span class="string">"blue"</span>);	<span class="comment">//자손 선택</span></div><div class="line">$(<span class="string">".blue &gt; #s2"</span>).css(<span class="string">"color"</span>,<span class="string">"red"</span>);	<span class="comment">//자식선택 (바로아래)</span></div><div class="line">$(<span class="string">"#second + li"</span>).css(<span class="string">"color"</span>,<span class="string">"red"</span>);	<span class="comment">//인접선택</span></div><div class="line"></div><div class="line"></div><div class="line">$(<span class="string">"li:first-child"</span>).css(<span class="string">"color"</span>,<span class="string">"red"</span>);	<span class="comment">//첫번째 자식</span></div><div class="line">$(<span class="string">"li:last-child"</span>).css(<span class="string">"color"</span>,<span class="string">"red"</span>);	<span class="comment">//마지막 자식</span></div><div class="line"></div><div class="line"></div><div class="line">$(<span class="string">"li[id]"</span>).css(<span class="string">"color"</span>,<span class="string">"red"</span>);	<span class="comment">//id 속성이 있는 애만</span></div><div class="line">$(<span class="string">"li[class]"</span>).css(<span class="string">"color"</span>,<span class="string">"red"</span>);	<span class="comment">//class속성이 있는애만</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2006년 Mozila의 자바스크립트 에반젤리스 Jhon Resig에 의해 개발 / 공개&lt;br&gt;여러 자바스크립트 라이브러리 ( prototype.js, Mootool.js 등) 중에 가장 주목 받고 있다.&lt;br&gt;jQuery로 코딩하면 자바스크립트
+    
+    </summary>
+    
+      <category term="빅데이터 전문가과정" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/"/>
+    
+      <category term="Web" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Web/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>6.웹표준</title>
     <link href="http://KKimSangHeon.github.io/2017/08/30/servlet6/"/>
     <id>http://KKimSangHeon.github.io/2017/08/30/servlet6/</id>
     <published>2017-08-30T00:00:10.000Z</published>
-    <updated>2017-08-30T05:38:20.038Z</updated>
+    <updated>2017-08-31T00:11:35.251Z</updated>
     
     <content type="html"><![CDATA[<p>초창기 웹은 넷스케이프가 독주하는 상황이었지만,  윈도우98 부터 IE브라우저가  기본 탑재되어  IE6.0는 브라우저 시장의 90%를 점유 했었다.</p>
 <p>IE의 ActiveX (자사 기술 독점)에 따른 웹 환경의 폐해<br>MS는 COM(Component Object Model)이라는 기술 제공한다. 이 중 UI가 있는 컴포넌트를 ActiveX라 한다.  </p>
@@ -783,37 +810,6 @@ END AS &quot;직업&quot;
       <category term="MySQL" scheme="http://KKimSangHeon.github.io/tags/MySQL/"/>
     
       <category term="CentOS" scheme="http://KKimSangHeon.github.io/tags/CentOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>데이터 프리 기프티콘</title>
-    <link href="http://KKimSangHeon.github.io/2017/08/11/defcon/"/>
-    <id>http://KKimSangHeon.github.io/2017/08/11/defcon/</id>
-    <published>2017-08-11T06:07:04.000Z</published>
-    <updated>2017-08-11T06:15:14.135Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="참가배경"><a href="#참가배경" class="headerlink" title="참가배경"></a>참가배경</h1><p>-두 번째 참가한 해커톤 입니다. 첫 해커톤에 흥미를 느껴 다시한번 참가하게 되었습니다.</p>
-<h1 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h1><p>VPN을 이용하여 스마트폰 데이터 사용량을 감소시키는 어플리케이션입니다.<br>데이터 사용량을 감소시키기 위해 서버에 데이터를 전송하기 전 압축하여 보내고 서버에서 클라이언트로 데이터를 보낼때도 압축을 진행하게 됩니다.<br>서버, 클라이언트는 toyVPN이라는 오픈소스를 활용하였습니다.</p>
-<h1 id="동작화면"><a href="#동작화면" class="headerlink" title="동작화면"></a>동작화면</h1><img src="/2017/08/11/defcon/defcon.png" alt="동작화면 [그림1]" title="동작화면 [그림1]">
-<p>서버의 주소, 포트, 암호를 입력하고 데.프.콘 바로가기 버튼을 누르면 VPN서버에 접속하게됩니다. </p>
-<p><a href="https://github.com/KKimSangHeon/Defcon" target="_blank" rel="external">github Repository</a></p>
-<hr>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;참가배경&quot;&gt;&lt;a href=&quot;#참가배경&quot; class=&quot;headerlink&quot; title=&quot;참가배경&quot;&gt;&lt;/a&gt;참가배경&lt;/h1&gt;&lt;p&gt;-두 번째 참가한 해커톤 입니다. 첫 해커톤에 흥미를 느껴 다시한번 참가하게 되었습니다.&lt;/p&gt;
-&lt;h1 id=&quot;
-    
-    </summary>
-    
-      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
-    
-      <category term="My Projects" scheme="http://KKimSangHeon.github.io/categories/About-Me/My-Projects/"/>
-    
-    
-      <category term="ID 해커톤" scheme="http://KKimSangHeon.github.io/tags/ID-%ED%95%B4%EC%BB%A4%ED%86%A4/"/>
     
   </entry>
   

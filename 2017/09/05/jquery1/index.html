@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>jquery | Kim Sang Heon&#39;s Bolg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="" />
+    
+    
+
+      <meta name="description" content="2006년 Mozila의 자바스크립트 에반젤리스 Jhon Resig에 의해 개발 / 공개여러 자바스크립트 라이브러리 ( prototype.js, Mootool.js 등) 중에 가장 주목 받고 있다.jQuery로 코딩하면 자바스크립트 코드가  간결해 진다.가볍다 ( 90KB)IE6.0 이상,  Firefox2.0 이상,  Safari 3 이상, Opera 9">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jquery">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2017/09/05/jquery1/index.html">
+<meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
+<meta property="og:description" content="2006년 Mozila의 자바스크립트 에반젤리스 Jhon Resig에 의해 개발 / 공개여러 자바스크립트 라이브러리 ( prototype.js, Mootool.js 등) 중에 가장 주목 받고 있다.jQuery로 코딩하면 자바스크립트 코드가  간결해 진다.가볍다 ( 90KB)IE6.0 이상,  Firefox2.0 이상,  Safari 3 이상, Opera 9">
+<meta property="og:updated_time" content="2017-09-05T05:21:59.160Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jquery">
+<meta name="twitter:description" content="2006년 Mozila의 자바스크립트 에반젤리스 Jhon Resig에 의해 개발 / 공개여러 자바스크립트 라이브러리 ( prototype.js, Mootool.js 등) 중에 가장 주목 받고 있다.jQuery로 코딩하면 자바스크립트 코드가  간결해 진다.가볍다 ( 90KB)IE6.0 이상,  Firefox2.0 이상,  Safari 3 이상, Opera 9">
+        <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-101744076-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/2017/06/29/about-me/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/">About Me</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/Introduction/">Introduction</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/My-Projects/">My Projects</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/">Data Structure</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Search/">Search</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Data-Structure/Sort/">Sort</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/">Linux</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/관련정보/">관련정보</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Servlet/">Servlet</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a></li></ul></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/빅데이터-전문가과정/Web/">Web</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-jquery1" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        jquery
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2017/09/05/jquery1/" class="article-date">
+            <time datetime="2017-09-05T00:09:56.000Z" itemprop="datePublished">2017-09-05</time>
+        </a>
+    </div>
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>2006년 Mozila의 자바스크립트 에반젤리스 Jhon Resig에 의해 개발 / 공개<br>여러 자바스크립트 라이브러리 ( prototype.js, Mootool.js 등) 중에 가장 주목 받고 있다.<br>jQuery로 코딩하면 자바스크립트 코드가  간결해 진다.<br>가볍다 ( 90KB)<br>IE6.0 이상,  Firefox2.0 이상,  Safari 3 이상, Opera 9이상,  Google Chrome등의 주요 브라우저를 지원하여 클로스브라우징을 가능케 한다.</p>
+<figure class="highlight java"><figcaption><span>엘리먼트를 골라야 하는 시점들</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//엘리먼트를 골라야 하는 시점 1(Vanilla JS)</span></div><div class="line">window.onload = function()&#123;</div><div class="line">	console.log(document.getElementBy(<span class="string">"my-p"</span>));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//엘리먼트를 골라야 하는 시점 2 (jQuery)</span></div><div class="line">jQuery( document ).ready( function()&#123;</div><div class="line">	console.log( document.getElementById(<span class="string">"my-p"</span>));</div><div class="line"></div><div class="line"><span class="comment">//엘리먼트를 골라야 하는 시점 3 (jQuery)</span></div><div class="line">$( document ).ready( function()&#123;</div><div class="line">	console.log(document.getElementById(<span class="string">"my-p"</span>));</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//엘리먼트를 골라야 하는 시점 4 (jQuery)</span></div><div class="line">$(function()&#123;</div><div class="line">	console.log(document.getElementById(<span class="string">"my-p"</span>));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight java"><figcaption><span>jQuery 함수를 이용한 색 변경</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">$(function()&#123;</div><div class="line">  setTimeout( function()&#123;</div><div class="line">  var $li = $(<span class="string">"li"</span>);</div><div class="line">  $li.css(<span class="string">"color"</span>,<span class="string">"#f00"</span> );</div><div class="line"></div><div class="line">  <span class="comment">//jQuery Object 뭐냐?</span></div><div class="line">  console.log($li.length);</div><div class="line">  console.log($li[<span class="number">0</span>]); <span class="comment">//HTMLElement Object</span></div><div class="line"></div><div class="line">  <span class="comment">//에러유발</span></div><div class="line">  <span class="comment">//$li[0].css("font-weigth","bold")</span></div><div class="line"></div><div class="line">  $li[<span class="number">0</span>].style.fontWeight = <span class="string">"bold"</span>;</div><div class="line"></div><div class="line">  <span class="comment">//jQuery API를 호출 하고 싶으면</span></div><div class="line">  <span class="comment">//jQuery 함수(=$)로 매핑한다</span></div><div class="line">  $($li[<span class="number">0</span>]).css(<span class="string">"text-decoration"</span>,<span class="string">"underline"</span>)</div><div class="line"></div><div class="line"></div><div class="line">  <span class="comment">//get api함수를 사용해서 HTMLElement 가져오기</span></div><div class="line"></div><div class="line">  $($li.get(<span class="number">1</span>)).css(<span class="string">"backgroundColor"</span>,<span class="string">"#ccc"</span>);</div><div class="line"></div><div class="line">  &#125;,<span class="number">2000</span>)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight java"><figcaption><span>jQuery 활용방법</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"#first"</span>).css(<span class="string">"color"</span>,<span class="string">"red"</span>);</div><div class="line"></div><div class="line"></div><div class="line">$(<span class="string">"#secnod"</span>).css(<span class="string">"color"</span>,<span class="string">"blue"</span>);</div><div class="line">$(<span class="string">"#second"</span>).css(<span class="string">"fontWeight"</span>,<span class="string">"bold"</span>);</div><div class="line"></div><div class="line">var $li3 = $(<span class="string">"#third"</span>);</div><div class="line">$li3.css(<span class="string">"color"</span>,<span class="string">"blue"</span>);</div><div class="line">$li3.css(<span class="string">"fontWeigth"</span>,<span class="string">"bold"</span>);</div><div class="line"></div><div class="line"><span class="comment">//메소드 체인</span></div><div class="line">$(<span class="string">"#third"</span>).css(<span class="string">"color"</span>,<span class="string">"blue"</span>).css(<span class="string">"fontWeight"</span>,<span class="string">"bold"</span>);</div><div class="line"></div><div class="line"><span class="comment">// 파라미터로 JSON을 사용하는 방법</span></div><div class="line">$(<span class="string">"#fifth"</span>).css(&#123;</div><div class="line">  <span class="string">"color"</span>:<span class="string">"blue"</span>,</div><div class="line">  <span class="string">"fontWeight"</span>:<span class="string">"bold"</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight java"><figcaption><span>다양한 선택방법</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".red strong"</span>).css(<span class="string">"color"</span>,<span class="string">"red"</span>).text(<span class="string">"text"</span>);</div><div class="line"></div><div class="line">$(<span class="string">".blue #s1"</span>).css(<span class="string">"color"</span>,<span class="string">"blue"</span>);	<span class="comment">//자손 선택</span></div><div class="line">$(<span class="string">".blue &gt; #s2"</span>).css(<span class="string">"color"</span>,<span class="string">"red"</span>);	<span class="comment">//자식선택 (바로아래)</span></div><div class="line">$(<span class="string">"#second + li"</span>).css(<span class="string">"color"</span>,<span class="string">"red"</span>);	<span class="comment">//인접선택</span></div><div class="line"></div><div class="line"></div><div class="line">$(<span class="string">"li:first-child"</span>).css(<span class="string">"color"</span>,<span class="string">"red"</span>);	<span class="comment">//첫번째 자식</span></div><div class="line">$(<span class="string">"li:last-child"</span>).css(<span class="string">"color"</span>,<span class="string">"red"</span>);	<span class="comment">//마지막 자식</span></div><div class="line"></div><div class="line"></div><div class="line">$(<span class="string">"li[id]"</span>).css(<span class="string">"color"</span>,<span class="string">"red"</span>);	<span class="comment">//id 속성이 있는 애만</span></div><div class="line">$(<span class="string">"li[class]"</span>).css(<span class="string">"color"</span>,<span class="string">"red"</span>);	<span class="comment">//class속성이 있는애만</span></div></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://KKimSangHeon.github.io/2017/09/05/jquery1/" data-id="cj76yi99x0000vcv772xglix1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/KKimSangHeon/" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/tkdgjs1501/" target="_blank">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/08/30/servlet6/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">6.웹표준</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">32</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Servlet/">Servlet</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Web/">Web</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 Kim Sang Heon</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'https-kkimsangheon-github-io-2';
+    
+    
+    var disqus_url = 'http://KKimSangHeon.github.io/2017/09/05/jquery1/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

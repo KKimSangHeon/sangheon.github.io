@@ -7,8 +7,16 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2017/09/05/jquery1/</loc>
+        <lastmod>2017-09-05T05:21:59.160Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2017/08/30/servlet6/</loc>
-        <lastmod>2017-08-30T05:38:20.038Z</lastmod>
+        <lastmod>2017-08-31T00:11:35.251Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
