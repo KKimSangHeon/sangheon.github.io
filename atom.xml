@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-09-05T05:21:59.160Z</updated>
+  <updated>2017-09-06T06:45:23.647Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,64 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>spring</title>
+    <link href="http://KKimSangHeon.github.io/2017/09/06/spring/"/>
+    <id>http://KKimSangHeon.github.io/2017/09/06/spring/</id>
+    <published>2017-09-06T05:01:31.000Z</published>
+    <updated>2017-09-06T06:45:23.647Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="스프링이란"><a href="#스프링이란" class="headerlink" title="스프링이란?"></a>스프링이란?</h3><p>자바 엔터프라이즈 개발을 편하게 해주는 오픈소스 경량급 애플리케이션 프레임워크</p>
+<h4 id="프레임워크"><a href="#프레임워크" class="headerlink" title="프레임워크?"></a>프레임워크?</h4><p>소프트웨어를  만드는  데  기본이 되는 골격 코드<br>반제품<br>완전한 애플리케이션 소프트웨어가 아니다.<br>문제 영역(도메인)을 해결하기 위한 잘 설계된 재사용 가능한 모듈<br>확장하여 비즈니스 요구사항에 맞는 완전한 애플리케이션으로 완성이 요구된다.</p>
+<p>스프링을 이용하여 웹을 만들면 Spring MVC를 사용<br>DB어플리케이션 프레임 워크는 MyBatis,Spring DAO가 존재<br>기타(지원) 프레임워크로는 로깅(Log4J),  빌드/배포(Ant),  단위테스트(JUnit)가 존재     </p>
+<p>객체에 대한 의존성,생성,소멸 등에 대한 것을 스프링 컨테이너에게 넘긴다. 이로 인해 개발자는 비즈니스만 잘 만들면 된다. 이로인해 생산성이 향상된다.</p>
+<h4 id="EJB"><a href="#EJB" class="headerlink" title="EJB"></a>EJB</h4><p>Enterprise Java Bean의 약자.<br>자바 빈즈 스펙에 맞게 구현된 자바코드를 웹에서 쉽게 이용하기 위해 JSP 표준액션 태그 지원<br>인터페이스 구현 등 불편한 점이 많았다.</p>
+<h4 id="POJO-Plain-Old-Java-Object"><a href="#POJO-Plain-Old-Java-Object" class="headerlink" title="POJO(Plain Old Java Object)"></a>POJO(Plain Old Java Object)</h4><p>EJB를 대체하여 특정클래스를 상속하거나 인터페이스를 구현하지 않는 평범한 자바 클래스(느슨한 Java Bean, Spring Bean)를 이용하며 단순하지만 EJB에서 제공하는 고급 기술을  제공한다.<br>-자바 언어와  꼭 필요한  API외에는 특정 규약에 종속되지 않는다.<br>-특정 환경에 종속되지 않는다. (기술과 비즈니스 분리)(서블릿은 서블릿 컨테이너에 종속적이였음)<br>-스프링에서는 스프링에 특화된 인터페이스 구현을 요구하지 않음<br>-스프링 자체에 의존성이 높은 클래스 확장을  거의 요구 하지 않음</p>
+<h4 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h4><p>1.POJO를 이용한 가볍고(lightweight) 비침투적(non-invasive) 개발<br>2.DI와 인터페이스 지향을 통한 느슨한 결합도(loose coupling)<br>3.Aspect와 공통 규약을 통한 선언적(declarative) 프로그래밍<br>4.Aspect와 템플릿(template)을 통한 반복적이고 상투적인(boilerplate) 코드 제거</p>
+<p>AOP는 OOP를 더 OOP답게 쓰는것</p>
+<h4 id="3-1-IoC-제어역전-Inverse-of-Control-Object-과-DI-의존관계-주입"><a href="#3-1-IoC-제어역전-Inverse-of-Control-Object-과-DI-의존관계-주입" class="headerlink" title="3.1 IoC( 제어역전 ,Inverse of Control (Object) ) 과 DI( 의존관계 주입)"></a>3.1 IoC( 제어역전 ,Inverse of Control (Object) ) 과 DI( 의존관계 주입)</h4><p>Spring Container = IoC(DI) Container = Bean Container = Application Context<br>new를 하지 않아도 컨테이너가 알아서 만들고 소멸해주고 다한다!!</p>
+<h4 id="AOP-Aspect-Oriented-Programming"><a href="#AOP-Aspect-Oriented-Programming" class="headerlink" title="AOP (Aspect Oriented Programming)"></a>AOP (Aspect Oriented Programming)</h4><p>클래스의 관심에 따라 클래스를 구성하게되는데(ex:DAO는 DB접근에 관심)</p>
+<p>횡단관심: 여러곳에서 공통으로 필요한 모듈<br>횡단관심은 클래스로 빼내서 모듈로 만든다.<br>관심의 분리 ( Separation of Concern )<br>횡단 관심( Crosscutting Concern )과  핵심관심(  Core Concern )<br>핵심관심  모듈과  횡단 관심 모듈이 긴밀하게 결합 ( 핵심 모듈이 필요한 시점에..)<br>OOP 문제점 : 중복코드,  지저분한 코드,  생산성 저하,  재활용성의 문제점<br>필요한 시점에  횡단 관심 모듈을 삽입하여 동작하게 하는 기술.<br>EJB AOP, JDK Dynamic Proxy, AspectJ, Spring AOP      </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;스프링이란&quot;&gt;&lt;a href=&quot;#스프링이란&quot; class=&quot;headerlink&quot; title=&quot;스프링이란?&quot;&gt;&lt;/a&gt;스프링이란?&lt;/h3&gt;&lt;p&gt;자바 엔터프라이즈 개발을 편하게 해주는 오픈소스 경량급 애플리케이션 프레임워크&lt;/p&gt;
+&lt;h4 id=&quot;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ajax</title>
+    <link href="http://KKimSangHeon.github.io/2017/09/06/ajax/"/>
+    <id>http://KKimSangHeon.github.io/2017/09/06/ajax/</id>
+    <published>2017-09-06T00:10:29.000Z</published>
+    <updated>2017-09-06T05:01:23.364Z</updated>
+    
+    <content type="html"><![CDATA[<p>Asynchronous Javascript XML</p>
+<p>AJAX는 비동기 통신이다.</p>
+<h4 id="동기"><a href="#동기" class="headerlink" title="동기"></a>동기</h4><p>클라이언트가 리퀘스트를 보내면 그에 대한 리스폰스가 와야 다른 리퀘스트를 보낼 수 있다.<br>서버에서 리퀘스트에 대한 응답이 오지 않으면 block상태에 빠진다는 단점 존재.</p>
+<h4 id="비동기"><a href="#비동기" class="headerlink" title="비동기"></a>비동기</h4><p>리퀘스트에 대한 응답을 기다리지 않고 다른 동작을 처리할 수 있다.<br>단점은 어느 요청이 어느 요청에 대한 응답인지 알기 어려울 수 있다. 도착순서도 정해져있지 않고 많은 응답이 있기 때문에..<br><figure class="highlight java"><figcaption><span>ajax를 이용하지 않고 통신</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">$(function()&#123;</div><div class="line">	$(<span class="string">"button"</span>).click(function()&#123;</div><div class="line"></div><div class="line">		<span class="comment">//1.XMLHttpRequest 객체 생성</span></div><div class="line">		var xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line"></div><div class="line">		<span class="comment">//2. 통신 상태 변화에 따른 콜백함수 정의</span></div><div class="line">		xhr.onreadystatechange = function()&#123;</div><div class="line">			<span class="keyword">if</span>( <span class="keyword">this</span>.readyState == <span class="number">0</span> )&#123;</div><div class="line">			<span class="comment">//open() 호출 전</span></div><div class="line">			console.log( <span class="string">"readyState(0) - unset"</span> );</div><div class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">this</span>.readyState ==<span class="number">1</span>)&#123;</div><div class="line">				<span class="comment">//open() 호출 후</span></div><div class="line">			console.log( <span class="string">"readyState(1) - set"</span> );</div><div class="line"></div><div class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">this</span>.readyState ==<span class="number">2</span>)&#123;</div><div class="line">				<span class="comment">//send() 호출 후</span></div><div class="line">			console.log( <span class="string">"readyState(2) - sent"</span> );</div><div class="line"></div><div class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">this</span>.readyState ==<span class="number">3</span>)&#123;</div><div class="line">				<span class="comment">//loading...</span></div><div class="line">			console.log( <span class="string">"readyState(3) - loading"</span> );</div><div class="line"></div><div class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">this</span>.readyState ==<span class="number">4</span>)&#123;</div><div class="line">				<span class="comment">//done</span></div><div class="line">			console.log( <span class="string">"readyState(4) - done"</span> );</div><div class="line"></div><div class="line">			console.log( xhr.responseText);</div><div class="line"></div><div class="line">			var response = eval(xhr.responseText);</div><div class="line">			console.log(response);</div><div class="line">			$.each(response,function(index,vo)&#123;</div><div class="line">				console.log( index +<span class="string">":"</span> + vo.name)</div><div class="line"></div><div class="line">			&#125;)</div><div class="line">			&#125;</div><div class="line"></div><div class="line">		&#125;;</div><div class="line"></div><div class="line">		<span class="comment">//3. open</span></div><div class="line">		xhr.open(<span class="string">"GET"</span>,<span class="string">"/wp_js2/sample.json"</span>)</div><div class="line"></div><div class="line">		<span class="comment">//4. send request</span></div><div class="line">		xhr.send();</div><div class="line"></div><div class="line">	&#125;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure><br><figure class="highlight java"><figcaption><span>ajax를 이용하여 통신</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">$(function()&#123;</div><div class="line">	$(<span class="string">"button"</span>).click(function()&#123;</div><div class="line">		$.ajax( &#123;</div><div class="line">			async: <span class="keyword">true</span>,</div><div class="line">			url : <span class="string">"/wp_js2/sample.json"</span>,</div><div class="line">			type: <span class="string">"get"</span>,</div><div class="line">			dataType: <span class="string">"json"</span>,</div><div class="line">			data: <span class="string">""</span>,</div><div class="line">			contentType: <span class="string">'application/json'</span>,</div><div class="line">			success: function(response)&#123;</div><div class="line">				$.each (response,function(index,vo)&#123;</div><div class="line">					console.log(vo.name)</div><div class="line">				&#125;)</div><div class="line">			&#125;,</div><div class="line">			error: function( jqXHR, status, e )&#123;</div><div class="line">				alert( status + <span class="string">" : "</span> + e );</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">	&#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Asynchronous Javascript XML&lt;/p&gt;
+&lt;p&gt;AJAX는 비동기 통신이다.&lt;/p&gt;
+&lt;h4 id=&quot;동기&quot;&gt;&lt;a href=&quot;#동기&quot; class=&quot;headerlink&quot; title=&quot;동기&quot;&gt;&lt;/a&gt;동기&lt;/h4&gt;&lt;p&gt;클라이언트가 리퀘스트를
+    
+    </summary>
+    
+      <category term="빅데이터 전문가과정" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/"/>
+    
+      <category term="Web" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Web/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>jquery</title>
@@ -741,75 +799,6 @@ END AS &quot;직업&quot;
     
     
       <category term="Data Base" scheme="http://KKimSangHeon.github.io/tags/Data-Base/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Whole in 밴드</title>
-    <link href="http://KKimSangHeon.github.io/2017/08/11/wholin/"/>
-    <id>http://KKimSangHeon.github.io/2017/08/11/wholin/</id>
-    <published>2017-08-11T06:55:24.000Z</published>
-    <updated>2017-08-11T07:13:18.046Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="App-소개-및-개발배경"><a href="#App-소개-및-개발배경" class="headerlink" title="App 소개 및 개발배경"></a>App 소개 및 개발배경</h1><p>-GIF 2016 에 참가하면서 개발하였던 어플리케이션 입니다. 주제는 성공적인 개최를 위한 IOT 서비스 활용방안이였으며 저희팀은 NFC를 이용하여 국적별 다용도로 활용할 수 있는 팔찌(Wholin 밴드)를 제작하였습니다.<br>프로토 타입 어플리케이션이므로 밴드를 통한 국적별 메뉴판 조회, 음식주문 기능을 구현하였습니다.</p>
-<h1 id="밴드소개"><a href="#밴드소개" class="headerlink" title="밴드소개"></a>밴드소개</h1><img src="/2017/08/11/wholin/band.PNG" alt="밴드소개" title="밴드소개">
-<p>밴드 속에는 NFC칩이 존재하며 메뉴주문 및 결제, 사각지대 VR 생중계 등의 기능을 제공하며 프로토 타입이므로 국적별 메뉴판 조회기능만 제공합니다.</p>
-<h1 id="작동화면"><a href="#작동화면" class="headerlink" title="작동화면"></a>작동화면</h1><img src="/2017/08/11/wholin/work1.PNG" alt="작동화면" title="작동화면">
-<p>처음 언어를 설정하고 자신의 기본정보를 입력하고 추가정보를 입력후 밴드를 스마트폰에 갖다대면 밴드 등록이 완료됩니다.</p>
-<p>-시연영상<br><div class="video-container"><iframe src="//www.youtube.com/embed/eBBswuTXMxY" frameborder="0" allowfullscreen></iframe></div><br><a href="https://github.com/KKimSangHeon/Wholin_Band" target="_blank" rel="external">github Repository</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;App-소개-및-개발배경&quot;&gt;&lt;a href=&quot;#App-소개-및-개발배경&quot; class=&quot;headerlink&quot; title=&quot;App 소개 및 개발배경&quot;&gt;&lt;/a&gt;App 소개 및 개발배경&lt;/h1&gt;&lt;p&gt;-GIF 2016 에 참가하면서 개발하였던 어플
-    
-    </summary>
-    
-      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
-    
-      <category term="My Projects" scheme="http://KKimSangHeon.github.io/categories/About-Me/My-Projects/"/>
-    
-    
-      <category term="Android" scheme="http://KKimSangHeon.github.io/tags/Android/"/>
-    
-      <category term="NFC" scheme="http://KKimSangHeon.github.io/tags/NFC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>동국대학교 경주캠퍼스 채팅봇</title>
-    <link href="http://KKimSangHeon.github.io/2017/08/11/dg-chat-bot/"/>
-    <id>http://KKimSangHeon.github.io/2017/08/11/dg-chat-bot/</id>
-    <published>2017-08-11T06:20:24.000Z</published>
-    <updated>2017-08-11T06:45:52.459Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="프로그램-개발배경"><a href="#프로그램-개발배경" class="headerlink" title="프로그램 개발배경"></a>프로그램 개발배경</h1><p>-기숙사 외박계가 서비스 되지 않은점이 아쉬웠으며 유용하게 쓰일 수 있는 프로그램을 만들어 보고싶어 학교 채팅봇을 만들어보게 되었습니다.</p>
-<h1 id="프로그램-소개"><a href="#프로그램-소개" class="headerlink" title="프로그램 소개"></a>프로그램 소개</h1><p>플러스 친구 추가 후 통학버스 조회, 기숙사 식단조회, 도서관 좌석조회, 홈페이지 조회 기능을 사용할 수 있습니다.<br>또한 AWS EC2인스턴스를 활용하여 서비스하며 동국대학교 경주캠퍼스 채팅봇을 검색 후 친구추가가 가능합니다.</p>
-<h1 id="프로그램-동작화면"><a href="#프로그램-동작화면" class="headerlink" title="프로그램 동작화면"></a>프로그램 동작화면</h1><img src="/2017/08/11/dg-chat-bot/dgchat.png" alt="동작화면 [그림1]" title="동작화면 [그림1]">
-<p>플러스 친구 추가 후 통학버스 조회, 기숙사 식단조회, 도서관 좌석조회, 홈페이지 조회 기능을 사용할 수 있습니다.</p>
-<p><a href="https://github.com/KKimSangHeon/Dg_Chat_Bot" target="_blank" rel="external">github Repository</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;프로그램-개발배경&quot;&gt;&lt;a href=&quot;#프로그램-개발배경&quot; class=&quot;headerlink&quot; title=&quot;프로그램 개발배경&quot;&gt;&lt;/a&gt;프로그램 개발배경&lt;/h1&gt;&lt;p&gt;-기숙사 외박계가 서비스 되지 않은점이 아쉬웠으며 유용하게 쓰일 수 있는 프
-    
-    </summary>
-    
-      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
-    
-      <category term="My Projects" scheme="http://KKimSangHeon.github.io/categories/About-Me/My-Projects/"/>
-    
-    
-      <category term="Node.js" scheme="http://KKimSangHeon.github.io/tags/Node-js/"/>
-    
-      <category term="Kakao talk open API" scheme="http://KKimSangHeon.github.io/tags/Kakao-talk-open-API/"/>
-    
-      <category term="챗봇" scheme="http://KKimSangHeon.github.io/tags/%EC%B1%97%EB%B4%87/"/>
-    
-      <category term="MySQL" scheme="http://KKimSangHeon.github.io/tags/MySQL/"/>
-    
-      <category term="CentOS" scheme="http://KKimSangHeon.github.io/tags/CentOS/"/>
     
   </entry>
   

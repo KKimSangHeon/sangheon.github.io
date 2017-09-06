@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2017/09/06/spring/</loc>
+        <lastmod>2017-09-06T06:45:23.647Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/09/06/ajax/</loc>
+        <lastmod>2017-09-06T05:01:23.364Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2017/09/05/jquery1/</loc>
         <lastmod>2017-09-05T05:21:59.160Z</lastmod>
         <changefreq>weekly</changefreq>
