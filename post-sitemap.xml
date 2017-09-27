@@ -7,8 +7,72 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2017/09/27/python/</loc>
+        <lastmod>2017-09-27T06:43:57.142Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/09/18/spring5/</loc>
+        <lastmod>2017-09-18T05:08:58.826Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/09/05/jquery1/</loc>
+        <lastmod>2017-09-18T00:28:25.076Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/09/06/ajax/</loc>
+        <lastmod>2017-09-18T00:28:25.075Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/09/15/spring4/</loc>
+        <lastmod>2017-09-18T00:28:25.075Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2017/09/11/spring3/</loc>
-        <lastmod>2017-09-14T00:09:54.979Z</lastmod>
+        <lastmod>2017-09-18T00:28:25.075Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/09/07/spring2/</loc>
+        <lastmod>2017-09-18T00:28:25.075Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/09/06/spring/</loc>
+        <lastmod>2017-09-18T00:28:25.072Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/08/30/servlet6/</loc>
+        <lastmod>2017-09-18T00:26:28.666Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,46 +81,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2017/08/11/dg-chat-bot/</loc>
         <lastmod>2017-09-14T00:09:36.861Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2017/09/06/spring/</loc>
-        <lastmod>2017-09-08T00:43:29.689Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2017/09/07/spring2/</loc>
-        <lastmod>2017-09-07T05:19:05.405Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2017/09/06/ajax/</loc>
-        <lastmod>2017-09-07T01:15:00.792Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2017/09/05/jquery1/</loc>
-        <lastmod>2017-09-07T01:14:57.780Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2017/08/30/servlet6/</loc>
-        <lastmod>2017-08-31T00:11:35.251Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

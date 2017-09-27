@@ -219,27 +219,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Servlet/</loc>
-        <lastmod>2017-08-31T00:11:35.251Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/JQuery/</loc>
-        <lastmod>2017-09-07T01:14:57.780Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/Ajax/</loc>
-        <lastmod>2017-09-07T01:15:00.792Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/Node-js/</loc>
         <lastmod>2017-09-14T00:09:36.861Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -275,8 +254,29 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/tags/Servlet/</loc>
+        <lastmod>2017-09-18T00:26:28.666Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Ajax/</loc>
+        <lastmod>2017-09-18T00:28:25.075Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/JQuery/</loc>
+        <lastmod>2017-09-18T00:28:25.076Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/tags/Spring/</loc>
-        <lastmod>2017-09-14T00:09:54.979Z</lastmod>
+        <lastmod>2017-09-18T05:08:58.826Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

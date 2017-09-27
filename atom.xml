@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-09-14T00:09:54.979Z</updated>
+  <updated>2017-09-27T06:43:57.142Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,109 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Spring. annotation의 활용</title>
+    <title>python</title>
+    <link href="http://KKimSangHeon.github.io/2017/09/27/python/"/>
+    <id>http://KKimSangHeon.github.io/2017/09/27/python/</id>
+    <published>2017-09-27T04:43:58.000Z</published>
+    <updated>2017-09-27T06:43:57.142Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="소개"><a href="#소개" class="headerlink" title="소개"></a>소개</h3><p>1991년 귀도 반 로섬( Guido van Rossum ) 이 발표한 인터프리터 언어<br>귀도가 구글에 입사하고 구글의 3대 개발언어 중 하나로 채택되면서 유명세를 탔다.</p>
+<h3 id="특징"><a href="#특징" class="headerlink" title="특징"></a>특징</h3><p>대화 기능의 인터프리터 언어<br>동적타이핑(동적인 데이터 타입 결정 지원)<br>플랫폼 독립적 언어(Unix, Linux, Window9x/NT 계열, DOS, OS/2, Mac OS, Nokia 등)</p>
+<p>간단하고 쉬운 문법<br>가독성(  코드블러의 들여쓰기 구분 )<br>비교적 짧은 개발 시간<br>고수준의 내장 객체 자료형 제공(List, Dictionary, String, Turple 등의 자료구조)<br>메모리 자동 관리<br>무료(비영리의 파이썬 소프트웨어 재단이 관리하는 개방형, 공동체 기반 개발 모델)<br>많은 수의 풍부한 라이브러리 제공<br>높은 확장성(접착성, Glue Language)<br>유니코드</p>
+<h3 id="파이선의-종류"><a href="#파이선의-종류" class="headerlink" title="파이선의 종류"></a>파이선의 종류</h3><h4 id="Cpython"><a href="#Cpython" class="headerlink" title="Cpython"></a>Cpython</h4><p>C로 작성된 파이썬 인터프리터</p>
+<h4 id="Jython"><a href="#Jython" class="headerlink" title="Jython"></a>Jython</h4><p>Java로 작성된 파이썬 인터프리터</p>
+<h4 id="IronPython"><a href="#IronPython" class="headerlink" title="IronPython"></a>IronPython</h4><p>.Net  플랫폼 용 파이썬 인터프리터, C#으로 구현</p>
+<h4 id="PyPy"><a href="#PyPy" class="headerlink" title="PyPy"></a>PyPy</h4><p>파이썬으로 작성된 파이썬 인터프리터</p>
+<figure class="highlight"><figcaption><span>PythonExam.pi</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line">가장 바깥쪽에 있는 블록의 코드는 1열부터 시작해야 한다.</div><div class="line">&gt;&gt;&gt; a=1</div><div class="line">&gt;&gt;&gt;  a=1</div><div class="line">SyntaxError: unexpected indent</div><div class="line"></div><div class="line"></div><div class="line">내부 블록은 같은 거리만큼 들여 쓰기를 해야 한다.</div><div class="line">&gt;&gt;&gt; if( a &gt; 1 ):</div><div class="line">	print( "big" )</div><div class="line">		print( "really?" )</div><div class="line">SyntaxError: unexpected indent</div><div class="line"></div><div class="line">from __future__ import print_function</div><div class="line"># -*- coding: utf-8 -*-</div><div class="line"># 치환문의 예</div><div class="line"></div><div class="line">a = 1</div><div class="line">b = a + 1</div><div class="line">print(a , b, sep=',')</div><div class="line"></div><div class="line"># 여러 변수를 한번에 치환</div><div class="line"></div><div class="line">e, f =3, 7</div><div class="line">print(e ,f )</div><div class="line"></div><div class="line"># 하나의 값을 여러 변수에 할당</div><div class="line">x = y = z = 1</div><div class="line"></div><div class="line"># 값 교환</div><div class="line">f, e = e, f</div><div class="line">print(e, f)</div><div class="line"></div><div class="line"># 동적 타이핑</div><div class="line">a = 1</div><div class="line">print(type(a))</div><div class="line">a = 'hell'</div><div class="line">print(type(a))</div><div class="line"></div><div class="line"># -*- coding: utf-8 -*-</div><div class="line"></div><div class="line"></div><div class="line">import keyword</div><div class="line"></div><div class="line"></div><div class="line"># 변수 이름은 문자, 숫자, _ 로 구성해야 한다.</div><div class="line">friend = 1</div><div class="line">a = 10</div><div class="line">my_name = '김상헌'</div><div class="line">_yourName = '둘리'</div><div class="line">member1 = '도우넛'</div><div class="line"></div><div class="line"># 에러</div><div class="line"># $friend = 2</div><div class="line"># a! = 1</div><div class="line"># 1abc = 10</div><div class="line"></div><div class="line"># 에러: 예약어는 사용할 수 없다.</div><div class="line"># def = 10</div><div class="line">print(keyword.kwlist)</div><div class="line"></div><div class="line"># 한글 이름의 변수도 가능하다.</div><div class="line">가격1 = 2000</div><div class="line">print(가격1 - 200)</div><div class="line"></div></pre></td></tr></table></figure>
+<h4 id="파이썬-변수-이름-규칙"><a href="#파이썬-변수-이름-규칙" class="headerlink" title="파이썬 변수 이름 규칙"></a>파이썬 변수 이름 규칙</h4><p>1)문자(유니코드), 숫자, 밑줄(_)로 구성<br>2)숫자는 처음에 올 수 없다.<br>3)대소문자 구분<br>4)예약어 사용 불가<br>5)함수 이름, 클래스 이름도 같은 규칙이 적용된다.<br><figure class="highlight"><figcaption><span>PythonExam.pi</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"># 참이나 거짓을 나타내는 True, False 두 상수를 갖는다</div><div class="line"></div><div class="line">a = 1</div><div class="line">b = a &lt; 10</div><div class="line">print(b,type(b),sep=",")</div><div class="line"></div><div class="line">b1 = True</div><div class="line">b2 = False</div><div class="line"></div><div class="line">print(b1 + 10)</div><div class="line">print(b2 + 10)</div><div class="line">print(True + True )</div><div class="line"></div><div class="line">if a &lt; 10:</div><div class="line">    print(a)</div><div class="line"></div><div class="line"></div><div class="line">a = 23</div><div class="line">print(type(a))</div><div class="line">print(isinstance(a,int))</div><div class="line">print(isinstance(a,bool))</div><div class="line"></div><div class="line">b = 0b1101</div><div class="line">c = 0o23</div><div class="line">d = 0x23</div><div class="line"></div><div class="line">print(a, b, c, d, sep=' ')</div><div class="line"></div><div class="line"># 3.x 에서는 int 와 long이 합쳐졌다</div><div class="line"># 따라서 표현 범위가 굉장히 크다</div><div class="line"></div><div class="line">e = 2 ** 1024</div><div class="line">print(e)</div><div class="line">print(type(e))</div><div class="line"></div><div class="line"># 변환 함수</div><div class="line">print(oct(38))</div><div class="line">print(hex(38))</div><div class="line">print(bin(38))</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;소개&quot;&gt;&lt;a href=&quot;#소개&quot; class=&quot;headerlink&quot; title=&quot;소개&quot;&gt;&lt;/a&gt;소개&lt;/h3&gt;&lt;p&gt;1991년 귀도 반 로섬( Guido van Rossum ) 이 발표한 인터프리터 언어&lt;br&gt;귀도가 구글에 입사하고 구글의 3
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>13. Logging, IoC / DI</title>
+    <link href="http://KKimSangHeon.github.io/2017/09/18/spring5/"/>
+    <id>http://KKimSangHeon.github.io/2017/09/18/spring5/</id>
+    <published>2017-09-18T00:26:03.000Z</published>
+    <updated>2017-09-18T05:08:58.826Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="로깅이란"><a href="#로깅이란" class="headerlink" title="로깅이란?"></a>로깅이란?</h4><p>-비 기능적 요구사항  ( Non Functional Requirement )<br>하지만,  프로그램 개발 중 디버깅 및 개발완료 후 문제점 추적 및 분석을 위해 필수적으로 갖추어야 할 요구 조건<br>,로그(Log) 는  프로그램 개발이나 운영 시 발생하는 문제점을 추적 하거나  운영 상태를 모니터링 하는 정보<br>,로깅(logging)이란  로그(log)를  생성하도록  시스템을 작성하는 활동<br>-얻을 수 있는 것<br>1.재현하기 힘든 (  테스트 환경이 아닌 개발 완료된 환경에서 발생하는 )  버그에 대한  유용한 정보를 제공<br>2.성능에 관한 통계와 정보를 제공할 수 있다.</p>
+<p>Inversion of Control( 제어역전 ) 이란 프로그램 코드 내에서 참조하려는 객체를 직접 생성  하지 않고  외부의 다른 존재가  생성하여 제공한다는 개념<br>외부의 다른 존재(객체) 를  Container 라고 하며  IoC 오브젝트 또는 IoC Container 라고 한다</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;로깅이란&quot;&gt;&lt;a href=&quot;#로깅이란&quot; class=&quot;headerlink&quot; title=&quot;로깅이란?&quot;&gt;&lt;/a&gt;로깅이란?&lt;/h4&gt;&lt;p&gt;-비 기능적 요구사항  ( Non Functional Requirement )&lt;br&gt;하지만,  프로그램 개발
+    
+    </summary>
+    
+      <category term="빅데이터 전문가과정" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/"/>
+    
+      <category term="Web" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Web/"/>
+    
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>12.AOP</title>
+    <link href="http://KKimSangHeon.github.io/2017/09/15/spring4/"/>
+    <id>http://KKimSangHeon.github.io/2017/09/15/spring4/</id>
+    <published>2017-09-15T00:11:03.000Z</published>
+    <updated>2017-09-18T00:28:25.075Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="AOP-개요"><a href="#AOP-개요" class="headerlink" title="AOP 개요"></a>AOP 개요</h4><p>(A)spect (O)riented (P)rogramming : 관점 지향 프로그래밍<br>가장 기초가 되는 개념은 관심의 분리(Separation of Concern)<br>AOP는 OOP를 수정하는 것이라 보면 된다.<br>가장 기초가 되는 개념은 관심의 분리(Separation of Concern)<br>1.핵심관심 : 시스템의 핵심 가치와 목적이 그대로 드러난 관심영역</p>
+<p>2.횡단관심: 핵심관심 전반에 걸쳐 반복적으로 나오게 되는 로깅, 트랜잭션, 보안, 인증, 리소스 풀링, 에러체크 등의 관심영역</p>
+<p>3.관심의 분리: 여러 핵심관심에 걸쳐 등장하는 횡단관심을 분리하여 독립적인 모듈로 만들고 핵심관심이 실행되는 동안 횡단관심을 호출하는 코드를 직접 명시하지 않고 선언적으로 처리</p>
+<p>4.핵심관심 모듈의 중간중간에서 필요한 횡단관심 모듈을 직접 호출하지 않고 위빙(Weaving)이라 불리는 작업을 이용하여 횡단관심 코드가 삽입되도록 만든다.</p>
+<p>5.핵심관심모듈에서는 횡단관심모듈이 무엇인지 조차 인식할 필요가 없음</p>
+<h4 id="AOP의-구성요소"><a href="#AOP의-구성요소" class="headerlink" title="AOP의 구성요소"></a>AOP의 구성요소</h4><p>1) JoinPoint(언제)<br>-횡단관심모듈은 코드의 아무 때나 삽입이 되는 건 아니다.<br>-조인포인트라 불리는 특정 시점에서만 삽입이 가능하다.</p>
+<p>2) PointCut (어디에서)<br>-어느 조인포인트에 횡단관심모듈을 삽입할지를 결정하는 기능<br>-횡단관심이 삽입될 특정 클래스의 특정 메소드를 선택하는 방법 정의</p>
+<p>3) Advice(or Interceptor, 무엇을 )<br>횡단관심모듈(로깅, 보안, 트랜잭션 등)</p>
+<p>4) Weaving(위빙)<br>-어드바이스(횡단관심)를 삽입하는 과정<br>-위빙작업이 일어나는 시간<br>컴파일 시  - 특별한 컴파일러 필요<br>클래스 로딩시 - 특별한 클래스로더 필요<br>런타임시 - 프록시를 이용한 방법(스프링)</p>
+<p>####실습<br>project 생성 - new maven project - 다음 - quick start 다음 - 그룹ID:com.bigdata2017   /  아티클아이디:aoptest</p>
+<p>프로젝트 우클릭 - 프로퍼티스- 자바빌드패스 - JRE 수정<br>프로젝트 우클릭 - 프로퍼티스- project facets - Runtimes탭 - jre 선택 후 어플라이</p>
+<p>아래와 같이 수정<br><figure class="highlight"><figcaption><span>pom.xml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</div><div class="line">  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;</div><div class="line">  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</div><div class="line"></div><div class="line">  &lt;groupId&gt;com.bigdata2017&lt;/groupId&gt;</div><div class="line">  &lt;artifactId&gt;aoptest&lt;/artifactId&gt;</div><div class="line">  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</div><div class="line">  &lt;packaging&gt;jar&lt;/packaging&gt;</div><div class="line"></div><div class="line">  &lt;name&gt;aoptest&lt;/name&gt;</div><div class="line">  &lt;url&gt;http://maven.apache.org&lt;/url&gt;</div><div class="line"></div><div class="line">  &lt;properties&gt;</div><div class="line">    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</div><div class="line">    &lt;org.springframework-version&gt;4.1.1.RELEASE&lt;/org.springframework-version&gt;</div><div class="line">  &lt;/properties&gt;</div><div class="line"></div><div class="line">  &lt;dependencies&gt;</div><div class="line">		  &lt;!-- spring context --&gt;</div><div class="line">		&lt;dependency&gt;</div><div class="line">			&lt;groupId&gt;org.springframework&lt;/groupId&gt;</div><div class="line">			&lt;artifactId&gt;spring-context&lt;/artifactId&gt;</div><div class="line">			&lt;version&gt;$&#123;org.springframework-version&#125;&lt;/version&gt;</div><div class="line">		&lt;/dependency&gt;</div><div class="line"></div><div class="line">		  &lt;!-- spring aspect --&gt;</div><div class="line">		&lt;dependency&gt;</div><div class="line">		    	&lt;groupId&gt;org.springframework&lt;/groupId&gt;</div><div class="line">		    	&lt;artifactId&gt;spring-aspects&lt;/artifactId&gt;</div><div class="line">		    	&lt;version&gt;$&#123;org.springframework-version&#125;&lt;/version&gt;</div><div class="line">		&lt;/dependency&gt;</div><div class="line"></div><div class="line"></div><div class="line">	    &lt;dependency&gt;</div><div class="line">	      &lt;groupId&gt;junit&lt;/groupId&gt;</div><div class="line">	      &lt;artifactId&gt;junit&lt;/artifactId&gt;</div><div class="line">	      &lt;version&gt;3.8.1&lt;/version&gt;</div><div class="line">	      &lt;scope&gt;test&lt;/scope&gt;</div><div class="line">	    &lt;/dependency&gt;</div><div class="line">  &lt;/dependencies&gt;</div><div class="line">&lt;/project&gt;</div><div class="line"></div></pre></td></tr></table></figure></p>
+<p>프로젝트 우클릭-  뉴 - 소스폴더 -src/main/resource<br>생성된 소스폴더안에 config패키지 추가<br>패키지 안에 applicationContext.xml</p>
+<figure class="highlight"><figcaption><span>applicationContext.xml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line">&lt;beans xmlns="http://www.springframework.org/schema/beans"</div><div class="line">	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</div><div class="line">	xmlns:aop="http://www.springframework.org/schema/aop"</div><div class="line">	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"</div><div class="line">	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd</div><div class="line">		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd</div><div class="line">		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd</div><div class="line">		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"&gt;</div><div class="line">	&lt;!-- AOP AutoProxy --&gt;</div><div class="line">	&lt;aop:aspectj-autoproxy /&gt;</div><div class="line"></div><div class="line">	&lt;context:annotation-config /&gt;</div><div class="line"></div><div class="line">	&lt;context:component-scan base-package="com.bigdata2017.aoptest"&gt;</div><div class="line">		&lt;context:include-filter type="annotation"</div><div class="line">			expression="org.springframework.stereotype.Repository" /&gt;</div><div class="line">		&lt;context:include-filter type="annotation"</div><div class="line">			expression="org.springframework.stereotype.Service" /&gt;</div><div class="line">		&lt;context:include-filter type="annotation"</div><div class="line">			expression="org.springframework.stereotype.Component" /&gt;</div><div class="line">	&lt;/context:component-scan&gt;</div><div class="line"></div><div class="line">&lt;/beans&gt;</div></pre></td></tr></table></figure>
+<p>App.java에 입력</p>
+<figure class="highlight java"><figcaption><span>App.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.bigdata2017.aoptest;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.springframework.context.ApplicationContext;</div><div class="line"><span class="keyword">import</span> org.springframework.context.support.ClassPathXmlApplicationContext;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">( String[] args )</span></span>&#123;</div><div class="line">    	ApplicationContext ac =</div><div class="line">    			<span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"config/applicationContext.xml"</span>);</div><div class="line"></div><div class="line">    	ProductService ps =</div><div class="line">    	ac.getBean( ProductService.class );</div><div class="line"></div><div class="line">    	ProductVo vo = ps.find( <span class="string">"camera"</span> );</div><div class="line">    	<span class="comment">//System.out.println( vo );</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<p>ProductService.java 생성</p>
+<figure class="highlight java"><figcaption><span>pom.xml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.bigdata2017.aoptest;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</div><div class="line"></div><div class="line"><span class="meta">@Service</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProductService</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> ProductVo <span class="title">find</span><span class="params">( String keyword )</span> </span>&#123;</div><div class="line"></div><div class="line">		System.out.println(<span class="string">"finding...."</span>);</div><div class="line"></div><div class="line"><span class="comment">//		if( 1 == 2-1 ) &#123;</span></div><div class="line"><span class="comment">//			throw new RuntimeException( "exceptionoccrs" );</span></div><div class="line"><span class="comment">//		&#125;</span></div><div class="line"></div><div class="line">		<span class="keyword">return</span> <span class="keyword">new</span> ProductVo( keyword );</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<p>ProductVo생성</p>
+<figure class="highlight java"><figcaption><span>ProductVo.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.bigdata2017.aoptest;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProductVo</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> String name;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ProductVo</span><span class="params">( String name )</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.name = name;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> name;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.name = name;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">"ProductVo [name="</span> + name + <span class="string">"]"</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>MyAspect생성<br><figure class="highlight java"><figcaption><span>MyAspect.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.bigdata2017.aoptest;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.After;</div><div class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.AfterReturning;</div><div class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.AfterThrowing;</div><div class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Aspect;</div><div class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Before;</div><div class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</div><div class="line"></div><div class="line"><span class="meta">@Aspect</span></div><div class="line"><span class="meta">@Component</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyAspect</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="meta">@Before</span>( <span class="string">"execution(public ProductVo com.bigdata2017.aoptest.ProductService.find(..))"</span> )</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beforeAdvice</span><span class="params">()</span> </span>&#123;</div><div class="line">		System.out.println( <span class="string">"beforeAdvice() called"</span> );</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@After</span>( <span class="string">"execution(* com.bigdata2017.aoptest.*.find(..))"</span> )</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterAdvice</span><span class="params">()</span> </span>&#123;</div><div class="line">		System.out.println( <span class="string">"afterAdvice() called"</span> );</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@AfterReturning</span>( <span class="string">"execution(* *..ProductService.find(..))"</span> )</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterReturning</span><span class="params">()</span> </span>&#123;</div><div class="line">		System.out.println( <span class="string">"afterReturning() called"</span> );</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@AfterThrowing</span>( value=<span class="string">"execution(* *..*.*(..))"</span>, throwing=<span class="string">"ex"</span> )</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterThrowing</span><span class="params">( Throwable ex )</span> </span>&#123;</div><div class="line">		System.out.println( <span class="string">"afterThrowing() called:"</span> + ex );</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;AOP-개요&quot;&gt;&lt;a href=&quot;#AOP-개요&quot; class=&quot;headerlink&quot; title=&quot;AOP 개요&quot;&gt;&lt;/a&gt;AOP 개요&lt;/h4&gt;&lt;p&gt;(A)spect (O)riented (P)rogramming : 관점 지향 프로그래밍&lt;br&gt;가장 
+    
+    </summary>
+    
+      <category term="빅데이터 전문가과정" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/"/>
+    
+      <category term="Web" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Web/"/>
+    
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>11.Spring. annotation의 활용</title>
     <link href="http://KKimSangHeon.github.io/2017/09/11/spring3/"/>
     <id>http://KKimSangHeon.github.io/2017/09/11/spring3/</id>
     <published>2017-09-11T00:15:08.000Z</published>
-    <updated>2017-09-14T00:09:54.979Z</updated>
+    <updated>2017-09-18T00:28:25.075Z</updated>
     
     <content type="html"><![CDATA[<p>-JDBC를 통해 DB를 사용하려면, Connection 타입의 DB 연결 객체가 필요하다.<br>-엔터프라이즈 환경에서는 각 요청마다 Connection을 새롭게 만들고 종료시킨다.<br>-애플리케이션과  DB사이의 실제 커넥션을 매번 새롭게 만드는 것은 비효율적이고 성능저하<br>-풀링(pooling) 기법 사용<br>    정해진 개수의 DB Connection Pool에 준비하고 애플리케이션 요청때 마다 꺼내서 할당하고 돌려받아  pool에 저장.<br> -Spring에서는 DataSource를 하나의 독립된 빈으로 등록하도록 강력하게 권장.<br> -엔터프라이즈 시스템에서는 반드시 DB 연결 풀 기능을 지원하는 DataSource를 사용해야 한다.                                   </p>
 <h4 id="요약"><a href="#요약" class="headerlink" title="요약"></a>요약</h4><p>쿼리를 보내는것보다 연결하는데 더 많은 자원이 사용된다. 그래서 사용한는것이 Connection Pool이다. 이는 커넥션을 만들어 놓고 요청이 있을 때 마다 하나 빼서 쓰고 반납하고 쓰고 반납하고 하는 방식이다. 이를 통해 성능이 좋아진다.<br>여기서 Connection Pool을 Datasource라 한다.</p>
@@ -45,11 +143,11 @@
   </entry>
   
   <entry>
-    <title>Spring. annotation의 활용</title>
+    <title>10.Spring. annotation의 활용</title>
     <link href="http://KKimSangHeon.github.io/2017/09/07/spring2/"/>
     <id>http://KKimSangHeon.github.io/2017/09/07/spring2/</id>
     <published>2017-09-07T02:29:09.000Z</published>
-    <updated>2017-09-07T05:19:05.405Z</updated>
+    <updated>2017-09-18T00:28:25.075Z</updated>
     
     <content type="html"><![CDATA[<p>리턴 은 주로 String, ModelActivew, Object로 한다.<br>메소드 단독매핑<br><figure class="highlight java"><figcaption><span>MainController.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.bigdata2017.springex.controller;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</div><div class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</div><div class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ResponseBody;</div><div class="line"></div><div class="line"><span class="meta">@Controller</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainController</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="comment">//	request mapping	(method 단독 매핑)</span></div><div class="line">	<span class="comment">//	접속시 MainController:main 출력됨</span></div><div class="line">	<span class="meta">@ResponseBody</span></div><div class="line">	<span class="meta">@RequestMapping</span>(<span class="string">"/main"</span>)</div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">"MainController:main"</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">	<span class="meta">@ResponseBody</span></div><div class="line">	<span class="meta">@RequestMapping</span>(<span class="string">"/main2/a/b/c"</span>)</div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">main2</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> sendMessage(<span class="string">"main2"</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">private</span> String <span class="title">sendMessage</span><span class="params">( String message)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">"MainController:"</span>+message;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>타입+ 메소드 메핑<br><figure class="highlight java"><figcaption><span>UserController.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.bigdata2017.springex.controller;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</div><div class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</div><div class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMethod;</div><div class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ResponseBody;</div><div class="line"></div><div class="line"><span class="comment">/* request mapping( type + method) */</span></div><div class="line"></div><div class="line"><span class="meta">@Controller</span></div><div class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/user"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserController</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="meta">@ResponseBody</span></div><div class="line">	<span class="meta">@RequestMapping</span>(<span class="string">"/joinform"</span>)</div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">joinform</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">"UserController:joinfrom"</span>;</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@ResponseBody</span></div><div class="line">	<span class="meta">@RequestMapping</span>(&#123;<span class="string">"/join"</span>,<span class="string">"/doJoin"</span>&#125;)</div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">join</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">"UserController:join"</span>;</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@ResponseBody</span></div><div class="line">	<span class="meta">@RequestMapping</span>( value = <span class="string">"/loginform"</span>, method=RequestMethod.GET)</div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">loginform</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">"UserController:loginform"</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">	<span class="meta">@ResponseBody</span></div><div class="line">	<span class="meta">@RequestMapping</span>( value = <span class="string">"/login"</span>, method=RequestMethod.GET)</div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">login</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">"UserController:login"</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure></p>
 <p>타입단독 메핑<br><figure class="highlight java"><figcaption><span>GuestbookController.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.bigdata2017.springex.controller;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</div><div class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</div><div class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ResponseBody;</div><div class="line"></div><div class="line"><span class="comment">//Request Mapping (type 단독 매핑)</span></div><div class="line"></div><div class="line"><span class="meta">@Controller</span></div><div class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/guestbook/*"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GuestbookController</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="meta">@ResponseBody</span></div><div class="line">	<span class="meta">@RequestMapping</span></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">list</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">"GuestbookController:list"</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@ResponseBody</span></div><div class="line">	<span class="meta">@RequestMapping</span></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">insert</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">"GuestbookController:insert"</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure></p>
@@ -72,11 +170,11 @@
   </entry>
   
   <entry>
-    <title>Spring이란? helloSpring실습</title>
+    <title>9.Spring이란? helloSpring실습</title>
     <link href="http://KKimSangHeon.github.io/2017/09/06/spring/"/>
     <id>http://KKimSangHeon.github.io/2017/09/06/spring/</id>
     <published>2017-09-06T05:01:31.000Z</published>
-    <updated>2017-09-08T00:43:29.689Z</updated>
+    <updated>2017-09-18T00:28:25.072Z</updated>
     
     <content type="html"><![CDATA[<h3 id="스프링이란"><a href="#스프링이란" class="headerlink" title="스프링이란?"></a>스프링이란?</h3><p>자바 엔터프라이즈 개발을 편하게 해주는 오픈소스 경량급 애플리케이션 프레임워크</p>
 <h4 id="프레임워크"><a href="#프레임워크" class="headerlink" title="프레임워크?"></a>프레임워크?</h4><p>소프트웨어를  만드는  데  기본이 되는 골격 코드<br>반제품<br>완전한 애플리케이션 소프트웨어가 아니다.<br>문제 영역(도메인)을 해결하기 위한 잘 설계된 재사용 가능한 모듈<br>확장하여 비즈니스 요구사항에 맞는 완전한 애플리케이션으로 완성이 요구된다.</p>
@@ -124,11 +222,11 @@
   </entry>
   
   <entry>
-    <title>Ajax</title>
+    <title>8.Ajax</title>
     <link href="http://KKimSangHeon.github.io/2017/09/06/ajax/"/>
     <id>http://KKimSangHeon.github.io/2017/09/06/ajax/</id>
     <published>2017-09-06T00:10:29.000Z</published>
-    <updated>2017-09-07T01:15:00.792Z</updated>
+    <updated>2017-09-18T00:28:25.075Z</updated>
     
     <content type="html"><![CDATA[<p>Asynchronous Javascript XML</p>
 <p>AJAX는 비동기 통신이다.</p>
@@ -154,11 +252,11 @@
   </entry>
   
   <entry>
-    <title>jquery</title>
+    <title>7.jquery</title>
     <link href="http://KKimSangHeon.github.io/2017/09/05/jquery1/"/>
     <id>http://KKimSangHeon.github.io/2017/09/05/jquery1/</id>
     <published>2017-09-05T00:09:56.000Z</published>
-    <updated>2017-09-07T01:14:57.780Z</updated>
+    <updated>2017-09-18T00:28:25.076Z</updated>
     
     <content type="html"><![CDATA[<p>2006년 Mozila의 자바스크립트 에반젤리스 Jhon Resig에 의해 개발 / 공개<br>여러 자바스크립트 라이브러리 ( prototype.js, Mootool.js 등) 중에 가장 주목 받고 있다.<br>jQuery로 코딩하면 자바스크립트 코드가  간결해 진다.<br>가볍다 ( 90KB)<br>IE6.0 이상,  Firefox2.0 이상,  Safari 3 이상, Opera 9이상,  Google Chrome등의 주요 브라우저를 지원하여 클로스브라우징을 가능케 한다.</p>
 <figure class="highlight java"><figcaption><span>엘리먼트를 골라야 하는 시점들</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//엘리먼트를 골라야 하는 시점 1(Vanilla JS)</span></div><div class="line">window.onload = function()&#123;</div><div class="line">	console.log(document.getElementBy(<span class="string">"my-p"</span>));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//엘리먼트를 골라야 하는 시점 2 (jQuery)</span></div><div class="line">jQuery( document ).ready( function()&#123;</div><div class="line">	console.log( document.getElementById(<span class="string">"my-p"</span>));</div><div class="line"></div><div class="line"><span class="comment">//엘리먼트를 골라야 하는 시점 3 (jQuery)</span></div><div class="line">$( document ).ready( function()&#123;</div><div class="line">	console.log(document.getElementById(<span class="string">"my-p"</span>));</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//엘리먼트를 골라야 하는 시점 4 (jQuery)</span></div><div class="line">$(function()&#123;</div><div class="line">	console.log(document.getElementById(<span class="string">"my-p"</span>));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
@@ -187,7 +285,7 @@
     <link href="http://KKimSangHeon.github.io/2017/08/30/servlet6/"/>
     <id>http://KKimSangHeon.github.io/2017/08/30/servlet6/</id>
     <published>2017-08-30T00:00:10.000Z</published>
-    <updated>2017-08-31T00:11:35.251Z</updated>
+    <updated>2017-09-18T00:26:28.666Z</updated>
     
     <content type="html"><![CDATA[<p>초창기 웹은 넷스케이프가 독주하는 상황이었지만,  윈도우98 부터 IE브라우저가  기본 탑재되어  IE6.0는 브라우저 시장의 90%를 점유 했었다.</p>
 <p>IE의 ActiveX (자사 기술 독점)에 따른 웹 환경의 폐해<br>MS는 COM(Component Object Model)이라는 기술 제공한다. 이 중 UI가 있는 컴포넌트를 ActiveX라 한다.  </p>
@@ -218,7 +316,7 @@
     
       <category term="빅데이터 전문가과정" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/"/>
     
-      <category term="Servlet" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Servlet/"/>
+      <category term="Web" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Web/"/>
     
     
       <category term="Servlet" scheme="http://KKimSangHeon.github.io/tags/Servlet/"/>
@@ -623,129 +721,6 @@
     <summary type="html">
     
       &lt;p&gt;– TOP -K&lt;br&gt;SELECT ROWNUM,EMPLOYEE_ID, SALARY&lt;br&gt;  FROM EMPLOYEES&lt;br&gt; WHERE HIRE_DATE LIKE ‘06%’&lt;br&gt; ORDER BY SALARY&lt;br&gt;원하는대로 출력이 되지 않을 것
-    
-    </summary>
-    
-      <category term="빅데이터 전문가과정" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/"/>
-    
-      <category term="Data Base" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Data-Base/"/>
-    
-    
-      <category term="Data Base" scheme="http://KKimSangHeon.github.io/tags/Data-Base/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>6. SUBQUERY</title>
-    <link href="http://KKimSangHeon.github.io/2017/08/18/database6/"/>
-    <id>http://KKimSangHeon.github.io/2017/08/18/database6/</id>
-    <published>2017-08-18T01:22:43.000Z</published>
-    <updated>2017-08-18T04:04:17.946Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="서브쿼리"><a href="#서브쿼리" class="headerlink" title="서브쿼리"></a>서브쿼리</h4><p>Lex보다 많이 받는 사원 구하기</p>
-<p>SELECT FIRST_NAME, SALARY<br>FROM   EMPLOYEES<br>WHERE  SALARY &gt; (SELECT<br>                    SALARY<br>                 FROM EMPLOYEES<br>                 WHERE FIRST_NAME = ‘Lex’);</p>
-<p>SELECT A.FIRST_NAME, B.SALARY<br>FROM   EMPLOYEES A,<br>       (SELECT<br>           SALARY<br>        FROM EMPLOYEES<br>        WHERE FIRST_NAME = ‘Lex’) B<br>WHERE A.SALARY &gt; B.SALARY;<br>– 조인으로도 처리 가능                </p>
-<p>SELECT FIRST_NAME, SALARY<br>FROM   EMPLOYEES<br>WHERE   SALARY &gt; (SELECT AVG(SALARY)<br>                  FROM EMPLOYEES );         </p>
-<p>–SINGLE LOW SUB QUERY</p>
-<hr>
-<p>– 문_ JOB_ID가 ‘IT_PROG’인 직원이 받는 월급보다 많이 받고 있는 직원의 이름과 월급</p>
-<p>SELECT FIRST_NAME,<br>       SALARY<br>FROM   EMPLOYEES<br>WHERE  SALARY &gt; ALL (SELECT SALARY<br>                     FROM EMPLOYEES<br>                     WHERE JOB_ID = ‘IT_PROG’)</p>
-<p>– MULTI ROW SUB QUERY</p>
-<hr>
-<p>–문) 각 부서별로 최고 월급을 받는 직원의 이름과 직원의 이름과 월급 출력</p>
-<p>WHERE을 활용</p>
-<p>SELECT FIRST_NAME<br>FROM   EMPLOYEES<br>WHERE  (SALARY,DEPARTMENT_ID) IN (<br>                                SELECT MAX(SALARY),DEPARTMENT_ID<br>                                FROM EMPLOYEES<br>                                GROUP BY DEPARTMENT_ID<br>                                );</p>
-<p>FROM을 활용<br>SELECT A.DEPARTMENT_ID, FIRST_NAME, SALARY<br>FROM   EMPLOYEES A,<br>    ( SELECT DEPARTMENT_ID,<br>             MAX(SALARY) AS MAX_SALARY<br>      FROM EMPLOYEES<br>      GROUP BY DEPARTMENT_ID<br>    ) B<br>WHERE A.DEPARTMENT_ID = B.DEPARTMENT_ID<br>AND   A.SALARY = B.MAX_SALARY;        </p>
-<p>CORELATED 활용<br>SELECT DEPARTMENT_ID, FIRST_NAME, SALARY<br>FROM EMPLOYEES A<br>WHERE SALARY = ( SELECT MAX(SALARY)<br>                 FROM EMPLOYEES<br>                 WHERE A.DEPARTMENT_ID = DEPARTMENT_ID);</p>
-<p>– CORELATED SUBQUERY</p>
-<hr>
-<p>자기 부서의 평균월급 보다 적은 월급을 받는 사원을 구하라</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;서브쿼리&quot;&gt;&lt;a href=&quot;#서브쿼리&quot; class=&quot;headerlink&quot; title=&quot;서브쿼리&quot;&gt;&lt;/a&gt;서브쿼리&lt;/h4&gt;&lt;p&gt;Lex보다 많이 받는 사원 구하기&lt;/p&gt;
-&lt;p&gt;SELECT FIRST_NAME, SALARY&lt;br&gt;FROM   
-    
-    </summary>
-    
-      <category term="빅데이터 전문가과정" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/"/>
-    
-      <category term="Data Base" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Data-Base/"/>
-    
-    
-      <category term="Data Base" scheme="http://KKimSangHeon.github.io/tags/Data-Base/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>5. ROLLUP, CUBE</title>
-    <link href="http://KKimSangHeon.github.io/2017/08/18/database5/"/>
-    <id>http://KKimSangHeon.github.io/2017/08/18/database5/</id>
-    <published>2017-08-18T00:05:47.000Z</published>
-    <updated>2017-08-18T01:22:37.148Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="ROWNUM"><a href="#ROWNUM" class="headerlink" title="ROWNUM"></a>ROWNUM</h4><p>SELECT ROWNUM, EMPLOYEE_ID<br>FROM EMPLOYEES;</p>
-<h4 id="트리-형태-구조를-추출하기-위한-질의"><a href="#트리-형태-구조를-추출하기-위한-질의" class="headerlink" title="트리 형태 구조를 추출하기 위한 질의"></a>트리 형태 구조를 추출하기 위한 질의</h4><p>– START WITH ~ CONNECT BY 절<br>SELECT LEVEL MANAGER_ID, EMPLOYEE_ID<br>FROM EMPLOYEES<br>START WITH MANAGER_ID IS NULL<br>CONNECT BY PRIOR EMPLOYEE_ID = MANAGER_ID<br>ORDER BY LEVEL, MANAGER_ID, EMPLOYEE_ID;</p>
-<h4 id="ROLLUP"><a href="#ROLLUP" class="headerlink" title="ROLLUP"></a>ROLLUP</h4><p>부서별 직책별 평균월급, 사원수 평균월급을 출력하시오<br>ROLLUP (A, B):  group by (A, B) &amp; group by (A) &amp; ALL</p>
-<p>SELECT CASE GROUPING(DEPARTMENT_ID)<br>            WHEN 1 THEN ‘모든 부서’<br>            ELSE NVL(TO_CHAR(DEPARTMENT_ID),’없음’)<br>       END AS “부서”,</p>
-<pre><code>CASE GROUPING(JOB_ID)
-     WHEN 1 THEN &apos;모든 직업&apos;
-     ELSE NVL(TO_CHAR(JOB_ID),&apos;없음&apos;)
-END AS &quot;직업&quot;
-
-,COUNT(*),ROUND(AVG(SALARY),0)
-</code></pre><p>FROM EMPLOYEES<br>GROUP BY ROLLUP(DEPARTMENT_ID, JOB_ID)<br>ORDER BY DEPARTMENT_ID, JOB_ID</p>
-<h4 id="GROUPING"><a href="#GROUPING" class="headerlink" title="GROUPING"></a>GROUPING</h4><p>SELECT CASE GROUPING(DEPARTMENT_ID)<br>            WHEN 1 THEN ‘모든 부서’<br>            ELSE NVL(TO_CHAR(DEPARTMENT_ID),’없음’)<br>       END AS “부서”,</p>
-<pre><code>CASE GROUPING(JOB_ID)
-     WHEN 1 THEN &apos;모든 직업&apos;
-     ELSE NVL(TO_CHAR(JOB_ID),&apos;없음&apos;)
-END AS &quot;직업&quot;
-
-,COUNT(*),ROUND(AVG(SALARY),0)
-</code></pre><p>FROM EMPLOYEES<br>GROUP BY CUBE(DEPARTMENT_ID, JOB_ID)<br>ORDER BY DEPARTMENT_ID, JOB_ID</p>
-<h4 id="CUBE"><a href="#CUBE" class="headerlink" title="CUBE"></a>CUBE</h4><p>group by (A,B) &amp; group by (A) &amp; group by (B) &amp; ALL<br>SELECT CASE GROUPING(DEPARTMENT_ID)<br>            WHEN 1 THEN ‘모든 부서’<br>            ELSE NVL(TO_CHAR(DEPARTMENT_ID),’없음’)<br>       END AS “부서”,</p>
-<pre><code>CASE GROUPING(JOB_ID)
-     WHEN 1 THEN &apos;모든 직업&apos;
-     ELSE NVL(TO_CHAR(JOB_ID),&apos;없음&apos;)
-END AS &quot;직업&quot;
-
-,COUNT(*),ROUND(AVG(SALARY),0)
-</code></pre><p>FROM EMPLOYEES<br>GROUP BY CUBE(DEPARTMENT_ID, JOB_ID)<br>ORDER BY DEPARTMENT_ID, JOB_ID</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;ROWNUM&quot;&gt;&lt;a href=&quot;#ROWNUM&quot; class=&quot;headerlink&quot; title=&quot;ROWNUM&quot;&gt;&lt;/a&gt;ROWNUM&lt;/h4&gt;&lt;p&gt;SELECT ROWNUM, EMPLOYEE_ID&lt;br&gt;FROM EMPLOYEES;&lt;/p&gt;
-&lt;h4 
-    
-    </summary>
-    
-      <category term="빅데이터 전문가과정" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/"/>
-    
-      <category term="Data Base" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Data-Base/"/>
-    
-    
-      <category term="Data Base" scheme="http://KKimSangHeon.github.io/tags/Data-Base/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>4. CASE, DECODE, GROUP BY</title>
-    <link href="http://KKimSangHeon.github.io/2017/08/17/database4/"/>
-    <id>http://KKimSangHeon.github.io/2017/08/17/database4/</id>
-    <published>2017-08-17T01:59:31.000Z</published>
-    <updated>2017-08-18T00:05:05.111Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="CASE"><a href="#CASE" class="headerlink" title="CASE"></a>CASE</h4><p>SELECT EMPLOYEE_ID,<br>       SALARY,<br>       JOB_ID,<br>       CASE JOB_ID<br>            WHEN ‘AC_ACCOUNT’ THEN SALARY + SALARY <em> 0.5<br>            WHEN ‘AC_MGR’ THEN SALARY + SALARY </em> 0.3<br>            WHEN ‘AD_VP’ THEN SALARY + SALARY * 0.2<br>            ELSE  SALARY<br>       END AS SALARY<br>FROM EMPLOYEES;        </p>
-<h4 id="DECODE"><a href="#DECODE" class="headerlink" title="DECODE"></a>DECODE</h4><p>SELECT EMPLOYEE_ID,<br>       SALARY,<br>       JOB_ID,<br>       DECODE( JOB_ID ,<br>                ‘AC_ACCOUNT’ , SALARY + SALARY <em> 0.5 ,<br>                ‘AC_MGR’ ,SALARY + SALARY </em> 0.3 ,<br>                ‘AD_VP’ , SALARY + SALARY * 0.2 ,<br>                 SALARY) AS “이번달 월급”<br>FROM EMPLOYEES;        </p>
-<p>SELECT EMPLOYEE_ID,AVG(SALARY) , MAX(SALARY)<br>FROM EMPLOYEES;<br>– ERROR<br>– 집계함수 이외의 칼럼은 프로젝션 될 수 없다</p>
-<h4 id="GROUP-BY"><a href="#GROUP-BY" class="headerlink" title="GROUP BY"></a>GROUP BY</h4><p>SELECT JOB_ID,AVG(SALARY), MAX(SALARY)<br>FROM   EMPLOYEES<br>WHERE  MANAGER_ID IS NOT NULL<br>GROUP BY JOB_ID;<br>– GROUP BY 절에 참여하고 있는 컬럼은 프로젝션 할 수 있다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;CASE&quot;&gt;&lt;a href=&quot;#CASE&quot; class=&quot;headerlink&quot; title=&quot;CASE&quot;&gt;&lt;/a&gt;CASE&lt;/h4&gt;&lt;p&gt;SELECT EMPLOYEE_ID,&lt;br&gt;       SALARY,&lt;br&gt;       JOB_ID,&lt;br&gt;   
     
     </summary>
     
