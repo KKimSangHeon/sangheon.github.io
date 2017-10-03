@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="그룹웨어 개발그룹웨어는 회원가입, 로그인, 게시판, 일정관리, 사원조회, 쪽지, 마이페이지 기능을 갖고있다. ERD 그룹웨어에서 사용하는 ERD는 위과 같다. 보안그룹웨어 내의 모든 페이지이동은 INTERCEPTOR을 활용하여 페이지 이동 전 권한을 확인한다. 로그인하지 않은 회원이 URL로 페이지 이동을 할 경우 다음과 같은 화면이 출력된다. 회원가입그룹">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/groupware.png">
-<meta property="og:updated_time" content="2017-10-03T20:33:10.960Z">
+<meta property="og:updated_time" content="2017-10-03T21:01:24.012Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring 기반 그룹웨어 개발">
 <meta name="twitter:description" content="그룹웨어 개발그룹웨어는 회원가입, 로그인, 게시판, 일정관리, 사원조회, 쪽지, 마이페이지 기능을 갖고있다. ERD 그룹웨어에서 사용하는 ERD는 위과 같다. 보안그룹웨어 내의 모든 페이지이동은 INTERCEPTOR을 활용하여 페이지 이동 전 권한을 확인한다. 로그인하지 않은 회원이 URL로 페이지 이동을 할 경우 다음과 같은 화면이 출력된다. 회원가입그룹">
@@ -189,8 +189,7 @@ ga('send', 'pageview');
 <p>관지자는 가입 승인하기 버튼을 클릭하여 가입승인을 할 수 있다. 이후 해당 사용자는 로그인이 가능해진다.</p>
 <img src="/2017/10/04/groupware/가입승인.PNG" alt="가입승인" title="가입승인">
 <p>가입승인 버튼을 누를 경우 alert창이 생성되며 가입이 승인된다.</p>
-<h4 id="로그인"><a href="#로그인" class="headerlink" title="로그인"></a>로그인</h4>
-<p>이전에 생성한 아이디로 로그인을 진행하자.</p>
+<h4 id="로그인"><a href="#로그인" class="headerlink" title="로그인"></a>로그인</h4><p>이전에 생성한 아이디로 로그인을 진행하자.</p>
 <img src="/2017/10/04/groupware/에두_초기화면.PNG" alt="초기화면" title="초기화면">
 <p>위와 같이 로그인이 되었다.</p>
 <h4 id="게시판"><a href="#게시판" class="headerlink" title="게시판"></a>게시판</h4><p>게시판은 공지사항, 자유게시판, 팀 게시판이 존재한다.<br>게시판 테이블(BOARD)에는 BOARD_AUTHORITY, IS_TEAM 컬럼이 존재하는데 BOARD_AUTHORITY는 글쓰기 권한을 의미한다. 해당 게시판의 BOARD_AUTHORITY가 3일경우 POSITION_ID가 3(전무) 이상인 회원만 게시물 작성이 가능하다.<br>IS_TEAM 컬럼은 팀게시판 유무이며 TEAM_ID가 같은 즉 같은팀이 작성한 글만 볼 수 있도록 하는 역할이다.</p>
@@ -222,7 +221,7 @@ ga('send', 'pageview');
 <p>위와 같은 팝업창이 생성된다.</p>
 <img src="/2017/10/04/groupware/에두_메세지보내기.PNG" alt="메세지보내기" title="메세지보내기">
 <p>위와 같이 메세지를 입력후 전송하기 버튼을 누르면 메세지가 전송된다.</p>
-<h4 id="쪽지"><a href="#쪽지" class="headerlink" title="쪽지"></a>쪽지</h4><p>김상헌의 계정으로 로그인하여 쪽지 탭으로 들어갈 경우 다음과 같이 화면이 출력된다.<br><img src="/2017/10/04/groupware/쪽지.PNG" alt="쪽지" title="쪽지"><br>글자수가 15자 이상일 경우 …이 붙게되며 내용이 생략된다.<br>해당 메세지를 눌러 자세한 내용을 확인할 수 있으며 답장버튼을 눌러 답장할 수 있으며, 삭제 또한 가능하다.</p>
+<h4 id="쪽지"><a href="#쪽지" class="headerlink" title="쪽지"></a>쪽지</h4><p>김상헌의 계정으로 로그인하여 쪽지 탭으로 들어갈 경우 다음과 같이 화면이 출력된다.<br><img src="/2017/10/04/groupware/쪽지.PNG" alt="쪽지" title="쪽지"><br>글자수가 23자 이상일 경우 …이 붙게되며 내용이 생략된다.<br>해당 메세지를 눌러 자세한 내용을 확인할 수 있으며 답장버튼을 눌러 답장할 수 있으며, 삭제 또한 가능하다.</p>
 <img src="/2017/10/04/groupware/자세히보기.PNG" alt="쪽지 자세히 보기" title="쪽지 자세히 보기">
 <p>위와 같이 쪽지의 내용이 자세히 보인다.</p>
 <img src="/2017/10/04/groupware/답장.PNG" alt="답장" title="답장">
