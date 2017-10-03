@@ -7,8 +7,40 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2017/10/04/groupware/</loc>
+        <lastmod>2017-10-03T20:33:10.960Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/06/29/where-are-you/</loc>
+        <lastmod>2017-10-03T18:02:21.818Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/09/29/python3/</loc>
+        <lastmod>2017-09-29T07:29:24.181Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/09/29/python2/</loc>
+        <lastmod>2017-09-29T02:30:51.820Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2017/09/27/python/</loc>
-        <lastmod>2017-09-27T06:43:57.142Z</lastmod>
+        <lastmod>2017-09-29T02:30:51.128Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -289,14 +321,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2017/08/11/bigdata13/</loc>
         <lastmod>2017-08-11T04:36:14.025Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2017/06/29/where-are-you/</loc>
-        <lastmod>2017-08-09T09:28:08.513Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

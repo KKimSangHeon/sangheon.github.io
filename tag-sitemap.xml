@@ -114,20 +114,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Reco-Beacon/</loc>
-        <lastmod>2017-08-09T09:28:08.513Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/Beacon/</loc>
-        <lastmod>2017-08-09T09:28:08.513Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/Java/</loc>
         <lastmod>2017-08-11T04:36:14.025Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -186,13 +172,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/tags/Linux/</loc>
         <lastmod>2017-08-11T06:28:37.858Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/Android/</loc>
-        <lastmod>2017-08-11T07:13:18.046Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -277,6 +256,48 @@
     <url>
         <loc>http://KKimSangHeon.github.io/tags/Spring/</loc>
         <lastmod>2017-09-18T05:08:58.826Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Python/</loc>
+        <lastmod>2017-09-29T07:29:24.181Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Android/</loc>
+        <lastmod>2017-10-03T18:02:21.818Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Reco-Beacon/</loc>
+        <lastmod>2017-10-03T18:02:21.818Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Beacon/</loc>
+        <lastmod>2017-10-03T18:02:21.818Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Spring-Framework/</loc>
+        <lastmod>2017-10-03T20:33:10.960Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Java-Script/</loc>
+        <lastmod>2017-10-03T20:33:10.960Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
