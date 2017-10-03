@@ -160,11 +160,11 @@
   </entry>
   
   <entry>
-    <title>1.. 변수명과 예약어</title>
+    <title>1. 변수명과 예약어</title>
     <link href="http://KKimSangHeon.github.io/2017/09/27/python/"/>
     <id>http://KKimSangHeon.github.io/2017/09/27/python/</id>
     <published>2017-09-27T04:43:58.000Z</published>
-    <updated>2017-09-29T02:30:51.128Z</updated>
+    <updated>2017-10-03T20:37:05.439Z</updated>
     
     <content type="html"><![CDATA[<h3 id="소개"><a href="#소개" class="headerlink" title="소개"></a>소개</h3><p>1991년 귀도 반 로섬( Guido van Rossum ) 이 발표한 인터프리터 언어<br>귀도가 구글에 입사하고 구글의 3대 개발언어 중 하나로 채택되면서 유명세를 탔다.</p>
 <h3 id="특징"><a href="#특징" class="headerlink" title="특징"></a>특징</h3><p>대화 기능의 인터프리터 언어<br>동적타이핑(동적인 데이터 타입 결정 지원)<br>플랫폼 독립적 언어(Unix, Linux, Window9x/NT 계열, DOS, OS/2, Mac OS, Nokia 등)</p>
