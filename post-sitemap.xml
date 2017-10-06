@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2017/10/06/riding1/</loc>
+        <lastmod>2017-10-06T11:07:03.734Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2017/10/04/groupware/</loc>
         <lastmod>2017-10-03T21:01:24.012Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -79,7 +87,7 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/2017/09/15/spring4/</loc>
+        <loc>http://KKimSangHeon.github.io/2017/09/11/spring3/</loc>
         <lastmod>2017-09-18T00:28:25.075Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -87,7 +95,7 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/2017/09/11/spring3/</loc>
+        <loc>http://KKimSangHeon.github.io/2017/09/15/spring4/</loc>
         <lastmod>2017-09-18T00:28:25.075Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
