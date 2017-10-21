@@ -63,11 +63,11 @@
   </entry>
   
   <entry>
-    <title>모듈</title>
+    <title>4.모듈</title>
     <link href="http://KKimSangHeon.github.io/2017/10/10/python4/"/>
     <id>http://KKimSangHeon.github.io/2017/10/10/python4/</id>
     <published>2017-10-10T06:11:53.000Z</published>
-    <updated>2017-10-10T06:14:23.167Z</updated>
+    <updated>2017-10-21T06:20:51.469Z</updated>
     
     <content type="html"><![CDATA[<p>파이썬 모듈이란?</p>
 <p>1) 파이썬 프로그램  파일로 따로  함수나 변수를 정의한다.<br>2) 모듈안에는 어떤 코드도 작성 가능하다.(함수, 클래스, 변수등)<br>3) 다른 모듈에 의해서 호출되고 사용된다.<br>4) 표준모듈, 사용자 생성 모듈, 서드 파티 모듈 등으로 나눌 수 있다.</p>
@@ -80,6 +80,12 @@
     
     </summary>
     
+      <category term="빅데이터 전문가과정" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/"/>
+    
+      <category term="Python" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Python/"/>
+    
+    
+      <category term="Python" scheme="http://KKimSangHeon.github.io/tags/Python/"/>
     
   </entry>
   
