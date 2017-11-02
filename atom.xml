@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-10-18T04:14:29.889Z</updated>
+  <updated>2017-11-02T06:16:55.334Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://KKimSangHeon.github.io/2017/10/17/ablethon/"/>
     <id>http://KKimSangHeon.github.io/2017/10/17/ablethon/</id>
     <published>2017-10-17T05:05:28.000Z</published>
-    <updated>2017-10-18T04:14:29.889Z</updated>
+    <updated>2017-11-02T06:16:55.334Z</updated>
     
     <content type="html"><![CDATA[<h1 id="ABLETHON-참가"><a href="#ABLETHON-참가" class="headerlink" title="ABLETHON 참가"></a>ABLETHON 참가</h1><img src="/2017/10/17/ablethon/0.jpg" alt="에이블톤" title="에이블톤">
 <p>시각장애인의 App 사용에 관심이 많아 관련 공모전을 알아보던 중 에이블톤이 눈에 띄어 참가하게 되었다.</p>
@@ -40,7 +40,7 @@
 <div class="video-container"><iframe src="//www.youtube.com/embed/teWgX4QBYLY" frameborder="0" allowfullscreen></iframe></div>
 <p>길 안내 도움요청기능</p>
 <h1 id="수상"><a href="#수상" class="headerlink" title="수상"></a>수상</h1><img src="/2017/10/17/ablethon/11.jpg" alt="수상" title="수상">
-
+<img src="/2017/10/17/ablethon/22.jpg" alt="수상" title="수상">
 <p>많은 분들이 좋게 봐준 덕분에 우수상을 받을 수 있었다.</p>
 <h1 id="소스코드-Github-Repository"><a href="#소스코드-Github-Repository" class="headerlink" title="소스코드 (Github Repository)"></a>소스코드 (Github Repository)</h1><p><a href="https://github.com/KKimSangHeon/GestCaptureX" target="_blank" rel="external">-안드로이드 어플리케이션 소스코드</a></p>
 ]]></content>
