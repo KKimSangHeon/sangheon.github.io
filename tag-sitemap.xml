@@ -282,20 +282,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Spring-Framework/</loc>
-        <lastmod>2017-10-03T21:01:24.012Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/Java-Script/</loc>
-        <lastmod>2017-10-03T21:01:24.012Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/%EA%B5%AD%ED%86%A0%EC%A2%85%EC%A3%BC/</loc>
         <lastmod>2017-10-06T11:14:44.985Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -319,6 +305,34 @@
     <url>
         <loc>http://KKimSangHeon.github.io/tags/Python/</loc>
         <lastmod>2017-11-04T07:43:01.565Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Spring-Framework/</loc>
+        <lastmod>2017-11-06T02:26:03.338Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Java-Script/</loc>
+        <lastmod>2017-11-06T02:26:03.338Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/JQgrid/</loc>
+        <lastmod>2017-11-06T02:26:03.338Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/fullcallendar/</loc>
+        <lastmod>2017-11-06T02:26:03.338Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

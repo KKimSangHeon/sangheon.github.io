@@ -232,7 +232,7 @@
     <link href="http://KKimSangHeon.github.io/2017/10/04/groupware/"/>
     <id>http://KKimSangHeon.github.io/2017/10/04/groupware/</id>
     <published>2017-10-03T17:55:55.000Z</published>
-    <updated>2017-10-03T21:01:24.012Z</updated>
+    <updated>2017-11-06T02:26:03.338Z</updated>
     
     <content type="html"><![CDATA[<h3 id="그룹웨어-개발"><a href="#그룹웨어-개발" class="headerlink" title="그룹웨어 개발"></a>그룹웨어 개발</h3><p>그룹웨어는 회원가입, 로그인, 게시판, 일정관리, 사원조회, 쪽지, 마이페이지 기능을 갖고있다.</p>
 <h4 id="ERD"><a href="#ERD" class="headerlink" title="ERD"></a>ERD</h4><img src="/2017/10/04/groupware/ERD.PNG" alt="ERD" title="ERD">
@@ -312,6 +312,10 @@
       <category term="Spring Framework" scheme="http://KKimSangHeon.github.io/tags/Spring-Framework/"/>
     
       <category term="Java Script" scheme="http://KKimSangHeon.github.io/tags/Java-Script/"/>
+    
+      <category term="JQgrid" scheme="http://KKimSangHeon.github.io/tags/JQgrid/"/>
+    
+      <category term="fullcallendar" scheme="http://KKimSangHeon.github.io/tags/fullcallendar/"/>
     
   </entry>
   
