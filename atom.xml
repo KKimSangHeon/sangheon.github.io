@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2017-11-04T07:42:46.891Z</updated>
+  <updated>2017-11-07T13:45:00.689Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://KKimSangHeon.github.io/2017/10/17/ablethon/"/>
     <id>http://KKimSangHeon.github.io/2017/10/17/ablethon/</id>
     <published>2017-10-17T05:05:28.000Z</published>
-    <updated>2017-11-04T07:42:46.891Z</updated>
+    <updated>2017-11-07T13:45:00.689Z</updated>
     
     <content type="html"><![CDATA[<h1 id="ABLETHON-참가"><a href="#ABLETHON-참가" class="headerlink" title="ABLETHON 참가"></a>ABLETHON 참가</h1><img src="/2017/10/17/ablethon/0.jpg" alt="에이블톤" title="에이블톤">
 <p>시각장애인의 App 사용에 관심이 많아 관련 공모전을 알아보던 중 에이블톤이 눈에 띄어 참가하게 되었다.</p>
@@ -59,6 +59,8 @@
       <category term="ABLETHON" scheme="http://KKimSangHeon.github.io/tags/ABLETHON/"/>
     
       <category term="시각장애인도 이용가능한 App" scheme="http://KKimSangHeon.github.io/tags/%EC%8B%9C%EA%B0%81%EC%9E%A5%EC%95%A0%EC%9D%B8%EB%8F%84-%EC%9D%B4%EC%9A%A9%EA%B0%80%EB%8A%A5%ED%95%9C-App/"/>
+    
+      <category term="에이블톤" scheme="http://KKimSangHeon.github.io/tags/%EC%97%90%EC%9D%B4%EB%B8%94%ED%86%A4/"/>
     
   </entry>
   
