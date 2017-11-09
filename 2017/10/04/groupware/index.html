@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="그룹웨어 개발그룹웨어는 회원가입, 로그인, 게시판, 일정관리, 사원조회, 쪽지, 마이페이지 기능을 갖고있다. ERD 그룹웨어에서 사용하는 ERD는 위과 같다. 보안그룹웨어 내의 모든 페이지이동은 INTERCEPTOR을 활용하여 페이지 이동 전 권한을 확인한다. 로그인하지 않은 회원이 URL로 페이지 이동을 할 경우 다음과 같은 화면이 출력된다. 회원가입그룹">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/groupware.png">
-<meta property="og:updated_time" content="2017-11-06T02:26:03.338Z">
+<meta property="og:updated_time" content="2017-11-09T02:45:23.750Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring 기반 그룹웨어 개발">
 <meta name="twitter:description" content="그룹웨어 개발그룹웨어는 회원가입, 로그인, 게시판, 일정관리, 사원조회, 쪽지, 마이페이지 기능을 갖고있다. ERD 그룹웨어에서 사용하는 ERD는 위과 같다. 보안그룹웨어 내의 모든 페이지이동은 INTERCEPTOR을 활용하여 페이지 이동 전 권한을 확인한다. 로그인하지 않은 회원이 URL로 페이지 이동을 할 경우 다음과 같은 화면이 출력된다. 회원가입그룹">
@@ -181,7 +181,7 @@ ga('send', 'pageview');
 <p>정상적으로 가입이 완료되면 다음과 같은 화면이 출력된다. 해당 아이디로 로그인이 불가능하나 관리자의 승인 후 로그인이 가능해진다.</p>
 <img src="/2017/10/04/groupware/미승인로그인.PNG" alt="승인되지않은 로그인" title="승인되지않은 로그인">
 <p>승인되지 않은 아이디로 로그인 할 경우 위와 같은 화면이 출력된다.</p>
-<h4 id="관리자의-가입-승인"><a href="#관리자의-가입-승인" class="headerlink" title="관리자의 가입 승인"></a>관리자의 가입 승인</h4><p>사전에 지정해 놓은 아이디로 로그인 하여 관리자 화면에 접속하여 신규 가입한 회원에 한해 승인을 해줄 수 있다.</p>
+<h4 id="관리자의-가입-승인"><a href="#관리자의-가입-승인" class="headerlink" title="관리자의 가입 승인"></a>관리자의 가입 승인</h4><p>사전에 지정해 놓은 아이디로 로그인 하여 관리자 화면에 접속하고 신규 가입한 회원에 한해 승인을 해줄 수 있다.</p>
 <img src="/2017/10/04/groupware/관리자_로그인.PNG" alt="관리자 로그인" title="관리자 로그인">
 <p>관리자 계정으로 로그인을 할 경우 우측 상단에 관리페이지가 출력된다. 이는 EMPLOYEE 테이블의 ROLE 컬럼값을 통해 판단한다. ROLE컬럼의 값은 USER, ADMIN으로 나뉜다. 관리자가 아님에도 불구하고 URL로 관리자 페이지로 접속할 경우 다음과 같은 화면이 출력된다.<br><img src="/2017/10/04/groupware/관리자페이지접속시도.PNG" alt="관리자가 아닌 사용자가 접근" title="관리자가 아닌 사용자가 접근"></p>
 <p>다시 돌아와서 관리자가 로그인을 하고 우측상단의 관리페이지를 접속할 경우 다음과 같은 화면이 출력된다.</p>
