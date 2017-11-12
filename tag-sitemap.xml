@@ -296,27 +296,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/ABLETHON/</loc>
-        <lastmod>2017-11-07T13:45:00.689Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/%EC%8B%9C%EA%B0%81%EC%9E%A5%EC%95%A0%EC%9D%B8%EB%8F%84-%EC%9D%B4%EC%9A%A9%EA%B0%80%EB%8A%A5%ED%95%9C-App/</loc>
-        <lastmod>2017-11-07T13:45:00.689Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/%EC%97%90%EC%9D%B4%EB%B8%94%ED%86%A4/</loc>
-        <lastmod>2017-11-07T13:45:00.689Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/Spring-Framework/</loc>
         <lastmod>2017-11-09T02:45:23.750Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -340,6 +319,20 @@
     <url>
         <loc>http://KKimSangHeon.github.io/tags/fullcallendar/</loc>
         <lastmod>2017-11-09T02:45:23.750Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/ABLETHON/</loc>
+        <lastmod>2017-11-12T12:48:28.999Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/%EC%8B%9C%EA%B0%81%EC%9E%A5%EC%95%A0%EC%9D%B8%EB%8F%84-%EC%9D%B4%EC%9A%A9%EA%B0%80%EB%8A%A5%ED%95%9C-App/</loc>
+        <lastmod>2017-11-12T12:48:28.999Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
