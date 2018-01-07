@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-01-07T03:29:10.655Z</updated>
+  <updated>2018-01-07T05:22:06.819Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://KKimSangHeon.github.io/2017/10/17/angular2/"/>
     <id>http://KKimSangHeon.github.io/2017/10/17/angular2/</id>
     <published>2017-10-17T05:05:28.000Z</published>
-    <updated>2018-01-07T03:29:10.655Z</updated>
+    <updated>2018-01-07T05:22:06.819Z</updated>
     
     <content type="html"><![CDATA[<h1 id="AngularJS"><a href="#AngularJS" class="headerlink" title="AngularJS"></a>AngularJS</h1><h3 id="디렉티브"><a href="#디렉티브" class="headerlink" title="디렉티브"></a>디렉티브</h3><p>HTML 태그나 어트리뷰트의 기능을 새롭게 만드는 개념. 애플리케이션의 요구 사항에 맞게 HTML 태그를 확장할 수 있다.</p>
 <h3 id="ng-app"><a href="#ng-app" class="headerlink" title="ng-app"></a>ng-app</h3><p><div>에 ng-app 어트리뷰트를 추가하면 그 <div>만 AngularJS의 영향을 받는다.</div></div></p>
