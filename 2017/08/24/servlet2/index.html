@@ -138,6 +138,14 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2850951807285210",
+    enable_page_level_ads: true
+  });
+</script>
+
                             <article id="post-servlet2" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -177,6 +185,14 @@ ga('send', 'pageview');
 <p>Java Resource에 서블릿 파일 생성<br><figure class="highlight java"><figcaption><span>join.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.bigdata2017.helloweb.servlet;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"><span class="keyword">import</span> java.io.PrintWriter;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.servlet.ServletException;</div><div class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Servlet implementation class join</div><div class="line"> */</div><div class="line"><span class="meta">@WebServlet</span>(<span class="string">"/join"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">join</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</div><div class="line">		request.setCharacterEncoding( <span class="string">"utf-8"</span>);</div><div class="line">		<span class="comment">//post 방식으로 데이터를 전달 받는 경우</span></div><div class="line">		<span class="comment">//encoidng charset를 지정</span></div><div class="line"></div><div class="line"></div><div class="line">		String type = request.getParameter(<span class="string">"type"</span>);</div><div class="line">		System.out.println(type);		</div><div class="line"></div><div class="line">		String email = request.getParameter(<span class="string">"email"</span>);</div><div class="line">		System.out.println(email);</div><div class="line"></div><div class="line">		String password = request.getParameter(<span class="string">"password"</span>);</div><div class="line">		System.out.println(password);</div><div class="line"></div><div class="line">		String name = request.getParameter(<span class="string">"name"</span>);</div><div class="line">		System.out.println(name);</div><div class="line"></div><div class="line">		String gender = request.getParameter(<span class="string">"gender"</span>);</div><div class="line">		System.out.println(gender);</div><div class="line"></div><div class="line">		String birthYear = request.getParameter(<span class="string">"birth-year"</span>);</div><div class="line">		System.out.println(birthYear);</div><div class="line"></div><div class="line">		String hobbies[] = request.getParameterValues( <span class="string">"hobby"</span> );</div><div class="line">		<span class="keyword">if</span>( hobbies != <span class="keyword">null</span>) &#123;</div><div class="line">			<span class="keyword">for</span>( String hobby : hobbies) &#123;</div><div class="line">				System.out.println( hobby );</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		String selfIntro = request.getParameter(<span class="string">"self-intro"</span>);</div><div class="line">		System.out.println(selfIntro);</div><div class="line"></div><div class="line">		response.setContentType( <span class="string">"text/html; charset=utf-8"</span> );</div><div class="line"></div><div class="line">		<span class="comment">//setContentType() 메소드를 호출하고 getWriter()을 호출해야 글이 안꺠진다.</span></div><div class="line">		PrintWriter out = response.getWriter();</div><div class="line">		out.println(<span class="string">"&lt;h1&gt;성공적으로 가입되었습니다&lt;/h1&gt;"</span>);</div><div class="line">		out.print(<span class="string">"&lt;a href='/helloweb/form.jsp'&gt;폼으로가기&lt;/a&gt;"</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</div><div class="line">		doGet(request, response);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure></p>
 
         </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2850951807285210",
+    enable_page_level_ads: true
+  });
+</script>
+
         <footer class="article-footer">
             
 
@@ -257,6 +273,7 @@ ga('send', 'pageview');
     </section>
 
 
+
                         </div>
                     </section>
                     <aside id="sidebar">
@@ -322,7 +339,16 @@ ga('send', 'pageview');
             
         
     </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2850951807285210",
+    enable_page_level_ads: true
+  });
+</script>
+
 </aside>
+
                 </div>
             </div>
         </div>

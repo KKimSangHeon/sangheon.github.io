@@ -138,6 +138,14 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2850951807285210",
+    enable_page_level_ads: true
+  });
+</script>
+
                             <article id="post-ajax" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -176,6 +184,14 @@ ga('send', 'pageview');
 <h4 id="비동기"><a href="#비동기" class="headerlink" title="비동기"></a>비동기</h4><p>리퀘스트에 대한 응답을 기다리지 않고 다른 동작을 처리할 수 있다.<br>단점은 어느 요청이 어느 요청에 대한 응답인지 알기 어려울 수 있다. 도착순서도 정해져있지 않고 많은 응답이 있기 때문에..<br><figure class="highlight java"><figcaption><span>ajax를 이용하지 않고 통신</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">$(function()&#123;</div><div class="line">	$(<span class="string">"button"</span>).click(function()&#123;</div><div class="line"></div><div class="line">		<span class="comment">//1.XMLHttpRequest 객체 생성</span></div><div class="line">		var xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line"></div><div class="line">		<span class="comment">//2. 통신 상태 변화에 따른 콜백함수 정의</span></div><div class="line">		xhr.onreadystatechange = function()&#123;</div><div class="line">			<span class="keyword">if</span>( <span class="keyword">this</span>.readyState == <span class="number">0</span> )&#123;</div><div class="line">			<span class="comment">//open() 호출 전</span></div><div class="line">			console.log( <span class="string">"readyState(0) - unset"</span> );</div><div class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">this</span>.readyState ==<span class="number">1</span>)&#123;</div><div class="line">				<span class="comment">//open() 호출 후</span></div><div class="line">			console.log( <span class="string">"readyState(1) - set"</span> );</div><div class="line"></div><div class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">this</span>.readyState ==<span class="number">2</span>)&#123;</div><div class="line">				<span class="comment">//send() 호출 후</span></div><div class="line">			console.log( <span class="string">"readyState(2) - sent"</span> );</div><div class="line"></div><div class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">this</span>.readyState ==<span class="number">3</span>)&#123;</div><div class="line">				<span class="comment">//loading...</span></div><div class="line">			console.log( <span class="string">"readyState(3) - loading"</span> );</div><div class="line"></div><div class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">this</span>.readyState ==<span class="number">4</span>)&#123;</div><div class="line">				<span class="comment">//done</span></div><div class="line">			console.log( <span class="string">"readyState(4) - done"</span> );</div><div class="line"></div><div class="line">			console.log( xhr.responseText);</div><div class="line"></div><div class="line">			var response = eval(xhr.responseText);</div><div class="line">			console.log(response);</div><div class="line">			$.each(response,function(index,vo)&#123;</div><div class="line">				console.log( index +<span class="string">":"</span> + vo.name)</div><div class="line"></div><div class="line">			&#125;)</div><div class="line">			&#125;</div><div class="line"></div><div class="line">		&#125;;</div><div class="line"></div><div class="line">		<span class="comment">//3. open</span></div><div class="line">		xhr.open(<span class="string">"GET"</span>,<span class="string">"/wp_js2/sample.json"</span>)</div><div class="line"></div><div class="line">		<span class="comment">//4. send request</span></div><div class="line">		xhr.send();</div><div class="line"></div><div class="line">	&#125;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure><br><figure class="highlight java"><figcaption><span>ajax를 이용하여 통신</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">$(function()&#123;</div><div class="line">	$(<span class="string">"button"</span>).click(function()&#123;</div><div class="line">		$.ajax( &#123;</div><div class="line">			async: <span class="keyword">true</span>,</div><div class="line">			url : <span class="string">"/wp_js2/sample.json"</span>,</div><div class="line">			type: <span class="string">"get"</span>,</div><div class="line">			dataType: <span class="string">"json"</span>,</div><div class="line">			data: <span class="string">""</span>,</div><div class="line">			contentType: <span class="string">'application/json'</span>,</div><div class="line">			success: function(response)&#123;</div><div class="line">				$.each (response,function(index,vo)&#123;</div><div class="line">					console.log(vo.name)</div><div class="line">				&#125;)</div><div class="line">			&#125;,</div><div class="line">			error: function( jqXHR, status, e )&#123;</div><div class="line">				alert( status + <span class="string">" : "</span> + e );</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">	&#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 
         </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2850951807285210",
+    enable_page_level_ads: true
+  });
+</script>
+
         <footer class="article-footer">
             
 
@@ -256,6 +272,7 @@ ga('send', 'pageview');
     </section>
 
 
+
                         </div>
                     </section>
                     <aside id="sidebar">
@@ -321,7 +338,16 @@ ga('send', 'pageview');
             
         
     </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2850951807285210",
+    enable_page_level_ads: true
+  });
+</script>
+
 </aside>
+
                 </div>
             </div>
         </div>

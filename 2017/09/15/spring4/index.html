@@ -138,6 +138,14 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2850951807285210",
+    enable_page_level_ads: true
+  });
+</script>
+
                             <article id="post-spring4" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -193,6 +201,14 @@ ga('send', 'pageview');
 <p>MyAspect생성<br><figure class="highlight java"><figcaption><span>MyAspect.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.bigdata2017.aoptest;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.After;</div><div class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.AfterReturning;</div><div class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.AfterThrowing;</div><div class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Aspect;</div><div class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Before;</div><div class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</div><div class="line"></div><div class="line"><span class="meta">@Aspect</span></div><div class="line"><span class="meta">@Component</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyAspect</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="meta">@Before</span>( <span class="string">"execution(public ProductVo com.bigdata2017.aoptest.ProductService.find(..))"</span> )</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beforeAdvice</span><span class="params">()</span> </span>&#123;</div><div class="line">		System.out.println( <span class="string">"beforeAdvice() called"</span> );</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@After</span>( <span class="string">"execution(* com.bigdata2017.aoptest.*.find(..))"</span> )</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterAdvice</span><span class="params">()</span> </span>&#123;</div><div class="line">		System.out.println( <span class="string">"afterAdvice() called"</span> );</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@AfterReturning</span>( <span class="string">"execution(* *..ProductService.find(..))"</span> )</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterReturning</span><span class="params">()</span> </span>&#123;</div><div class="line">		System.out.println( <span class="string">"afterReturning() called"</span> );</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@AfterThrowing</span>( value=<span class="string">"execution(* *..*.*(..))"</span>, throwing=<span class="string">"ex"</span> )</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterThrowing</span><span class="params">( Throwable ex )</span> </span>&#123;</div><div class="line">		System.out.println( <span class="string">"afterThrowing() called:"</span> + ex );</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure></p>
 
         </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2850951807285210",
+    enable_page_level_ads: true
+  });
+</script>
+
         <footer class="article-footer">
             
 
@@ -273,6 +289,7 @@ ga('send', 'pageview');
     </section>
 
 
+
                         </div>
                     </section>
                     <aside id="sidebar">
@@ -338,7 +355,16 @@ ga('send', 'pageview');
             
         
     </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2850951807285210",
+    enable_page_level_ads: true
+  });
+</script>
+
 </aside>
+
                 </div>
             </div>
         </div>
