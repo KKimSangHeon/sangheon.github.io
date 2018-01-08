@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-01-07T06:20:02.371Z</updated>
+  <updated>2018-01-08T16:07:04.276Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -17,12 +17,12 @@
   
   <entry>
     <title>Angular2 정리</title>
-    <link href="http://KKimSangHeon.github.io/2017/10/17/angular2/"/>
-    <id>http://KKimSangHeon.github.io/2017/10/17/angular2/</id>
-    <published>2017-10-17T05:05:28.000Z</published>
-    <updated>2018-01-07T06:20:02.371Z</updated>
+    <link href="http://KKimSangHeon.github.io/2018/01/07/angular2/"/>
+    <id>http://KKimSangHeon.github.io/2018/01/07/angular2/</id>
+    <published>2018-01-07T05:05:28.000Z</published>
+    <updated>2018-01-08T16:07:04.276Z</updated>
     
-    <content type="html"><![CDATA[<img src="/2017/10/17/angular2/book.jpg" alt="쉽고 빠르게 배우는 Angular2" title="쉽고 빠르게 배우는 Angular2">
+    <content type="html"><![CDATA[<img src="/2018/01/07/angular2/book.jpg" alt="쉽고 빠르게 배우는 Angular2" title="쉽고 빠르게 배우는 Angular2">
 <p>위의 책을 공부하며 정리하는 포스트이다.</p>
 <h1 id="AngularJS"><a href="#AngularJS" class="headerlink" title="AngularJS"></a>AngularJS</h1><h3 id="디렉티브"><a href="#디렉티브" class="headerlink" title="디렉티브"></a>디렉티브</h3><p>HTML 태그나 어트리뷰트의 기능을 새롭게 만드는 개념. 애플리케이션의 요구 사항에 맞게 HTML 태그를 확장할 수 있다.</p>
 <h3 id="ng-app"><a href="#ng-app" class="headerlink" title="ng-app"></a>ng-app</h3><p><code>&lt;div&gt;</code>에 ng-app 어트리뷰트를 추가하면 그 <code>&lt;div&gt;</code>만 AngularJS의 영향을 받는다.</p>
@@ -100,7 +100,7 @@ ${hi()}</code><br>console.log(hello_message);</p>
     
     <summary type="html">
     
-      &lt;img src=&quot;/2017/10/17/angular2/book.jpg&quot; alt=&quot;쉽고 빠르게 배우는 Angular2&quot; title=&quot;쉽고 빠르게 배우는 Angular2&quot;&gt;
+      &lt;img src=&quot;/2018/01/07/angular2/book.jpg&quot; alt=&quot;쉽고 빠르게 배우는 Angular2&quot; title=&quot;쉽고 빠르게 배우는 Angular2&quot;&gt;
 &lt;p&gt;위의 책을 공부하며 정리하는 포스트이다.&lt;/p&gt;
 &lt;h1 id=&quot;Angula
     
