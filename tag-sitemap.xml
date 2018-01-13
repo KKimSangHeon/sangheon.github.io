@@ -331,13 +331,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Sang-Heon-Kim/</loc>
-        <lastmod>2018-01-07T06:27:32.208Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/Angular2/</loc>
         <lastmod>2018-01-09T23:24:15.467Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -345,50 +338,57 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/tags/Sang-Heon-Kim/</loc>
+        <lastmod>2018-01-13T03:41:35.439Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/tags/%EC%97%85%EB%B9%84%ED%8A%B8/</loc>
-        <lastmod>2018-01-11T23:30:14.193Z</lastmod>
+        <lastmod>2018-01-13T03:42:28.633Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://KKimSangHeon.github.io/tags/API/</loc>
-        <lastmod>2018-01-11T23:30:14.193Z</lastmod>
+        <lastmod>2018-01-13T03:42:28.633Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://KKimSangHeon.github.io/tags/%EC%97%90%EC%9D%B4%EB%8B%A4/</loc>
-        <lastmod>2018-01-11T23:30:14.193Z</lastmod>
+        <lastmod>2018-01-13T03:42:28.633Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://KKimSangHeon.github.io/tags/%ED%80%80%ED%85%80/</loc>
-        <lastmod>2018-01-11T23:30:14.193Z</lastmod>
+        <lastmod>2018-01-13T03:42:28.633Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://KKimSangHeon.github.io/tags/%EC%8A%A4%ED%85%94%EB%9D%BC%EB%A3%A8%EB%A9%98/</loc>
-        <lastmod>2018-01-11T23:30:14.193Z</lastmod>
+        <lastmod>2018-01-13T03:42:28.633Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://KKimSangHeon.github.io/tags/%EB%A6%AC%ED%94%8C/</loc>
-        <lastmod>2018-01-11T23:30:14.193Z</lastmod>
+        <lastmod>2018-01-13T03:42:28.633Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://KKimSangHeon.github.io/tags/%EC%8A%A4%ED%85%8C%EC%9D%B4%ED%84%B0%EC%8A%A4%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/</loc>
-        <lastmod>2018-01-11T23:30:14.193Z</lastmod>
+        <lastmod>2018-01-13T03:42:28.633Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
