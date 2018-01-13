@@ -261,14 +261,14 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Reco-Beacon/</loc>
+        <loc>http://KKimSangHeon.github.io/tags/Beacon/</loc>
         <lastmod>2017-10-03T18:02:21.818Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Beacon/</loc>
+        <loc>http://KKimSangHeon.github.io/tags/Reco-Beacon/</loc>
         <lastmod>2017-10-03T18:02:21.818Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -389,6 +389,76 @@
     <url>
         <loc>http://KKimSangHeon.github.io/tags/%EC%8A%A4%ED%85%8C%EC%9D%B4%ED%84%B0%EC%8A%A4%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/</loc>
         <lastmod>2018-01-13T03:42:28.633Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/SK-%EA%B3%A0%EC%9A%A9%EB%94%94%EB%94%A4%EB%8F%8C/</loc>
+        <lastmod>2018-01-13T11:31:12.511Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/</loc>
+        <lastmod>2018-01-13T11:31:12.511Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/%EB%AA%A8%EB%B0%94%EC%9D%BC-%EA%B0%9C%EB%B0%9C/</loc>
+        <lastmod>2018-01-13T11:31:12.511Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/%EA%B3%A0%EC%9A%A9%EB%94%94%EB%94%A4%EB%8F%8C/</loc>
+        <lastmod>2018-01-13T11:31:12.511Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/</loc>
+        <lastmod>2018-01-13T12:11:37.029Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/%EC%BB%B4%ED%93%A8%ED%84%B0%ED%99%9C%EC%9A%A9%EB%8A%A5%EB%A0%A5-1%EA%B8%89/</loc>
+        <lastmod>2018-01-13T12:11:40.480Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/%EC%9B%8C%EB%93%9C%ED%94%84%EB%A1%9C%EC%84%B8%EC%84%9C/</loc>
+        <lastmod>2018-01-13T12:11:43.542Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/%EC%9E%90%EA%B2%A9%EC%A6%9D/</loc>
+        <lastmod>2018-01-13T12:16:30.828Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/SQLD/</loc>
+        <lastmod>2018-01-13T12:16:30.828Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/SQL-%EA%B0%9C%EB%B0%9C%EC%9E%90/</loc>
+        <lastmod>2018-01-13T12:16:30.828Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
