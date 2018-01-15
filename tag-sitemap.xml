@@ -331,13 +331,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Angular2/</loc>
-        <lastmod>2018-01-09T23:24:15.467Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/Sang-Heon-Kim/</loc>
         <lastmod>2018-01-13T03:41:35.439Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -529,6 +522,13 @@
     <url>
         <loc>http://KKimSangHeon.github.io/tags/%EC%A0%84%EC%82%B0/</loc>
         <lastmod>2018-01-13T14:54:27.551Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Angular2/</loc>
+        <lastmod>2018-01-15T23:30:16.936Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
