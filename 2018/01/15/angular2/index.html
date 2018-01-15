@@ -3,26 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>6장. RAID 정의 및 개념,구현 | Kim Sang Heon&#39;s Bolg</title>
+    <title>angular2 | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Linux,This Is Linux" />
+        <meta name="keywords" content="" />
     
     
 
-      <meta name="description" content="RAIDRedundant Array of Inexpensive Disks여러개의 디스크를 하나처럼 사용하는 RAID를 알아보자비용절감 + 신뢰성 향상 + 성능 향상1테라 디스크 3개를 하나로 묶어서 3테라 디스크처럼 쓴다 하드웨어 RAID여러개의 하드디스크를 가지고 장비를 만들어서 사용. 장비업체에서 제공하기 떄문에 사용법이 다를 수 있다. 그리고 상당히">
-<meta name="keywords" content="Linux,This Is Linux">
+      <meta name="description" content="Welcome to Sang Heon&apos;s Blog.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="6장. RAID 정의 및 개념,구현">
-<meta property="og:url" content="http://KKimSangHeon.github.io/2017/07/06/ThisIsLinux16/index.html">
+<meta property="og:title" content="angular2">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2018/01/15/angular2/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="RAIDRedundant Array of Inexpensive Disks여러개의 디스크를 하나처럼 사용하는 RAID를 알아보자비용절감 + 신뢰성 향상 + 성능 향상1테라 디스크 3개를 하나로 묶어서 3테라 디스크처럼 쓴다 하드웨어 RAID여러개의 하드디스크를 가지고 장비를 만들어서 사용. 장비업체에서 제공하기 떄문에 사용법이 다를 수 있다. 그리고 상당히">
-<meta property="og:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
-<meta property="og:updated_time" content="2017-07-06T07:00:53.610Z">
+<meta property="og:description" content="Welcome to Sang Heon&apos;s Blog.">
+<meta property="og:updated_time" content="2018-01-15T14:22:51.013Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="6장. RAID 정의 및 개념,구현">
-<meta name="twitter:description" content="RAIDRedundant Array of Inexpensive Disks여러개의 디스크를 하나처럼 사용하는 RAID를 알아보자비용절감 + 신뢰성 향상 + 성능 향상1테라 디스크 3개를 하나로 묶어서 3테라 디스크처럼 쓴다 하드웨어 RAID여러개의 하드디스크를 가지고 장비를 만들어서 사용. 장비업체에서 제공하기 떄문에 사용법이 다를 수 있다. 그리고 상당히">
-<meta name="twitter:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
+<meta name="twitter:title" content="angular2">
+<meta name="twitter:description" content="Welcome to Sang Heon&apos;s Blog.">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
 
@@ -134,7 +131,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Linux/">Linux</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a>
+    uncategorized
     </h1>
 </div>
                         <div class="main-body-content">
@@ -149,14 +146,14 @@ ga('send', 'pageview');
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-                            <article id="post-ThisIsLinux16" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-angular2" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        6장. RAID 정의 및 개념,구현
+        angular2
         </h1>
     
 
@@ -166,47 +163,17 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/07/06/ThisIsLinux16/" class="article-date">
-            <time datetime="2017-07-06T00:13:09.000Z" itemprop="datePublished">2017-07-06</time>
+        <a href="/2018/01/15/angular2/" class="article-date">
+            <time datetime="2018-01-15T14:22:50.000Z" itemprop="datePublished">2018-01-15</time>
         </a>
     </div>
 
                 
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Linux/">Linux</a>, <a class="tag-link" href="/tags/This-Is-Linux/">This Is Linux</a>
-    </div>
-
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h4 id="RAID"><a href="#RAID" class="headerlink" title="RAID"></a>RAID</h4><p>Redundant Array of Inexpensive Disks<br>여러개의 디스크를 하나처럼 사용하는 RAID를 알아보자<br>비용절감 + 신뢰성 향상 + 성능 향상<br>1테라 디스크 3개를 하나로 묶어서 3테라 디스크처럼 쓴다</p>
-<h5 id="하드웨어-RAID"><a href="#하드웨어-RAID" class="headerlink" title="하드웨어 RAID"></a>하드웨어 RAID</h5><p>여러개의 하드디스크를 가지고 장비를 만들어서 사용. 장비업체에서 제공하기 떄문에 사용법이 다를 수 있다. 그리고 상당히 고가이다. 하드웨어RAID가 안정성이 높다.</p>
-<h5 id="소프트웨어-RAID"><a href="#소프트웨어-RAID" class="headerlink" title="소프트웨어 RAID"></a>소프트웨어 RAID</h5><p>디스크를 장착만하면 운영체제 레벨에서 하나로 묶을 수 있다.</p>
-<h5 id="Linear-RAID-339p-그림보기"><a href="#Linear-RAID-339p-그림보기" class="headerlink" title="Linear RAID (339p 그림보기)"></a>Linear RAID (339p 그림보기)</h5><p>최소 2개이상의 디스크를 하나로 묶음<br>앞 디스크 부터 차례로 저장<br>100TB 100TB 100TB 를 사용하면 총 300TB가 된다. 즉 공간효율성이 100%임.</p>
-<h5 id="RAID-0-339p-그림보기"><a href="#RAID-0-339p-그림보기" class="headerlink" title="RAID 0 (339p 그림보기)"></a>RAID 0 (339p 그림보기)</h5><p>모든 디스크에 동시에 저장되는 개념<br>그러므로 하드디스크가 3개면 /3 시간으로 저장됨<br>신뢰성이 낮다.<br>빠르지만 전부 잃어버려도 큰 문제가 되지 않는 자료가 적당하다.<br>3TB 100TB 100TB 를 사용하면 총 9TB가 된다. 즉 디스크 크기가 다르면 공간효율성이 100%가 되지 않음.<br>그래서 RAID를 구성할 떈 같은회사 같은 용량의 디스크로 구성한다.<br>디스크 세개중에 하나만 고장나도 디스크를 못쓴다.</p>
-<h5 id="RAID-1"><a href="#RAID-1" class="headerlink" title="RAID 1"></a>RAID 1</h5><p>미러링이라 부름<br>1TB 1TB 를 사용하면 1TB 사용가능<br>결함 허용을 제공= 신뢰성 높음. 즉 둘중에 하나가 고장나도 데이터가 보존된다.<br>공간효율이 나쁘므로 비용이 비싸다는 단점이 있다.</p>
-<h5 id="RAID-5"><a href="#RAID-5" class="headerlink" title="RAID 5"></a>RAID 5</h5><p>RAID 2,3,4의 장점을 포용하기 때문에 2,3,4를 사용할 필요가 없다.<br>RAID1의 데이터 안정성 +RAID0의 공간 효율성을 추구 디스크 개수 -1개의 공간을 사용. 즉 4개일 경우 3개를 사용(75%) 100개일 경우 99개를 사용(99%)<br>즉 가격이 저렴하면서 안정적인것.<br>최소한 3개 이상의 하드디스크가 필요하며 오류가 발생했을 때는 패리티(Parity)를 이용해서 데이터를 복구<br>결함 허용을 제공 - 즉 디스크 하나가 고장나도 사용 복구 가능<br>하지만 디스크가 하나가 고장났을 때는 복구가 가능하지만 디스크가 2개가 고장날 경우에는 복구 불가능.<br>그래서 100개를 사용하였을 경우에는 불안하다.(2개 이상 고장날 확률이 높아지므로)<br>즉 적은 디스크를 활용할 경우 공간효율은 낮아지지만 신뢰도는 높아진다.<br>일반적으로 RAID 5는 7개에서 10개정도의 디스크로 구성</p>
-<h5 id="RAID-6"><a href="#RAID-6" class="headerlink" title="RAID 6"></a>RAID 6</h5><p>패리트를 2개 쓴다. 즉 디스크가 2개가 고장나도 복구가능. 최소 4개이상의 디스크가 필요함.(패리티를 2개 쓰므로)<br>패리티를 2개 쓰는 알고리즘의 효율성이 떨어져서 성능이 떨어지는 단점이 있어 많이 사용하지는 않음.</p>
-<h5 id="RAID1-0-RAID-RAID0"><a href="#RAID1-0-RAID-RAID0" class="headerlink" title="RAID1 + 0 = RAID + RAID0"></a>RAID1 + 0 = RAID + RAID0</h5><p>신뢰성(안정성)과 성능(속도)이 동시에 뛰어난 방법<br>RAID1로 구성된것을 RAID 0 으로 묶음. 그림참고</p>
-<h5 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h5><p>SCSI 0:1 부터 0:10 까지 진행.</p>
-<p>SCSI 0:1  SCSI 0:2 - Linear RAID</p>
-<p>SCSI 0:3  SCSI 0:4 - RAID 0</p>
-<p>SCSI 0:5  SCSI 0:6 - RAID 1</p>
-<p>SCSI 0:8  SCSI 0:9  SCSI 0:10 - RAID 5</p>
-<p>SCSI 0:1 만 2GB로 구성하고 나머지는 다 1GB로 구성</p>
-<p>에디트 쪽에서 디스크 2기가 1개 1기가 8개 추가.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># ls -l /dev/sd*      //장착이 잘 되었나 확인</div></pre></td></tr></table></figure>
-<p>9번 반복<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># fdisk /dev/sdb ~sdj 까지 반복</div><div class="line">n   p   엔터 엔터</div><div class="line">p //로 확인해보면 시스템이 리눅스인데 RAID로 변경해야한다.</div><div class="line">t 엔터</div><div class="line">L 누르면 도움말이 나온다.</div><div class="line">fd를 입력 후 엔터</div><div class="line">p를 눌러 확인</div><div class="line">w를 눌러 저장</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># ls -l /dev/sd*      //장착이 잘 되었나 확인</div></pre></td></tr></table></figure>
-<h4 id="과정-설명"><a href="#과정-설명" class="headerlink" title="과정 설명"></a>과정 설명</h4><p>1.mdadm 명령어로 논리 볼륨 생성<br>2.mkfs.ext4 명령어로 파일시스템 생성(포멧)<br>3.mount 적용<br>위 3가지 과정은 6장에서 하드디스크 1개추가 과정과 같다.</p>
-<h4 id="Linear-RAID-만들기"><a href="#Linear-RAID-만들기" class="headerlink" title="Linear RAID 만들기"></a>Linear RAID 만들기</h4><p>sdb1 sdc1 이용<br>mdadm RAID를 만들고 없애는 명령어</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"># fdisk -l /dev/sdb /dev/sdc // 아까 한것이 잘 적용되었나 확인</div><div class="line"></div><div class="line"># mdadm --create /dev/md9 --level=linear --raid-devices=2 /dev/sdb1 /dev/sdc1</div><div class="line">        //RAID md9를 만드는데 리니어로 디바이스는</div><div class="line">        //개수 2개로 2개는 /dev/sdb1 /dev/sdc1 로</div><div class="line"></div><div class="line"># mdadm --detail --scan     //돌고있는지 확인</div><div class="line"># mdadm --detail /dev/md9   //md9에 대해 자세히 보자</div><div class="line"></div><div class="line"># mkfs.ext4 /dev/md9    //포멧하자</div><div class="line"></div><div class="line"># mkdir /raidLinear   //디렉토리 생성</div><div class="line"></div><div class="line"># mount /dev/md9 /raidLinear/ //마운트</div><div class="line"></div><div class="line"># df      //마운트 확인</div><div class="line"># vi /etc/fstab     //재부팅하면 마운트가 풀리므로 설정</div><div class="line"></div><div class="line">/dev/md9    /raidLinear   ext4    defaults    0 0    </div><div class="line">맨 아래 추가</div><div class="line"></div><div class="line"># reboot</div><div class="line"># df    //마운트 확인</div></pre></td></tr></table></figure>
-<h4 id="RAID-0-만들기"><a href="#RAID-0-만들기" class="headerlink" title="RAID 0 만들기"></a>RAID 0 만들기</h4><p>sdd sde로 한다<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"># mdadm --create /dev/md0 --level=0 --raid-devices=2 /dev/sdd1 /dev/sde1</div><div class="line"></div><div class="line"># mdadm --detail --scan     //돌고있는지 확인</div><div class="line"># mdadm --detail /dev/md0   //md9에 대해 자세히 보자</div><div class="line"></div><div class="line"># mkfs.ext4 /dev/md0    //포멧하자</div><div class="line"></div><div class="line"># mkdir /raid0   //디렉토리 생성</div><div class="line"></div><div class="line"># mount /dev/md0 /raid0/ //마운트</div><div class="line"></div><div class="line"># df      //마운트 확인</div><div class="line"></div><div class="line"># vi /etc/fstab     //재부팅하면 마운트가 풀리므로 설정</div><div class="line"></div><div class="line">/dev/md0    /raid0   ext4    defaults    0 0   </div><div class="line">추가</div></pre></td></tr></table></figure></p>
-<h4 id="RAID-1-1"><a href="#RAID-1-1" class="headerlink" title="RAID 1"></a>RAID 1</h4><p>sdf sdg 사용<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"># mdadm --create /dev/md1 --level=1 --raid-devices=2 /dev/sdf1 /dev/sdg1</div><div class="line">y입력  // raid1은 부트 디바이스로 사용 할 수 없는데 만들겠냐는 뜻</div><div class="line"></div><div class="line"># mdadm --detail /dev/md1   //확인해보자</div><div class="line"></div><div class="line"># mkfs.ext4 /dev/md1    //포멧하자</div><div class="line"></div><div class="line"># mkdir /raid1   //디렉토리 생성</div><div class="line"></div><div class="line"># mount /dev/md1 /raid1/ //마운트</div><div class="line"></div><div class="line"># df      //마운트 확인</div><div class="line"></div><div class="line"># vi /etc/fstab     //재부팅하면 마운트가 풀리므로 설정</div><div class="line">/dev/md1    /raid1   ext4    defaults    0 0   </div><div class="line">추가</div></pre></td></tr></table></figure></p>
-<h4 id="RAID-5-1"><a href="#RAID-5-1" class="headerlink" title="RAID 5"></a>RAID 5</h4><p>sdh sdi sdj 사용<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"># mdadm --create /dev/md5 --level=5 --raid-devices=3 /dev/sdh1 /dev/sdi1 /dev/sdj1</div><div class="line"></div><div class="line">망가졌다는 메세지 나오는데 무시하면된다. (컴퓨터가 착각함!)</div><div class="line"></div><div class="line"># mdadm --detail /dev/md5   //확인해보자</div><div class="line"></div><div class="line"># mkfs.ext4 /dev/md5    //포멧하자</div><div class="line"></div><div class="line"># mkdir /raid5   //디렉토리 생성</div><div class="line"></div><div class="line"># mount /dev/md5 /raid5/ //마운트</div><div class="line"></div><div class="line"># df      //마운트 확인</div><div class="line"></div><div class="line"># vi /etc/fstab     //재부팅하면 마운트가 풀리므로 설정</div><div class="line"></div><div class="line">/dev/md5    /raid5   ext4    defaults    0 0  </div></pre></td></tr></table></figure></p>
-
+            
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
@@ -224,7 +191,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/07/06/ThisIsLinux16/" data-id="cjcgauiwt002dgov7w2ndm3wc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2018/01/15/angular2/" data-id="cjcgauj4100apgov7arq05psf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -330,20 +297,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/07/06/ThisIsLinux17/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            RAID 0,1,5 의 고장과 원상 복구
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/07/05/ThisIsLinux15/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/01/13/interview6/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">6장. IDE/SCSI 장치 구성, 하드디스크 1개 추가</p>
+        <p class="article-nav-title">마인즈랩</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -390,7 +347,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'https-kkimsangheon-github-io-2';
     
     
-    var disqus_url = 'http://KKimSangHeon.github.io/2017/07/06/ThisIsLinux16/';
+    var disqus_url = 'http://KKimSangHeon.github.io/2018/01/15/angular2/';
     
     (function() {
     var dsq = document.createElement('script');
