@@ -119,22 +119,8 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/%EC%95%84%EB%AC%B4%EA%B1%B0%EB%82%98/</loc>
-        <lastmod>2018-01-13T13:03:02.886Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/%EC%9E%90%EA%B2%A9%EC%A6%9D/</loc>
         <lastmod>2018-01-13T13:06:06.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/</loc>
-        <lastmod>2018-01-13T14:54:27.551Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -156,6 +142,20 @@
     <url>
         <loc>http://KKimSangHeon.github.io/categories/Web/Angular2/</loc>
         <lastmod>2018-01-21T03:07:34.570Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/</loc>
+        <lastmod>2018-01-21T06:25:41.970Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/%EC%95%84%EB%AC%B4%EA%B1%B0%EB%82%98/</loc>
+        <lastmod>2018-01-21T06:25:41.970Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
