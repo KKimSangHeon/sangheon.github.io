@@ -58,9 +58,16 @@
     <link href="http://KKimSangHeon.github.io/2018/01/15/angular2/"/>
     <id>http://KKimSangHeon.github.io/2018/01/15/angular2/</id>
     <published>2018-01-15T14:22:50.000Z</published>
-    <updated>2018-01-21T03:07:34.570Z</updated>
+    <updated>2018-01-25T12:51:32.106Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="핵심모듈-155p"><a href="#핵심모듈-155p" class="headerlink" title="핵심모듈 155p"></a>핵심모듈 155p</h2><p>앵귤러 어플리케이션 관점에서 핵심이 되는 모듈로 애플리케이션 루트 모듈에 한번 설정함을써 애플리케이션 레벨에서 사용할 수 있는 모듈을 말한다. 루트 모듈에 등록됐다는 것은 애플리케이션이 시작될 때 처음 한 번만 호출해서 전역으로 사용하겠다는 의미이다. 대표 예로 타이틀 컴포넌트가 있다. 보통 핵심 모듈은 /app/core에 위치시킨다.</p>
+<h2 id="특징모듈-161p"><a href="#특징모듈-161p" class="headerlink" title="특징모듈 161p"></a>특징모듈 161p</h2><p>모듈이 많아지면 모듈 구성이 복잡해지며 지시자의 이름충돌 등의 문제가 발생할 수 있다. 이를 방지하기 위해 애플리케이션 루트 모듈에서 하위 모듈로 분리하는 것을 특징 모듈이라 한다. 특징 모듈에 선언한 모듈은 다른 모듈에 노출하거나 숨길수도 있다.</p>
+<p>추가예정..</p>
+]]></content>
     
     <summary type="html">
+    
+      &lt;h2 id=&quot;핵심모듈-155p&quot;&gt;&lt;a href=&quot;#핵심모듈-155p&quot; class=&quot;headerlink&quot; title=&quot;핵심모듈 155p&quot;&gt;&lt;/a&gt;핵심모듈 155p&lt;/h2&gt;&lt;p&gt;앵귤러 어플리케이션 관점에서 핵심이 되는 모듈로 애플리케이션 루트 모듈에 한
     
     </summary>
     
