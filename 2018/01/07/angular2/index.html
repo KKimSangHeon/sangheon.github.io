@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="위의 책을 공부하며 정리하는 포스트이다. AngularJS디렉티브HTML 태그나 어트리뷰트의 기능을 새롭게 만드는 개념. 애플리케이션의 요구 사항에 맞게 HTML 태그를 확장할 수 있다. ng-app&amp;lt;div&amp;gt;에 ng-app 어트리뷰트를 추가하면 그 &amp;lt;div&amp;gt;만 AngularJS의 영향을 받는다. 바인딩뷰와 모델이 서로를 갱신하는것.">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/angular2.png">
-<meta property="og:updated_time" content="2018-01-09T23:24:15.467Z">
+<meta property="og:updated_time" content="2018-01-27T13:41:40.027Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular2 정리">
 <meta name="twitter:description" content="위의 책을 공부하며 정리하는 포스트이다. AngularJS디렉티브HTML 태그나 어트리뷰트의 기능을 새롭게 만드는 개념. 애플리케이션의 요구 사항에 맞게 HTML 태그를 확장할 수 있다. ng-app&amp;lt;div&amp;gt;에 ng-app 어트리뷰트를 추가하면 그 &amp;lt;div&amp;gt;만 AngularJS의 영향을 받는다. 바인딩뷰와 모델이 서로를 갱신하는것.">
@@ -253,9 +253,6 @@ ${hi()}</code><br>console.log(hello_message);</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">const appRoutes:Routes = [</div><div class="line">  &#123; path: &apos;&apos;, component: IntroComponet&#125;,</div><div class="line">  &#123; path: &apos;hello&apos;, component: HelloComponent&#125;,</div><div class="line">  ...</div><div class="line">];</div><div class="line"></div><div class="line">@NgModule(&#123;</div><div class="line">  imports: [RouterModule.forRoot(appRoutes)],</div><div class="line">  exports:[RouterModule]</div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
 <p>appRoutes 변수는 라우팅 설정을 담고 있으며 입력 URL에 대응하는 컴포넌트로 라우팅 되게 한다. appRoutes변수는 forRoot() 메소드를 이용해 등록한다. 유의할 점은 애플리케이션 라우팅 모듈에서만 한 번만 사용돼야 하고 특징 모듈에서는 사용하면 안된다.</p>
 <p>애플리케이션 루트모듈에서는 다음과 같이 inports를 해줘야 한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@Ngmodule(&#123;</div><div class="line">    imports : [AppRoutingModule ...] ,</div></pre></td></tr></table></figure></p>
-<h2 id="핵심모듈-155p"><a href="#핵심모듈-155p" class="headerlink" title="핵심모듈 155p"></a>핵심모듈 155p</h2><p>앵귤러 어플리케이션 관점에서 핵심이 되는 모듈로 애플리케이션 루트 모듈에 한번 설정함을써 애플리케이션 레벨에서 사용할 수 있는 모듈을 말한다. 루트 모듈에 등록됐다는 것은 애플리케이션이 시작될 때 처음 한 번만 호출해서 전역으로 사용하겠다는 의미이다. 대표 예로 타이틀 컴포넌트가 있다. 보통 핵심 모듈은 /app/core에 위치시킨다.</p>
-<h2 id="특징모듈-161p"><a href="#특징모듈-161p" class="headerlink" title="특징모듈 161p"></a>특징모듈 161p</h2><p>모듈이 많아지면 모듈 구성이 복잡해지며 지시자의 이름충돌 등의 문제가 발생할 수 있다. 이를 방지하기 위해 애플리케이션 루트 모듈에서 하위 모듈로 분리하는 것을 특징 모듈이라 한다. 특징 모듈에 선언한 모듈은 다른 모듈에 노출하거나 숨길수도 있다.</p>
-<p>추가예정..</p>
 
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -274,7 +271,7 @@ ${hi()}</code><br>console.log(hello_message);</p>
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2018/01/07/angular2/" data-id="cjcoeg21c00jlxwv7yaj80v8l" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2018/01/07/angular2/" data-id="cjcxenpi100ifdkv72cc4wbvk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

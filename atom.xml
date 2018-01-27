@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-01-21T06:26:12.578Z</updated>
+  <updated>2018-01-27T13:41:25.082Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>usefulsite</title>
+    <link href="http://KKimSangHeon.github.io/2018/01/27/usefulsite/"/>
+    <id>http://KKimSangHeon.github.io/2018/01/27/usefulsite/</id>
+    <published>2018-01-27T13:41:25.000Z</published>
+    <updated>2018-01-27T13:41:25.082Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>무료코인 얻기</title>
@@ -511,7 +525,7 @@
     <link href="http://KKimSangHeon.github.io/2018/01/07/angular2/"/>
     <id>http://KKimSangHeon.github.io/2018/01/07/angular2/</id>
     <published>2018-01-07T05:05:28.000Z</published>
-    <updated>2018-01-09T23:24:15.467Z</updated>
+    <updated>2018-01-27T13:41:40.027Z</updated>
     
     <content type="html"><![CDATA[<img src="/2018/01/07/angular2/book.jpg" alt="쉽고 빠르게 배우는 Angular2" title="쉽고 빠르게 배우는 Angular2">
 <p>위의 책을 공부하며 정리하는 포스트이다.</p>
@@ -585,9 +599,6 @@ ${hi()}</code><br>console.log(hello_message);</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">const appRoutes:Routes = [</div><div class="line">  &#123; path: &apos;&apos;, component: IntroComponet&#125;,</div><div class="line">  &#123; path: &apos;hello&apos;, component: HelloComponent&#125;,</div><div class="line">  ...</div><div class="line">];</div><div class="line"></div><div class="line">@NgModule(&#123;</div><div class="line">  imports: [RouterModule.forRoot(appRoutes)],</div><div class="line">  exports:[RouterModule]</div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
 <p>appRoutes 변수는 라우팅 설정을 담고 있으며 입력 URL에 대응하는 컴포넌트로 라우팅 되게 한다. appRoutes변수는 forRoot() 메소드를 이용해 등록한다. 유의할 점은 애플리케이션 라우팅 모듈에서만 한 번만 사용돼야 하고 특징 모듈에서는 사용하면 안된다.</p>
 <p>애플리케이션 루트모듈에서는 다음과 같이 inports를 해줘야 한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@Ngmodule(&#123;</div><div class="line">    imports : [AppRoutingModule ...] ,</div></pre></td></tr></table></figure></p>
-<h2 id="핵심모듈-155p"><a href="#핵심모듈-155p" class="headerlink" title="핵심모듈 155p"></a>핵심모듈 155p</h2><p>앵귤러 어플리케이션 관점에서 핵심이 되는 모듈로 애플리케이션 루트 모듈에 한번 설정함을써 애플리케이션 레벨에서 사용할 수 있는 모듈을 말한다. 루트 모듈에 등록됐다는 것은 애플리케이션이 시작될 때 처음 한 번만 호출해서 전역으로 사용하겠다는 의미이다. 대표 예로 타이틀 컴포넌트가 있다. 보통 핵심 모듈은 /app/core에 위치시킨다.</p>
-<h2 id="특징모듈-161p"><a href="#특징모듈-161p" class="headerlink" title="특징모듈 161p"></a>특징모듈 161p</h2><p>모듈이 많아지면 모듈 구성이 복잡해지며 지시자의 이름충돌 등의 문제가 발생할 수 있다. 이를 방지하기 위해 애플리케이션 루트 모듈에서 하위 모듈로 분리하는 것을 특징 모듈이라 한다. 특징 모듈에 선언한 모듈은 다른 모듈에 노출하거나 숨길수도 있다.</p>
-<p>추가예정..</p>
 ]]></content>
     
     <summary type="html">
@@ -925,35 +936,6 @@ ${hi()}</code><br>console.log(hello_message);</p>
     <summary type="html">
     
       &lt;h3 id=&quot;리스트&quot;&gt;&lt;a href=&quot;#리스트&quot; class=&quot;headerlink&quot; title=&quot;리스트&quot;&gt;&lt;/a&gt;리스트&lt;/h3&gt;&lt;p&gt;순서를 가지는 객체들의 집합, 파이썬 자료형들 중에서 가장 많이 사용한다.&lt;br&gt;시퀀스 자료형이기 때문에 시퀀스의 연산
-    
-    </summary>
-    
-      <category term="빅데이터 전문가과정" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/"/>
-    
-      <category term="Python" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Python/"/>
-    
-    
-      <category term="Python" scheme="http://KKimSangHeon.github.io/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2. 제어문</title>
-    <link href="http://KKimSangHeon.github.io/2017/09/29/python2/"/>
-    <id>http://KKimSangHeon.github.io/2017/09/29/python2/</id>
-    <published>2017-09-29T02:24:02.000Z</published>
-    <updated>2017-09-29T02:30:51.820Z</updated>
-    
-    <content type="html"><![CDATA[<p>If문<br><figure class="highlight java"><figcaption><span>PythonExam.pi</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">a = <span class="number">10</span></div><div class="line"><span class="keyword">if</span> a &gt; <span class="number">5</span>:</div><div class="line">    print(<span class="string">"big"</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    print(<span class="string">"small"</span>)</div><div class="line"></div><div class="line"></div><div class="line">n = -<span class="number">2</span></div><div class="line"><span class="keyword">if</span> n &gt; <span class="number">0</span>:</div><div class="line">    print(<span class="string">'양수'</span>)</div><div class="line">elif n &lt; <span class="number">0</span>:</div><div class="line">    print(<span class="string">'음수'</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    print(<span class="string">'0'</span>)</div><div class="line"></div><div class="line">order = <span class="string">'spam'</span></div><div class="line"><span class="keyword">if</span> order == <span class="string">'spam'</span>:</div><div class="line">    price = <span class="number">1000</span></div><div class="line">elif order == <span class="string">'egg'</span>:</div><div class="line">    price = <span class="number">500</span></div><div class="line">elif order == <span class="string">'spagetti'</span>:</div><div class="line">    price = <span class="number">2000</span></div><div class="line"><span class="keyword">else</span>:</div><div class="line">    price = <span class="number">0</span></div><div class="line"></div><div class="line">print(price)</div><div class="line"></div></pre></td></tr></table></figure></p>
-<p>For문</p>
-<figure class="highlight java"><figcaption><span>PythonExam.pi</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">a = [<span class="string">'cat'</span>, <span class="string">'cow'</span>, <span class="string">'tiger'</span>]</div><div class="line"></div><div class="line"><span class="keyword">for</span> animal in a:</div><div class="line">    print(animal)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">for</span> x in <span class="title">range</span><span class="params">(<span class="number">10</span>)</span>:</span></div><div class="line">    <span class="title">print</span><span class="params">(x, end=<span class="string">" "</span>)</span></div><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-<p>while문<br><figure class="highlight java"><figcaption><span>PythonExam.pi</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">count = <span class="number">1</span></div><div class="line"><span class="keyword">while</span> count &lt; <span class="number">11</span>:</div><div class="line">    print(count, end=<span class="string">' '</span>)</div><div class="line">    count += <span class="number">1</span></div><div class="line"><span class="keyword">else</span>:</div><div class="line">    print(<span class="string">''</span>)</div></pre></td></tr></table></figure></p>
-<p>break, continue, else<br><figure class="highlight java"><figcaption><span>PythonExam.pi</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">i = <span class="number">0</span></div><div class="line"><span class="keyword">while</span> i &lt; <span class="number">10</span>:</div><div class="line">    i += <span class="number">1</span></div><div class="line">    <span class="keyword">if</span> i &lt; <span class="number">5</span>:</div><div class="line">        <span class="function"><span class="keyword">continue</span></span></div><div class="line">    <span class="title">print</span><span class="params">(i, end=<span class="string">' '</span>)</span></div><div class="line">    <span class="keyword">if</span> i &gt; 10:</div><div class="line">        <span class="keyword">break</span></div><div class="line"><span class="keyword">else</span>:</div><div class="line">    <span class="title">print</span><span class="params">(<span class="string">'else block'</span>)</span></div><div class="line"></div><div class="line"><span class="title">print</span><span class="params">(<span class="string">'done'</span>)</span></div><div class="line"></div><div class="line"></div><div class="line">i = <span class="number">0</span></div><div class="line"><span class="keyword">while</span> True:</div><div class="line">    print(i)</div><div class="line">    <span class="keyword">if</span> i &gt; <span class="number">5</span>:</div><div class="line">        <span class="keyword">break</span></div><div class="line">    i += <span class="number">1</span></div><div class="line"></div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;If문&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;figcaption&gt;&lt;span&gt;PythonExam.pi&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;l
     
     </summary>
     
