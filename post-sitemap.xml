@@ -8,7 +8,15 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2018/01/27/usefulsite/</loc>
-        <lastmod>2018-01-28T08:44:21.170Z</lastmod>
+        <lastmod>2018-01-28T12:09:17.579Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2018/01/28/angular2-1/</loc>
+        <lastmod>2018-01-28T12:05:51.766Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +24,7 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2018/01/07/angular2/</loc>
-        <lastmod>2018-01-27T13:41:40.027Z</lastmod>
+        <lastmod>2018-01-28T12:04:51.349Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -24,7 +32,15 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2018/01/15/angular2/</loc>
-        <lastmod>2018-01-25T12:51:32.106Z</lastmod>
+        <lastmod>2018-01-28T12:04:37.024Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2018/01/28/angular2/</loc>
+        <lastmod>2018-01-28T12:04:31.361Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -215,7 +231,7 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/2017/09/06/ajax/</loc>
+        <loc>http://KKimSangHeon.github.io/2017/09/11/spring3/</loc>
         <lastmod>2017-09-18T00:28:25.075Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -223,7 +239,7 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/2017/09/11/spring3/</loc>
+        <loc>http://KKimSangHeon.github.io/2017/09/06/ajax/</loc>
         <lastmod>2017-09-18T00:28:25.075Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

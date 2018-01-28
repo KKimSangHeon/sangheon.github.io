@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Angular2 정리 | Kim Sang Heon&#39;s Bolg</title>
+    <title>3장. 타입스크립트 | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="Angular2" />
@@ -13,14 +13,14 @@
       <meta name="description" content="위의 책을 공부하며 정리하는 포스트이다. AngularJS디렉티브HTML 태그나 어트리뷰트의 기능을 새롭게 만드는 개념. 애플리케이션의 요구 사항에 맞게 HTML 태그를 확장할 수 있다. ng-app&amp;lt;div&amp;gt;에 ng-app 어트리뷰트를 추가하면 그 &amp;lt;div&amp;gt;만 AngularJS의 영향을 받는다. 바인딩뷰와 모델이 서로를 갱신하는것.">
 <meta name="keywords" content="Angular2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Angular2 정리">
+<meta property="og:title" content="3장. 타입스크립트">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2018/01/07/angular2/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="위의 책을 공부하며 정리하는 포스트이다. AngularJS디렉티브HTML 태그나 어트리뷰트의 기능을 새롭게 만드는 개념. 애플리케이션의 요구 사항에 맞게 HTML 태그를 확장할 수 있다. ng-app&amp;lt;div&amp;gt;에 ng-app 어트리뷰트를 추가하면 그 &amp;lt;div&amp;gt;만 AngularJS의 영향을 받는다. 바인딩뷰와 모델이 서로를 갱신하는것.">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/angular2.png">
-<meta property="og:updated_time" content="2018-01-27T13:41:40.027Z">
+<meta property="og:updated_time" content="2018-01-28T12:04:51.349Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Angular2 정리">
+<meta name="twitter:title" content="3장. 타입스크립트">
 <meta name="twitter:description" content="위의 책을 공부하며 정리하는 포스트이다. AngularJS디렉티브HTML 태그나 어트리뷰트의 기능을 새롭게 만드는 개념. 애플리케이션의 요구 사항에 맞게 HTML 태그를 확장할 수 있다. ng-app&amp;lt;div&amp;gt;에 ng-app 어트리뷰트를 추가하면 그 &amp;lt;div&amp;gt;만 AngularJS의 영향을 받는다. 바인딩뷰와 모델이 서로를 갱신하는것.">
 <meta name="twitter:image" content="http://kkimsangheon.github.io/images/angular2.png">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
@@ -156,7 +156,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        Angular2 정리
+        3장. 타입스크립트
         </h1>
     
 
@@ -193,7 +193,7 @@ ga('send', 'pageview');
 <h2 id="빌드명령어"><a href="#빌드명령어" class="headerlink" title="빌드명령어"></a>빌드명령어</h2><p>Angular-CLI로 만들어진 프로젝트의 코드는 타입스크립트 기반이기 때문에 빌드를 통해 브라우저에서 동작 가능한 자바스크립트로 변환해야 한다.</p>
 <p>ng build</p>
 <p>프로덕션용 빌드 명령어<br>ng build –prod</p>
-<h1 id="타입스크립트"><a href="#타입스크립트" class="headerlink" title="타입스크립트"></a>타입스크립트</h1><h2 id="1-let을-이용한-변수선언"><a href="#1-let을-이용한-변수선언" class="headerlink" title="1.let을 이용한 변수선언"></a>1.let을 이용한 변수선언</h2><p>ES 5 이하에서 호이스팅 문제가 발생하므로 이를 해결하기 위해 ES6의 좋은 특징인 let 선언자를 이용</p>
+<h1 id="3장-타입스크립트"><a href="#3장-타입스크립트" class="headerlink" title="3장 타입스크립트"></a>3장 타입스크립트</h1><h2 id="1-let을-이용한-변수선언"><a href="#1-let을-이용한-변수선언" class="headerlink" title="1.let을 이용한 변수선언"></a>1.let을 이용한 변수선언</h2><p>ES 5 이하에서 호이스팅 문제가 발생하므로 이를 해결하기 위해 ES6의 좋은 특징인 let 선언자를 이용</p>
 <p>타입스크립트는 변수명 뒤에 타입을 명시해야 한다. 타입스크립트를 타입 언어라고 하는 이유는 이와 같은 이유이다.<br>let 변수명 : 타입;<br>let emotion2:string=”happy”;</p>
 <h2 id="배열타입"><a href="#배열타입" class="headerlink" title="배열타입"></a>배열타입</h2><h4 id="배열정의-형태1"><a href="#배열정의-형태1" class="headerlink" title="배열정의 형태1"></a>배열정의 형태1</h4><p>let fruits: string[] = [“a”,”b”];</p>
 <p>let fruits2: string[] = [];<br>fruits2.push(“a”);</p>
@@ -204,55 +204,6 @@ ga('send', 'pageview');
 1 + ${one} = ${1+1}
 ${hi()}</code><br>console.log(hello_message);</p>
 <h2 id="디스트럭처링-지원-60p"><a href="#디스트럭처링-지원-60p" class="headerlink" title="디스트럭처링 지원 60p"></a>디스트럭처링 지원 60p</h2><p>ES6에 포함된 특징으로 배열이나 객체에서 데이터를 선택적으로 추출할 수 있는 자바스크립트 할당식이다.<br>var params2 = [‘happy 동물원’, 100];<br>let[m_name2, m_num2] = params2;</p>
-<h2 id="컴포넌트"><a href="#컴포넌트" class="headerlink" title="컴포넌트"></a>컴포넌트</h2><p>앵귤러에서 화면하는 구성하는 중요한 구성요소이다.</p>
-<h3 id="웹-컴포넌트"><a href="#웹-컴포넌트" class="headerlink" title="웹 컴포넌트"></a>웹 컴포넌트</h3><p>HTML , CSS, 자바스크립트를 하나의 단위로 묶어주는 기술이다. 웹 컴포넌트 기술은 하나의 기능이 아니라 여러가지 기술들이 합쳐져 하나의 웹 컴포넌트를 구성<br> 웹 컴포넌트는 앵귤러2 컴포넌트의 기반기술이다 앵귤러 2 컴포넌트는 웹 컴포넌트의 기술요소를 기반으로 하므로 웹 컴포넌트를 이해하면 앵귤러 컴포넌트를 이해하는 데 도움된다.</p>
-<ol>
-<li>HTML 템플릿</li>
-<li>템플릿 호출</li>
-<li>쉐도우 DOM</li>
-<li>커스텀 엘리먼트</li>
-</ol>
-<h3 id="중첩컴포넌트-85p"><a href="#중첩컴포넌트-85p" class="headerlink" title="중첩컴포넌트 85p"></a>중첩컴포넌트 85p</h3><p>부모 컴포넌트가 여러 자식컴포넌트를 포함하는 경우</p>
-<h3 id="컴포넌트-트리-86p"><a href="#컴포넌트-트리-86p" class="headerlink" title="컴포넌트 트리 86p"></a>컴포넌트 트리 86p</h3><p>평면적으로 나열된 컴포넌트가 어떤 포함 관계를 가지는지 알수있게 해줌</p>
-<h3 id="컴포넌트-기반-개발-87p"><a href="#컴포넌트-기반-개발-87p" class="headerlink" title="컴포넌트 기반 개발 87p"></a>컴포넌트 기반 개발 87p</h3><p>컴포넌트를 개발의 중심에 두고 개발하는것.</p>
-<h2 id="컴포넌트-89p"><a href="#컴포넌트-89p" class="headerlink" title="컴포넌트 89p"></a>컴포넌트 89p</h2><p>컴포넌트 내부는 크게 import 영역, @Component 장식자(selector, template, styles로 구성됨), 컴포넌트 클래스 영역으로 나뉜다.</p>
-<h2 id="부모가-자식한테-값-전달"><a href="#부모가-자식한테-값-전달" class="headerlink" title="부모가 자식한테 값 전달"></a>부모가 자식한테 값 전달</h2><p>부모가 속성바인드를 통해 값을 전달하면 자식이 값을 받는 방법은 2가지가 있다.</p>
-<h3 id="input-장식자-99p"><a href="#input-장식자-99p" class="headerlink" title="@input 장식자 99p"></a>@input 장식자 99p</h3><p>외부에서 전달된 값을 받기 위해 사용하는 장식자</p>
-<h3 id="inputs-102p"><a href="#inputs-102p" class="headerlink" title="inputs 102p"></a>inputs 102p</h3><p>부모가 name1, name2 속성으로 어떠한 값을 전달하면 자식은 @Component장식자 안에 inputs:[‘name1’,’name2’]로 값을 받을 수 있다. 자식의 클래스에서도 name1, name2를 지정해줘야함</p>
-<h2 id="자식이-부모한테-값-전달-103p"><a href="#자식이-부모한테-값-전달-103p" class="headerlink" title="자식이 부모한테 값 전달 103p"></a>자식이 부모한테 값 전달 103p</h2><p>@Output 장식자로 선언한 변수를 EventEmitter로 초기화한다. 그리고 부모에게 보낼 시점이 되면 emit()메소드를 사용해 부모로 이벤트를 전달한다.</p>
-<h3 id="ViewChild-장식자-107p"><a href="#ViewChild-장식자-107p" class="headerlink" title="@ViewChild 장식자 107p"></a>@ViewChild 장식자 107p</h3><p>화면 DOM에 접근해 첫 번째로 위치한 지시자의 내부 상태(지시자의 속성값)나 정보(컴포넌트 지시자의 경우 내부 메서드)를 가져온다</p>
-<h3 id="ViewChildren-장식자-109p"><a href="#ViewChildren-장식자-109p" class="headerlink" title="@ViewChildren 장식자 109p"></a>@ViewChildren 장식자 109p</h3><p>@ViewChild는 하나의 엘리먼트 상태를 갖고왔지만 @ViewChildren 장식자는 여러 지시자의 상태를 한번에 취할 수 있다.</p>
-<h3 id="ContentChild-장식자-112p"><a href="#ContentChild-장식자-112p" class="headerlink" title="@ContentChild 장식자 112p"></a>@ContentChild 장식자 112p</h3><p>콘텐츠 DOM을 탐색해 지시자 엘리먼트의 상태를 QueryList에 담는 역할을 한다.</p>
-<h3 id="ContentChildren-장식자-114p"><a href="#ContentChildren-장식자-114p" class="headerlink" title="@ContentChildren 장식자 114p"></a>@ContentChildren 장식자 114p</h3><p>컴포넌트 내부에 위치한 엘리먼트나 지시자에 정보를 담고 있는 쿼리리스트를 얻는다.</p>
-<h3 id="쉐도우-DOM의-선택자-118p"><a href="#쉐도우-DOM의-선택자-118p" class="headerlink" title="쉐도우 DOM의 선택자 118p"></a>쉐도우 DOM의 선택자 118p</h3><p>그냥 styles:[‘span{font-style}’] 이런식으로 하면 해당 컴포넌트의 span만 적용된다. 이를 범위를 넓히거나 좁힐때 사용하는것이 쉐도우 DOM의 선택자이다.<br>1.:host 선택자<br>2.:host-context 선택자<br>3.:deep 선택자</p>
-<h1 id="서비스"><a href="#서비스" class="headerlink" title="서비스"></a>서비스</h1><p>앵귤러JS(앵귤러2아님)에서는 기능을 컨트롤러에서 분리하기 위해 서비스 메소드를 써야할지 팩토리 메소드를 써야할지 혼란이 있었으나 2에서는 팩토리와 서비스를 서비스로 단일화 하였고 메소드에서 클래스로 변경하였다.<br>서비스는 공통관심사를 묶어놓았다.<br>provider제공자 그리고 @Injectable() 장식자 이용</p>
-<h3 id="서비스-특징"><a href="#서비스-특징" class="headerlink" title="서비스 특징"></a>서비스 특징</h3><ol>
-<li>서비스는 의존성 주입이 가능하다. 132p</li>
-<li>객체지향적으로 이용가능</li>
-<li>목 객체 서비스로 이용가능(서버,외부의 의존성없이 테스트 코드 작성할 때 유용) 135p</li>
-<li>프로미스 서비스 (콜백헬과같은 비정상적인 호출형태를 개선하기 위해 나옴) 138p</li>
-<li>서비스를 이용한 데이터 교환 가능(부모는 provider 설정을 해줘야하지만 자식은 안한다.)</li>
-</ol>
-<h1 id="모듈"><a href="#모듈" class="headerlink" title="모듈"></a>모듈</h1><p>앵귤러 애플리케이션을 구성하는 뼈대와 같은 역할. @NgModule 장식자를 이용한다<br>import {Component} from ‘@angular/core’;<br>와 같이 이용하는데 Component는 사용할 모듈이고, @angular/core는 패키지이다.</p>
-<h3 id="라이브러리-모듈-147p"><a href="#라이브러리-모듈-147p" class="headerlink" title="라이브러리 모듈 147p"></a>라이브러리 모듈 147p</h3><p>앵귤러가 제공하는 모듈. ex) 지시자, 파이프, 장식자, 클래스, 인터페이스, 함수, Enum, 타입 별칭(type alias), 상수</p>
-<h3 id="사용자-정의-모듈-147p"><a href="#사용자-정의-모듈-147p" class="headerlink" title="사용자 정의 모듈 147p"></a>사용자 정의 모듈 147p</h3><p>컴포넌트나 지시자와 같이 장식자를 이용한 모듈과 서비스와 함수 값과 같이 장식자가 없는 모듈로 구분됨.<br>외부로 공개할 모듈은 export를 이용해 선언(ES6부터 지원)</p>
-<h3 id="애플리케이션-루트-모듈-149p"><a href="#애플리케이션-루트-모듈-149p" class="headerlink" title="애플리케이션 루트 모듈 149p"></a>애플리케이션 루트 모듈 149p</h3><p>앵귤러는 애플리케이션 루트 모듈이라는 최상위 모듈을 통행 애플리케이션 모듈을 구성한다. 하지만 이 안에 모든 모듈을 구성할 수 없기 떄문에 의미론적으로 - 특징모듈 (개별 컴포넌트 단위가 아닌 단위 애플리케이션을 구성하는 모듈)</p>
-<ul>
-<li>공유모듈 (다른 모듈에 포함되어 동작하는 모듈 (반복적으로 선언되는 모듈))</li>
-<li>핵심모듈 (애플리케이션에서 항상 동작할 필요가 있거나 애플리케이션의 전체적인 동작에 핵심적인 역할을 하는 모듈(ex) 타이틀 컴포넌트)<br>로 나눔.</li>
-</ul>
-<p>애플리케이션 루트 모듈은 @Ngmodule 장식자를 이용해 정의한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@Ngmodule(&#123;</div><div class="line">    imports : [BrowserModule, CommonModule, FormsModule ...] ,</div><div class="line">    providers : [] ,</div><div class="line">    declarations : [AppComponent, ...]</div><div class="line">    bootstrap : [AppComponent]</div><div class="line">  &#125;)</div></pre></td></tr></table></figure></p>
-<h1 id="Ngmodule내-import영역"><a href="#Ngmodule내-import영역" class="headerlink" title="@Ngmodule내 import영역"></a>@Ngmodule내 import영역</h1><h3 id="브라우저-모듈-BrowserModule-151p"><a href="#브라우저-모듈-BrowserModule-151p" class="headerlink" title="브라우저 모듈(BrowserModule) 151p"></a>브라우저 모듈(BrowserModule) 151p</h3><p>브라우저 모듈은 앵귤러가 브라우저에서 동작한다면 반드시 포함되어야함. 지시자, 파이프 같은 구성요소를 템플릿에 나타나게 하는 역할을 함.<br>브라우저 모듈은 공통 모듈을 재노출(re-exports) 한다는 것이다. 이 때문에 브라우저 모듈을 이미 선언했다면 공통 모듈을 선언하지 않아도 된다.</p>
-<h3 id="공통모듈-CommonModule-151p"><a href="#공통모듈-CommonModule-151p" class="headerlink" title="공통모듈(CommonModule) 151p"></a>공통모듈(CommonModule) 151p</h3><p>템플릿에서 사용하는 ngIf나 ngFor와 관련된 기능을 포함하고 있는 모듈이다.</p>
-<h3 id="폼모듈-FormsModule-152p"><a href="#폼모듈-FormsModule-152p" class="headerlink" title="폼모듈(FormsModule) 152p"></a>폼모듈(FormsModule) 152p</h3><p>템플릿에서 자주 사용하는 NgModel지시자나 내장 검증기 지시자 등을 포함하고 있다. 그래서 폼 모듈을 포함하면 NgModel과 같이 자주 사용하는 지시자를 별도로 추가하지 않아도 된다.</p>
-<h3 id="AppRoutingModule-152p"><a href="#AppRoutingModule-152p" class="headerlink" title="AppRoutingModule 152p"></a>AppRoutingModule 152p</h3><p>사용자가 정의할 수 있는 라우팅 모듈이다. 애플리케이션 루트 모듈에 추가한 라우팅모듈은 애플리케이션 수준에서 라우팅을 수행한다.</p>
-<h1 id="Ngmodule내-provider영역"><a href="#Ngmodule내-provider영역" class="headerlink" title="@Ngmodule내 provider영역"></a>@Ngmodule내 provider영역</h1><p>애플리케이션 전역에서 사용할 서비스를 등록.</p>
-<h1 id="Ngmodule내-declarations영역"><a href="#Ngmodule내-declarations영역" class="headerlink" title="@Ngmodule내 declarations영역"></a>@Ngmodule내 declarations영역</h1><p>애플리케이션 레벨에서 사용하고자 하는 컴포넌트, 지시자 파이프를 선언한다.</p>
-<h1 id="Ngmodule내-bootstrap영역"><a href="#Ngmodule내-bootstrap영역" class="headerlink" title="@Ngmodule내 bootstrap영역"></a>@Ngmodule내 bootstrap영역</h1><p>최상위 컴포넌트인 애플리케이션 컴포넌트를 등록</p>
-<h1 id="router-outlet-152p"><a href="#router-outlet-152p" class="headerlink" title="router-outlet 152p"></a>router-outlet 152p</h1><p>하위 특정 컴포넌트로 라우팅 후 하위 컴포넌ㅌ를 표시할 목적으로 라우터 아룰렛 지시자를 포함한다. 라우터 아울렛에 표시할 컴포넌트가 있다면 애플리케이션 라우팅 모듈 설정에 등록한다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">const appRoutes:Routes = [</div><div class="line">  &#123; path: &apos;&apos;, component: IntroComponet&#125;,</div><div class="line">  &#123; path: &apos;hello&apos;, component: HelloComponent&#125;,</div><div class="line">  ...</div><div class="line">];</div><div class="line"></div><div class="line">@NgModule(&#123;</div><div class="line">  imports: [RouterModule.forRoot(appRoutes)],</div><div class="line">  exports:[RouterModule]</div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
-<p>appRoutes 변수는 라우팅 설정을 담고 있으며 입력 URL에 대응하는 컴포넌트로 라우팅 되게 한다. appRoutes변수는 forRoot() 메소드를 이용해 등록한다. 유의할 점은 애플리케이션 라우팅 모듈에서만 한 번만 사용돼야 하고 특징 모듈에서는 사용하면 안된다.</p>
-<p>애플리케이션 루트모듈에서는 다음과 같이 inports를 해줘야 한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@Ngmodule(&#123;</div><div class="line">    imports : [AppRoutingModule ...] ,</div></pre></td></tr></table></figure></p>
 
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -271,7 +222,7 @@ ${hi()}</code><br>console.log(hello_message);</p>
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2018/01/07/angular2/" data-id="cjcxenpi100ifdkv72cc4wbvk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2018/01/07/angular2/" data-id="cjcyqn2bl00k0a8v7f9tl62d6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -404,7 +355,7 @@ ${hi()}</code><br>console.log(hello_message);</p>
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">14</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Travel/">Travel</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web/Angular2/">Angular2</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/">기타</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/기타/면접/">면접</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/아무거나/">아무거나</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/자격증/">자격증</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">42</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Python/">Python</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Web/">Web</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">14</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Travel/">Travel</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web/Angular2/">Angular2</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/">기타</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/기타/면접/">면접</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/아무거나/">아무거나</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/자격증/">자격증</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">42</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Python/">Python</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Web/">Web</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 

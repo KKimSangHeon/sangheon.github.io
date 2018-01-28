@@ -3,25 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>angular2-2 | Kim Sang Heon&#39;s Bolg</title>
+    <title>4장. 컴포넌트 | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Angular2" />
+        <meta name="keywords" content="Angular2,Web" />
     
     
 
-      <meta name="description" content="핵심모듈 155p앵귤러 어플리케이션 관점에서 핵심이 되는 모듈로 애플리케이션 루트 모듈에 한번 설정함을써 애플리케이션 레벨에서 사용할 수 있는 모듈을 말한다. 루트 모듈에 등록됐다는 것은 애플리케이션이 시작될 때 처음 한 번만 호출해서 전역으로 사용하겠다는 의미이다. 대표 예로 타이틀 컴포넌트가 있다. 보통 핵심 모듈은 /app/core에 위치시킨다. 특징">
-<meta name="keywords" content="Angular2">
+      <meta name="description" content="4장. 컴포넌트컴포넌트앵귤러에서 화면하는 구성하는 중요한 구성요소이다. 웹 컴포넌트HTML , CSS, 자바스크립트를 하나의 단위로 묶어주는 기술이다. 웹 컴포넌트 기술은 하나의 기능이 아니라 여러가지 기술들이 합쳐져 하나의 웹 컴포넌트를 구성 웹 컴포넌트는 앵귤러2 컴포넌트의 기반기술이다 앵귤러 2 컴포넌트는 웹 컴포넌트의 기술요소를 기반으로 하므로 웹">
+<meta name="keywords" content="Angular2,Web">
 <meta property="og:type" content="article">
-<meta property="og:title" content="angular2-2">
+<meta property="og:title" content="4장. 컴포넌트">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2018/01/15/angular2/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="핵심모듈 155p앵귤러 어플리케이션 관점에서 핵심이 되는 모듈로 애플리케이션 루트 모듈에 한번 설정함을써 애플리케이션 레벨에서 사용할 수 있는 모듈을 말한다. 루트 모듈에 등록됐다는 것은 애플리케이션이 시작될 때 처음 한 번만 호출해서 전역으로 사용하겠다는 의미이다. 대표 예로 타이틀 컴포넌트가 있다. 보통 핵심 모듈은 /app/core에 위치시킨다. 특징">
+<meta property="og:description" content="4장. 컴포넌트컴포넌트앵귤러에서 화면하는 구성하는 중요한 구성요소이다. 웹 컴포넌트HTML , CSS, 자바스크립트를 하나의 단위로 묶어주는 기술이다. 웹 컴포넌트 기술은 하나의 기능이 아니라 여러가지 기술들이 합쳐져 하나의 웹 컴포넌트를 구성 웹 컴포넌트는 앵귤러2 컴포넌트의 기반기술이다 앵귤러 2 컴포넌트는 웹 컴포넌트의 기술요소를 기반으로 하므로 웹">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/angular2.png">
-<meta property="og:updated_time" content="2018-01-25T12:51:32.106Z">
+<meta property="og:updated_time" content="2018-01-28T12:04:37.024Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="angular2-2">
-<meta name="twitter:description" content="핵심모듈 155p앵귤러 어플리케이션 관점에서 핵심이 되는 모듈로 애플리케이션 루트 모듈에 한번 설정함을써 애플리케이션 레벨에서 사용할 수 있는 모듈을 말한다. 루트 모듈에 등록됐다는 것은 애플리케이션이 시작될 때 처음 한 번만 호출해서 전역으로 사용하겠다는 의미이다. 대표 예로 타이틀 컴포넌트가 있다. 보통 핵심 모듈은 /app/core에 위치시킨다. 특징">
+<meta name="twitter:title" content="4장. 컴포넌트">
+<meta name="twitter:description" content="4장. 컴포넌트컴포넌트앵귤러에서 화면하는 구성하는 중요한 구성요소이다. 웹 컴포넌트HTML , CSS, 자바스크립트를 하나의 단위로 묶어주는 기술이다. 웹 컴포넌트 기술은 하나의 기능이 아니라 여러가지 기술들이 합쳐져 하나의 웹 컴포넌트를 구성 웹 컴포넌트는 앵귤러2 컴포넌트의 기반기술이다 앵귤러 2 컴포넌트는 웹 컴포넌트의 기술요소를 기반으로 하므로 웹">
 <meta name="twitter:image" content="http://kkimsangheon.github.io/images/angular2.png">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
@@ -156,7 +156,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        angular2-2
+        4장. 컴포넌트
         </h1>
     
 
@@ -174,16 +174,34 @@ ga('send', 'pageview');
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Angular2/">Angular2</a>
+        <a class="tag-link" href="/tags/Angular2/">Angular2</a>, <a class="tag-link" href="/tags/Web/">Web</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="핵심모듈-155p"><a href="#핵심모듈-155p" class="headerlink" title="핵심모듈 155p"></a>핵심모듈 155p</h2><p>앵귤러 어플리케이션 관점에서 핵심이 되는 모듈로 애플리케이션 루트 모듈에 한번 설정함을써 애플리케이션 레벨에서 사용할 수 있는 모듈을 말한다. 루트 모듈에 등록됐다는 것은 애플리케이션이 시작될 때 처음 한 번만 호출해서 전역으로 사용하겠다는 의미이다. 대표 예로 타이틀 컴포넌트가 있다. 보통 핵심 모듈은 /app/core에 위치시킨다.</p>
-<h2 id="특징모듈-161p"><a href="#특징모듈-161p" class="headerlink" title="특징모듈 161p"></a>특징모듈 161p</h2><p>모듈이 많아지면 모듈 구성이 복잡해지며 지시자의 이름충돌 등의 문제가 발생할 수 있다. 이를 방지하기 위해 애플리케이션 루트 모듈에서 하위 모듈로 분리하는 것을 특징 모듈이라 한다. 특징 모듈에 선언한 모듈은 다른 모듈에 노출하거나 숨길수도 있다.</p>
-<p>추가예정..</p>
+            <h1 id="4장-컴포넌트"><a href="#4장-컴포넌트" class="headerlink" title="4장. 컴포넌트"></a>4장. 컴포넌트</h1><h2 id="컴포넌트"><a href="#컴포넌트" class="headerlink" title="컴포넌트"></a>컴포넌트</h2><p>앵귤러에서 화면하는 구성하는 중요한 구성요소이다.</p>
+<h3 id="웹-컴포넌트"><a href="#웹-컴포넌트" class="headerlink" title="웹 컴포넌트"></a>웹 컴포넌트</h3><p>HTML , CSS, 자바스크립트를 하나의 단위로 묶어주는 기술이다. 웹 컴포넌트 기술은 하나의 기능이 아니라 여러가지 기술들이 합쳐져 하나의 웹 컴포넌트를 구성<br> 웹 컴포넌트는 앵귤러2 컴포넌트의 기반기술이다 앵귤러 2 컴포넌트는 웹 컴포넌트의 기술요소를 기반으로 하므로 웹 컴포넌트를 이해하면 앵귤러 컴포넌트를 이해하는 데 도움된다.</p>
+<ol>
+<li>HTML 템플릿</li>
+<li>템플릿 호출</li>
+<li>쉐도우 DOM</li>
+<li>커스텀 엘리먼트</li>
+</ol>
+<h3 id="중첩컴포넌트-85p"><a href="#중첩컴포넌트-85p" class="headerlink" title="중첩컴포넌트 85p"></a>중첩컴포넌트 85p</h3><p>부모 컴포넌트가 여러 자식컴포넌트를 포함하는 경우</p>
+<h3 id="컴포넌트-트리-86p"><a href="#컴포넌트-트리-86p" class="headerlink" title="컴포넌트 트리 86p"></a>컴포넌트 트리 86p</h3><p>평면적으로 나열된 컴포넌트가 어떤 포함 관계를 가지는지 알수있게 해줌</p>
+<h3 id="컴포넌트-기반-개발-87p"><a href="#컴포넌트-기반-개발-87p" class="headerlink" title="컴포넌트 기반 개발 87p"></a>컴포넌트 기반 개발 87p</h3><p>컴포넌트를 개발의 중심에 두고 개발하는것.</p>
+<h2 id="컴포넌트-89p"><a href="#컴포넌트-89p" class="headerlink" title="컴포넌트 89p"></a>컴포넌트 89p</h2><p>컴포넌트 내부는 크게 import 영역, @Component 장식자(selector, template, styles로 구성됨), 컴포넌트 클래스 영역으로 나뉜다.</p>
+<h2 id="부모가-자식한테-값-전달"><a href="#부모가-자식한테-값-전달" class="headerlink" title="부모가 자식한테 값 전달"></a>부모가 자식한테 값 전달</h2><p>부모가 속성바인드를 통해 값을 전달하면 자식이 값을 받는 방법은 2가지가 있다.</p>
+<h3 id="input-장식자-99p"><a href="#input-장식자-99p" class="headerlink" title="@input 장식자 99p"></a>@input 장식자 99p</h3><p>외부에서 전달된 값을 받기 위해 사용하는 장식자</p>
+<h3 id="inputs-102p"><a href="#inputs-102p" class="headerlink" title="inputs 102p"></a>inputs 102p</h3><p>부모가 name1, name2 속성으로 어떠한 값을 전달하면 자식은 @Component장식자 안에 inputs:[‘name1’,’name2’]로 값을 받을 수 있다. 자식의 클래스에서도 name1, name2를 지정해줘야함</p>
+<h2 id="자식이-부모한테-값-전달-103p"><a href="#자식이-부모한테-값-전달-103p" class="headerlink" title="자식이 부모한테 값 전달 103p"></a>자식이 부모한테 값 전달 103p</h2><p>@Output 장식자로 선언한 변수를 EventEmitter로 초기화한다. 그리고 부모에게 보낼 시점이 되면 emit()메소드를 사용해 부모로 이벤트를 전달한다.</p>
+<h3 id="ViewChild-장식자-107p"><a href="#ViewChild-장식자-107p" class="headerlink" title="@ViewChild 장식자 107p"></a>@ViewChild 장식자 107p</h3><p>화면 DOM에 접근해 첫 번째로 위치한 지시자의 내부 상태(지시자의 속성값)나 정보(컴포넌트 지시자의 경우 내부 메서드)를 가져온다</p>
+<h3 id="ViewChildren-장식자-109p"><a href="#ViewChildren-장식자-109p" class="headerlink" title="@ViewChildren 장식자 109p"></a>@ViewChildren 장식자 109p</h3><p>@ViewChild는 하나의 엘리먼트 상태를 갖고왔지만 @ViewChildren 장식자는 여러 지시자의 상태를 한번에 취할 수 있다.</p>
+<h3 id="ContentChild-장식자-112p"><a href="#ContentChild-장식자-112p" class="headerlink" title="@ContentChild 장식자 112p"></a>@ContentChild 장식자 112p</h3><p>콘텐츠 DOM을 탐색해 지시자 엘리먼트의 상태를 QueryList에 담는 역할을 한다.</p>
+<h3 id="ContentChildren-장식자-114p"><a href="#ContentChildren-장식자-114p" class="headerlink" title="@ContentChildren 장식자 114p"></a>@ContentChildren 장식자 114p</h3><p>컴포넌트 내부에 위치한 엘리먼트나 지시자에 정보를 담고 있는 쿼리리스트를 얻는다.</p>
+<h3 id="쉐도우-DOM의-선택자-118p"><a href="#쉐도우-DOM의-선택자-118p" class="headerlink" title="쉐도우 DOM의 선택자 118p"></a>쉐도우 DOM의 선택자 118p</h3><p>그냥 styles:[‘span{font-style}’] 이런식으로 하면 해당 컴포넌트의 span만 적용된다. 이를 범위를 넓히거나 좁힐때 사용하는것이 쉐도우 DOM의 선택자이다.<br>1.:host 선택자<br>2.:host-context 선택자<br>3.:deep 선택자</p>
 
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -202,7 +220,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2018/01/15/angular2/" data-id="cjcxenpje00jjdkv7eorwu21h" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2018/01/15/angular2/" data-id="cjcyqn2cm00kza8v7fds1fq58" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -335,7 +353,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">14</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Travel/">Travel</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web/Angular2/">Angular2</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/">기타</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/기타/면접/">면접</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/아무거나/">아무거나</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/자격증/">자격증</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">42</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Python/">Python</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Web/">Web</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">14</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Travel/">Travel</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web/Angular2/">Angular2</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/">기타</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/기타/면접/">면접</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/아무거나/">아무거나</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/자격증/">자격증</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">42</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Python/">Python</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Web/">Web</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
