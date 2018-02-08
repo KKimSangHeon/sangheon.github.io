@@ -162,7 +162,7 @@
     <link href="http://KKimSangHeon.github.io/2018/01/15/angular2/"/>
     <id>http://KKimSangHeon.github.io/2018/01/15/angular2/</id>
     <published>2018-01-15T14:22:50.000Z</published>
-    <updated>2018-01-28T12:04:37.024Z</updated>
+    <updated>2018-02-08T14:26:06.339Z</updated>
     
     <content type="html"><![CDATA[<h1 id="4장-컴포넌트"><a href="#4장-컴포넌트" class="headerlink" title="4장. 컴포넌트"></a>4장. 컴포넌트</h1><h2 id="컴포넌트"><a href="#컴포넌트" class="headerlink" title="컴포넌트"></a>컴포넌트</h2><p>앵귤러에서 화면하는 구성하는 중요한 구성요소이다.</p>
 <h3 id="웹-컴포넌트"><a href="#웹-컴포넌트" class="headerlink" title="웹 컴포넌트"></a>웹 컴포넌트</h3><p>HTML , CSS, 자바스크립트를 하나의 단위로 묶어주는 기술이다. 웹 컴포넌트 기술은 하나의 기능이 아니라 여러가지 기술들이 합쳐져 하나의 웹 컴포넌트를 구성<br> 웹 컴포넌트는 앵귤러2 컴포넌트의 기반기술이다 앵귤러 2 컴포넌트는 웹 컴포넌트의 기술요소를 기반으로 하므로 웹 컴포넌트를 이해하면 앵귤러 컴포넌트를 이해하는 데 도움된다.</p>
@@ -184,7 +184,7 @@
 <h3 id="ViewChildren-장식자-109p"><a href="#ViewChildren-장식자-109p" class="headerlink" title="@ViewChildren 장식자 109p"></a>@ViewChildren 장식자 109p</h3><p>@ViewChild는 하나의 엘리먼트 상태를 갖고왔지만 @ViewChildren 장식자는 여러 지시자의 상태를 한번에 취할 수 있다.</p>
 <h3 id="ContentChild-장식자-112p"><a href="#ContentChild-장식자-112p" class="headerlink" title="@ContentChild 장식자 112p"></a>@ContentChild 장식자 112p</h3><p>콘텐츠 DOM을 탐색해 지시자 엘리먼트의 상태를 QueryList에 담는 역할을 한다.</p>
 <h3 id="ContentChildren-장식자-114p"><a href="#ContentChildren-장식자-114p" class="headerlink" title="@ContentChildren 장식자 114p"></a>@ContentChildren 장식자 114p</h3><p>컴포넌트 내부에 위치한 엘리먼트나 지시자에 정보를 담고 있는 쿼리리스트를 얻는다.</p>
-<h3 id="쉐도우-DOM의-선택자-118p"><a href="#쉐도우-DOM의-선택자-118p" class="headerlink" title="쉐도우 DOM의 선택자 118p"></a>쉐도우 DOM의 선택자 118p</h3><p>그냥 styles:[‘span{font-style}’] 이런식으로 하면 해당 컴포넌트의 span만 적용된다. 이를 범위를 넓히거나 좁힐때 사용하는것이 쉐도우 DOM의 선택자이다.<br>1.:host 선택자<br>2.:host-context 선택자<br>3.:deep 선택자</p>
+<h3 id="쉐도우-DOM의-선택자-118p"><a href="#쉐도우-DOM의-선택자-118p" class="headerlink" title="쉐도우 DOM의 선택자 118p"></a>쉐도우 DOM의 선택자 118p</h3><p>그냥 styles:[‘span{font-style}’] 이런식으로 하면 해당 컴포넌트의 span만 적용된다. 이를 범위를 넓히거나 좁힐때 사용하는것이 쉐도우 DOM의 선택자이다.<br>1.:host 선택자<br>2.:host-context 선택자<br>3.:deep 선택자<br>6.</p>
 ]]></content>
     
     <summary type="html">
