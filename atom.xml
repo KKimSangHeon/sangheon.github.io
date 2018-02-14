@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-02-11T23:28:47.779Z</updated>
+  <updated>2018-02-14T12:39:27.043Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,12 +20,20 @@
     <link href="http://KKimSangHeon.github.io/2018/02/12/angular2/"/>
     <id>http://KKimSangHeon.github.io/2018/02/12/angular2/</id>
     <published>2018-02-11T23:28:47.000Z</published>
-    <updated>2018-02-11T23:28:47.779Z</updated>
+    <updated>2018-02-14T12:39:27.043Z</updated>
     
     <summary type="html">
     
     </summary>
     
+      <category term="Web" scheme="http://KKimSangHeon.github.io/categories/Web/"/>
+    
+      <category term="Angular2" scheme="http://KKimSangHeon.github.io/categories/Web/Angular2/"/>
+    
+    
+      <category term="Angular2" scheme="http://KKimSangHeon.github.io/tags/Angular2/"/>
+    
+      <category term="Web" scheme="http://KKimSangHeon.github.io/tags/Web/"/>
     
   </entry>
   
