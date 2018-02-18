@@ -3,26 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>BinarySearch | Kim Sang Heon&#39;s Bolg</title>
+    <title>angular2 | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Data Structure,Search,BinarySearch" />
+        <meta name="keywords" content="" />
     
     
 
-      <meta name="description" content="이진탐색데이터의 정렬이 선행되어야 한다. 시간복잡도는 O(log2n) 이다.BinarySearch.c 재귀적인 방법12345678910111213141516int ISearch(int ar[], int first, int last, int target)&amp;#123;	int mid;	if(first &amp;gt; last)		return -1;    // -1의 반">
-<meta name="keywords" content="Data Structure,Search,BinarySearch">
+      <meta name="description" content="Welcome to Sang Heon&apos;s Blog.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BinarySearch">
-<meta property="og:url" content="http://KKimSangHeon.github.io/2017/06/30/BinarySearch/index.html">
+<meta property="og:title" content="angular2">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2018/02/19/angular2/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="이진탐색데이터의 정렬이 선행되어야 한다. 시간복잡도는 O(log2n) 이다.BinarySearch.c 재귀적인 방법12345678910111213141516int ISearch(int ar[], int first, int last, int target)&amp;#123;	int mid;	if(first &amp;gt; last)		return -1;    // -1의 반">
-<meta property="og:image" content="http://kkimsangheon.github.io/images/datastructure.jpg">
-<meta property="og:updated_time" content="2017-06-30T11:01:37.840Z">
+<meta property="og:description" content="Welcome to Sang Heon&apos;s Blog.">
+<meta property="og:updated_time" content="2018-02-18T23:37:27.408Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BinarySearch">
-<meta name="twitter:description" content="이진탐색데이터의 정렬이 선행되어야 한다. 시간복잡도는 O(log2n) 이다.BinarySearch.c 재귀적인 방법12345678910111213141516int ISearch(int ar[], int first, int last, int target)&amp;#123;	int mid;	if(first &amp;gt; last)		return -1;    // -1의 반">
-<meta name="twitter:image" content="http://kkimsangheon.github.io/images/datastructure.jpg">
+<meta name="twitter:title" content="angular2">
+<meta name="twitter:description" content="Welcome to Sang Heon&apos;s Blog.">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
 
@@ -134,7 +131,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Data-Structure/">Data Structure</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Data-Structure/Search/">Search</a>
+    uncategorized
     </h1>
 </div>
                         <div class="main-body-content">
@@ -149,14 +146,14 @@ ga('send', 'pageview');
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-                            <article id="post-BinarySearch" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-angular2" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        BinarySearch
+        angular2
         </h1>
     
 
@@ -166,29 +163,17 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/06/30/BinarySearch/" class="article-date">
-            <time datetime="2017-06-30T10:38:20.000Z" itemprop="datePublished">2017-06-30</time>
+        <a href="/2018/02/19/angular2/" class="article-date">
+            <time datetime="2018-02-18T23:37:27.000Z" itemprop="datePublished">2018-02-19</time>
         </a>
     </div>
 
                 
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/BinarySearch/">BinarySearch</a>, <a class="tag-link" href="/tags/Data-Structure/">Data Structure</a>, <a class="tag-link" href="/tags/Search/">Search</a>
-    </div>
-
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="이진탐색"><a href="#이진탐색" class="headerlink" title="이진탐색"></a>이진탐색</h3><p>데이터의 정렬이 선행되어야 한다. 시간복잡도는 O(log2n) 이다.<br><figure class="highlight c"><figcaption><span>BinarySearch.c 재귀적인 방법</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">ISearch</span><span class="params">(<span class="keyword">int</span> ar[], <span class="keyword">int</span> first, <span class="keyword">int</span> last, <span class="keyword">int</span> target)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> mid;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(first &gt; last)</div><div class="line">		<span class="keyword">return</span> <span class="number">-1</span>;    <span class="comment">// -1의 반환은 탐색의 실패를 의미</span></div><div class="line"></div><div class="line">	mid=(first+last) / <span class="number">2</span> ;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(ar[mid] == target)</div><div class="line">		<span class="keyword">return</span> mid;    <span class="comment">// 탐색된 타겟의 인덱스 값 반환</span></div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(target &lt; ar[mid])</div><div class="line">		<span class="keyword">return</span> ISearch(ar, first, mid<span class="number">-1</span>, target);</div><div class="line">	<span class="keyword">else</span></div><div class="line">		<span class="keyword">return</span> ISearch(ar, mid+<span class="number">1</span>, last, target);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<figure class="highlight c"><figcaption><span>BinarySearch.c 반복문 이용</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">BinarySearch(<span class="keyword">int</span> DataSet[], <span class="keyword">int</span> Size, <span class="keyword">int</span> target)&#123;</div><div class="line">	<span class="keyword">int</span> Left,Right,Mid;</div><div class="line"></div><div class="line">	Left=<span class="number">0</span>;</div><div class="line">	Right=Size<span class="number">-1</span>;</div><div class="line"></div><div class="line">	<span class="keyword">while</span>(Left&lt;=Right)&#123;</div><div class="line">		Mid=(Left+Rigth) / <span class="number">2</span> ;</div><div class="line"></div><div class="line">		<span class="keyword">if</span>( Target==DataSet[Mid])</div><div class="line">			<span class="keyword">return</span> DataSet[Mid];</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(Target&gt;DataSet[Mid])</div><div class="line">			Left=Mid+<span class="number">1</span>;</div><div class="line">		<span class="keyword">else</span></div><div class="line">			Right=Mid<span class="number">-1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="literal">NULL</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>이진탐색의 경우 비교대상이 되는 mid값을 단순히 (first+last)/2로 설정한다.<br>그러나 보간 탐색의 경우 mid 값 설정방식이 다르며 이진탐색보다 우수한 성능을 보인다.</p>
-<h3 id="보간탐색"><a href="#보간탐색" class="headerlink" title="보간탐색"></a>보간탐색</h3><p>탐색대상이 앞쪽에 위치 할 경우 앞쪽에서 탐색을 시작하고 뒤쪽에 위치할 경우 뒤쪽에서 탐색을 시작한다.<br>이진탐색보다 우수하다.<br><figure class="highlight c"><figcaption><span>ISearch.c</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">ISearch</span><span class="params">(<span class="keyword">int</span> ar[], <span class="keyword">int</span> first, <span class="keyword">int</span> last, <span class="keyword">int</span> target)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> mid;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(ar[first]&gt;target || ar[last]&lt;target)</div><div class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">	<span class="comment">// 이진 탐색과의 차이점을 반영한 문장</span></div><div class="line">	mid = ((<span class="keyword">double</span>)(target-ar[first]) / (ar[last]-ar[first]) *(last-first)) + first;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(ar[mid] == target)</div><div class="line">		<span class="keyword">return</span> mid;    <span class="comment">// 탐색된 타겟의 인덱스 값 반환</span></div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(target &lt; ar[mid])</div><div class="line">		<span class="keyword">return</span> ISearch(ar, first, mid<span class="number">-1</span>, target);</div><div class="line">	<span class="keyword">else</span></div><div class="line">		<span class="keyword">return</span> ISearch(ar, mid+<span class="number">1</span>, last, target);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4 id="보간탐색의-mid값-계산-방법"><a href="#보간탐색의-mid값-계산-방법" class="headerlink" title="보간탐색의 mid값 계산 방법"></a>보간탐색의 mid값 계산 방법</h4><img src="/2017/06/30/BinarySearch/BinarySearch1.bmp" alt="보간탐색의 mid값 계산 방법 [그림1]" title="보간탐색의 mid값 계산 방법 [그림1]">
-<p>그림[1]에서 arr[s]는 찾는값을 의미함.</p>
-<p>참고 : 윤성우의 열혈 자료구조</p>
-
+            
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
@@ -206,7 +191,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/06/30/BinarySearch/" data-id="cjdtfmktk000bpcv7f5tsdxxq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2018/02/19/angular2/" data-id="cjdtfmlpt00mwpcv7psd7lmrm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -312,20 +297,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/07/01/LinuxError/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            리눅스 에러
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/06/30/ThisIsLinux1/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/02/12/angular2/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">2장. CentOS 리눅스 소개</p>
+        <p class="article-nav-title">angular2</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -372,7 +347,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'https-kkimsangheon-github-io-2';
     
     
-    var disqus_url = 'http://KKimSangHeon.github.io/2017/06/30/BinarySearch/';
+    var disqus_url = 'http://KKimSangHeon.github.io/2018/02/19/angular2/';
     
     (function() {
     var dsq = document.createElement('script');
