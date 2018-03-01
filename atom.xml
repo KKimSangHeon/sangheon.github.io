@@ -91,7 +91,7 @@
     <link href="http://KKimSangHeon.github.io/2018/01/28/angular2/"/>
     <id>http://KKimSangHeon.github.io/2018/01/28/angular2/</id>
     <published>2018-01-28T12:02:55.000Z</published>
-    <updated>2018-02-06T23:28:21.819Z</updated>
+    <updated>2018-03-01T07:37:18.029Z</updated>
     
     <content type="html"><![CDATA[<h1 id="5장-서비스"><a href="#5장-서비스" class="headerlink" title="5장. 서비스"></a>5장. 서비스</h1><p>앵귤러JS(앵귤러2아님)에서는 기능을 컨트롤러에서 분리하기 위해 서비스 메소드를 써야할지 팩토리 메소드를 써야할지 혼란이 있었으나 2에서는 팩토리와 서비스를 서비스로 단일화 하였고 메소드에서 클래스로 변경하였다.<br>서비스는 공통관심사를 묶어놓았다.<br>provider제공자 그리고 @Injectable() 장식자 이용</p>
 <h3 id="서비스-특징"><a href="#서비스-특징" class="headerlink" title="서비스 특징"></a>서비스 특징</h3><ol>
@@ -99,7 +99,7 @@
 <li>객체지향적으로 이용가능</li>
 <li>목 객체 서비스로 이용가능(서버,외부의 의존성없이 테스트 코드 작성할 때 유용) 135p</li>
 <li>프로미스 서비스 (콜백헬과같은 비정상적인 호출형태를 개선하기 위해 나옴) 138p</li>
-<li>서비스를 이용한 데이터 교환 가능(부모는 provider 설정을 해줘야하지만 자식은 안한다)</li>
+<li>서비스를 이용한 데이터 교환 가능(부모는 provider 설정을 해줘야하지만 자식은 안한다)<br>6.</li>
 </ol>
 ]]></content>
     
