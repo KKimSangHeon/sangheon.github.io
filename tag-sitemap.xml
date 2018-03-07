@@ -450,20 +450,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/%EC%9B%B9%EA%B0%9C%EB%B0%9C/</loc>
-        <lastmod>2018-01-13T13:41:38.396Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/%ED%9C%B4%EB%A7%A5%EC%8A%A4/</loc>
-        <lastmod>2018-01-13T13:41:38.396Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/itcen/</loc>
         <lastmod>2018-01-13T13:41:42.030Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -499,15 +485,29 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/</loc>
+        <loc>http://KKimSangHeon.github.io/tags/%EC%A0%84%EC%82%B0/</loc>
         <lastmod>2018-01-13T14:54:27.551Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/%EC%A0%84%EC%82%B0/</loc>
-        <lastmod>2018-01-13T14:54:27.551Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/</loc>
+        <lastmod>2018-02-22T14:50:05.008Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/%EC%9B%B9%EA%B0%9C%EB%B0%9C/</loc>
+        <lastmod>2018-02-22T14:50:05.008Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/%ED%9C%B4%EB%A7%A5%EC%8A%A4/</loc>
+        <lastmod>2018-02-22T14:50:05.008Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
