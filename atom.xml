@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-03-07T14:51:28.963Z</updated>
+  <updated>2018-03-12T14:02:33.033Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,38 +16,55 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>linuxmaster</title>
-    <link href="http://KKimSangHeon.github.io/2018/03/07/linuxmaster/"/>
-    <id>http://KKimSangHeon.github.io/2018/03/07/linuxmaster/</id>
-    <published>2018-03-07T14:51:28.000Z</published>
-    <updated>2018-03-07T14:51:28.963Z</updated>
+    <title>Effective Java</title>
+    <link href="http://KKimSangHeon.github.io/2018/03/12/effectiveJava1/"/>
+    <id>http://KKimSangHeon.github.io/2018/03/12/effectiveJava1/</id>
+    <published>2018-03-12T13:49:17.000Z</published>
+    <updated>2018-03-12T14:02:33.033Z</updated>
+    
+    <content type="html"><![CDATA[<p>워낙 유명한 이책을 한번쯤 보고싶다는 생각을 했었고 이제서야 이 책을 읽으며 스스로 정리한 내용을 잊지 않기위해 블로그에 올려 공유하고자 한다.</p>
+]]></content>
     
     <summary type="html">
     
+      &lt;p&gt;워낙 유명한 이책을 한번쯤 보고싶다는 생각을 했었고 이제서야 이 책을 읽으며 스스로 정리한 내용을 잊지 않기위해 블로그에 올려 공유하고자 한다.&lt;/p&gt;
+
+    
     </summary>
     
+      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
     
   </entry>
   
   <entry>
-    <title>angular2</title>
-    <link href="http://KKimSangHeon.github.io/2018/02/12/angular2/"/>
-    <id>http://KKimSangHeon.github.io/2018/02/12/angular2/</id>
-    <published>2018-02-11T23:28:47.000Z</published>
-    <updated>2018-02-26T12:03:12.865Z</updated>
+    <title>리눅스마스터 2급</title>
+    <link href="http://KKimSangHeon.github.io/2018/03/07/linuxmaster/"/>
+    <id>http://KKimSangHeon.github.io/2018/03/07/linuxmaster/</id>
+    <published>2018-03-07T14:51:28.000Z</published>
+    <updated>2018-03-12T14:14:42.540Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="취득시기"><a href="#취득시기" class="headerlink" title="취득시기"></a>취득시기</h3><p>2018년 03월</p>
+<h3 id="내용"><a href="#내용" class="headerlink" title="내용"></a>내용</h3><p>데비안, 레드햇 계열 리눅스의 기본적인 역사 그리고 간단한 명령어 정도만 알고있을 경우 일주일 정도면 취득가능하다. www.comcbt.com/ 에서 연도별 문제를 제공하며 총 5회분의 문제(약 400문제)정도를 풀어보고 시험을 봤었다. 용산공업고등학교에서 시험을 봤으며 학교의 정문을 찾는데 애를 먹었던것 말고는 불편했던점은 없다. 하루 2시간씩 약 일주일동안 공부하였으며 시험 3일 후엔 가답안이 나와 가채점이 가능하다는 것이 다른 자격증에 비해 좋았던것 같다.</p>
+]]></content>
     
     <summary type="html">
     
+      &lt;h3 id=&quot;취득시기&quot;&gt;&lt;a href=&quot;#취득시기&quot; class=&quot;headerlink&quot; title=&quot;취득시기&quot;&gt;&lt;/a&gt;취득시기&lt;/h3&gt;&lt;p&gt;2018년 03월&lt;/p&gt;
+&lt;h3 id=&quot;내용&quot;&gt;&lt;a href=&quot;#내용&quot; class=&quot;headerlink&quot; tit
+    
     </summary>
     
-      <category term="Web" scheme="http://KKimSangHeon.github.io/categories/Web/"/>
+      <category term="기타" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/"/>
     
-      <category term="Angular2" scheme="http://KKimSangHeon.github.io/categories/Web/Angular2/"/>
+      <category term="자격증" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/%EC%9E%90%EA%B2%A9%EC%A6%9D/"/>
     
     
-      <category term="Angular2" scheme="http://KKimSangHeon.github.io/tags/Angular2/"/>
+      <category term="자격증" scheme="http://KKimSangHeon.github.io/tags/%EC%9E%90%EA%B2%A9%EC%A6%9D/"/>
     
-      <category term="Web" scheme="http://KKimSangHeon.github.io/tags/Web/"/>
+      <category term="리눅스마스터 2급" scheme="http://KKimSangHeon.github.io/tags/%EB%A6%AC%EB%88%85%EC%8A%A4%EB%A7%88%EC%8A%A4%ED%84%B0-2%EA%B8%89/"/>
     
   </entry>
   
@@ -105,7 +122,7 @@
     <link href="http://KKimSangHeon.github.io/2018/01/28/angular2/"/>
     <id>http://KKimSangHeon.github.io/2018/01/28/angular2/</id>
     <published>2018-01-28T12:02:55.000Z</published>
-    <updated>2018-03-01T07:37:18.029Z</updated>
+    <updated>2018-03-12T13:50:18.976Z</updated>
     
     <content type="html"><![CDATA[<h1 id="5장-서비스"><a href="#5장-서비스" class="headerlink" title="5장. 서비스"></a>5장. 서비스</h1><p>앵귤러JS(앵귤러2아님)에서는 기능을 컨트롤러에서 분리하기 위해 서비스 메소드를 써야할지 팩토리 메소드를 써야할지 혼란이 있었으나 2에서는 팩토리와 서비스를 서비스로 단일화 하였고 메소드에서 클래스로 변경하였다.<br>서비스는 공통관심사를 묶어놓았다.<br>provider제공자 그리고 @Injectable() 장식자 이용</p>
 <h3 id="서비스-특징"><a href="#서비스-특징" class="headerlink" title="서비스 특징"></a>서비스 특징</h3><ol>
@@ -113,7 +130,7 @@
 <li>객체지향적으로 이용가능</li>
 <li>목 객체 서비스로 이용가능(서버,외부의 의존성없이 테스트 코드 작성할 때 유용) 135p</li>
 <li>프로미스 서비스 (콜백헬과같은 비정상적인 호출형태를 개선하기 위해 나옴) 138p</li>
-<li>서비스를 이용한 데이터 교환 가능(부모는 provider 설정을 해줘야하지만 자식은 안한다)<br>6.</li>
+<li>서비스를 이용한 데이터 교환 가능(부모는 provider 설정을 해줘야하지만 자식은 안한다)</li>
 </ol>
 ]]></content>
     
@@ -529,9 +546,9 @@
       <category term="면접" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/%EB%A9%B4%EC%A0%91/"/>
     
     
-      <category term="SK 고용디딤돌" scheme="http://KKimSangHeon.github.io/tags/SK-%EA%B3%A0%EC%9A%A9%EB%94%94%EB%94%A4%EB%8F%8C/"/>
-    
       <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
+    
+      <category term="SK 고용디딤돌" scheme="http://KKimSangHeon.github.io/tags/SK-%EA%B3%A0%EC%9A%A9%EB%94%94%EB%94%A4%EB%8F%8C/"/>
     
       <category term="모바일 개발" scheme="http://KKimSangHeon.github.io/tags/%EB%AA%A8%EB%B0%94%EC%9D%BC-%EA%B0%9C%EB%B0%9C/"/>
     

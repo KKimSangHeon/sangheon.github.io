@@ -114,13 +114,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Java/</loc>
-        <lastmod>2017-08-11T04:36:14.025Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/%EC%97%90%EB%84%88%EC%A7%80-%ED%95%B4%EC%BB%A4%ED%86%A4/</loc>
         <lastmod>2017-08-11T06:06:16.469Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -331,13 +324,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Sang-Heon-Kim/</loc>
-        <lastmod>2018-01-13T03:41:35.439Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/%EC%97%85%EB%B9%84%ED%8A%B8/</loc>
         <lastmod>2018-01-13T13:03:02.886Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -410,13 +396,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/tags/%EC%BB%B4%ED%93%A8%ED%84%B0%ED%99%9C%EC%9A%A9%EB%8A%A5%EB%A0%A5-1%EA%B8%89/</loc>
         <lastmod>2018-01-13T13:06:05.364Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/%EC%9E%90%EA%B2%A9%EC%A6%9D/</loc>
-        <lastmod>2018-01-13T13:06:06.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -514,14 +493,42 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/tags/Angular2/</loc>
-        <lastmod>2018-03-01T07:37:18.029Z</lastmod>
+        <lastmod>2018-03-12T13:50:18.976Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://KKimSangHeon.github.io/tags/Web/</loc>
-        <lastmod>2018-03-01T07:37:18.029Z</lastmod>
+        <lastmod>2018-03-12T13:50:18.976Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Java/</loc>
+        <lastmod>2018-03-12T14:02:33.033Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/%EC%9E%90%EA%B2%A9%EC%A6%9D/</loc>
+        <lastmod>2018-03-12T14:14:42.540Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/%EB%A6%AC%EB%88%85%EC%8A%A4%EB%A7%88%EC%8A%A4%ED%84%B0-2%EA%B8%89/</loc>
+        <lastmod>2018-03-12T14:14:42.540Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Sang-Heon-Kim/</loc>
+        <lastmod>2018-03-12T14:15:06.066Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
