@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-03-13T23:14:34.241Z</updated>
+  <updated>2018-03-15T10:27:56.088Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>effectiveJava3</title>
+    <link href="http://KKimSangHeon.github.io/2018/03/15/effectiveJava3/"/>
+    <id>http://KKimSangHeon.github.io/2018/03/15/effectiveJava3/</id>
+    <published>2018-03-15T10:27:56.000Z</published>
+    <updated>2018-03-15T10:27:56.088Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>2장.</title>
@@ -521,9 +535,9 @@
       <category term="자격증" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/%EC%9E%90%EA%B2%A9%EC%A6%9D/"/>
     
     
-      <category term="자격증" scheme="http://KKimSangHeon.github.io/tags/%EC%9E%90%EA%B2%A9%EC%A6%9D/"/>
-    
       <category term="컴퓨터활용능력 1급" scheme="http://KKimSangHeon.github.io/tags/%EC%BB%B4%ED%93%A8%ED%84%B0%ED%99%9C%EC%9A%A9%EB%8A%A5%EB%A0%A5-1%EA%B8%89/"/>
+    
+      <category term="자격증" scheme="http://KKimSangHeon.github.io/tags/%EC%9E%90%EA%B2%A9%EC%A6%9D/"/>
     
   </entry>
   
@@ -550,9 +564,9 @@
       <category term="자격증" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/%EC%9E%90%EA%B2%A9%EC%A6%9D/"/>
     
     
-      <category term="워드프로세서" scheme="http://KKimSangHeon.github.io/tags/%EC%9B%8C%EB%93%9C%ED%94%84%EB%A1%9C%EC%84%B8%EC%84%9C/"/>
-    
       <category term="자격증" scheme="http://KKimSangHeon.github.io/tags/%EC%9E%90%EA%B2%A9%EC%A6%9D/"/>
+    
+      <category term="워드프로세서" scheme="http://KKimSangHeon.github.io/tags/%EC%9B%8C%EB%93%9C%ED%94%84%EB%A1%9C%EC%84%B8%EC%84%9C/"/>
     
   </entry>
   
@@ -592,9 +606,9 @@
       <category term="면접" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/%EB%A9%B4%EC%A0%91/"/>
     
     
-      <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
-    
       <category term="SK 고용디딤돌" scheme="http://KKimSangHeon.github.io/tags/SK-%EA%B3%A0%EC%9A%A9%EB%94%94%EB%94%A4%EB%8F%8C/"/>
+    
+      <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
     
       <category term="모바일 개발" scheme="http://KKimSangHeon.github.io/tags/%EB%AA%A8%EB%B0%94%EC%9D%BC-%EA%B0%9C%EB%B0%9C/"/>
     
@@ -738,34 +752,6 @@ ${hi()}</code><br>console.log(hello_message);</p>
       <category term="ABLETHON" scheme="http://KKimSangHeon.github.io/tags/ABLETHON/"/>
     
       <category term="시각장애인도 이용가능한 App" scheme="http://KKimSangHeon.github.io/tags/%EC%8B%9C%EA%B0%81%EC%9E%A5%EC%95%A0%EC%9D%B8%EB%8F%84-%EC%9D%B4%EC%9A%A9%EA%B0%80%EB%8A%A5%ED%95%9C-App/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>4.모듈</title>
-    <link href="http://KKimSangHeon.github.io/2017/10/10/python4/"/>
-    <id>http://KKimSangHeon.github.io/2017/10/10/python4/</id>
-    <published>2017-10-10T06:11:53.000Z</published>
-    <updated>2017-11-04T07:43:01.565Z</updated>
-    
-    <content type="html"><![CDATA[<p>파이썬 모듈이란?</p>
-<p>1) 파이썬 프로그램  파일로 따로  함수나 변수를 정의한다.<br>2) 모듈안에는 어떤 코드도 작성 가능하다.(함수, 클래스, 변수등)<br>3) 다른 모듈에 의해서 호출되고 사용된다.<br>4) 표준모듈, 사용자 생성 모듈, 서드 파티 모듈 등으로 나눌 수 있다.</p>
-<p>추 후 추가예정…</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;파이썬 모듈이란?&lt;/p&gt;
-&lt;p&gt;1) 파이썬 프로그램  파일로 따로  함수나 변수를 정의한다.&lt;br&gt;2) 모듈안에는 어떤 코드도 작성 가능하다.(함수, 클래스, 변수등)&lt;br&gt;3) 다른 모듈에 의해서 호출되고 사용된다.&lt;br&gt;4) 표준모듈, 사용자
-    
-    </summary>
-    
-      <category term="빅데이터 전문가과정" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/"/>
-    
-      <category term="Python" scheme="http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Python/"/>
-    
-    
-      <category term="Python" scheme="http://KKimSangHeon.github.io/tags/Python/"/>
     
   </entry>
   
