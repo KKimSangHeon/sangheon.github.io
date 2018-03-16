@@ -30,11 +30,11 @@
   </entry>
   
   <entry>
-    <title>2장.</title>
+    <title>2장. 규칙1.생성자 대신 정적 팩터리 메서드를 사용할 수 없는지 생각해보자.</title>
     <link href="http://KKimSangHeon.github.io/2018/03/14/effectiveJava2/"/>
     <id>http://KKimSangHeon.github.io/2018/03/14/effectiveJava2/</id>
     <published>2018-03-13T22:53:39.000Z</published>
-    <updated>2018-03-13T23:14:34.241Z</updated>
+    <updated>2018-03-16T08:50:45.059Z</updated>
     
     <content type="html"><![CDATA[<h2 id="규칙-1-생성자-대신-정적-팩터리-메서드를-사용할-수-없는지-생각해보자"><a href="#규칙-1-생성자-대신-정적-팩터리-메서드를-사용할-수-없는지-생각해보자" class="headerlink" title="규칙 1. 생성자 대신 정적 팩터리 메서드를 사용할 수 없는지 생각해보자."></a>규칙 1. 생성자 대신 정적 팩터리 메서드를 사용할 수 없는지 생각해보자.</h2><p>프로그래머가 알아야하는 또다른 객체생성 방법은 클래스에 public로 선언된 팩토리 메서드를 추가하는 것이다.<br>이러한 방법의 장점은 다음과 같다.</p>
 <ol>
