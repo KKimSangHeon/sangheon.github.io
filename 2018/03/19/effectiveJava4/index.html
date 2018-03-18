@@ -3,26 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Music Share | Kim Sang Heon&#39;s Bolg</title>
+    <title>2장. 규칙3 생성자나 enum 자료형은 싱글턴 패턴을 따르도록 설계해라 | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="C,Socket,Music Share,Ubuntu" />
+        <meta name="keywords" content="Java" />
     
     
 
-      <meta name="description" content="프로그램 개발배경-C 소켓프로그래밍에 대한 이해를 높이고자 진행한 프로젝트입니다. 프로그램 소개-본 프로그램은 회원가입기능, 로그인기능, 서버에 mp3파일을 올리는기능 등이 구현되어 있습니다. 회원가입을 하고 로그인 후 서버에 mp3파일을 올리거나 다운로드 받을 수 있습니다. 프로그램 개발환경은 우분투 14.04 LTS 입니다. 프로그램 기능 초기 서버에">
-<meta name="keywords" content="C,Socket,Music Share,Ubuntu">
+      <meta name="description" content="규칙3 생성자나 enum 자료형은 싱글턴 패턴을 따르도록 설계해라싱글턴 : 객체를 하나만 만들 수 있는 클래스. 창관리자, 파일 시스템 같은 것들이 그 예다. 싱글턴을 구현하는 방법은 두가지인데 두 방법 다 생성자는 private로 선언하고, 싱글턴 객체는 정적(static)멤버를 이용한다. 첫번째 방법의 경우 정적멤버는 final로 선언한다. 두 번째 방">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Music Share">
-<meta property="og:url" content="http://KKimSangHeon.github.io/2017/06/30/music-share/index.html">
+<meta property="og:title" content="2장. 규칙3 생성자나 enum 자료형은 싱글턴 패턴을 따르도록 설계해라">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2018/03/19/effectiveJava4/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="프로그램 개발배경-C 소켓프로그래밍에 대한 이해를 높이고자 진행한 프로젝트입니다. 프로그램 소개-본 프로그램은 회원가입기능, 로그인기능, 서버에 mp3파일을 올리는기능 등이 구현되어 있습니다. 회원가입을 하고 로그인 후 서버에 mp3파일을 올리거나 다운로드 받을 수 있습니다. 프로그램 개발환경은 우분투 14.04 LTS 입니다. 프로그램 기능 초기 서버에">
-<meta property="og:image" content="http://kkimsangheon.github.io/2017/06/30/music-share/music-share1.png">
-<meta property="og:updated_time" content="2017-08-11T06:17:27.853Z">
+<meta property="og:description" content="규칙3 생성자나 enum 자료형은 싱글턴 패턴을 따르도록 설계해라싱글턴 : 객체를 하나만 만들 수 있는 클래스. 창관리자, 파일 시스템 같은 것들이 그 예다. 싱글턴을 구현하는 방법은 두가지인데 두 방법 다 생성자는 private로 선언하고, 싱글턴 객체는 정적(static)멤버를 이용한다. 첫번째 방법의 경우 정적멤버는 final로 선언한다. 두 번째 방">
+<meta property="og:image" content="http://kkimsangheon.github.io/images/effectivejava.png">
+<meta property="og:updated_time" content="2018-03-18T23:39:16.755Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Music Share">
-<meta name="twitter:description" content="프로그램 개발배경-C 소켓프로그래밍에 대한 이해를 높이고자 진행한 프로젝트입니다. 프로그램 소개-본 프로그램은 회원가입기능, 로그인기능, 서버에 mp3파일을 올리는기능 등이 구현되어 있습니다. 회원가입을 하고 로그인 후 서버에 mp3파일을 올리거나 다운로드 받을 수 있습니다. 프로그램 개발환경은 우분투 14.04 LTS 입니다. 프로그램 기능 초기 서버에">
-<meta name="twitter:image" content="http://kkimsangheon.github.io/2017/06/30/music-share/music-share1.png">
+<meta name="twitter:title" content="2장. 규칙3 생성자나 enum 자료형은 싱글턴 패턴을 따르도록 설계해라">
+<meta name="twitter:description" content="규칙3 생성자나 enum 자료형은 싱글턴 패턴을 따르도록 설계해라싱글턴 : 객체를 하나만 만들 수 있는 클래스. 창관리자, 파일 시스템 같은 것들이 그 예다. 싱글턴을 구현하는 방법은 두가지인데 두 방법 다 생성자는 private로 선언하고, 싱글턴 객체는 정적(static)멤버를 이용한다. 첫번째 방법의 경우 정적멤버는 final로 선언한다. 두 번째 방">
+<meta name="twitter:image" content="http://kkimsangheon.github.io/images/effectivejava.png">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
 
@@ -134,7 +134,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/About-Me/">About Me</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/About-Me/My-Projects/">My Projects</a>
+    <a class="page-title-link" href="/categories/Java/">Java</a>
     </h1>
 </div>
                         <div class="main-body-content">
@@ -149,14 +149,14 @@ ga('send', 'pageview');
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-                            <article id="post-music-share" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-effectiveJava4" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        Music Share
+        2장. 규칙3 생성자나 enum 자료형은 싱글턴 패턴을 따르도록 설계해라
         </h1>
     
 
@@ -166,38 +166,24 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/06/30/music-share/" class="article-date">
-            <time datetime="2017-06-30T00:31:38.000Z" itemprop="datePublished">2017-06-30</time>
+        <a href="/2018/03/19/effectiveJava4/" class="article-date">
+            <time datetime="2018-03-18T23:00:36.000Z" itemprop="datePublished">2018-03-19</time>
         </a>
     </div>
 
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/C/">C</a>, <a class="tag-link" href="/tags/Music-Share/">Music Share</a>, <a class="tag-link" href="/tags/Socket/">Socket</a>, <a class="tag-link" href="/tags/Ubuntu/">Ubuntu</a>
+        <a class="tag-link" href="/tags/Java/">Java</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="프로그램-개발배경"><a href="#프로그램-개발배경" class="headerlink" title="프로그램 개발배경"></a>프로그램 개발배경</h1><p>-C 소켓프로그래밍에 대한 이해를 높이고자 진행한 프로젝트입니다.</p>
-<h1 id="프로그램-소개"><a href="#프로그램-소개" class="headerlink" title="프로그램 소개"></a>프로그램 소개</h1><p>-본 프로그램은 회원가입기능, 로그인기능, 서버에 mp3파일을 올리는기능 등이 구현되어 있습니다. 회원가입을 하고 로그인 후 서버에 mp3파일을 올리거나 다운로드 받을 수 있습니다. 프로그램 개발환경은 우분투 14.04 LTS 입니다.</p>
-<h1 id="프로그램-기능"><a href="#프로그램-기능" class="headerlink" title="프로그램 기능"></a>프로그램 기능</h1><img src="/2017/06/30/music-share/music-share1.png" alt="서버에 접속한 클라이언트[그림1]" title="서버에 접속한 클라이언트[그림1]">
-<p>초기 서버에 접속하였을 경우 화면입니다. 서버에서는 클라이언트의 접속현황 및 상태를 확인할 수 있으며 클라이언트에서는 다음에 할 수 있는 일을 확인할 수 있습니다.</p>
-<img src="/2017/06/30/music-share/music-share2.png" alt="두 클라이언트가 회원가입[그림2]" title="두 클라이언트가 회원가입[그림2]">
-<p>두 클라이언트가 회원가입을 진행하고 있고 이에 대한 내용이 서버측 화면에 출력됩니다.</p>
-<img src="/2017/06/30/music-share/music-share3.png" alt="회원가입한 ID로 로그인[그림3]" title="회원가입한 ID로 로그인[그림3]">
-<p>클라이언트가 가입한 ID를 이용하여 로그인을 하였습니다. 로그인 후 에는 서버에 존재하는 mp3파일리스트를 조회하거나 mp3파일을 업로드, 다운로드 할 수있습니다.</p>
-<img src="/2017/06/30/music-share/music-share4.png" alt="로그인 후 mp3파일 업로드[그림4]" title="로그인 후 mp3파일 업로드[그림4]">
-<p>클라이언트가 로그인을 한 후 mp3파일을 업로드하는 화면입니다.</p>
-<img src="/2017/06/30/music-share/music-share5.png" alt="로그인 후 mp3파일 조회[그림5]" title="로그인 후 mp3파일 조회[그림5]">
-<p>클라이언트가 로그인을 한 후 서버에 존재하는 mp3파일을 조회하는 화면입니다.</p>
-<img src="/2017/06/30/music-share/music-share6.png" alt="mp3파일 다운로드[그림6]" title="mp3파일 다운로드[그림6]">
-<p>[그림4]에서 KSH클라이언트가 업로드한 hello.mp3 파일을 HRA클라이언트가 접속하여 다운로드 하는 화면입니다.</p>
-<img src="/2017/06/30/music-share/music-share7.png" alt="비밀번호 찾기기능[그림7]" title="비밀번호 찾기기능[그림7]">
-<p>비밀번호를 찾기위해 ID, Email을 입력하였고 이 후 비밀번호가 화면에 출력되는 모습입니다.</p>
-<p><a href="https://github.com/KKimSangHeon/music_share" target="_blank" rel="external">github Repository</a></p>
+            <h2 id="규칙3-생성자나-enum-자료형은-싱글턴-패턴을-따르도록-설계해라"><a href="#규칙3-생성자나-enum-자료형은-싱글턴-패턴을-따르도록-설계해라" class="headerlink" title="규칙3 생성자나 enum 자료형은 싱글턴 패턴을 따르도록 설계해라"></a>규칙3 생성자나 enum 자료형은 싱글턴 패턴을 따르도록 설계해라</h2><p><code>싱글턴 : 객체를 하나만 만들 수 있는 클래스. 창관리자, 파일 시스템 같은 것들이 그 예다.</code><br> 싱글턴을 구현하는 방법은 두가지인데 두 방법 다 생성자는 private로 선언하고, 싱글턴 객체는 정적(static)멤버를 이용한다. 첫번째 방법의 경우 정적멤버는 final로 선언한다. 두 번째 방법은 public으로 선언된 정적 팩터리 메서드를 이용하는 것이다. 두 방법 다 리플렉션 기능을 통해 private 생성자를 호출할 수 있다는 점에 주의해야 한다.</p>
+<p> 싱글턴을 구현하는 또다른 한가지의 방법은 원소가 하나뿐인 enum 자료형을 정의하는 것이다. 이는 좀 더 간결하며, 직렬화가 자동으로 처리된다. 또한 직렬화가 복잡하게 이루어져도 여러 객체가 생길일이 없으며 리플렉션을 통한 공격에도 안전하다.<br> 책에서는 이 방법이 싱글턴을 구현하는 가장 좋은 방법이라 추천한다.</p>
+<h3 id="참고-URL"><a href="#참고-URL" class="headerlink" title="참고 URL"></a>참고 URL</h3><p>직렬화 : <a href="http://woowabros.github.io/experience/2017/10/17/java-serialize.html" target="_blank" rel="external">http://woowabros.github.io/experience/2017/10/17/java-serialize.html</a></p>
 
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -216,7 +202,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/06/30/music-share/" data-id="cjexgk4vy000kvcv75gd49cmm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2018/03/19/effectiveJava4/" data-id="cjexgk5jk00hxvcv76geipx64" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -322,20 +308,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/06/30/Dormitory-Sleep-Out/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            기숙사 외박계
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/06/29/where-are-you/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/03/15/effectiveJava3/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">다수 사용자의 실시간 위치추적 어플리케이션 구현</p>
+        <p class="article-nav-title">2장. 규칙2 생성자 인자가 많을 때는 Builder 패턴 적용을 고려하라.</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -382,7 +358,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'https-kkimsangheon-github-io-2';
     
     
-    var disqus_url = 'http://KKimSangHeon.github.io/2017/06/30/music-share/';
+    var disqus_url = 'http://KKimSangHeon.github.io/2018/03/19/effectiveJava4/';
     
     (function() {
     var dsq = document.createElement('script');

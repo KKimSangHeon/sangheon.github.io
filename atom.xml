@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-03-18T09:57:03.232Z</updated>
+  <updated>2018-03-18T23:39:16.755Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2장. 규칙3 생성자나 enum 자료형은 싱글턴 패턴을 따르도록 설계해라</title>
+    <link href="http://KKimSangHeon.github.io/2018/03/19/effectiveJava4/"/>
+    <id>http://KKimSangHeon.github.io/2018/03/19/effectiveJava4/</id>
+    <published>2018-03-18T23:00:36.000Z</published>
+    <updated>2018-03-18T23:39:16.755Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="규칙3-생성자나-enum-자료형은-싱글턴-패턴을-따르도록-설계해라"><a href="#규칙3-생성자나-enum-자료형은-싱글턴-패턴을-따르도록-설계해라" class="headerlink" title="규칙3 생성자나 enum 자료형은 싱글턴 패턴을 따르도록 설계해라"></a>규칙3 생성자나 enum 자료형은 싱글턴 패턴을 따르도록 설계해라</h2><p><code>싱글턴 : 객체를 하나만 만들 수 있는 클래스. 창관리자, 파일 시스템 같은 것들이 그 예다.</code><br> 싱글턴을 구현하는 방법은 두가지인데 두 방법 다 생성자는 private로 선언하고, 싱글턴 객체는 정적(static)멤버를 이용한다. 첫번째 방법의 경우 정적멤버는 final로 선언한다. 두 번째 방법은 public으로 선언된 정적 팩터리 메서드를 이용하는 것이다. 두 방법 다 리플렉션 기능을 통해 private 생성자를 호출할 수 있다는 점에 주의해야 한다.</p>
+<p> 싱글턴을 구현하는 또다른 한가지의 방법은 원소가 하나뿐인 enum 자료형을 정의하는 것이다. 이는 좀 더 간결하며, 직렬화가 자동으로 처리된다. 또한 직렬화가 복잡하게 이루어져도 여러 객체가 생길일이 없으며 리플렉션을 통한 공격에도 안전하다.<br> 책에서는 이 방법이 싱글턴을 구현하는 가장 좋은 방법이라 추천한다.</p>
+<h3 id="참고-URL"><a href="#참고-URL" class="headerlink" title="참고 URL"></a>참고 URL</h3><p>직렬화 : <a href="http://woowabros.github.io/experience/2017/10/17/java-serialize.html" target="_blank" rel="external">http://woowabros.github.io/experience/2017/10/17/java-serialize.html</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;규칙3-생성자나-enum-자료형은-싱글턴-패턴을-따르도록-설계해라&quot;&gt;&lt;a href=&quot;#규칙3-생성자나-enum-자료형은-싱글턴-패턴을-따르도록-설계해라&quot; class=&quot;headerlink&quot; title=&quot;규칙3 생성자나 enum 자료형은 싱
+    
+    </summary>
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>2장. 규칙2 생성자 인자가 많을 때는 Builder 패턴 적용을 고려하라.</title>
@@ -726,53 +751,6 @@ ${hi()}</code><br>console.log(hello_message);</p>
     
     
       <category term="Angular2" scheme="http://KKimSangHeon.github.io/tags/Angular2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ABLETHON 참가</title>
-    <link href="http://KKimSangHeon.github.io/2017/10/17/ablethon/"/>
-    <id>http://KKimSangHeon.github.io/2017/10/17/ablethon/</id>
-    <published>2017-10-17T05:05:28.000Z</published>
-    <updated>2017-11-12T12:48:28.999Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="ABLETHON-참가"><a href="#ABLETHON-참가" class="headerlink" title="ABLETHON 참가"></a>ABLETHON 참가</h1><img src="/2017/10/17/ablethon/0.jpg" alt="에이블톤" title="에이블톤">
-<p>시각장애인의 App 사용에 관심이 많아 관련 공모전을 알아보던 중 에이블톤이 눈에 띄어 참가하게 되었다.</p>
-<img src="/2017/10/17/ablethon/33.jpg" alt="발표" title="발표">
-<img src="/2017/10/17/ablethon/3.PNG" alt="안드로이드, 아이폰 사용비율" title="안드로이드, 아이폰 사용비율">
-<p>지도에서 붉은 부분은 저소득층 국가가 많으며 이에 해당하는 국가의 시각장애인은 안드로이드의 talkback 기능을 많이 이용하고 있으며, 상대적으로 소득이 높은 파랑색 국가의 시각장애인은 아이폰에서 제공하는 voiceover 기능을 많이 이용하고 있다. 안드로이드는 자체적으로 아이폰의 voiceover와 같은 기능을 제공하지 않기 때문에 아이폰에 비해 상대적으로 낮은 접근성을 갖는다. 우리팀은 이를 해결하고자 안드로이드 앱 개발을 하기로 결정하였다.</p>
-<img src="/2017/10/17/ablethon/4.PNG" alt="기능소개" title="기능소개">
-<img src="/2017/10/17/ablethon/5.PNG" alt="제스처 인식 아키텍처" title="제스처 인식 아키텍처">
-<h1 id="시연영상"><a href="#시연영상" class="headerlink" title="시연영상"></a>시연영상</h1><div class="video-container"><iframe src="//www.youtube.com/embed/dYBPrOKW99M" frameborder="0" allowfullscreen></iframe></div>
-<p>날씨조회기능</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/NpqYYXhiFzM" frameborder="0" allowfullscreen></iframe></div>
-<p>버스도착정보 조회기능</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/UZxKuUvjezA" frameborder="0" allowfullscreen></iframe></div>
-<p>전화기능</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/mm-xTgbOLdw" frameborder="0" allowfullscreen></iframe></div>
-<p>길 안내기능</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/teWgX4QBYLY" frameborder="0" allowfullscreen></iframe></div>
-<p>길 안내 도움요청기능</p>
-<h1 id="수상"><a href="#수상" class="headerlink" title="수상"></a>수상</h1><img src="/2017/10/17/ablethon/11.jpg" alt="수상" title="수상">
-<img src="/2017/10/17/ablethon/22.jpg" alt="수상" title="수상">
-<p>많은 분들이 좋게 봐준 덕분에 우수상을 받을 수 있었다.</p>
-<h1 id="소스코드-Github-Repository"><a href="#소스코드-Github-Repository" class="headerlink" title="소스코드 (Github Repository)"></a>소스코드 (Github Repository)</h1><p><a href="https://github.com/KKimSangHeon/GestCaptureX" target="_blank" rel="external">-안드로이드 어플리케이션 소스코드</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;ABLETHON-참가&quot;&gt;&lt;a href=&quot;#ABLETHON-참가&quot; class=&quot;headerlink&quot; title=&quot;ABLETHON 참가&quot;&gt;&lt;/a&gt;ABLETHON 참가&lt;/h1&gt;&lt;img src=&quot;/2017/10/17/ablethon/0.jpg&quot;
-    
-    </summary>
-    
-      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
-    
-      <category term="My Projects" scheme="http://KKimSangHeon.github.io/categories/About-Me/My-Projects/"/>
-    
-    
-      <category term="ABLETHON" scheme="http://KKimSangHeon.github.io/tags/ABLETHON/"/>
-    
-      <category term="시각장애인도 이용가능한 App" scheme="http://KKimSangHeon.github.io/tags/%EC%8B%9C%EA%B0%81%EC%9E%A5%EC%95%A0%EC%9D%B8%EB%8F%84-%EC%9D%B4%EC%9A%A9%EA%B0%80%EB%8A%A5%ED%95%9C-App/"/>
     
   </entry>
   
