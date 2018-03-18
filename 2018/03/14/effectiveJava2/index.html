@@ -10,18 +10,18 @@
     
     
 
-      <meta name="description" content="규칙 1. 생성자 대신 정적 팩터리 메서드를 사용할 수 없는지 생각해보자.프로그래머가 알아야하는 또다른 객체생성 방법은 클래스에 public로 선언된 팩토리 메서드를 추가하는 것이다. 이러한 방법의 장점은 다음과 같다. 생성자와 달리 정적 팩토리 메소드에는 이름이 있다. (가독성 향상)  호출할 때마다 새로운 객체를 생성할 필요 없다.(객체생성 비용이 클">
+      <meta name="description" content="규칙 1. 생성자 대신 정적 팩터리 메서드를 사용할 수 없는지 생각해보자.프로그래머가 알아야하는 또다른 객체생성 방법은 클래스에 public로 선언된 팩토리 메서드를 추가하는 것이다. 이러한 방법의 장점은 다음과 같다.1.생성자와 달리 정적 팩토리 메소드에는 이름이 있다. (가독성 향상) 2.호출할 때마다 새로운 객체를 생성할 필요 없다.(객체생성 비용이">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2장. 규칙1 생성자 대신 정적 팩터리 메서드를 사용할 수 없는지 생각해보자.">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2018/03/14/effectiveJava2/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="규칙 1. 생성자 대신 정적 팩터리 메서드를 사용할 수 없는지 생각해보자.프로그래머가 알아야하는 또다른 객체생성 방법은 클래스에 public로 선언된 팩토리 메서드를 추가하는 것이다. 이러한 방법의 장점은 다음과 같다. 생성자와 달리 정적 팩토리 메소드에는 이름이 있다. (가독성 향상)  호출할 때마다 새로운 객체를 생성할 필요 없다.(객체생성 비용이 클">
+<meta property="og:description" content="규칙 1. 생성자 대신 정적 팩터리 메서드를 사용할 수 없는지 생각해보자.프로그래머가 알아야하는 또다른 객체생성 방법은 클래스에 public로 선언된 팩토리 메서드를 추가하는 것이다. 이러한 방법의 장점은 다음과 같다.1.생성자와 달리 정적 팩토리 메소드에는 이름이 있다. (가독성 향상) 2.호출할 때마다 새로운 객체를 생성할 필요 없다.(객체생성 비용이">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/effectivejava.png">
-<meta property="og:updated_time" content="2018-03-17T05:57:35.237Z">
+<meta property="og:updated_time" content="2018-03-18T09:35:25.035Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2장. 규칙1 생성자 대신 정적 팩터리 메서드를 사용할 수 없는지 생각해보자.">
-<meta name="twitter:description" content="규칙 1. 생성자 대신 정적 팩터리 메서드를 사용할 수 없는지 생각해보자.프로그래머가 알아야하는 또다른 객체생성 방법은 클래스에 public로 선언된 팩토리 메서드를 추가하는 것이다. 이러한 방법의 장점은 다음과 같다. 생성자와 달리 정적 팩토리 메소드에는 이름이 있다. (가독성 향상)  호출할 때마다 새로운 객체를 생성할 필요 없다.(객체생성 비용이 클">
+<meta name="twitter:description" content="규칙 1. 생성자 대신 정적 팩터리 메서드를 사용할 수 없는지 생각해보자.프로그래머가 알아야하는 또다른 객체생성 방법은 클래스에 public로 선언된 팩토리 메서드를 추가하는 것이다. 이러한 방법의 장점은 다음과 같다.1.생성자와 달리 정적 팩토리 메소드에는 이름이 있다. (가독성 향상) 2.호출할 때마다 새로운 객체를 생성할 필요 없다.(객체생성 비용이">
 <meta name="twitter:image" content="http://kkimsangheon.github.io/images/effectivejava.png">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
@@ -182,16 +182,10 @@ ga('send', 'pageview');
         
         <div class="article-entry" itemprop="articleBody">
             <h2 id="규칙-1-생성자-대신-정적-팩터리-메서드를-사용할-수-없는지-생각해보자"><a href="#규칙-1-생성자-대신-정적-팩터리-메서드를-사용할-수-없는지-생각해보자" class="headerlink" title="규칙 1. 생성자 대신 정적 팩터리 메서드를 사용할 수 없는지 생각해보자."></a>규칙 1. 생성자 대신 정적 팩터리 메서드를 사용할 수 없는지 생각해보자.</h2><p>프로그래머가 알아야하는 또다른 객체생성 방법은 클래스에 public로 선언된 팩토리 메서드를 추가하는 것이다.</p>
-<h3 id="이러한-방법의-장점은-다음과-같다"><a href="#이러한-방법의-장점은-다음과-같다" class="headerlink" title="이러한 방법의 장점은 다음과 같다."></a>이러한 방법의 장점은 다음과 같다.</h3><ol>
-<li><p>생성자와 달리 정적 팩토리 메소드에는 이름이 있다. (가독성 향상)</p>
-</li>
-<li><p>호출할 때마다 새로운 객체를 생성할 필요 없다.(객체생성 비용이 클 때 효율적, 개체 통제 클래스로의 역할)<br><code>개체 통제 클래스(instance-controlled class) : 어떤 시점에 어떤 객체가 얼마나 존재할지 제어가능한 클래스. 이를 통해 싱글턴 패턴을 따르도록 할수 있고, 객체생성이 불가능한 클래스를 만들 수 도 있다. 변경이 불가능한 클래스의 경우 두개의 같은 객체가 존재하지 못하도록 할 수 있다.</code></p>
-</li>
-<li><p>생성자와 달리 반환값 자료형의 하위 자료형 객체를 반환할 수 있다. (반환되는 객체의 클래스를 유연하게 결정 가능. EnumSet이 그 예시)</p>
-</li>
-<li><p>형인자 자료형(parameterized type) 객체를 만들 때 편하다.(자바 1.7부터는 자료형 유추가 가능해졌다 14p)</p>
-</li>
-</ol>
+<h3 id="이러한-방법의-장점은-다음과-같다"><a href="#이러한-방법의-장점은-다음과-같다" class="headerlink" title="이러한 방법의 장점은 다음과 같다."></a>이러한 방법의 장점은 다음과 같다.</h3><p>1.생성자와 달리 정적 팩토리 메소드에는 이름이 있다. (가독성 향상)</p>
+<p>2.호출할 때마다 새로운 객체를 생성할 필요 없다.(객체생성 비용이 클 때 효율적, 개체 통제 클래스로의 역할)<br><code>개체 통제 클래스(instance-controlled class) : 어떤 시점에 어떤 객체가 얼마나 존재할지 제어가능한 클래스. 이를 통해 싱글턴 패턴을 따르도록 할수 있고, 객체생성이 불가능한 클래스를 만들 수 도 있다. 변경이 불가능한 클래스의 경우 두개의 같은 객체가 존재하지 못하도록 할 수 있다.</code></p>
+<p>3.생성자와 달리 반환값 자료형의 하위 자료형 객체를 반환할 수 있다. (반환되는 객체의 클래스를 유연하게 결정 가능. EnumSet이 그 예시)</p>
+<p>4.형인자 자료형(parameterized type) 객체를 만들 때 편하다.(자바 1.7부터는 자료형 유추가 가능해졌다 14p)</p>
 <h3 id="단점은-다음과-같다"><a href="#단점은-다음과-같다" class="headerlink" title="단점은 다음과 같다."></a>단점은 다음과 같다.</h3><ol>
 <li>public이나 protected로 선언된 생성자가 없으므로 하위 클래스를 만들 수 없다는 것이다.</li>
 <li>정적 팩터리 메서드가 다른 정적 메서드와 확연히 구분되지 않는다는 것이다.<br>보통 정적 팩토리 메소드의 이름으로는 다음과같은 이름을 쓴다.<br>valueOf , of , getInstance , newInstance , getType , newType</li>
