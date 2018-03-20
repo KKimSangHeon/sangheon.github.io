@@ -3,26 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>4. CASE, DECODE, GROUP BY | Kim Sang Heon&#39;s Bolg</title>
+    <title>mytip | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Data Base" />
+        <meta name="keywords" content="" />
     
     
 
-      <meta name="description" content="CASESELECT EMPLOYEE_ID,       SALARY,       JOB_ID,       CASE JOB_ID            WHEN ‘AC_ACCOUNT’ THEN SALARY + SALARY  0.5            WHEN ‘AC_MGR’ THEN SALARY + SALARY  0.3            WHEN ‘AD_VP’">
-<meta name="keywords" content="Data Base">
+      <meta name="description" content="========================================================================= 아파치 관련설치 : https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%95%84%ED%8C%8C%EC%B9%98_%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0">
 <meta property="og:type" content="article">
-<meta property="og:title" content="4. CASE, DECODE, GROUP BY">
-<meta property="og:url" content="http://KKimSangHeon.github.io/2017/08/17/database4/index.html">
+<meta property="og:title" content="mytip">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2018/03/20/mytip/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="CASESELECT EMPLOYEE_ID,       SALARY,       JOB_ID,       CASE JOB_ID            WHEN ‘AC_ACCOUNT’ THEN SALARY + SALARY  0.5            WHEN ‘AC_MGR’ THEN SALARY + SALARY  0.3            WHEN ‘AD_VP’">
-<meta property="og:image" content="http://kkimsangheon.github.io/images/db.jpg">
-<meta property="og:updated_time" content="2017-08-18T00:05:05.111Z">
+<meta property="og:description" content="========================================================================= 아파치 관련설치 : https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%95%84%ED%8C%8C%EC%B9%98_%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0">
+<meta property="og:updated_time" content="2018-03-20T13:58:47.311Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="4. CASE, DECODE, GROUP BY">
-<meta name="twitter:description" content="CASESELECT EMPLOYEE_ID,       SALARY,       JOB_ID,       CASE JOB_ID            WHEN ‘AC_ACCOUNT’ THEN SALARY + SALARY  0.5            WHEN ‘AC_MGR’ THEN SALARY + SALARY  0.3            WHEN ‘AD_VP’">
-<meta name="twitter:image" content="http://kkimsangheon.github.io/images/db.jpg">
+<meta name="twitter:title" content="mytip">
+<meta name="twitter:description" content="========================================================================= 아파치 관련설치 : https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%95%84%ED%8C%8C%EC%B9%98_%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
 
@@ -134,7 +131,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a>
+    uncategorized
     </h1>
 </div>
                         <div class="main-body-content">
@@ -149,14 +146,14 @@ ga('send', 'pageview');
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-                            <article id="post-database4" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-mytip" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        4. CASE, DECODE, GROUP BY
+        mytip
         </h1>
     
 
@@ -166,25 +163,36 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/08/17/database4/" class="article-date">
-            <time datetime="2017-08-17T01:59:31.000Z" itemprop="datePublished">2017-08-17</time>
+        <a href="/2018/03/20/mytip/" class="article-date">
+            <time datetime="2018-03-20T13:57:50.000Z" itemprop="datePublished">2018-03-20</time>
         </a>
     </div>
 
                 
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Data-Base/">Data Base</a>
-    </div>
-
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h4 id="CASE"><a href="#CASE" class="headerlink" title="CASE"></a>CASE</h4><p>SELECT EMPLOYEE_ID,<br>       SALARY,<br>       JOB_ID,<br>       CASE JOB_ID<br>            WHEN ‘AC_ACCOUNT’ THEN SALARY + SALARY <em> 0.5<br>            WHEN ‘AC_MGR’ THEN SALARY + SALARY </em> 0.3<br>            WHEN ‘AD_VP’ THEN SALARY + SALARY * 0.2<br>            ELSE  SALARY<br>       END AS SALARY<br>FROM EMPLOYEES;        </p>
-<h4 id="DECODE"><a href="#DECODE" class="headerlink" title="DECODE"></a>DECODE</h4><p>SELECT EMPLOYEE_ID,<br>       SALARY,<br>       JOB_ID,<br>       DECODE( JOB_ID ,<br>                ‘AC_ACCOUNT’ , SALARY + SALARY <em> 0.5 ,<br>                ‘AC_MGR’ ,SALARY + SALARY </em> 0.3 ,<br>                ‘AD_VP’ , SALARY + SALARY * 0.2 ,<br>                 SALARY) AS “이번달 월급”<br>FROM EMPLOYEES;        </p>
-<p>SELECT EMPLOYEE_ID,AVG(SALARY) , MAX(SALARY)<br>FROM EMPLOYEES;<br>– ERROR<br>– 집계함수 이외의 칼럼은 프로젝션 될 수 없다</p>
-<h4 id="GROUP-BY"><a href="#GROUP-BY" class="headerlink" title="GROUP BY"></a>GROUP BY</h4><p>SELECT JOB_ID,AVG(SALARY), MAX(SALARY)<br>FROM   EMPLOYEES<br>WHERE  MANAGER_ID IS NOT NULL<br>GROUP BY JOB_ID;<br>– GROUP BY 절에 참여하고 있는 컬럼은 프로젝션 할 수 있다.</p>
+            <p>=========================================================================</p>
+<h1 id="아파치-관련"><a href="#아파치-관련" class="headerlink" title="아파치 관련"></a>아파치 관련</h1><p>설치 : <a href="https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%95%84%ED%8C%8C%EC%B9%98_%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84_%EC%84%A4%EC%B9%98_(%EC%BB%B4%ED%8C%8C%EC%9D%BC" target="_blank" rel="external">https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%95%84%ED%8C%8C%EC%B9%98_%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84_%EC%84%A4%EC%B9%98_(%EC%BB%B4%ED%8C%8C%EC%9D%BC</a>)<br>아파치 실행 : /home1/irteam/apps/apache/bin 에서 “./apachectl start”<br>html 파일 : /home1/irteam/apps/apache/htdocs</p>
+<h3 id="서버의-아파치-실행"><a href="#서버의-아파치-실행" class="headerlink" title="서버의 아파치 실행"></a>서버의 아파치 실행</h3><p>sudo /sbin/service httpd start<br>sudo /sbin/apachectl start<br>sudo /sbin/service httpd status<br>sudo /sbin/apachectl status<br>참고 : <a href="http://library.gabia.com/contents/infrahosting/3513" target="_blank" rel="external">http://library.gabia.com/contents/infrahosting/3513</a></p>
+<h3 id="아파치-모듈-추가"><a href="#아파치-모듈-추가" class="headerlink" title="아파치 모듈 추가"></a>아파치 모듈 추가</h3><p><a href="http://prettymonkey02.tistory.com/1051" target="_blank" rel="external">http://prettymonkey02.tistory.com/1051</a></p>
+<p>성공한 방법</p>
+<ol>
+<li>/home1/irteam/apps/apache/bin 에서 “./apxs -n helloworld -g” 명령어 입력하면 helloworld 디렉터리가 생성된다.</li>
+<li><p>생성된 helloworld 디렉터리 들어간 후 vi mod_helloworld.c 를 참고하여 명령들을 실행.(명령들은 다음과같다)<br>/home1/irteam/apps/apache/bin 디렉토리로 이동 후  “#sudo ./apxs -c -i helloworld/mod_helloworld.c” 실행<br>/home1/irteam/apps/apache/conf 디렉토리로 이동 후 “vi httpd.conf” 열기<br>적당한 곳에 다음 2-4번의 내용 추가 ( 약 156라인)<br>LoadModule helloworld_module modules/mod_helloworld.so</p>
+ <location helloworld=""><br> SetHandler helloworld<br> </location>
+</li>
+<li><p>/home/irteam/apps/apache/bin 디렉토리에 들어간 후 “# sudo ./apachectl restart” 입력</p>
+</li>
+<li>테스트를 위해 “lynx -mime_header <a href="http://localhost/helloworld" target="_blank" rel="external">http://localhost/helloworld</a>“ 입력</li>
+</ol>
+<p>대문자로 모듈을 생성할 경우 안되는것 같다…</p>
+<p>C파일을 수정하였을 경우<br>C 파일을 수정 한 후에는 위의 2-1번만 실행 후 3번으로 거치면 된다.</p>
+<p>시도해봤지만 안되는 방법<br>apxs -n hello -g 를 하면 so 파일이 /usr/lib64/httpd/modules/mod_hello.so 에 생성되는데  “sudo mv /usr/lib64/httpd/modules/mod_hello.so 내 modules 디렉토리”  명령어를 통해 so 파일을 옮겨준다.<br>“sudo chown irteam:irteam mod_hello.so” 명령어를 통해 소유자와 관리자를 다른것과 동일하게 변경한다.</p>
+<p>LoadModule hello_module /modules/mod_hello.so 이라는 문자열이 /etc/httpd/conf/httpd.conf<br>에 생성되는데 내 경로의 conf/httpd.conf  149쯔음 사이에 끼워 넣어준다.</p>
+<p>request가 도착하였을때 수신하는 request_rec 구조체 정보<br><a href="http://woorie.tistory.com/entry/API1-requestrec-structure" target="_blank" rel="external">http://woorie.tistory.com/entry/API1-requestrec-structure</a><br>상대방에게 echo를 하기위해서는  ap_rprintf(r,”%s”,r-&gt;args); 처럼 ap_rprintf 함수를 이용하자.</p>
+<p>ap_rputs(“The sample page from mod_getimage.c\n”, r);</p>
 
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -203,7 +211,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/08/17/database4/" data-id="cjezq61ri006gd4v7e1jin1ps" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2018/03/20/mytip/" data-id="cjezq61ui00bad4v75c29m12b" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -309,20 +317,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/08/18/database5/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            5. ROLLUP, CUBE
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/08/16/database3/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/03/19/effectiveJava4/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">3. 함수 NVL,SYSDATE,IN,BETWEEN,IS NULL,LIKE,LOWER,INITCAP,LPAD,TRIM,REPLACE,CEIL,FLOOR,ROUND,TRUNC,MOD,POWER,SIGN,ADD_MONTHS,TO_CHAR</p>
+        <p class="article-nav-title">2장. 규칙3 생성자나 enum 자료형은 싱글턴 패턴을 따르도록 설계해라</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -369,7 +367,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'https-kkimsangheon-github-io-2';
     
     
-    var disqus_url = 'http://KKimSangHeon.github.io/2017/08/17/database4/';
+    var disqus_url = 'http://KKimSangHeon.github.io/2018/03/20/mytip/';
     
     (function() {
     var dsq = document.createElement('script');

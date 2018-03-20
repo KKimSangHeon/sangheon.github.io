@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-03-18T23:39:16.755Z</updated>
+  <updated>2018-03-20T13:58:47.311Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mytip</title>
+    <link href="http://KKimSangHeon.github.io/2018/03/20/mytip/"/>
+    <id>http://KKimSangHeon.github.io/2018/03/20/mytip/</id>
+    <published>2018-03-20T13:57:50.000Z</published>
+    <updated>2018-03-20T13:58:47.311Z</updated>
+    
+    <content type="html"><![CDATA[<p>=========================================================================</p>
+<h1 id="아파치-관련"><a href="#아파치-관련" class="headerlink" title="아파치 관련"></a>아파치 관련</h1><p>설치 : <a href="https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%95%84%ED%8C%8C%EC%B9%98_%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84_%EC%84%A4%EC%B9%98_(%EC%BB%B4%ED%8C%8C%EC%9D%BC" target="_blank" rel="external">https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%95%84%ED%8C%8C%EC%B9%98_%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84_%EC%84%A4%EC%B9%98_(%EC%BB%B4%ED%8C%8C%EC%9D%BC</a>)<br>아파치 실행 : /home1/irteam/apps/apache/bin 에서 “./apachectl start”<br>html 파일 : /home1/irteam/apps/apache/htdocs</p>
+<h3 id="서버의-아파치-실행"><a href="#서버의-아파치-실행" class="headerlink" title="서버의 아파치 실행"></a>서버의 아파치 실행</h3><p>sudo /sbin/service httpd start<br>sudo /sbin/apachectl start<br>sudo /sbin/service httpd status<br>sudo /sbin/apachectl status<br>참고 : <a href="http://library.gabia.com/contents/infrahosting/3513" target="_blank" rel="external">http://library.gabia.com/contents/infrahosting/3513</a></p>
+<h3 id="아파치-모듈-추가"><a href="#아파치-모듈-추가" class="headerlink" title="아파치 모듈 추가"></a>아파치 모듈 추가</h3><p><a href="http://prettymonkey02.tistory.com/1051" target="_blank" rel="external">http://prettymonkey02.tistory.com/1051</a></p>
+<p>성공한 방법</p>
+<ol>
+<li>/home1/irteam/apps/apache/bin 에서 “./apxs -n helloworld -g” 명령어 입력하면 helloworld 디렉터리가 생성된다.</li>
+<li><p>생성된 helloworld 디렉터리 들어간 후 vi mod_helloworld.c 를 참고하여 명령들을 실행.(명령들은 다음과같다)<br>/home1/irteam/apps/apache/bin 디렉토리로 이동 후  “#sudo ./apxs -c -i helloworld/mod_helloworld.c” 실행<br>/home1/irteam/apps/apache/conf 디렉토리로 이동 후 “vi httpd.conf” 열기<br>적당한 곳에 다음 2-4번의 내용 추가 ( 약 156라인)<br>LoadModule helloworld_module modules/mod_helloworld.so</p>
+ <location helloworld=""><br> SetHandler helloworld<br> </location>
+</li>
+<li><p>/home/irteam/apps/apache/bin 디렉토리에 들어간 후 “# sudo ./apachectl restart” 입력</p>
+</li>
+<li>테스트를 위해 “lynx -mime_header <a href="http://localhost/helloworld" target="_blank" rel="external">http://localhost/helloworld</a>“ 입력</li>
+</ol>
+<p>대문자로 모듈을 생성할 경우 안되는것 같다…</p>
+<p>C파일을 수정하였을 경우<br>C 파일을 수정 한 후에는 위의 2-1번만 실행 후 3번으로 거치면 된다.</p>
+<p>시도해봤지만 안되는 방법<br>apxs -n hello -g 를 하면 so 파일이 /usr/lib64/httpd/modules/mod_hello.so 에 생성되는데  “sudo mv /usr/lib64/httpd/modules/mod_hello.so 내 modules 디렉토리”  명령어를 통해 so 파일을 옮겨준다.<br>“sudo chown irteam:irteam mod_hello.so” 명령어를 통해 소유자와 관리자를 다른것과 동일하게 변경한다.</p>
+<p>LoadModule hello_module /modules/mod_hello.so 이라는 문자열이 /etc/httpd/conf/httpd.conf<br>에 생성되는데 내 경로의 conf/httpd.conf  149쯔음 사이에 끼워 넣어준다.</p>
+<p>request가 도착하였을때 수신하는 request_rec 구조체 정보<br><a href="http://woorie.tistory.com/entry/API1-requestrec-structure" target="_blank" rel="external">http://woorie.tistory.com/entry/API1-requestrec-structure</a><br>상대방에게 echo를 하기위해서는  ap_rprintf(r,”%s”,r-&gt;args); 처럼 ap_rprintf 함수를 이용하자.</p>
+<p>ap_rputs(“The sample page from mod_getimage.c\n”, r);</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;=========================================================================&lt;/p&gt;
+&lt;h1 id=&quot;아파치-관련&quot;&gt;&lt;a href=&quot;#아파치-관련&quot; class=&quot;headerlink&quot; title=
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>2장. 규칙3 생성자나 enum 자료형은 싱글턴 패턴을 따르도록 설계해라</title>
@@ -652,9 +691,9 @@
       <category term="면접" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/%EB%A9%B4%EC%A0%91/"/>
     
     
-      <category term="SK 고용디딤돌" scheme="http://KKimSangHeon.github.io/tags/SK-%EA%B3%A0%EC%9A%A9%EB%94%94%EB%94%A4%EB%8F%8C/"/>
-    
       <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
+    
+      <category term="SK 고용디딤돌" scheme="http://KKimSangHeon.github.io/tags/SK-%EA%B3%A0%EC%9A%A9%EB%94%94%EB%94%A4%EB%8F%8C/"/>
     
       <category term="모바일 개발" scheme="http://KKimSangHeon.github.io/tags/%EB%AA%A8%EB%B0%94%EC%9D%BC-%EA%B0%9C%EB%B0%9C/"/>
     
@@ -702,55 +741,6 @@
       <category term="리플" scheme="http://KKimSangHeon.github.io/tags/%EB%A6%AC%ED%94%8C/"/>
     
       <category term="스테이터스네트워크" scheme="http://KKimSangHeon.github.io/tags/%EC%8A%A4%ED%85%8C%EC%9D%B4%ED%84%B0%EC%8A%A4%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>3장. 타입스크립트</title>
-    <link href="http://KKimSangHeon.github.io/2018/01/07/angular2/"/>
-    <id>http://KKimSangHeon.github.io/2018/01/07/angular2/</id>
-    <published>2018-01-07T05:05:28.000Z</published>
-    <updated>2018-01-28T12:04:51.349Z</updated>
-    
-    <content type="html"><![CDATA[<img src="/2018/01/07/angular2/book.jpg" alt="쉽고 빠르게 배우는 Angular2" title="쉽고 빠르게 배우는 Angular2">
-<p>위의 책을 공부하며 정리하는 포스트이다.</p>
-<h1 id="AngularJS"><a href="#AngularJS" class="headerlink" title="AngularJS"></a>AngularJS</h1><h3 id="디렉티브"><a href="#디렉티브" class="headerlink" title="디렉티브"></a>디렉티브</h3><p>HTML 태그나 어트리뷰트의 기능을 새롭게 만드는 개념. 애플리케이션의 요구 사항에 맞게 HTML 태그를 확장할 수 있다.</p>
-<h3 id="ng-app"><a href="#ng-app" class="headerlink" title="ng-app"></a>ng-app</h3><p><code>&lt;div&gt;</code>에 ng-app 어트리뷰트를 추가하면 그 <code>&lt;div&gt;</code>만 AngularJS의 영향을 받는다.</p>
-<h3 id="바인딩"><a href="#바인딩" class="headerlink" title="바인딩"></a>바인딩</h3><p>뷰와 모델이 서로를 갱신하는것. AngularJS는 모델이 갱신될 때마다 전체 애플리케이션에 영향을 미치는 $digest 함수를 실행하면서 데이터 바인딩을 점검하고 DOM 객체의 값을 갱신한다.</p>
-<h3 id="socpe"><a href="#socpe" class="headerlink" title="socpe"></a>socpe</h3><p>모델의 값은 $scope라는 스코프 안에 선언되며 AngularJS에서는 이 스코프를 여러 계층으로 구성한다.</p>
-<h1 id="Angular"><a href="#Angular" class="headerlink" title="Angular"></a>Angular</h1><h3 id="NgModule"><a href="#NgModule" class="headerlink" title="NgModule"></a>NgModule</h3><p>모듈은 클래스에 @NgModule 어노테이션을 붙여서 지정하고 이 어노테이션 안에서 모듈 내용을 설정한다.</p>
-<h3 id="SystemJS-모듈로더"><a href="#SystemJS-모듈로더" class="headerlink" title="SystemJS 모듈로더"></a>SystemJS 모듈로더</h3><p>JS는 script 태그 안에서 로드하고 실행하지만 Angular도 이 방법을 사용할 수 있지만 SystemJS 라이브러리를 사용해서 불러오는것을 권장한다.<br>why? 스크립트 태그를 삭제하지 않으면 이를 불러오려고 하고 불필요한 부하 발생 , 스크립트 태그의 실행순서를 보장하지 않기 때문에 문제가 될 수 있다.</p>
-<p>environment.ts 파일 -&gt; 빌드를 위한 개발환경 설정 정보들</p>
-<h2 id="빌드명령어"><a href="#빌드명령어" class="headerlink" title="빌드명령어"></a>빌드명령어</h2><p>Angular-CLI로 만들어진 프로젝트의 코드는 타입스크립트 기반이기 때문에 빌드를 통해 브라우저에서 동작 가능한 자바스크립트로 변환해야 한다.</p>
-<p>ng build</p>
-<p>프로덕션용 빌드 명령어<br>ng build –prod</p>
-<h1 id="3장-타입스크립트"><a href="#3장-타입스크립트" class="headerlink" title="3장 타입스크립트"></a>3장 타입스크립트</h1><h2 id="1-let을-이용한-변수선언"><a href="#1-let을-이용한-변수선언" class="headerlink" title="1.let을 이용한 변수선언"></a>1.let을 이용한 변수선언</h2><p>ES 5 이하에서 호이스팅 문제가 발생하므로 이를 해결하기 위해 ES6의 좋은 특징인 let 선언자를 이용</p>
-<p>타입스크립트는 변수명 뒤에 타입을 명시해야 한다. 타입스크립트를 타입 언어라고 하는 이유는 이와 같은 이유이다.<br>let 변수명 : 타입;<br>let emotion2:string=”happy”;</p>
-<h2 id="배열타입"><a href="#배열타입" class="headerlink" title="배열타입"></a>배열타입</h2><h4 id="배열정의-형태1"><a href="#배열정의-형태1" class="headerlink" title="배열정의 형태1"></a>배열정의 형태1</h4><p>let fruits: string[] = [“a”,”b”];</p>
-<p>let fruits2: string[] = [];<br>fruits2.push(“a”);</p>
-<h4 id="배열정의-형태2"><a href="#배열정의-형태2" class="headerlink" title="배열정의 형태2"></a>배열정의 형태2</h4><p>let num:Array<number> = [1,2,3];</number></p>
-<h2 id="유니언-타입-56p"><a href="#유니언-타입-56p" class="headerlink" title="유니언 타입 56p"></a>유니언 타입 56p</h2><p>유니언 타입은 2개 이상으로 입력된 타입에 대해 하나의 타입으로 정의하는것. 메소드의 파라미터로 사용가능.<br>var unionX: string | number = 1;<br>console.log(typeof unionX, unionX); // number 1 출력</p>
-<h2 id="문자열-표현-58p"><a href="#문자열-표현-58p" class="headerlink" title="문자열 표현 58p"></a>문자열 표현 58p</h2><p>+와 \n을 써서 줄바꿈이 가능하지만 다음과 같이 가능하다.<br>let w: string =”world”;<br>let one: number = 1;<br>function hi(){<br>    return “hi”;<br>}</p>
-<p>let hello_message: string =<code>hello ${w}
-1 + ${one} = ${1+1}
-${hi()}</code><br>console.log(hello_message);</p>
-<h2 id="디스트럭처링-지원-60p"><a href="#디스트럭처링-지원-60p" class="headerlink" title="디스트럭처링 지원 60p"></a>디스트럭처링 지원 60p</h2><p>ES6에 포함된 특징으로 배열이나 객체에서 데이터를 선택적으로 추출할 수 있는 자바스크립트 할당식이다.<br>var params2 = [‘happy 동물원’, 100];<br>let[m_name2, m_num2] = params2;</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;img src=&quot;/2018/01/07/angular2/book.jpg&quot; alt=&quot;쉽고 빠르게 배우는 Angular2&quot; title=&quot;쉽고 빠르게 배우는 Angular2&quot;&gt;
-&lt;p&gt;위의 책을 공부하며 정리하는 포스트이다.&lt;/p&gt;
-&lt;h1 id=&quot;Angula
-    
-    </summary>
-    
-      <category term="Web" scheme="http://KKimSangHeon.github.io/categories/Web/"/>
-    
-      <category term="Angular2" scheme="http://KKimSangHeon.github.io/categories/Web/Angular2/"/>
-    
-    
-      <category term="Angular2" scheme="http://KKimSangHeon.github.io/tags/Angular2/"/>
     
   </entry>
   
