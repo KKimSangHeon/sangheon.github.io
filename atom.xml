@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-03-20T13:58:47.311Z</updated>
+  <updated>2018-03-21T13:34:57.424Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://KKimSangHeon.github.io/2018/03/20/mytip/"/>
     <id>http://KKimSangHeon.github.io/2018/03/20/mytip/</id>
     <published>2018-03-20T13:57:50.000Z</published>
-    <updated>2018-03-20T13:58:47.311Z</updated>
+    <updated>2018-03-21T13:34:57.424Z</updated>
     
     <content type="html"><![CDATA[<p>=========================================================================</p>
 <h1 id="아파치-관련"><a href="#아파치-관련" class="headerlink" title="아파치 관련"></a>아파치 관련</h1><p>설치 : <a href="https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%95%84%ED%8C%8C%EC%B9%98_%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84_%EC%84%A4%EC%B9%98_(%EC%BB%B4%ED%8C%8C%EC%9D%BC" target="_blank" rel="external">https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%95%84%ED%8C%8C%EC%B9%98_%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84_%EC%84%A4%EC%B9%98_(%EC%BB%B4%ED%8C%8C%EC%9D%BC</a>)<br>아파치 실행 : /home1/irteam/apps/apache/bin 에서 “./apachectl start”<br>html 파일 : /home1/irteam/apps/apache/htdocs</p>
@@ -29,7 +29,7 @@
 <p>성공한 방법</p>
 <ol>
 <li>/home1/irteam/apps/apache/bin 에서 “./apxs -n helloworld -g” 명령어 입력하면 helloworld 디렉터리가 생성된다.</li>
-<li><p>생성된 helloworld 디렉터리 들어간 후 vi mod_helloworld.c 를 참고하여 명령들을 실행.(명령들은 다음과같다)<br>/home1/irteam/apps/apache/bin 디렉토리로 이동 후  “#sudo ./apxs -c -i helloworld/mod_helloworld.c” 실행<br>/home1/irteam/apps/apache/conf 디렉토리로 이동 후 “vi httpd.conf” 열기<br>적당한 곳에 다음 2-4번의 내용 추가 ( 약 156라인)<br>LoadModule helloworld_module modules/mod_helloworld.so</p>
+<li><p>생성된 helloworld 디렉터리 들어간 후 vi mod_helloworld.c 를 참고하여 명령들을 실행.(명령들은 다음과같다)<br>/home1/irteam/apps/apache/bin 디렉토리로 이동 후  “#sudo ./apxs -c -i helloworld/mod_helloworld.c” 실행(sudo ./apxs -c -i /home1/irteam/sangheon/getimage/mod_getimage.c 로 하면된다. )<br>/home1/irteam/apps/apache/conf 디렉토리로 이동 후 “vi httpd.conf” 열기<br>적당한 곳에 다음 2-4번의 내용 추가 ( 약 156라인)<br>LoadModule helloworld_module modules/mod_helloworld.so</p>
  <location helloworld=""><br> SetHandler helloworld<br> </location>
 </li>
 <li><p>/home/irteam/apps/apache/bin 디렉토리에 들어간 후 “# sudo ./apachectl restart” 입력</p>
@@ -40,8 +40,26 @@
 <p>C파일을 수정하였을 경우<br>C 파일을 수정 한 후에는 위의 2-1번만 실행 후 3번으로 거치면 된다.</p>
 <p>시도해봤지만 안되는 방법<br>apxs -n hello -g 를 하면 so 파일이 /usr/lib64/httpd/modules/mod_hello.so 에 생성되는데  “sudo mv /usr/lib64/httpd/modules/mod_hello.so 내 modules 디렉토리”  명령어를 통해 so 파일을 옮겨준다.<br>“sudo chown irteam:irteam mod_hello.so” 명령어를 통해 소유자와 관리자를 다른것과 동일하게 변경한다.</p>
 <p>LoadModule hello_module /modules/mod_hello.so 이라는 문자열이 /etc/httpd/conf/httpd.conf<br>에 생성되는데 내 경로의 conf/httpd.conf  149쯔음 사이에 끼워 넣어준다.</p>
+<p>파일 전송 관련<br>사용함.</p>
+<p>posix함수<br>lseek 함수(apr_file_open) 대신</p>
+<p>ap_rwrite 함수<br><a href="https://ci.apache.org/projects/httpd/trunk/doxygen/group__APACHE__CORE__PROTO.html#ga5e91eb6ca777c9a427b2e82bf1eeb81d" target="_blank" rel="external">https://ci.apache.org/projects/httpd/trunk/doxygen/group__APACHE__CORE__PROTO.html#ga5e91eb6ca777c9a427b2e82bf1eeb81d</a></p>
+<p>얘도 이미지 전송하는거 구현함<br><a href="https://github.com/lucianpls/mod_reproject/blob/master/src/mod_reproject.cpp" target="_blank" rel="external">https://github.com/lucianpls/mod_reproject/blob/master/src/mod_reproject.cpp</a></p>
+<p>헤더의 값 모음(ex 200은 뭐 404는 뭐)<br><a href="https://ci.apache.org/projects/httpd/trunk/doxygen/group__HTTP__Status.html" target="_blank" rel="external">https://ci.apache.org/projects/httpd/trunk/doxygen/group__HTTP__Status.html</a></p>
+<p>사용안함..<br>파일전송에 관한 예제소스<br><a href="https://serverfault.com/questions/691604/sending-files-via-http" target="_blank" rel="external">https://serverfault.com/questions/691604/sending-files-via-http</a></p>
+<p>APR 파일처리 관련함수 정리되어있음(한글)<br><a href="http://m.blog.daum.net/jchern/13756702#start" target="_blank" rel="external">http://m.blog.daum.net/jchern/13756702#start</a></p>
+<p>로그찍기<br>헤더 : #include <http_log.h><br>사용예문 : ap_log_rerror(APLOG_MARK, APLOG_ERR, 0, r, “myError%s %s”,”aa”,”bbb”);<br>로그경로 : /home1/irteam/apps/apache/logs 로 들어가  tail -100f error_log 하면 출력된다.</http_log.h></p>
 <p>request가 도착하였을때 수신하는 request_rec 구조체 정보<br><a href="http://woorie.tistory.com/entry/API1-requestrec-structure" target="_blank" rel="external">http://woorie.tistory.com/entry/API1-requestrec-structure</a><br>상대방에게 echo를 하기위해서는  ap_rprintf(r,”%s”,r-&gt;args); 처럼 ap_rprintf 함수를 이용하자.</p>
 <p>ap_rputs(“The sample page from mod_getimage.c\n”, r);</p>
+<p>=========================================================================</p>
+<h1 id="각종-경로"><a href="#각종-경로" class="headerlink" title="각종 경로"></a>각종 경로</h1><p>apps/usr - 라이브러리 모음집</p>
+<p>파일전송에 관한 예제소스<br><a href="https://serverfault.com/questions/691604/sending-files-via-http" target="_blank" rel="external">https://serverfault.com/questions/691604/sending-files-via-http</a></p>
+<p>APR 파일처리 관련함수 정리되어있음(한글)<br><a href="http://m.blog.daum.net/jchern/13756702#start" target="_blank" rel="external">http://m.blog.daum.net/jchern/13756702#start</a></p>
+<p>irteam으로 아파치 실행을 하기위한 명령어<br>sudo /bin/chown root.irteam /home1/irteam/apps/apache/bin/httpd<br>sudo /bin/chmod 4755 /home1/irteam/apps/apache/bin/httpd</p>
+<p>=========================================================================</p>
+<p>psir이란?<br>두 이미지의 차이.(값이 낮을수록 신뢰도가 낮아진다.)</p>
+<h1 id="명령어"><a href="#명령어" class="headerlink" title="명령어"></a>명령어</h1><p>ip 확인 : /sbin/ifconfig</p>
+<p>Makefile - 동작과 관련된 명령<br>Makefile.inc - 연결해야할 라이브러리, 모듈이 정의되어 있다.</p>
+<p>vi 로 코딩 쉽게하는 방법 ctags -R * ()<br>메모리 fault 났을 때 gdb를 활용하자</p>
 ]]></content>
     
     <summary type="html">
