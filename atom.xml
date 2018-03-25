@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-03-23T11:39:06.922Z</updated>
+  <updated>2018-03-25T10:39:42.662Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,25 +16,50 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>apache-add-module</title>
+    <title>아파치 모듈추가</title>
     <link href="http://KKimSangHeon.github.io/2018/03/23/apache-add-module/"/>
     <id>http://KKimSangHeon.github.io/2018/03/23/apache-add-module/</id>
     <published>2018-03-23T11:39:06.000Z</published>
-    <updated>2018-03-23T11:39:06.922Z</updated>
+    <updated>2018-03-25T10:39:42.662Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="아파치-모듈-추가"><a href="#아파치-모듈-추가" class="headerlink" title="아파치 모듈 추가"></a>아파치 모듈 추가</h3><p>/home/irteam/apps/apache 이라는 경로에 아파치가 설치되어있다고 가정.</p>
+<ol>
+<li><code>./apxs -n getimage -g</code> 로 모듈추가. 그럼 현재 위치(bin)에 getimage디렉토리가 생성된다.</li>
+<li>/home/irteam/apps/apache/conf 경로로 이동하여 httpd.conf를 열자</li>
+<li>약 150라인 정도 다음을 추가하자.<br><code>LoadModule getimage_module modules/mod_getimage.so
+&lt;Location /getimage&gt;
+SetHandler getimage
+&lt;/Location&gt;</code><br>위의 내용은 mod_getimage.c 파일을 참고하여 작성가능.</li>
+<li>/home/irteam/apps/apache/bin 디렉토리에 이동하여 <code>./apxs -c -i /home/irteam/apps/apache/bin/getimage/mod_getimage.c</code> 를 입력하자. 여기서 특정 라이브러리를 이용할 경우 뒤에 -l라이브러리 이름을 입력하자. curl을 이용할 경우 -lcurl을 입력</li>
+<li>bin 디렉토리에서<code>./apachectl restart</code> 입력</li>
+</ol>
+<p>만약 c 파일을 수정했을 경우엔 4번 5번을 다시 실행하면 된다.</p>
+<hr>
+<p>권한문제로 서버를 실행시킬 수 없을 때 다음과 같이 입력하자.<br><code>sudo /bin/chown root.irteam /home/irteam/apps/apache/bin/httpd
+sudo /bin/chmod 4755 /home/irteam/apps/apache/bin/httpd</code></p>
+]]></content>
     
     <summary type="html">
     
+      &lt;h3 id=&quot;아파치-모듈-추가&quot;&gt;&lt;a href=&quot;#아파치-모듈-추가&quot; class=&quot;headerlink&quot; title=&quot;아파치 모듈 추가&quot;&gt;&lt;/a&gt;아파치 모듈 추가&lt;/h3&gt;&lt;p&gt;/home/irteam/apps/apache 이라는 경로에 아파치가 설치되어
+    
     </summary>
     
+      <category term="기타" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/"/>
+    
+      <category term="아무거나" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/%EC%95%84%EB%AC%B4%EA%B1%B0%EB%82%98/"/>
+    
+    
+      <category term="아파치 모듈추가" scheme="http://KKimSangHeon.github.io/tags/%EC%95%84%ED%8C%8C%EC%B9%98-%EB%AA%A8%EB%93%88%EC%B6%94%EA%B0%80/"/>
     
   </entry>
   
   <entry>
-    <title>mytip</title>
+    <title>자료정리</title>
     <link href="http://KKimSangHeon.github.io/2018/03/20/mytip/"/>
     <id>http://KKimSangHeon.github.io/2018/03/20/mytip/</id>
     <published>2018-03-20T13:57:50.000Z</published>
-    <updated>2018-03-21T13:34:57.424Z</updated>
+    <updated>2018-03-25T10:38:56.821Z</updated>
     
     <content type="html"><![CDATA[<p>=========================================================================</p>
 <h1 id="아파치-관련"><a href="#아파치-관련" class="headerlink" title="아파치 관련"></a>아파치 관련</h1><p>설치 : <a href="https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%95%84%ED%8C%8C%EC%B9%98_%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84_%EC%84%A4%EC%B9%98_(%EC%BB%B4%ED%8C%8C%EC%9D%BC" target="_blank" rel="external">https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%95%84%ED%8C%8C%EC%B9%98_%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84_%EC%84%A4%EC%B9%98_(%EC%BB%B4%ED%8C%8C%EC%9D%BC</a>)<br>아파치 실행 : /home1/irteam/apps/apache/bin 에서 “./apachectl start”<br>html 파일 : /home1/irteam/apps/apache/htdocs</p>
@@ -82,6 +107,10 @@
 &lt;h1 id=&quot;아파치-관련&quot;&gt;&lt;a href=&quot;#아파치-관련&quot; class=&quot;headerlink&quot; title=
     
     </summary>
+    
+      <category term="기타" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/"/>
+    
+      <category term="아무거나" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/%EC%95%84%EB%AC%B4%EA%B1%B0%EB%82%98/"/>
     
     
   </entry>
