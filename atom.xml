@@ -59,10 +59,9 @@ sudo /bin/chmod 4755 /home/irteam/apps/apache/bin/httpd</code></p>
     <link href="http://KKimSangHeon.github.io/2018/03/20/mytip/"/>
     <id>http://KKimSangHeon.github.io/2018/03/20/mytip/</id>
     <published>2018-03-20T13:57:50.000Z</published>
-    <updated>2018-03-25T10:38:56.821Z</updated>
+    <updated>2018-03-26T12:41:47.557Z</updated>
     
-    <content type="html"><![CDATA[<p>=========================================================================</p>
-<h1 id="아파치-관련"><a href="#아파치-관련" class="headerlink" title="아파치 관련"></a>아파치 관련</h1><p>설치 : <a href="https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%95%84%ED%8C%8C%EC%B9%98_%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84_%EC%84%A4%EC%B9%98_(%EC%BB%B4%ED%8C%8C%EC%9D%BC" target="_blank" rel="external">https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%95%84%ED%8C%8C%EC%B9%98_%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84_%EC%84%A4%EC%B9%98_(%EC%BB%B4%ED%8C%8C%EC%9D%BC</a>)<br>아파치 실행 : /home1/irteam/apps/apache/bin 에서 “./apachectl start”<br>html 파일 : /home1/irteam/apps/apache/htdocs</p>
+    <content type="html"><![CDATA[<h1 id="아파치-관련"><a href="#아파치-관련" class="headerlink" title="아파치 관련"></a>아파치 관련</h1><p>설치 : <a href="https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%95%84%ED%8C%8C%EC%B9%98_%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84_%EC%84%A4%EC%B9%98_(%EC%BB%B4%ED%8C%8C%EC%9D%BC" target="_blank" rel="external">https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%95%84%ED%8C%8C%EC%B9%98_%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84_%EC%84%A4%EC%B9%98_(%EC%BB%B4%ED%8C%8C%EC%9D%BC</a>)<br>아파치 실행 : /home1/irteam/apps/apache/bin 에서 “./apachectl start”<br>html 파일 : /home1/irteam/apps/apache/htdocs</p>
 <h3 id="서버의-아파치-실행"><a href="#서버의-아파치-실행" class="headerlink" title="서버의 아파치 실행"></a>서버의 아파치 실행</h3><p>sudo /sbin/service httpd start<br>sudo /sbin/apachectl start<br>sudo /sbin/service httpd status<br>sudo /sbin/apachectl status<br>참고 : <a href="http://library.gabia.com/contents/infrahosting/3513" target="_blank" rel="external">http://library.gabia.com/contents/infrahosting/3513</a></p>
 <h3 id="아파치-모듈-추가"><a href="#아파치-모듈-추가" class="headerlink" title="아파치 모듈 추가"></a>아파치 모듈 추가</h3><p><a href="http://prettymonkey02.tistory.com/1051" target="_blank" rel="external">http://prettymonkey02.tistory.com/1051</a></p>
 <p>성공한 방법</p>
@@ -103,8 +102,7 @@ sudo /bin/chmod 4755 /home/irteam/apps/apache/bin/httpd</code></p>
     
     <summary type="html">
     
-      &lt;p&gt;=========================================================================&lt;/p&gt;
-&lt;h1 id=&quot;아파치-관련&quot;&gt;&lt;a href=&quot;#아파치-관련&quot; class=&quot;headerlink&quot; title=
+      &lt;h1 id=&quot;아파치-관련&quot;&gt;&lt;a href=&quot;#아파치-관련&quot; class=&quot;headerlink&quot; title=&quot;아파치 관련&quot;&gt;&lt;/a&gt;아파치 관련&lt;/h1&gt;&lt;p&gt;설치 : &lt;a href=&quot;https://zetawiki.com/wiki/%EB%A6%AC%EB%8
     
     </summary>
     
