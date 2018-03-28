@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     
-    <title>자료정리 | Kim Sang Heon&#39;s Bolg</title>
+    <title>Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="" />
@@ -12,13 +12,13 @@
 
       <meta name="description" content="아파치 관련설치 : https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%95%84%ED%8C%8C%EC%B9%98_%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84_%EC%84%A4%EC%B9%98_(%EC%BB%B4%ED%8C%8C%EC%9D%BC)아파치 실행 : /home1/irteam">
 <meta property="og:type" content="article">
-<meta property="og:title" content="자료정리">
+<meta property="og:title" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2018/03/20/mytip/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="아파치 관련설치 : https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%95%84%ED%8C%8C%EC%B9%98_%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84_%EC%84%A4%EC%B9%98_(%EC%BB%B4%ED%8C%8C%EC%9D%BC)아파치 실행 : /home1/irteam">
-<meta property="og:updated_time" content="2018-03-26T12:41:47.557Z">
+<meta property="og:updated_time" content="2018-03-28T23:34:16.981Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="자료정리">
+<meta name="twitter:title" content="Kim Sang Heon&#39;s Bolg">
 <meta name="twitter:description" content="아파치 관련설치 : https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%95%84%ED%8C%8C%EC%B9%98_%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84_%EC%84%A4%EC%B9%98_(%EC%BB%B4%ED%8C%8C%EC%9D%BC)아파치 실행 : /home1/irteam">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
@@ -131,7 +131,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/기타/">기타</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/기타/아무거나/">아무거나</a>
+    uncategorized
     </h1>
 </div>
                         <div class="main-body-content">
@@ -149,22 +149,12 @@ ga('send', 'pageview');
                             <article id="post-mytip" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
-            <header class="article-header">
-                
-    
-        <h1 class="article-title" itemprop="name">
-        자료정리
-        </h1>
-    
-
-            </header>
-        
         
             <div class="article-meta">
                 
     <div class="article-date">
         <a href="/2018/03/20/mytip/" class="article-date">
-            <time datetime="2018-03-20T13:57:50.000Z" itemprop="datePublished">2018-03-20</time>
+            <time datetime="2018-03-19T15:00:00.000Z" itemprop="datePublished">2018-03-20</time>
         </a>
     </div>
 
@@ -174,12 +164,21 @@ ga('send', 'pageview');
         
         <div class="article-entry" itemprop="articleBody">
             <h1 id="아파치-관련"><a href="#아파치-관련" class="headerlink" title="아파치 관련"></a>아파치 관련</h1><p>설치 : <a href="https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%95%84%ED%8C%8C%EC%B9%98_%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84_%EC%84%A4%EC%B9%98_(%EC%BB%B4%ED%8C%8C%EC%9D%BC" target="_blank" rel="external">https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%95%84%ED%8C%8C%EC%B9%98_%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84_%EC%84%A4%EC%B9%98_(%EC%BB%B4%ED%8C%8C%EC%9D%BC</a>)<br>아파치 실행 : /home1/irteam/apps/apache/bin 에서 “./apachectl start”<br>html 파일 : /home1/irteam/apps/apache/htdocs</p>
+<p>설치 2: 얘가 더 안정적인 방법인듯.<br><a href="http://fmd1225.tistory.com/43" target="_blank" rel="external">http://fmd1225.tistory.com/43</a></p>
+<p>영진님이 제공한 스크립트.(이걸로 하자.)<br>wget <a href="http://10.99.85.104/ips/centos7.3/httpd-2.2.17.tar.gz" target="_blank" rel="external">http://10.99.85.104/ips/centos7.3/httpd-2.2.17.tar.gz</a><br>tar xfz httpd-2.2.17.tar.gz<br>cd httpd-2.2.17</p>
+<p>cd srclib/apr<br>./configure –prefix=/home1/irteam/apps/apache-2.2.17<br>make &amp;&amp; make install</p>
+<p>cd ../apr-util<br>./configure –prefix=/home1/irteam/apps/apache-2.2.17 –with-apr=/home1/irteam/apps/apache-2.2.17<br>make &amp;&amp; make install</p>
+<p>cd ../..<br>./configure –prefix=/home1/irteam/apps/apache-2.2.17 –enable-mods-shared=all<br>make &amp;&amp; make install</p>
+<p>cd /home1/irteam/apps/usr<br>ln -s apache-2.2.17/ apache</p>
+<p>wget <a href="http://10.99.85.104/ips/centos7.3/expat-2.0.1.tar.gz" target="_blank" rel="external">http://10.99.85.104/ips/centos7.3/expat-2.0.1.tar.gz</a><br>tar xfz expat-2.0.1.tar.gz<br>cd expat-2.0.1<br>./configure -prefix=/home1/irteam/apps/usr/libexpat<br>make &amp;&amp; make install</p>
+<p>wget <a href="http://10.99.85.104/ips/centos7.3/libapreq2-2.13.tar.gz" target="_blank" rel="external">http://10.99.85.104/ips/centos7.3/libapreq2-2.13.tar.gz</a><br>tar xfz libapreq2-2.13.tar.gz<br>cd libapreq2-2.13<br>./configure –with-apache2-apxs=/home1/irteam/apps/apache/bin/apxs –with-expat=/home1/irteam/apps/usr/libexpat –prefix=/home1/irteam/apps/usr/apreq2<br>make &amp;&amp; make install</p>
+<p>여기서 apache/include 들어가서 생성된 디렉토리에 있는 헤더파일들을 모두 밖으로 빼 주자.<br>그리고 conf/httpd.conf 들어가서 deamon으로 된것 irteam으로 수정</p>
 <h3 id="서버의-아파치-실행"><a href="#서버의-아파치-실행" class="headerlink" title="서버의 아파치 실행"></a>서버의 아파치 실행</h3><p>sudo /sbin/service httpd start<br>sudo /sbin/apachectl start<br>sudo /sbin/service httpd status<br>sudo /sbin/apachectl status<br>참고 : <a href="http://library.gabia.com/contents/infrahosting/3513" target="_blank" rel="external">http://library.gabia.com/contents/infrahosting/3513</a></p>
 <h3 id="아파치-모듈-추가"><a href="#아파치-모듈-추가" class="headerlink" title="아파치 모듈 추가"></a>아파치 모듈 추가</h3><p><a href="http://prettymonkey02.tistory.com/1051" target="_blank" rel="external">http://prettymonkey02.tistory.com/1051</a></p>
 <p>성공한 방법</p>
 <ol>
 <li>/home1/irteam/apps/apache/bin 에서 “./apxs -n helloworld -g” 명령어 입력하면 helloworld 디렉터리가 생성된다.</li>
-<li><p>생성된 helloworld 디렉터리 들어간 후 vi mod_helloworld.c 를 참고하여 명령들을 실행.(명령들은 다음과같다)<br>/home1/irteam/apps/apache/bin 디렉토리로 이동 후  “#sudo ./apxs -c -i helloworld/mod_helloworld.c” 실행(sudo ./apxs -c -i /home1/irteam/sangheon/getimage/mod_getimage.c 로 하면된다. )<br>/home1/irteam/apps/apache/conf 디렉토리로 이동 후 “vi httpd.conf” 열기<br>적당한 곳에 다음 2-4번의 내용 추가 ( 약 156라인)<br>LoadModule helloworld_module modules/mod_helloworld.so</p>
+<li><p>생성된 helloworld 디렉터리 들어간 후 vi mod_helloworld.c 를 참고하여 명령들을 실행.(명령들은 다음과같다)<br>/home1/irteam/apps/apache/bin 디렉토리로 이동 후  “#sudo ./apxs -c -i helloworld/mod_helloworld.c” 실행(sudo ./apxs -c -i /home1/irteam/sangheon/getimage/mod_getimage.c 로 하면된다. 만약 curl을 사용할 경우 -lcurl을 입력하자)<br>/home1/irteam/apps/apache/conf 디렉토리로 이동 후 “vi httpd.conf” 열기<br>적당한 곳에 다음 2-4번의 내용 추가 ( 약 156라인)<br>LoadModule helloworld_module modules/mod_helloworld.so</p>
  <location helloworld=""><br> SetHandler helloworld<br> </location>
 </li>
 <li><p>/home/irteam/apps/apache/bin 디렉토리에 들어간 후 “# sudo ./apachectl restart” 입력</p>
@@ -200,16 +199,22 @@ ga('send', 'pageview');
 <p>로그찍기<br>헤더 : #include <http_log.h><br>사용예문 : ap_log_rerror(APLOG_MARK, APLOG_ERR, 0, r, “myError%s %s”,”aa”,”bbb”);<br>로그경로 : /home1/irteam/apps/apache/logs 로 들어가  tail -100f error_log 하면 출력된다.</http_log.h></p>
 <p>request가 도착하였을때 수신하는 request_rec 구조체 정보<br><a href="http://woorie.tistory.com/entry/API1-requestrec-structure" target="_blank" rel="external">http://woorie.tistory.com/entry/API1-requestrec-structure</a><br>상대방에게 echo를 하기위해서는  ap_rprintf(r,”%s”,r-&gt;args); 처럼 ap_rprintf 함수를 이용하자.</p>
 <p>ap_rputs(“The sample page from mod_getimage.c\n”, r);</p>
-<p>=========================================================================</p>
-<h1 id="각종-경로"><a href="#각종-경로" class="headerlink" title="각종 경로"></a>각종 경로</h1><p>apps/usr - 라이브러리 모음집</p>
+<p>register_hook는?<br>아파치가 뜨고 핸들러를 연결해준다. 초기화 호출 후 등록 같은것을 해준다. 보통 서버 공통사항을 적용</p>
+<p>각종 경로<br>apps/usr - 라이브러리 모음집</p>
 <p>파일전송에 관한 예제소스<br><a href="https://serverfault.com/questions/691604/sending-files-via-http" target="_blank" rel="external">https://serverfault.com/questions/691604/sending-files-via-http</a></p>
 <p>APR 파일처리 관련함수 정리되어있음(한글)<br><a href="http://m.blog.daum.net/jchern/13756702#start" target="_blank" rel="external">http://m.blog.daum.net/jchern/13756702#start</a></p>
 <p>irteam으로 아파치 실행을 하기위한 명령어<br>sudo /bin/chown root.irteam /home1/irteam/apps/apache/bin/httpd<br>sudo /bin/chmod 4755 /home1/irteam/apps/apache/bin/httpd</p>
+<p>알아두면 좋을것..<br>xxxx_register_hooks 함수 내에서 쓰이는 함수들<br>ap_hook_handler() 함수 :  첫번째 인자로 핸들러 함수를 넘겨주어 처리하도록 함<br><a href="https://svn.apache.org/repos/asf/httpd/httpd/branches/2.0.x/modules/experimental/mod_example.c" target="_blank" rel="external">https://svn.apache.org/repos/asf/httpd/httpd/branches/2.0.x/modules/experimental/mod_example.c</a><br>자세한건 위의 경로가서 분석해보자</p>
+<p>의존성 관련 문제발생시<br>httpd: Syntax error on line 157 of /home1/irteam/apps/apache/conf/httpd.conf: Cannot load modules/mod_getimage.so into server: /home1/irteam/apps/apache/modules/mod_getimage.so: undefined symbol: curl_global_init<br>위와같은 에러 발생시….<br><a href="http://www.slowsystems.co.jp/blog/?p=111" target="_blank" rel="external">http://www.slowsystems.co.jp/blog/?p=111</a></p>
+<p>apxs를 이용할 경우 “./apxs -c -i /home1/irteam/sangheon/getimage/mod_getimage.c -lcurl “와 같이 컴파일하자</p>
 <p>=========================================================================</p>
-<p>psir이란?<br>두 이미지의 차이.(값이 낮을수록 신뢰도가 낮아진다.)</p>
-<h1 id="명령어"><a href="#명령어" class="headerlink" title="명령어"></a>명령어</h1><p>ip 확인 : /sbin/ifconfig</p>
-<p>Makefile - 동작과 관련된 명령<br>Makefile.inc - 연결해야할 라이브러리, 모듈이 정의되어 있다.</p>
-<p>vi 로 코딩 쉽게하는 방법 ctags -R * ()<br>메모리 fault 났을 때 gdb를 활용하자</p>
+<p>vi 관련</p>
+<p>코드 정렬하기<br>ggvG=<br>gg는 파일 처음으로이동하고<br>v는 비쥬얼 모드로 전환하고<br>G는 끝까지 드래그<br>=는 정렬</p>
+<p>함수 정의를 찾아가고싶을 때<br>ctag 를 사용하자<br><a href="http://bowbowbow.tistory.com/15" target="_blank" rel="external">http://bowbowbow.tistory.com/15</a></p>
+<p>사용하는 ~/.vimrc<br>set hlsearch<br>set nu<br>set autoindent<br>set scrolloff=2<br>set wildmode=longest,list<br>set ts=4<br>set sts=4<br>set sw=1<br>set autowrite<br>set autoread<br>set cindent<br>set bs=eol,start,indent<br>set history=256<br>set laststatus=2<br>set shiftwidth=4<br>set showmatch<br>set smartcase<br>set smarttab<br>set smartindent<br>set softtabstop=4<br>set tabstop=4<br>set ruler<br>set incsearch<br>highlight Comment term=bold cterm=bold ctermfg=4<br>set tags=/home1/irteam/sangheon/getimage/tags</p>
+<p>========================================================================<br>과제관련<br>fiddler : 헤더 분석 등 웹 디버깅도구<br>ldd mod_getimage.so : 링크확인</p>
+<p>curl 로 이미지 읽기<br><a href="http://kalug.linux.org.tw/~lloyd/bblog/archives/2010/12/05/tip_libcurl_example/" target="_blank" rel="external">http://kalug.linux.org.tw/~lloyd/bblog/archives/2010/12/05/tip_libcurl_example/</a></p>
+<p><a href="http://www.imagemagick.org/api/magick++-classes.php" target="_blank" rel="external">http://www.imagemagick.org/api/magick++-classes.php</a></p>
 
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -361,7 +366,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">14</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Travel/">Travel</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web/Angular2/">Angular2</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/">기타</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/기타/면접/">면접</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/아무거나/">아무거나</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/자격증/">자격증</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">42</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Python/">Python</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Web/">Web</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">14</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Travel/">Travel</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/">Data Structure</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Structure/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/관련정보/">관련정보</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web/Angular2/">Angular2</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/">기타</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/기타/면접/">면접</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/아무거나/">아무거나</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/자격증/">자격증</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><span class="category-list-count">42</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Data-Base/">Data Base</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Java/">Java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Python/">Python</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/Web/">Web</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/빅데이터-전문가과정/기타/">기타</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
