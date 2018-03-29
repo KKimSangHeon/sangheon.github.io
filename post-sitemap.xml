@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2018/03/30/linux-bash-profile/</loc>
+        <lastmod>2018-03-29T23:31:33.279Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/07/09/ThisIsLinux24/</loc>
+        <lastmod>2018-03-29T23:30:58.529Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2018/03/20/mytip/</loc>
         <lastmod>2018-03-28T23:34:16.981Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -271,7 +287,7 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/2017/09/15/spring4/</loc>
+        <loc>http://KKimSangHeon.github.io/2017/09/06/ajax/</loc>
         <lastmod>2017-09-18T00:28:25.075Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -295,7 +311,7 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/2017/09/06/ajax/</loc>
+        <loc>http://KKimSangHeon.github.io/2017/09/15/spring4/</loc>
         <lastmod>2017-09-18T00:28:25.075Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -785,14 +801,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2017/07/09/ThisIsLinux25/</loc>
         <lastmod>2017-07-10T15:51:05.334Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2017/07/09/ThisIsLinux24/</loc>
-        <lastmod>2017-07-10T15:51:04.205Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
