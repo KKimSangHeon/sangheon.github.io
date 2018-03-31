@@ -7,8 +7,8 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/2018/03/30/linux-bash-profile/</loc>
-        <lastmod>2018-03-29T23:31:33.279Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/2017/06/29/about-me/</loc>
+        <lastmod>2018-03-31T10:11:57.170Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +16,23 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2017/07/09/ThisIsLinux24/</loc>
-        <lastmod>2018-03-29T23:30:58.529Z</lastmod>
+        <lastmod>2018-03-31T10:06:33.261Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2018/01/13/interview6/</loc>
+        <lastmod>2018-03-31T10:06:32.287Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2018/03/30/linux-bash-profile/</loc>
+        <lastmod>2018-03-29T23:31:33.279Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -33,14 +49,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2018/03/23/apache-add-module/</loc>
         <lastmod>2018-03-25T10:39:42.662Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2017/06/29/about-me/</loc>
-        <lastmod>2018-03-23T11:40:45.472Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -137,14 +145,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2018/01/13/interview2/</loc>
         <lastmod>2018-01-13T14:54:27.551Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2018/01/13/interview6/</loc>
-        <lastmod>2018-01-13T13:41:44.785Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
