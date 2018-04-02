@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://KKimSangHeon.github.io/2018/03/23/apache-add-module/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="아파치 모듈 추가/home/sangheon/apps/apache 이라는 경로에 아파치가 설치되어있다고 가정.  ./apxs -n modulename -g 로 모듈추가. 그럼 현재 위치(bin)에 modulename디렉토리가 생성된다. /home/sangheon/apps/apache/conf 경로로 이동하여 httpd.conf를 열자 약 150라인 정도 다음">
-<meta property="og:updated_time" content="2018-04-02T14:28:13.594Z">
+<meta property="og:updated_time" content="2018-04-02T15:02:55.802Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="아파치 모듈추가">
 <meta name="twitter:description" content="아파치 모듈 추가/home/sangheon/apps/apache 이라는 경로에 아파치가 설치되어있다고 가정.  ./apxs -n modulename -g 로 모듈추가. 그럼 현재 위치(bin)에 modulename디렉토리가 생성된다. /home/sangheon/apps/apache/conf 경로로 이동하여 httpd.conf를 열자 약 150라인 정도 다음">
@@ -186,7 +186,7 @@ ga('send', 'pageview');
 <li>약 150라인 정도 다음을 추가하자.<br><code>LoadModule modulename_module modules/mod_modulename.so
 &lt;Location /modulename&gt;
 SetHandler modulename
-&lt;/Location&gt;</code><br>위의 내용은 mod_modulename.c 파일을 참고하여 작성가능.</li>
+&lt;/Location&gt;</code><br>위의 내용은 mod_modulename.c 파일을 참고하여 작성가능</li>
 <li>/home/sangheon/apps/apache/bin 디렉토리에 이동하여 <code>./apxs -c -i /home/sangheon/apps/apache/bin/modulename/mod_modulename.c</code> 를 입력하자. 여기서 특정 라이브러리를 이용할 경우 뒤에 -l라이브러리 이름을 입력하자. curl을 이용할 경우 -lcurl을 입력</li>
 <li>bin 디렉토리에서<code>./apachectl restart</code> 입력</li>
 </ol>
