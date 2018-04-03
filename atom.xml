@@ -88,65 +88,19 @@ sudo /bin/chmod 4755 /home/sangheon/apps/apache/bin/httpd</code></p>
     <link href="http://KKimSangHeon.github.io/2018/03/20/mytip/"/>
     <id>http://KKimSangHeon.github.io/2018/03/20/mytip/</id>
     <published>2018-03-19T15:00:00.000Z</published>
-    <updated>2018-03-28T23:34:16.981Z</updated>
+    <updated>2018-04-03T23:21:49.708Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="아파치-관련"><a href="#아파치-관련" class="headerlink" title="아파치 관련"></a>아파치 관련</h1><p>설치 : <a href="https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%95%84%ED%8C%8C%EC%B9%98_%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84_%EC%84%A4%EC%B9%98_(%EC%BB%B4%ED%8C%8C%EC%9D%BC" target="_blank" rel="external">https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%95%84%ED%8C%8C%EC%B9%98_%EC%B5%9C%EC%8B%A0%EB%B2%84%EC%A0%84_%EC%84%A4%EC%B9%98_(%EC%BB%B4%ED%8C%8C%EC%9D%BC</a>)<br>아파치 실행 : /home1/irteam/apps/apache/bin 에서 “./apachectl start”<br>html 파일 : /home1/irteam/apps/apache/htdocs</p>
-<p>설치 2: 얘가 더 안정적인 방법인듯.<br><a href="http://fmd1225.tistory.com/43" target="_blank" rel="external">http://fmd1225.tistory.com/43</a></p>
-<p>영진님이 제공한 스크립트.(이걸로 하자.)<br>wget <a href="http://10.99.85.104/ips/centos7.3/httpd-2.2.17.tar.gz" target="_blank" rel="external">http://10.99.85.104/ips/centos7.3/httpd-2.2.17.tar.gz</a><br>tar xfz httpd-2.2.17.tar.gz<br>cd httpd-2.2.17</p>
-<p>cd srclib/apr<br>./configure –prefix=/home1/irteam/apps/apache-2.2.17<br>make &amp;&amp; make install</p>
-<p>cd ../apr-util<br>./configure –prefix=/home1/irteam/apps/apache-2.2.17 –with-apr=/home1/irteam/apps/apache-2.2.17<br>make &amp;&amp; make install</p>
-<p>cd ../..<br>./configure –prefix=/home1/irteam/apps/apache-2.2.17 –enable-mods-shared=all<br>make &amp;&amp; make install</p>
-<p>cd /home1/irteam/apps/usr<br>ln -s apache-2.2.17/ apache</p>
-<p>wget <a href="http://10.99.85.104/ips/centos7.3/expat-2.0.1.tar.gz" target="_blank" rel="external">http://10.99.85.104/ips/centos7.3/expat-2.0.1.tar.gz</a><br>tar xfz expat-2.0.1.tar.gz<br>cd expat-2.0.1<br>./configure -prefix=/home1/irteam/apps/usr/libexpat<br>make &amp;&amp; make install</p>
-<p>wget <a href="http://10.99.85.104/ips/centos7.3/libapreq2-2.13.tar.gz" target="_blank" rel="external">http://10.99.85.104/ips/centos7.3/libapreq2-2.13.tar.gz</a><br>tar xfz libapreq2-2.13.tar.gz<br>cd libapreq2-2.13<br>./configure –with-apache2-apxs=/home1/irteam/apps/apache/bin/apxs –with-expat=/home1/irteam/apps/usr/libexpat –prefix=/home1/irteam/apps/usr/apreq2<br>make &amp;&amp; make install</p>
-<p>여기서 apache/include 들어가서 생성된 디렉토리에 있는 헤더파일들을 모두 밖으로 빼 주자.<br>그리고 conf/httpd.conf 들어가서 deamon으로 된것 irteam으로 수정</p>
-<h3 id="서버의-아파치-실행"><a href="#서버의-아파치-실행" class="headerlink" title="서버의 아파치 실행"></a>서버의 아파치 실행</h3><p>sudo /sbin/service httpd start<br>sudo /sbin/apachectl start<br>sudo /sbin/service httpd status<br>sudo /sbin/apachectl status<br>참고 : <a href="http://library.gabia.com/contents/infrahosting/3513" target="_blank" rel="external">http://library.gabia.com/contents/infrahosting/3513</a></p>
-<h3 id="아파치-모듈-추가"><a href="#아파치-모듈-추가" class="headerlink" title="아파치 모듈 추가"></a>아파치 모듈 추가</h3><p><a href="http://prettymonkey02.tistory.com/1051" target="_blank" rel="external">http://prettymonkey02.tistory.com/1051</a></p>
-<p>성공한 방법</p>
-<ol>
-<li>/home1/irteam/apps/apache/bin 에서 “./apxs -n helloworld -g” 명령어 입력하면 helloworld 디렉터리가 생성된다.</li>
-<li><p>생성된 helloworld 디렉터리 들어간 후 vi mod_helloworld.c 를 참고하여 명령들을 실행.(명령들은 다음과같다)<br>/home1/irteam/apps/apache/bin 디렉토리로 이동 후  “#sudo ./apxs -c -i helloworld/mod_helloworld.c” 실행(sudo ./apxs -c -i /home1/irteam/sangheon/getimage/mod_getimage.c 로 하면된다. 만약 curl을 사용할 경우 -lcurl을 입력하자)<br>/home1/irteam/apps/apache/conf 디렉토리로 이동 후 “vi httpd.conf” 열기<br>적당한 곳에 다음 2-4번의 내용 추가 ( 약 156라인)<br>LoadModule helloworld_module modules/mod_helloworld.so</p>
- <location helloworld=""><br> SetHandler helloworld<br> </location>
-</li>
-<li><p>/home/irteam/apps/apache/bin 디렉토리에 들어간 후 “# sudo ./apachectl restart” 입력</p>
-</li>
-<li>테스트를 위해 “lynx -mime_header <a href="http://localhost/helloworld" target="_blank" rel="external">http://localhost/helloworld</a>“ 입력</li>
-</ol>
-<p>대문자로 모듈을 생성할 경우 안되는것 같다…</p>
-<p>C파일을 수정하였을 경우<br>C 파일을 수정 한 후에는 위의 2-1번만 실행 후 3번으로 거치면 된다.</p>
-<p>시도해봤지만 안되는 방법<br>apxs -n hello -g 를 하면 so 파일이 /usr/lib64/httpd/modules/mod_hello.so 에 생성되는데  “sudo mv /usr/lib64/httpd/modules/mod_hello.so 내 modules 디렉토리”  명령어를 통해 so 파일을 옮겨준다.<br>“sudo chown irteam:irteam mod_hello.so” 명령어를 통해 소유자와 관리자를 다른것과 동일하게 변경한다.</p>
-<p>LoadModule hello_module /modules/mod_hello.so 이라는 문자열이 /etc/httpd/conf/httpd.conf<br>에 생성되는데 내 경로의 conf/httpd.conf  149쯔음 사이에 끼워 넣어준다.</p>
-<p>파일 전송 관련<br>사용함.</p>
-<p>posix함수<br>lseek 함수(apr_file_open) 대신</p>
-<p>ap_rwrite 함수<br><a href="https://ci.apache.org/projects/httpd/trunk/doxygen/group__APACHE__CORE__PROTO.html#ga5e91eb6ca777c9a427b2e82bf1eeb81d" target="_blank" rel="external">https://ci.apache.org/projects/httpd/trunk/doxygen/group__APACHE__CORE__PROTO.html#ga5e91eb6ca777c9a427b2e82bf1eeb81d</a></p>
-<p>얘도 이미지 전송하는거 구현함<br><a href="https://github.com/lucianpls/mod_reproject/blob/master/src/mod_reproject.cpp" target="_blank" rel="external">https://github.com/lucianpls/mod_reproject/blob/master/src/mod_reproject.cpp</a></p>
-<p>헤더의 값 모음(ex 200은 뭐 404는 뭐)<br><a href="https://ci.apache.org/projects/httpd/trunk/doxygen/group__HTTP__Status.html" target="_blank" rel="external">https://ci.apache.org/projects/httpd/trunk/doxygen/group__HTTP__Status.html</a></p>
-<p>사용안함..<br>파일전송에 관한 예제소스<br><a href="https://serverfault.com/questions/691604/sending-files-via-http" target="_blank" rel="external">https://serverfault.com/questions/691604/sending-files-via-http</a></p>
-<p>APR 파일처리 관련함수 정리되어있음(한글)<br><a href="http://m.blog.daum.net/jchern/13756702#start" target="_blank" rel="external">http://m.blog.daum.net/jchern/13756702#start</a></p>
-<p>로그찍기<br>헤더 : #include <http_log.h><br>사용예문 : ap_log_rerror(APLOG_MARK, APLOG_ERR, 0, r, “myError%s %s”,”aa”,”bbb”);<br>로그경로 : /home1/irteam/apps/apache/logs 로 들어가  tail -100f error_log 하면 출력된다.</http_log.h></p>
-<p>request가 도착하였을때 수신하는 request_rec 구조체 정보<br><a href="http://woorie.tistory.com/entry/API1-requestrec-structure" target="_blank" rel="external">http://woorie.tistory.com/entry/API1-requestrec-structure</a><br>상대방에게 echo를 하기위해서는  ap_rprintf(r,”%s”,r-&gt;args); 처럼 ap_rprintf 함수를 이용하자.</p>
-<p>ap_rputs(“The sample page from mod_getimage.c\n”, r);</p>
-<p>register_hook는?<br>아파치가 뜨고 핸들러를 연결해준다. 초기화 호출 후 등록 같은것을 해준다. 보통 서버 공통사항을 적용</p>
-<p>각종 경로<br>apps/usr - 라이브러리 모음집</p>
-<p>파일전송에 관한 예제소스<br><a href="https://serverfault.com/questions/691604/sending-files-via-http" target="_blank" rel="external">https://serverfault.com/questions/691604/sending-files-via-http</a></p>
-<p>APR 파일처리 관련함수 정리되어있음(한글)<br><a href="http://m.blog.daum.net/jchern/13756702#start" target="_blank" rel="external">http://m.blog.daum.net/jchern/13756702#start</a></p>
-<p>irteam으로 아파치 실행을 하기위한 명령어<br>sudo /bin/chown root.irteam /home1/irteam/apps/apache/bin/httpd<br>sudo /bin/chmod 4755 /home1/irteam/apps/apache/bin/httpd</p>
-<p>알아두면 좋을것..<br>xxxx_register_hooks 함수 내에서 쓰이는 함수들<br>ap_hook_handler() 함수 :  첫번째 인자로 핸들러 함수를 넘겨주어 처리하도록 함<br><a href="https://svn.apache.org/repos/asf/httpd/httpd/branches/2.0.x/modules/experimental/mod_example.c" target="_blank" rel="external">https://svn.apache.org/repos/asf/httpd/httpd/branches/2.0.x/modules/experimental/mod_example.c</a><br>자세한건 위의 경로가서 분석해보자</p>
-<p>의존성 관련 문제발생시<br>httpd: Syntax error on line 157 of /home1/irteam/apps/apache/conf/httpd.conf: Cannot load modules/mod_getimage.so into server: /home1/irteam/apps/apache/modules/mod_getimage.so: undefined symbol: curl_global_init<br>위와같은 에러 발생시….<br><a href="http://www.slowsystems.co.jp/blog/?p=111" target="_blank" rel="external">http://www.slowsystems.co.jp/blog/?p=111</a></p>
-<p>apxs를 이용할 경우 “./apxs -c -i /home1/irteam/sangheon/getimage/mod_getimage.c -lcurl “와 같이 컴파일하자</p>
-<p>=========================================================================</p>
-<p>vi 관련</p>
+    <content type="html"><![CDATA[<p>vi 관련</p>
 <p>코드 정렬하기<br>ggvG=<br>gg는 파일 처음으로이동하고<br>v는 비쥬얼 모드로 전환하고<br>G는 끝까지 드래그<br>=는 정렬</p>
 <p>함수 정의를 찾아가고싶을 때<br>ctag 를 사용하자<br><a href="http://bowbowbow.tistory.com/15" target="_blank" rel="external">http://bowbowbow.tistory.com/15</a></p>
 <p>사용하는 ~/.vimrc<br>set hlsearch<br>set nu<br>set autoindent<br>set scrolloff=2<br>set wildmode=longest,list<br>set ts=4<br>set sts=4<br>set sw=1<br>set autowrite<br>set autoread<br>set cindent<br>set bs=eol,start,indent<br>set history=256<br>set laststatus=2<br>set shiftwidth=4<br>set showmatch<br>set smartcase<br>set smarttab<br>set smartindent<br>set softtabstop=4<br>set tabstop=4<br>set ruler<br>set incsearch<br>highlight Comment term=bold cterm=bold ctermfg=4<br>set tags=/home1/irteam/sangheon/getimage/tags</p>
-<p>========================================================================<br>과제관련<br>fiddler : 헤더 분석 등 웹 디버깅도구<br>ldd mod_getimage.so : 링크확인</p>
-<p>curl 로 이미지 읽기<br><a href="http://kalug.linux.org.tw/~lloyd/bblog/archives/2010/12/05/tip_libcurl_example/" target="_blank" rel="external">http://kalug.linux.org.tw/~lloyd/bblog/archives/2010/12/05/tip_libcurl_example/</a></p>
-<p><a href="http://www.imagemagick.org/api/magick++-classes.php" target="_blank" rel="external">http://www.imagemagick.org/api/magick++-classes.php</a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;아파치-관련&quot;&gt;&lt;a href=&quot;#아파치-관련&quot; class=&quot;headerlink&quot; title=&quot;아파치 관련&quot;&gt;&lt;/a&gt;아파치 관련&lt;/h1&gt;&lt;p&gt;설치 : &lt;a href=&quot;https://zetawiki.com/wiki/%EB%A6%AC%EB%8
+      &lt;p&gt;vi 관련&lt;/p&gt;
+&lt;p&gt;코드 정렬하기&lt;br&gt;ggvG=&lt;br&gt;gg는 파일 처음으로이동하고&lt;br&gt;v는 비쥬얼 모드로 전환하고&lt;br&gt;G는 끝까지 드래그&lt;br&gt;=는 정렬&lt;/p&gt;
+&lt;p&gt;함수 정의를 찾아가고싶을 때&lt;br&gt;ctag 를 사용하자&lt;br&gt;&lt;a hr
     
     </summary>
     
