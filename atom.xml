@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-03-29T23:31:33.279Z</updated>
+  <updated>2018-04-04T23:23:32.565Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>opencv_exam1</title>
+    <link href="http://KKimSangHeon.github.io/2018/04/05/opencv-exam1/"/>
+    <id>http://KKimSangHeon.github.io/2018/04/05/opencv-exam1/</id>
+    <published>2018-04-04T23:23:32.000Z</published>
+    <updated>2018-04-04T23:23:32.565Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>리눅스 개인폴더에 설치된 것 사용하기</title>
@@ -676,35 +690,6 @@ sudo /bin/chmod 4755 /home/sangheon/apps/apache/bin/httpd</code></p>
       <category term="자격증" scheme="http://KKimSangHeon.github.io/tags/%EC%9E%90%EA%B2%A9%EC%A6%9D/"/>
     
       <category term="컴퓨터활용능력 1급" scheme="http://KKimSangHeon.github.io/tags/%EC%BB%B4%ED%93%A8%ED%84%B0%ED%99%9C%EC%9A%A9%EB%8A%A5%EB%A0%A5-1%EA%B8%89/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>워드프로세서 1급</title>
-    <link href="http://KKimSangHeon.github.io/2018/01/13/certificate/"/>
-    <id>http://KKimSangHeon.github.io/2018/01/13/certificate/</id>
-    <published>2018-01-13T03:40:20.000Z</published>
-    <updated>2018-01-13T13:06:00.653Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="취득시기"><a href="#취득시기" class="headerlink" title="취득시기"></a>취득시기</h3><p>2012년 8월</p>
-<h3 id="내용"><a href="#내용" class="headerlink" title="내용"></a>내용</h3><p>필기의 경우 기출문제만 풀어본다면 가볍게 합격할 수 있는 수준이며 실기도 마찬가지로 한달만 준비하면 딸 수 있는수준입니다. 실기시험을 볼 때 한타는 500타, 영타는 200타 나왔었으며 합격에 무리없을 적당한 속도였습니다. 교재를 보고 숙달하면 실력이 금방 향상되며 오타만 주의하면 쉽게 취득 가능합니다. 워드프로세서의 경우 군대에서 자격증을 취득할 만큼 쉬웠으며 취득했던 자격증 중에 가장 쉬웠던 자격증이었습니다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;취득시기&quot;&gt;&lt;a href=&quot;#취득시기&quot; class=&quot;headerlink&quot; title=&quot;취득시기&quot;&gt;&lt;/a&gt;취득시기&lt;/h3&gt;&lt;p&gt;2012년 8월&lt;/p&gt;
-&lt;h3 id=&quot;내용&quot;&gt;&lt;a href=&quot;#내용&quot; class=&quot;headerlink&quot; titl
-    
-    </summary>
-    
-      <category term="기타" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/"/>
-    
-      <category term="자격증" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/%EC%9E%90%EA%B2%A9%EC%A6%9D/"/>
-    
-    
-      <category term="워드프로세서" scheme="http://KKimSangHeon.github.io/tags/%EC%9B%8C%EB%93%9C%ED%94%84%EB%A1%9C%EC%84%B8%EC%84%9C/"/>
-    
-      <category term="자격증" scheme="http://KKimSangHeon.github.io/tags/%EC%9E%90%EA%B2%A9%EC%A6%9D/"/>
     
   </entry>
   
