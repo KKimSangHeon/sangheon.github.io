@@ -41,11 +41,11 @@
   </entry>
   
   <entry>
-    <title>리눅스 개인폴더에 설치된 것 사용하기</title>
+    <title>리눅스 개인폴더에 설치된 디렉토리 사용하기</title>
     <link href="http://KKimSangHeon.github.io/2018/03/30/linux-bash-profile/"/>
     <id>http://KKimSangHeon.github.io/2018/03/30/linux-bash-profile/</id>
     <published>2018-03-29T23:29:17.000Z</published>
-    <updated>2018-03-29T23:31:33.279Z</updated>
+    <updated>2018-04-09T23:18:30.222Z</updated>
     
     <content type="html"><![CDATA[<p>서버에 curl이 설치되어 있고 내 로컬에도 curl이 설치되어 있을 때 내 curl을 사용하기 위한 방법</p>
 <p>vi ~/.bash_profile을 열고 아래를 입력하고</p>

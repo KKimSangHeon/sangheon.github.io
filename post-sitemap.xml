@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2018/03/30/linux-bash-profile/</loc>
+        <lastmod>2018-04-09T23:18:30.222Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2018/04/05/opencv-exam1/</loc>
         <lastmod>2018-04-07T07:50:34.819Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -49,14 +57,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2018/01/13/interview6/</loc>
         <lastmod>2018-03-31T10:06:32.287Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2018/03/30/linux-bash-profile/</loc>
-        <lastmod>2018-03-29T23:31:33.279Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
