@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-04-07T07:50:34.819Z</updated>
+  <updated>2018-04-09T23:52:28.571Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="http://KKimSangHeon.github.io/2018/04/05/opencv-exam1/"/>
     <id>http://KKimSangHeon.github.io/2018/04/05/opencv-exam1/</id>
     <published>2018-04-04T23:23:32.000Z</published>
-    <updated>2018-04-07T07:50:34.819Z</updated>
+    <updated>2018-04-09T23:52:28.571Z</updated>
     
     <content type="html"><![CDATA[<p><a href="http://webnautes.tistory.com/1030" target="_blank" rel="external">http://webnautes.tistory.com/1030</a><br>참고로 나는 마지막 pkg_config 관련해서 vi ~/.bash_profile을 입력후<br>export PKG_CONFIG_PATH=”$LIB_DIR/opencv/lib64/pkgconfig” 을 입력했다</p>
 <p>컴파일 방법<br>g++ -o facedetect facedetect.cpp $(pkg-config –libs –cflags opencv)<br>g++ -o facedetect facedetect.cpp ‘pkg-config –libs –cflags opencv’</p>
-<p>참고할만한 예제<br><a href="http://hanmin-dev.tistory.com/13" target="_blank" rel="external">http://hanmin-dev.tistory.com/13</a> (이미지의 픽셀 RGB 구하는법 알려줌 Makefile 구성방법 알려줌)<br><a href="http://eehoeskrap.tistory.com/34?category=537364" target="_blank" rel="external">http://eehoeskrap.tistory.com/34?category=537364</a>  ( 픽셀 소글뿌리기)</p>
+<p>참고할만한 예제<br><a href="http://hanmin-dev.tistory.com/13" target="_blank" rel="external">http://hanmin-dev.tistory.com/13</a> (이미지의 픽셀 RGB 구하는법 알려줌 Makefile 구성방법 알려줌)<br><a href="http://eehoeskrap.tistory.com/34?category=537364" target="_blank" rel="external">http://eehoeskrap.tistory.com/34?category=537364</a>  ( 픽셀 소금뿌리기)</p>
 ]]></content>
     
     <summary type="html">
