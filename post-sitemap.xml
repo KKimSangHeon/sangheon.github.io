@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2018/03/23/apache-add-module/</loc>
+        <lastmod>2018-04-15T09:38:25.926Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2018/03/20/mytip/</loc>
         <lastmod>2018-04-10T23:50:46.417Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -25,14 +33,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2018/03/30/linux-bash-profile/</loc>
         <lastmod>2018-04-09T23:18:30.222Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2018/03/23/apache-add-module/</loc>
-        <lastmod>2018-04-02T15:02:55.802Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
