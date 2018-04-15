@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-04-09T23:52:28.571Z</updated>
+  <updated>2018-04-15T23:19:55.286Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>cpp1</title>
+    <link href="http://KKimSangHeon.github.io/2018/04/16/cpp1/"/>
+    <id>http://KKimSangHeon.github.io/2018/04/16/cpp1/</id>
+    <published>2018-04-15T23:19:55.000Z</published>
+    <updated>2018-04-15T23:19:55.286Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>OpenCV 설치</title>
@@ -672,35 +686,6 @@ sudo /bin/chmod 4755 /home/sangheon/apps/apache/bin/httpd</code></p>
       <category term="자격증" scheme="http://KKimSangHeon.github.io/tags/%EC%9E%90%EA%B2%A9%EC%A6%9D/"/>
     
       <category term="정보처리기사" scheme="http://KKimSangHeon.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>컴퓨터활용능력 1급</title>
-    <link href="http://KKimSangHeon.github.io/2018/01/13/certificate2/"/>
-    <id>http://KKimSangHeon.github.io/2018/01/13/certificate2/</id>
-    <published>2018-01-13T11:49:58.000Z</published>
-    <updated>2018-01-13T13:06:05.364Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="취득시기"><a href="#취득시기" class="headerlink" title="취득시기"></a>취득시기</h3><p>2013년 7월</p>
-<h3 id="내용"><a href="#내용" class="headerlink" title="내용"></a>내용</h3><p>필기는 워드프로세서와 겹치는 부분이 있으며 조금 더 확자된 부분이 있어 그부분만 조금 더 공부하고 쉽게 합격했습니다. 하지만 실기의 경우 생각만큼 쉽지만은 않았습니다. 11년 10월 입대전에 컴활이나 따고 가자해서 시작해서 11년 8월에 필기를 취득하고 13년 7월 전역후 한달동안 빡세게 공부해서 필기시험 만료를 눈앞에두고 취득할 수 있었습니다.<br>전역하고 보니 필기시험 합격의 만료 전까지 실기시험이 3번밖에 없던터라 무작정 이번에 딴다는 각오로 3번 다 시험을 신청했습니다. 첫 시험은 어려웠음에도 불구하고 1점차이로 떨어졌고 두번째 시험에서 합격했습니다. 시험지마다 난이도도 조금씩 차이가 있는것 같으며 운도 어느정도 따라주었던거 같습니다. 실기의 경우 프로시저의 어려운 부분은 과감하게 포기하고 쉬운영역만 공부하였으며 엑셀, 엑세스는 사용방법을 빠삭하게 익혔으며 단축키의 사용법 또한 완벽하게 익혔습니다.<br>컴활을 취득하기 위해 공부했던 내용은 일상생활속에서 생각보다 많은 도움을 주며 단순 취업용 뿐만아니라 엑셀실력 향상에도 많은 도움을 주었습니다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;취득시기&quot;&gt;&lt;a href=&quot;#취득시기&quot; class=&quot;headerlink&quot; title=&quot;취득시기&quot;&gt;&lt;/a&gt;취득시기&lt;/h3&gt;&lt;p&gt;2013년 7월&lt;/p&gt;
-&lt;h3 id=&quot;내용&quot;&gt;&lt;a href=&quot;#내용&quot; class=&quot;headerlink&quot; titl
-    
-    </summary>
-    
-      <category term="기타" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/"/>
-    
-      <category term="자격증" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/%EC%9E%90%EA%B2%A9%EC%A6%9D/"/>
-    
-    
-      <category term="자격증" scheme="http://KKimSangHeon.github.io/tags/%EC%9E%90%EA%B2%A9%EC%A6%9D/"/>
-    
-      <category term="컴퓨터활용능력 1급" scheme="http://KKimSangHeon.github.io/tags/%EC%BB%B4%ED%93%A8%ED%84%B0%ED%99%9C%EC%9A%A9%EB%8A%A5%EB%A0%A5-1%EA%B8%89/"/>
     
   </entry>
   

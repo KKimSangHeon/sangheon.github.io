@@ -3,26 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>4장. 파이프/필터, 프로세스, 서비스/소켓 | Kim Sang Heon&#39;s Bolg</title>
+    <title>cpp1 | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Linux,This Is Linux" />
+        <meta name="keywords" content="" />
     
     
 
-      <meta name="description" content="파이프두개의 프로그램을 연결해주는 통로1$ ls -l /etc | more   //앞에서 뒤로 넘김 필터필요한것만 걸러주는 명령어 123456$ ps -ef //현재 작동중인 프로세스 보여줌$ ps -ef | grep bash    //bash와 관련된 프로세스만                      //보여줌$ rpm -qa | grep gedit  //">
-<meta name="keywords" content="Linux,This Is Linux">
+      <meta name="description" content="Welcome to Sang Heon&apos;s Blog.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="4장. 파이프&#x2F;필터, 프로세스, 서비스&#x2F;소켓">
-<meta property="og:url" content="http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux10/index.html">
+<meta property="og:title" content="cpp1">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2018/04/16/cpp1/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="파이프두개의 프로그램을 연결해주는 통로1$ ls -l /etc | more   //앞에서 뒤로 넘김 필터필요한것만 걸러주는 명령어 123456$ ps -ef //현재 작동중인 프로세스 보여줌$ ps -ef | grep bash    //bash와 관련된 프로세스만                      //보여줌$ rpm -qa | grep gedit  //">
-<meta property="og:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
-<meta property="og:updated_time" content="2017-07-04T06:31:35.759Z">
+<meta property="og:description" content="Welcome to Sang Heon&apos;s Blog.">
+<meta property="og:updated_time" content="2018-04-15T23:19:55.286Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="4장. 파이프&#x2F;필터, 프로세스, 서비스&#x2F;소켓">
-<meta name="twitter:description" content="파이프두개의 프로그램을 연결해주는 통로1$ ls -l /etc | more   //앞에서 뒤로 넘김 필터필요한것만 걸러주는 명령어 123456$ ps -ef //현재 작동중인 프로세스 보여줌$ ps -ef | grep bash    //bash와 관련된 프로세스만                      //보여줌$ rpm -qa | grep gedit  //">
-<meta name="twitter:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
+<meta name="twitter:title" content="cpp1">
+<meta name="twitter:description" content="Welcome to Sang Heon&apos;s Blog.">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
 
@@ -134,7 +131,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Linux/">Linux</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Linux/이것이-리눅스다/">이것이 리눅스다</a>
+    uncategorized
     </h1>
 </div>
                         <div class="main-body-content">
@@ -149,14 +146,14 @@ ga('send', 'pageview');
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-                            <article id="post-ThisIsLinux10" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-cpp1" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        4장. 파이프/필터, 프로세스, 서비스/소켓
+        cpp1
         </h1>
     
 
@@ -166,40 +163,17 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/07/04/ThisIsLinux10/" class="article-date">
-            <time datetime="2017-07-04T05:52:52.000Z" itemprop="datePublished">2017-07-04</time>
+        <a href="/2018/04/16/cpp1/" class="article-date">
+            <time datetime="2018-04-15T23:19:55.000Z" itemprop="datePublished">2018-04-16</time>
         </a>
     </div>
 
                 
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Linux/">Linux</a>, <a class="tag-link" href="/tags/This-Is-Linux/">This Is Linux</a>
-    </div>
-
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h4 id="파이프"><a href="#파이프" class="headerlink" title="파이프"></a>파이프</h4><p>두개의 프로그램을 연결해주는 통로<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ls -l /etc | more   //앞에서 뒤로 넘김</div></pre></td></tr></table></figure></p>
-<h4 id="필터"><a href="#필터" class="headerlink" title="필터"></a>필터</h4><p>필요한것만 걸러주는 명령어</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ ps -ef //현재 작동중인 프로세스 보여줌</div><div class="line"></div><div class="line">$ ps -ef | grep bash    //bash와 관련된 프로세스만</div><div class="line">                      //보여줌</div><div class="line"></div><div class="line">$ rpm -qa | grep gedit  //gedit 관련된것만 보여줌</div></pre></td></tr></table></figure>
-<h4 id="리다이렉션-보내는-것"><a href="#리다이렉션-보내는-것" class="headerlink" title="리다이렉션(보내는 것)"></a>리다이렉션(보내는 것)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ ls -l &gt; file.txt //결과를file.txt로 만드는것</div><div class="line">              //file.txt가 존재할 경우 덮어쓰고</div><div class="line">              //존재하지 않을경우 새로 만들고 작성</div><div class="line"></div><div class="line">$ ls -l &gt;&gt; file.txt //결과를file.txt로 만드는것</div><div class="line">                    //file.txt가 존재할 경우 뒤에다 이어서 작성하고</div><div class="line">                    //존재하지 않을경우 새로만들고 작성</div><div class="line"></div><div class="line">$ cat sort &lt; file.txt &gt; out.txt //file.txt를 정렬해서 out.txt에 넣어라</div></pre></td></tr></table></figure>
-<h4 id="프로세스-데몬"><a href="#프로세스-데몬" class="headerlink" title="프로세스, 데몬"></a>프로세스, 데몬</h4><p>프로세스는 하드디스크에 저장된 실행코드가 메모리에 로딩되어 활성화 된것.</p>
-<h5 id="포그라운드-프로세스"><a href="#포그라운드-프로세스" class="headerlink" title="포그라운드 프로세스"></a>포그라운드 프로세스</h5><p>실행하면 화면에 나타나서 사용자와 상호작용을 하는 프로세스</p>
-<h5 id="백그라운드-프로세스"><a href="#백그라운드-프로세스" class="headerlink" title="백그라운드 프로세스"></a>백그라운드 프로세스</h5><p>화면에 나타나지 않고 실행되는 프로세스<br>백신 , 서버 데몬(=서비스,=서버 프로세스)등</p>
-<h4 id="프로세스번호"><a href="#프로세스번호" class="headerlink" title="프로세스번호"></a>프로세스번호</h4><p>각각의 프로세스는 할당된 번호가 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ ps -ef | grep bash    //bash관련된 프로세스만 보여줌</div><div class="line"></div><div class="line">root       693     1  0 13:43 ?        00:00:00 /bin/bash /usr/sbin/ksmtuned</div><div class="line"></div><div class="line">693은 자기 프로세스 번호고 1은 부모프로세스 번호이다.</div></pre></td></tr></table></figure></p>
-<h4 id="작업-번호"><a href="#작업-번호" class="headerlink" title="작업 번호"></a>작업 번호</h4><p>현재 실행되고 있는 백그라운드 프로세스의 순차번호</p>
-<h4 id="부모프로세스-자식프로세스"><a href="#부모프로세스-자식프로세스" class="headerlink" title="부모프로세스 ,자식프로세스"></a>부모프로세스 ,자식프로세스</h4><p>모든 프로세스는 부모프로세스를 갖는다.<br>부모 프로세스를 kill하면 자식프로세스도 자동으로 죽음.</p>
-<h4 id="프로세스-관련-명령"><a href="#프로세스-관련-명령" class="headerlink" title="프로세스 관련 명령"></a>프로세스 관련 명령</h4><h5 id="ps-프로세스-보기"><a href="#ps-프로세스-보기" class="headerlink" title="ps 프로세스 보기"></a>ps 프로세스 보기</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ps -ef | grep bash  //bash 관련 프로세스 보여줌</div></pre></td></tr></table></figure>
-<h5 id="kill-프로세스-종료"><a href="#kill-프로세스-종료" class="headerlink" title="kill 프로세스 종료"></a>kill 프로세스 종료</h5><p>파이어폭스 kill하기<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ ps -ef | grep fire  //파폭 관련 프로세스 보기</div><div class="line">root      2637  1934  0 13:49 ?        00:00:04 /usr/lib64/firefox/firefox</div><div class="line">//프로세스번호가 2637이다.</div><div class="line">$ kill 2637</div><div class="line">//가끔 킬 해도 죽지 않는 경우가 있는데 그경우 -9 옵션을 준다.</div><div class="line">$ kill -9 2637</div></pre></td></tr></table></figure></p>
-<h5 id="pstree-프로세스-트리로-보기"><a href="#pstree-프로세스-트리로-보기" class="headerlink" title="pstree 프로세스 트리로 보기"></a>pstree 프로세스 트리로 보기</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$pstree //프로세스 구조를 트리로 보여줌</div></pre></td></tr></table></figure>
-<h5 id="실습-포그라운드-gt-백그라운드-gt-포그라운드"><a href="#실습-포그라운드-gt-백그라운드-gt-포그라운드" class="headerlink" title="실습 (포그라운드-&gt;백그라운드-&gt;포그라운드)"></a>실습 (포그라운드-&gt;백그라운드-&gt;포그라운드)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ yes &gt; /dev/null   //y를 계속생성하는 프로세스 생성</div><div class="line">ctrl+ z 입력.</div><div class="line">$ bg //백그라운드 보는것.</div><div class="line">    //처음에 했던 동작이 남아있다.</div><div class="line">[1]+ yes &gt; /dev/null &amp;</div><div class="line"></div><div class="line">$ fg 1    //1번작업을 다시 포그라운드로 갖고와라</div></pre></td></tr></table></figure>
-<h5 id="실습-포그라운드-gt-백그라운드-gt-포그라운드-1"><a href="#실습-포그라운드-gt-백그라운드-gt-포그라운드-1" class="headerlink" title="실습 (포그라운드-&gt;백그라운드-&gt;포그라운드)"></a>실습 (포그라운드-&gt;백그라운드-&gt;포그라운드)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ gedit &amp; //지에딧을 백그라운드로 돌려라.</div><div class="line">        //콘솔을 계속 사용할 수 있게된다.</div><div class="line"></div><div class="line">$ vi &amp;  //백그라운드로 돌아가긴 하는데 의미없다.</div><div class="line">        //vi는 포그라운드로 돌려야 하므로  </div><div class="line">$ bg    //vi의 백그라운드 번호를 알고</div><div class="line">$ fg 1   //vi를 포그라운드로 갖고옴</div></pre></td></tr></table></figure>
-<h4 id="서비스와-소켓"><a href="#서비스와-소켓" class="headerlink" title="서비스와 소켓"></a>서비스와 소켓</h4><h5 id="서비스"><a href="#서비스" class="headerlink" title="서비스"></a>서비스</h5><p>웹 서버 = 웹 서비스<br>FTP 서버 = FTP 서비스</p>
-<p>서비스의 실행 스크립트 파일은 /usr/lib/systemd/system/ 디렉터리에 ‘서비스이름.service’라는 이름으로 확인할 수 있다. 예를들어 웹 서비스는 httpd.service라는 이름의 파일로 존재</p>
-<h5 id="소켓"><a href="#소켓" class="headerlink" title="소켓"></a>소켓</h5><p>서비스는 항상 가동되지만 소켓은 필요할 떄만 구동된다. 외부에서 특정 서비스가 요청되었을 때. 그래서 약간 느리다.<br>/usr/lib/systemd/system/ 디렉터리에 소켓이름.socket 이름으로 존재</p>
-
+            
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
@@ -217,7 +191,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux10/" data-id="cjg1fntid001p14v74e8m3amc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2018/04/16/cpp1/" data-id="cjg1fnts500bm14v7zcuvm77x" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -323,20 +297,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/07/04/ThisIsLinux11/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            4장. 응급복구, GRUB, 커널 컴파일
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/07/04/ThisIsLinux9/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/04/05/opencv-exam1/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">4장. 네트워크 관련 개념과 명령어,SELinux</p>
+        <p class="article-nav-title">OpenCV 설치</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -383,7 +347,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'https-kkimsangheon-github-io-2';
     
     
-    var disqus_url = 'http://KKimSangHeon.github.io/2017/07/04/ThisIsLinux10/';
+    var disqus_url = 'http://KKimSangHeon.github.io/2018/04/16/cpp1/';
     
     (function() {
     var dsq = document.createElement('script');
