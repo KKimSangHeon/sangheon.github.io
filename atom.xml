@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-04-15T23:19:55.286Z</updated>
+  <updated>2018-04-17T14:11:49.678Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,16 +16,20 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>cpp1</title>
+    <title>C++ 함수에서의 참조자</title>
     <link href="http://KKimSangHeon.github.io/2018/04/16/cpp1/"/>
     <id>http://KKimSangHeon.github.io/2018/04/16/cpp1/</id>
     <published>2018-04-15T23:19:55.000Z</published>
-    <updated>2018-04-15T23:19:55.286Z</updated>
+    <updated>2018-04-17T14:11:49.678Z</updated>
     
     <summary type="html">
     
     </summary>
     
+      <category term="C++" scheme="http://KKimSangHeon.github.io/categories/C/"/>
+    
+    
+      <category term="c++, 참조자" scheme="http://KKimSangHeon.github.io/tags/c-%EC%B0%B8%EC%A1%B0%EC%9E%90/"/>
     
   </entry>
   
