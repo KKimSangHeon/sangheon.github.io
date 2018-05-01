@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-04-18T14:11:58.795Z</updated>
+  <updated>2018-05-01T08:47:46.231Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>터미널을 종료해도 서버가 켜져있도록 유지</title>
+    <link href="http://KKimSangHeon.github.io/2018/05/01/angular/"/>
+    <id>http://KKimSangHeon.github.io/2018/05/01/angular/</id>
+    <published>2018-05-01T08:46:42.000Z</published>
+    <updated>2018-05-01T08:47:46.231Z</updated>
+    
+    <content type="html"><![CDATA[<p>터미널 꺼도 서벼 켜져있도록 유지하는 방법</p>
+<p>npm으로 forever을 설치 후<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">forever start node_modules/@angular/cli/bin/ng serve --host=0.0.0.0</div><div class="line">forever stopall</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;터미널 꺼도 서벼 켜져있도록 유지하는 방법&lt;/p&gt;
+&lt;p&gt;npm으로 forever을 설치 후&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line
+    
+    </summary>
+    
+      <category term="Web" scheme="http://KKimSangHeon.github.io/categories/Web/"/>
+    
+      <category term="Angular2" scheme="http://KKimSangHeon.github.io/categories/Web/Angular2/"/>
+    
+    
+      <category term="Angular2" scheme="http://KKimSangHeon.github.io/tags/Angular2/"/>
+    
+      <category term="Web" scheme="http://KKimSangHeon.github.io/tags/Web/"/>
+    
+  </entry>
   
   <entry>
     <title>C++ 함수에서의 참조자의 활용</title>
@@ -661,35 +690,6 @@ sudo /bin/chmod 4755 /home/sangheon/apps/apache/bin/httpd</code></p>
       <category term="SQLD" scheme="http://KKimSangHeon.github.io/tags/SQLD/"/>
     
       <category term="SQL 개발자" scheme="http://KKimSangHeon.github.io/tags/SQL-%EA%B0%9C%EB%B0%9C%EC%9E%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>정보처리기사</title>
-    <link href="http://KKimSangHeon.github.io/2018/01/13/certificate3/"/>
-    <id>http://KKimSangHeon.github.io/2018/01/13/certificate3/</id>
-    <published>2018-01-13T11:50:03.000Z</published>
-    <updated>2018-01-13T13:06:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="취득시기"><a href="#취득시기" class="headerlink" title="취득시기"></a>취득시기</h3><p>2016년 12월</p>
-<h3 id="내용"><a href="#내용" class="headerlink" title="내용"></a>내용</h3><p>필기의 경우 기출문제만 풀어본다면 합격할 수 있는 수준입니다. 전자계산기의 경우 반복해서 숙달해서 풀이법을 익히는게 중요하며 네트워크는 그냥 암기해야하는것 같습니다…  실기의 경우 16년 3회차부터 주관식으로 변경되어 어려워졌다는 말이 많은데 제가 봤던 16년 3회의 경우 그렇게 어렵지만은 않았습니다. 5년치의 실기 문제를 모두 풀어보고 시험에 임했으나 DB과목은 6년전의 문제와 비슷한 유형으로 나와 아차싶었지만 다행이 좋은 점수를 받을 수 있었습니다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;취득시기&quot;&gt;&lt;a href=&quot;#취득시기&quot; class=&quot;headerlink&quot; title=&quot;취득시기&quot;&gt;&lt;/a&gt;취득시기&lt;/h3&gt;&lt;p&gt;2016년 12월&lt;/p&gt;
-&lt;h3 id=&quot;내용&quot;&gt;&lt;a href=&quot;#내용&quot; class=&quot;headerlink&quot; tit
-    
-    </summary>
-    
-      <category term="기타" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/"/>
-    
-      <category term="자격증" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/%EC%9E%90%EA%B2%A9%EC%A6%9D/"/>
-    
-    
-      <category term="자격증" scheme="http://KKimSangHeon.github.io/tags/%EC%9E%90%EA%B2%A9%EC%A6%9D/"/>
-    
-      <category term="정보처리기사" scheme="http://KKimSangHeon.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
     
   </entry>
   
