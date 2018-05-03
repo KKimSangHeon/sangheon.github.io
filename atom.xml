@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-05-01T23:35:52.879Z</updated>
+  <updated>2018-05-03T13:43:03.736Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,16 +20,16 @@
     <link href="http://KKimSangHeon.github.io/2018/05/01/angular/"/>
     <id>http://KKimSangHeon.github.io/2018/05/01/angular/</id>
     <published>2018-05-01T08:46:42.000Z</published>
-    <updated>2018-05-01T23:35:52.879Z</updated>
+    <updated>2018-05-03T13:43:03.736Z</updated>
     
-    <content type="html"><![CDATA[<p>터미널 꺼도 서벼 켜져있도록 유지하는 방법</p>
+    <content type="html"><![CDATA[<p>터미널을 종료해도 서벼가 켜져있도록 유지하는 방법</p>
 <p>npm으로 forever을 설치 후<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">forever start node_modules/@angular/cli/bin/ng serve --host=0.0.0.0</div><div class="line">forever stopall</div></pre></td></tr></table></figure></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;터미널 꺼도 서벼 켜져있도록 유지하는 방법&lt;/p&gt;
-&lt;p&gt;npm으로 forever을 설치 후&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line
+      &lt;p&gt;터미널을 종료해도 서벼가 켜져있도록 유지하는 방법&lt;/p&gt;
+&lt;p&gt;npm으로 forever을 설치 후&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;
     
     </summary>
     
