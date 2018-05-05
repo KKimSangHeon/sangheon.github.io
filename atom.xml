@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-05-03T13:43:03.736Z</updated>
+  <updated>2018-05-05T13:19:09.972Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>cpperror</title>
+    <link href="http://KKimSangHeon.github.io/2018/05/05/cpperror/"/>
+    <id>http://KKimSangHeon.github.io/2018/05/05/cpperror/</id>
+    <published>2018-05-05T13:19:09.000Z</published>
+    <updated>2018-05-05T13:19:09.972Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>터미널을 종료해도 서버가 켜져있도록 유지</title>
@@ -659,37 +673,6 @@ sudo /bin/chmod 4755 /home/sangheon/apps/apache/bin/httpd</code></p>
       <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
     
       <category term="전산" scheme="http://KKimSangHeon.github.io/tags/%EC%A0%84%EC%82%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SQLD, SQL개발자</title>
-    <link href="http://KKimSangHeon.github.io/2018/01/13/certificate4/"/>
-    <id>http://KKimSangHeon.github.io/2018/01/13/certificate4/</id>
-    <published>2018-01-13T11:50:17.000Z</published>
-    <updated>2018-01-13T13:05:35.149Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="취득시기"><a href="#취득시기" class="headerlink" title="취득시기"></a>취득시기</h3><p>2017년 11월</p>
-<h3 id="내용"><a href="#내용" class="headerlink" title="내용"></a>내용</h3><p>총 한번의 시험이 있으며 앞부분의 이론적인 부분은 배점이 낮지만 절대 무시하면 안됩니다. 그 말이 이 말같고 이 말이 저 말같은 문제에 낚여 과락이라는 결과가 나올 수 있습니다. 공식교재와 풀이문제집을 구매해서 공부하였으며 책이 잘 읽히는 부분도 있지만 그렇지 않은 부분도 있었습니다. 총 한달정도 기간동안 천천히 공부했으며 공부내용은 개발자로서 살아가는데 많은 도움이 될 것 같으며 DB에 대한 상식 또한 넓어진것 같습니다. 개발자로서 따면 좋은 자격증이라 생각합니다. 하지만 시험당시가 조금 당황스러웠습니다. 문제에 오탈자가 한 두개가 아니라 집중할만하면 계속되는 감독관의 오타수정 알림으로 인해 시험이 5번넘게 중단되었습니다. 대놓고 짜증내는 사람도 있었으며 시험 종료 후 추가시간은 제공되지 않았습니다. 책의 내용, 문제는 개발자로서 알아야 할 상식이 많은것은 분명하나 문제 출제에 조금더 신경써주면 좋을것 같습니다. 전 이제 시험볼일은 없겠지만요 ㅋㅋ  </p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;취득시기&quot;&gt;&lt;a href=&quot;#취득시기&quot; class=&quot;headerlink&quot; title=&quot;취득시기&quot;&gt;&lt;/a&gt;취득시기&lt;/h3&gt;&lt;p&gt;2017년 11월&lt;/p&gt;
-&lt;h3 id=&quot;내용&quot;&gt;&lt;a href=&quot;#내용&quot; class=&quot;headerlink&quot; tit
-    
-    </summary>
-    
-      <category term="기타" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/"/>
-    
-      <category term="자격증" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/%EC%9E%90%EA%B2%A9%EC%A6%9D/"/>
-    
-    
-      <category term="자격증" scheme="http://KKimSangHeon.github.io/tags/%EC%9E%90%EA%B2%A9%EC%A6%9D/"/>
-    
-      <category term="SQLD" scheme="http://KKimSangHeon.github.io/tags/SQLD/"/>
-    
-      <category term="SQL 개발자" scheme="http://KKimSangHeon.github.io/tags/SQL-%EA%B0%9C%EB%B0%9C%EC%9E%90/"/>
     
   </entry>
   

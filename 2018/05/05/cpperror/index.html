@@ -3,26 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>2. Servlet &amp; JSP 기본실습 | Kim Sang Heon&#39;s Bolg</title>
+    <title>cpperror | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Servlet" />
+        <meta name="keywords" content="" />
     
     
 
-      <meta name="description" content="JSP도 곧 서블릿임을 잊지말자. GET 방식 : http://naver.com?이름=shkim&amp;amp;암호=1234 get방식으로 한글을 보낼경우 글이 깨지는데 이때는 server을 열고 server.xml을 열자. 65라인에 URIEncoding=”utf-8”을 추가해주자 WebContent에 form.jsp 생성form , 절대경로, 상대경로에 대해">
-<meta name="keywords" content="Servlet">
+      <meta name="description" content="Welcome to Sang Heon&apos;s Blog.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2. Servlet &amp; JSP 기본실습">
-<meta property="og:url" content="http://KKimSangHeon.github.io/2017/08/24/servlet2/index.html">
+<meta property="og:title" content="cpperror">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2018/05/05/cpperror/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="JSP도 곧 서블릿임을 잊지말자. GET 방식 : http://naver.com?이름=shkim&amp;amp;암호=1234 get방식으로 한글을 보낼경우 글이 깨지는데 이때는 server을 열고 server.xml을 열자. 65라인에 URIEncoding=”utf-8”을 추가해주자 WebContent에 form.jsp 생성form , 절대경로, 상대경로에 대해">
-<meta property="og:image" content="http://kkimsangheon.github.io/images/servlet.png">
-<meta property="og:updated_time" content="2017-08-30T00:15:19.427Z">
+<meta property="og:description" content="Welcome to Sang Heon&apos;s Blog.">
+<meta property="og:updated_time" content="2018-05-05T13:19:09.972Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2. Servlet &amp; JSP 기본실습">
-<meta name="twitter:description" content="JSP도 곧 서블릿임을 잊지말자. GET 방식 : http://naver.com?이름=shkim&amp;amp;암호=1234 get방식으로 한글을 보낼경우 글이 깨지는데 이때는 server을 열고 server.xml을 열자. 65라인에 URIEncoding=”utf-8”을 추가해주자 WebContent에 form.jsp 생성form , 절대경로, 상대경로에 대해">
-<meta name="twitter:image" content="http://kkimsangheon.github.io/images/servlet.png">
+<meta name="twitter:title" content="cpperror">
+<meta name="twitter:description" content="Welcome to Sang Heon&apos;s Blog.">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
 
@@ -134,7 +131,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/빅데이터-전문가과정/Web/">Web</a>
+    uncategorized
     </h1>
 </div>
                         <div class="main-body-content">
@@ -149,14 +146,14 @@ ga('send', 'pageview');
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-                            <article id="post-servlet2" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-cpperror" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        2. Servlet &amp; JSP 기본실습
+        cpperror
         </h1>
     
 
@@ -166,27 +163,17 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/08/24/servlet2/" class="article-date">
-            <time datetime="2017-08-24T00:02:51.000Z" itemprop="datePublished">2017-08-24</time>
+        <a href="/2018/05/05/cpperror/" class="article-date">
+            <time datetime="2018-05-05T13:19:09.000Z" itemprop="datePublished">2018-05-05</time>
         </a>
     </div>
 
                 
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Servlet/">Servlet</a>
-    </div>
-
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>JSP도 곧 서블릿임을 잊지말자.</p>
-<p>GET 방식 : <a href="http://naver.com?이름=shkim&amp;암호=1234" target="_blank" rel="external">http://naver.com?이름=shkim&amp;암호=1234</a></p>
-<p>get방식으로 한글을 보낼경우 글이 깨지는데 이때는 server을 열고 server.xml을 열자. 65라인에 URIEncoding=”utf-8”을 추가해주자</p>
-<p>WebContent에 form.jsp 생성<br>form , 절대경로, 상대경로에 대해 알아보자<br><figure class="highlight"><figcaption><span>form.jsp</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div></pre></td><td class="code"><pre><div class="line">&lt;%@ page language="java" contentType="text/html; charset=UTF-8"</div><div class="line">	pageEncoding="UTF-8"%&gt;</div><div class="line">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;</div><div class="line">&lt;title&gt;Insert title here&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;!-- h1태그는 블록 태그라 아래로 내려감 --&gt;</div><div class="line">	&lt;h1&gt;폼테스트&lt;/h1&gt;</div><div class="line">	&lt;h2&gt;폼테스트&lt;/h2&gt;</div><div class="line">	&lt;h3&gt;폼테스트&lt;/h3&gt;</div><div class="line">	&lt;h4&gt;폼테스트&lt;/h4&gt;</div><div class="line">	&lt;h5&gt;폼테스트&lt;/h5&gt;</div><div class="line"></div><div class="line">	&lt;!-- 상대경로(form.jsp의 위치부터) --&gt;</div><div class="line">	&lt;img src = "images/java.png"&gt;</div><div class="line"></div><div class="line">	&lt;!-- 절대경로 --&gt;</div><div class="line">	&lt;a href = "/helloweb/index.jsp"&gt;메인으로 가기&lt;/a&gt;</div><div class="line"></div><div class="line">	&lt;!-- 절대경로를 처리하는 안정적인 방법 --&gt;</div><div class="line">	&lt;a href = "&lt;%=request.getContextPath() %&gt;/index.jsp"&gt;메인으로 가기&lt;/a&gt;</div><div class="line"></div><div class="line">	&lt;!-- form 태그는 디폴트로 겟방식으로 날린다. --&gt;</div><div class="line">	&lt;form method="post" action="&lt;%= request.getContextPath() %&gt;/join"&gt;</div><div class="line"></div><div class="line">	&lt;!-- input 태그는 인라인 태그라 옆으로간다. --&gt;</div><div class="line">		&lt;input type="hidden" name="type" value="나쁜놈"/&gt;</div><div class="line"></div><div class="line">		이메일: &lt;input type="text" name="email" value=""&gt;</div><div class="line">		&lt;br&gt;&lt;br&gt;</div><div class="line"></div><div class="line">		비밀번호: &lt;input type="password" name="password" value=""&gt;</div><div class="line">		&lt;br&gt;&lt;br&gt;</div><div class="line"></div><div class="line">		이름: &lt;input type="text" name="name" &gt;</div><div class="line">		&lt;br&gt;&lt;br&gt;</div><div class="line"></div><div class="line">		성별:</div><div class="line">		&lt;!-- radio는 name속성을 같게 해줘야 하나만 선택된다. --&gt;</div><div class="line">		&lt;input type="radio" name="gender" value="female"/&gt; 여</div><div class="line">		&lt;input type="radio" name="gender" value="male checked=checked"/&gt; 남</div><div class="line">		&lt;br&gt;&lt;br&gt;</div><div class="line"></div><div class="line">		생년:</div><div class="line">		&lt;select name = "birth-year"&gt;</div><div class="line">			&lt;option value="1995"&gt;1995&lt;/option&gt;</div><div class="line">			&lt;option value="1994"&gt;1994&lt;/option&gt;</div><div class="line">			&lt;option value="1993"&gt;1993&lt;/option&gt;</div><div class="line">			&lt;option value="1992"&gt;1992&lt;/option&gt;</div><div class="line">			&lt;option value="1991"&gt;1991&lt;/option&gt;</div><div class="line">			&lt;option value="1990" selected&gt;1990&lt;/option&gt;</div><div class="line">		&lt;/select&gt;</div><div class="line">		&lt;br&gt;&lt;br&gt;</div><div class="line"></div><div class="line">		취미:</div><div class="line">		&lt;input type="checkbox" name="hobby" value="reading"/&gt;독서</div><div class="line">		&lt;input type="checkbox" name="hobby" value="sleeping"/&gt;잠자기</div><div class="line">		&lt;input type="checkbox" name="hobby" value="swimming"/&gt;수영</div><div class="line">		&lt;input type="checkbox" name="hobby" value="coding"/&gt;코딩</div><div class="line">		&lt;br&gt;&lt;br&gt;</div><div class="line"></div><div class="line">		자기소개:</div><div class="line">		&lt;br&gt;&lt;br&gt;</div><div class="line">		&lt;textarea rows="15" cols="80" name="self-intro"&gt;1234</div><div class="line">1234</div><div class="line">1234&lt;/textarea&gt;</div><div class="line">		&lt;br&gt;&lt;br&gt;</div><div class="line"></div><div class="line">		&lt;input type="submit" value="가입"&gt;</div><div class="line">		&lt;br&gt;&lt;br&gt;</div><div class="line">	&lt;/form&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
-<p>Java Resource에 서블릿 파일 생성<br><figure class="highlight java"><figcaption><span>join.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.bigdata2017.helloweb.servlet;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"><span class="keyword">import</span> java.io.PrintWriter;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.servlet.ServletException;</div><div class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Servlet implementation class join</div><div class="line"> */</div><div class="line"><span class="meta">@WebServlet</span>(<span class="string">"/join"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">join</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</div><div class="line">		request.setCharacterEncoding( <span class="string">"utf-8"</span>);</div><div class="line">		<span class="comment">//post 방식으로 데이터를 전달 받는 경우</span></div><div class="line">		<span class="comment">//encoidng charset를 지정</span></div><div class="line"></div><div class="line"></div><div class="line">		String type = request.getParameter(<span class="string">"type"</span>);</div><div class="line">		System.out.println(type);		</div><div class="line"></div><div class="line">		String email = request.getParameter(<span class="string">"email"</span>);</div><div class="line">		System.out.println(email);</div><div class="line"></div><div class="line">		String password = request.getParameter(<span class="string">"password"</span>);</div><div class="line">		System.out.println(password);</div><div class="line"></div><div class="line">		String name = request.getParameter(<span class="string">"name"</span>);</div><div class="line">		System.out.println(name);</div><div class="line"></div><div class="line">		String gender = request.getParameter(<span class="string">"gender"</span>);</div><div class="line">		System.out.println(gender);</div><div class="line"></div><div class="line">		String birthYear = request.getParameter(<span class="string">"birth-year"</span>);</div><div class="line">		System.out.println(birthYear);</div><div class="line"></div><div class="line">		String hobbies[] = request.getParameterValues( <span class="string">"hobby"</span> );</div><div class="line">		<span class="keyword">if</span>( hobbies != <span class="keyword">null</span>) &#123;</div><div class="line">			<span class="keyword">for</span>( String hobby : hobbies) &#123;</div><div class="line">				System.out.println( hobby );</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		String selfIntro = request.getParameter(<span class="string">"self-intro"</span>);</div><div class="line">		System.out.println(selfIntro);</div><div class="line"></div><div class="line">		response.setContentType( <span class="string">"text/html; charset=utf-8"</span> );</div><div class="line"></div><div class="line">		<span class="comment">//setContentType() 메소드를 호출하고 getWriter()을 호출해야 글이 안꺠진다.</span></div><div class="line">		PrintWriter out = response.getWriter();</div><div class="line">		out.println(<span class="string">"&lt;h1&gt;성공적으로 가입되었습니다&lt;/h1&gt;"</span>);</div><div class="line">		out.print(<span class="string">"&lt;a href='/helloweb/form.jsp'&gt;폼으로가기&lt;/a&gt;"</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</div><div class="line">		doGet(request, response);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure></p>
-
+            
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
@@ -204,7 +191,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/08/24/servlet2/" data-id="cjgtf0b7p007nmwv78cpi465h" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2018/05/05/cpperror/" data-id="cjgtf0bbv00bymwv7rwz5xn9f" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -310,20 +297,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/08/24/servlet3/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            3. Servlet &amp; JSP 응용실습
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/08/23/servlet1/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/05/01/angular/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">1. servlet이란? 실습</p>
+        <p class="article-nav-title">터미널을 종료해도 서버가 켜져있도록 유지</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -370,7 +347,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'https-kkimsangheon-github-io-2';
     
     
-    var disqus_url = 'http://KKimSangHeon.github.io/2017/08/24/servlet2/';
+    var disqus_url = 'http://KKimSangHeon.github.io/2018/05/05/cpperror/';
     
     (function() {
     var dsq = document.createElement('script');
