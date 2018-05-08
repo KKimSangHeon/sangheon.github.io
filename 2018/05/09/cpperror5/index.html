@@ -3,26 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>13. Logging, IoC / DI | Kim Sang Heon&#39;s Bolg</title>
+    <title>cpperror5 | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Spring" />
+        <meta name="keywords" content="" />
     
     
 
-      <meta name="description" content="로깅이란?-비 기능적 요구사항  ( Non Functional Requirement )하지만,  프로그램 개발 중 디버깅 및 개발완료 후 문제점 추적 및 분석을 위해 필수적으로 갖추어야 할 요구 조건,로그(Log) 는  프로그램 개발이나 운영 시 발생하는 문제점을 추적 하거나  운영 상태를 모니터링 하는 정보,로깅(logging)이란  로그(log)를  생">
-<meta name="keywords" content="Spring">
+      <meta name="description" content="Welcome to Sang Heon&apos;s Blog.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="13. Logging, IoC &#x2F; DI">
-<meta property="og:url" content="http://KKimSangHeon.github.io/2017/09/18/spring5/index.html">
+<meta property="og:title" content="cpperror5">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2018/05/09/cpperror5/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="로깅이란?-비 기능적 요구사항  ( Non Functional Requirement )하지만,  프로그램 개발 중 디버깅 및 개발완료 후 문제점 추적 및 분석을 위해 필수적으로 갖추어야 할 요구 조건,로그(Log) 는  프로그램 개발이나 운영 시 발생하는 문제점을 추적 하거나  운영 상태를 모니터링 하는 정보,로깅(logging)이란  로그(log)를  생">
-<meta property="og:image" content="http://kkimsangheon.github.io/images/web.png">
-<meta property="og:updated_time" content="2017-09-18T05:08:58.826Z">
+<meta property="og:description" content="Welcome to Sang Heon&apos;s Blog.">
+<meta property="og:updated_time" content="2018-05-08T23:35:02.847Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="13. Logging, IoC &#x2F; DI">
-<meta name="twitter:description" content="로깅이란?-비 기능적 요구사항  ( Non Functional Requirement )하지만,  프로그램 개발 중 디버깅 및 개발완료 후 문제점 추적 및 분석을 위해 필수적으로 갖추어야 할 요구 조건,로그(Log) 는  프로그램 개발이나 운영 시 발생하는 문제점을 추적 하거나  운영 상태를 모니터링 하는 정보,로깅(logging)이란  로그(log)를  생">
-<meta name="twitter:image" content="http://kkimsangheon.github.io/images/web.png">
+<meta name="twitter:title" content="cpperror5">
+<meta name="twitter:description" content="Welcome to Sang Heon&apos;s Blog.">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
 
@@ -134,7 +131,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/빅데이터-전문가과정/">빅데이터 전문가과정</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/빅데이터-전문가과정/Web/">Web</a>
+    uncategorized
     </h1>
 </div>
                         <div class="main-body-content">
@@ -149,14 +146,14 @@ ga('send', 'pageview');
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-                            <article id="post-spring5" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-cpperror5" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        13. Logging, IoC / DI
+        cpperror5
         </h1>
     
 
@@ -166,24 +163,17 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/09/18/spring5/" class="article-date">
-            <time datetime="2017-09-18T00:26:03.000Z" itemprop="datePublished">2017-09-18</time>
+        <a href="/2018/05/09/cpperror5/" class="article-date">
+            <time datetime="2018-05-08T23:35:02.000Z" itemprop="datePublished">2018-05-09</time>
         </a>
     </div>
 
                 
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Spring/">Spring</a>
-    </div>
-
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h4 id="로깅이란"><a href="#로깅이란" class="headerlink" title="로깅이란?"></a>로깅이란?</h4><p>-비 기능적 요구사항  ( Non Functional Requirement )<br>하지만,  프로그램 개발 중 디버깅 및 개발완료 후 문제점 추적 및 분석을 위해 필수적으로 갖추어야 할 요구 조건<br>,로그(Log) 는  프로그램 개발이나 운영 시 발생하는 문제점을 추적 하거나  운영 상태를 모니터링 하는 정보<br>,로깅(logging)이란  로그(log)를  생성하도록  시스템을 작성하는 활동<br>-얻을 수 있는 것<br>1.재현하기 힘든 (  테스트 환경이 아닌 개발 완료된 환경에서 발생하는 )  버그에 대한  유용한 정보를 제공<br>2.성능에 관한 통계와 정보를 제공할 수 있다.</p>
-<p>Inversion of Control( 제어역전 ) 이란 프로그램 코드 내에서 참조하려는 객체를 직접 생성  하지 않고  외부의 다른 존재가  생성하여 제공한다는 개념<br>외부의 다른 존재(객체) 를  Container 라고 하며  IoC 오브젝트 또는 IoC Container 라고 한다</p>
-
+            
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
@@ -201,7 +191,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/09/18/spring5/" data-id="cjgybbu5s008v38v71b9n62zi" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2018/05/09/cpperror5/" data-id="cjgybbua300cs38v7cisk7knq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -307,20 +297,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/09/27/python/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            1. 변수명과 예약어
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/09/15/spring4/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/05/07/cpperror6/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">12.AOP</p>
+        <p class="article-nav-title">string does not name a type</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -367,7 +347,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'https-kkimsangheon-github-io-2';
     
     
-    var disqus_url = 'http://KKimSangHeon.github.io/2017/09/18/spring5/';
+    var disqus_url = 'http://KKimSangHeon.github.io/2018/05/09/cpperror5/';
     
     (function() {
     var dsq = document.createElement('script');
