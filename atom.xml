@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-05-22T10:54:10.914Z</updated>
+  <updated>2018-05-07T05:24:50.148Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,34 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>cpperr</title>
-    <link href="http://KKimSangHeon.github.io/2018/05/22/cpperr/"/>
-    <id>http://KKimSangHeon.github.io/2018/05/22/cpperr/</id>
-    <published>2018-05-22T10:54:10.000Z</published>
-    <updated>2018-05-22T10:54:10.914Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>cpperror</title>
-    <link href="http://KKimSangHeon.github.io/2018/05/17/cpperror/"/>
-    <id>http://KKimSangHeon.github.io/2018/05/17/cpperror/</id>
-    <published>2018-05-16T23:57:26.000Z</published>
-    <updated>2018-05-16T23:57:26.924Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>string does not name a type</title>
@@ -557,6 +529,61 @@ sudo /bin/chmod 4755 /home/sangheon/apps/apache/bin/httpd</code></p>
       <category term="Angular2" scheme="http://KKimSangHeon.github.io/tags/Angular2/"/>
     
       <category term="Web" scheme="http://KKimSangHeon.github.io/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>5장. 서비스</title>
+    <link href="http://KKimSangHeon.github.io/2018/01/28/angular2/"/>
+    <id>http://KKimSangHeon.github.io/2018/01/28/angular2/</id>
+    <published>2018-01-28T12:02:55.000Z</published>
+    <updated>2018-03-12T13:50:18.976Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="5장-서비스"><a href="#5장-서비스" class="headerlink" title="5장. 서비스"></a>5장. 서비스</h1><p>앵귤러JS(앵귤러2아님)에서는 기능을 컨트롤러에서 분리하기 위해 서비스 메소드를 써야할지 팩토리 메소드를 써야할지 혼란이 있었으나 2에서는 팩토리와 서비스를 서비스로 단일화 하였고 메소드에서 클래스로 변경하였다.<br>서비스는 공통관심사를 묶어놓았다.<br>provider제공자 그리고 @Injectable() 장식자 이용</p>
+<h3 id="서비스-특징"><a href="#서비스-특징" class="headerlink" title="서비스 특징"></a>서비스 특징</h3><ol>
+<li>서비스는 의존성 주입이 가능하다. 132p</li>
+<li>객체지향적으로 이용가능</li>
+<li>목 객체 서비스로 이용가능(서버,외부의 의존성없이 테스트 코드 작성할 때 유용) 135p</li>
+<li>프로미스 서비스 (콜백헬과같은 비정상적인 호출형태를 개선하기 위해 나옴) 138p</li>
+<li>서비스를 이용한 데이터 교환 가능(부모는 provider 설정을 해줘야하지만 자식은 안한다)</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;5장-서비스&quot;&gt;&lt;a href=&quot;#5장-서비스&quot; class=&quot;headerlink&quot; title=&quot;5장. 서비스&quot;&gt;&lt;/a&gt;5장. 서비스&lt;/h1&gt;&lt;p&gt;앵귤러JS(앵귤러2아님)에서는 기능을 컨트롤러에서 분리하기 위해 서비스 메소드를 써야할지 팩토
+    
+    </summary>
+    
+      <category term="Web" scheme="http://KKimSangHeon.github.io/categories/Web/"/>
+    
+      <category term="Angular2" scheme="http://KKimSangHeon.github.io/categories/Web/Angular2/"/>
+    
+    
+      <category term="Angular2" scheme="http://KKimSangHeon.github.io/tags/Angular2/"/>
+    
+      <category term="Web" scheme="http://KKimSangHeon.github.io/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>유용한 사이트 모음</title>
+    <link href="http://KKimSangHeon.github.io/2018/01/27/usefulsite/"/>
+    <id>http://KKimSangHeon.github.io/2018/01/27/usefulsite/</id>
+    <published>2018-01-27T13:41:25.000Z</published>
+    <updated>2018-02-12T23:34:32.218Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="알고리즘-코딩관련"><a href="#알고리즘-코딩관련" class="headerlink" title="알고리즘, 코딩관련"></a>알고리즘, 코딩관련</h3><p><a href="https://app.codility.com/programmers/lessons/1-iterations/" target="_blank" rel="external">https://app.codility.com/programmers/lessons/1-iterations/</a></p>
+<h3 id="트렌드-분석"><a href="#트렌드-분석" class="headerlink" title="트렌드 분석"></a>트렌드 분석</h3><p><a href="https://trends.google.com/trends/?hl=ko" target="_blank" rel="external">https://trends.google.com/trends/?hl=ko</a><br>검색어를 입력하여 해당검색어에 대한 연관이슈 등에 대해 알 수 있다..</p>
+<h3 id="IT-관련"><a href="#IT-관련" class="headerlink" title="IT 관련"></a>IT 관련</h3><p><a href="http://www.itfind.or.kr/" target="_blank" rel="external">http://www.itfind.or.kr/</a><br>IT 관련 이슈를 접할 수 있으며 정기간행물또한 유용하다.</p>
+<h3 id="면접"><a href="#면접" class="headerlink" title="면접"></a>면접</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;알고리즘-코딩관련&quot;&gt;&lt;a href=&quot;#알고리즘-코딩관련&quot; class=&quot;headerlink&quot; title=&quot;알고리즘, 코딩관련&quot;&gt;&lt;/a&gt;알고리즘, 코딩관련&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://app.codility.com/progra
+    
+    </summary>
+    
     
   </entry>
   
