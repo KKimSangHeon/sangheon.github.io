@@ -8,7 +8,15 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2017/06/29/about-me/</loc>
-        <lastmod>2018-06-01T11:02:03.011Z</lastmod>
+        <lastmod>2018-06-02T01:14:34.466Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2017/08/11/dg-chat-bot/</loc>
+        <lastmod>2018-06-02T01:13:31.070Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -401,14 +409,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2017/08/30/servlet6/</loc>
         <lastmod>2017-09-18T00:26:28.666Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2017/08/11/dg-chat-bot/</loc>
-        <lastmod>2017-09-14T00:09:36.861Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
