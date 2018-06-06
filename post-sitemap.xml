@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2018/06/06/algo1/</loc>
+        <lastmod>2018-06-06T05:53:20.725Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2017/06/29/about-me/</loc>
         <lastmod>2018-06-02T01:14:34.466Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -383,7 +391,7 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/2017/09/15/spring4/</loc>
+        <loc>http://KKimSangHeon.github.io/2017/09/07/spring2/</loc>
         <lastmod>2017-09-18T00:28:25.075Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -391,7 +399,7 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/2017/09/07/spring2/</loc>
+        <loc>http://KKimSangHeon.github.io/2017/09/15/spring4/</loc>
         <lastmod>2017-09-18T00:28:25.075Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
