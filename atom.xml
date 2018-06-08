@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-05-07T05:24:50.148Z</updated>
+  <updated>2018-06-08T03:53:32.033Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://KKimSangHeon.github.io/2018/05/07/cpperror6/"/>
     <id>http://KKimSangHeon.github.io/2018/05/07/cpperror6/</id>
     <published>2018-05-07T05:22:47.000Z</published>
-    <updated>2018-05-07T05:24:50.148Z</updated>
+    <updated>2018-06-08T03:53:32.033Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">분명히 string을 include 했을때도 발생한다면 namespace를 붙여줬는지 확인해보자</div><div class="line">아니면 using namespace std; 을 선언하자</div></pre></td></tr></table></figure>
 ]]></content>
@@ -43,7 +43,7 @@
     <link href="http://KKimSangHeon.github.io/2018/05/07/cpperror5/"/>
     <id>http://KKimSangHeon.github.io/2018/05/07/cpperror5/</id>
     <published>2018-05-07T05:22:17.000Z</published>
-    <updated>2018-05-29T08:10:01.397Z</updated>
+    <updated>2018-06-08T03:53:33.101Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">변수명이 겹치는것이 존재하는경우 발생하는 에러이다.</div></pre></td></tr></table></figure>
 ]]></content>
@@ -66,7 +66,7 @@
     <link href="http://KKimSangHeon.github.io/2018/05/07/cpperror4/"/>
     <id>http://KKimSangHeon.github.io/2018/05/07/cpperror4/</id>
     <published>2018-05-07T05:20:20.000Z</published>
-    <updated>2018-05-07T05:22:09.630Z</updated>
+    <updated>2018-06-08T03:53:33.806Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">이 경우 다른 파일의 헤더와 겹치는 경우일 수 있다.</div><div class="line">#ifndef _AA_H</div><div class="line">#define _AA_H 라고 헤더를 정의했을 때 다른파일도 헤더를 AA로 선언했을 가능성이 높다.</div><div class="line"></div><div class="line">무분별한 복붙을 지양하자..</div></pre></td></tr></table></figure>
 ]]></content>
@@ -89,7 +89,7 @@
     <link href="http://KKimSangHeon.github.io/2018/05/07/cpperror3/"/>
     <id>http://KKimSangHeon.github.io/2018/05/07/cpperror3/</id>
     <published>2018-05-07T05:20:12.000Z</published>
-    <updated>2018-05-07T05:21:21.404Z</updated>
+    <updated>2018-06-08T03:53:34.376Z</updated>
     
     <content type="html"><![CDATA[<p>함수 호출부의 2번째 인자를 확인해보자</p>
 <p>대표적으로 값을 반환하는 함수를 호출하는데 ()를 붙이지 않았을 경우 발생</p>
@@ -115,7 +115,7 @@
     <link href="http://KKimSangHeon.github.io/2018/05/06/cpperror2/"/>
     <id>http://KKimSangHeon.github.io/2018/05/06/cpperror2/</id>
     <published>2018-05-06T13:47:39.000Z</published>
-    <updated>2018-05-13T23:36:27.320Z</updated>
+    <updated>2018-06-08T03:53:14.317Z</updated>
     
     <content type="html"><![CDATA[<p>헤더파일에 해당 생성자를 선언하지 않았을 경우 발생</p>
 <p>생성자를 다시한번 살펴보자</p>
@@ -141,7 +141,7 @@
     <link href="http://KKimSangHeon.github.io/2018/05/05/cpperror/"/>
     <id>http://KKimSangHeon.github.io/2018/05/05/cpperror/</id>
     <published>2018-05-05T13:19:09.000Z</published>
-    <updated>2018-05-07T05:19:07.970Z</updated>
+    <updated>2018-06-08T03:53:34.997Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">다음중 아무거나 include하자</div><div class="line">Defined in header &lt;cstddef&gt;         </div><div class="line">Defined in header &lt;cstdio&gt;      </div><div class="line">Defined in header &lt;cstring&gt;         </div><div class="line">Defined in header &lt;ctime&gt;       </div><div class="line">Defined in header &lt;cwchar&gt;</div></pre></td></tr></table></figure>
 ]]></content>
