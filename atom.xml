@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-06-11T14:55:32.224Z</updated>
+  <updated>2018-06-13T06:56:55.974Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,50 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>임베디드를 배우기 전 간략한 C 이론 2</title>
+    <link href="http://KKimSangHeon.github.io/2018/06/13/embeded2/"/>
+    <id>http://KKimSangHeon.github.io/2018/06/13/embeded2/</id>
+    <published>2018-06-13T06:54:56.000Z</published>
+    <updated>2018-06-13T06:56:55.974Z</updated>
+    
+    <content type="html"><![CDATA[<p>변수선언-&gt; 자료형 변수명;<br>변수사용-&gt; 변수명<br>오버플러우 : 할당할 수 있는 범위를 넘어선 입력</p>
+<p>빅 앤디안 : 낮은 어드레스에 높은 바이트를 넣는다<br>리틀 앤디안 : 낮은 어드레스에 낮은 바이트를 넣는다(ARM, Intel이 사용한다)</p>
+<p>내 컴퓨터가 리틀앤디안인지 빅앤디안인지 알아봐라<br>포인터로 한바이트만 읽어서 체크해보자</p>
+<p>팬아웃 : 신호가 변질되는것 방지하는것 . 버퍼를 달아서 구현할 수 있다.</p>
+<p>Not-G (inverter) : 역으로 변경<br>X-Or Gate : 다를 때 참<br>3-State Buffer  : B에 신호가 1이여야 A에서 X로 출력됨. B 신호가 0이면 A에서 X로 아무것도 출력되지 않는 고저항상태가 된다.</p>
+<p>char의 범위 -127~128</p>
+<p>비트연산<br>| : 비트 or<br>&amp; : 비트 And<br>~ : 비트 Not<br>&lt;&lt; : 비트 왼쪽시프트</p>
+<blockquote>
+<blockquote>
+<p>: 비트 오른쪽시프트<br>^ : 비트 xor</p>
+</blockquote>
+</blockquote>
+<p>MSB만 역으로 만들기 위한방법<br>res&amp; = ~(0x01&lt;<7); <figure="" class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">my_strcpy(char* ps, char* pb)</div><div class="line">&#123;</div><div class="line">    while(*ps!=&apos;\0&apos;)</div><div class="line">     &#123;</div><div class="line">           *pb = *ps;</div><div class="line">            pb++;</div><div class="line">            ps++;</div><div class="line">     &#125;</div><div class="line">    *pb = &apos;\0&apos;;</div><div class="line">&#125;</div></pre></td></tr></table></7);></p>
+<p>연산자가 많이 들어갈 경우 괄호로 묶어주도록 하자</p>
+<p>case문을 이용할 때 break문을 잘 사용하자</p>
+<p>polling: 계속적으로 반복해서 돌아가는것<br>인터럽트: 갑작스럽게 이벤트가 발생했을 때 처리함<br>임베디드는 폴링과 인터럽트로 구성된다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;변수선언-&amp;gt; 자료형 변수명;&lt;br&gt;변수사용-&amp;gt; 변수명&lt;br&gt;오버플러우 : 할당할 수 있는 범위를 넘어선 입력&lt;/p&gt;
+&lt;p&gt;빅 앤디안 : 낮은 어드레스에 높은 바이트를 넣는다&lt;br&gt;리틀 앤디안 : 낮은 어드레스에 낮은 바이트를 넣는다(A
+    
+    </summary>
+    
+      <category term="임베디드" scheme="http://KKimSangHeon.github.io/categories/%EC%9E%84%EB%B2%A0%EB%94%94%EB%93%9C/"/>
+    
+    
+      <category term="c, embedded" scheme="http://KKimSangHeon.github.io/tags/c-embedded/"/>
+    
+  </entry>
+  
+  <entry>
     <title>임베디드를 배우기 전 간략한 C 이론 1</title>
     <link href="http://KKimSangHeon.github.io/2018/06/11/embeded/"/>
     <id>http://KKimSangHeon.github.io/2018/06/11/embeded/</id>
     <published>2018-06-11T14:53:29.000Z</published>
-    <updated>2018-06-11T14:55:32.224Z</updated>
+    <updated>2018-06-13T06:56:55.296Z</updated>
     
     <content type="html"><![CDATA[<p>컴파일 : 컴퓨터가 아는 언어로 변경하는것 원시코드를 오브젝트로 (syntax에러 확인)<br>컴파일러 : 이를 실행시켜주는것<br>링커 : 라이브러리를 묶어주고 실행파일을 만든다.</p>
 <p>전처리기 : 컴파일 전에 처리</p>
@@ -44,10 +83,10 @@
     
     </summary>
     
-      <category term="embeded" scheme="http://KKimSangHeon.github.io/categories/embeded/"/>
+      <category term="임베디드" scheme="http://KKimSangHeon.github.io/categories/%EC%9E%84%EB%B2%A0%EB%94%94%EB%93%9C/"/>
     
     
-      <category term="c, embeded" scheme="http://KKimSangHeon.github.io/tags/c-embeded/"/>
+      <category term="c, embedded" scheme="http://KKimSangHeon.github.io/tags/c-embedded/"/>
     
   </entry>
   
@@ -553,40 +592,6 @@ sudo /bin/chmod 4755 /home/sangheon/apps/apache/bin/httpd</code></p>
     <summary type="html">
     
       &lt;h1 id=&quot;6장-모듈&quot;&gt;&lt;a href=&quot;#6장-모듈&quot; class=&quot;headerlink&quot; title=&quot;6장. 모듈&quot;&gt;&lt;/a&gt;6장. 모듈&lt;/h1&gt;&lt;p&gt;앵귤러 애플리케이션을 구성하는 뼈대와 같은 역할. @NgModule 장식자를 이용한다&lt;br&gt;impor
-    
-    </summary>
-    
-      <category term="Web" scheme="http://KKimSangHeon.github.io/categories/Web/"/>
-    
-      <category term="Angular2" scheme="http://KKimSangHeon.github.io/categories/Web/Angular2/"/>
-    
-    
-      <category term="Angular2" scheme="http://KKimSangHeon.github.io/tags/Angular2/"/>
-    
-      <category term="Web" scheme="http://KKimSangHeon.github.io/tags/Web/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>5장. 서비스</title>
-    <link href="http://KKimSangHeon.github.io/2018/01/28/angular2/"/>
-    <id>http://KKimSangHeon.github.io/2018/01/28/angular2/</id>
-    <published>2018-01-28T12:02:55.000Z</published>
-    <updated>2018-03-12T13:50:18.976Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="5장-서비스"><a href="#5장-서비스" class="headerlink" title="5장. 서비스"></a>5장. 서비스</h1><p>앵귤러JS(앵귤러2아님)에서는 기능을 컨트롤러에서 분리하기 위해 서비스 메소드를 써야할지 팩토리 메소드를 써야할지 혼란이 있었으나 2에서는 팩토리와 서비스를 서비스로 단일화 하였고 메소드에서 클래스로 변경하였다.<br>서비스는 공통관심사를 묶어놓았다.<br>provider제공자 그리고 @Injectable() 장식자 이용</p>
-<h3 id="서비스-특징"><a href="#서비스-특징" class="headerlink" title="서비스 특징"></a>서비스 특징</h3><ol>
-<li>서비스는 의존성 주입이 가능하다. 132p</li>
-<li>객체지향적으로 이용가능</li>
-<li>목 객체 서비스로 이용가능(서버,외부의 의존성없이 테스트 코드 작성할 때 유용) 135p</li>
-<li>프로미스 서비스 (콜백헬과같은 비정상적인 호출형태를 개선하기 위해 나옴) 138p</li>
-<li>서비스를 이용한 데이터 교환 가능(부모는 provider 설정을 해줘야하지만 자식은 안한다)</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;5장-서비스&quot;&gt;&lt;a href=&quot;#5장-서비스&quot; class=&quot;headerlink&quot; title=&quot;5장. 서비스&quot;&gt;&lt;/a&gt;5장. 서비스&lt;/h1&gt;&lt;p&gt;앵귤러JS(앵귤러2아님)에서는 기능을 컨트롤러에서 분리하기 위해 서비스 메소드를 써야할지 팩토
     
     </summary>
     
