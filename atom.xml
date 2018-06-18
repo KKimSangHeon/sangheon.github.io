@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-06-15T04:20:10.453Z</updated>
+  <updated>2018-06-18T09:00:39.420Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>임베디드를 배우기 전 간략한 C 이론 5</title>
+    <link href="http://KKimSangHeon.github.io/2018/06/18/embedded4/"/>
+    <id>http://KKimSangHeon.github.io/2018/06/18/embedded4/</id>
+    <published>2018-06-18T08:59:01.000Z</published>
+    <updated>2018-06-18T09:00:39.420Z</updated>
+    
+    <content type="html"><![CDATA[<p>*(pa+0) == pa[0]</p>
+<p>포인터 배열 - 포인터를 묶어놓은 배열이다.</p>
+<p>더블포인터 - 싱글포인터의 주소를 저장하는 용도로써 사용된다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">int arr_m[3][4] = &#123;</div><div class="line">    &#123;5,6,7,8&#125;,</div><div class="line">    &#123;9,10,11,12&#125;,</div><div class="line">    &#123;13,14,15,16&#125;</div><div class="line">&#125; //2차원 배열 선언과 동시 초기화</div><div class="line"></div><div class="line">int row,col;</div><div class="line"></div><div class="line">for (row = 0;row&lt;3; row++)</div><div class="line">&#123;</div><div class="line">    for(col = 0;col&lt;4;col++)</div><div class="line">          printf(&quot;arr_m[%d][%d]:%d&quot;, row, col, arr_m[row][col]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위의 경우에서 arr_m[2] == arr_m+2 == arr_m[2][0]</p>
+<p>int (<em>pa)[3];     //길이가 3인 int형 2차원 배열을 가르키는 포인터 변수(배열포인터)<br>int </em>pa[3];     //포인터 배열</p>
+<p>포인터배열 배열포인터를 헷갈리지 말자<br>배열 포인터는 - 2차원 배열을 가르키는 포인터<br>포인터 배열을 - 포인터를 배열로 만들어 놓은것.</p>
+<p>char *(str)[50]; 일 때<br>str[0]+1 != str+1<br>좌측은 50만큼 증가하고 우측은 1바이트씩 증가</p>
+<p>자료형 앞에 register 을 넣으면 변수가 register 변수에 저장이 된다. 빠르다!</p>
+<p>static의 생존기간은 전역변수와 같지만 메모리 존재범위은 블록 내에서만!</p>
+<h3 id="함수포인터"><a href="#함수포인터" class="headerlink" title="함수포인터"></a>함수포인터</h3><p>함수명은 함수의 시작주소이다.</p>
+<p>함수 포인터를 만드려고 하니<br>int <em>ptr(int a, int b); 와같은 형태가 나왔다,<br>이는 리턴타입이 int </em> 이라는 함수선언과 같으므로<br>괄호를 씌워 int (*ptr)(int a, int b); 로 함수포인터를 만든다.</p>
+<p>배열포인터와 유사한 형태로 만들어졌다.<br>배열 포인터 또한 int <em>arr[3] 으로 만들라 했으나 이는 포인터 배열과 일치하므로 괄호를 추가해 int (</em>arr)[3]으로 처리했다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">int Add(int a, int b);</div><div class="line"></div><div class="line">int (*ptr)(int a, int b) = Add;</div></pre></td></tr></table></figure></p>
+<p>위와같이 사용한다.</p>
+<p>ptr(2,3) // 간접호출<br>Add(2,3) //직접호출</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">int temp = 5;</div><div class="line">int * ptr = &amp;temp;</div><div class="line">void* pv = &amp;temp;     //가능하다.</div><div class="line"></div><div class="line">*pv = 8;     //불가능하다(시작부터 몇바이트를 읽을지는 pv의 자료형으로 판단하는데 몇바이트로 접근해야할지 알 수 없다)</div><div class="line">*((int*)pv) = 8 //가능</div></pre></td></tr></table></figure>
+<p>void형 포인터는 모든 변수의 주소값을 저장할 수 있다.</p>
+<p>주소값을 표현할 땐 다음과 같이<br><em>((volatile unsigned int</em>)0x80000000) = 0xFF000000;     //나중에 다시한번 배운다.</p>
+<p>volatile 은 주소값의 데이터가 변경되는것을 막는다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;*(pa+0) == pa[0]&lt;/p&gt;
+&lt;p&gt;포인터 배열 - 포인터를 묶어놓은 배열이다.&lt;/p&gt;
+&lt;p&gt;더블포인터 - 싱글포인터의 주소를 저장하는 용도로써 사용된다.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr
+    
+    </summary>
+    
+      <category term="임베디드" scheme="http://KKimSangHeon.github.io/categories/%EC%9E%84%EB%B2%A0%EB%94%94%EB%93%9C/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>임베디드를 배우기 전 간략한 C 이론 3</title>
@@ -563,35 +605,6 @@ sudo /bin/chmod 4755 /home/sangheon/apps/apache/bin/httpd</code></p>
     
     
       <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>리눅스마스터 2급</title>
-    <link href="http://KKimSangHeon.github.io/2018/03/07/linuxmaster/"/>
-    <id>http://KKimSangHeon.github.io/2018/03/07/linuxmaster/</id>
-    <published>2018-03-07T14:51:28.000Z</published>
-    <updated>2018-03-12T14:14:42.540Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="취득시기"><a href="#취득시기" class="headerlink" title="취득시기"></a>취득시기</h3><p>2018년 03월</p>
-<h3 id="내용"><a href="#내용" class="headerlink" title="내용"></a>내용</h3><p>데비안, 레드햇 계열 리눅스의 기본적인 역사 그리고 간단한 명령어 정도만 알고있을 경우 일주일 정도면 취득가능하다. www.comcbt.com/ 에서 연도별 문제를 제공하며 총 5회분의 문제(약 400문제)정도를 풀어보고 시험을 봤었다. 용산공업고등학교에서 시험을 봤으며 학교의 정문을 찾는데 애를 먹었던것 말고는 불편했던점은 없다. 하루 2시간씩 약 일주일동안 공부하였으며 시험 3일 후엔 가답안이 나와 가채점이 가능하다는 것이 다른 자격증에 비해 좋았던것 같다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;취득시기&quot;&gt;&lt;a href=&quot;#취득시기&quot; class=&quot;headerlink&quot; title=&quot;취득시기&quot;&gt;&lt;/a&gt;취득시기&lt;/h3&gt;&lt;p&gt;2018년 03월&lt;/p&gt;
-&lt;h3 id=&quot;내용&quot;&gt;&lt;a href=&quot;#내용&quot; class=&quot;headerlink&quot; tit
-    
-    </summary>
-    
-      <category term="기타" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/"/>
-    
-      <category term="자격증" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/%EC%9E%90%EA%B2%A9%EC%A6%9D/"/>
-    
-    
-      <category term="자격증" scheme="http://KKimSangHeon.github.io/tags/%EC%9E%90%EA%B2%A9%EC%A6%9D/"/>
-    
-      <category term="리눅스마스터 2급" scheme="http://KKimSangHeon.github.io/tags/%EB%A6%AC%EB%88%85%EC%8A%A4%EB%A7%88%EC%8A%A4%ED%84%B0-2%EA%B8%89/"/>
     
   </entry>
   
