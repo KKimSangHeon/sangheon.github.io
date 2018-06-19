@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-06-19T08:20:50.777Z</updated>
+  <updated>2018-06-19T08:49:36.606Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://KKimSangHeon.github.io/2018/06/19/embedded6/"/>
     <id>http://KKimSangHeon.github.io/2018/06/19/embedded6/</id>
     <published>2018-06-19T08:20:21.000Z</published>
-    <updated>2018-06-19T08:20:50.777Z</updated>
+    <updated>2018-06-19T08:49:36.606Z</updated>
     
-    <content type="html"><![CDATA[<p>함수포인터를 만들 때 괄호를 추가하는것을 잊지말자.<br>int (*pf)(double, int);</p>
+    <content type="html"><![CDATA[<p>임베디드를 배우기 전 간략한 C 이론 5</p>
+<p>함수포인터를 만들 때 괄호를 추가하는것을 잊지말자.<br>int (*pf)(double, int);</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">int temp = 5;</div><div class="line">void* ptr = &amp;temp;     // void 형 포인터: 어떤 변수의 주소값도 저장이 가능한 변수</div><div class="line">((int*)ptr) = 7;</div></pre></td></tr></table></figure>
 <p>Data 영역 - 전역, static<br>Heap영역 - 동적할당영역<br>Stack영역- 지역변수, 매개변수</p>
 <p>정적할당(배열) - 컴파일 타임에 할당, 접근속도가 빠르다. 코드 유지보수성 낮다(데이터 추가, 삭제)<br>동적할당 - run time(실행타임), 접근속도가 느리다.코드유지보수성이 높다.(데이터 추가 삭제 쉽다.), 메모리 낭비 x, 메모리 자동 해제(x) -&gt;직접해제할것</p>
@@ -46,12 +47,15 @@
 <li>구조체 변수를 참조하는 포인터</li>
 <li>포인터 변수를 구조체 멤버변수로 포함</li>
 </ol>
+<p>(*ptr).age == ptr-&gt;age</p>
+<p>PER arr[3];      //구조체 배열</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;함수포인터를 만들 때 괄호를 추가하는것을 잊지말자.&lt;br&gt;int (*pf)(double, int);&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class
+      &lt;p&gt;임베디드를 배우기 전 간략한 C 이론 5&lt;/p&gt;
+&lt;p&gt;함수포인터를 만들 때 괄호를 추가하는것을 잊지말자.&lt;br&gt;int (*pf)(double, int);&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td 
     
     </summary>
     

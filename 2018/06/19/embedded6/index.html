@@ -10,16 +10,16 @@
     
     
 
-      <meta name="description" content="함수포인터를 만들 때 괄호를 추가하는것을 잊지말자.int (*pf)(double, int); 123int temp = 5;void* ptr = &amp;amp;temp;     // void 형 포인터: 어떤 변수의 주소값도 저장이 가능한 변수((int*)ptr) = 7; Data 영역 - 전역, staticHeap영역 - 동적할당영역Stack영역- 지역변수, 매">
+      <meta name="description" content="임베디드를 배우기 전 간략한 C 이론 5 함수포인터를 만들 때 괄호를 추가하는것을 잊지말자.int (*pf)(double, int); 123int temp = 5;void* ptr = &amp;amp;temp;     // void 형 포인터: 어떤 변수의 주소값도 저장이 가능한 변수((int*)ptr) = 7; Data 영역 - 전역, staticHeap영역 -">
 <meta property="og:type" content="article">
 <meta property="og:title" content="임베디드를 배우기 전 간략한 C 이론 6">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2018/06/19/embedded6/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="함수포인터를 만들 때 괄호를 추가하는것을 잊지말자.int (*pf)(double, int); 123int temp = 5;void* ptr = &amp;amp;temp;     // void 형 포인터: 어떤 변수의 주소값도 저장이 가능한 변수((int*)ptr) = 7; Data 영역 - 전역, staticHeap영역 - 동적할당영역Stack영역- 지역변수, 매">
-<meta property="og:updated_time" content="2018-06-19T08:20:50.777Z">
+<meta property="og:description" content="임베디드를 배우기 전 간략한 C 이론 5 함수포인터를 만들 때 괄호를 추가하는것을 잊지말자.int (*pf)(double, int); 123int temp = 5;void* ptr = &amp;amp;temp;     // void 형 포인터: 어떤 변수의 주소값도 저장이 가능한 변수((int*)ptr) = 7; Data 영역 - 전역, staticHeap영역 -">
+<meta property="og:updated_time" content="2018-06-19T08:49:36.606Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="임베디드를 배우기 전 간략한 C 이론 6">
-<meta name="twitter:description" content="함수포인터를 만들 때 괄호를 추가하는것을 잊지말자.int (*pf)(double, int); 123int temp = 5;void* ptr = &amp;amp;temp;     // void 형 포인터: 어떤 변수의 주소값도 저장이 가능한 변수((int*)ptr) = 7; Data 영역 - 전역, staticHeap영역 - 동적할당영역Stack영역- 지역변수, 매">
+<meta name="twitter:description" content="임베디드를 배우기 전 간략한 C 이론 5 함수포인터를 만들 때 괄호를 추가하는것을 잊지말자.int (*pf)(double, int); 123int temp = 5;void* ptr = &amp;amp;temp;     // void 형 포인터: 어떤 변수의 주소값도 저장이 가능한 변수((int*)ptr) = 7; Data 영역 - 전역, staticHeap영역 -">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
 
@@ -173,7 +173,8 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>함수포인터를 만들 때 괄호를 추가하는것을 잊지말자.<br>int (*pf)(double, int);</p>
+            <p>임베디드를 배우기 전 간략한 C 이론 5</p>
+<p>함수포인터를 만들 때 괄호를 추가하는것을 잊지말자.<br>int (*pf)(double, int);</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">int temp = 5;</div><div class="line">void* ptr = &amp;temp;     // void 형 포인터: 어떤 변수의 주소값도 저장이 가능한 변수</div><div class="line">((int*)ptr) = 7;</div></pre></td></tr></table></figure>
 <p>Data 영역 - 전역, static<br>Heap영역 - 동적할당영역<br>Stack영역- 지역변수, 매개변수</p>
 <p>정적할당(배열) - 컴파일 타임에 할당, 접근속도가 빠르다. 코드 유지보수성 낮다(데이터 추가, 삭제)<br>동적할당 - run time(실행타임), 접근속도가 느리다.코드유지보수성이 높다.(데이터 추가 삭제 쉽다.), 메모리 낭비 x, 메모리 자동 해제(x) -&gt;직접해제할것</p>
@@ -197,6 +198,8 @@ ga('send', 'pageview');
 <li>구조체 변수를 참조하는 포인터</li>
 <li>포인터 변수를 구조체 멤버변수로 포함</li>
 </ol>
+<p>(*ptr).age == ptr-&gt;age</p>
+<p>PER arr[3];      //구조체 배열</p>
 
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
