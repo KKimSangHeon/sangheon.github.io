@@ -7,32 +7,8 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/2018/06/22/cpperr/</loc>
-        <lastmod>2018-06-22T05:24:08.106Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2018/06/19/embedded6/</loc>
-        <lastmod>2018-06-19T08:49:36.606Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2018/06/18/embedded4/</loc>
-        <lastmod>2018-06-18T09:00:39.420Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2018/06/15/embedded3/</loc>
-        <lastmod>2018-06-15T04:20:10.453Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/2018/06/11/embeded/</loc>
+        <lastmod>2018-06-27T01:52:09.788Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -40,15 +16,39 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2018/06/13/embeded2/</loc>
-        <lastmod>2018-06-13T06:56:55.974Z</lastmod>
+        <lastmod>2018-06-27T01:52:06.825Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/2018/06/11/embeded/</loc>
-        <lastmod>2018-06-13T06:56:55.296Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/2018/06/15/embedded3/</loc>
+        <lastmod>2018-06-27T01:52:03.488Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2018/06/18/embedded4/</loc>
+        <lastmod>2018-06-27T01:52:00.453Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2018/06/19/embedded6/</loc>
+        <lastmod>2018-06-27T01:51:57.973Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2018/06/22/cpperr/</loc>
+        <lastmod>2018-06-22T05:24:08.106Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
