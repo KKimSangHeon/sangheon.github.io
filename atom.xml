@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-07-09T03:29:07.485Z</updated>
+  <updated>2018-07-09T05:11:29.205Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,15 +16,17 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>embedded</title>
+    <title>임베디드 1</title>
     <link href="http://KKimSangHeon.github.io/2018/07/09/embedded/"/>
     <id>http://KKimSangHeon.github.io/2018/07/09/embedded/</id>
     <published>2018-07-09T03:29:07.000Z</published>
-    <updated>2018-07-09T03:29:07.485Z</updated>
+    <updated>2018-07-09T05:11:29.205Z</updated>
     
     <summary type="html">
     
     </summary>
+    
+      <category term="임베디드" scheme="http://KKimSangHeon.github.io/categories/%EC%9E%84%EB%B2%A0%EB%94%94%EB%93%9C/"/>
     
     
   </entry>
