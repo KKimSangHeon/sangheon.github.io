@@ -196,7 +196,9 @@ ga('send', 'pageview');
     
 
         <p class="article-excerpt">
-            
+            volatile - 최적화 하지마라 ( 어차피 날라갈 값이니까)
+READ APRINT AREAD APRINT A라는 코드가 있을 때 옵티마이저가 이를 최적화하여READ APRINT APRINT A로 변경하는데 A가 휘발성일경우 문제가 된다,
+그래서 위에 VOLATILE를 추가해줘 최적화를 못하도록 명시한다.VOLATILE AREAD APRINT AREAD 
         </p>
     </div>
 </article>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-07-09T05:11:29.205Z</updated>
+  <updated>2018-07-09T09:47:56.763Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,9 +20,24 @@
     <link href="http://KKimSangHeon.github.io/2018/07/09/embedded/"/>
     <id>http://KKimSangHeon.github.io/2018/07/09/embedded/</id>
     <published>2018-07-09T03:29:07.000Z</published>
-    <updated>2018-07-09T05:11:29.205Z</updated>
+    <updated>2018-07-09T09:47:56.763Z</updated>
+    
+    <content type="html"><![CDATA[<p>volatile - 최적화 하지마라 ( 어차피 날라갈 값이니까)</p>
+<p>READ A<br>PRINT A<br>READ A<br>PRINT A<br>라는 코드가 있을 때 옵티마이저가 이를 최적화하여<br>READ A<br>PRINT A<br>PRINT A<br>로 변경하는데 A가 휘발성일경우 문제가 된다,</p>
+<p>그래서 위에 VOLATILE를 추가해줘 최적화를 못하도록 명시한다.<br>VOLATILE A<br>READ A<br>PRINT A<br>READ A<br>PRINT A<br>외부의 센서(온도계)등에서 데이터를 가져올 때 같은 경우 사용. 즉 내가 가져오는 시점의 데이터를 활용하고자 할 경우 사용한다.</p>
+<p>restrict - 최적화 해라</p>
+<p>unit8x8_t SIMD를 사용하면 사용할 수 있다.</p>
+<p>GPU - 일반 프로세서와 구분하기 위해 GPU라 불리는데 주로 그래픽처리에 사용됨(작은 코어가 많다..)<br>SOC - 계산보다는 주변 여러장치를 같이 갖고있다.<br>DSP - 멀티미디어 수식처리의 식을 하나로 만드는것</p>
+<p>하드웨어 - Hypervisor - OS</p>
+<p> RTOS , Resal time Operating System<br>실시간 시스템을 구현 가능한 운영체제<br>우선 순위 기반 스케줄링<br>충분한 개수의 인터럽트 레벨</p>
+<p>text     data     bss       dec        hex      filename<br>8024     32     6072     14128     3730     image</p>
+<p>text - 기계어로 변경된것들<br>data는 초기화된 전역변수<br>bss는 초기화되지않은 전역변수</p>
+]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;volatile - 최적화 하지마라 ( 어차피 날라갈 값이니까)&lt;/p&gt;
+&lt;p&gt;READ A&lt;br&gt;PRINT A&lt;br&gt;READ A&lt;br&gt;PRINT A&lt;br&gt;라는 코드가 있을 때 옵티마이저가 이를 최적화하여&lt;br&gt;READ A&lt;br&gt;PRINT A&lt;br&gt;
     
     </summary>
     
