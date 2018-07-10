@@ -10,17 +10,17 @@
     
     
 
-      <meta name="description" content="volatile - 최적화 하지마라 ( 어차피 날라갈 값이니까) READ APRINT AREAD APRINT A라는 코드가 있을 때 옵티마이저가 이를 최적화하여READ APRINT APRINT A로 변경하는데 A가 휘발성일경우 문제가 된다, 그래서 위에 VOLATILE를 추가해줘 최적화를 못하도록 명시한다.VOLATILE AREAD APRINT AREAD">
+      <meta name="description" content="volatile - 최적화 하지마라 ( 어차피 날라갈 값이니까) READ APRINT AREAD APRINT A라는 코드가 있을 때 옵티마이저가 이를 최적화하여READ APRINT APRINT A로 변경하는데 A가 휘발성일경우 문제가 된다. 그래서 위에 VOLATILE를 추가해줘 최적화를 못하도록 명시한다.VOLATILE AREAD APRINT AREAD">
 <meta property="og:type" content="article">
 <meta property="og:title" content="임베디드 1">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2018/07/09/embedded/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="volatile - 최적화 하지마라 ( 어차피 날라갈 값이니까) READ APRINT AREAD APRINT A라는 코드가 있을 때 옵티마이저가 이를 최적화하여READ APRINT APRINT A로 변경하는데 A가 휘발성일경우 문제가 된다, 그래서 위에 VOLATILE를 추가해줘 최적화를 못하도록 명시한다.VOLATILE AREAD APRINT AREAD">
+<meta property="og:description" content="volatile - 최적화 하지마라 ( 어차피 날라갈 값이니까) READ APRINT AREAD APRINT A라는 코드가 있을 때 옵티마이저가 이를 최적화하여READ APRINT APRINT A로 변경하는데 A가 휘발성일경우 문제가 된다. 그래서 위에 VOLATILE를 추가해줘 최적화를 못하도록 명시한다.VOLATILE AREAD APRINT AREAD">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/embedded.jpg">
-<meta property="og:updated_time" content="2018-07-09T09:47:56.763Z">
+<meta property="og:updated_time" content="2018-07-10T08:29:29.460Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="임베디드 1">
-<meta name="twitter:description" content="volatile - 최적화 하지마라 ( 어차피 날라갈 값이니까) READ APRINT AREAD APRINT A라는 코드가 있을 때 옵티마이저가 이를 최적화하여READ APRINT APRINT A로 변경하는데 A가 휘발성일경우 문제가 된다, 그래서 위에 VOLATILE를 추가해줘 최적화를 못하도록 명시한다.VOLATILE AREAD APRINT AREAD">
+<meta name="twitter:description" content="volatile - 최적화 하지마라 ( 어차피 날라갈 값이니까) READ APRINT AREAD APRINT A라는 코드가 있을 때 옵티마이저가 이를 최적화하여READ APRINT APRINT A로 변경하는데 A가 휘발성일경우 문제가 된다. 그래서 위에 VOLATILE를 추가해줘 최적화를 못하도록 명시한다.VOLATILE AREAD APRINT AREAD">
 <meta name="twitter:image" content="http://kkimsangheon.github.io/images/embedded.jpg">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
@@ -176,7 +176,7 @@ ga('send', 'pageview');
         
         <div class="article-entry" itemprop="articleBody">
             <p>volatile - 최적화 하지마라 ( 어차피 날라갈 값이니까)</p>
-<p>READ A<br>PRINT A<br>READ A<br>PRINT A<br>라는 코드가 있을 때 옵티마이저가 이를 최적화하여<br>READ A<br>PRINT A<br>PRINT A<br>로 변경하는데 A가 휘발성일경우 문제가 된다,</p>
+<p>READ A<br>PRINT A<br>READ A<br>PRINT A<br>라는 코드가 있을 때 옵티마이저가 이를 최적화하여<br>READ A<br>PRINT A<br>PRINT A<br>로 변경하는데 A가 휘발성일경우 문제가 된다.</p>
 <p>그래서 위에 VOLATILE를 추가해줘 최적화를 못하도록 명시한다.<br>VOLATILE A<br>READ A<br>PRINT A<br>READ A<br>PRINT A<br>외부의 센서(온도계)등에서 데이터를 가져올 때 같은 경우 사용. 즉 내가 가져오는 시점의 데이터를 활용하고자 할 경우 사용한다.</p>
 <p>restrict - 최적화 해라</p>
 <p>unit8x8_t SIMD를 사용하면 사용할 수 있다.</p>
