@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-07-10T08:29:29.460Z</updated>
+  <updated>2018-07-11T04:47:20.849Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>임베디드 2</title>
+    <link href="http://KKimSangHeon.github.io/2018/07/11/embedded/"/>
+    <id>http://KKimSangHeon.github.io/2018/07/11/embedded/</id>
+    <published>2018-07-11T04:46:52.000Z</published>
+    <updated>2018-07-11T04:47:20.849Z</updated>
+    
+    <content type="html"><![CDATA[<p>캐쉬는 동작방식에 따라<br>Direct Mapping Cache, Associative Mapping Chche, Set Associative Mapping Chche로 나뉜다.<br>세번째가 주로 쓰이는데 세번째는 첫번째 두번째의 혼합형이다.</p>
+<h3 id="Direct-Mapping-Cache"><a href="#Direct-Mapping-Cache" class="headerlink" title="Direct Mapping Cache"></a>Direct Mapping Cache</h3><p>사용하기 편하고 이해하기 편하다<br>낭비가 심함</p>
+<h3 id="Associative-Mapping-Chche"><a href="#Associative-Mapping-Chche" class="headerlink" title="Associative Mapping Chche"></a>Associative Mapping Chche</h3><p>Direct Mapping Cache의 개선형태<br>DMC보다 Hit rate가 높다.<br>victim선택에 대해 자유롭다.<br>tag를 다 뒤져봐야 한다는점이 단점. 즉 개수가 많을수록 복잡.</p>
+<h3 id="Set-Associative-Mapping-Chche"><a href="#Set-Associative-Mapping-Chche" class="headerlink" title="Set Associative Mapping Chche"></a>Set Associative Mapping Chche</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;캐쉬는 동작방식에 따라&lt;br&gt;Direct Mapping Cache, Associative Mapping Chche, Set Associative Mapping Chche로 나뉜다.&lt;br&gt;세번째가 주로 쓰이는데 세번째는 첫번째 두번째의 혼합형이다.
+    
+    </summary>
+    
+      <category term="임베디드" scheme="http://KKimSangHeon.github.io/categories/%EC%9E%84%EB%B2%A0%EB%94%94%EB%93%9C/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>임베디드 1</title>
@@ -581,31 +604,6 @@ sudo /bin/chmod 4755 /home/sangheon/apps/apache/bin/httpd</code></p>
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>2장. 규칙3 생성자나 enum 자료형은 싱글턴 패턴을 따르도록 설계해라</title>
-    <link href="http://KKimSangHeon.github.io/2018/03/19/effectiveJava4/"/>
-    <id>http://KKimSangHeon.github.io/2018/03/19/effectiveJava4/</id>
-    <published>2018-03-18T23:00:36.000Z</published>
-    <updated>2018-03-18T23:39:16.755Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="규칙3-생성자나-enum-자료형은-싱글턴-패턴을-따르도록-설계해라"><a href="#규칙3-생성자나-enum-자료형은-싱글턴-패턴을-따르도록-설계해라" class="headerlink" title="규칙3 생성자나 enum 자료형은 싱글턴 패턴을 따르도록 설계해라"></a>규칙3 생성자나 enum 자료형은 싱글턴 패턴을 따르도록 설계해라</h2><p><code>싱글턴 : 객체를 하나만 만들 수 있는 클래스. 창관리자, 파일 시스템 같은 것들이 그 예다.</code><br> 싱글턴을 구현하는 방법은 두가지인데 두 방법 다 생성자는 private로 선언하고, 싱글턴 객체는 정적(static)멤버를 이용한다. 첫번째 방법의 경우 정적멤버는 final로 선언한다. 두 번째 방법은 public으로 선언된 정적 팩터리 메서드를 이용하는 것이다. 두 방법 다 리플렉션 기능을 통해 private 생성자를 호출할 수 있다는 점에 주의해야 한다.</p>
-<p> 싱글턴을 구현하는 또다른 한가지의 방법은 원소가 하나뿐인 enum 자료형을 정의하는 것이다. 이는 좀 더 간결하며, 직렬화가 자동으로 처리된다. 또한 직렬화가 복잡하게 이루어져도 여러 객체가 생길일이 없으며 리플렉션을 통한 공격에도 안전하다.<br> 책에서는 이 방법이 싱글턴을 구현하는 가장 좋은 방법이라 추천한다.</p>
-<h3 id="참고-URL"><a href="#참고-URL" class="headerlink" title="참고 URL"></a>참고 URL</h3><p>직렬화 : <a href="http://woowabros.github.io/experience/2017/10/17/java-serialize.html" target="_blank" rel="external">http://woowabros.github.io/experience/2017/10/17/java-serialize.html</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;규칙3-생성자나-enum-자료형은-싱글턴-패턴을-따르도록-설계해라&quot;&gt;&lt;a href=&quot;#규칙3-생성자나-enum-자료형은-싱글턴-패턴을-따르도록-설계해라&quot; class=&quot;headerlink&quot; title=&quot;규칙3 생성자나 enum 자료형은 싱
-    
-    </summary>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
     
   </entry>
   
