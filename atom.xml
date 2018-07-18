@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-07-16T23:34:38.556Z</updated>
+  <updated>2018-07-18T14:24:33.823Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>project1</title>
+    <link href="http://KKimSangHeon.github.io/2018/07/18/project1/"/>
+    <id>http://KKimSangHeon.github.io/2018/07/18/project1/</id>
+    <published>2018-07-18T14:24:33.000Z</published>
+    <updated>2018-07-18T14:24:33.823Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>임베디드 2</title>
@@ -583,30 +597,6 @@ sudo /bin/chmod 4755 /home/sangheon/apps/apache/bin/httpd</code></p>
     
     
       <category term="아파치 모듈추가" scheme="http://KKimSangHeon.github.io/tags/%EC%95%84%ED%8C%8C%EC%B9%98-%EB%AA%A8%EB%93%88%EC%B6%94%EA%B0%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://KKimSangHeon.github.io/2018/03/20/mytip/"/>
-    <id>http://KKimSangHeon.github.io/2018/03/20/mytip/</id>
-    <published>2018-03-19T15:00:00.000Z</published>
-    <updated>2018-04-10T23:50:46.417Z</updated>
-    
-    <content type="html"><![CDATA[<p>vi 관련</p>
-<p>코드 정렬하기<br>ggvG=<br>gg는 파일 처음으로이동하고<br>v는 비쥬얼 모드로 전환하고<br>G는 끝까지 드래그<br>=는 정렬</p>
-<p>함수 정의를 찾아가고싶을 때<br>ctag 를 사용하자<br><a href="http://bowbowbow.tistory.com/15" target="_blank" rel="external">http://bowbowbow.tistory.com/15</a></p>
-<p> ~/.vimrc<br>set hlsearch<br>set nu<br>set autoindent<br>set scrolloff=2<br>set wildmode=longest,list<br>set ts=4<br>set sts=4<br>set sw=1<br>set autowrite<br>set autoread<br>set cindent<br>set bs=eol,start,indent<br>set history=256<br>set laststatus=2<br>set shiftwidth=4<br>set showmatch<br>set smartcase<br>set smarttab<br>set smartindent<br>set softtabstop=4<br>set tabstop=4<br>set ruler<br>set incsearch<br>highlight Comment term=bold cterm=bold ctermfg=4<br>set tags=/home1/irteam/sangheon/getimage/tags</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;vi 관련&lt;/p&gt;
-&lt;p&gt;코드 정렬하기&lt;br&gt;ggvG=&lt;br&gt;gg는 파일 처음으로이동하고&lt;br&gt;v는 비쥬얼 모드로 전환하고&lt;br&gt;G는 끝까지 드래그&lt;br&gt;=는 정렬&lt;/p&gt;
-&lt;p&gt;함수 정의를 찾아가고싶을 때&lt;br&gt;ctag 를 사용하자&lt;br&gt;&lt;a hr
-    
-    </summary>
-    
     
   </entry>
   
