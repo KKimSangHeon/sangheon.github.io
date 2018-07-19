@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-07-18T23:37:39.651Z</updated>
+  <updated>2018-07-19T23:37:27.127Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,11 +20,14 @@
     <link href="http://KKimSangHeon.github.io/2018/07/18/project1/"/>
     <id>http://KKimSangHeon.github.io/2018/07/18/project1/</id>
     <published>2018-07-18T14:24:33.000Z</published>
-    <updated>2018-07-18T23:37:39.651Z</updated>
+    <updated>2018-07-19T23:37:27.127Z</updated>
     
     <content type="html"><![CDATA[<ol>
 <li>20180714<br>아이디어 정리.</li>
 </ol>
+<p>안드로이드 기반 등하차 체크시스템</p>
+<p>NFC팔찌를 이용한 등하차 관리 및 SMS 알림 or  노티 서비스. SMS는 위치정보, 시간,이름이 포함</p>
+<p>필요 기능.<br>등록<br>SMS전송<br>Read(내부 DB?)</p>
 ]]></content>
     
     <summary type="html">
@@ -32,7 +35,9 @@
       &lt;ol&gt;
 &lt;li&gt;20180714&lt;br&gt;아이디어 정리.&lt;/li&gt;
 &lt;/ol&gt;
-
+&lt;p&gt;안드로이드 기반 등하차 체크시스템&lt;/p&gt;
+&lt;p&gt;NFC팔찌를 이용한 등하차 관리 및 SMS 알림 or  노티 서비스. SMS는 위치정보, 시간,이름이 포함&lt;/p&gt;
+&lt;p&gt;필요 
     
     </summary>
     
