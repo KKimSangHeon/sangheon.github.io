@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-07-23T12:12:41.907Z</updated>
+  <updated>2018-07-19T23:37:27.127Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,20 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>project</title>
-    <link href="http://KKimSangHeon.github.io/2018/07/23/project/"/>
-    <id>http://KKimSangHeon.github.io/2018/07/23/project/</id>
-    <published>2018-07-23T12:12:41.000Z</published>
-    <updated>2018-07-23T12:12:41.907Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>project1</title>
@@ -589,6 +575,43 @@
     
     
       <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>아파치 모듈추가</title>
+    <link href="http://KKimSangHeon.github.io/2018/03/23/apache-add-module/"/>
+    <id>http://KKimSangHeon.github.io/2018/03/23/apache-add-module/</id>
+    <published>2018-03-23T11:39:06.000Z</published>
+    <updated>2018-04-15T09:38:25.926Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="아파치-모듈-추가"><a href="#아파치-모듈-추가" class="headerlink" title="아파치 모듈 추가"></a>아파치 모듈 추가</h3><p>/home/sangheon/apps/apache 이라는 경로에 아파치가 설치되어있다고 가정.</p>
+<ol>
+<li><code>./apxs -n modulename -g</code> 로 모듈추가. 그럼 현재 위치(bin)에 modulename디렉토리가 생성된다.</li>
+<li>/home/sangheon/apps/apache/conf 경로로 이동하여 httpd.conf를 열자</li>
+<li>약 150라인 정도 다음을 추가하자.<br><code>LoadModule modulename_module modules/mod_modulename.so
+&lt;Location /modulename&gt;
+SetHandler modulename
+&lt;/Location&gt;</code><br>위의 내용은 mod_modulename.c 파일을 참고하여 작성가능</li>
+<li>/home/sangheon/apps/apache/bin 디렉토리에 이동하여 <code>./apxs -c -i /home/sangheon/apps/apache/bin/modulename/mod_modulename.c</code> 를 입력하자. 여기서 특정 라이브러리를 이용할 경우 뒤에 -l라이브러리 이름을 입력하자. curl을 이용할 경우 -lcurl을 입력</li>
+<li>bin 디렉토리에서<code>./apachectl restart</code> 입력</li>
+</ol>
+<h2 id="만약-c-파일을-수정했을-경우엔-4번-5번을-다시-실행하면-된다"><a href="#만약-c-파일을-수정했을-경우엔-4번-5번을-다시-실행하면-된다" class="headerlink" title="만약 c 파일을 수정했을 경우엔 4번 5번을 다시 실행하면 된다."></a>만약 c 파일을 수정했을 경우엔 4번 5번을 다시 실행하면 된다.</h2><p>권한문제(sudo permission)로 서버를 실행시킬 수 없을 때 다음과 같이 입력하자.<br><code>sudo /bin/chown root.sangheon /home/sangheon/apps/apache/bin/httpd
+sudo /bin/chmod 4755 /home/sangheon/apps/apache/bin/httpd</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;아파치-모듈-추가&quot;&gt;&lt;a href=&quot;#아파치-모듈-추가&quot; class=&quot;headerlink&quot; title=&quot;아파치 모듈 추가&quot;&gt;&lt;/a&gt;아파치 모듈 추가&lt;/h3&gt;&lt;p&gt;/home/sangheon/apps/apache 이라는 경로에 아파치가 설치
+    
+    </summary>
+    
+      <category term="기타" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/"/>
+    
+      <category term="아무거나" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/%EC%95%84%EB%AC%B4%EA%B1%B0%EB%82%98/"/>
+    
+    
+      <category term="아파치 모듈추가" scheme="http://KKimSangHeon.github.io/tags/%EC%95%84%ED%8C%8C%EC%B9%98-%EB%AA%A8%EB%93%88%EC%B6%94%EA%B0%80/"/>
     
   </entry>
   
