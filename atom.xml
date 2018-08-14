@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-07-27T14:25:25.467Z</updated>
+  <updated>2018-08-14T07:58:00.101Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,16 +16,28 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>project</title>
+    <title>학생 등하차 알림 시스템</title>
     <link href="http://KKimSangHeon.github.io/2018/07/27/project/"/>
     <id>http://KKimSangHeon.github.io/2018/07/27/project/</id>
     <published>2018-07-27T14:25:25.000Z</published>
-    <updated>2018-07-27T14:25:25.467Z</updated>
+    <updated>2018-08-14T07:58:00.101Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="개발배경"><a href="#개발배경" class="headerlink" title="개발배경"></a>개발배경</h1><p>최근 유아 및 아동들의 등 하차시 발생하는 문제들로 인해 다양한 사회문제들이 발생하고 있다.<br>이를 App을 통해 극복해보고자 개발하였으며 해당 시스템은 NFC칩을 이용하여 학생들의 등하차를 관리하는 시스템이다.</p>
+<p>#</p>
+]]></content>
     
     <summary type="html">
     
+      &lt;h1 id=&quot;개발배경&quot;&gt;&lt;a href=&quot;#개발배경&quot; class=&quot;headerlink&quot; title=&quot;개발배경&quot;&gt;&lt;/a&gt;개발배경&lt;/h1&gt;&lt;p&gt;최근 유아 및 아동들의 등 하차시 발생하는 문제들로 인해 다양한 사회문제들이 발생하고 있다.&lt;br&gt;이를 App을
+    
     </summary>
     
+      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
+    
+      <category term="My Projects" scheme="http://KKimSangHeon.github.io/categories/About-Me/My-Projects/"/>
+    
+    
+      <category term="안드로이드, 등하차시스템" scheme="http://KKimSangHeon.github.io/tags/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EB%93%B1%ED%95%98%EC%B0%A8%EC%8B%9C%EC%8A%A4%ED%85%9C/"/>
     
   </entry>
   
