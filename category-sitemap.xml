@@ -154,22 +154,22 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/categories/Java/</loc>
+        <lastmod>2018-08-20T10:15:12.275Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/categories/About-Me/</loc>
-        <lastmod>2018-08-18T10:33:35.437Z</lastmod>
+        <lastmod>2018-08-28T13:47:34.263Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://KKimSangHeon.github.io/categories/About-Me/My-Projects/</loc>
-        <lastmod>2018-08-18T10:33:35.437Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/categories/Java/</loc>
-        <lastmod>2018-08-20T10:15:12.275Z</lastmod>
+        <lastmod>2018-08-28T13:47:34.263Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
