@@ -35,13 +35,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Data-Base/</loc>
-        <lastmod>2017-08-23T03:36:08.807Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EB%AC%B8%EA%B0%80%EA%B3%BC%EC%A0%95/Web/</loc>
         <lastmod>2017-09-18T05:08:58.826Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -154,13 +147,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/Java/</loc>
-        <lastmod>2018-08-20T10:15:12.275Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/categories/About-Me/</loc>
         <lastmod>2018-08-28T13:47:34.263Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -170,6 +156,20 @@
     <url>
         <loc>http://KKimSangHeon.github.io/categories/About-Me/My-Projects/</loc>
         <lastmod>2018-08-28T13:47:34.263Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/Java/</loc>
+        <lastmod>2018-08-28T14:23:42.593Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/Data-Base/</loc>
+        <lastmod>2018-08-30T09:14:28.692Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
