@@ -10,17 +10,17 @@
     
     
 
-      <meta name="description" content="Welcome to Sang Heon&apos;s Blog.">
+      <meta name="description" content="Firebase1234567891011121314151617&amp;lt;script&amp;gt;  var auth;  // Initialize Firebase  var config = &amp;#123;    apiKey: &quot;AIzaSyCuXqUy4sOBUh0FBJyqkOde_20s1f6gffs&quot;,    authDomain: &quot;memowebapp-b6255.firebasea">
 <meta name="keywords" content="firebase">
 <meta property="og:type" content="article">
 <meta property="og:title" content="firebase3">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2018/09/03/firebase3/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="Welcome to Sang Heon&apos;s Blog.">
-<meta property="og:updated_time" content="2018-09-03T06:03:33.796Z">
+<meta property="og:description" content="Firebase1234567891011121314151617&amp;lt;script&amp;gt;  var auth;  // Initialize Firebase  var config = &amp;#123;    apiKey: &quot;AIzaSyCuXqUy4sOBUh0FBJyqkOde_20s1f6gffs&quot;,    authDomain: &quot;memowebapp-b6255.firebasea">
+<meta property="og:updated_time" content="2018-09-03T06:23:57.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="firebase3">
-<meta name="twitter:description" content="Welcome to Sang Heon&apos;s Blog.">
+<meta name="twitter:description" content="Firebase1234567891011121314151617&amp;lt;script&amp;gt;  var auth;  // Initialize Firebase  var config = &amp;#123;    apiKey: &quot;AIzaSyCuXqUy4sOBUh0FBJyqkOde_20s1f6gffs&quot;,    authDomain: &quot;memowebapp-b6255.firebasea">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
 
@@ -179,7 +179,13 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <figure class="highlight"><figcaption><span>Firebase</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  var auth;</div><div class="line">  // Initialize Firebase</div><div class="line">  var config = &#123;</div><div class="line">    apiKey: "AIzaSyCuXqUy4sOBUh0FBJyqkOde_20s1f6gffs",</div><div class="line">    authDomain: "memowebapp-b6255.firebaseapp.com",</div><div class="line">    databaseURL: "https://memowebapp-b6255.firebaseio.com",</div><div class="line">    projectId: "memowebapp-b6255",</div><div class="line">    storageBucket: "memowebapp-b6255.appspot.com",</div><div class="line">    messagingSenderId: "582035498309"</div><div class="line">  &#125;;</div><div class="line">  firebase.initializeApp(config);</div><div class="line">  auth = firebase.auth();</div><div class="line">  var authProvider = new firebase.auth.GoogleAuthProvider();</div><div class="line">  auth.signInWithPopup(authProvider);</div><div class="line">&lt;/script&gt;</div><div class="line"></div></pre></td></tr></table></figure>
+<p>위의 코드를 추가한 후 서버를 껏다 켜고 localhost:5000으로 접속하면 팝업이 뜬다.</p>
+<figure class="highlight java"><figcaption><span>Firebase</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">auth.onAuthStateChanged(function(user)&#123;</div><div class="line">      <span class="keyword">if</span> ( user) &#123;</div><div class="line">          <span class="comment">// 인증 성공</span></div><div class="line">          console.log(<span class="string">"success"</span>);  </div><div class="line">          console.log(user);</div><div class="line">      &#125;<span class="keyword">else</span> &#123;</div><div class="line">          <span class="comment">// 인증 실패</span></div><div class="line">      &#125;</div></pre></td></tr></table></figure>
+<p>위의 코드를 추가해서 인증이 되었을 때 로그를 확인해보자.</p>
+<figure class="highlight"><figcaption><span>Firebase</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  var auth;</div><div class="line">  // Initialize Firebase</div><div class="line">  var config = &#123;</div><div class="line">    apiKey: "AIzaSyCuXqUy4sOBUh0FBJyqkOde_20s1f6gffs",</div><div class="line">    authDomain: "memowebapp-b6255.firebaseapp.com",</div><div class="line">    databaseURL: "https://memowebapp-b6255.firebaseio.com",</div><div class="line">    projectId: "memowebapp-b6255",</div><div class="line">    storageBucket: "memowebapp-b6255.appspot.com",</div><div class="line">    messagingSenderId: "582035498309"</div><div class="line">  &#125;;</div><div class="line">  firebase.initializeApp(config);</div><div class="line">  auth = firebase.auth();</div><div class="line">  var authProvider = new firebase.auth.GoogleAuthProvider();</div><div class="line"></div><div class="line"></div><div class="line">  auth.onAuthStateChanged(function(user)&#123;</div><div class="line">        if ( user) &#123;</div><div class="line">            // 인증 성공</div><div class="line">            console.log("success");</div><div class="line">            console.log(user);</div><div class="line">        &#125;else &#123;</div><div class="line">            // 인증 실패</div><div class="line">            auth.signInWithPopup(authProvider);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">  &#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>로그를 확인 했으면 위와같이 코드를 수정해서 인증을 실패 했을 때 팝업창이 뜨도록 설정해놓자</p>
+
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
