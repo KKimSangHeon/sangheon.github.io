@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-09-03T05:41:48.449Z</updated>
+  <updated>2018-09-03T06:03:33.796Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,13 +20,15 @@
     <link href="http://KKimSangHeon.github.io/2018/09/03/firebase3/"/>
     <id>http://KKimSangHeon.github.io/2018/09/03/firebase3/</id>
     <published>2018-09-03T05:41:11.000Z</published>
-    <updated>2018-09-03T05:41:48.449Z</updated>
+    <updated>2018-09-03T06:03:33.796Z</updated>
     
     <summary type="html">
     
     </summary>
     
-      <category term="Firebase" scheme="http://KKimSangHeon.github.io/categories/Firebase/"/>
+      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
+    
+      <category term="Firebase" scheme="http://KKimSangHeon.github.io/categories/Web-App/Firebase/"/>
     
     
       <category term="firebase" scheme="http://KKimSangHeon.github.io/tags/firebase/"/>
@@ -38,7 +40,7 @@
     <link href="http://KKimSangHeon.github.io/2018/09/03/firebase2/"/>
     <id>http://KKimSangHeon.github.io/2018/09/03/firebase2/</id>
     <published>2018-09-03T05:35:06.000Z</published>
-    <updated>2018-09-03T05:41:45.596Z</updated>
+    <updated>2018-09-03T06:03:29.595Z</updated>
     
     <content type="html"><![CDATA[<p>index.html파일을 내려받아 자신의 프로젝트 public 폴더에 붙여넣자</p>
 <p>파이어베이스 콘솔창에서 웹 앱 선택 후 스크립트 복사 후 index.html의 스크립트 부분에 복붙</p>
@@ -63,7 +65,9 @@
     
     </summary>
     
-      <category term="Firebase" scheme="http://KKimSangHeon.github.io/categories/Firebase/"/>
+      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
+    
+      <category term="Firebase" scheme="http://KKimSangHeon.github.io/categories/Web-App/Firebase/"/>
     
     
       <category term="firebase" scheme="http://KKimSangHeon.github.io/tags/firebase/"/>
@@ -103,7 +107,7 @@
     <link href="http://KKimSangHeon.github.io/2018/09/03/firebase1/"/>
     <id>http://KKimSangHeon.github.io/2018/09/03/firebase1/</id>
     <published>2018-09-03T04:31:40.000Z</published>
-    <updated>2018-09-03T05:41:23.034Z</updated>
+    <updated>2018-09-03T06:03:23.327Z</updated>
     
     <content type="html"><![CDATA[<h2 id="공부내용"><a href="#공부내용" class="headerlink" title="공부내용"></a>공부내용</h2><p><a href="https://www.inflearn.com/course/파이어베이스-강좌-웹-어플리케이션" target="_blank" rel="external">https://www.inflearn.com/course/파이어베이스-강좌-웹-어플리케이션</a> 의 강좌를 수강하며 나름대로 정리해본것이다.</p>
 <h2 id="파이어베이스"><a href="#파이어베이스" class="headerlink" title="파이어베이스"></a>파이어베이스</h2><p>웹과 모바일 개발에 필요한 기능을 제공하는 백엔드 서비스이다. 보안, 인증, DB설계, API설계등을 프론트 개발자에게 편리하게 제공하는것.</p>
@@ -118,7 +122,9 @@
     
     </summary>
     
-      <category term="Firebase" scheme="http://KKimSangHeon.github.io/categories/Firebase/"/>
+      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
+    
+      <category term="Firebase" scheme="http://KKimSangHeon.github.io/categories/Web-App/Firebase/"/>
     
     
       <category term="firebase" scheme="http://KKimSangHeon.github.io/tags/firebase/"/>
@@ -204,7 +210,7 @@
     <link href="http://KKimSangHeon.github.io/2018/07/11/embedded/"/>
     <id>http://KKimSangHeon.github.io/2018/07/11/embedded/</id>
     <published>2018-07-11T04:46:52.000Z</published>
-    <updated>2018-07-16T23:34:38.556Z</updated>
+    <updated>2018-09-03T06:02:20.807Z</updated>
     
     <content type="html"><![CDATA[<p>캐쉬는 동작방식에 따라<br>Direct Mapping Cache, Associative Mapping Chche, Set Associative Mapping Chche로 나뉜다.<br>세번째가 주로 쓰이는데 세번째는 첫번째 두번째의 혼합형이다.</p>
 <h3 id="Direct-Mapping-Cache"><a href="#Direct-Mapping-Cache" class="headerlink" title="Direct Mapping Cache"></a>Direct Mapping Cache</h3><p>사용하기 편하고 이해하기 편하다<br>낭비가 심함</p>
@@ -220,7 +226,9 @@
     
     </summary>
     
-      <category term="임베디드" scheme="http://KKimSangHeon.github.io/categories/%EC%9E%84%EB%B2%A0%EB%94%94%EB%93%9C/"/>
+      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
+    
+      <category term="Embeded C" scheme="http://KKimSangHeon.github.io/categories/Language/Embeded-C/"/>
     
     
   </entry>
@@ -230,7 +238,7 @@
     <link href="http://KKimSangHeon.github.io/2018/07/09/embedded/"/>
     <id>http://KKimSangHeon.github.io/2018/07/09/embedded/</id>
     <published>2018-07-09T03:29:07.000Z</published>
-    <updated>2018-07-10T08:29:29.460Z</updated>
+    <updated>2018-09-03T06:02:18.054Z</updated>
     
     <content type="html"><![CDATA[<p>volatile - 최적화 하지마라 ( 어차피 날라갈 값이니까)</p>
 <p>READ A<br>PRINT A<br>READ A<br>PRINT A<br>라는 코드가 있을 때 옵티마이저가 이를 최적화하여<br>READ A<br>PRINT A<br>PRINT A<br>로 변경하는데 A가 휘발성일경우 문제가 된다.</p>
@@ -251,7 +259,9 @@
     
     </summary>
     
-      <category term="임베디드" scheme="http://KKimSangHeon.github.io/categories/%EC%9E%84%EB%B2%A0%EB%94%94%EB%93%9C/"/>
+      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
+    
+      <category term="Embeded C" scheme="http://KKimSangHeon.github.io/categories/Language/Embeded-C/"/>
     
     
   </entry>
@@ -261,7 +271,7 @@
     <link href="http://KKimSangHeon.github.io/2018/06/22/cpperr/"/>
     <id>http://KKimSangHeon.github.io/2018/06/22/cpperr/</id>
     <published>2018-06-22T05:21:23.000Z</published>
-    <updated>2018-06-22T05:24:08.106Z</updated>
+    <updated>2018-09-03T06:02:12.176Z</updated>
     
     <content type="html"><![CDATA[<p>std::stringstream aa 불완전한 형식은 사용할 수 없습니다.라는 에러 발생할 경우</p>
 <p>해당에러의 경우 sstream 을 include 하지 않았을 확률이 높다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#include &lt;sstream&gt;</div></pre></td></tr></table></figure></p>
@@ -275,7 +285,9 @@
     
     </summary>
     
-      <category term="C++" scheme="http://KKimSangHeon.github.io/categories/C/"/>
+      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
+    
+      <category term="C++" scheme="http://KKimSangHeon.github.io/categories/Language/C/"/>
     
     
       <category term="c++, 에러" scheme="http://KKimSangHeon.github.io/tags/c-%EC%97%90%EB%9F%AC/"/>
@@ -287,7 +299,7 @@
     <link href="http://KKimSangHeon.github.io/2018/06/19/embedded6/"/>
     <id>http://KKimSangHeon.github.io/2018/06/19/embedded6/</id>
     <published>2018-06-19T08:20:21.000Z</published>
-    <updated>2018-06-27T01:51:57.973Z</updated>
+    <updated>2018-09-03T06:02:05.132Z</updated>
     
     <content type="html"><![CDATA[<p>임베디드를 배우기 전 간략한 C 이론 5</p>
 <p>함수포인터를 만들 때 괄호를 추가하는것을 잊지말자.<br>int (*pf)(double, int);</p>
@@ -326,7 +338,9 @@
     
     </summary>
     
-      <category term="임베디드" scheme="http://KKimSangHeon.github.io/categories/%EC%9E%84%EB%B2%A0%EB%94%94%EB%93%9C/"/>
+      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
+    
+      <category term="Embeded C" scheme="http://KKimSangHeon.github.io/categories/Language/Embeded-C/"/>
     
     
   </entry>
@@ -336,7 +350,7 @@
     <link href="http://KKimSangHeon.github.io/2018/06/18/embedded4/"/>
     <id>http://KKimSangHeon.github.io/2018/06/18/embedded4/</id>
     <published>2018-06-18T08:59:01.000Z</published>
-    <updated>2018-06-27T01:52:00.453Z</updated>
+    <updated>2018-09-03T06:02:02.084Z</updated>
     
     <content type="html"><![CDATA[<p>*(pa+0) == pa[0]</p>
 <p>포인터 배열 - 포인터를 묶어놓은 배열이다.</p>
@@ -368,7 +382,9 @@
     
     </summary>
     
-      <category term="임베디드" scheme="http://KKimSangHeon.github.io/categories/%EC%9E%84%EB%B2%A0%EB%94%94%EB%93%9C/"/>
+      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
+    
+      <category term="Embeded C" scheme="http://KKimSangHeon.github.io/categories/Language/Embeded-C/"/>
     
     
   </entry>
@@ -378,7 +394,7 @@
     <link href="http://KKimSangHeon.github.io/2018/06/15/embedded3/"/>
     <id>http://KKimSangHeon.github.io/2018/06/15/embedded3/</id>
     <published>2018-06-15T04:19:26.000Z</published>
-    <updated>2018-06-27T01:52:03.488Z</updated>
+    <updated>2018-09-03T06:01:59.028Z</updated>
     
     <content type="html"><![CDATA[<p>변수와 상수는 다른것이다.<br>연산자는 사칙연산, 비트연산, 논리연산, 비교연산이 있다.<br>자료형은 char short int float double가 있다.</p>
 <p>배열명은 배열의 시작주소를 의미한다.<br>&amp;data[0] == data</p>
@@ -406,7 +422,9 @@
     
     </summary>
     
-      <category term="임베디드" scheme="http://KKimSangHeon.github.io/categories/%EC%9E%84%EB%B2%A0%EB%94%94%EB%93%9C/"/>
+      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
+    
+      <category term="Embeded C" scheme="http://KKimSangHeon.github.io/categories/Language/Embeded-C/"/>
     
     
   </entry>
@@ -416,7 +434,7 @@
     <link href="http://KKimSangHeon.github.io/2018/06/13/embeded2/"/>
     <id>http://KKimSangHeon.github.io/2018/06/13/embeded2/</id>
     <published>2018-06-13T06:54:56.000Z</published>
-    <updated>2018-06-27T01:52:06.825Z</updated>
+    <updated>2018-09-03T06:01:56.639Z</updated>
     
     <content type="html"><![CDATA[<p>변수선언-&gt; 자료형 변수명;<br>변수사용-&gt; 변수명<br>오버플러우 : 할당할 수 있는 범위를 넘어선 입력</p>
 <p>빅 앤디안 : 낮은 어드레스에 높은 바이트를 넣는다<br>리틀 앤디안 : 낮은 어드레스에 낮은 바이트를 넣는다(ARM, Intel이 사용한다)</p>
@@ -443,7 +461,9 @@
     
     </summary>
     
-      <category term="임베디드" scheme="http://KKimSangHeon.github.io/categories/%EC%9E%84%EB%B2%A0%EB%94%94%EB%93%9C/"/>
+      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
+    
+      <category term="Embeded C" scheme="http://KKimSangHeon.github.io/categories/Language/Embeded-C/"/>
     
     
       <category term="c, embedded" scheme="http://KKimSangHeon.github.io/tags/c-embedded/"/>
@@ -455,7 +475,7 @@
     <link href="http://KKimSangHeon.github.io/2018/06/11/embeded/"/>
     <id>http://KKimSangHeon.github.io/2018/06/11/embeded/</id>
     <published>2018-06-11T14:53:29.000Z</published>
-    <updated>2018-06-27T01:52:09.788Z</updated>
+    <updated>2018-09-03T06:03:44.366Z</updated>
     
     <content type="html"><![CDATA[<p>컴파일 : 컴퓨터가 아는 언어로 변경하는것 원시코드를 오브젝트로 (syntax에러 확인)<br>컴파일러 : 이를 실행시켜주는것<br>링커 : 라이브러리를 묶어주고 실행파일을 만든다.</p>
 <p>전처리기 : 컴파일 전에 처리</p>
@@ -479,7 +499,9 @@
     
     </summary>
     
-      <category term="임베디드" scheme="http://KKimSangHeon.github.io/categories/%EC%9E%84%EB%B2%A0%EB%94%94%EB%93%9C/"/>
+      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
+    
+      <category term="Embeded C" scheme="http://KKimSangHeon.github.io/categories/Language/Embeded-C/"/>
     
     
       <category term="c, embedded" scheme="http://KKimSangHeon.github.io/tags/c-embedded/"/>
@@ -491,7 +513,7 @@
     <link href="http://KKimSangHeon.github.io/2018/05/07/cpperror6/"/>
     <id>http://KKimSangHeon.github.io/2018/05/07/cpperror6/</id>
     <published>2018-05-07T05:22:47.000Z</published>
-    <updated>2018-06-08T03:53:32.033Z</updated>
+    <updated>2018-09-03T06:01:29.738Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">분명히 string을 include 했을때도 발생한다면 namespace를 붙여줬는지 확인해보자</div><div class="line">아니면 using namespace std; 을 선언하자</div></pre></td></tr></table></figure>
 ]]></content>
@@ -502,7 +524,9 @@
     
     </summary>
     
-      <category term="C++" scheme="http://KKimSangHeon.github.io/categories/C/"/>
+      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
+    
+      <category term="C++" scheme="http://KKimSangHeon.github.io/categories/Language/C/"/>
     
     
       <category term="c++, 에러" scheme="http://KKimSangHeon.github.io/tags/c-%EC%97%90%EB%9F%AC/"/>
@@ -514,7 +538,7 @@
     <link href="http://KKimSangHeon.github.io/2018/05/07/cpperror5/"/>
     <id>http://KKimSangHeon.github.io/2018/05/07/cpperror5/</id>
     <published>2018-05-07T05:22:17.000Z</published>
-    <updated>2018-06-08T03:53:33.101Z</updated>
+    <updated>2018-09-03T06:01:25.043Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">변수명이 겹치는것이 존재하는경우 발생하는 에러이다.</div></pre></td></tr></table></figure>
 ]]></content>
@@ -525,7 +549,9 @@
     
     </summary>
     
-      <category term="C++" scheme="http://KKimSangHeon.github.io/categories/C/"/>
+      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
+    
+      <category term="C++" scheme="http://KKimSangHeon.github.io/categories/Language/C/"/>
     
     
       <category term="c++, 에러" scheme="http://KKimSangHeon.github.io/tags/c-%EC%97%90%EB%9F%AC/"/>
@@ -537,7 +563,7 @@
     <link href="http://KKimSangHeon.github.io/2018/05/07/cpperror4/"/>
     <id>http://KKimSangHeon.github.io/2018/05/07/cpperror4/</id>
     <published>2018-05-07T05:20:20.000Z</published>
-    <updated>2018-06-08T03:53:33.806Z</updated>
+    <updated>2018-09-03T06:01:26.170Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">이 경우 다른 파일의 헤더와 겹치는 경우일 수 있다.</div><div class="line">#ifndef _AA_H</div><div class="line">#define _AA_H 라고 헤더를 정의했을 때 다른파일도 헤더를 AA로 선언했을 가능성이 높다.</div><div class="line"></div><div class="line">무분별한 복붙을 지양하자..</div></pre></td></tr></table></figure>
 ]]></content>
@@ -548,7 +574,9 @@
     
     </summary>
     
-      <category term="C++" scheme="http://KKimSangHeon.github.io/categories/C/"/>
+      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
+    
+      <category term="C++" scheme="http://KKimSangHeon.github.io/categories/Language/C/"/>
     
     
       <category term="c++, 에러" scheme="http://KKimSangHeon.github.io/tags/c-%EC%97%90%EB%9F%AC/"/>
@@ -560,7 +588,7 @@
     <link href="http://KKimSangHeon.github.io/2018/05/07/cpperror3/"/>
     <id>http://KKimSangHeon.github.io/2018/05/07/cpperror3/</id>
     <published>2018-05-07T05:20:12.000Z</published>
-    <updated>2018-06-08T03:53:34.376Z</updated>
+    <updated>2018-09-03T06:01:19.306Z</updated>
     
     <content type="html"><![CDATA[<p>함수 호출부의 2번째 인자를 확인해보자</p>
 <p>대표적으로 값을 반환하는 함수를 호출하는데 ()를 붙이지 않았을 경우 발생</p>
@@ -574,7 +602,9 @@
     
     </summary>
     
-      <category term="C++" scheme="http://KKimSangHeon.github.io/categories/C/"/>
+      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
+    
+      <category term="C++" scheme="http://KKimSangHeon.github.io/categories/Language/C/"/>
     
     
       <category term="c++, 에러" scheme="http://KKimSangHeon.github.io/tags/c-%EC%97%90%EB%9F%AC/"/>
@@ -586,7 +616,7 @@
     <link href="http://KKimSangHeon.github.io/2018/05/06/cpperror2/"/>
     <id>http://KKimSangHeon.github.io/2018/05/06/cpperror2/</id>
     <published>2018-05-06T13:47:39.000Z</published>
-    <updated>2018-06-08T03:53:14.317Z</updated>
+    <updated>2018-09-03T06:01:16.928Z</updated>
     
     <content type="html"><![CDATA[<p>헤더파일에 해당 생성자를 선언하지 않았을 경우 발생</p>
 <p>생성자를 다시한번 살펴보자</p>
@@ -600,7 +630,9 @@
     
     </summary>
     
-      <category term="C++" scheme="http://KKimSangHeon.github.io/categories/C/"/>
+      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
+    
+      <category term="C++" scheme="http://KKimSangHeon.github.io/categories/Language/C/"/>
     
     
       <category term="c++, 에러" scheme="http://KKimSangHeon.github.io/tags/c-%EC%97%90%EB%9F%AC/"/>
@@ -612,7 +644,7 @@
     <link href="http://KKimSangHeon.github.io/2018/05/05/cpperror/"/>
     <id>http://KKimSangHeon.github.io/2018/05/05/cpperror/</id>
     <published>2018-05-05T13:19:09.000Z</published>
-    <updated>2018-06-09T14:29:36.893Z</updated>
+    <updated>2018-09-03T06:01:11.099Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">다음중 아무거나 include하자</div><div class="line">Defined in header &lt;cstddef&gt;         </div><div class="line">Defined in header &lt;cstdio&gt;      </div><div class="line">Defined in header &lt;cstring&gt;         </div><div class="line">Defined in header &lt;ctime&gt;       </div><div class="line">Defined in header &lt;cwchar&gt;</div></pre></td></tr></table></figure>
 ]]></content>
@@ -623,7 +655,9 @@
     
     </summary>
     
-      <category term="C++" scheme="http://KKimSangHeon.github.io/categories/C/"/>
+      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
+    
+      <category term="C++" scheme="http://KKimSangHeon.github.io/categories/Language/C/"/>
     
     
       <category term="c++, 에러" scheme="http://KKimSangHeon.github.io/tags/c-%EC%97%90%EB%9F%AC/"/>
