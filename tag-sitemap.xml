@@ -548,13 +548,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EB%93%B1%ED%95%98%EC%B0%A8%EC%8B%9C%EC%8A%A4%ED%85%9C/</loc>
-        <lastmod>2018-08-18T10:33:35.437Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/Java/</loc>
         <lastmod>2018-08-28T14:23:42.593Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -570,14 +563,21 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/tags/Social-Media/</loc>
-        <lastmod>2018-09-02T12:09:25.090Z</lastmod>
+        <lastmod>2018-09-03T05:30:55.731Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://KKimSangHeon.github.io/tags/firebase/</loc>
-        <lastmod>2018-09-03T05:27:50.517Z</lastmod>
+        <lastmod>2018-09-03T05:41:48.449Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EB%93%B1%ED%95%98%EC%B0%A8%EC%8B%9C%EC%8A%A4%ED%85%9C/</loc>
+        <lastmod>2018-09-03T05:45:52.539Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

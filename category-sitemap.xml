@@ -161,15 +161,29 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/categories/Firebase/</loc>
+        <lastmod>2018-09-03T05:41:48.449Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/HEX-Team/</loc>
+        <lastmod>2018-09-03T05:41:52.118Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/categories/About-Me/</loc>
-        <lastmod>2018-09-02T12:09:25.090Z</lastmod>
+        <lastmod>2018-09-03T05:45:52.539Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://KKimSangHeon.github.io/categories/About-Me/My-Projects/</loc>
-        <lastmod>2018-09-02T12:09:25.090Z</lastmod>
+        <lastmod>2018-09-03T05:45:52.539Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
