@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-09-02T12:09:25.090Z</updated>
+  <updated>2018-09-03T05:27:50.517Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Firebase 환경설정</title>
+    <link href="http://KKimSangHeon.github.io/2018/09/03/firebase1/"/>
+    <id>http://KKimSangHeon.github.io/2018/09/03/firebase1/</id>
+    <published>2018-09-03T04:31:40.000Z</published>
+    <updated>2018-09-03T05:27:50.517Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="공부내용"><a href="#공부내용" class="headerlink" title="공부내용"></a>공부내용</h2><p><a href="https://www.inflearn.com/course/파이어베이스-강좌-웹-어플리케이션" target="_blank" rel="external">https://www.inflearn.com/course/파이어베이스-강좌-웹-어플리케이션</a> 의 강좌를 수강하며 나름대로 정리해본것이다.</p>
+<h2 id="파이어베이스"><a href="#파이어베이스" class="headerlink" title="파이어베이스"></a>파이어베이스</h2><p>웹과 모바일 개발에 필요한 기능을 제공하는 백엔드 서비스이다. 보안, 인증, DB설계, API설계등을 프론트 개발자에게 편리하게 제공하는것.</p>
+<p>firebase.google.com 에 간 후 로그인을 하고 새 프로젝트를 생성한다.</p>
+<figure class="highlight java"><figcaption><span>Firebase 설치과정</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Node.js 설치</div><div class="line">npm install firebase-tools -g 를 콘솔창에서 입력하여 설치</div><div class="line">firebase login</div><div class="line">Y 입력</div><div class="line">구글로그인하고 승인</div><div class="line">firebase list 를 입력해서 확인</div><div class="line">mkdir memoWeb</div><div class="line">cd memoWeb</div><div class="line">firebase init  <span class="comment">//firebase 프로젝트 생성</span></div><div class="line">스페이스바 누르고 엔터를 입력해 데이터베이스 선택</div><div class="line">아까 만들어놓았던 프로젝트 선택</div><div class="line">데이터 베이스 파일이름 입력</div><div class="line"></div><div class="line">firebase init</div><div class="line">Hosting 선택</div><div class="line"><span class="keyword">public</span> 입력</div><div class="line">y 입력</div><div class="line"></div><div class="line"><span class="number">2018</span>-<span class="number">09</span>-<span class="number">03</span>  오후 <span class="number">02</span>:<span class="number">21</span>               <span class="number">161</span> database.rule.json</div><div class="line"><span class="number">2018</span>-<span class="number">09</span>-<span class="number">03</span>  오후 <span class="number">02</span>:<span class="number">22</span>               <span class="number">291</span> firebase.json</div><div class="line"><span class="number">2018</span>-<span class="number">09</span>-<span class="number">03</span>  오후 <span class="number">02</span>:<span class="number">22</span>    &lt;DIR&gt;          <span class="keyword">public</span></div><div class="line"></div><div class="line"></div><div class="line">위의 세개 파일이 생성된것을 확인</div><div class="line">firebase serve</div><div class="line"></div><div class="line">http:<span class="comment">//localhost:5000/ 으로 입력이 가능해진다.</span></div></pre></td></tr></table></figure>
+<h2 id="개인적인-생각"><a href="#개인적인-생각" class="headerlink" title="개인적인 생각"></a>개인적인 생각</h2><p>Firebase를 이용하면 많은것을 편리하게 구성하고 쉽게 만들수 있다는 생각이 든다.<br>구글이 왜 구글인지 알 수 있을것같다..</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;공부내용&quot;&gt;&lt;a href=&quot;#공부내용&quot; class=&quot;headerlink&quot; title=&quot;공부내용&quot;&gt;&lt;/a&gt;공부내용&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://www.inflearn.com/course/파이어베이스-강좌-웹-어플리케이션&quot; t
+    
+    </summary>
+    
+    
+      <category term="firebase" scheme="http://KKimSangHeon.github.io/tags/firebase/"/>
+    
+  </entry>
   
   <entry>
     <title>여행 동영상 기반 SNS개발</title>
@@ -590,37 +615,6 @@
     
       <category term="아무거나" scheme="http://KKimSangHeon.github.io/categories/%EA%B8%B0%ED%83%80/%EC%95%84%EB%AC%B4%EA%B1%B0%EB%82%98/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>리눅스 개인폴더에 설치된 디렉토리 사용하기</title>
-    <link href="http://KKimSangHeon.github.io/2018/03/30/linux-bash-profile/"/>
-    <id>http://KKimSangHeon.github.io/2018/03/30/linux-bash-profile/</id>
-    <published>2018-03-29T23:29:17.000Z</published>
-    <updated>2018-04-09T23:18:30.222Z</updated>
-    
-    <content type="html"><![CDATA[<p>서버에 curl이 설치되어 있고 내 로컬에도 curl이 설치되어 있을 때 내 curl을 사용하기 위한 방법</p>
-<p>vi ~/.bash_profile을 열고 아래를 입력하고</p>
-<p>export CURL_DIR=”$HOME/apps/usr/curl/bin”<br>export PATH=$CURL_DIR:$PATH</p>
-<p>source ~/.bash_profile을 입력</p>
-<p>curl -V를 통해 잘 적용되었나 확인</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;서버에 curl이 설치되어 있고 내 로컬에도 curl이 설치되어 있을 때 내 curl을 사용하기 위한 방법&lt;/p&gt;
-&lt;p&gt;vi ~/.bash_profile을 열고 아래를 입력하고&lt;/p&gt;
-&lt;p&gt;export CURL_DIR=”$HOME/apps/usr
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/Linux/"/>
-    
-      <category term="관련정보" scheme="http://KKimSangHeon.github.io/categories/Linux/%EA%B4%80%EB%A0%A8%EC%A0%95%EB%B3%B4/"/>
-    
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/tags/Linux/"/>
     
   </entry>
   
