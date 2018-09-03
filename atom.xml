@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-09-03T06:32:16.591Z</updated>
+  <updated>2018-09-03T09:18:43.300Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>firebase3</title>
+    <title>Firebase DB읽어오기</title>
+    <link href="http://KKimSangHeon.github.io/2018/09/03/firebase4/"/>
+    <id>http://KKimSangHeon.github.io/2018/09/03/firebase4/</id>
+    <published>2018-09-03T09:11:06.000Z</published>
+    <updated>2018-09-03T09:18:43.300Z</updated>
+    
+    <content type="html"><![CDATA[<p>이전 코드에 다음 코드를 추가하자.<br><figure class="highlight"><figcaption><span>Firebase</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  var auth, database, userInfo;</div><div class="line">  // Initialize Firebase</div><div class="line">  var config = &#123;</div><div class="line">    apiKey: "AIzaSyCuXqUy4sOBUh0FBJyqkOde_20s1f6gffs",</div><div class="line">    authDomain: "memowebapp-b6255.firebaseapp.com",</div><div class="line">    databaseURL: "https://memowebapp-b6255.firebaseio.com",</div><div class="line">    projectId: "memowebapp-b6255",</div><div class="line">    storageBucket: "memowebapp-b6255.appspot.com",</div><div class="line">    messagingSenderId: "582035498309"</div><div class="line">  &#125;;</div><div class="line">  firebase.initializeApp(config);</div><div class="line">  auth = firebase.auth();</div><div class="line">  database = firebase.database();</div><div class="line">  var authProvider = new firebase.auth.GoogleAuthProvider();</div><div class="line"></div><div class="line"></div><div class="line">  auth.onAuthStateChanged(function(user)&#123;</div><div class="line">        if ( user) &#123;</div><div class="line">            // 인증 성공</div><div class="line">            console.log("success");</div><div class="line">            console.log(user);</div><div class="line">            userInfo = user;</div><div class="line">            get_momo_list();</div><div class="line">        &#125;else &#123;</div><div class="line">            // 인증 실패</div><div class="line">            auth.signInWithPopup(authProvider);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  function get_momo_list() &#123;</div><div class="line">      var memoRef = database.ref('memos/' + userInfo.uid);</div><div class="line">      memoRef.on('child_added', on_child_added);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  function on_child_added(data)&#123;</div><div class="line">    var key = data.key;</div><div class="line">    var memoData = data.val();</div><div class="line">    var txt = memoData.txt;</div><div class="line">    var title = memoData.title;</div><div class="line">    var firstTxt = txt.substr(0,1);</div><div class="line"></div><div class="line">    var html =</div><div class="line">     "&lt;li id='"+key+"' class=\"collection-item avatar\" onclick=\"fn_get_data_one(this.id);\" &gt;" +</div><div class="line">     "&lt;i class=\"material-icons circle red\"&gt;" + firstTxt + "&lt;/i&gt;" +</div><div class="line">     "&lt;span class=\"title\"&gt;" + title + "&lt;/span&gt;" +</div><div class="line">     "&lt;p class='txt'&gt;" + txt + "&lt;br&gt;" +</div><div class="line">     "&lt;/p&gt;" +</div><div class="line">     "&lt;/li&gt;";</div><div class="line"></div><div class="line">     $(".collection").append(html);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line"></div></pre></td></tr></table></figure><br>위의 코드는 DB에서 데이터를 읽어온 후 왼쪽 리스트에 추가하는 상황인데 데이터는 다음 그림처럼 생성되어 있어야 한다.<br><img src="/2018/09/03/firebase4/test1.png" alt="DB" title="DB"></p>
+<p>“SF9uVrBjLKPRVVKZOCw7x2VKWT22” 이것이 나의 UID이다.</p>
+<p>즉 위의코드는 memos라는 DB에 내 UID로 접근해서 데이터를 가져오고 그 데이터들을 append하는것으로 볼 수 있다. 다음 그림은 출력된 화면이다<br><img src="/2018/09/03/firebase4/test2.png" alt="Example" title="Example"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;이전 코드에 다음 코드를 추가하자.&lt;br&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;figcaption&gt;&lt;span&gt;Firebase&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div cl
+    
+    </summary>
+    
+      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
+    
+      <category term="Firebase" scheme="http://KKimSangHeon.github.io/categories/Web-App/Firebase/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Firebase Google Auth 연동</title>
     <link href="http://KKimSangHeon.github.io/2018/09/03/firebase3/"/>
     <id>http://KKimSangHeon.github.io/2018/09/03/firebase3/</id>
     <published>2018-09-03T05:41:11.000Z</published>
-    <updated>2018-09-03T06:32:16.591Z</updated>
+    <updated>2018-09-03T09:11:36.638Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight"><figcaption><span>Firebase</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  var auth;</div><div class="line">  // Initialize Firebase</div><div class="line">  var config = &#123;</div><div class="line">    apiKey: "xxx",</div><div class="line">    authDomain: "xxx",</div><div class="line">    databaseURL: "xxx",</div><div class="line">    projectId: "xxx",</div><div class="line">    storageBucket: "xxx",</div><div class="line">    messagingSenderId: "xxx"</div><div class="line">  &#125;;</div><div class="line">  firebase.initializeApp(config);</div><div class="line">  auth = firebase.auth();</div><div class="line">  var authProvider = new firebase.auth.GoogleAuthProvider();</div><div class="line">  auth.signInWithPopup(authProvider);</div><div class="line">&lt;/script&gt;</div><div class="line"></div></pre></td></tr></table></figure>
 <p>위의 코드를 추가한 후 서버를 껏다 켜고 localhost:5000으로 접속하면 팝업이 뜬다.</p>
@@ -637,31 +662,6 @@
       &lt;p&gt;헤더파일에 해당 생성자를 선언하지 않았을 경우 발생&lt;/p&gt;
 &lt;p&gt;생성자를 다시한번 살펴보자&lt;/p&gt;
 
-    
-    </summary>
-    
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="C++" scheme="http://KKimSangHeon.github.io/categories/Language/C/"/>
-    
-    
-      <category term="c++, 에러" scheme="http://KKimSangHeon.github.io/tags/c-%EC%97%90%EB%9F%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>‘size_t’ does not name a type 에러가 발생했을 때</title>
-    <link href="http://KKimSangHeon.github.io/2018/05/05/cpperror/"/>
-    <id>http://KKimSangHeon.github.io/2018/05/05/cpperror/</id>
-    <published>2018-05-05T13:19:09.000Z</published>
-    <updated>2018-09-03T06:01:11.099Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">다음중 아무거나 include하자</div><div class="line">Defined in header &lt;cstddef&gt;         </div><div class="line">Defined in header &lt;cstdio&gt;      </div><div class="line">Defined in header &lt;cstring&gt;         </div><div class="line">Defined in header &lt;ctime&gt;       </div><div class="line">Defined in header &lt;cwchar&gt;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/di
     
     </summary>
     
