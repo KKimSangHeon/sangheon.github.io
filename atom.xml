@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-09-04T22:39:16.415Z</updated>
+  <updated>2018-09-04T22:59:27.404Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>자바8</title>
+    <link href="http://KKimSangHeon.github.io/2018/09/05/java3/"/>
+    <id>http://KKimSangHeon.github.io/2018/09/05/java3/</id>
+    <published>2018-09-04T22:49:23.000Z</published>
+    <updated>2018-09-04T22:59:27.404Z</updated>
+    
+    <content type="html"><![CDATA[<p>자바 개발자 면접을 보며 듣는 질문이 있다.. 자바8의 특징을 아시나요? 자바8에서 추가된 기능은요? 말씀하신 기능에 대해 좀더 자세히 설명해주세요. 그 외적인 부분은 없을까요? 등등 꼬리에 꼬리를 물다보면 항상 바닥을 드러냈던것 같다.<br>사실 자바를 공부하면서 딱히 버전에 대해 신경쓰지 않았던터라 많이 당황스러웠던 질문이었던것 같다.<br>기회가 되면 정리해야지 했는데 나와 비슷한 고민을 했던 분이 계셔서 링크를 남겨놓는다.<br><a href="https://johanneslee.github.io/articles/page7/" target="_blank" rel="external">https://johanneslee.github.io/articles/page7/</a></p>
+<p><a href="http://blog.eomdev.com/java/2016/03/30/default-method.html" target="_blank" rel="external">http://blog.eomdev.com/java/2016/03/30/default-method.html</a><br>나 또한 빠른 시일내에 공부해서 게시할 수 있도록 해야겠다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;자바 개발자 면접을 보며 듣는 질문이 있다.. 자바8의 특징을 아시나요? 자바8에서 추가된 기능은요? 말씀하신 기능에 대해 좀더 자세히 설명해주세요. 그 외적인 부분은 없을까요? 등등 꼬리에 꼬리를 물다보면 항상 바닥을 드러냈던것 같다.&lt;br&gt;사
+    
+    </summary>
+    
+      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
+    
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>인터페이스의 디폴트 메소드</title>
+    <link href="http://KKimSangHeon.github.io/2018/09/05/java2/"/>
+    <id>http://KKimSangHeon.github.io/2018/09/05/java2/</id>
+    <published>2018-09-04T22:43:01.000Z</published>
+    <updated>2018-09-04T22:49:11.419Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
+    
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>어노테이션</title>
@@ -625,85 +671,6 @@
     
       <category term="Embeded C" scheme="http://KKimSangHeon.github.io/categories/Language/Embeded-C/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>임베디드를 배우기 전 간략한 C 이론 2</title>
-    <link href="http://KKimSangHeon.github.io/2018/06/13/embeded2/"/>
-    <id>http://KKimSangHeon.github.io/2018/06/13/embeded2/</id>
-    <published>2018-06-13T06:54:56.000Z</published>
-    <updated>2018-09-03T06:01:56.639Z</updated>
-    
-    <content type="html"><![CDATA[<p>변수선언-&gt; 자료형 변수명;<br>변수사용-&gt; 변수명<br>오버플러우 : 할당할 수 있는 범위를 넘어선 입력</p>
-<p>빅 앤디안 : 낮은 어드레스에 높은 바이트를 넣는다<br>리틀 앤디안 : 낮은 어드레스에 낮은 바이트를 넣는다(ARM, Intel이 사용한다)</p>
-<p>내 컴퓨터가 리틀앤디안인지 빅앤디안인지 알아봐라<br>포인터로 한바이트만 읽어서 체크해보자</p>
-<p>팬아웃 : 신호가 변질되는것 방지하는것 . 버퍼를 달아서 구현할 수 있다.</p>
-<p>Not-G (inverter) : 역으로 변경<br>X-Or Gate : 다를 때 참<br>3-State Buffer  : B에 신호가 1이여야 A에서 X로 출력됨. B 신호가 0이면 A에서 X로 아무것도 출력되지 않는 고저항상태가 된다.</p>
-<p>char의 범위 -127~128</p>
-<p>비트연산<br>| : 비트 or<br>&amp; : 비트 And<br>~ : 비트 Not<br>&lt;&lt; : 비트 왼쪽시프트</p>
-<blockquote>
-<blockquote>
-<p>: 비트 오른쪽시프트<br>^ : 비트 xor</p>
-</blockquote>
-</blockquote>
-<p>MSB만 역으로 만들기 위한방법<br>res&amp; = ~(0x01&lt;<7); <figure="" class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">my_strcpy(char* ps, char* pb)</div><div class="line">&#123;</div><div class="line">    while(*ps!=&apos;\0&apos;)</div><div class="line">     &#123;</div><div class="line">           *pb = *ps;</div><div class="line">            pb++;</div><div class="line">            ps++;</div><div class="line">     &#125;</div><div class="line">    *pb = &apos;\0&apos;;</div><div class="line">&#125;</div></pre></td></tr></table></7);></p>
-<p>연산자가 많이 들어갈 경우 괄호로 묶어주도록 하자</p>
-<p>case문을 이용할 때 break문을 잘 사용하자</p>
-<p>polling: 계속적으로 반복해서 돌아가는것<br>인터럽트: 갑작스럽게 이벤트가 발생했을 때 처리함<br>임베디드는 폴링과 인터럽트로 구성된다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;변수선언-&amp;gt; 자료형 변수명;&lt;br&gt;변수사용-&amp;gt; 변수명&lt;br&gt;오버플러우 : 할당할 수 있는 범위를 넘어선 입력&lt;/p&gt;
-&lt;p&gt;빅 앤디안 : 낮은 어드레스에 높은 바이트를 넣는다&lt;br&gt;리틀 앤디안 : 낮은 어드레스에 낮은 바이트를 넣는다(A
-    
-    </summary>
-    
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Embeded C" scheme="http://KKimSangHeon.github.io/categories/Language/Embeded-C/"/>
-    
-    
-      <category term="c, embedded" scheme="http://KKimSangHeon.github.io/tags/c-embedded/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>임베디드를 배우기 전 간략한 C 이론 1</title>
-    <link href="http://KKimSangHeon.github.io/2018/06/11/embeded/"/>
-    <id>http://KKimSangHeon.github.io/2018/06/11/embeded/</id>
-    <published>2018-06-11T14:53:29.000Z</published>
-    <updated>2018-09-03T06:03:44.366Z</updated>
-    
-    <content type="html"><![CDATA[<p>컴파일 : 컴퓨터가 아는 언어로 변경하는것 원시코드를 오브젝트로 (syntax에러 확인)<br>컴파일러 : 이를 실행시켜주는것<br>링커 : 라이브러리를 묶어주고 실행파일을 만든다.</p>
-<p>전처리기 : 컴파일 전에 처리</p>
-<p>함수는 라이브러리, 사용자 정의 함수로 나뉜다.</p>
-<p>함수는 함수원형, 호출, 정의부로 나뉘는데 원형은 함수의 뼈대라고 보면 되고 , 정의는 함수의 동작을 정의한는 부분으로 보면된다.</p>
-<p>int main(int argc, char * argv[])<br>argc는 - arg counter 로 생각하자<br>두번째 포인터 배열이지만 더블포인터로 볼 수 있다.</p>
-<p>메인함수의 경우 vs에서 return을 하지 않을경우 에러가 발생하지 않는데 이는 잘못된것이다.<br>리턴타입이 int인데 return이 없는것은 잘못된것을 알고있자.</p>
-<p>반환형이 void인 함수의 return은 함수의 종료를 의미한다.</p>
-<p>return은 함수의 값 반환, 함수의 종료역할을 한다.</p>
-<p>ARM 프로세서에는<br>byte(1byte) / half-word(2byte) / word(4byte) 이란게 있다. 일단 알아만 두자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if ( temp = 5) &#123;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>위와같은 코드는 절대 짜지말자. if문이 뭐 저래</p>
-<p>헷갈릴수 있는 개념<br>더블 포인터 - 포인터의 주소를 저장하는 변수<br>포인터배열 - 포인터를 모아놓은 포인터<br>배열포인터 - 2차원 배열의 조소를 저장해놓은 변수<br>함수포인터 - 함수의 주소를 저장해 놓은 변수<br>구조체 - 다른 형태의 변수를 배열처럼 저장하기 위해 만들었다.</p>
-<p>서식문자<br>%d - 정수<br>%c - 문자<br>%s - 문자열<br>%f - float 자료형<br>%lf - double형 자료형<br>%u - unsigned<br>%x - hex</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;컴파일 : 컴퓨터가 아는 언어로 변경하는것 원시코드를 오브젝트로 (syntax에러 확인)&lt;br&gt;컴파일러 : 이를 실행시켜주는것&lt;br&gt;링커 : 라이브러리를 묶어주고 실행파일을 만든다.&lt;/p&gt;
-&lt;p&gt;전처리기 : 컴파일 전에 처리&lt;/p&gt;
-&lt;p&gt;함수는 
-    
-    </summary>
-    
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Embeded C" scheme="http://KKimSangHeon.github.io/categories/Language/Embeded-C/"/>
-    
-    
-      <category term="c, embedded" scheme="http://KKimSangHeon.github.io/tags/c-embedded/"/>
     
   </entry>
   
