@@ -7,8 +7,16 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/2018/09/04/firebase6/</loc>
-        <lastmod>2018-09-04T07:12:47.996Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/2018/09/04/myStudy/</loc>
+        <lastmod>2018-09-04T16:34:13.330Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2018/09/04/firebase7/</loc>
+        <lastmod>2018-09-04T10:12:55.152Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +24,7 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2018/09/03/firebase5/</loc>
-        <lastmod>2018-09-03T14:02:29.352Z</lastmod>
+        <lastmod>2018-09-04T10:10:57.627Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -24,7 +32,15 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2018/09/03/firebase4/</loc>
-        <lastmod>2018-09-03T13:28:57.975Z</lastmod>
+        <lastmod>2018-09-04T10:08:00.528Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2018/09/04/firebase6/</loc>
+        <lastmod>2018-09-04T07:12:47.996Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

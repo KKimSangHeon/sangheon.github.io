@@ -154,13 +154,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/Etc/</loc>
-        <lastmod>2018-09-03T06:05:21.232Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/categories/Etc/%EC%9E%90%EA%B2%A9%EC%A6%9D/</loc>
         <lastmod>2018-09-03T06:05:21.232Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -169,14 +162,21 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/categories/Web-App/</loc>
-        <lastmod>2018-09-04T07:12:47.996Z</lastmod>
+        <lastmod>2018-09-04T10:12:55.152Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://KKimSangHeon.github.io/categories/Web-App/Firebase/</loc>
-        <lastmod>2018-09-04T07:12:47.996Z</lastmod>
+        <lastmod>2018-09-04T10:12:55.152Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/Etc/</loc>
+        <lastmod>2018-09-04T16:34:13.330Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
