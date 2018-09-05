@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-09-04T22:59:27.404Z</updated>
+  <updated>2018-09-05T09:04:56.154Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>중첩 클래스, 중첩 인터페이스</title>
+    <link href="http://KKimSangHeon.github.io/2018/09/05/java4/"/>
+    <id>http://KKimSangHeon.github.io/2018/09/05/java4/</id>
+    <published>2018-09-05T07:08:43.000Z</published>
+    <updated>2018-09-05T09:04:56.154Z</updated>
+    
+    <content type="html"><![CDATA[<p>한 클래스가 여러 클래스와 관계를 갖을 땐 독립적으로 선언하는것이 좋다. 하지만 특정 클래스와 관계를 맺을 땐 내부에 선언하여 불필요한 관계 클래스를 감추고 코드의 복잡성을 감출 수 있게된다.</p>
+<h3 id="중첩클래스"><a href="#중첩클래스" class="headerlink" title="중첩클래스"></a>중첩클래스</h3><p>중첩클래스는 크게 두가지로 나뉘는데 다음과 같다.<br>멤버클래스 - 클래스의 멤버로서 선언되는 중첩클래스. 멤버클래스는 static 여부에 따라 인스턴스 멤버클래스, 정적 멤버클래스로 나뉜다. 클래스나 객체가 사용중이면 언제나 재사용 가능.<br>로컬클래스 - 메소드 내부에서 선언되는 중첩클래스. 메소드 실행 시에만 사용되고 종료되면 없어진다.</p>
+<h4 id="다음은-인스턴스-멤버-클래스-사용예시이다"><a href="#다음은-인스턴스-멤버-클래스-사용예시이다" class="headerlink" title="다음은 인스턴스 멤버 클래스 사용예시이다."></a>다음은 인스턴스 멤버 클래스 사용예시이다.</h4><figure class="highlight java"><figcaption><span>NestedClass</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="title">B</span></span>&#123;</div><div class="line">    B() &#123; &#125;  </div><div class="line">    <span class="keyword">int</span> filed;</div><div class="line">    <span class="comment">//static int filed2;  //static는 안되는데 그 이유를 생각해보자</span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">mehtod1</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">    <span class="comment">//static void method2()&#123;&#125; //역시 static은 안된다.</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 사용방벙</span></div><div class="line">A a = <span class="keyword">new</span> A();</div><div class="line">A.B b = a.new B();</div><div class="line">b.field1 = <span class="number">3</span>;</div><div class="line">b.method1();</div></pre></td></tr></table></figure>
+<h4 id="다음은-인스턴스-정적-멤버-클래스-사용예시이다"><a href="#다음은-인스턴스-정적-멤버-클래스-사용예시이다" class="headerlink" title="다음은 인스턴스 정적 멤버 클래스 사용예시이다."></a>다음은 인스턴스 정적 멤버 클래스 사용예시이다.</h4><p>static변수에 대한 이해가 필요하다.<br><figure class="highlight java"><figcaption><span>NestedClass</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</div><div class="line">  <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">C</span></span>&#123;</div><div class="line">    B() &#123; &#125;  </div><div class="line">    <span class="keyword">int</span> filed;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">int</span> filed2;  <span class="comment">//static 가능</span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">mehtod1</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span></span>&#123;&#125; <span class="comment">//static 가능</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">A.C c = <span class="keyword">new</span> A.C();</div><div class="line">c.file1 = <span class="number">3</span>;</div><div class="line">c.method1();</div><div class="line">A.C.filed2 = <span class="number">3</span>;</div><div class="line">A.C.method2();</div></pre></td></tr></table></figure></p>
+<h4 id="다음은-로컬-클래스-사용예시이다"><a href="#다음은-로컬-클래스-사용예시이다" class="headerlink" title="다음은 로컬 클래스 사용예시이다."></a>다음은 로컬 클래스 사용예시이다.</h4><p>주로 비동기 처리를 위해 스레드 객체를 만들 때 사용한다.<br><figure class="highlight java"><figcaption><span>NestedClass</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="title">D</span> </span>&#123;</div><div class="line">    D() &#123;&#125;</div><div class="line">    <span class="keyword">int</span> filed1;</div><div class="line">    <span class="comment">//static int filed2; //static 안된다.</span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span> </span>&#123;&#125;</div><div class="line">    <span class="comment">//static void method2() &#123;&#125;  //static 안된다.</span></div><div class="line"></div><div class="line">  &#125;</div><div class="line">  D d = <span class="keyword">new</span> D();</div><div class="line">  d.field1 = <span class="number">3</span>;</div><div class="line">  d.method1();</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;한 클래스가 여러 클래스와 관계를 갖을 땐 독립적으로 선언하는것이 좋다. 하지만 특정 클래스와 관계를 맺을 땐 내부에 선언하여 불필요한 관계 클래스를 감추고 코드의 복잡성을 감출 수 있게된다.&lt;/p&gt;
+&lt;h3 id=&quot;중첩클래스&quot;&gt;&lt;a href=&quot;#
+    
+    </summary>
+    
+      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
+    
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
     <title>자바8</title>
     <link href="http://KKimSangHeon.github.io/2018/09/05/java3/"/>
     <id>http://KKimSangHeon.github.io/2018/09/05/java3/</id>
     <published>2018-09-04T22:49:23.000Z</published>
-    <updated>2018-09-04T22:59:27.404Z</updated>
+    <updated>2018-09-04T23:25:52.655Z</updated>
     
     <content type="html"><![CDATA[<p>자바 개발자 면접을 보며 듣는 질문이 있다.. 자바8의 특징을 아시나요? 자바8에서 추가된 기능은요? 말씀하신 기능에 대해 좀더 자세히 설명해주세요. 그 외적인 부분은 없을까요? 등등 꼬리에 꼬리를 물다보면 항상 바닥을 드러냈던것 같다.<br>사실 자바를 공부하면서 딱히 버전에 대해 신경쓰지 않았던터라 많이 당황스러웠던 질문이었던것 같다.<br>기회가 되면 정리해야지 했는데 나와 비슷한 고민을 했던 분이 계셔서 링크를 남겨놓는다.<br><a href="https://johanneslee.github.io/articles/page7/" target="_blank" rel="external">https://johanneslee.github.io/articles/page7/</a></p>
 <p><a href="http://blog.eomdev.com/java/2016/03/30/default-method.html" target="_blank" rel="external">http://blog.eomdev.com/java/2016/03/30/default-method.html</a><br>나 또한 빠른 시일내에 공부해서 게시할 수 있도록 해야겠다.</p>
@@ -46,9 +76,24 @@
     <link href="http://KKimSangHeon.github.io/2018/09/05/java2/"/>
     <id>http://KKimSangHeon.github.io/2018/09/05/java2/</id>
     <published>2018-09-04T22:43:01.000Z</published>
-    <updated>2018-09-04T22:49:11.419Z</updated>
+    <updated>2018-09-05T06:48:04.679Z</updated>
+    
+    <content type="html"><![CDATA[<p>인터페이스의 디폴트 메소드는 자바8부터 나왔다고 한다.. 알아두자.<br>선언은 인터페이스에 하고 사용은 구현객체에서 한다.</p>
+<h3 id="왜-이걸-만들었을까"><a href="#왜-이걸-만들었을까" class="headerlink" title="왜 이걸 만들었을까?"></a>왜 이걸 만들었을까?</h3><p>기존 인터페이스를 확장해서 새로운 기능을 추가하기 위해서</p>
+<h3 id="특징"><a href="#특징" class="headerlink" title="특징?"></a>특징?</h3><p>디폴트 메소드는 정의된 형태이므로 implemets했을 때 해당 메소드의 구현을 강제하지 않는다.</p>
+<p>디폴트 메소드는 다음과 같이 정의할 수 있다.<br><figure class="highlight java"><figcaption><span>default</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MyInterface</span></span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">default</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span></span>&#123;</div><div class="line">      System.out.println(<span class="string">"method2"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//디폴트 메소드</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="디폴트-메소드를-갖는-인터페이스를-인터페이스가-상속했을-때"><a href="#디폴트-메소드를-갖는-인터페이스를-인터페이스가-상속했을-때" class="headerlink" title="디폴트 메소드를 갖는 인터페이스를 인터페이스가 상속했을 때?"></a>디폴트 메소드를 갖는 인터페이스를 인터페이스가 상속했을 때?</h3><p>디폴트 메소드를 처리하기 위해 다음 3가지중 선택가능</p>
+<ul>
+<li>디폴트 메소드를 단순히 상속만 받는다.</li>
+<li>디폴트 메소드를 오버라이딩 해서 내용 변경</li>
+<li>디폴트 메소드를 추상메소드로 재선언</li>
+</ul>
+]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;인터페이스의 디폴트 메소드는 자바8부터 나왔다고 한다.. 알아두자.&lt;br&gt;선언은 인터페이스에 하고 사용은 구현객체에서 한다.&lt;/p&gt;
+&lt;h3 id=&quot;왜-이걸-만들었을까&quot;&gt;&lt;a href=&quot;#왜-이걸-만들었을까&quot; class=&quot;headerlink&quot; ti
     
     </summary>
     
@@ -624,46 +669,6 @@
 &lt;p&gt;포인터 배열 - 포인터를 묶어놓은 배열이다.&lt;/p&gt;
 &lt;p&gt;더블포인터 - 싱글포인터의 주소를 저장하는 용도로써 사용된다.&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr
-    
-    </summary>
-    
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Embeded C" scheme="http://KKimSangHeon.github.io/categories/Language/Embeded-C/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>임베디드를 배우기 전 간략한 C 이론 3</title>
-    <link href="http://KKimSangHeon.github.io/2018/06/15/embedded3/"/>
-    <id>http://KKimSangHeon.github.io/2018/06/15/embedded3/</id>
-    <published>2018-06-15T04:19:26.000Z</published>
-    <updated>2018-09-03T06:01:59.028Z</updated>
-    
-    <content type="html"><![CDATA[<p>변수와 상수는 다른것이다.<br>연산자는 사칙연산, 비트연산, 논리연산, 비교연산이 있다.<br>자료형은 char short int float double가 있다.</p>
-<p>배열명은 배열의 시작주소를 의미한다.<br>&amp;data[0] == data</p>
-<p>배열명은 주소를 바꿀 수 없는 포인터 상수이다.</p>
-<p>조건부 컴파일<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#if(0)</div><div class="line">    1번로직</div><div class="line">#else</div><div class="line">    2번로직</div><div class="line">#endif</div></pre></td></tr></table></figure></p>
-<p>2번로직이 실행된다.</p>
-<p>C 라이브러리 모음<br><a href="http://www.soen.kr/" target="_blank" rel="external">http://www.soen.kr/</a></p>
-<p>LR 복귀주소를 저장(함수가 종료되고 다시 시작되어야할 주소)<br>LR들은 스택에 저장되게 되는데 최근 이동해야 할 곳을 가르키고 있는 포인터를 스택 포인터라함.<br>보통 스택이 4단계 이상 쌓이면 설계를 다시해보는것을 고려해 봐야 한다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">int Add(int a)</div><div class="line">&#123;</div><div class="line">    return tmp;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>함수 명 Add가 함수의 시작주소이다.</p>
-<p>ISR 인터럽트 서비스 루틴 - 특정인터럽트가 발생했을 때 처리해라.</p>
-<p>폴링 인터럽트 둘다 이벤트가 발생했을 때 ISR로 가서 처리하고 메인으로 돌아온다.<br>폴링은 함수를 호출해야하고 인터럽트는 호출 없이 서비스 로직이 실행된다.</p>
-<p>0 == false == off == 0v == clear == low<br>1 == true == on == 5v == set == high</p>
-<p>워치독 타이머 : 컴퓨터의 오작동을 탐지하고 복구하기 위해 쓰이는 전자 타이머이다. 정상 작동 중의 컴퓨터는 시간이 경과하거나 “타임아웃”이 되는 것을 막기 위해, 정기적으로 워치독 타이머를 재가동 시킨다.(내부적으로 소프트웨어를 리셋시키는 타이머)</p>
-<p>지역변수 - 해당 함수안에서만 접근, 해당함수 시작과 동시에 메모리에 올라갔다 함수 종료시 소멸된다.</p>
-<p>지역변수는 m_를 붙여서 처리하기도 한다.</p>
-<p>call by value - 복사대입에 의한 호출<br>call by address (pointer) - 포인터를 이용하여 호출<br>call by reference - 참조자를 이용하는것</p>
-<p>모든 포인터 변수는 32비트 시스템에서 4바이트로 동일하다</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;변수와 상수는 다른것이다.&lt;br&gt;연산자는 사칙연산, 비트연산, 논리연산, 비교연산이 있다.&lt;br&gt;자료형은 char short int float double가 있다.&lt;/p&gt;
-&lt;p&gt;배열명은 배열의 시작주소를 의미한다.&lt;br&gt;&amp;amp;data[0] =
     
     </summary>
     
