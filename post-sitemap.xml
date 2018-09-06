@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2018/09/04/myStudy/</loc>
+        <lastmod>2018-09-06T15:53:46.514Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2018/09/05/java4/</loc>
         <lastmod>2018-09-05T09:04:56.154Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -33,14 +41,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2018/09/05/java/</loc>
         <lastmod>2018-09-04T22:39:16.415Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2018/09/04/myStudy/</loc>
-        <lastmod>2018-09-04T20:33:36.685Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
