@@ -7,6 +7,38 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2018/09/07/refactoring/</loc>
+        <lastmod>2018-09-10T04:16:31.580Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2018/09/07/pattern1/</loc>
+        <lastmod>2018-09-10T04:16:06.673Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2018/09/03/hex/</loc>
+        <lastmod>2018-09-07T09:32:07.865Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2018/08/22/hex/</loc>
+        <lastmod>2018-09-07T09:32:01.424Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2018/09/04/myStudy/</loc>
         <lastmod>2018-09-06T15:53:46.514Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1169,22 +1201,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2018/07/27/project/</loc>
         <lastmod>2018-09-03T05:45:52.539Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2018/09/03/hex/</loc>
-        <lastmod>2018-09-03T05:41:52.118Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2018/08/22/hex/</loc>
-        <lastmod>2018-09-03T05:30:55.731Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
