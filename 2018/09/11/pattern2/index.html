@@ -3,26 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>9장. 마스터 네임서버 구축, 라운드 로빈 방식 네임서버 | Kim Sang Heon&#39;s Bolg</title>
+    <title>Singletone 디자인패턴 | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Linux,This Is Linux" />
+        <meta name="keywords" content="" />
     
     
 
-      <meta name="description" content="앞에한건 캐싱전용이었다.캐싱전용네임서버 - 자기가 관리하는건 없고 무조건 밖에 나가서 알아다가 알려줌. 마스터 네임 서버 - 자기가 관리하는 것들이 있다. 마스터 네임 서버 구축1. 웹서버 하나 간단하게 만들자(서버)1234567# rpm -qa httpd   //설치가 되어있다.# systemctl status httpd  //시작되어있나 확인# syst">
-<meta name="keywords" content="Linux,This Is Linux">
+      <meta name="description" content="싱글톤패턴클래스에 대한 오직 하나의 인스턴스 만이 허용되는 패턴이다.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="9장. 마스터 네임서버 구축, 라운드 로빈 방식 네임서버">
-<meta property="og:url" content="http://KKimSangHeon.github.io/2017/07/09/ThisIsLinux26/index.html">
+<meta property="og:title" content="Singletone 디자인패턴">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2018/09/11/pattern2/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="앞에한건 캐싱전용이었다.캐싱전용네임서버 - 자기가 관리하는건 없고 무조건 밖에 나가서 알아다가 알려줌. 마스터 네임 서버 - 자기가 관리하는 것들이 있다. 마스터 네임 서버 구축1. 웹서버 하나 간단하게 만들자(서버)1234567# rpm -qa httpd   //설치가 되어있다.# systemctl status httpd  //시작되어있나 확인# syst">
-<meta property="og:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
-<meta property="og:updated_time" content="2018-09-03T05:51:14.691Z">
+<meta property="og:description" content="싱글톤패턴클래스에 대한 오직 하나의 인스턴스 만이 허용되는 패턴이다.">
+<meta property="og:updated_time" content="2018-09-11T07:44:07.345Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="9장. 마스터 네임서버 구축, 라운드 로빈 방식 네임서버">
-<meta name="twitter:description" content="앞에한건 캐싱전용이었다.캐싱전용네임서버 - 자기가 관리하는건 없고 무조건 밖에 나가서 알아다가 알려줌. 마스터 네임 서버 - 자기가 관리하는 것들이 있다. 마스터 네임 서버 구축1. 웹서버 하나 간단하게 만들자(서버)1234567# rpm -qa httpd   //설치가 되어있다.# systemctl status httpd  //시작되어있나 확인# syst">
-<meta name="twitter:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
+<meta name="twitter:title" content="Singletone 디자인패턴">
+<meta name="twitter:description" content="싱글톤패턴클래스에 대한 오직 하나의 인스턴스 만이 허용되는 패턴이다.">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
 
@@ -134,7 +131,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/OS/">OS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/OS/Linux/">Linux</a>
+    <a class="page-title-link" href="/categories/CS/">CS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CS/Design-Pattern/">Design Pattern</a>
     </h1>
 </div>
                         <div class="main-body-content">
@@ -149,14 +146,14 @@ ga('send', 'pageview');
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-                            <article id="post-ThisIsLinux26" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-pattern2" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        9장. 마스터 네임서버 구축, 라운드 로빈 방식 네임서버
+        Singletone 디자인패턴
         </h1>
     
 
@@ -166,35 +163,17 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/07/09/ThisIsLinux26/" class="article-date">
-            <time datetime="2017-07-09T05:49:08.000Z" itemprop="datePublished">2017-07-09</time>
+        <a href="/2018/09/11/pattern2/" class="article-date">
+            <time datetime="2018-09-11T07:42:21.000Z" itemprop="datePublished">2018-09-11</time>
         </a>
     </div>
 
                 
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Linux/">Linux</a>, <a class="tag-link" href="/tags/This-Is-Linux/">This Is Linux</a>
-    </div>
-
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>앞에한건 캐싱전용이었다.<br>캐싱전용네임서버 - 자기가 관리하는건 없고 무조건 밖에 나가서 알아다가 알려줌.</p>
-<p>마스터 네임 서버 - 자기가 관리하는 것들이 있다.</p>
-<h4 id="마스터-네임-서버-구축"><a href="#마스터-네임-서버-구축" class="headerlink" title="마스터 네임 서버 구축"></a>마스터 네임 서버 구축</h4><h5 id="1-웹서버-하나-간단하게-만들자-서버"><a href="#1-웹서버-하나-간단하게-만들자-서버" class="headerlink" title="1. 웹서버 하나 간단하게 만들자(서버)"></a>1. 웹서버 하나 간단하게 만들자(서버)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># rpm -qa httpd   //설치가 되어있다.</div><div class="line"># systemctl status httpd  //시작되어있나 확인</div><div class="line"># systemctl restart httpd //시작</div><div class="line"># firewall-config</div><div class="line">영구적 - http 체크 - firewalld 다시불러오기</div><div class="line"># vi /var/www/html/index.html</div><div class="line">&lt;h1&gt; CentOS 7 홈피 입니다&lt;/h1&gt; //삽입</div></pre></td></tr></table></figure>
-<h5 id="2-ftp서버-간단하게-만들자-서버B"><a href="#2-ftp서버-간단하게-만들자-서버B" class="headerlink" title="2. ftp서버 간단하게 만들자(서버B)"></a>2. ftp서버 간단하게 만들자(서버B)</h5><p>서버 B를 켠다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># yum -y install vsftpd</div><div class="line"># firewall-cmd --permanent --add-service=ftp  //방화벽설정</div><div class="line"># firewall-cmd --reload</div></pre></td></tr></table></figure></p>
-<h5 id="3-환경설정을-해주자-서버"><a href="#3-환경설정을-해주자-서버" class="headerlink" title="3. 환경설정을 해주자(서버)"></a>3. 환경설정을 해주자(서버)</h5><p>서버에서<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"># vi /etc/named.conf</div><div class="line">:set number</div><div class="line">맨아래 가서</div><div class="line">zone &quot;centos.com&quot; IN &#123;type master;</div><div class="line">                      file &quot;centos.com.db&quot;;</div><div class="line">                      allow-update&#123;none;&#125;;</div><div class="line">&#125;;</div><div class="line">입력. 이 의미는 서버컴퓨터는 centos.com의 마스터 네임서버다. 그리고 상세정보는 centos.com.db(임의로 지은것)에 들어있다.</div><div class="line"></div><div class="line"># named-checkconf   //방금작성한것 문법적으로 잘못된것 없나 확인</div></pre></td></tr></table></figure></p>
-<h5 id="4-centos-com-db를-만들자-서버"><a href="#4-centos-com-db를-만들자-서버" class="headerlink" title="4. centos.com.db를 만들자(서버)"></a>4. centos.com.db를 만들자(서버)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"># cd /var/named</div><div class="line"># pwd</div><div class="line"># ls</div><div class="line"># touch centos.com.db</div><div class="line"># vi centos.com.db</div><div class="line">아래 추가</div><div class="line">$TTL 3H</div><div class="line">@    SOA  @   root. (2 1D 1H 1W 1H)</div><div class="line">     IN   NS  @</div><div class="line">     IN   A   192.168.111.100</div><div class="line"></div><div class="line">www  IN   A   192.168.111.100</div><div class="line">ftp  IN   A   192.168.111.200</div><div class="line"></div><div class="line">위 세줄은 항상 써주는것.</div><div class="line">네번째는 자기 자신의 ip 입력</div><div class="line">나머지 아래 두줄은 알려줄것.</div><div class="line"></div><div class="line"># named-checkzone centos.com centos.com.db   //오류있는지 확인</div><div class="line"># systemctl restart named</div><div class="line">방화벽 설정은 앞에서 해줬으니 안해도됨</div></pre></td></tr></table></figure>
-<h5 id="5-접속-테스트해보자"><a href="#5-접속-테스트해보자" class="headerlink" title="5. 접속 테스트해보자"></a>5. 접속 테스트해보자</h5><p>클라이언트 켜자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ su -</div><div class="line">$ vi /etc/resolv.conf</div><div class="line">맨 아래 192.168.111.100 으로 수정</div><div class="line"></div><div class="line">www.centos.com 접속해보자</div></pre></td></tr></table></figure><br>ftp 접속해보자<br>서버 B에서 다음을 실행하자(ftp서비스 시작)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># systemctl restart vsftpd</div><div class="line"># systemctl status vsftpd</div></pre></td></tr></table></figure><br>클라이언트에서 접속해보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># ftp ftp.centos.com</div><div class="line"> // anonymous</div><div class="line"> //엔터</div></pre></td></tr></table></figure></p>
-<h4 id="라운드-로빈-방식의-네임-서버"><a href="#라운드-로빈-방식의-네임-서버" class="headerlink" title="라운드 로빈 방식의 네임 서버"></a>라운드 로빈 방식의 네임 서버</h4><p>이전에 실습한 방식은 여러명이 동시에 접속할 경우 서버 하나에 부하가 걸린다. 그래서 웹 서버를 여러개 만들어서 요청이 들어올 때마다 번갈아가면서 요청처리.</p>
-<h5 id="네이버가-이-방식을-쓴다"><a href="#네이버가-이-방식을-쓴다" class="headerlink" title="네이버가 이 방식을 쓴다."></a>네이버가 이 방식을 쓴다.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># nslookup</div><div class="line">www.naver.com</div><div class="line">두개가 넘어온다.</div></pre></td></tr></table></figure>
-<h4 id="실습"><a href="#실습" class="headerlink" title="실습."></a>실습.</h4><p>www.john.com 으로 접속 했을 때 각각 다른 페이지를 뿌려주는실습.(라운드로빈 방식 확인가능)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># nslookup</div><div class="line">&gt; www.yes24.com     //아이피 주소를 확인하기위해</div><div class="line">&gt; www.danawa.com   //아이피 주소를 확인하기위해</div><div class="line">&gt; www.nate.com     //아이피 주소를 확인하기위해</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"># cd /var/named</div><div class="line"># vi centos.com.db</div><div class="line"></div><div class="line">아래 두줄 지우고 다음으로 대체</div><div class="line">www          IN      CNAME       webserver.centos.com.</div><div class="line">webserver    100     IN          A     61.111.13.51</div><div class="line">             200     IN          A     119.205.194.11</div><div class="line">             300     IN          A     120.50.131.112</div><div class="line"></div><div class="line">순차적으로 주소를 알려준다. 100,200,300 은 순차번호이다.</div><div class="line"></div><div class="line"># systemctl restart named</div><div class="line"># nslookup</div><div class="line">&gt;server 192.168.111.100</div><div class="line">&gt;www.centos.com</div><div class="line">결과가 세개가 온다.</div><div class="line"></div></pre></td></tr></table></figure>
-<h5 id="클라이언트에서-접속해보자"><a href="#클라이언트에서-접속해보자" class="headerlink" title="클라이언트에서 접속해보자"></a>클라이언트에서 접속해보자</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># vi /etc/resolv.conf</div><div class="line">//192.168.111.100 이 맞나 확인</div><div class="line">//아니면 설정하기</div></pre></td></tr></table></figure>
-<p>웹 브라우져 닫고<br>www.centos.com 들어가보자(여러번)</p>
+            <h3 id="싱글톤패턴"><a href="#싱글톤패턴" class="headerlink" title="싱글톤패턴"></a>싱글톤패턴</h3><p>클래스에 대한 오직 하나의 인스턴스 만이 허용되는 패턴이다.</p>
 
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -213,7 +192,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/07/09/ThisIsLinux26/" data-id="cjlxeumtq003dfsv7whwvp9w5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2018/09/11/pattern2/" data-id="cjlxeunq000rrfsv7i45r4vyh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -319,20 +298,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/07/11/ThisIsLinux27/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            10장. 메일서버 개념, 메일서버를 위한 네임서버 구현
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/07/09/ThisIsLinux25/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/09/07/pattern1/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">9장. 도메인 이름 체계 개념, 캐싱 전용 네임서버 구축</p>
+        <p class="article-nav-title">디자인패턴</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -379,7 +348,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'https-kkimsangheon-github-io-2';
     
     
-    var disqus_url = 'http://KKimSangHeon.github.io/2017/07/09/ThisIsLinux26/';
+    var disqus_url = 'http://KKimSangHeon.github.io/2018/09/11/pattern2/';
     
     (function() {
     var dsq = document.createElement('script');

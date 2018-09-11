@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-09-10T04:16:31.580Z</updated>
+  <updated>2018-09-11T07:44:07.345Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,13 +16,19 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Refactoring</title>
-    <link href="http://KKimSangHeon.github.io/2018/09/07/refactoring/"/>
-    <id>http://KKimSangHeon.github.io/2018/09/07/refactoring/</id>
-    <published>2018-09-07T10:43:19.000Z</published>
-    <updated>2018-09-10T04:16:31.580Z</updated>
+    <title>Singletone 디자인패턴</title>
+    <link href="http://KKimSangHeon.github.io/2018/09/11/pattern2/"/>
+    <id>http://KKimSangHeon.github.io/2018/09/11/pattern2/</id>
+    <published>2018-09-11T07:42:21.000Z</published>
+    <updated>2018-09-11T07:44:07.345Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="싱글톤패턴"><a href="#싱글톤패턴" class="headerlink" title="싱글톤패턴"></a>싱글톤패턴</h3><p>클래스에 대한 오직 하나의 인스턴스 만이 허용되는 패턴이다.</p>
+]]></content>
     
     <summary type="html">
+    
+      &lt;h3 id=&quot;싱글톤패턴&quot;&gt;&lt;a href=&quot;#싱글톤패턴&quot; class=&quot;headerlink&quot; title=&quot;싱글톤패턴&quot;&gt;&lt;/a&gt;싱글톤패턴&lt;/h3&gt;&lt;p&gt;클래스에 대한 오직 하나의 인스턴스 만이 허용되는 패턴이다.&lt;/p&gt;
+
     
     </summary>
     
@@ -30,8 +36,6 @@
     
       <category term="Design Pattern" scheme="http://KKimSangHeon.github.io/categories/CS/Design-Pattern/"/>
     
-    
-      <category term="Refactoring" scheme="http://KKimSangHeon.github.io/tags/Refactoring/"/>
     
   </entry>
   
