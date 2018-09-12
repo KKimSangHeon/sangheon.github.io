@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-09-11T07:44:07.345Z</updated>
+  <updated>2018-09-12T02:56:08.591Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,15 +20,16 @@
     <link href="http://KKimSangHeon.github.io/2018/09/11/pattern2/"/>
     <id>http://KKimSangHeon.github.io/2018/09/11/pattern2/</id>
     <published>2018-09-11T07:42:21.000Z</published>
-    <updated>2018-09-11T07:44:07.345Z</updated>
+    <updated>2018-09-12T02:56:08.591Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="싱글톤패턴"><a href="#싱글톤패턴" class="headerlink" title="싱글톤패턴"></a>싱글톤패턴</h3><p>클래스에 대한 오직 하나의 인스턴스 만이 허용되는 패턴이다.</p>
+    <content type="html"><![CDATA[<h3 id="싱글톤패턴"><a href="#싱글톤패턴" class="headerlink" title="싱글톤패턴"></a>싱글톤패턴</h3><p>클래스에 대한 오직 하나의 인스턴스 만이 허용되는 패턴이다.<br>이를위해 생성자를 private로 선언하여 외부에서 인스턴스를 생성하는것을 방지한다.<br>싱글톤 패턴을 사용할땐 다중 스레드에 주의해야 한다.</p>
+<p>스레드에 안전한 코드는 다음과 같다.</p>
+<figure class="highlight java"><figcaption><span>Singletone</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"></div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;싱글톤패턴&quot;&gt;&lt;a href=&quot;#싱글톤패턴&quot; class=&quot;headerlink&quot; title=&quot;싱글톤패턴&quot;&gt;&lt;/a&gt;싱글톤패턴&lt;/h3&gt;&lt;p&gt;클래스에 대한 오직 하나의 인스턴스 만이 허용되는 패턴이다.&lt;/p&gt;
-
+      &lt;h3 id=&quot;싱글톤패턴&quot;&gt;&lt;a href=&quot;#싱글톤패턴&quot; class=&quot;headerlink&quot; title=&quot;싱글톤패턴&quot;&gt;&lt;/a&gt;싱글톤패턴&lt;/h3&gt;&lt;p&gt;클래스에 대한 오직 하나의 인스턴스 만이 허용되는 패턴이다.&lt;br&gt;이를위해 생성자를 private로 선언
     
     </summary>
     
