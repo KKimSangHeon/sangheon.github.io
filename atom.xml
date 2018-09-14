@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-09-12T03:46:08.720Z</updated>
+  <updated>2018-09-14T09:14:04.819Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,12 +20,12 @@
     <link href="http://KKimSangHeon.github.io/2018/09/11/pattern2/"/>
     <id>http://KKimSangHeon.github.io/2018/09/11/pattern2/</id>
     <published>2018-09-11T07:42:21.000Z</published>
-    <updated>2018-09-12T03:46:08.720Z</updated>
+    <updated>2018-09-14T09:14:04.819Z</updated>
     
     <content type="html"><![CDATA[<h3 id="싱글톤패턴"><a href="#싱글톤패턴" class="headerlink" title="싱글톤패턴"></a>싱글톤패턴</h3><p>클래스에 대한 오직 하나의 인스턴스 만이 허용되는 패턴이다.<br>이를위해 생성자를 private로 선언하여 외부에서 인스턴스를 생성하는것을 방지한다.<br>싱글톤 패턴을 사용할땐 다중 스레드에 주의해야 한다.</p>
 <p>스레드에 안전한 코드는 다음과 같다.</p>
 <figure class="highlight java"><figcaption><span>Singleton</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</div><div class="line">  <span class="keyword">public</span>:</div><div class="line">    <span class="keyword">static</span> Singleton* getInstance() &#123;</div><div class="line">        <span class="keyword">if</span> (instance == <span class="number">0</span>) &#123;</div><div class="line">            Lock lock;</div><div class="line">            <span class="keyword">if</span> (instance == <span class="number">0</span> )&#123;</div><div class="line">              instance = <span class="keyword">new</span> Singleton;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">      <span class="keyword">return</span> instance;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">private</span>:</div><div class="line">      Singleton() &#123;&#125;</div><div class="line">      <span class="keyword">static</span> Singleton* instance;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>클래스가 적재되는순간 즉 더 빠르게 인스턴스화를 하기 위해서는 아래와 같이 코드를 작성하면 된다.</p>
+<p>클래스가 적재되는순간 즉 더 빠르게 인스턴스화를 하기 위해서는 아래와 같이 코드를 작성하면 된다. 이 또한 스레드에 주의해서 작성해야 한다는것을 잊지말자.</p>
 <figure class="highlight java"><figcaption><span>Singleton</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</div><div class="line">  <span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();</div><div class="line">  Singleton() &#123;&#125;</div><div class="line">  <span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</div><div class="line">      <span class="keyword">return</span> instance;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 ]]></content>
     
@@ -40,6 +40,8 @@
       <category term="Design Pattern" scheme="http://KKimSangHeon.github.io/categories/CS/Design-Pattern/"/>
     
     
+      <category term="Design Pattern" scheme="http://KKimSangHeon.github.io/tags/Design-Pattern/"/>
+    
   </entry>
   
   <entry>
@@ -47,7 +49,7 @@
     <link href="http://KKimSangHeon.github.io/2018/09/07/pattern1/"/>
     <id>http://KKimSangHeon.github.io/2018/09/07/pattern1/</id>
     <published>2018-09-07T09:31:43.000Z</published>
-    <updated>2018-09-10T04:16:06.673Z</updated>
+    <updated>2018-09-14T09:13:59.874Z</updated>
     
     <content type="html"><![CDATA[<h3 id="디자인패턴"><a href="#디자인패턴" class="headerlink" title="디자인패턴"></a>디자인패턴</h3><p>소프트웨어 설계에서 공통적으로 발생하는 문제를 다루는 보편적이고 반복해서 사용할 수 있는 방법. 문제를 해결하기 위한 설명이나 템플릿으로 보면 된다.</p>
 <h3 id="디자인패턴을-사용할-때-장점"><a href="#디자인패턴을-사용할-때-장점" class="headerlink" title="디자인패턴을 사용할 때 장점"></a>디자인패턴을 사용할 때 장점</h3><p>개발 절차의 속도를 높일 수 있다.<br>재사용 가능한 구조적 개념으로 구성되어 있기 때문에 믿을 수 있다.</p>
@@ -77,6 +79,8 @@
     
       <category term="Design Pattern" scheme="http://KKimSangHeon.github.io/categories/CS/Design-Pattern/"/>
     
+    
+      <category term="Design Pattern" scheme="http://KKimSangHeon.github.io/tags/Design-Pattern/"/>
     
   </entry>
   
