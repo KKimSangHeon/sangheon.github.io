@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-09-14T10:11:46.213Z</updated>
+  <updated>2018-09-18T08:19:51.989Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>제주도 여행</title>
+    <link href="http://KKimSangHeon.github.io/2018/09/18/travel/"/>
+    <id>http://KKimSangHeon.github.io/2018/09/18/travel/</id>
+    <published>2018-09-18T08:18:54.000Z</published>
+    <updated>2018-09-18T08:19:51.989Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
+    
+      <category term="Travel" scheme="http://KKimSangHeon.github.io/categories/About-Me/Travel/"/>
+    
+    
+      <category term="여행" scheme="http://KKimSangHeon.github.io/tags/%EC%97%AC%ED%96%89/"/>
+    
+  </entry>
   
   <entry>
     <title>Singleton 디자인패턴</title>
@@ -678,34 +698,6 @@
     
       <category term="Embeded C" scheme="http://KKimSangHeon.github.io/categories/Language/Embeded-C/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>std::stringstream aa 불완전한 형식은 사용할 수 없습니다.</title>
-    <link href="http://KKimSangHeon.github.io/2018/06/22/cpperr/"/>
-    <id>http://KKimSangHeon.github.io/2018/06/22/cpperr/</id>
-    <published>2018-06-22T05:21:23.000Z</published>
-    <updated>2018-09-03T06:02:12.176Z</updated>
-    
-    <content type="html"><![CDATA[<p>std::stringstream aa 불완전한 형식은 사용할 수 없습니다.라는 에러 발생할 경우</p>
-<p>해당에러의 경우 sstream 을 include 하지 않았을 확률이 높다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#include &lt;sstream&gt;</div></pre></td></tr></table></figure></p>
-<p>을 추가하여 다시 확인해보자</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;std::stringstream aa 불완전한 형식은 사용할 수 없습니다.라는 에러 발생할 경우&lt;/p&gt;
-&lt;p&gt;해당에러의 경우 sstream 을 include 하지 않았을 확률이 높다.&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;
-    
-    </summary>
-    
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="C++" scheme="http://KKimSangHeon.github.io/categories/Language/C/"/>
-    
-    
-      <category term="c++, 에러" scheme="http://KKimSangHeon.github.io/tags/c-%EC%97%90%EB%9F%AC/"/>
     
   </entry>
   
