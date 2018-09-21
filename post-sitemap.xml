@@ -8,7 +8,15 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2018/09/18/travel/</loc>
-        <lastmod>2018-09-18T08:19:51.989Z</lastmod>
+        <lastmod>2018-09-21T10:59:58.254Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2018/09/04/myStudy/</loc>
+        <lastmod>2018-09-21T10:38:11.078Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -41,14 +49,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2018/08/22/hex/</loc>
         <lastmod>2018-09-07T09:32:01.424Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2018/09/04/myStudy/</loc>
-        <lastmod>2018-09-06T15:53:46.514Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
