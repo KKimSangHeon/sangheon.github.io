@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-09-21T10:59:58.254Z</updated>
+  <updated>2018-09-22T06:24:40.723Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>팩토리 메서드 디자인 패턴</title>
+    <link href="http://KKimSangHeon.github.io/2018/09/22/factory-method/"/>
+    <id>http://KKimSangHeon.github.io/2018/09/22/factory-method/</id>
+    <published>2018-09-22T04:25:51.000Z</published>
+    <updated>2018-09-22T06:24:40.723Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="팩토리-메서드-패턴"><a href="#팩토리-메서드-패턴" class="headerlink" title="팩토리 메서드 패턴"></a>팩토리 메서드 패턴</h3><p>공장처럼 팩토리 메서드의 일은 객체를 생성하는것이다. 이는 생성패턴으로 클래스들 중 하나의 객체를 인스턴스화 하는데 사용된다. 생성자에 비해 많은장점을 갖으며 상황에 따라 생성자 대신 혹은 기존의 생성자에 덧붙여 제공하는것이 좋다.</p>
+<figure class="highlight c"><figcaption><span>Factory</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 팩토리 메서드 패턴으로 인스턴스화될 형으로 제공될 기본 클래스</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Pet</span> &#123;</span></div><div class="line">  <span class="keyword">public</span> :</div><div class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">petSound</span><span class="params">()</span> </span>= <span class="number">0</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">// 팩토리 메서드 패턴에 의해 인스턴스를 얻게 될 첫 번째 파생 클래스</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>:</span> <span class="keyword">public</span> Pet&#123;</div><div class="line">  <span class="keyword">public</span> :</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">petSound</span><span class="params">( )</span> </span>&#123;</div><div class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"Bow Bow..."</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// 팩토리 메서드 패턴에 의해 인스턴스를 얻게 될 두번째 파생 클래스</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> :</span> <span class="keyword">public</span> Pet &#123;</div><div class="line">  <span class="keyword">public</span> :</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">petSound</span><span class="params">()</span> </span>&#123;</div><div class="line">      <span class="built_in">cout</span>&lt;&lt; <span class="string">"Meaw Meaw..."</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">// 로직에 기반해서 객체들을 인스턴스화하는 팩토리 메서드 패턴 구현</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PetFactory</span> &#123;</span></div><div class="line">  <span class="keyword">public</span> :</div><div class="line">    <span class="function">Pet* <span class="title">getPet</span><span class="params">(<span class="keyword">int</span> petType)</span> </span>&#123;</div><div class="line">      Pet pet = <span class="literal">NULL</span>;</div><div class="line">      <span class="comment">// 비즈니스 로직에 기반한 객체의 인스턴스화</span></div><div class="line">      <span class="keyword">if</span> (petType == <span class="number">1</span>)</div><div class="line">          pet = <span class="keyword">new</span> Dog();</div><div class="line">      <span class="keyword">else</span> <span class="keyword">if</span>(petType ==<span class="number">2</span>)</div><div class="line">          pet = <span class="keyword">new</span> Cat();</div><div class="line"></div><div class="line">      <span class="keyword">return</span> pet;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<p>다음은 생성한 팩토리메소드를 활용하여 인스턴스를 생성하는 방식이다.</p>
+<figure class="highlight c"><figcaption><span>Factory</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;팩토리-메서드-패턴&quot;&gt;&lt;a href=&quot;#팩토리-메서드-패턴&quot; class=&quot;headerlink&quot; title=&quot;팩토리 메서드 패턴&quot;&gt;&lt;/a&gt;팩토리 메서드 패턴&lt;/h3&gt;&lt;p&gt;공장처럼 팩토리 메서드의 일은 객체를 생성하는것이다. 이는 생성패턴으
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="Design Pattern" scheme="http://KKimSangHeon.github.io/categories/CS/Design-Pattern/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>제주도 여행</title>
@@ -687,39 +713,6 @@
     <summary type="html">
     
       &lt;p&gt;캐쉬는 동작방식에 따라&lt;br&gt;Direct Mapping Cache, Associative Mapping Chche, Set Associative Mapping Chche로 나뉜다.&lt;br&gt;세번째가 주로 쓰이는데 세번째는 첫번째 두번째의 혼합형이다.
-    
-    </summary>
-    
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Embeded C" scheme="http://KKimSangHeon.github.io/categories/Language/Embeded-C/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>임베디드 1</title>
-    <link href="http://KKimSangHeon.github.io/2018/07/09/embedded/"/>
-    <id>http://KKimSangHeon.github.io/2018/07/09/embedded/</id>
-    <published>2018-07-09T03:29:07.000Z</published>
-    <updated>2018-09-03T06:02:18.054Z</updated>
-    
-    <content type="html"><![CDATA[<p>volatile - 최적화 하지마라 ( 어차피 날라갈 값이니까)</p>
-<p>READ A<br>PRINT A<br>READ A<br>PRINT A<br>라는 코드가 있을 때 옵티마이저가 이를 최적화하여<br>READ A<br>PRINT A<br>PRINT A<br>로 변경하는데 A가 휘발성일경우 문제가 된다.</p>
-<p>그래서 위에 VOLATILE를 추가해줘 최적화를 못하도록 명시한다.<br>VOLATILE A<br>READ A<br>PRINT A<br>READ A<br>PRINT A<br>외부의 센서(온도계)등에서 데이터를 가져올 때 같은 경우 사용. 즉 내가 가져오는 시점의 데이터를 활용하고자 할 경우 사용한다.</p>
-<p>restrict - 최적화 해라</p>
-<p>unit8x8_t SIMD를 사용하면 사용할 수 있다.</p>
-<p>GPU - 일반 프로세서와 구분하기 위해 GPU라 불리는데 주로 그래픽처리에 사용됨(작은 코어가 많다..)<br>SOC - 계산보다는 주변 여러장치를 같이 갖고있다.<br>DSP - 멀티미디어 수식처리의 식을 하나로 만드는것</p>
-<p>하드웨어 - Hypervisor - OS</p>
-<p> RTOS , Resal time Operating System<br>실시간 시스템을 구현 가능한 운영체제<br>우선 순위 기반 스케줄링<br>충분한 개수의 인터럽트 레벨</p>
-<p>text     data     bss       dec        hex      filename<br>8024     32     6072     14128     3730     image</p>
-<p>text - 기계어로 변경된것들<br>data는 초기화된 전역변수<br>bss는 초기화되지않은 전역변수</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;volatile - 최적화 하지마라 ( 어차피 날라갈 값이니까)&lt;/p&gt;
-&lt;p&gt;READ A&lt;br&gt;PRINT A&lt;br&gt;READ A&lt;br&gt;PRINT A&lt;br&gt;라는 코드가 있을 때 옵티마이저가 이를 최적화하여&lt;br&gt;READ A&lt;br&gt;PRINT A&lt;br&gt;
     
     </summary>
     
