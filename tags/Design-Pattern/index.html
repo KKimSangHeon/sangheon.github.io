@@ -3,24 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Singleton 디자인패턴 | Kim Sang Heon&#39;s Bolg</title>
+    <title>Tag: Design Pattern | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-        <meta name="keywords" content="Design Pattern" />
     
     
 
-      <meta name="description" content="싱글톤패턴클래스에 대한 오직 하나의 인스턴스 만이 허용되는 패턴이다.이를위해 생성자를 private로 선언하여 외부에서 인스턴스를 생성하는것을 방지한다.싱글톤 패턴을 사용할땐 다중 스레드에 주의해야 한다. 스레드에 안전한 코드는 다음과 같다. Singleton12345678910111213141516class Singleton &amp;#123;  public:">
-<meta name="keywords" content="Design Pattern">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Singleton 디자인패턴">
-<meta property="og:url" content="http://KKimSangHeon.github.io/2018/09/11/pattern2/index.html">
+      <meta name="description" content="Welcome to Sang Heon&apos;s Blog.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kim Sang Heon&#39;s Bolg">
+<meta property="og:url" content="http://KKimSangHeon.github.io/tags/Design-Pattern/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="싱글톤패턴클래스에 대한 오직 하나의 인스턴스 만이 허용되는 패턴이다.이를위해 생성자를 private로 선언하여 외부에서 인스턴스를 생성하는것을 방지한다.싱글톤 패턴을 사용할땐 다중 스레드에 주의해야 한다. 스레드에 안전한 코드는 다음과 같다. Singleton12345678910111213141516class Singleton &amp;#123;  public:">
-<meta property="og:updated_time" content="2018-09-23T11:53:57.107Z">
+<meta property="og:description" content="Welcome to Sang Heon&apos;s Blog.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Singleton 디자인패턴">
-<meta name="twitter:description" content="싱글톤패턴클래스에 대한 오직 하나의 인스턴스 만이 허용되는 패턴이다.이를위해 생성자를 private로 선언하여 외부에서 인스턴스를 생성하는것을 방지한다.싱글톤 패턴을 사용할땐 다중 스레드에 주의해야 한다. 스레드에 안전한 코드는 다음과 같다. Singleton12345678910111213141516class Singleton &amp;#123;  public:">
+<meta name="twitter:title" content="Kim Sang Heon&#39;s Bolg">
+<meta name="twitter:description" content="Welcome to Sang Heon&apos;s Blog.">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
 
@@ -132,7 +128,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/CS/">CS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CS/Design-Pattern/">Design Pattern</a>
+    <i class="icon fa fa-tag"></i>Tag: <em>Design Pattern</em>
     </h1>
 </div>
                         <div class="main-body-content">
@@ -147,134 +143,214 @@ ga('send', 'pageview');
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-                            <article id="post-pattern2" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+                            
+
+    
+    
         
-            <header class="article-header">
-                
+        
+        <section class="archives-wrap">
+            <div class="archive-year-wrap">
+                <a href="/archives/2018" class="archive-year"><i class="icon fa fa-calendar-o"></i>2018</a>
+            </div>
+            <div class="archives">
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2018/09/22/Prototype-Pattern/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2018/09/22/Prototype-Pattern/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/CS/">CS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/CS/Design-Pattern/">Design Pattern</a>
+            </div>
+            <div class="date"><time datetime="2018-09-22T06:26:34.000Z" itemprop="datePublished">2018-09-22</time></div>
+        </div>
+        
     
         <h1 class="article-title" itemprop="name">
-        Singleton 디자인패턴
+        <a href="/2018/09/22/Prototype-Pattern/">프로토타입 디자인 패턴</a>
         </h1>
     
 
-            </header>
-        
-        
-            <div class="article-meta">
-                
-    <div class="article-date">
-        <a href="/2018/09/11/pattern2/" class="article-date">
-            <time datetime="2018-09-11T07:42:21.000Z" itemprop="datePublished">2018-09-11</time>
-        </a>
-    </div>
+        <p class="article-excerpt">
+            프로토타입 디자인 패턴프로토타입 패턴은 객체를 복사품을 만드는것을 의미하는 것이다. 복제된 객체는 호출되는 객체의 현재 상태를 갖고 초기화 되는데 이는 얕은복사 혹은 깊은복사에 기반하여 이뤄진다.
+얕은복사 vs 깊은복사얕은복사는 단지 참조의 사본을 만든다고 볼 수 있다.깊은복사는 사본을 새로 생성하여 복사대상이 변경되어도 복사한 데이터는 변경되지 않는다.
 
-                
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Design-Pattern/">Design Pattern</a>
-    </div>
-
-            </div>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            <h3 id="싱글톤패턴"><a href="#싱글톤패턴" class="headerlink" title="싱글톤패턴"></a>싱글톤패턴</h3><p>클래스에 대한 오직 하나의 인스턴스 만이 허용되는 패턴이다.<br>이를위해 생성자를 private로 선언하여 외부에서 인스턴스를 생성하는것을 방지한다.<br>싱글톤 패턴을 사용할땐 다중 스레드에 주의해야 한다.</p>
-<p>스레드에 안전한 코드는 다음과 같다.</p>
-<figure class="highlight java"><figcaption><span>Singleton</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</div><div class="line">  <span class="keyword">public</span>:</div><div class="line">    <span class="keyword">static</span> Singleton* getInstance() &#123;</div><div class="line">        <span class="keyword">if</span> (instance == <span class="number">0</span>) &#123;</div><div class="line">            Lock lock;</div><div class="line">            <span class="keyword">if</span> (instance == <span class="number">0</span> )&#123;</div><div class="line">              instance = <span class="keyword">new</span> Singleton;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">      <span class="keyword">return</span> instance;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">private</span>:</div><div class="line">      Singleton() &#123;&#125;</div><div class="line">      <span class="keyword">static</span> Singleton* instance;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>클래스가 적재되는순간 즉 더 빠르게 인스턴스화를 하기 위해서는 아래와 같이 코드를 작성하면 된다. 이 또한 스레드에 주의해서 작성해야 한다는것을 잊지말자.</p>
-<figure class="highlight java"><figcaption><span>Singleton</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</div><div class="line">  <span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();</div><div class="line">  Singleton() &#123;&#125;</div><div class="line">  <span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</div><div class="line">      <span class="keyword">return</span> instance;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-
-        </div>
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-2850951807285210"
-     data-ad-slot="1831621923"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-        <footer class="article-footer">
-            
-
-
-
-    <a data-url="http://KKimSangHeon.github.io/2018/09/11/pattern2/" data-id="cjmd1xbjd00f02gv7dbybkepk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-        </footer>
+        </p>
     </div>
 </article>
+    
 
-    <section id="comments">
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2018/09/22/factory-method/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
     
         
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2018/09/22/factory-method/">0</span>
+    
+</span>
 
     
-    </section>
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/CS/">CS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/CS/Design-Pattern/">Design Pattern</a>
+            </div>
+            <div class="date"><time datetime="2018-09-22T04:25:51.000Z" itemprop="datePublished">2018-09-22</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2018/09/22/factory-method/">팩토리 메서드 디자인 패턴</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            팩토리 메서드 패턴공장처럼 팩토리 메서드의 일은 객체를 생성하는것이다. 이는 생성패턴으로 클래스들 중 하나의 객체를 인스턴스화 하는데 사용된다. 생성자에 비해 많은장점을 갖으며 상황에 따라 생성자 대신 혹은 기존의 생성자에 덧붙여 제공하는것이 좋다.
+Factory12345678910111213141516171819202122232425262728293031
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2018/09/11/pattern2/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2018/09/11/pattern2/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/CS/">CS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/CS/Design-Pattern/">Design Pattern</a>
+            </div>
+            <div class="date"><time datetime="2018-09-11T07:42:21.000Z" itemprop="datePublished">2018-09-11</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2018/09/11/pattern2/">Singleton 디자인패턴</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            싱글톤패턴클래스에 대한 오직 하나의 인스턴스 만이 허용되는 패턴이다.이를위해 생성자를 private로 선언하여 외부에서 인스턴스를 생성하는것을 방지한다.싱글톤 패턴을 사용할땐 다중 스레드에 주의해야 한다.
+스레드에 안전한 코드는 다음과 같다.
+Singleton12345678910111213141516class Singleton &#123;  public: 
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2018/09/07/pattern1/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2018/09/07/pattern1/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/CS/">CS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/CS/Design-Pattern/">Design Pattern</a>
+            </div>
+            <div class="date"><time datetime="2018-09-07T09:31:43.000Z" itemprop="datePublished">2018-09-07</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2018/09/07/pattern1/">디자인패턴</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            디자인패턴소프트웨어 설계에서 공통적으로 발생하는 문제를 다루는 보편적이고 반복해서 사용할 수 있는 방법. 문제를 해결하기 위한 설명이나 템플릿으로 보면 된다.
+디자인패턴을 사용할 때 장점개발 절차의 속도를 높일 수 있다.재사용 가능한 구조적 개념으로 구성되어 있기 때문에 믿을 수 있다.
+디자인 패턴을 사용하기 위한 조건
+주어진 문제를 명확, 세밀하게 이해한
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+
+    </div></section>
 
 
 
@@ -304,29 +380,6 @@ ga('send', 'pageview');
             
         </ul>
     </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2018/09/18/travel/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            제주도 여행
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
-    
-    
-        <a href="/2018/09/07/pattern1/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">디자인패턴</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
-    
-</nav>
-
     
     <div class="widgets-container">
         
@@ -368,13 +421,11 @@ ga('send', 'pageview');
     var disqus_shortname = 'https-kkimsangheon-github-io-2';
     
     
-    var disqus_url = 'http://KKimSangHeon.github.io/2018/09/11/pattern2/';
-    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
