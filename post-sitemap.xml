@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2018/09/24/Decorator-pattern/</loc>
+        <lastmod>2018-09-24T13:32:35.103Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2018/09/22/Prototype-Pattern/</loc>
         <lastmod>2018-09-23T11:54:06.208Z</lastmod>
         <changefreq>weekly</changefreq>
