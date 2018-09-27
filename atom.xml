@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-09-27T11:43:52.697Z</updated>
+  <updated>2018-09-27T17:40:52.524Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://KKimSangHeon.github.io/2018/09/24/Decorator-pattern/"/>
     <id>http://KKimSangHeon.github.io/2018/09/24/Decorator-pattern/</id>
     <published>2018-09-24T13:32:35.000Z</published>
-    <updated>2018-09-27T11:43:52.697Z</updated>
+    <updated>2018-09-27T17:40:52.524Z</updated>
     
     <summary type="html">
     
@@ -40,7 +40,7 @@
     <link href="http://KKimSangHeon.github.io/2018/09/22/Prototype-Pattern/"/>
     <id>http://KKimSangHeon.github.io/2018/09/22/Prototype-Pattern/</id>
     <published>2018-09-22T06:26:34.000Z</published>
-    <updated>2018-09-23T11:54:06.208Z</updated>
+    <updated>2018-09-27T17:40:54.464Z</updated>
     
     <content type="html"><![CDATA[<h3 id="프로토타입-디자인-패턴"><a href="#프로토타입-디자인-패턴" class="headerlink" title="프로토타입 디자인 패턴"></a>프로토타입 디자인 패턴</h3><p>프로토타입 패턴은 객체를 복사품을 만드는것을 의미하는 것이다. 복제된 객체는 호출되는 객체의 현재 상태를 갖고 초기화 되는데 이는 얕은복사 혹은 깊은복사에 기반하여 이뤄진다.</p>
 <h4 id="얕은복사-vs-깊은복사"><a href="#얕은복사-vs-깊은복사" class="headerlink" title="얕은복사 vs 깊은복사"></a>얕은복사 vs 깊은복사</h4><p>얕은복사는 단지 참조의 사본을 만든다고 볼 수 있다.<br>깊은복사는 사본을 새로 생성하여 복사대상이 변경되어도 복사한 데이터는 변경되지 않는다.</p>
@@ -71,7 +71,7 @@
     <link href="http://KKimSangHeon.github.io/2018/09/22/factory-method/"/>
     <id>http://KKimSangHeon.github.io/2018/09/22/factory-method/</id>
     <published>2018-09-22T04:25:51.000Z</published>
-    <updated>2018-09-23T11:54:02.063Z</updated>
+    <updated>2018-09-27T17:40:56.718Z</updated>
     
     <content type="html"><![CDATA[<h3 id="팩토리-메서드-패턴"><a href="#팩토리-메서드-패턴" class="headerlink" title="팩토리 메서드 패턴"></a>팩토리 메서드 패턴</h3><p>공장처럼 팩토리 메서드의 일은 객체를 생성하는것이다. 이는 생성패턴으로 클래스들 중 하나의 객체를 인스턴스화 하는데 사용된다. 생성자에 비해 많은장점을 갖으며 상황에 따라 생성자 대신 혹은 기존의 생성자에 덧붙여 제공하는것이 좋다.</p>
 <figure class="highlight c"><figcaption><span>Factory</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 팩토리 메서드 패턴으로 인스턴스화될 형으로 제공될 기본 클래스</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Pet</span> &#123;</span></div><div class="line">  <span class="keyword">public</span> :</div><div class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">petSound</span><span class="params">()</span> </span>= <span class="number">0</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">// 팩토리 메서드 패턴에 의해 인스턴스를 얻게 될 첫 번째 파생 클래스</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>:</span> <span class="keyword">public</span> Pet&#123;</div><div class="line">  <span class="keyword">public</span> :</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">petSound</span><span class="params">( )</span> </span>&#123;</div><div class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"Bow Bow..."</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// 팩토리 메서드 패턴에 의해 인스턴스를 얻게 될 두번째 파생 클래스</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> :</span> <span class="keyword">public</span> Pet &#123;</div><div class="line">  <span class="keyword">public</span> :</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">petSound</span><span class="params">()</span> </span>&#123;</div><div class="line">      <span class="built_in">cout</span>&lt;&lt; <span class="string">"Meaw Meaw..."</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">// 로직에 기반해서 객체들을 인스턴스화하는 팩토리 메서드 패턴 구현</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PetFactory</span> &#123;</span></div><div class="line">  <span class="keyword">public</span> :</div><div class="line">    <span class="function">Pet* <span class="title">getPet</span><span class="params">(<span class="keyword">int</span> petType)</span> </span>&#123;</div><div class="line">      Pet pet = <span class="literal">NULL</span>;</div><div class="line">      <span class="comment">// 비즈니스 로직에 기반한 객체의 인스턴스화</span></div><div class="line">      <span class="keyword">if</span> (petType == <span class="number">1</span>)</div><div class="line">          pet = <span class="keyword">new</span> Dog();</div><div class="line">      <span class="keyword">else</span> <span class="keyword">if</span>(petType ==<span class="number">2</span>)</div><div class="line">          pet = <span class="keyword">new</span> Cat();</div><div class="line"></div><div class="line">      <span class="keyword">return</span> pet;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
