@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-10-05T16:12:41.278Z</updated>
+  <updated>2018-10-09T04:37:41.086Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,13 +20,15 @@
     <link href="http://KKimSangHeon.github.io/2018/09/24/Decorator-pattern/"/>
     <id>http://KKimSangHeon.github.io/2018/09/24/Decorator-pattern/</id>
     <published>2018-09-24T13:32:35.000Z</published>
-    <updated>2018-10-05T16:12:41.278Z</updated>
+    <updated>2018-10-09T04:37:41.086Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="데코레이터-패턴"><a href="#데코레이터-패턴" class="headerlink" title="데코레이터 패턴"></a>데코레이터 패턴</h3>]]></content>
+    <content type="html"><![CDATA[<h3 id="데코레이터-패턴"><a href="#데코레이터-패턴" class="headerlink" title="데코레이터 패턴"></a>데코레이터 패턴</h3><p>데코레이터 패턴은 </p>
+]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;데코레이터-패턴&quot;&gt;&lt;a href=&quot;#데코레이터-패턴&quot; class=&quot;headerlink&quot; title=&quot;데코레이터 패턴&quot;&gt;&lt;/a&gt;데코레이터 패턴&lt;/h3&gt;
+      &lt;h3 id=&quot;데코레이터-패턴&quot;&gt;&lt;a href=&quot;#데코레이터-패턴&quot; class=&quot;headerlink&quot; title=&quot;데코레이터 패턴&quot;&gt;&lt;/a&gt;데코레이터 패턴&lt;/h3&gt;&lt;p&gt;데코레이터 패턴은 &lt;/p&gt;
+
     
     </summary>
     
