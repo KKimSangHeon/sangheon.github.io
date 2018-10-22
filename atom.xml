@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-10-18T13:49:59.227Z</updated>
+  <updated>2018-10-22T03:36:14.768Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,25 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>interview</title>
+    <link href="http://KKimSangHeon.github.io/2018/10/22/interview/"/>
+    <id>http://KKimSangHeon.github.io/2018/10/22/interview/</id>
+    <published>2018-10-22T03:36:14.000Z</published>
+    <updated>2018-10-22T03:36:14.768Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>프로토타입 디자인 패턴</title>
     <link href="http://KKimSangHeon.github.io/2018/09/22/Prototype-Pattern/"/>
     <id>http://KKimSangHeon.github.io/2018/09/22/Prototype-Pattern/</id>
     <published>2018-09-22T06:26:34.000Z</published>
-    <updated>2018-10-18T13:49:59.227Z</updated>
+    <updated>2018-10-22T01:47:04.323Z</updated>
     
     <content type="html"><![CDATA[<h3 id="프로토타입-디자인-패턴"><a href="#프로토타입-디자인-패턴" class="headerlink" title="프로토타입 디자인 패턴"></a>프로토타입 디자인 패턴</h3><p>프로토타입 패턴은 객체를 복사품을 만드는것을 의미하는 것이다. 복제된 객체는 호출되는 객체의 현재 상태를 갖고 초기화 되는데 이는 얕은복사 혹은 깊은복사에 기반하여 이뤄진다.</p>
 <h4 id="얕은복사-vs-깊은복사"><a href="#얕은복사-vs-깊은복사" class="headerlink" title="얕은복사 vs 깊은복사"></a>얕은복사 vs 깊은복사</h4><p>얕은복사는 단지 참조의 사본을 만든다고 볼 수 있다.<br>깊은복사는 사본을 새로 생성하여 복사대상이 변경되어도 복사한 데이터는 변경되지 않는다.</p>
@@ -701,34 +715,6 @@
     
     
       <category term="Social Media" scheme="http://KKimSangHeon.github.io/tags/Social-Media/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>학생 등하차 알림 시스템</title>
-    <link href="http://KKimSangHeon.github.io/2018/07/27/project/"/>
-    <id>http://KKimSangHeon.github.io/2018/07/27/project/</id>
-    <published>2018-07-27T14:25:25.000Z</published>
-    <updated>2018-09-03T05:45:52.539Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="개발배경"><a href="#개발배경" class="headerlink" title="개발배경"></a>개발배경</h1><p>최근 유아 및 아동들의 등 하차시 발생하는 문제들로 인해 다양한 사회문제들이 발생하고 있다.<br>이를 App을 통해 극복해보고자 개발하였으며 해당 시스템은 NFC칩을 이용하여 학생들의 등하차를 관리하는 시스템이다.</p>
-<h1 id="개발현황"><a href="#개발현황" class="headerlink" title="개발현황"></a>개발현황</h1><p>NFC 등록<br>NFC 인식<br>내부 DB(SQLite)를 활용한 승하차 인원관리 시스템 구축완료<br>태그 리스트 확인화면 구현완료</p>
-<h2 id="To-Do"><a href="#To-Do" class="headerlink" title="To Do"></a>To Do</h2><p>버스 위치 실시간수신 위한 서버<br>10초 단위로 현재위치 갱신 및 SMS전송 테스트</p>
-<p>해당앱은 성능테스트, 기능테스트만 완료하면 되지만 GPS, SNS테스트를 할 폰이 없어서 일단 프로젝트 중단..<br>지금까지 작성한 코드는 아래에서 확인 가능<br><a href="https://github.com/KKimSangHeon/RescueChildren" target="_blank" rel="external">GitHub</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;개발배경&quot;&gt;&lt;a href=&quot;#개발배경&quot; class=&quot;headerlink&quot; title=&quot;개발배경&quot;&gt;&lt;/a&gt;개발배경&lt;/h1&gt;&lt;p&gt;최근 유아 및 아동들의 등 하차시 발생하는 문제들로 인해 다양한 사회문제들이 발생하고 있다.&lt;br&gt;이를 App을
-    
-    </summary>
-    
-      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
-    
-      <category term="My Projects" scheme="http://KKimSangHeon.github.io/categories/About-Me/My-Projects/"/>
-    
-    
-      <category term="안드로이드, 등하차시스템" scheme="http://KKimSangHeon.github.io/tags/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EB%93%B1%ED%95%98%EC%B0%A8%EC%8B%9C%EC%8A%A4%ED%85%9C/"/>
     
   </entry>
   
