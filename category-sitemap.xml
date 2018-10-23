@@ -63,13 +63,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/Etc/%EB%A9%B4%EC%A0%91/</loc>
-        <lastmod>2018-09-03T05:59:32.994Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/categories/OS/</loc>
         <lastmod>2018-09-03T06:00:55.200Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -154,13 +147,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/Etc/</loc>
-        <lastmod>2018-09-07T09:32:07.865Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/categories/Etc/HEX-Team/</loc>
         <lastmod>2018-09-07T09:32:07.865Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -191,6 +177,20 @@
     <url>
         <loc>http://KKimSangHeon.github.io/categories/CS/Design-Pattern/</loc>
         <lastmod>2018-10-22T01:47:04.323Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/Etc/</loc>
+        <lastmod>2018-10-23T23:37:44.676Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/Etc/%EB%A9%B4%EC%A0%91/</loc>
+        <lastmod>2018-10-23T23:37:44.676Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
