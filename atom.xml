@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-10-24T00:07:41.658Z</updated>
+  <updated>2018-11-20T00:43:28.993Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,114 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>StringBuffer, StringBuilder</title>
+    <link href="http://KKimSangHeon.github.io/2018/11/20/java4/"/>
+    <id>http://KKimSangHeon.github.io/2018/11/20/java4/</id>
+    <published>2018-11-20T00:37:37.000Z</published>
+    <updated>2018-11-20T00:43:28.993Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="String-클래스"><a href="#String-클래스" class="headerlink" title="String 클래스"></a>String 클래스</h3><p>String은 내부의 문자열을 수정할 수 없다. StringBuffer()메소드는 내부의 문자를 대치하는 것이 아니라, 대치된 새로운 문자열을 리턴한다.<br>문자열을 결합하는 + 연산을 많이 사용하면 할수록 그만큼 String 객체의 수가 ㅇ늘어나기 때문에 프로그램 성능을 느리게 한다. 문자열을 변경하는 작업이 많을 경우 StringBuffer, StringBuilder클래스를 사용하는것이 좋다. 이 두 클래스는 내부 버퍼에 문자열을 저장해두고 그 안에서 추가, 수정, 삭제 작업을 할 수 있도록 설계되어 있기 때문이다.<br>StringBuffer는 멀티 스레드 환경에서 사용할 수 있도록 동기화가 적용되어 있어 스레드에 안전하지만 StringBuilder는 단일 스레드 환경에서만 사용하도록 설계되어 있다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;String-클래스&quot;&gt;&lt;a href=&quot;#String-클래스&quot; class=&quot;headerlink&quot; title=&quot;String 클래스&quot;&gt;&lt;/a&gt;String 클래스&lt;/h3&gt;&lt;p&gt;String은 내부의 문자열을 수정할 수 없다. StringBuffe
+    
+    </summary>
+    
+      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
+    
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>리플렉션</title>
+    <link href="http://KKimSangHeon.github.io/2018/11/20/java3/"/>
+    <id>http://KKimSangHeon.github.io/2018/11/20/java3/</id>
+    <published>2018-11-20T00:37:34.000Z</published>
+    <updated>2018-11-20T00:43:01.888Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="리플렉션"><a href="#리플렉션" class="headerlink" title="리플렉션"></a>리플렉션</h3><p>java.lang.reflect 패키지에 소속되어있는 메소드들로 getDeclaredConstructors(), getDeclaredFields(), getDeclaredMethods()가 있다.<br>getDeclaredFields(), getDeclaredMethods()는 클래스에 선언된 멤버만 가져오고 상속된 멤버는 가져오지 않는다. 상속된 멤버도 얻고 싶다면 getFields(), getMethods()를 이용해야 한다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;리플렉션&quot;&gt;&lt;a href=&quot;#리플렉션&quot; class=&quot;headerlink&quot; title=&quot;리플렉션&quot;&gt;&lt;/a&gt;리플렉션&lt;/h3&gt;&lt;p&gt;java.lang.reflect 패키지에 소속되어있는 메소드들로 getDeclaredConstructors(),
+    
+    </summary>
+    
+      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
+    
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>익명클래스</title>
+    <link href="http://KKimSangHeon.github.io/2018/11/20/java2/"/>
+    <id>http://KKimSangHeon.github.io/2018/11/20/java2/</id>
+    <published>2018-11-20T00:37:31.000Z</published>
+    <updated>2018-11-20T00:42:29.017Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="익명클래스"><a href="#익명클래스" class="headerlink" title="익명클래스"></a>익명클래스</h3><p>익명객체는 이름이 없는 객체를 말한다. 이는 단독으로 생성할 수 없고 클래스를 상속하거나 인터페이스를 구현해야만 생성할 수 있다. UI 이벤트 처리 객체나 스레드 객체를 간편하게 생성할 목적으로 많이 활용된다.<br>익명클래스는 생성자를 선언할 수 없다는 특징이 있으며 클래스가 재사용되지 않을 때 사용하는것이 좋다.<br>익명 자식 객체에 새롭게 정의된 필드와 메소드는 익명자식 객체 내부에서만 사용되고, 외부에서는 필드와 메소드에 접근할 수 없다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">wake</span><span class="params">( )</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"7시 인남"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Annoymous</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="comment">//필드 초기값으로 대입</span></div><div class="line">	Person field = <span class="keyword">new</span> Person() &#123;</div><div class="line">		<span class="function"><span class="keyword">void</span> <span class="title">work</span><span class="params">( )</span> </span>&#123;</div><div class="line">			System.out.println(<span class="string">"출근~"</span>);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="meta">@Override</span></div><div class="line">		<span class="function"><span class="keyword">void</span> <span class="title">wake</span><span class="params">( )</span> </span>&#123;</div><div class="line"></div><div class="line">			System.out.println(<span class="string">"6시 인남"</span>);</div><div class="line">			work( );</div><div class="line">		&#125;</div><div class="line">	&#125;;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">method1</span><span class="params">( )</span> </span>&#123;</div><div class="line">	<span class="comment">//로컬 변수값으로 대입</span></div><div class="line">		Person localVar = <span class="keyword">new</span> Person( ) &#123;</div><div class="line">			<span class="function"><span class="keyword">void</span> <span class="title">walk</span><span class="params">( )</span> </span>&#123;</div><div class="line">				System.out.println(<span class="string">"산책 고고"</span>);</div><div class="line">			&#125;</div><div class="line"></div><div class="line">			<span class="meta">@Override</span></div><div class="line">			<span class="function"><span class="keyword">void</span> <span class="title">wake</span><span class="params">( )</span> </span>&#123;</div><div class="line">				System.out.println(<span class="string">"7시에 인남"</span>);</div><div class="line">				walk( );</div><div class="line">			&#125;</div><div class="line">		&#125;;</div><div class="line">		<span class="comment">//로컬변수 사용</span></div><div class="line">		localVar.wake( );</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">method2</span><span class="params">(Person person)</span> </span>&#123;</div><div class="line">		person.wake();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위에 정의한 클래스를 활용해보자</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnonymousExample</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Anoymous anony = <span class="keyword">new</span> Anonymous();</div><div class="line"></div><div class="line">		<span class="comment">//익명객체 필드 사용</span></div><div class="line">		anony.field.wake();</div><div class="line"></div><div class="line">		<span class="comment">//anony.filed.walk(); 는 에러가 발생한다. 이유가 뭘까?</span></div><div class="line">		<span class="comment">//익명자식 객체는 부모 타입 변수에 대입되므로 부모타입에 선언된 것만 사용할 수 있기 때문인다.</span></div><div class="line"></div><div class="line">		<span class="comment">//익명 객체 로컬변수 사용</span></div><div class="line">		anony.method1();</div><div class="line"></div><div class="line">		<span class="comment">//익명 객체 매개값 사용</span></div><div class="line">		anony.method2(</div><div class="line">			<span class="keyword">new</span> Person( ) &#123;</div><div class="line">				<span class="function"><span class="keyword">void</span> <span class="title">study</span><span class="params">( )</span> </span>&#123;</div><div class="line">					System.out.println(<span class="string">"공부~"</span>);</div><div class="line">				&#125;</div><div class="line"></div><div class="line">				<span class="meta">@Override</span></div><div class="line">				<span class="function"><span class="keyword">void</span> <span class="title">wake</span><span class="params">( )</span> </span>&#123;</div><div class="line">					System.out.println(<span class="string">"8시에인남"</span>);</div><div class="line">					study( );</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;익명클래스&quot;&gt;&lt;a href=&quot;#익명클래스&quot; class=&quot;headerlink&quot; title=&quot;익명클래스&quot;&gt;&lt;/a&gt;익명클래스&lt;/h3&gt;&lt;p&gt;익명객체는 이름이 없는 객체를 말한다. 이는 단독으로 생성할 수 없고 클래스를 상속하거나 인터페이스를 구
+    
+    </summary>
+    
+      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
+    
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java1</title>
+    <link href="http://KKimSangHeon.github.io/2018/11/20/java1/"/>
+    <id>http://KKimSangHeon.github.io/2018/11/20/java1/</id>
+    <published>2018-11-20T00:37:20.000Z</published>
+    <updated>2018-11-20T00:41:38.733Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="중첩클래스의-접근-제한"><a href="#중첩클래스의-접근-제한" class="headerlink" title="중첩클래스의 접근 제한"></a>중첩클래스의 접근 제한</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> field1;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">method1</span><span class="params">( )</span> </span>&#123; &#125;</div><div class="line"></div><div class="line">	<span class="keyword">static</span> <span class="keyword">int</span> field2;</div><div class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">( )</span> </span>&#123; &#125;</div><div class="line"></div><div class="line">	<span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;</div><div class="line">		<span class="function"><span class="keyword">void</span> <span class="title">method</span> <span class="params">( )</span> </span>&#123;</div><div class="line">			field1 = <span class="number">10</span>;</div><div class="line">			method1( );</div><div class="line"></div><div class="line">			field2 = <span class="number">10</span>;</div><div class="line">			method2( );</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">C</span> </span>&#123;</div><div class="line">		<span class="function"><span class="keyword">void</span> <span class="title">method</span><span class="params">( )</span> </span>&#123;</div><div class="line">			<span class="comment">//filed1 = 10;	//접근 불가</span></div><div class="line">			<span class="comment">//method1( );	//접근 불가</span></div><div class="line"></div><div class="line">			field2 = <span class="number">10</span>;</div><div class="line">			method2( );</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>로컬클래스(메소드 안에 클래스 생성)에서 사용 가능한 것은 final로 선언된 매개 변수와 로컬 변수뿐이다. 자바 7 이전에는 final이 붙어있지 않은 매개변수 혹은 변수를 로컬 클래스안에서 사용하고자 하면 컴파일 에러가 발생하였다. 하지만 자바 8부터는 컴파일 에러가 발생하지 않는다. 즉 내부적으로는 final의 특성(값을 변경할 수 없는)을 갖으며 final의 유무로 로컬클래스 내 복사 위치가 결정된다.(복사위치에 대해선 아래 설명)<br>다음은 7,8버전의 final 유무에 따른 접근관련 이슈이다.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Outter</span> </span>&#123;</div><div class="line">	<span class="comment">//자바7 이전</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> arg)</span> </span>&#123;</div><div class="line">		<span class="keyword">final</span> <span class="keyword">int</span> localVariable = <span class="number">1</span>;</div><div class="line">		<span class="comment">//arg = 100;	//불가능</span></div><div class="line">		<span class="comment">//localVariable = 100 //불가능</span></div><div class="line">		<span class="class"><span class="keyword">class</span> <span class="title">Inner</span> </span>&#123;</div><div class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">( )</span> </span>&#123;</div><div class="line">				<span class="keyword">int</span> result = arg + localVariable;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">	<span class="comment">//자바8 이후</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">(<span class="keyword">int</span> arg)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> localVariable = <span class="number">1</span>;</div><div class="line">		<span class="comment">//arg = 100;	//불가능</span></div><div class="line">		<span class="comment">//localVariable = 100 //불가능</span></div><div class="line">		<span class="class"><span class="keyword">class</span> <span class="title">Inner</span> </span>&#123;</div><div class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">( )</span> </span>&#123;</div><div class="line">				<span class="keyword">int</span> result = arg + localVariable;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure></p>
+<p>위의 코드와 같이 final이 없더라도 값 변경은 허용하지 않는다는것이다.</p>
+<p>※ final의 유무로 로컬클래스 내 복사 위치가 결정된다?<br>먼저 다음과 같은 코드가 있다고 가정하자.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">outMethod</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> arg1, <span class="keyword">int</span> arg2)</span> </span>&#123;</div><div class="line">	<span class="keyword">final</span> <span class="keyword">int</span> var1 = <span class="number">1</span>;</div><div class="line">	<span class="keyword">int</span> var2 = <span class="number">2</span>;</div><div class="line"></div><div class="line">	<span class="class"><span class="keyword">class</span> <span class="title">LocalClass</span> </span>&#123;</div><div class="line">		<span class="function"><span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</div><div class="line">			<span class="keyword">int</span> result = arg1+arg2+var1+var2;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure><br>위의 LocalClass에 복사된 변수를 보면 다음과 같다.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">LocalClass</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> arg2 = 매개값;	<span class="comment">//final이 붙지 않아 필드로 복사</span></div><div class="line">	<span class="keyword">int</span> var2 = <span class="number">2</span>;	<span class="comment">//final이 붙지 않아 필드로 복사</span></div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">method</span><span class="params">( )</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> arg1 = 매개값;	<span class="comment">//final이 붙은것은 로컬 변수로 복사</span></div><div class="line">		<span class="keyword">int</span> var1 = <span class="number">1</span>;	<span class="comment">//final이 붙은것은 로컬 변수로 복사</span></div><div class="line">		<span class="keyword">int</span> result = arg1 + arg2+ var1+ var2;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure><br>복사된 영역을 신경쓸 필요는 없으나 알고 있는것이 좋겠다!</p>
+<h3 id="중첩클래스에서-바깥-클래스-참조-얻기"><a href="#중첩클래스에서-바깥-클래스-참조-얻기" class="headerlink" title="중첩클래스에서 바깥 클래스 참조 얻기"></a>중첩클래스에서 바깥 클래스 참조 얻기</h3><p>중첩 클래스 내부에서 this키워드를 사용하면 어떻게 될까? 말 그대로 중첩클래스가 this가 되게된다. 그렇다면 바깥 클래스를 가르키기 위해선 어떻게 해야될까.<br>정답은 바깥클래스.this 를 활용하면 된다. 아래를 참고하자</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Outter</span> </span>&#123;</div><div class="line">	String field = <span class="string">"Outter-filed"</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">method</span><span class="params">( )</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"Outter-method"</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Nested</span> </span>&#123;</div><div class="line">		String field = <span class="string">"Nested-field"</span>;</div><div class="line">		<span class="function"><span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</div><div class="line">			System.out.println(<span class="string">"Nested-method"</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">( )</span> </span>&#123;</div><div class="line">		System.out.println(<span class="keyword">this</span>.field);		<span class="comment">//중첩객체 참조</span></div><div class="line">		<span class="keyword">this</span>.method( );			<span class="comment">//중첩객체 참조</span></div><div class="line"></div><div class="line">		System.out.println(Outter.<span class="keyword">this</span>.field);	<span class="comment">//바깥객체 참조</span></div><div class="line">		Outter.<span class="keyword">this</span>.method( );		<span class="comment">//바깥객체 참조</span></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OutterExample</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Outter outter = <span class="keyword">new</span> Outter( );</div><div class="line">		outter.Nested nested = outter.new Nested( );</div><div class="line">		nested.print( );</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;중첩클래스의-접근-제한&quot;&gt;&lt;a href=&quot;#중첩클래스의-접근-제한&quot; class=&quot;headerlink&quot; title=&quot;중첩클래스의 접근 제한&quot;&gt;&lt;/a&gt;중첩클래스의 접근 제한&lt;/h3&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;t
+    
+    </summary>
+    
+      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
+    
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>비트 빅데이터 전문가 양성과정 면접</title>
@@ -50,25 +158,24 @@
   </entry>
   
   <entry>
-    <title>KT SW개발직무 면접</title>
-    <link href="http://KKimSangHeon.github.io/2018/10/22/interview4/"/>
-    <id>http://KKimSangHeon.github.io/2018/10/22/interview4/</id>
+    <title>줌인터넷 면접</title>
+    <link href="http://KKimSangHeon.github.io/2018/10/22/interview3/"/>
+    <id>http://KKimSangHeon.github.io/2018/10/22/interview3/</id>
     <published>2018-10-22T03:36:14.000Z</published>
-    <updated>2018-10-23T23:37:44.676Z</updated>
+    <updated>2018-10-24T00:02:11.674Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2018년 8월 ~ 2018년 10월</p>
-<h3 id="채용공고"><a href="#채용공고" class="headerlink" title="채용공고"></a>채용공고</h3><img src="/2018/10/22/interview4/kt.jpg" alt="공고" title="공고">
-<h3 id="필기시험"><a href="#필기시험" class="headerlink" title="필기시험"></a>필기시험</h3><p>적성이 아닌 전공, 인성검사로서 진성여중에서 시험을 치뤘었다. 정말 많은사람들이 왔었고 문제의 난이도는 평소 CS에 대한 공부만 충실했다면 무난한 난이도였다.</p>
-<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>면접관 3분과 지원자 1명의 면접형태로서 면접 전 간단한 코딩 테스트를 본다. 푼 문제를 복사하여 면접관분들께 설명드리면서 면접이 시작된다. 이후엔 자기소개서 위주의 프로젝트, 경력관련 질문들이 주를 이뤘다. 여기서 자신감을 갖고 대답했던것이 좋게 작용했던것 같다.</p>
-<h3 id="2차면접"><a href="#2차면접" class="headerlink" title="2차면접"></a>2차면접</h3><p>마찬가지로 면접관 3분과 면접을 본다. 정말 많이 떨렸지만 충분히 준비하고 또 준비했기에 떨지않고 잘 대답할 수 있었다. 주로 경력에 관한 질문이 많았으며 인성질문도 있었다.</p>
-<h3 id="건강검진"><a href="#건강검진" class="headerlink" title="건강검진"></a>건강검진</h3><p>건강검진 이틀전 술을 마신탓에 약간 걱정은 됐으나 다행히 별 탈 없이 통과할 수 있었다.</p>
-<h3 id="합격"><a href="#합격" class="headerlink" title="합격"></a>합격</h3><p>두달간의 긴 여정을 잘 마무리 짓고 최종합격할 수 있었다.<br><img src="/2018/10/22/interview4/kt2.jpg" alt="합격!" title="합격!"></p>
+    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2018년 7월</p>
+<h3 id="코딩시험"><a href="#코딩시험" class="headerlink" title="코딩시험"></a>코딩시험</h3><p>문제의 난이도는 크게 어렵지 않은수준이었다.</p>
+<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>면접 때 코딩시험 내용을 질문한다는 후기를 많이 봐 와서 작성했던 코드를 철저하게 분석하여 갔지만 관련 내용은 질문하지 않으셨다.<br>면접관 다섯분과 지원자 한명 다대일 방식으로 면접이 진행되었다.</p>
+<p>면접 질문은 다음과 같다.</p>
+<p>자바8<br>자바 몇까지 써봄<br>프로미스<br>프로토타입<br>http 송신 수신시 헤더<br>di<br>aop<br>쿠키 세션<br>rest api?<br>예외의 종류 Error에 대한질문<br>stringbuffer stringbuilder 차이<br>인터페이스 staitc default<br>resultful api설계해본적<br>암호화기법<br>양방향 단방향</p>
+<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p>정말 많이많이 어려웠던 면접이었던것 같다. 지금까지 봤던 면접 중 가장 어려웠고 많은것을 다시한번 생각해볼 수 있었던 기회였다. 면접관 분들은 친절하셨지만 내 실력이 불친절했던것 같다.   </p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2018년 8월 ~ 2018년 10월&lt;/p&gt;
-&lt;h3 id=&quot;채용공고&quot;&gt;&lt;a href=&quot;#채용공고&quot; class=&quot;headerli
+      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2018년 7월&lt;/p&gt;
+&lt;h3 id=&quot;코딩시험&quot;&gt;&lt;a href=&quot;#코딩시험&quot; class=&quot;headerlink&quot; title=&quot;코
     
     </summary>
     
@@ -79,7 +186,7 @@
     
       <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
     
-      <category term="KT" scheme="http://KKimSangHeon.github.io/tags/KT/"/>
+      <category term="줌인터넷" scheme="http://KKimSangHeon.github.io/tags/%EC%A4%8C%EC%9D%B8%ED%84%B0%EB%84%B7/"/>
     
   </entry>
   
@@ -179,24 +286,25 @@
   </entry>
   
   <entry>
-    <title>줌인터넷 면접</title>
-    <link href="http://KKimSangHeon.github.io/2018/10/22/interview3/"/>
-    <id>http://KKimSangHeon.github.io/2018/10/22/interview3/</id>
+    <title>KT SW개발직무 면접</title>
+    <link href="http://KKimSangHeon.github.io/2018/10/22/interview4/"/>
+    <id>http://KKimSangHeon.github.io/2018/10/22/interview4/</id>
     <published>2018-10-22T03:36:14.000Z</published>
-    <updated>2018-10-24T00:02:11.674Z</updated>
+    <updated>2018-10-23T23:37:44.676Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2018년 7월</p>
-<h3 id="코딩시험"><a href="#코딩시험" class="headerlink" title="코딩시험"></a>코딩시험</h3><p>문제의 난이도는 크게 어렵지 않은수준이었다.</p>
-<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>면접 때 코딩시험 내용을 질문한다는 후기를 많이 봐 와서 작성했던 코드를 철저하게 분석하여 갔지만 관련 내용은 질문하지 않으셨다.<br>면접관 다섯분과 지원자 한명 다대일 방식으로 면접이 진행되었다.</p>
-<p>면접 질문은 다음과 같다.</p>
-<p>자바8<br>자바 몇까지 써봄<br>프로미스<br>프로토타입<br>http 송신 수신시 헤더<br>di<br>aop<br>쿠키 세션<br>rest api?<br>예외의 종류 Error에 대한질문<br>stringbuffer stringbuilder 차이<br>인터페이스 staitc default<br>resultful api설계해본적<br>암호화기법<br>양방향 단방향</p>
-<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p>정말 많이많이 어려웠던 면접이었던것 같다. 지금까지 봤던 면접 중 가장 어려웠고 많은것을 다시한번 생각해볼 수 있었던 기회였다. 면접관 분들은 친절하셨지만 내 실력이 불친절했던것 같다.   </p>
+    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2018년 8월 ~ 2018년 10월</p>
+<h3 id="채용공고"><a href="#채용공고" class="headerlink" title="채용공고"></a>채용공고</h3><img src="/2018/10/22/interview4/kt.jpg" alt="공고" title="공고">
+<h3 id="필기시험"><a href="#필기시험" class="headerlink" title="필기시험"></a>필기시험</h3><p>적성이 아닌 전공, 인성검사로서 진성여중에서 시험을 치뤘었다. 정말 많은사람들이 왔었고 문제의 난이도는 평소 CS에 대한 공부만 충실했다면 무난한 난이도였다.</p>
+<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>면접관 3분과 지원자 1명의 면접형태로서 면접 전 간단한 코딩 테스트를 본다. 푼 문제를 복사하여 면접관분들께 설명드리면서 면접이 시작된다. 이후엔 자기소개서 위주의 프로젝트, 경력관련 질문들이 주를 이뤘다. 여기서 자신감을 갖고 대답했던것이 좋게 작용했던것 같다.</p>
+<h3 id="2차면접"><a href="#2차면접" class="headerlink" title="2차면접"></a>2차면접</h3><p>마찬가지로 면접관 3분과 면접을 본다. 정말 많이 떨렸지만 충분히 준비하고 또 준비했기에 떨지않고 잘 대답할 수 있었다. 주로 경력에 관한 질문이 많았으며 인성질문도 있었다.</p>
+<h3 id="건강검진"><a href="#건강검진" class="headerlink" title="건강검진"></a>건강검진</h3><p>건강검진 이틀전 술을 마신탓에 약간 걱정은 됐으나 다행히 별 탈 없이 통과할 수 있었다.</p>
+<h3 id="합격"><a href="#합격" class="headerlink" title="합격"></a>합격</h3><p>두달간의 긴 여정을 잘 마무리 짓고 최종합격할 수 있었다.<br><img src="/2018/10/22/interview4/kt2.jpg" alt="합격!" title="합격!"></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2018년 7월&lt;/p&gt;
-&lt;h3 id=&quot;코딩시험&quot;&gt;&lt;a href=&quot;#코딩시험&quot; class=&quot;headerlink&quot; title=&quot;코
+      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2018년 8월 ~ 2018년 10월&lt;/p&gt;
+&lt;h3 id=&quot;채용공고&quot;&gt;&lt;a href=&quot;#채용공고&quot; class=&quot;headerli
     
     </summary>
     
@@ -207,7 +315,7 @@
     
       <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
     
-      <category term="줌인터넷" scheme="http://KKimSangHeon.github.io/tags/%EC%A4%8C%EC%9D%B8%ED%84%B0%EB%84%B7/"/>
+      <category term="KT" scheme="http://KKimSangHeon.github.io/tags/KT/"/>
     
   </entry>
   
@@ -480,11 +588,11 @@
   </entry>
   
   <entry>
-    <title>어노테이션</title>
+    <title>어노테이션 그리고 리플렉션</title>
     <link href="http://KKimSangHeon.github.io/2018/09/05/java/"/>
     <id>http://KKimSangHeon.github.io/2018/09/05/java/</id>
     <published>2018-09-04T21:25:09.000Z</published>
-    <updated>2018-09-04T22:39:16.415Z</updated>
+    <updated>2018-11-20T00:43:05.194Z</updated>
     
     <content type="html"><![CDATA[<h3 id="어노테이션"><a href="#어노테이션" class="headerlink" title="어노테이션"></a>어노테이션</h3><p>어노테이션은 컴파일 과정과 실행 과정에서 코드를 어떻게 컴파일하고 처리할 것인지를 알려주는 정보이다.<br>@가 붙는 형태로 정의된다.</p>
 <p>어노테이션은 다음의 용도로 사용된다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">컴파일러에게 문법에러 체크 ex(@Override)</div><div class="line">개발 툴이 코드를 자동 생성할 수 있도록 정보제공</div><div class="line">실행시 특정기능을 실행하도록 정보제공</div></pre></td></tr></table></figure></p>
@@ -617,109 +725,6 @@
     </summary>
     
       <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>7.Firebase 호스팅</title>
-    <link href="http://KKimSangHeon.github.io/2018/09/04/firebase7/"/>
-    <id>http://KKimSangHeon.github.io/2018/09/04/firebase7/</id>
-    <published>2018-09-04T10:01:11.000Z</published>
-    <updated>2018-09-04T10:12:55.152Z</updated>
-    
-    <content type="html"><![CDATA[<p>firebase deploy를 입력해 배포를 하자<br><img src="/2018/09/04/firebase7/deploy.PNG" alt="Flow Chart" title="Flow Chart"><br>명령어를 입력하고 성공하면 위와같은 화면이 출력된다.<br>Hosting URL 이라고 표현된 부분을 통해 접속 가능하다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;firebase deploy를 입력해 배포를 하자&lt;br&gt;&lt;img src=&quot;/2018/09/04/firebase7/deploy.PNG&quot; alt=&quot;Flow Chart&quot; title=&quot;Flow Chart&quot;&gt;&lt;br&gt;명령어를 입력하고 성공하면 위와같은 화면
-    
-    </summary>
-    
-      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
-    
-      <category term="Firebase" scheme="http://KKimSangHeon.github.io/categories/Web-App/Firebase/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>6.Firebase DB수정 삭제</title>
-    <link href="http://KKimSangHeon.github.io/2018/09/04/firebase6/"/>
-    <id>http://KKimSangHeon.github.io/2018/09/04/firebase6/</id>
-    <published>2018-09-03T15:54:01.000Z</published>
-    <updated>2018-09-04T07:12:47.996Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="DB-수정"><a href="#DB-수정" class="headerlink" title="DB 수정"></a>DB 수정</h3><p>selectedKey라는 전역변수를 만들고 아래의 두 함수를 추가하면 데이터는 수정이 가능하다. 이때 수정하는 부분의 ref함수의 인자에 selectedKey가 삽입된 것을 확인할 수 있다.<br><figure class="highlight java"><figcaption><span>Firebase</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="function">function <span class="title">fn_get_data_one</span><span class="params">(key)</span> </span>&#123;</div><div class="line">    selectedKey = key;</div><div class="line">    var memoRef = database.ref(<span class="string">'memos/'</span> + userInfo.uid + <span class="string">'/'</span> + key).once(<span class="string">'value'</span>).then(function(snapshot)&#123;</div><div class="line">    var txt = $(<span class="string">".textarea"</span>).val(snapshot.val().txt);</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function">function <span class="title">save_data</span><span class="params">()</span> </span>&#123;</div><div class="line">      var memoRef = database.ref(<span class="string">'memos/'</span> + userInfo.uid);</div><div class="line">      var txt = $(<span class="string">".textarea"</span>).val();</div><div class="line"></div><div class="line">      <span class="comment">// 유효성 검사</span></div><div class="line">      <span class="keyword">if</span> ( txt == <span class="string">''</span>) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      <span class="keyword">if</span> ( selectedKey ) &#123;</div><div class="line"></div><div class="line">        <span class="comment">// 전역변수  selectedKey가 있으면 update</span></div><div class="line">         memoRef = database.ref(<span class="string">'memos/'</span> + userInfo.uid + <span class="string">'/'</span> + selectedKey);</div><div class="line">        memoRef.update(&#123;</div><div class="line">          txt : txt,</div><div class="line">          createDate : <span class="keyword">new</span> Date().getTime(),</div><div class="line">          updateDate : <span class="keyword">new</span> Date().getTime(),</div><div class="line">        &#125;)</div><div class="line">      &#125;<span class="keyword">else</span>&#123;</div><div class="line">        memoRef.push(&#123;</div><div class="line">          txt : txt,</div><div class="line">          createDate : <span class="keyword">new</span> Date().getTime()</div><div class="line">        &#125;)</div><div class="line">      &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>title이 문장의 맨윗줄만 나오도록 하기 위해 on_child_added의 title변수에 txt.substr(0, txt.indexOf(‘\n’));을 대입하자<br><figure class="highlight java"><figcaption><span>Firebase</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function">function <span class="title">on_child_added</span><span class="params">(data)</span></span>&#123;</div><div class="line">      ...</div><div class="line">      var title = txt.substr(<span class="number">0</span>, txt.indexOf(<span class="string">'\n'</span>));</div><div class="line">      ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>이번에는 + 버튼을 눌러 메모를 추가할 수 있도록 확인해보자<br>버튼에 onClick = ‘initMemo();’ 를 추가하고 다음의 함수를 추가하자.<br><figure class="highlight java"><figcaption><span>Firebase</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function">function <span class="title">initMemo</span><span class="params">()</span> </span>&#123;</div><div class="line">  $(<span class="string">'.textarea'</span>).val(<span class="string">''</span>);</div><div class="line">  selectedKey = <span class="keyword">null</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>이제 + 버튼을 누르면 새로운 메모를 입력할 수 있게된다.</p>
-<p>이제 데이터가 변경되었을 때 왼쪽 리스트가 변경되도록 해보자<br>get_momo_list 함수에 아래의 코드를 추가하여 변경에 대한 처리를 추가한다.<br><figure class="highlight java"><figcaption><span>Firebase</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">memoRef.on(<span class="string">'child_changed'</span>, function(data)&#123;</div><div class="line">  var key = data.key;</div><div class="line">  var txt = data.val().txt;</div><div class="line">  var title = txt.substr(<span class="number">0</span>, txt.indexOf(<span class="string">'\n'</span>));</div><div class="line">  $(<span class="string">"#"</span>+ key + <span class="string">"&gt; .title"</span>).text(title);</div><div class="line">  $(<span class="string">"#"</span>+ key + <span class="string">"&gt; .txt"</span>).text(txt);</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>이제 삭제기능을 구현해보자<br>HTML에 다음을 추가하자<br><figure class="highlight java"><figcaption><span>Firebase</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"&lt;a href=\"#!\" onclick=\"fn_delete_data('"</span>+key+<span class="string">"')\" class=\"secondary-content\"&gt;&lt;i class=\"material-icons\"&gt;grade&lt;/i&gt;&lt;/a&gt;"</span></div></pre></td></tr></table></figure><br>그리고 다음 함수를 추가하여 삭제기능 구현하자</p>
-<figure class="highlight java"><figcaption><span>Firebase</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function">function <span class="title">fn_delete_data</span><span class="params">(key)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span>(!confirm(<span class="string">'삭제하시겠습니까'</span>)) &#123;</div><div class="line">    <span class="keyword">return</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  var memoRef = database.ref(<span class="string">'memos/'</span> + userInfo.uid + <span class="string">'/'</span> + key);</div><div class="line">  memoRef.remove();</div><div class="line">  $(<span class="string">"#"</span>+key).remove();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;DB-수정&quot;&gt;&lt;a href=&quot;#DB-수정&quot; class=&quot;headerlink&quot; title=&quot;DB 수정&quot;&gt;&lt;/a&gt;DB 수정&lt;/h3&gt;&lt;p&gt;selectedKey라는 전역변수를 만들고 아래의 두 함수를 추가하면 데이터는 수정이 가능하다. 이때 수
-    
-    </summary>
-    
-      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
-    
-      <category term="Firebase" scheme="http://KKimSangHeon.github.io/categories/Web-App/Firebase/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>5.Firebase DB 읽고 쓰기</title>
-    <link href="http://KKimSangHeon.github.io/2018/09/03/firebase5/"/>
-    <id>http://KKimSangHeon.github.io/2018/09/03/firebase5/</id>
-    <published>2018-09-03T13:32:28.000Z</published>
-    <updated>2018-09-04T10:10:57.627Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="포커스가-사라지면-데이터베이스에-input하도록-설정"><a href="#포커스가-사라지면-데이터베이스에-input하도록-설정" class="headerlink" title="포커스가 사라지면 데이터베이스에 input하도록 설정"></a>포커스가 사라지면 데이터베이스에 input하도록 설정</h3><p>아래의 코드를 추가하면 textarea가 포커스를 잃을 때 마다 데이터를 저장하게 된다.<br><figure class="highlight java"><figcaption><span>Firebase</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function">function <span class="title">save_data</span><span class="params">()</span> </span>&#123;</div><div class="line">      var memoRef = database.ref(<span class="string">'memos/'</span> + userInfo.uid);</div><div class="line">      var txt = $(<span class="string">".textarea"</span>).val();</div><div class="line"></div><div class="line">      <span class="comment">// 유효성 검사</span></div><div class="line">      <span class="keyword">if</span> ( txt == <span class="string">''</span>) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">      &#125;</div><div class="line">      memoRef.push(&#123;</div><div class="line">        txt : txt,</div><div class="line">        createDate : <span class="keyword">new</span> Date().getTime()</div><div class="line">      &#125;)</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">$(function()&#123;</div><div class="line">    $(<span class="string">".textarea"</span>).blur(function()&#123;</div><div class="line">      save_data();</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>그리고 아래의 코드를 추가하면 왼쪽중 하나를 선택하면 textArea에 내용이 출력된다.</p>
-<figure class="highlight java"><figcaption><span>Firebase</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function">function <span class="title">fn_get_data_one</span><span class="params">(key)</span> </span>&#123;</div><div class="line">    var memoRef = database.ref(<span class="string">'memos/'</span> + userInfo.uid + <span class="string">'/'</span> + key).once(<span class="string">'value'</span>).then(function(snapshot)&#123;</div><div class="line">    var txt = $(<span class="string">".textarea"</span>).val(snapshot.val().txt);</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>위에서 once() 함수는 프로미스를 반환한다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;포커스가-사라지면-데이터베이스에-input하도록-설정&quot;&gt;&lt;a href=&quot;#포커스가-사라지면-데이터베이스에-input하도록-설정&quot; class=&quot;headerlink&quot; title=&quot;포커스가 사라지면 데이터베이스에 input하도록 설정&quot;&gt;&lt;/a
-    
-    </summary>
-    
-      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
-    
-      <category term="Firebase" scheme="http://KKimSangHeon.github.io/categories/Web-App/Firebase/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>4.Firebase DB읽어오기</title>
-    <link href="http://KKimSangHeon.github.io/2018/09/03/firebase4/"/>
-    <id>http://KKimSangHeon.github.io/2018/09/03/firebase4/</id>
-    <published>2018-09-03T09:11:06.000Z</published>
-    <updated>2018-09-04T10:08:00.528Z</updated>
-    
-    <content type="html"><![CDATA[<p>DB를 읽고 쓰기 위해 리얼타임 데이터베이스의 규칙에 아래로 수정하자<br><figure class="highlight java"><figcaption><span>Firebase</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"rules"</span>: &#123;</div><div class="line">    <span class="string">".read"</span>: <span class="keyword">true</span>,</div><div class="line">    <span class="string">".write"</span>: <span class="string">"auth != null"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>이전 코드에 다음 코드를 추가하자.<br><figure class="highlight"><figcaption><span>Firebase</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  var auth, database, userInfo;</div><div class="line">  // Initialize Firebase</div><div class="line">  var config = &#123;</div><div class="line">    apiKey: "AIzaSyCuXqUy4sOBUh0FBJyqkOde_20s1f6gffs",</div><div class="line">    authDomain: "memowebapp-b6255.firebaseapp.com",</div><div class="line">    databaseURL: "https://memowebapp-b6255.firebaseio.com",</div><div class="line">    projectId: "memowebapp-b6255",</div><div class="line">    storageBucket: "memowebapp-b6255.appspot.com",</div><div class="line">    messagingSenderId: "582035498309"</div><div class="line">  &#125;;</div><div class="line">  firebase.initializeApp(config);</div><div class="line">  auth = firebase.auth();</div><div class="line">  database = firebase.database();</div><div class="line">  var authProvider = new firebase.auth.GoogleAuthProvider();</div><div class="line"></div><div class="line"></div><div class="line">  auth.onAuthStateChanged(function(user)&#123;</div><div class="line">        if ( user) &#123;</div><div class="line">            // 인증 성공</div><div class="line">            console.log("success");</div><div class="line">            console.log(user);</div><div class="line">            userInfo = user;</div><div class="line">            get_momo_list();</div><div class="line">        &#125;else &#123;</div><div class="line">            // 인증 실패</div><div class="line">            auth.signInWithPopup(authProvider);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  function get_momo_list() &#123;</div><div class="line">      var memoRef = database.ref('memos/' + userInfo.uid);</div><div class="line">      memoRef.on('child_added', on_child_added);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  function on_child_added(data)&#123;</div><div class="line">    var key = data.key;</div><div class="line">    var memoData = data.val();</div><div class="line">    var txt = memoData.txt;</div><div class="line">    var title = memoData.title;</div><div class="line">    var firstTxt = txt.substr(0,1);</div><div class="line"></div><div class="line">    var html =</div><div class="line">     "&lt;li id='"+key+"' class=\"collection-item avatar\" onclick=\"fn_get_data_one(this.id);\" &gt;" +</div><div class="line">     "&lt;i class=\"material-icons circle red\"&gt;" + firstTxt + "&lt;/i&gt;" +</div><div class="line">     "&lt;span class=\"title\"&gt;" + title + "&lt;/span&gt;" +</div><div class="line">     "&lt;p class='txt'&gt;" + txt + "&lt;br&gt;" +</div><div class="line">     "&lt;/p&gt;" +</div><div class="line">     "&lt;/li&gt;";</div><div class="line"></div><div class="line">     $(".collection").append(html);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line"></div></pre></td></tr></table></figure><br>위의 코드는 DB에서 데이터를 읽어온 후 왼쪽 리스트에 추가하는 상황인데 데이터는 다음 그림처럼 생성되어 있어야 한다.<br><img src="/2018/09/03/firebase4/test1.png" alt="DB" title="DB"></p>
-<p>“SF9uVrBjLKPRVVKZOCw7x2VKWT22” 이것이 나의 UID이다.</p>
-<p>즉 위의코드는 memos라는 DB에 내 UID로 접근해서 데이터를 가져오고 그 데이터들을 append하는것으로 볼 수 있다. 다음 그림은 출력된 화면이다<br><img src="/2018/09/03/firebase4/test2.png" alt="Example" title="Example"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;DB를 읽고 쓰기 위해 리얼타임 데이터베이스의 규칙에 아래로 수정하자&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;figcaption&gt;&lt;span&gt;Firebase&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td cla
-    
-    </summary>
-    
-      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
-    
-      <category term="Firebase" scheme="http://KKimSangHeon.github.io/categories/Web-App/Firebase/"/>
     
     
   </entry>

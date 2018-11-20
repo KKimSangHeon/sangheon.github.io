@@ -555,13 +555,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Java/</loc>
-        <lastmod>2018-09-05T09:04:56.154Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/Social-Media/</loc>
         <lastmod>2018-09-07T09:32:01.424Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -648,6 +641,13 @@
     <url>
         <loc>http://KKimSangHeon.github.io/tags/Linux/</loc>
         <lastmod>2018-11-14T09:37:34.995Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Java/</loc>
+        <lastmod>2018-11-20T00:43:28.993Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
