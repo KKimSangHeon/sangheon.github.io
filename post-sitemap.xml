@@ -8,7 +8,15 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2017/06/29/about-me/</loc>
-        <lastmod>2019-01-20T20:39:02.882Z</lastmod>
+        <lastmod>2019-01-21T15:15:16.932Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2019/01/22/hexoerr/</loc>
+        <lastmod>2019-01-21T15:14:38.104Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

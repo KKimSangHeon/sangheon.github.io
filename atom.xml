@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2018-11-20T00:43:28.993Z</updated>
+  <updated>2019-01-21T15:14:38.104Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo command not found 에러 발생시</title>
+    <link href="http://KKimSangHeon.github.io/2019/01/22/hexoerr/"/>
+    <id>http://KKimSangHeon.github.io/2019/01/22/hexoerr/</id>
+    <published>2019-01-21T15:12:31.000Z</published>
+    <updated>2019-01-21T15:14:38.104Z</updated>
+    
+    <content type="html"><![CDATA[<p>npm이 global로 설치한 것을 찾지 못할 때 발생한다.</p>
+<p>환경변수에 아래의 경로를 추가해 주도록 하자</p>
+<p><code>C:\Users\SangHeon\AppData\Roaming\npm</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;npm이 global로 설치한 것을 찾지 못할 때 발생한다.&lt;/p&gt;
+&lt;p&gt;환경변수에 아래의 경로를 추가해 주도록 하자&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;C:\Users\SangHeon\AppData\Roaming\npm&lt;/code&gt;&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>StringBuffer, StringBuilder</title>
@@ -124,6 +148,135 @@
   </entry>
   
   <entry>
+    <title>KT SW개발직무 면접</title>
+    <link href="http://KKimSangHeon.github.io/2018/10/22/interview4/"/>
+    <id>http://KKimSangHeon.github.io/2018/10/22/interview4/</id>
+    <published>2018-10-22T03:36:14.000Z</published>
+    <updated>2018-10-23T23:37:44.676Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2018년 8월 ~ 2018년 10월</p>
+<h3 id="채용공고"><a href="#채용공고" class="headerlink" title="채용공고"></a>채용공고</h3><img src="/2018/10/22/interview4/kt.jpg" alt="공고" title="공고">
+<h3 id="필기시험"><a href="#필기시험" class="headerlink" title="필기시험"></a>필기시험</h3><p>적성이 아닌 전공, 인성검사로서 진성여중에서 시험을 치뤘었다. 정말 많은사람들이 왔었고 문제의 난이도는 평소 CS에 대한 공부만 충실했다면 무난한 난이도였다.</p>
+<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>면접관 3분과 지원자 1명의 면접형태로서 면접 전 간단한 코딩 테스트를 본다. 푼 문제를 복사하여 면접관분들께 설명드리면서 면접이 시작된다. 이후엔 자기소개서 위주의 프로젝트, 경력관련 질문들이 주를 이뤘다. 여기서 자신감을 갖고 대답했던것이 좋게 작용했던것 같다.</p>
+<h3 id="2차면접"><a href="#2차면접" class="headerlink" title="2차면접"></a>2차면접</h3><p>마찬가지로 면접관 3분과 면접을 본다. 정말 많이 떨렸지만 충분히 준비하고 또 준비했기에 떨지않고 잘 대답할 수 있었다. 주로 경력에 관한 질문이 많았으며 인성질문도 있었다.</p>
+<h3 id="건강검진"><a href="#건강검진" class="headerlink" title="건강검진"></a>건강검진</h3><p>건강검진 이틀전 술을 마신탓에 약간 걱정은 됐으나 다행히 별 탈 없이 통과할 수 있었다.</p>
+<h3 id="합격"><a href="#합격" class="headerlink" title="합격"></a>합격</h3><p>두달간의 긴 여정을 잘 마무리 짓고 최종합격할 수 있었다.<br><img src="/2018/10/22/interview4/kt2.jpg" alt="합격!" title="합격!"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2018년 8월 ~ 2018년 10월&lt;/p&gt;
+&lt;h3 id=&quot;채용공고&quot;&gt;&lt;a href=&quot;#채용공고&quot; class=&quot;headerli
+    
+    </summary>
+    
+      <category term="Etc" scheme="http://KKimSangHeon.github.io/categories/Etc/"/>
+    
+      <category term="면접" scheme="http://KKimSangHeon.github.io/categories/Etc/%EB%A9%B4%EC%A0%91/"/>
+    
+    
+      <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
+    
+      <category term="KT" scheme="http://KKimSangHeon.github.io/tags/KT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>알티캐스트 면접</title>
+    <link href="http://KKimSangHeon.github.io/2018/10/22/interview2/"/>
+    <id>http://KKimSangHeon.github.io/2018/10/22/interview2/</id>
+    <published>2018-10-22T03:36:14.000Z</published>
+    <updated>2018-10-23T23:25:27.959Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2018년 6월</p>
+<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>면접관 두분과 지원자 두명 다대다 면접으로 진행된다.<br>경력에 대한 질문, 프로젝트에 대한 질문이 주를 이루며 자기소개서 내용이 거짓이 아니라면 충분히 대답이 가능한 수준이었다.</p>
+<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p>2차면접은 따로 없이 최종 합격통보를 받았다.<br>편안한 분위기속에서 진행되었으며 사옥을 이전한지 얼마되지 않아 깨끗한 느낌을 많이받았다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2018년 6월&lt;/p&gt;
+&lt;h3 id=&quot;1차면접&quot;&gt;&lt;a href=&quot;#1차면접&quot; class=&quot;headerlink&quot; title=&quot;1
+    
+    </summary>
+    
+      <category term="Etc" scheme="http://KKimSangHeon.github.io/categories/Etc/"/>
+    
+      <category term="면접" scheme="http://KKimSangHeon.github.io/categories/Etc/%EB%A9%B4%EC%A0%91/"/>
+    
+    
+      <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
+    
+      <category term="알티캐스트" scheme="http://KKimSangHeon.github.io/tags/%EC%95%8C%ED%8B%B0%EC%BA%90%EC%8A%A4%ED%8A%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>알지피코리아(요기요,배달통) 면접</title>
+    <link href="http://KKimSangHeon.github.io/2018/10/22/interview/"/>
+    <id>http://KKimSangHeon.github.io/2018/10/22/interview/</id>
+    <published>2018-10-22T03:36:14.000Z</published>
+    <updated>2018-10-23T23:17:48.376Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2018년 7월</p>
+<p>사실 서류자체는 무난하게 복붙이 가능할 정도로 간단했다. 자소서를 작성하면서 정말 감사했던 기억이 난다.</p>
+<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>편안한 분위기속에서 면접관 두분과 면접을 진행했다. 난이도가 높은 면접은 아니었던걸로 기억한다.<br>질문내용은 다음과 같다.</p>
+<p>인터페이스 추상클래스 차이<br>가장인상깊었던 문제<br>개발하다 막히면 어떻게하나<br>비동기로 처리하는 방법<br>jap hibernate 차이</p>
+<h3 id="소감"><a href="#소감" class="headerlink" title="소감"></a>소감</h3><p>평범한 회사였고 자유로운 분위기를 느낄 수 있었다. 면접 후 신세계 상품권과 요기요 할인쿠폰을 잘 이용했다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2018년 7월&lt;/p&gt;
+&lt;p&gt;사실 서류자체는 무난하게 복붙이 가능할 정도로 간단했다. 자소서를 작성하면서 정말 감사했던 기억이
+    
+    </summary>
+    
+      <category term="Etc" scheme="http://KKimSangHeon.github.io/categories/Etc/"/>
+    
+      <category term="면접" scheme="http://KKimSangHeon.github.io/categories/Etc/%EB%A9%B4%EC%A0%91/"/>
+    
+    
+      <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
+    
+      <category term="알지피코리아" scheme="http://KKimSangHeon.github.io/tags/%EC%95%8C%EC%A7%80%ED%94%BC%EC%BD%94%EB%A6%AC%EC%95%84/"/>
+    
+      <category term="요기요 배달통" scheme="http://KKimSangHeon.github.io/tags/%EC%9A%94%EA%B8%B0%EC%9A%94-%EB%B0%B0%EB%8B%AC%ED%86%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>웍스모바일 인턴 면접</title>
+    <link href="http://KKimSangHeon.github.io/2018/10/22/interview/"/>
+    <id>http://KKimSangHeon.github.io/2018/10/22/interview/</id>
+    <published>2018-10-22T03:36:14.000Z</published>
+    <updated>2018-10-23T23:25:14.117Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2018년 3월</p>
+<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>면접은 한번뿐이었으며 기본적인 전공지식 그리고 경험에 대한 질문이 다수였다.</p>
+<p>ide뭐 쓰는지<br>asyn<br>서치<br>정렬되지않은 데이터 접근<br>http https차이<br>블로킹 논블로킹 차이<br>트랜잭션<br>데드락<br>dns<br>설계패턴<br>동기비동기 차이<br>string stringbuffer차이</p>
+<h3 id="소감"><a href="#소감" class="headerlink" title="소감"></a>소감</h3><p>합격해서 인턴까지 잘 마무리 지을 수 있었고 그린팩토리에서 일한다는 자부심을 느낄 수 있었다. 좋은분들과 함께 근무했던것 같아 좋았었다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2018년 3월&lt;/p&gt;
+&lt;h3 id=&quot;1차면접&quot;&gt;&lt;a href=&quot;#1차면접&quot; class=&quot;headerlink&quot; title=&quot;1
+    
+    </summary>
+    
+      <category term="Etc" scheme="http://KKimSangHeon.github.io/categories/Etc/"/>
+    
+      <category term="면접" scheme="http://KKimSangHeon.github.io/categories/Etc/%EB%A9%B4%EC%A0%91/"/>
+    
+    
+      <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
+    
+      <category term="웍스모바일" scheme="http://KKimSangHeon.github.io/tags/%EC%9B%8D%EC%8A%A4%EB%AA%A8%EB%B0%94%EC%9D%BC/"/>
+    
+  </entry>
+  
+  <entry>
     <title>비트 빅데이터 전문가 양성과정 면접</title>
     <link href="http://KKimSangHeon.github.io/2018/10/22/interview5/"/>
     <id>http://KKimSangHeon.github.io/2018/10/22/interview5/</id>
@@ -187,135 +340,6 @@
       <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
     
       <category term="줌인터넷" scheme="http://KKimSangHeon.github.io/tags/%EC%A4%8C%EC%9D%B8%ED%84%B0%EB%84%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>KT SW개발직무 면접</title>
-    <link href="http://KKimSangHeon.github.io/2018/10/22/interview4/"/>
-    <id>http://KKimSangHeon.github.io/2018/10/22/interview4/</id>
-    <published>2018-10-22T03:36:14.000Z</published>
-    <updated>2018-10-23T23:37:44.676Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2018년 8월 ~ 2018년 10월</p>
-<h3 id="채용공고"><a href="#채용공고" class="headerlink" title="채용공고"></a>채용공고</h3><img src="/2018/10/22/interview4/kt.jpg" alt="공고" title="공고">
-<h3 id="필기시험"><a href="#필기시험" class="headerlink" title="필기시험"></a>필기시험</h3><p>적성이 아닌 전공, 인성검사로서 진성여중에서 시험을 치뤘었다. 정말 많은사람들이 왔었고 문제의 난이도는 평소 CS에 대한 공부만 충실했다면 무난한 난이도였다.</p>
-<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>면접관 3분과 지원자 1명의 면접형태로서 면접 전 간단한 코딩 테스트를 본다. 푼 문제를 복사하여 면접관분들께 설명드리면서 면접이 시작된다. 이후엔 자기소개서 위주의 프로젝트, 경력관련 질문들이 주를 이뤘다. 여기서 자신감을 갖고 대답했던것이 좋게 작용했던것 같다.</p>
-<h3 id="2차면접"><a href="#2차면접" class="headerlink" title="2차면접"></a>2차면접</h3><p>마찬가지로 면접관 3분과 면접을 본다. 정말 많이 떨렸지만 충분히 준비하고 또 준비했기에 떨지않고 잘 대답할 수 있었다. 주로 경력에 관한 질문이 많았으며 인성질문도 있었다.</p>
-<h3 id="건강검진"><a href="#건강검진" class="headerlink" title="건강검진"></a>건강검진</h3><p>건강검진 이틀전 술을 마신탓에 약간 걱정은 됐으나 다행히 별 탈 없이 통과할 수 있었다.</p>
-<h3 id="합격"><a href="#합격" class="headerlink" title="합격"></a>합격</h3><p>두달간의 긴 여정을 잘 마무리 짓고 최종합격할 수 있었다.<br><img src="/2018/10/22/interview4/kt2.jpg" alt="합격!" title="합격!"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2018년 8월 ~ 2018년 10월&lt;/p&gt;
-&lt;h3 id=&quot;채용공고&quot;&gt;&lt;a href=&quot;#채용공고&quot; class=&quot;headerli
-    
-    </summary>
-    
-      <category term="Etc" scheme="http://KKimSangHeon.github.io/categories/Etc/"/>
-    
-      <category term="면접" scheme="http://KKimSangHeon.github.io/categories/Etc/%EB%A9%B4%EC%A0%91/"/>
-    
-    
-      <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
-    
-      <category term="KT" scheme="http://KKimSangHeon.github.io/tags/KT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>웍스모바일 인턴 면접</title>
-    <link href="http://KKimSangHeon.github.io/2018/10/22/interview/"/>
-    <id>http://KKimSangHeon.github.io/2018/10/22/interview/</id>
-    <published>2018-10-22T03:36:14.000Z</published>
-    <updated>2018-10-23T23:25:14.117Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2018년 3월</p>
-<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>면접은 한번뿐이었으며 기본적인 전공지식 그리고 경험에 대한 질문이 다수였다.</p>
-<p>ide뭐 쓰는지<br>asyn<br>서치<br>정렬되지않은 데이터 접근<br>http https차이<br>블로킹 논블로킹 차이<br>트랜잭션<br>데드락<br>dns<br>설계패턴<br>동기비동기 차이<br>string stringbuffer차이</p>
-<h3 id="소감"><a href="#소감" class="headerlink" title="소감"></a>소감</h3><p>합격해서 인턴까지 잘 마무리 지을 수 있었고 그린팩토리에서 일한다는 자부심을 느낄 수 있었다. 좋은분들과 함께 근무했던것 같아 좋았었다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2018년 3월&lt;/p&gt;
-&lt;h3 id=&quot;1차면접&quot;&gt;&lt;a href=&quot;#1차면접&quot; class=&quot;headerlink&quot; title=&quot;1
-    
-    </summary>
-    
-      <category term="Etc" scheme="http://KKimSangHeon.github.io/categories/Etc/"/>
-    
-      <category term="면접" scheme="http://KKimSangHeon.github.io/categories/Etc/%EB%A9%B4%EC%A0%91/"/>
-    
-    
-      <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
-    
-      <category term="웍스모바일" scheme="http://KKimSangHeon.github.io/tags/%EC%9B%8D%EC%8A%A4%EB%AA%A8%EB%B0%94%EC%9D%BC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>알지피코리아(요기요,배달통) 면접</title>
-    <link href="http://KKimSangHeon.github.io/2018/10/22/interview/"/>
-    <id>http://KKimSangHeon.github.io/2018/10/22/interview/</id>
-    <published>2018-10-22T03:36:14.000Z</published>
-    <updated>2018-10-23T23:17:48.376Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2018년 7월</p>
-<p>사실 서류자체는 무난하게 복붙이 가능할 정도로 간단했다. 자소서를 작성하면서 정말 감사했던 기억이 난다.</p>
-<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>편안한 분위기속에서 면접관 두분과 면접을 진행했다. 난이도가 높은 면접은 아니었던걸로 기억한다.<br>질문내용은 다음과 같다.</p>
-<p>인터페이스 추상클래스 차이<br>가장인상깊었던 문제<br>개발하다 막히면 어떻게하나<br>비동기로 처리하는 방법<br>jap hibernate 차이</p>
-<h3 id="소감"><a href="#소감" class="headerlink" title="소감"></a>소감</h3><p>평범한 회사였고 자유로운 분위기를 느낄 수 있었다. 면접 후 신세계 상품권과 요기요 할인쿠폰을 잘 이용했다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2018년 7월&lt;/p&gt;
-&lt;p&gt;사실 서류자체는 무난하게 복붙이 가능할 정도로 간단했다. 자소서를 작성하면서 정말 감사했던 기억이
-    
-    </summary>
-    
-      <category term="Etc" scheme="http://KKimSangHeon.github.io/categories/Etc/"/>
-    
-      <category term="면접" scheme="http://KKimSangHeon.github.io/categories/Etc/%EB%A9%B4%EC%A0%91/"/>
-    
-    
-      <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
-    
-      <category term="알지피코리아" scheme="http://KKimSangHeon.github.io/tags/%EC%95%8C%EC%A7%80%ED%94%BC%EC%BD%94%EB%A6%AC%EC%95%84/"/>
-    
-      <category term="요기요 배달통" scheme="http://KKimSangHeon.github.io/tags/%EC%9A%94%EA%B8%B0%EC%9A%94-%EB%B0%B0%EB%8B%AC%ED%86%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>알티캐스트 면접</title>
-    <link href="http://KKimSangHeon.github.io/2018/10/22/interview2/"/>
-    <id>http://KKimSangHeon.github.io/2018/10/22/interview2/</id>
-    <published>2018-10-22T03:36:14.000Z</published>
-    <updated>2018-10-23T23:25:27.959Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2018년 6월</p>
-<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>면접관 두분과 지원자 두명 다대다 면접으로 진행된다.<br>경력에 대한 질문, 프로젝트에 대한 질문이 주를 이루며 자기소개서 내용이 거짓이 아니라면 충분히 대답이 가능한 수준이었다.</p>
-<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p>2차면접은 따로 없이 최종 합격통보를 받았다.<br>편안한 분위기속에서 진행되었으며 사옥을 이전한지 얼마되지 않아 깨끗한 느낌을 많이받았다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2018년 6월&lt;/p&gt;
-&lt;h3 id=&quot;1차면접&quot;&gt;&lt;a href=&quot;#1차면접&quot; class=&quot;headerlink&quot; title=&quot;1
-    
-    </summary>
-    
-      <category term="Etc" scheme="http://KKimSangHeon.github.io/categories/Etc/"/>
-    
-      <category term="면접" scheme="http://KKimSangHeon.github.io/categories/Etc/%EB%A9%B4%EC%A0%91/"/>
-    
-    
-      <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
-    
-      <category term="알티캐스트" scheme="http://KKimSangHeon.github.io/tags/%EC%95%8C%ED%8B%B0%EC%BA%90%EC%8A%A4%ED%8A%B8/"/>
     
   </entry>
   
@@ -622,110 +646,6 @@
     
     
       <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CS 공부</title>
-    <link href="http://KKimSangHeon.github.io/2018/09/04/myStudy/"/>
-    <id>http://KKimSangHeon.github.io/2018/09/04/myStudy/</id>
-    <published>2018-09-04T12:28:35.000Z</published>
-    <updated>2018-09-21T10:38:11.078Z</updated>
-    
-    <content type="html"><![CDATA[<p>대부분의 자료는 <a href="http://www.comcbt.com/cbt/" target="_blank" rel="external">http://www.comcbt.com/cbt/</a> 의 정보처리기사 필기 문제를 참고하여 작성하였다.</p>
-<h2 id="데이터베이스"><a href="#데이터베이스" class="headerlink" title="데이터베이스"></a>데이터베이스</h2><p>기수(Cardinality) : 튜플의 수<br>차수(Degree) : 열의 수</p>
-<p>색인 순차 파일은 순차 파일과 직접 파일에서 지원하는 편성 방법이 결합된 형태다.<br>색인 순차 접근 방식 (ISAM, Index Sequential Access Method)<br>색인 순차 파일은 기본영역, 색인 영역, 오버플로 영역으로 구성된다.</p>
-<h3 id="병행-제어의-목적"><a href="#병행-제어의-목적" class="headerlink" title="병행 제어의 목적"></a>병행 제어의 목적</h3><ul>
-<li>데이터베이스의 공류를 최대화한다.</li>
-<li>시스템의 활용도를 최대화한다.</li>
-<li>사용자에 대한 응답 시간을 최소화한다.</li>
-<li>단위 시간당 트랜잭션 처리 건수를 최대화한다.</li>
-<li>데이터베이스의 일관성을 유지한다.<br>[해설작성자 : 출처: <a href="http://androphil.tistory.com/335" target="_blank" rel="external">http://androphil.tistory.com/335</a> [소림사의 홍반장!]]</li>
-</ul>
-<h3 id="중위표기법-gt-후위표기법"><a href="#중위표기법-gt-후위표기법" class="headerlink" title="중위표기법 - &gt; 후위표기법"></a>중위표기법 - &gt; 후위표기법</h3><p>스택에 모든 연산자를 넣으면서 형님이 아우 위에 올라오면 그대로 넣고 그 역이면 모두 pop</p>
-<h3 id="후위표기법계산"><a href="#후위표기법계산" class="headerlink" title="후위표기법계산"></a>후위표기법계산</h3><p>연산자의 앞에 등장하는 두개의 숫자가 피연산자이다.<br>차례대로 앞에서부터 계산해 나가자</p>
-<h3 id="관계대수"><a href="#관계대수" class="headerlink" title="관계대수"></a>관계대수</h3><p>1)관계대수<br>-관계형 데이터베이스에서 원하는 정보와 그정보를 검색하기 위해서 ‘어떻게’ 유도하는가를 기술하는 절차적언어(절차 중심)<br>-기존의 릴레이션으로부터 새로운 릴레이션을 생성한다<br>-릴레이션을 처리하기 위해 연산자와 연산 규칙을 제공</p>
-<p>연산자 종류 : 순수관계연산자 , 일반집합연산자</p>
-<h3 id="관계해석"><a href="#관계해석" class="headerlink" title="관계해석"></a>관계해석</h3><p>2)관계해석<br>-원하는 정보가 ‘무엇’이라는 것만 정의하는 비절차적언어(결과 중심)<br>-질의어 이용한 표현<br>-관계해석으로 표현한식은 관계대수로 표현 가능<br>-프레디킷해석에 기반<br>-관계 데이터 모델 제안자인 코드가 관계 데이터베이스에 적용할수 있도록 설계하여 제안<br>종류 : 튜플관계해석 , 도메인관계해석</p>
-<p>출처 - <a href="http://unius.tistory.com/entry/관계대수-vs-관계해석" target="_blank" rel="external">http://unius.tistory.com/entry/관계대수-vs-관계해석</a></p>
-<h3 id="카르노맵"><a href="#카르노맵" class="headerlink" title="카르노맵"></a>카르노맵</h3><p>사용되는 알파벳이 4개일 때 블로그와 반대로하자<br><a href="https://m.blog.naver.com/PostView.nhn?blogId=leeyunghuk1&amp;logNo=220958708825&amp;proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F" target="_blank" rel="external">https://m.blog.naver.com/PostView.nhn?blogId=leeyunghuk1&amp;logNo=220958708825&amp;proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F</a></p>
-<h3 id="CPU-사용방식"><a href="#CPU-사용방식" class="headerlink" title="CPU 사용방식"></a>CPU 사용방식</h3><p>멀티 프로그래밍: 한대의 CPU로 여러 개의 프로그램을 동시에 처리</p>
-<p>분산처리 프로그래밍: 지역적으로 분산된 여러 대 컴퓨터 연결. 작업분담처리<br>일괄처리 프로그래밍: 처리할 데이터를 모았다가 한번에 처리. EX) 급여계산, 공공요금계산<br>리얼타임(실시간처리) 프로그래밍: 처리 데이터 발생시 바로 처리. EX) 좌석예약, 은행업무<br>[해설작성자 : ʕ • ᴥ •メʔ 북극곰사냥꾼]</p>
-<h3 id="플립플롭"><a href="#플립플롭" class="headerlink" title="플립플롭"></a>플립플롭</h3><p><a href="http://vision.kongju.ac.kr/DigitalMain/dvlec/textbook/chap08/digital08_2.htm" target="_blank" rel="external">http://vision.kongju.ac.kr/DigitalMain/dvlec/textbook/chap08/digital08_2.htm</a> 참고</p>
-<p>JK 는 SR에 11일때 토글만 추가로 지원하는것 같다.</p>
-<h3 id="RAM"><a href="#RAM" class="headerlink" title="RAM"></a>RAM</h3><p>4x2 RAM을 이용하여 16x4 메모리를 구성하고자 할 경우에 필요한 4x2 RAM의 수는?<br>8개<br>(4<em>2) </em> 8 = (16*4)<br>[해설작성자 : wg]</p>
-<h3 id="문자-데이터-표현"><a href="#문자-데이터-표현" class="headerlink" title="문자 데이터 표현"></a>문자 데이터 표현</h3><p>표준 ASCⅡ 코드는 7비트 사용, 영문 대소문자, 숫자, 문장 부호, 특수 제어 문자 표현<br>3개의 존 비트, 4개의 디지트 비트로 구성</p>
-<p>문자데이터의 표현<br>BCD코드 : 6비트 구성(존 2, 숫자 4)<br>ASCII코드 : 7비트 구성(존 3, 숫자 4)<br>EBICIC코드: 8비트 구성(존4, 숫자4)<br>UNICODE: 16비트 구성 - 전 세계의 문자를 표현 할 수 있는 국제 표준 문자 코드<br>[해설작성자 : 석영호]</p>
-<h3 id="CPU-스케줄링"><a href="#CPU-스케줄링" class="headerlink" title="CPU 스케줄링"></a>CPU 스케줄링</h3><p><a href="http://raisonde.tistory.com/entry/CPU-스케줄링-알고리즘" target="_blank" rel="external">http://raisonde.tistory.com/entry/CPU-스케줄링-알고리즘</a></p>
-<p>비선점형 스케줄링 : FCFS(FIFO), SJF, HRN, 비선점형 우선순위, 기한부<br>SRT 스케줄링은 수행 시간이 가장 작은 작업을 선점형으로 처리합니다.<br>[해설작성자 : 46200]</p>
-<h3 id="커널"><a href="#커널" class="headerlink" title="커널"></a>커널</h3><p>커널의 기능은 프로세스 생성, 종료/    기억 장치 할당, 회수/    파일 시스템 관리 등이 있다</p>
-<h3 id="유닉스의-i-node"><a href="#유닉스의-i-node" class="headerlink" title="유닉스의 i-node"></a>유닉스의 i-node</h3><p>i-node에 저장되는 정보로는 파일의 소유자에 대한 정보(소유자id, 그룹id), 파일에 대한 정보(크기, 유형, 생성된 시간,링크된 참조 갯수), 시간에 대한 정보(최근 사용시간, 최근 변경시간), 파일 접근 권한, 파일이 저장된 데이터블록 주소가 있다<br>[해설작성자 : 희굴이]</p>
-<hr>
-<h3 id="삽입정렬"><a href="#삽입정렬" class="headerlink" title="삽입정렬"></a>삽입정렬</h3><p>1~n까지 정렬해 나감 1~2 정렬 12묶음 3정렬 13묶음 4정렬<br>첫 번째 데이터는 정렬이 되어있다고 봄. 그래서 i=0이아닌 1부터 시작.시간복잡도는 O(n^2) 이다.</p>
-<h3 id="뷰"><a href="#뷰" class="headerlink" title="뷰"></a>뷰</h3><ol>
-<li>가상테이블(물리적으로 구현되는 테이블이 아니다)</li>
-<li>시스템 검색은 일반 테이블과 동일</li>
-<li>논리적 데이터 독립성을 제공</li>
-<li>하나의 뷰를 삭제하면 그 뷰를 기초로 정의된 다른 뷰도 자동으로 삭제</li>
-<li>접근 제한을 통한 보안 제공</li>
-<li>실제 테이터가 저장되지 않는다.</li>
-<li>독자적인 인덱스를 가질 수 없다.</li>
-<li>뷰를 이용한 또 다른 뷰의 생성이 가능하다.</li>
-<li>필요한 데이터만 뷰로 정의해서 처리하여 사용자의 관리가 용이</li>
-<li>뷰는 변경이 안되어 지우고 다시 만들어야 함. &lt;-</li>
-</ol>
-<h3 id="전위식-후위식"><a href="#전위식-후위식" class="headerlink" title="전위식, 후위식"></a>전위식, 후위식</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-/*A+BCDE 를 후위식으로</div></pre></td></tr></table></figure>
-<p>쉬운 변환방법 설명<br>1.연산자에 따라 묶는다. (이거 못하시면 이론 다시 ㄱㄱ)<br>( - ( / ( * A ( + B C ) ) D ) E )</p>
-<p>2.연산자를 각 괄호 뒤로 뺀다. (중위식으로 할때는 연산자를 문자 사이로 하시면 됩니다.)<br>( ( ( A ( B C ) + ) * D ) / E ) -</p>
-<p>3.괄호를 제거한다.<br>A B C + * D / E -</p>
-<p>[해설작성자 : 쀼쀼]</p>
-<h3 id="관계대수-관계해석"><a href="#관계대수-관계해석" class="headerlink" title="관계대수, 관계해석"></a>관계대수, 관계해석</h3><p>관계대수 : 절차적 언어 / 순수 관계 연산(select, project, join, division)과 일반 집합연산(union, intersection, difference, cartesian product)<br>관계해석 : 비절차적 언어 / Predicate Calculus에 기반을 둠  / 튜플 및 도메인 관계해석<br>[해설작성자 : sdk]</p>
-<p>관계대수(릴레이션 조작을 위한 연산의집합.기술적인특성)의 순수관계 연산자</p>
-<ul>
-<li>릴레이션을 처리하기 위한 연산의 집합으로 피연산자가 릴레이션이고 결과도 릴레이션이다.</li>
-<li>Select : 수평적 부분집합. 시그마를 사용</li>
-<li>Project : 수직적 부분집합. 파이를 이용</li>
-<li>Join</li>
-<li>Division : 두 릴레이션 A,B에 대해 릴레이션의 모든 조건을 만족하는 튜플들을 릴레이션 A에서 분리해 내어 프로젝션 함.</li>
-</ul>
-<h3 id="스레싱"><a href="#스레싱" class="headerlink" title="스레싱"></a>스레싱</h3><p>스레싱(Thrasing)<br>:하나의 프로세스가 작업 수행 과정에서 수행하는 기억장치 접근에서 지나치게 페이지 폴트가 발생하여 프로세스 수행에 소요되는 시간보다 페이지 이동에 소요되는 시간이 더 커지는 현상..<br>오류율이 클수록 스레싱이 많이 발생한 것이고.<br>스래싱으로 인해 전체 시스템의 성능 및 처리율은 저하된다.<br>다중 프로그래밍의 어느 시점을 넘어서면 스레싱의 빈도가 높아진다.<br>[해설작성자 : 김은희]</p>
-<p>[추가해설]<br>Thrashing 현상 방지 방법</p>
-<ul>
-<li>다중 프로그래밍의 정도를 적정수준으로 유지</li>
-<li>부족한 자원 증설</li>
-<li>일부 프로세스 중단</li>
-<li>페이지 부재 빈도 조절</li>
-<li>워킹 셋 유지</li>
-<li>적정프레임 수 제공<br>[해설작성자 : 네비자동실행 앱 : haewon.tistory.com]</li>
-</ul>
-<h3 id="메모리-할당기법"><a href="#메모리-할당기법" class="headerlink" title="메모리 할당기법"></a>메모리 할당기법</h3><p>가변분할 할당 : 다중분할 할당의 한 방법으로, 프로그램을 주기억장치에 적재할 때 함수 등 필요한 크기로 영역을 분할하는 기법<br>고정분할 할당 : 다중분할 할당의 한 방법으로, 주기억장치의 사용자 영역을 일정 수의 고정크기로 분할하여 사용하는 기법<br>오버레이 기법 : 프로그램의 크기가 주기억장치보다 클 때, 프로그램을 여러 조각으로 분할한 후 필요한 조각 순서대로 주기억장치에 적재한다. 실행중 주기억장치의 메모리가 부족하면 이미 존재하는 조각에 새로운 조각을 중첩하여 적재한다.<br>[해설작성자 : ck]</p>
-<h3 id="프로세서-상태전이"><a href="#프로세서-상태전이" class="headerlink" title="프로세서 상태전이"></a>프로세서 상태전이</h3><p>① dispatch (준비상태→실행상태)<br>준비 상태의 프로세스들 중에서 우선 순위가 가장 높은 프로세스를 선정하여 CPU를 할당함으로써 실행상태로 전환한다.<br>② timerrunout (실행상태→준비상태)<br>CPU의 지정된 할당 시간을 모두 사용한 프로세스는 다른 프로세스를 위해 다시 준비 상태로 되돌아간다.<br>③ block (실행상태→대기상태)<br>실행중인 프로세스가 입출력 명령을 만나면 인터럽트가 발생하여 입출력 전용 프로세서에게 CPU를 양도하고 자신은 대기 상태로 전환한다.<br>④ wake-up (대기상태→준비상태)<br>입출력 완료를 기다리다가 입출력 완료 신호가 들어오면 대기중인 프로세스는 준비 상태로 전환한다.<br>[해설작성자 : ㅁㄴㅇㄹ]</p>
-<h3 id="페이지-교체기법"><a href="#페이지-교체기법" class="headerlink" title="페이지 교체기법"></a>페이지 교체기법</h3><p>&lt;문제 해설&gt;<br>NUR (Not Used Recently)</p>
-<ul>
-<li>최근 사용하지 않은 페이지 교체</li>
-<li>최근 사용여부를 확인하기 위해(시간 오버헤드를 줄이기 위해), 각 페이지마다 참조/변형비트 사용</li>
-<li>교체순서 : 00 - 01 - 10 - 11 (0 : 참조비트, 1 : 변형비트)<br>[해설작성자 : 비슷한문제 해설에서 따옴]</li>
-</ul>
-<p>페이지 교체 기법 - 새 데이터를 주기억장치에 등록할 때<br>공간이 부족할 경우 먼저 있던 데이터를 빼고 넣는 행위를 말함.</p>
-<p>FIFO - 제일 오래된 데이터 제거<br>LFU - 가장 적게 사용 되었던 데이터 제거<br>LRU,NUR - ‘최근’ 가장 적게 사용되었던 데이터 제거<br>OPT - 앞으로 가장 적게 사용될 것 같은 데이터를 예측하여 제거(신뢰성 떨어짐)</p>
-<h3 id="브룩스-법칙"><a href="#브룩스-법칙" class="headerlink" title="브룩스 법칙"></a>브룩스 법칙</h3><p>브룩스(Brooks)의 법칙 : 소프트웨어 개발 일정이 지연된다고 해서 말기에 새로운 인원을 투입하면 작업 적응 기간과 부작용으로 인해 일정은 더욱 지연된다는 법칙이다.<br>[해설작성자 : strawsoojin]</p>
-<h3 id="결합도의-약한-순서"><a href="#결합도의-약한-순서" class="headerlink" title="결합도의 약한 순서"></a>결합도의 약한 순서</h3><p>데이터 -&gt; 스템프 -&gt; 제어 -&gt; 공통 -&gt; 컨텐츠 결합도 순서<br>[해설작성자 : 원동민]</p>
-<h3 id="전송제어-문자"><a href="#전송제어-문자" class="headerlink" title="전송제어 문자"></a>전송제어 문자</h3><ol>
-<li>SOH(Start Of Heding) : 헤딩 시작</li>
-<li>STX(Start of Text) : 본문 시작, 전송할 데이터 그룹의 시작</li>
-<li>SYN(Synchronous idle) : 동기 문자</li>
-<li>DLE(Data Link Escape) : 데이터 투과성을 위해 삽입(전송 제어 문자와 전송 데이터 구분을 위해 사용)<br>[해설작성자 : 실기도 화이팅!]</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;대부분의 자료는 &lt;a href=&quot;http://www.comcbt.com/cbt/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.comcbt.com/cbt/&lt;/a&gt; 의 정보처리기사 필기 문제를 참고하여 작성하였다.&lt;/
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
     
   </entry>
   
