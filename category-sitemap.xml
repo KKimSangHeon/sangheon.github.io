@@ -140,13 +140,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/CS/</loc>
-        <lastmod>2018-10-22T01:47:04.323Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/categories/CS/Design-Pattern/</loc>
         <lastmod>2018-10-22T01:47:04.323Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -191,6 +184,20 @@
     <url>
         <loc>http://KKimSangHeon.github.io/categories/About-Me/Introduction/</loc>
         <lastmod>2019-01-21T15:15:16.932Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/CS/</loc>
+        <lastmod>2019-02-07T11:31:59.183Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/CS/Data-Base/</loc>
+        <lastmod>2019-02-07T11:31:59.183Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
