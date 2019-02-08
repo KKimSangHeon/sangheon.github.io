@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>onem2m | Kim Sang Heon&#39;s Bolg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="" />
+    
+    
+
+      <meta name="description" content="https://www.youtube.com/watch?v=tBQ085PvR9E 요약 IOT의 4계층Application layer - 스마트홈, 스마트카, 헬스케어Service layer - IoT 서비스 개발이 용이하도록 공통으로 요구되는 기능 제공 oneM2M, AllJoyn, OICNetwork layer - 장치 간 또는 서비스간 연결, 정보전달 H">
+<meta property="og:type" content="article">
+<meta property="og:title" content="onem2m">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2019/02/08/onem2m/index.html">
+<meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
+<meta property="og:description" content="https://www.youtube.com/watch?v=tBQ085PvR9E 요약 IOT의 4계층Application layer - 스마트홈, 스마트카, 헬스케어Service layer - IoT 서비스 개발이 용이하도록 공통으로 요구되는 기능 제공 oneM2M, AllJoyn, OICNetwork layer - 장치 간 또는 서비스간 연결, 정보전달 H">
+<meta property="og:updated_time" content="2019-02-08T10:39:25.022Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="onem2m">
+<meta name="twitter:description" content="https://www.youtube.com/watch?v=tBQ085PvR9E 요약 IOT의 4계층Application layer - 스마트홈, 스마트카, 헬스케어Service layer - IoT 서비스 개발이 용이하도록 공통으로 요구되는 기능 제공 oneM2M, AllJoyn, OICNetwork layer - 장치 간 또는 서비스간 연결, 정보전달 H">
+        <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-101744076-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/2017/06/29/about-me/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/">About Me</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/Introduction/">Introduction</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/My-Projects/">My Projects</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/Travel/">Travel</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Search/">Search</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Sort/">Sort</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/">CS</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/Data-Base/">Data Base</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/Design-Pattern/">Design Pattern</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/IOT/">IOT</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/">Etc</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/HEX-Team/">HEX Team</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/면접/">면접</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/아무거나/">아무거나</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/자격증/">자격증</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/">Language</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/C/">C++</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/Embeded-C/">Embeded C</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/Python/">Python</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/SQL-Oracle/">SQL(Oracle)</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/OS/">OS</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/OS/Linux/">Linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/">Web/App</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/Angular2/">Angular2</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/Firebase/">Firebase</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/Servlet-JSP/">Servlet/JSP</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/Spring/">Spring</a></li></ul></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/CS/">CS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CS/IOT/">IOT</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2850951807285210"
+     data-ad-slot="1831621923"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                            <article id="post-onem2m" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        onem2m
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/02/08/onem2m/" class="article-date">
+            <time datetime="2019-02-08T09:44:50.000Z" itemprop="datePublished">2019-02-08</time>
+        </a>
+    </div>
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><a href="https://www.youtube.com/watch?v=tBQ085PvR9E" target="_blank" rel="external">https://www.youtube.com/watch?v=tBQ085PvR9E</a> 요약</p>
+<h3 id="IOT의-4계층"><a href="#IOT의-4계층" class="headerlink" title="IOT의 4계층"></a>IOT의 4계층</h3><p>Application layer - 스마트홈, 스마트카, 헬스케어<br>Service layer - IoT 서비스 개발이 용이하도록 공통으로 요구되는 기능 제공 <code>oneM2M, AllJoyn, OIC</code><br>Network layer - 장치 간 또는 서비스간 연결, 정보전달 <code>HTTP, CoAP, MQTT, Wi-Fi ...</code><br>Device layer - 센서 또는 다른 하드웨어</p>
+<h3 id="oneM2M"><a href="#oneM2M" class="headerlink" title="oneM2M ?"></a>oneM2M ?</h3><p>IoT 응용 개발이 용이하도록 공통 기능을 제공하는 국제표준 플랫폼 기술</p>
+<p>데이터관리, 연결 제어, 구독/통지, 보안, 그룹관리 ….</p>
+<p>등을 제공하는데 응용 개발자는 이를 적절히 활용하여 개발공수를 줄일 수 있다.</p>
+<h3 id="oneM2M발생이유"><a href="#oneM2M발생이유" class="headerlink" title="oneM2M발생이유"></a>oneM2M발생이유</h3><p>기존엔 응용이 특정한 디바이스를 타겟으로 개발되었다. 이를 개선할 수 있는것이 oneM2M</p>
+<h3 id="oneM2M-1"><a href="#oneM2M-1" class="headerlink" title="oneM2M"></a>oneM2M</h3><p>먼저 Use Case를 기반으로 요구사항을 도출해봤더니 다음과 같았다.<br><code>일반요구사항:</code> 성능, 네트워크 연결지원에 따른 다양한 IoT장치 지원, QoS 기반 메시지 전달, 과금관리…<br><code>장치관리요구사항:</code> <u>OMA DM</u>/ BBF TR-069, 펌웨어, 소프트웨어 제어, 고장제어<br><code>보안 요구사항:</code>요청자에 대한 인증/권한 부여, 기반 네트워크 보안기능 활용</p>
+<p>이를 기반으로 공통기능 CSE를 도출해냄<br>데이터관리 : 장치가 데이터를 저장할 수 없을때 플랫폼이 저장해준다<br>연결제어 : 레이턴시는 10ms 이하여야 한다.(예시)<br>구독. 통지 : 온도가 40도 이상이면 문자보내줘<br>과금 : 통신플랫폼의 사업자 이므로 이 또한 가능<br>이종 플랫폼 연동<br>사업자간 로밍 : 나의 커넥티드 카가 해외로 넘어가게 되면 로밍을 제공<br>기타 많은 공통기능 제공</p>
+<p>oneM2M 안드로이드 플랫폼이랑 유사하다. CSE는 공통기능이 포함된 엔티티다.</p>
+<p>AE를 카카오톡이라고 보면 좋다. 카톡은 안드로이드에 존재하는 간단한 API를 호출해 메세지를 보낸다.<br>즉 AE개발자는 CSE를 적절히 활용하면 된다.</p>
+<p>여러플랫폼이 서로 연결되어 큰 iot를 만들어 낼 수 있게된다.</p>
+<h3 id="Distributed-Platform-형태인-oneM2M"><a href="#Distributed-Platform-형태인-oneM2M" class="headerlink" title="Distributed Platform 형태인 oneM2M"></a>Distributed Platform 형태인 oneM2M</h3><p>IOT의 호출순서는 다음과 같다고 가정 하자.<br><code>디바이스 - 게이트웨이 - 클라우드 - 게이트웨이 - 디바이스</code><br>과거에는 클라우드에만 CSE를 탑재하여 호출하였지만 최근에는 게이트웨이, 디바이스에도 이를 탑재하여 분산처리를 한다.<br>물론 하드웨어의 용량이 부족할 경우 플랫폼 기능을 배제하기도 한다. 이 경우 <u>Constrained Device Support</u> 라고 한다.</p>
+<h3 id="그렇다면-CSE를-어떻게-호출할까"><a href="#그렇다면-CSE를-어떻게-호출할까" class="headerlink" title="그렇다면 CSE를 어떻게 호출할까?"></a>그렇다면 CSE를 어떻게 호출할까?</h3><p>과거에는 RPC(Remote Procedure Call)을 활용하였지만 REST 기반 API구조를 사용한다.<br>CSE의 기능들을 REST 형태로 개방한다. 즉 URI만 갖고있으면 웹브라우저에서 기능을 호출할 수 있다.</p>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2850951807285210"
+     data-ad-slot="1831621923"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://KKimSangHeon.github.io/2019/02/08/onem2m/" data-id="cjrvy8rvg00ggi4v700tkupuh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/KKimSangHeon/" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/tkdgjs1501/" target="_blank">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/02/08/mine/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            oneM2M, OMA-DM 생각정리..
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/02/08/TR-069/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">TR-069</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">16</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Travel/">Travel</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/">CS</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Data-Base/">Data Base</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Design-Pattern/">Design Pattern</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/IOT/">IOT</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/">Etc</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/HEX-Team/">HEX Team</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/면접/">면접</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/아무거나/">아무거나</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/자격증/">자격증</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">55</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/C/">C++</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Embeded-C/">Embeded C</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Java/">Java</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Python/">Python</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/SQL-Oracle/">SQL(Oracle)</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/OS/Linux/">Linux</a><span class="category-list-count">45</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/">Web/App</a><span class="category-list-count">25</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Angular2/">Angular2</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Firebase/">Firebase</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Servlet-JSP/">Servlet/JSP</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Spring/">Spring</a><span class="category-list-count">7</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Kim Sang Heon</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'https-kkimsangheon-github-io-2';
+    
+    
+    var disqus_url = 'http://KKimSangHeon.github.io/2019/02/08/onem2m/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

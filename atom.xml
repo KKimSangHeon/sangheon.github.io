@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-02-08T06:49:24.432Z</updated>
+  <updated>2019-02-08T11:04:21.570Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,65 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>oneM2M, OMA-DM 생각정리..</title>
+    <link href="http://KKimSangHeon.github.io/2019/02/08/mine/"/>
+    <id>http://KKimSangHeon.github.io/2019/02/08/mine/</id>
+    <published>2019-02-08T10:53:12.000Z</published>
+    <updated>2019-02-08T11:04:21.570Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="oneM2M"><a href="#oneM2M" class="headerlink" title="oneM2M"></a>oneM2M</h3><p>iot 솔루션을 제공함에 있어 여러 벤더를 맞추기란 힘들다… oneM2M이라는 표준을 만들고 이를 여러 벤더가 맞춤으로써 응용개발사 또한 iot시스템을 개발함에 있어 개발공수를 낮출 수 있게된다.<br>oneM2M에는 CSE라는게 있는데 공통서비스를 제공하는것이다. 가령 데이터 저장, 요금청구 등등 다양하게 있다..<br>통신사업자는 oneM2M 표준을 기반으로 CSE를 사용하는 플랫폼을 만들고 일반에 공개하게 되면 일반 개발자들은 통신사업자가 만든 플랫폼을 사용할 수 있게된다.<br>CSE는 REST 형태로 제공되어 편리하다는 장점이 있으며 최근에는 일반 응용개발에 oneM2M을 적용하여 CSE를 적절히 활용하는 경우도 있다. 이를 Distributed Platform 형태 라고 한다</p>
+<h3 id="oneM2M과-OMA-DM의-상관관계"><a href="#oneM2M과-OMA-DM의-상관관계" class="headerlink" title="oneM2M과 OMA-DM의 상관관계???"></a>oneM2M과 OMA-DM의 상관관계???</h3><p>아래부터 개인적인생각입니다. 참고하지도 마세요!<br>oneM2M은 장치에서 받은 데이터를 활용하고 정제하는 표준이라고 생각한다. 즉 디바이스의 정보를 뭐 제어하거나 어떻게 가져오는건 아니라 생각한다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;oneM2M&quot;&gt;&lt;a href=&quot;#oneM2M&quot; class=&quot;headerlink&quot; title=&quot;oneM2M&quot;&gt;&lt;/a&gt;oneM2M&lt;/h3&gt;&lt;p&gt;iot 솔루션을 제공함에 있어 여러 벤더를 맞추기란 힘들다… oneM2M이라는 표준을 만들고 이를
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="IOT" scheme="http://KKimSangHeon.github.io/categories/CS/IOT/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>onem2m</title>
+    <link href="http://KKimSangHeon.github.io/2019/02/08/onem2m/"/>
+    <id>http://KKimSangHeon.github.io/2019/02/08/onem2m/</id>
+    <published>2019-02-08T09:44:50.000Z</published>
+    <updated>2019-02-08T10:39:25.022Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.youtube.com/watch?v=tBQ085PvR9E" target="_blank" rel="external">https://www.youtube.com/watch?v=tBQ085PvR9E</a> 요약</p>
+<h3 id="IOT의-4계층"><a href="#IOT의-4계층" class="headerlink" title="IOT의 4계층"></a>IOT의 4계층</h3><p>Application layer - 스마트홈, 스마트카, 헬스케어<br>Service layer - IoT 서비스 개발이 용이하도록 공통으로 요구되는 기능 제공 <code>oneM2M, AllJoyn, OIC</code><br>Network layer - 장치 간 또는 서비스간 연결, 정보전달 <code>HTTP, CoAP, MQTT, Wi-Fi ...</code><br>Device layer - 센서 또는 다른 하드웨어</p>
+<h3 id="oneM2M"><a href="#oneM2M" class="headerlink" title="oneM2M ?"></a>oneM2M ?</h3><p>IoT 응용 개발이 용이하도록 공통 기능을 제공하는 국제표준 플랫폼 기술</p>
+<p>데이터관리, 연결 제어, 구독/통지, 보안, 그룹관리 ….</p>
+<p>등을 제공하는데 응용 개발자는 이를 적절히 활용하여 개발공수를 줄일 수 있다.</p>
+<h3 id="oneM2M발생이유"><a href="#oneM2M발생이유" class="headerlink" title="oneM2M발생이유"></a>oneM2M발생이유</h3><p>기존엔 응용이 특정한 디바이스를 타겟으로 개발되었다. 이를 개선할 수 있는것이 oneM2M</p>
+<h3 id="oneM2M-1"><a href="#oneM2M-1" class="headerlink" title="oneM2M"></a>oneM2M</h3><p>먼저 Use Case를 기반으로 요구사항을 도출해봤더니 다음과 같았다.<br><code>일반요구사항:</code> 성능, 네트워크 연결지원에 따른 다양한 IoT장치 지원, QoS 기반 메시지 전달, 과금관리…<br><code>장치관리요구사항:</code> <u>OMA DM</u>/ BBF TR-069, 펌웨어, 소프트웨어 제어, 고장제어<br><code>보안 요구사항:</code>요청자에 대한 인증/권한 부여, 기반 네트워크 보안기능 활용</p>
+<p>이를 기반으로 공통기능 CSE를 도출해냄<br>데이터관리 : 장치가 데이터를 저장할 수 없을때 플랫폼이 저장해준다<br>연결제어 : 레이턴시는 10ms 이하여야 한다.(예시)<br>구독. 통지 : 온도가 40도 이상이면 문자보내줘<br>과금 : 통신플랫폼의 사업자 이므로 이 또한 가능<br>이종 플랫폼 연동<br>사업자간 로밍 : 나의 커넥티드 카가 해외로 넘어가게 되면 로밍을 제공<br>기타 많은 공통기능 제공</p>
+<p>oneM2M 안드로이드 플랫폼이랑 유사하다. CSE는 공통기능이 포함된 엔티티다.</p>
+<p>AE를 카카오톡이라고 보면 좋다. 카톡은 안드로이드에 존재하는 간단한 API를 호출해 메세지를 보낸다.<br>즉 AE개발자는 CSE를 적절히 활용하면 된다.</p>
+<p>여러플랫폼이 서로 연결되어 큰 iot를 만들어 낼 수 있게된다.</p>
+<h3 id="Distributed-Platform-형태인-oneM2M"><a href="#Distributed-Platform-형태인-oneM2M" class="headerlink" title="Distributed Platform 형태인 oneM2M"></a>Distributed Platform 형태인 oneM2M</h3><p>IOT의 호출순서는 다음과 같다고 가정 하자.<br><code>디바이스 - 게이트웨이 - 클라우드 - 게이트웨이 - 디바이스</code><br>과거에는 클라우드에만 CSE를 탑재하여 호출하였지만 최근에는 게이트웨이, 디바이스에도 이를 탑재하여 분산처리를 한다.<br>물론 하드웨어의 용량이 부족할 경우 플랫폼 기능을 배제하기도 한다. 이 경우 <u>Constrained Device Support</u> 라고 한다.</p>
+<h3 id="그렇다면-CSE를-어떻게-호출할까"><a href="#그렇다면-CSE를-어떻게-호출할까" class="headerlink" title="그렇다면 CSE를 어떻게 호출할까?"></a>그렇다면 CSE를 어떻게 호출할까?</h3><p>과거에는 RPC(Remote Procedure Call)을 활용하였지만 REST 기반 API구조를 사용한다.<br>CSE의 기능들을 REST 형태로 개방한다. 즉 URI만 갖고있으면 웹브라우저에서 기능을 호출할 수 있다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=tBQ085PvR9E&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.youtube.com/watch?v=tBQ085PvR9E&lt;/a&gt; 요약&lt;/
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="IOT" scheme="http://KKimSangHeon.github.io/categories/CS/IOT/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>TR-069</title>
@@ -54,14 +113,14 @@
     <link href="http://KKimSangHeon.github.io/2019/02/08/oma-dm/"/>
     <id>http://KKimSangHeon.github.io/2019/02/08/oma-dm/</id>
     <published>2019-02-08T01:29:08.000Z</published>
-    <updated>2019-02-08T07:22:37.351Z</updated>
+    <updated>2019-02-08T10:50:18.335Z</updated>
     
     <content type="html"><![CDATA[<h4 id="OMA-Open-Mobile-Alliance"><a href="#OMA-Open-Mobile-Alliance" class="headerlink" title="OMA(Open Mobile Alliance)"></a>OMA(Open Mobile Alliance)</h4><p>이동통신 서비스 애플리케이션 표준화 기구이며 일부 애플리케이션 프로토콜을 다루고 있는 산업 포럼의 증진에 응하기 위해 2002년 6월 설립되었다.</p>
 <h4 id="Device-Management-DM"><a href="#Device-Management-DM" class="headerlink" title="Device Management(DM) ?"></a>Device Management(DM) ?</h4><p><code>장치 관리 기술이란 직접 수익을 창출하는 기술은 아니지만, 사업자가 응용 서비스를 시작하고 개선하고 관리하는 과정에서 겪는 문제점들을 해결해 줄 수 있는 효과적인 기술로서 이들 서비스를 통한 수익 창출에 효과적인 솔루션이다.</code><br>WAP, 3G Partnership Project(3GPP), Open Service Gateway Initiative(OSGi), Telemanagement Forum(TMF)등은 그들이 개발한 응용 서비스를 관리해 줄 수 있는 기술, 그들이 개발한 서비스 관리 기법을 가능하게 해줄 기술을 필요로 하게 되었다.</p>
-<h4 id="OMA-DA"><a href="#OMA-DA" class="headerlink" title="OMA-DA"></a>OMA-DA</h4><p><code>장치(단말기) 안에 존재하는 데이터를 서버가 원격으로 접근할 수 있도록 하는 Technology와 규격을 OMA가 제정함</code></p>
+<h4 id="OMA-DM"><a href="#OMA-DM" class="headerlink" title="OMA-DM"></a>OMA-DM</h4><p><code>장치(단말기) 안에 존재하는 데이터를 서버가 원격으로 접근할 수 있도록 하는 Technology와 규격을 OMA가 제정함</code></p>
 <p>OMA 장치 관리 기술은 범세계적인 이동 통신 시장의 특별한 Use Case와 요구 사항을 고려하여 개발되고 있으며, 특히 이동 단말기의 종류, 운영체제, 지역, 네트워크 기술에 제한되지 않은 열린 기술이기 때문에 결국 기존의 일부 특정 네트워크와 단말기에 국한된 장치 관리 기술들을 통합하거나 대체할 수 있는 기술이다.</p>
 <p>OMA-DM 은 초기 설정, 소프트웨어 및 펌웨어 관리, 원 격 제어, 진단 및 모니터링 등의 기능을 가지고 있으며, 스마트폰 등의 모바일 단말을 대 상으로 관리 서비스를 제공한다.</p>
-<h4 id="OMA-DA-프로토콜"><a href="#OMA-DA-프로토콜" class="headerlink" title="OMA-DA 프로토콜"></a>OMA-DA 프로토콜</h4><p>두 통신 상대가 장치 관리 서비스를 제공하는 서버와 장치 관리 서비스를 받아 처리하는 클라이언트의 관계를 갖는다는 관점에서 비대칭 구조를 갖는 프로토콜이다.<br>장치 관리 서버의 역할은 클라이언트에게 장치 관리 명령을 내리는 것이고 클라이언트의 역할은 주어진 명령을 수행하는 것이다. 장치 관리 서버는 장치 관리 명령을 통해 장치에 설치된 응용 서비스의 파라미터를 변경할 수 있으며, 새로운 파라미터를 생성하도록 할 수 있으며, 장치 내부의 정보를 읽어낼 수 있으며, 응용 소프트웨어를 장치에 설치하고, 그것들의 실행을 원격으로 제어할 수 있을 뿐 아니라 운용체제(OS)를 다시 설치할 수도 있다. <u>결국, OMA Device Management 프로토콜이란 장치의 자원을 장치 관리 서버가 원격으로 접근할 수 있게하는 프로토콜이며, 장치 관리 프로토콜을 통해 관리할 수 있는 이러한 자원을 관리 객체(Management Object) 라고 부른다</u></p>
+<h4 id="OMA-DM-프로토콜"><a href="#OMA-DM-프로토콜" class="headerlink" title="OMA-DM 프로토콜"></a>OMA-DM 프로토콜</h4><p>두 통신 상대가 장치 관리 서비스를 제공하는 서버와 장치 관리 서비스를 받아 처리하는 클라이언트의 관계를 갖는다는 관점에서 비대칭 구조를 갖는 프로토콜이다.<br>장치 관리 서버의 역할은 클라이언트에게 장치 관리 명령을 내리는 것이고 클라이언트의 역할은 주어진 명령을 수행하는 것이다. 장치 관리 서버는 장치 관리 명령을 통해 장치에 설치된 응용 서비스의 파라미터를 변경할 수 있으며, 새로운 파라미터를 생성하도록 할 수 있으며, 장치 내부의 정보를 읽어낼 수 있으며, 응용 소프트웨어를 장치에 설치하고, 그것들의 실행을 원격으로 제어할 수 있을 뿐 아니라 운용체제(OS)를 다시 설치할 수도 있다. <u>결국, OMA Device Management 프로토콜이란 장치의 자원을 장치 관리 서버가 원격으로 접근할 수 있게하는 프로토콜이며, 장치 관리 프로토콜을 통해 관리할 수 있는 이러한 자원을 관리 객체(Management Object) 라고 부른다</u></p>
 <p>서버와 클라이언트간의 장치 관리 <u>명령과 결과는 원격으로 XML에 기반한 마크업(Markup) 언어인 SyncML 메시지를 HTTP, WSP, OBEX 등의 유선, 무선, 또는 적외선 전송 프로토콜을 통해 서로 전송된다</u>. 뿐만 아니라, Device Management(DM) Tree라는 장치 관리 프로토콜만의 파일 시스템을 정의하고 각 노드를 URI를 통해 접근할 수 있도록 하였다. 그리고, 장치 고유의 데이터 베이스 또는 파일 시스템은 DM Tree와 메핑을 통해 장치 관리 서버에게 투사된다. 그러므로 어떤 장치는 결국 장치 관리 서버에게 있어서 하나의 DM Tree로 나타나게 되는 셈이다. 또한 동일한 장치라도 주어진 접근 권한에 따라 서로 다른 서버에게 다른 형태로 나타나게 된다.</p>
 <h4 id="OMA-Device-Management-기술-규격의-구성"><a href="#OMA-Device-Management-기술-규격의-구성" class="headerlink" title="OMA Device Management 기술 규격의 구성"></a>OMA Device Management 기술 규격의 구성</h4><p>아래 그림의 규격 구성에 깔린 의도는 첫째로, <u>기본 규격(Base Protocol)을 다른“Silo”규격들과 분리함으로써 기본 규격이 오랜 기간동안 변하지 않고 꾸준한 안정화 과정을 지날 수 있도록 한다는 것이다.</u> 안정적인 기본 프로토콜의 바탕 위에 변화하는 이동 통신 시장의 요구를 충족시키기 위한 독립적인“Silo”프로토콜들을 정의하도록 함으로써 최소한의 노력으로 안정된 토대 위에서 시장이 필요로 하는 규격을 공급할 수 있는 방안을 마련하였다. 이것은, 각“Silo”규격들이 오직 기본 프로토콜에만 의존적이면서 서로 간에 독립적인 구조를 갖는 프로토콜이기 때문이기도 하다. 둘째로, <u>자료 동기 프로토콜과 SyncML 파서와 SyncML Toolkit을 공유함으로써 기존 SyncML Toolkit에 기반한 네트워크 인프라를 보호하고 재활용할 수 있도록 하기 위함이다.</u></p>
 <img src="/2019/02/08/oma-dm/image1.PNG" alt="OMA Device Management 규격의 구성" title="OMA Device Management 규격의 구성">
@@ -90,7 +149,7 @@
     <link href="http://KKimSangHeon.github.io/2019/02/07/onem2m/"/>
     <id>http://KKimSangHeon.github.io/2019/02/07/onem2m/</id>
     <published>2019-02-07T11:46:50.000Z</published>
-    <updated>2019-02-08T06:55:46.828Z</updated>
+    <updated>2019-02-08T09:53:14.290Z</updated>
     
     <content type="html"><![CDATA[<h3 id="M2M-Machine-to-Machine"><a href="#M2M-Machine-to-Machine" class="headerlink" title="M2M(Machine to Machine)"></a>M2M(Machine to Machine)</h3><ul>
 <li>사물 또는 지능화된 기기들이 사람을 대신해 통신의 양쪽 모두를 맡고 있는 기술을 의미</li>
@@ -186,6 +245,7 @@
 </ul>
 <hr>
 <h4 id="MQTT"><a href="#MQTT" class="headerlink" title="MQTT"></a>MQTT</h4><p>MQTT(Message Queue for Telemetry Transport)는 M2M 또는 IoT 기기와 G/W의 연동을 위해 정의된 프로토콜입니다. 경량 프로토콜로 저전력 장비에서도 운용 가능하며 network bandwidth가 작은 곳에서도 충분히 운용 가능하도록 설계된 프로토콜입니다.</p>
+<hr>
 <h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><p><a href="http://www.iotocean.org/common/download.asp?pach=/upload/Board/&amp;file=6VXFR20174271377.pdf" target="_blank" rel="external">http://www.iotocean.org/common/download.asp?pach=/upload/Board/&amp;file=6VXFR20174271377.pdf</a><br>(IoT 표준/기술 동향 2017-9호) 2017-9호_oneM2M Release 3 표준<br><a href="http://www.iotforum.kr/board1/read.asp?bdNum=101&amp;sc_field=&amp;sc_word=&amp;bdCode=13350" target="_blank" rel="external">http://www.iotforum.kr/board1/read.asp?bdNum=101&amp;sc_field=&amp;sc_word=&amp;bdCode=13350</a><br><a href="http://woowabros.github.io/experience/2017/08/11/ost_mqtt_broker.html" target="_blank" rel="external">http://woowabros.github.io/experience/2017/08/11/ost_mqtt_broker.html</a></p>
 ]]></content>
     
@@ -377,6 +437,70 @@
   </entry>
   
   <entry>
+    <title>KT SW개발직무 면접</title>
+    <link href="http://KKimSangHeon.github.io/2018/10/22/interview4/"/>
+    <id>http://KKimSangHeon.github.io/2018/10/22/interview4/</id>
+    <published>2018-10-22T03:36:14.000Z</published>
+    <updated>2018-10-23T23:37:44.676Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2018년 8월 ~ 2018년 10월</p>
+<h3 id="채용공고"><a href="#채용공고" class="headerlink" title="채용공고"></a>채용공고</h3><img src="/2018/10/22/interview4/kt.jpg" alt="공고" title="공고">
+<h3 id="필기시험"><a href="#필기시험" class="headerlink" title="필기시험"></a>필기시험</h3><p>적성이 아닌 전공, 인성검사로서 진성여중에서 시험을 치뤘었다. 정말 많은사람들이 왔었고 문제의 난이도는 평소 CS에 대한 공부만 충실했다면 무난한 난이도였다.</p>
+<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>면접관 3분과 지원자 1명의 면접형태로서 면접 전 간단한 코딩 테스트를 본다. 푼 문제를 복사하여 면접관분들께 설명드리면서 면접이 시작된다. 이후엔 자기소개서 위주의 프로젝트, 경력관련 질문들이 주를 이뤘다. 여기서 자신감을 갖고 대답했던것이 좋게 작용했던것 같다.</p>
+<h3 id="2차면접"><a href="#2차면접" class="headerlink" title="2차면접"></a>2차면접</h3><p>마찬가지로 면접관 3분과 면접을 본다. 정말 많이 떨렸지만 충분히 준비하고 또 준비했기에 떨지않고 잘 대답할 수 있었다. 주로 경력에 관한 질문이 많았으며 인성질문도 있었다.</p>
+<h3 id="건강검진"><a href="#건강검진" class="headerlink" title="건강검진"></a>건강검진</h3><p>건강검진 이틀전 술을 마신탓에 약간 걱정은 됐으나 다행히 별 탈 없이 통과할 수 있었다.</p>
+<h3 id="합격"><a href="#합격" class="headerlink" title="합격"></a>합격</h3><p>두달간의 긴 여정을 잘 마무리 짓고 최종합격할 수 있었다.<br><img src="/2018/10/22/interview4/kt2.jpg" alt="합격!" title="합격!"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2018년 8월 ~ 2018년 10월&lt;/p&gt;
+&lt;h3 id=&quot;채용공고&quot;&gt;&lt;a href=&quot;#채용공고&quot; class=&quot;headerli
+    
+    </summary>
+    
+      <category term="Etc" scheme="http://KKimSangHeon.github.io/categories/Etc/"/>
+    
+      <category term="면접" scheme="http://KKimSangHeon.github.io/categories/Etc/%EB%A9%B4%EC%A0%91/"/>
+    
+    
+      <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
+    
+      <category term="KT" scheme="http://KKimSangHeon.github.io/tags/KT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>알티캐스트 면접</title>
+    <link href="http://KKimSangHeon.github.io/2018/10/22/interview2/"/>
+    <id>http://KKimSangHeon.github.io/2018/10/22/interview2/</id>
+    <published>2018-10-22T03:36:14.000Z</published>
+    <updated>2018-10-23T23:25:27.959Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2018년 6월</p>
+<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>면접관 두분과 지원자 두명 다대다 면접으로 진행된다.<br>경력에 대한 질문, 프로젝트에 대한 질문이 주를 이루며 자기소개서 내용이 거짓이 아니라면 충분히 대답이 가능한 수준이었다.</p>
+<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p>2차면접은 따로 없이 최종 합격통보를 받았다.<br>편안한 분위기속에서 진행되었으며 사옥을 이전한지 얼마되지 않아 깨끗한 느낌을 많이받았다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2018년 6월&lt;/p&gt;
+&lt;h3 id=&quot;1차면접&quot;&gt;&lt;a href=&quot;#1차면접&quot; class=&quot;headerlink&quot; title=&quot;1
+    
+    </summary>
+    
+      <category term="Etc" scheme="http://KKimSangHeon.github.io/categories/Etc/"/>
+    
+      <category term="면접" scheme="http://KKimSangHeon.github.io/categories/Etc/%EB%A9%B4%EC%A0%91/"/>
+    
+    
+      <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
+    
+      <category term="알티캐스트" scheme="http://KKimSangHeon.github.io/tags/%EC%95%8C%ED%8B%B0%EC%BA%90%EC%8A%A4%ED%8A%B8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>알지피코리아(요기요,배달통) 면접</title>
     <link href="http://KKimSangHeon.github.io/2018/10/22/interview/"/>
     <id>http://KKimSangHeon.github.io/2018/10/22/interview/</id>
@@ -411,21 +535,23 @@
   </entry>
   
   <entry>
-    <title>알티캐스트 면접</title>
-    <link href="http://KKimSangHeon.github.io/2018/10/22/interview2/"/>
-    <id>http://KKimSangHeon.github.io/2018/10/22/interview2/</id>
+    <title>비트 빅데이터 전문가 양성과정 면접</title>
+    <link href="http://KKimSangHeon.github.io/2018/10/22/interview5/"/>
+    <id>http://KKimSangHeon.github.io/2018/10/22/interview5/</id>
     <published>2018-10-22T03:36:14.000Z</published>
-    <updated>2018-10-23T23:25:27.959Z</updated>
+    <updated>2018-10-24T00:07:41.658Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2018년 6월</p>
-<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>면접관 두분과 지원자 두명 다대다 면접으로 진행된다.<br>경력에 대한 질문, 프로젝트에 대한 질문이 주를 이루며 자기소개서 내용이 거짓이 아니라면 충분히 대답이 가능한 수준이었다.</p>
-<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p>2차면접은 따로 없이 최종 합격통보를 받았다.<br>편안한 분위기속에서 진행되었으며 사옥을 이전한지 얼마되지 않아 깨끗한 느낌을 많이받았다.</p>
+    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2017년 6월</p>
+<p>국비지원 교육을 받기위해 필기시험, 면접을 진행한다. 보통 다른과정은 면접이 없지만 전문가 과정이라 회장님과의 면접이 있다고 들었다.</p>
+<h3 id="필기시험"><a href="#필기시험" class="headerlink" title="필기시험"></a>필기시험</h3><p>자바 필기시험을 진행하였으며 난이도는 쉬운편이었다. 오버라이딩, 인터페이스 수준정도의 개념까지만 잘 이해하고 있다면 쉽게 풀 수 있다.</p>
+<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>비트컴퓨터 회장님과 지원자들과 면접을 진행한다.<br>많은 지원자를 대상으로 면접을 진행하기 때문에 자신이 진행했던 프로젝트가 뭐가있는지 물어보고 기술력을 판단하신다. 당락은 그 자리에서 결정되는데 합격률이 생각보다 많이 낮았던 것이 인상깊었다.</p>
+<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p>합격하여 국비지원을 받으며 교육을 수강할 수 있었다. 강사님께서 정말 고수라 많은것을 배울 수 있었고 실무에서 인턴경험 이상으로 값진 경험이었다.</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2018년 6월&lt;/p&gt;
-&lt;h3 id=&quot;1차면접&quot;&gt;&lt;a href=&quot;#1차면접&quot; class=&quot;headerlink&quot; title=&quot;1
+      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2017년 6월&lt;/p&gt;
+&lt;p&gt;국비지원 교육을 받기위해 필기시험, 면접을 진행한다. 보통 다른과정은 면접이 없지만 전문가 과정이
     
     </summary>
     
@@ -436,7 +562,9 @@
     
       <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
     
-      <category term="알티캐스트" scheme="http://KKimSangHeon.github.io/tags/%EC%95%8C%ED%8B%B0%EC%BA%90%EC%8A%A4%ED%8A%B8/"/>
+      <category term="비트" scheme="http://KKimSangHeon.github.io/tags/%EB%B9%84%ED%8A%B8/"/>
+    
+      <category term="국비지원" scheme="http://KKimSangHeon.github.io/tags/%EA%B5%AD%EB%B9%84%EC%A7%80%EC%9B%90/"/>
     
   </entry>
   
@@ -501,74 +629,6 @@
       <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
     
       <category term="웍스모바일" scheme="http://KKimSangHeon.github.io/tags/%EC%9B%8D%EC%8A%A4%EB%AA%A8%EB%B0%94%EC%9D%BC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>비트 빅데이터 전문가 양성과정 면접</title>
-    <link href="http://KKimSangHeon.github.io/2018/10/22/interview5/"/>
-    <id>http://KKimSangHeon.github.io/2018/10/22/interview5/</id>
-    <published>2018-10-22T03:36:14.000Z</published>
-    <updated>2018-10-24T00:07:41.658Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2017년 6월</p>
-<p>국비지원 교육을 받기위해 필기시험, 면접을 진행한다. 보통 다른과정은 면접이 없지만 전문가 과정이라 회장님과의 면접이 있다고 들었다.</p>
-<h3 id="필기시험"><a href="#필기시험" class="headerlink" title="필기시험"></a>필기시험</h3><p>자바 필기시험을 진행하였으며 난이도는 쉬운편이었다. 오버라이딩, 인터페이스 수준정도의 개념까지만 잘 이해하고 있다면 쉽게 풀 수 있다.</p>
-<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>비트컴퓨터 회장님과 지원자들과 면접을 진행한다.<br>많은 지원자를 대상으로 면접을 진행하기 때문에 자신이 진행했던 프로젝트가 뭐가있는지 물어보고 기술력을 판단하신다. 당락은 그 자리에서 결정되는데 합격률이 생각보다 많이 낮았던 것이 인상깊었다.</p>
-<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p>합격하여 국비지원을 받으며 교육을 수강할 수 있었다. 강사님께서 정말 고수라 많은것을 배울 수 있었고 실무에서 인턴경험 이상으로 값진 경험이었다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2017년 6월&lt;/p&gt;
-&lt;p&gt;국비지원 교육을 받기위해 필기시험, 면접을 진행한다. 보통 다른과정은 면접이 없지만 전문가 과정이
-    
-    </summary>
-    
-      <category term="Etc" scheme="http://KKimSangHeon.github.io/categories/Etc/"/>
-    
-      <category term="면접" scheme="http://KKimSangHeon.github.io/categories/Etc/%EB%A9%B4%EC%A0%91/"/>
-    
-    
-      <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
-    
-      <category term="비트" scheme="http://KKimSangHeon.github.io/tags/%EB%B9%84%ED%8A%B8/"/>
-    
-      <category term="국비지원" scheme="http://KKimSangHeon.github.io/tags/%EA%B5%AD%EB%B9%84%EC%A7%80%EC%9B%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>KT SW개발직무 면접</title>
-    <link href="http://KKimSangHeon.github.io/2018/10/22/interview4/"/>
-    <id>http://KKimSangHeon.github.io/2018/10/22/interview4/</id>
-    <published>2018-10-22T03:36:14.000Z</published>
-    <updated>2018-10-23T23:37:44.676Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2018년 8월 ~ 2018년 10월</p>
-<h3 id="채용공고"><a href="#채용공고" class="headerlink" title="채용공고"></a>채용공고</h3><img src="/2018/10/22/interview4/kt.jpg" alt="공고" title="공고">
-<h3 id="필기시험"><a href="#필기시험" class="headerlink" title="필기시험"></a>필기시험</h3><p>적성이 아닌 전공, 인성검사로서 진성여중에서 시험을 치뤘었다. 정말 많은사람들이 왔었고 문제의 난이도는 평소 CS에 대한 공부만 충실했다면 무난한 난이도였다.</p>
-<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>면접관 3분과 지원자 1명의 면접형태로서 면접 전 간단한 코딩 테스트를 본다. 푼 문제를 복사하여 면접관분들께 설명드리면서 면접이 시작된다. 이후엔 자기소개서 위주의 프로젝트, 경력관련 질문들이 주를 이뤘다. 여기서 자신감을 갖고 대답했던것이 좋게 작용했던것 같다.</p>
-<h3 id="2차면접"><a href="#2차면접" class="headerlink" title="2차면접"></a>2차면접</h3><p>마찬가지로 면접관 3분과 면접을 본다. 정말 많이 떨렸지만 충분히 준비하고 또 준비했기에 떨지않고 잘 대답할 수 있었다. 주로 경력에 관한 질문이 많았으며 인성질문도 있었다.</p>
-<h3 id="건강검진"><a href="#건강검진" class="headerlink" title="건강검진"></a>건강검진</h3><p>건강검진 이틀전 술을 마신탓에 약간 걱정은 됐으나 다행히 별 탈 없이 통과할 수 있었다.</p>
-<h3 id="합격"><a href="#합격" class="headerlink" title="합격"></a>합격</h3><p>두달간의 긴 여정을 잘 마무리 짓고 최종합격할 수 있었다.<br><img src="/2018/10/22/interview4/kt2.jpg" alt="합격!" title="합격!"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2018년 8월 ~ 2018년 10월&lt;/p&gt;
-&lt;h3 id=&quot;채용공고&quot;&gt;&lt;a href=&quot;#채용공고&quot; class=&quot;headerli
-    
-    </summary>
-    
-      <category term="Etc" scheme="http://KKimSangHeon.github.io/categories/Etc/"/>
-    
-      <category term="면접" scheme="http://KKimSangHeon.github.io/categories/Etc/%EB%A9%B4%EC%A0%91/"/>
-    
-    
-      <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
-    
-      <category term="KT" scheme="http://KKimSangHeon.github.io/tags/KT/"/>
     
   </entry>
   
@@ -677,75 +737,6 @@
     
     
       <category term="여행" scheme="http://KKimSangHeon.github.io/tags/%EC%97%AC%ED%96%89/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Singleton 디자인패턴</title>
-    <link href="http://KKimSangHeon.github.io/2018/09/11/pattern2/"/>
-    <id>http://KKimSangHeon.github.io/2018/09/11/pattern2/</id>
-    <published>2018-09-11T07:42:21.000Z</published>
-    <updated>2018-09-27T19:05:02.359Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="싱글톤패턴"><a href="#싱글톤패턴" class="headerlink" title="싱글톤패턴"></a>싱글톤패턴</h3><p>클래스에 대한 오직 하나의 인스턴스 만이 허용되는 패턴이다.<br>이를위해 생성자를 private로 선언하여 외부에서 인스턴스를 생성하는것을 방지한다.<br>싱글톤 패턴을 사용할땐 다중 스레드에 주의해야 한다.</p>
-<p>스레드에 안전한 코드는 다음과 같다.</p>
-<figure class="highlight java"><figcaption><span>Singleton</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</div><div class="line">  <span class="keyword">public</span>:</div><div class="line">    <span class="keyword">static</span> Singleton* getInstance() &#123;</div><div class="line">        <span class="keyword">if</span> (instance == <span class="number">0</span>) &#123;</div><div class="line">            Lock lock;</div><div class="line">            <span class="keyword">if</span> (instance == <span class="number">0</span> )&#123;</div><div class="line">              instance = <span class="keyword">new</span> Singleton;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">      <span class="keyword">return</span> instance;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">private</span>:</div><div class="line">      Singleton() &#123;&#125;</div><div class="line">      <span class="keyword">static</span> Singleton* instance;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>클래스가 적재되는순간 즉 더 빠르게 인스턴스화를 하기 위해서는 아래와 같이 코드를 작성하면 된다. 이 또한 스레드에 주의해서 작성해야 한다는것을 잊지말자.</p>
-<figure class="highlight java"><figcaption><span>Singleton</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</div><div class="line">  <span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();</div><div class="line">  Singleton() &#123;&#125;</div><div class="line">  <span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</div><div class="line">      <span class="keyword">return</span> instance;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;싱글톤패턴&quot;&gt;&lt;a href=&quot;#싱글톤패턴&quot; class=&quot;headerlink&quot; title=&quot;싱글톤패턴&quot;&gt;&lt;/a&gt;싱글톤패턴&lt;/h3&gt;&lt;p&gt;클래스에 대한 오직 하나의 인스턴스 만이 허용되는 패턴이다.&lt;br&gt;이를위해 생성자를 private로 선언
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="Design Pattern" scheme="http://KKimSangHeon.github.io/categories/CS/Design-Pattern/"/>
-    
-    
-      <category term="Design Pattern" scheme="http://KKimSangHeon.github.io/tags/Design-Pattern/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>디자인패턴</title>
-    <link href="http://KKimSangHeon.github.io/2018/09/07/pattern1/"/>
-    <id>http://KKimSangHeon.github.io/2018/09/07/pattern1/</id>
-    <published>2018-09-07T09:31:43.000Z</published>
-    <updated>2018-09-27T19:05:00.128Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="디자인패턴"><a href="#디자인패턴" class="headerlink" title="디자인패턴"></a>디자인패턴</h3><p>소프트웨어 설계에서 공통적으로 발생하는 문제를 다루는 보편적이고 반복해서 사용할 수 있는 방법. 문제를 해결하기 위한 설명이나 템플릿으로 보면 된다.</p>
-<h3 id="디자인패턴을-사용할-때-장점"><a href="#디자인패턴을-사용할-때-장점" class="headerlink" title="디자인패턴을 사용할 때 장점"></a>디자인패턴을 사용할 때 장점</h3><p>개발 절차의 속도를 높일 수 있다.<br>재사용 가능한 구조적 개념으로 구성되어 있기 때문에 믿을 수 있다.</p>
-<h3 id="디자인-패턴을-사용하기-위한-조건"><a href="#디자인-패턴을-사용하기-위한-조건" class="headerlink" title="디자인 패턴을 사용하기 위한 조건"></a>디자인 패턴을 사용하기 위한 조건</h3><ol>
-<li>주어진 문제를 명확, 세밀하게 이해한다.</li>
-<li>디자인 패턴이 문제에 일치하는지 다시한번 확인해본다.</li>
-<li>다른 패턴들 사이에서 관계성을 찾고 변경해야할 사항을 결정한다.</li>
-</ol>
-<h3 id="패턴-여러가지의-디자인-패턴은-3가지의-범주로-분류된다"><a href="#패턴-여러가지의-디자인-패턴은-3가지의-범주로-분류된다" class="headerlink" title="패턴 여러가지의 디자인 패턴은 3가지의 범주로 분류된다."></a>패턴 여러가지의 디자인 패턴은 3가지의 범주로 분류된다.</h3><p>범주는 아래와 같다.</p>
-<ol>
-<li><p>생성패턴 : 객체생성 메커니즘을 다룬다. 객체의 생성을 다루는 객체 생성 패턴, 클래스 인스턴스 생성을 다루는 클래스 생성 패턴으로 분류된다.<br>ex: Factory, Abstract Factory, Builder, Protype, Singleton 패턴.</p>
-</li>
-<li><p>구조패턴: 객체들과 클래스들이 커다란 구조를 형성하기 위해 결합될 수 있는 방법을 설명한다. 클래스패턴은 상속의 도움을 받아 추상화를 설명하고 어떻게 프로그램에 더 유용한 인터페이스를 제공할 수 있는지 설명하는것이고, 객체 패턴은 객체들이 크고 더 복잡한 구조를 형성하기 위해 연결되고 구성되는지 설명한다.<br>ex: Adapter, Bridge, Composite, Decorator, Flyweight, Proxy 패턴</p>
-</li>
-<li><p>행위패턴: 객체 사이의 상호 작용과 관련된 것들이다. 이들은 객체간에 공통의 통신 패턴을 파악하고 이러한 패턴을 실현한다.<br>ex: Chain of Responsibility, Command, Interpreter, iterator, Mediator, Memento, Observer, State, Strategy,Template, Vistor 패턴</p>
-</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;디자인패턴&quot;&gt;&lt;a href=&quot;#디자인패턴&quot; class=&quot;headerlink&quot; title=&quot;디자인패턴&quot;&gt;&lt;/a&gt;디자인패턴&lt;/h3&gt;&lt;p&gt;소프트웨어 설계에서 공통적으로 발생하는 문제를 다루는 보편적이고 반복해서 사용할 수 있는 방법. 문제를 
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="Design Pattern" scheme="http://KKimSangHeon.github.io/categories/CS/Design-Pattern/"/>
-    
-    
-      <category term="Design Pattern" scheme="http://KKimSangHeon.github.io/tags/Design-Pattern/"/>
     
   </entry>
   
