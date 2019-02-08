@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-02-08T01:25:56.049Z</updated>
+  <updated>2019-02-08T02:30:24.041Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>OMA-DM</title>
+    <link href="http://KKimSangHeon.github.io/2019/02/08/oma-dm/"/>
+    <id>http://KKimSangHeon.github.io/2019/02/08/oma-dm/</id>
+    <published>2019-02-08T01:29:08.000Z</published>
+    <updated>2019-02-08T02:30:24.041Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="OMA-Open-Mobile-Alliance"><a href="#OMA-Open-Mobile-Alliance" class="headerlink" title="OMA(Open Mobile Alliance)"></a>OMA(Open Mobile Alliance)</h4><p>이동통신 서비스 애플리케이션 표준화 기구이며 일부 애플리케이션 프로토콜을 다루고 있는 산업 포럼의 증진에 응하기 위해 2002년 6월 설립되었다.</p>
+<h4 id="Device-Management-DM"><a href="#Device-Management-DM" class="headerlink" title="Device Management(DM) ?"></a>Device Management(DM) ?</h4><p><code>장치 관리 기술이란 직접 수익을 창출하는 기술은 아니지만, 사업자가 응용 서비스를 시작하고 개선하고 관리하는 과정에서 겪는 문제점들을 해결해 줄 수 있는 효과적인 기술로서 이들 서비스를 통한 수익 창출에 효과적인 솔루션이다.</code><br>WAP, 3G Partnership Project(3GPP), Open Service Gateway Initiative(OSGi), Telemanagement Forum(TMF)등은 그들이 개발한 응용 서비스를 관리해 줄 수 있는 기술, 그들이 개발한 서비스 관리 기법을 가능하게 해줄 기술을 필요로 하게 되었다.</p>
+<h4 id="OMA-DA"><a href="#OMA-DA" class="headerlink" title="OMA-DA"></a>OMA-DA</h4><p><code>장치(단말기) 안에 존재하는 데이터를 서버가 원격으로 접근할 수 있도록 하는 Technology와 규격을 OMA가 제정함</code></p>
+<p>OMA 장치 관리 기술은 범세계적인 이동 통신 시장의 특별한 Use Case와 요구 사항을 고려하여 개발되고 있으며, 특히 이동 단말기의 종류, 운영체제, 지역, 네트워크 기술에 제한되지 않은 열린 기술이기 때문에 결국 기존의 일부 특정 네트워크와 단말기에 국한된 장치 관리 기술들을 통합하거나 대체할 수 있는 기술이다.</p>
+<h4 id="OMA-Device-Management-기술-규격의-구성"><a href="#OMA-Device-Management-기술-규격의-구성" class="headerlink" title="OMA Device Management 기술 규격의 구성"></a>OMA Device Management 기술 규격의 구성</h4><p>아래 그림의 규격 구성에 깔린 의도는 첫째로, <u>기본 규격(Base Protocol)을 다른“Silo”규격들과 분리함으로써 기본 규격이 오랜 기간동안 변하지 않고 꾸준한 안정화 과정을 지날 수 있도록 한다는 것이다.</u> 안정적인 기본 프로토콜의 바탕 위에 변화하는 이동 통신 시장의 요구를 충족시키기 위한 독립적인“Silo”프로토콜들을 정의하도록 함으로써 최소한의 노력으로 안정된 토대 위에서 시장이 필요로 하는 규격을 공급할 수 있는 방안을 마련하였다. 이것은, 각“Silo”규격들이 오직 기본 프로토콜에만 의존적이면서 서로 간에 독립적인 구조를 갖는 프로토콜이기 때문이기도 하다. 둘째로, <u>자료 동기 프로토콜과 SyncML 파서와 SyncML Toolkit을 공유함으로써 기존 SyncML Toolkit에 기반한 네트워크 인프라를 보호하고 재활용할 수 있도록 하기 위함이다.</u></p>
+<img src="/2019/02/08/oma-dm/image1.PNG" alt="OMA Device Management 규격의 구성" title="OMA Device Management 규격의 구성">
+<h4 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h4><p>OMA 표준화 동향 - OMA Device Management [LG전자 이동통신기술연구소 김 태 현]<br>TTA저널 제 96호</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;OMA-Open-Mobile-Alliance&quot;&gt;&lt;a href=&quot;#OMA-Open-Mobile-Alliance&quot; class=&quot;headerlink&quot; title=&quot;OMA(Open Mobile Alliance)&quot;&gt;&lt;/a&gt;OMA(Open Mobi
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="IOT" scheme="http://KKimSangHeon.github.io/categories/CS/IOT/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>oneM2M</title>
     <link href="http://KKimSangHeon.github.io/2019/02/07/onem2m/"/>
     <id>http://KKimSangHeon.github.io/2019/02/07/onem2m/</id>
     <published>2019-02-07T11:46:50.000Z</published>
-    <updated>2019-02-08T01:25:56.049Z</updated>
+    <updated>2019-02-08T02:34:37.285Z</updated>
     
     <content type="html"><![CDATA[<h3 id="M2M-Machine-to-Machine"><a href="#M2M-Machine-to-Machine" class="headerlink" title="M2M(Machine to Machine)"></a>M2M(Machine to Machine)</h3><ul>
 <li>사물 또는 지능화된 기기들이 사람을 대신해 통신의 양쪽 모두를 맡고 있는 기술을 의미</li>
@@ -100,7 +129,7 @@
 <p><code>Application Dedicated Node (ADN) :</code> <u>필드 도메인에 위치한 ADN-AE를 포함하고 CSE를 포함하지 않는 논리적 기기이다.</u> 즉 해당 ADN는 CSE가 없고, 1개 이상의 AE를 포함한다. 논리적 ADN에 매칭되는 물리적 기기로는 센서 및 액츄에이터와 같은 자원제약적인 M2M 디바이스를 예로 들 수 있다. ADN은 Mca 참조 포인트를 통해서 MN 또는 IN과 연동되는 구조를 갖는다.</p>
 <hr>
 <h3 id="oneM2M-공통-서비스-기능"><a href="#oneM2M-공통-서비스-기능" class="headerlink" title="oneM2M 공통 서비스 기능"></a>oneM2M 공통 서비스 기능</h3><p><u>oneM2M 공통 서비스 플랫폼 개발과 관련하여 아키텍처 표준 문서에서 다루고 있는 부분은 Common Service Entity (CSE)에 대한 기능들을 표준화하는 것이다.</u> 그리고 해당 기능들은 oneM2M이 지향하고 있는 리소스 기반 아키텍처 구조를 기반으로 각각의 리소스 타입으로 해당 공통 서비스 기능들이 표현되고 있다. oneM2M 표준화 작업 진행방식은 전체적으로 유스케이스 및 요구사항을 다루고, 이를 통해 필요한 기능들을 도출해 내어 시스템 아키텍처를 디자인하고, 상세 프로토콜을 개발하는 3GPP 표준화 방식에서 취한 Stage 기반의 접근 방식으로 표준 개발을 진행하였다.</p>
-<p>각각의 기능은 리소스 타입으로 표현되고 Mcc, Mca, Mcn 참조 포인트를 통해서 서비스가 제공된다.</p>
+<p>각각의 기능은 리소스 타입으로 표현되고 Mcc, Mca, Mcn 참조 포인트를 통해서 서비스가 제공된다.<br><img src="/2019/02/07/onem2m/image4.PNG" alt="공통 서비스 기능" title="공통 서비스 기능"></p>
 <p><code>Common Service Function (CSF) :</code> 기능설명<br><code>Registration (REG) :</code> REG CSF는 AE와 CSE 또는 CSE와 CSE간의 등록을 담당하며, 이러한 등록 관계를 통해서 oneM2M 엔티티간의 접속 및 접근이 가능하며 oneM2M 엔티티간의 데이터 전달을 통한 oneM2M 서비스 구성이 가능해진다<br><code>Discovery (DIS) :</code> DIS CSF는 기본적으로 oneM2M 리소스 및 어트리뷰트에 담긴 서비스 정보에 대한 검색 기능을 제공한다. 기본적으로 텍스트 기반의 검색이 제공 되어지며, 그 이외에도 특징 기반의 검색 등이 제공되어질 수 있다.<br><code>Security (SEC) :</code> SEC CSF는 oneM2M 공통 서비스 플랫폼의 공통 기능으로서 접근권한, 키 관리와 같은 보안 메커니즘을 제공하는 기능을 담당한다.<br><code>Group Management (GMG) :</code> GMG CSF는 리소스들을 그룹으로 관리할 수 있도록 하는 기능을 담당한다. 이를 통해, 비슷한 역할을 하거나, 공동으로 관리되어져야 하는 리소스들을 그룹으로 관리할 수 있다.<br><code>Data Management &amp; Repository (DMR) :</code>DMR CSF는 기본적으로 데이터 저장소의 기능을 제공하는 것이다. 또한 데이터의 타입, 시맨틱 정보, 시간, 위치와 관련한 데이터의 분류 및 데이터 포맷의 변경 및 데이터 처리 기능을 제공한다.<br><code>Subscription &amp; Notification (SUB) :</code> SUB CSF는 리소스에 대한 구독정보를 관리하고 리소스 및 어트리뷰트에 대한 업데이트 발생, Child 리소스의 생성, 삭제 등 해당 리소스에 대한 트랙킹 및 관련된 변화 정보를 통지하는 역할을 담당한다.<br><code>Device Management (DMG) :</code> DMG CSF는 디바이스 관리 기능을 제공하는 공통 서비스 기능이다. 디바이스 관리라고 함은 디바이스에 설치된 펌웨어에 대한 관리, 디바이스 하드웨어 리소스 관리, 디바이스 동작 설정 관리, 진단을 포함한다.<br><code>Application &amp; Service Management (ASM) :</code> ASM CSF는 ADN, ASN, MN, IN에 위치한 AE와 CSE 소프트웨어에 대한 관리 기능을 담당한다. 해당 기능은 AE와 CSE의 재설치, 업데이트, 고장탐지, 설정에 관한 기능을 제공한다.<br><code>Communication Management &amp; Delivery Handling (CMDH) :</code> CSE간, AE와 CSE간, 데이터 전달 시에 NSE를 통한 데이터 전달 서비스를 제공하는 기능을 담당한다. CMDH CSF는 메시지 전달을 위해서 언제 보낼건지, 어떤 네트워크 연결을 활용하여 보낼지를 결정한다.<br><code>Network Service Exposure, Service Execution &amp; Triggering (NSSE) :</code>NSSE CSF는 기저 네트워크와 관련된 통신을 관리하며 Mcn 참조 포인트를 통한 네트워크 접근 서비스를 제공한다.<br><code>Location (LOC):</code> LOC CSF는 AE의 위치 정보 요청에 대해서 ASN, MN과 관련된 위치정보를 획득하기 위한 방법을 제공하는 CSF이다.<br><code>Service Charging &amp; Accounting (SCA) :</code> SCA CSF는 oneM2M 공통 서비스 플랫폼을 통해서 제공되는 서비스에 대한 과금 체계 및 방법에 대한 기능을 제공한다.</p>
 <hr>
 <h3 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h3><h4 id="LwM2M-Lightweight-M2M"><a href="#LwM2M-Lightweight-M2M" class="headerlink" title="LwM2M(Lightweight M2M)"></a>LwM2M(Lightweight M2M)</h4><p>LwM2M(Lightweight M2M)은 M2M 또는 IoT 장치 관리를 위하여 LwM2M 서버와 LwM2M 장치에 있는 LwM2M 클라이언트 간의 응용 프로그램 계층 통신 프로토콜을 정의함. 소형기기를 포함하여 다양한 사물인터넷 기기를 지원하기 위한 기기 관리 표준임.<br>1)센서 또는 셀룰러 네트워크를 통한 장치 관리 기능 제공<br>2)네트워크에서 장치로 서비스 데이터 전송<br>3)대부분의 모든 응용 프로그램의 요구사항을 충족하도록 확장 을 위하여 설계됨. 자원이 제한된 LwM2M 디바이스를 감안하여 효율적인 리소스 데이터 모델을 기반으로 가볍고 간결한 프로토콜로 IETF CoAP을 사용하고 있음</p>
@@ -307,23 +336,25 @@
   </entry>
   
   <entry>
-    <title>비트 빅데이터 전문가 양성과정 면접</title>
-    <link href="http://KKimSangHeon.github.io/2018/10/22/interview5/"/>
-    <id>http://KKimSangHeon.github.io/2018/10/22/interview5/</id>
+    <title>KT SW개발직무 면접</title>
+    <link href="http://KKimSangHeon.github.io/2018/10/22/interview4/"/>
+    <id>http://KKimSangHeon.github.io/2018/10/22/interview4/</id>
     <published>2018-10-22T03:36:14.000Z</published>
-    <updated>2018-10-24T00:07:41.658Z</updated>
+    <updated>2018-10-23T23:37:44.676Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2017년 6월</p>
-<p>국비지원 교육을 받기위해 필기시험, 면접을 진행한다. 보통 다른과정은 면접이 없지만 전문가 과정이라 회장님과의 면접이 있다고 들었다.</p>
-<h3 id="필기시험"><a href="#필기시험" class="headerlink" title="필기시험"></a>필기시험</h3><p>자바 필기시험을 진행하였으며 난이도는 쉬운편이었다. 오버라이딩, 인터페이스 수준정도의 개념까지만 잘 이해하고 있다면 쉽게 풀 수 있다.</p>
-<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>비트컴퓨터 회장님과 지원자들과 면접을 진행한다.<br>많은 지원자를 대상으로 면접을 진행하기 때문에 자신이 진행했던 프로젝트가 뭐가있는지 물어보고 기술력을 판단하신다. 당락은 그 자리에서 결정되는데 합격률이 생각보다 많이 낮았던 것이 인상깊었다.</p>
-<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p>합격하여 국비지원을 받으며 교육을 수강할 수 있었다. 강사님께서 정말 고수라 많은것을 배울 수 있었고 실무에서 인턴경험 이상으로 값진 경험이었다.</p>
+    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2018년 8월 ~ 2018년 10월</p>
+<h3 id="채용공고"><a href="#채용공고" class="headerlink" title="채용공고"></a>채용공고</h3><img src="/2018/10/22/interview4/kt.jpg" alt="공고" title="공고">
+<h3 id="필기시험"><a href="#필기시험" class="headerlink" title="필기시험"></a>필기시험</h3><p>적성이 아닌 전공, 인성검사로서 진성여중에서 시험을 치뤘었다. 정말 많은사람들이 왔었고 문제의 난이도는 평소 CS에 대한 공부만 충실했다면 무난한 난이도였다.</p>
+<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>면접관 3분과 지원자 1명의 면접형태로서 면접 전 간단한 코딩 테스트를 본다. 푼 문제를 복사하여 면접관분들께 설명드리면서 면접이 시작된다. 이후엔 자기소개서 위주의 프로젝트, 경력관련 질문들이 주를 이뤘다. 여기서 자신감을 갖고 대답했던것이 좋게 작용했던것 같다.</p>
+<h3 id="2차면접"><a href="#2차면접" class="headerlink" title="2차면접"></a>2차면접</h3><p>마찬가지로 면접관 3분과 면접을 본다. 정말 많이 떨렸지만 충분히 준비하고 또 준비했기에 떨지않고 잘 대답할 수 있었다. 주로 경력에 관한 질문이 많았으며 인성질문도 있었다.</p>
+<h3 id="건강검진"><a href="#건강검진" class="headerlink" title="건강검진"></a>건강검진</h3><p>건강검진 이틀전 술을 마신탓에 약간 걱정은 됐으나 다행히 별 탈 없이 통과할 수 있었다.</p>
+<h3 id="합격"><a href="#합격" class="headerlink" title="합격"></a>합격</h3><p>두달간의 긴 여정을 잘 마무리 짓고 최종합격할 수 있었다.<br><img src="/2018/10/22/interview4/kt2.jpg" alt="합격!" title="합격!"></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2017년 6월&lt;/p&gt;
-&lt;p&gt;국비지원 교육을 받기위해 필기시험, 면접을 진행한다. 보통 다른과정은 면접이 없지만 전문가 과정이
+      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2018년 8월 ~ 2018년 10월&lt;/p&gt;
+&lt;h3 id=&quot;채용공고&quot;&gt;&lt;a href=&quot;#채용공고&quot; class=&quot;headerli
     
     </summary>
     
@@ -334,9 +365,7 @@
     
       <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
     
-      <category term="비트" scheme="http://KKimSangHeon.github.io/tags/%EB%B9%84%ED%8A%B8/"/>
-    
-      <category term="국비지원" scheme="http://KKimSangHeon.github.io/tags/%EA%B5%AD%EB%B9%84%EC%A7%80%EC%9B%90/"/>
+      <category term="KT" scheme="http://KKimSangHeon.github.io/tags/KT/"/>
     
   </entry>
   
@@ -469,25 +498,23 @@
   </entry>
   
   <entry>
-    <title>KT SW개발직무 면접</title>
-    <link href="http://KKimSangHeon.github.io/2018/10/22/interview4/"/>
-    <id>http://KKimSangHeon.github.io/2018/10/22/interview4/</id>
+    <title>비트 빅데이터 전문가 양성과정 면접</title>
+    <link href="http://KKimSangHeon.github.io/2018/10/22/interview5/"/>
+    <id>http://KKimSangHeon.github.io/2018/10/22/interview5/</id>
     <published>2018-10-22T03:36:14.000Z</published>
-    <updated>2018-10-23T23:37:44.676Z</updated>
+    <updated>2018-10-24T00:07:41.658Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2018년 8월 ~ 2018년 10월</p>
-<h3 id="채용공고"><a href="#채용공고" class="headerlink" title="채용공고"></a>채용공고</h3><img src="/2018/10/22/interview4/kt.jpg" alt="공고" title="공고">
-<h3 id="필기시험"><a href="#필기시험" class="headerlink" title="필기시험"></a>필기시험</h3><p>적성이 아닌 전공, 인성검사로서 진성여중에서 시험을 치뤘었다. 정말 많은사람들이 왔었고 문제의 난이도는 평소 CS에 대한 공부만 충실했다면 무난한 난이도였다.</p>
-<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>면접관 3분과 지원자 1명의 면접형태로서 면접 전 간단한 코딩 테스트를 본다. 푼 문제를 복사하여 면접관분들께 설명드리면서 면접이 시작된다. 이후엔 자기소개서 위주의 프로젝트, 경력관련 질문들이 주를 이뤘다. 여기서 자신감을 갖고 대답했던것이 좋게 작용했던것 같다.</p>
-<h3 id="2차면접"><a href="#2차면접" class="headerlink" title="2차면접"></a>2차면접</h3><p>마찬가지로 면접관 3분과 면접을 본다. 정말 많이 떨렸지만 충분히 준비하고 또 준비했기에 떨지않고 잘 대답할 수 있었다. 주로 경력에 관한 질문이 많았으며 인성질문도 있었다.</p>
-<h3 id="건강검진"><a href="#건강검진" class="headerlink" title="건강검진"></a>건강검진</h3><p>건강검진 이틀전 술을 마신탓에 약간 걱정은 됐으나 다행히 별 탈 없이 통과할 수 있었다.</p>
-<h3 id="합격"><a href="#합격" class="headerlink" title="합격"></a>합격</h3><p>두달간의 긴 여정을 잘 마무리 짓고 최종합격할 수 있었다.<br><img src="/2018/10/22/interview4/kt2.jpg" alt="합격!" title="합격!"></p>
+    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2017년 6월</p>
+<p>국비지원 교육을 받기위해 필기시험, 면접을 진행한다. 보통 다른과정은 면접이 없지만 전문가 과정이라 회장님과의 면접이 있다고 들었다.</p>
+<h3 id="필기시험"><a href="#필기시험" class="headerlink" title="필기시험"></a>필기시험</h3><p>자바 필기시험을 진행하였으며 난이도는 쉬운편이었다. 오버라이딩, 인터페이스 수준정도의 개념까지만 잘 이해하고 있다면 쉽게 풀 수 있다.</p>
+<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>비트컴퓨터 회장님과 지원자들과 면접을 진행한다.<br>많은 지원자를 대상으로 면접을 진행하기 때문에 자신이 진행했던 프로젝트가 뭐가있는지 물어보고 기술력을 판단하신다. 당락은 그 자리에서 결정되는데 합격률이 생각보다 많이 낮았던 것이 인상깊었다.</p>
+<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p>합격하여 국비지원을 받으며 교육을 수강할 수 있었다. 강사님께서 정말 고수라 많은것을 배울 수 있었고 실무에서 인턴경험 이상으로 값진 경험이었다.</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2018년 8월 ~ 2018년 10월&lt;/p&gt;
-&lt;h3 id=&quot;채용공고&quot;&gt;&lt;a href=&quot;#채용공고&quot; class=&quot;headerli
+      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2017년 6월&lt;/p&gt;
+&lt;p&gt;국비지원 교육을 받기위해 필기시험, 면접을 진행한다. 보통 다른과정은 면접이 없지만 전문가 과정이
     
     </summary>
     
@@ -498,7 +525,9 @@
     
       <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
     
-      <category term="KT" scheme="http://KKimSangHeon.github.io/tags/KT/"/>
+      <category term="비트" scheme="http://KKimSangHeon.github.io/tags/%EB%B9%84%ED%8A%B8/"/>
+    
+      <category term="국비지원" scheme="http://KKimSangHeon.github.io/tags/%EA%B5%AD%EB%B9%84%EC%A7%80%EC%9B%90/"/>
     
   </entry>
   
@@ -697,32 +726,6 @@
     
       &lt;p&gt;한 클래스가 여러 클래스와 관계를 갖을 땐 독립적으로 선언하는것이 좋다. 하지만 특정 클래스와 관계를 맺을 땐 내부에 선언하여 불필요한 관계 클래스를 감추고 코드의 복잡성을 감출 수 있게된다.&lt;/p&gt;
 &lt;h3 id=&quot;중첩클래스&quot;&gt;&lt;a href=&quot;#
-    
-    </summary>
-    
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>자바8</title>
-    <link href="http://KKimSangHeon.github.io/2018/09/05/java3/"/>
-    <id>http://KKimSangHeon.github.io/2018/09/05/java3/</id>
-    <published>2018-09-04T22:49:23.000Z</published>
-    <updated>2018-09-04T23:25:52.655Z</updated>
-    
-    <content type="html"><![CDATA[<p>자바 개발자 면접을 보며 듣는 질문이 있다.. 자바8의 특징을 아시나요? 자바8에서 추가된 기능은요? 말씀하신 기능에 대해 좀더 자세히 설명해주세요. 그 외적인 부분은 없을까요? 등등 꼬리에 꼬리를 물다보면 항상 바닥을 드러냈던것 같다.<br>사실 자바를 공부하면서 딱히 버전에 대해 신경쓰지 않았던터라 많이 당황스러웠던 질문이었던것 같다.<br>기회가 되면 정리해야지 했는데 나와 비슷한 고민을 했던 분이 계셔서 링크를 남겨놓는다.<br><a href="https://johanneslee.github.io/articles/page7/" target="_blank" rel="external">https://johanneslee.github.io/articles/page7/</a></p>
-<p><a href="http://blog.eomdev.com/java/2016/03/30/default-method.html" target="_blank" rel="external">http://blog.eomdev.com/java/2016/03/30/default-method.html</a><br>나 또한 빠른 시일내에 공부해서 게시할 수 있도록 해야겠다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;자바 개발자 면접을 보며 듣는 질문이 있다.. 자바8의 특징을 아시나요? 자바8에서 추가된 기능은요? 말씀하신 기능에 대해 좀더 자세히 설명해주세요. 그 외적인 부분은 없을까요? 등등 꼬리에 꼬리를 물다보면 항상 바닥을 드러냈던것 같다.&lt;br&gt;사
     
     </summary>
     
