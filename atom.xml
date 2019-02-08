@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-02-07T15:27:18.212Z</updated>
+  <updated>2019-02-08T01:25:56.049Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://KKimSangHeon.github.io/2019/02/07/onem2m/"/>
     <id>http://KKimSangHeon.github.io/2019/02/07/onem2m/</id>
     <published>2019-02-07T11:46:50.000Z</published>
-    <updated>2019-02-07T15:27:18.212Z</updated>
+    <updated>2019-02-08T01:25:56.049Z</updated>
     
     <content type="html"><![CDATA[<h3 id="M2M-Machine-to-Machine"><a href="#M2M-Machine-to-Machine" class="headerlink" title="M2M(Machine to Machine)"></a>M2M(Machine to Machine)</h3><ul>
 <li>사물 또는 지능화된 기기들이 사람을 대신해 통신의 양쪽 모두를 맡고 있는 기술을 의미</li>
@@ -94,12 +94,14 @@
 <p><code>Mcc’(M2M Commmunication with CSE of different M2M Service Provider) 참조 포인트 :</code> <u>서로 다른 서비스 프로바이더에 종속적인 CSE간의 포인트를 가리키며</u>, 서비스 프로바이더 간 CSE사이의 서비스 공개 및 통신을 지원하는 연결 포인트이다.</p>
 <h3 id="oneM2M-노드-구성모델-아키텍처"><a href="#oneM2M-노드-구성모델-아키텍처" class="headerlink" title="oneM2M 노드 구성모델 아키텍처"></a>oneM2M 노드 구성모델 아키텍처</h3><img src="/2019/02/07/onem2m/image3.PNG" alt="노드 구성모델" title="노드 구성모델">
 <p>oneM2M의 노드 구성모델은 다음과 같다.</p>
-<p><code>Infrastructure Node (IN) :</code> 인프라스트럭쳐 도메인에 위치하고 있는 IN-CSE를 포함하는 서버단에 위치하는 기기를 의미한다. 해당 IN은 서비스 프로바이더 당 한 개의 IN을 지원하는 것으로 정의되며 IN은 한 개의 CSE로만 구성이 되거나 1개 이상의 AE를 포함하는 형태로 구성되어질 수 있다. 논리적 기기인 IN에 매칭되는 물리적 기기로는 서버를 예로 들 수 있다. IN은 Mcc 참조 포인트를 통해서 한 개 이상의 MN과 한 개 이상의 ASN과 연동되며 Mca 참조 포인트를 통해서 한 개 이상의 ADN과 연동될 수 있다. Mcc’을 통한 연동은 다른 서비스 프로바이더 영역에 위치한 IN노드와 연동된다.</p>
-<p><code>Middle Node (MN) :</code> 필드 도메인에 위치한 MN-CSE를 포함하는 논리적 기기로 일반적으로 여러 센서나 엑추에이터들이 연결되는 게이트웨이가 이에 해당한다고 보면 된다. MN은 한 개의 CSE로 구성이 되거나, 하나의 CSE에 1개 이상의 AE 를 포함하는 형태로 구성되어질 수 있다. MN은 Mcc참조 포인트를 통해서 적어도 하나의 IN 또는 MN과 연동되며 Mcc 참조 포인트를 통해서 ASN과 연동 및 Mca 참조 포인트를 통한 ADN과 연동될 수 있다.</p>
-<p><code>Application Service Node (ASN) :</code> 필드 도메인에 위치한 ASN-CSE와 ASN-AE를 포함하고 있는 논리적 기기이다. 해당 ASN은 한 개의 CSE와 1개 이상의 AE를 포함하는 형태로 구성되며 논리적 ASN에 매칭되는 물리적 기기로는 M2M 디바이스를 예로 들 수 있다. ASN 은 Mcc 참조 포인트를 통해서 한 개의 MN 또는 한 개의 IN에 연동된다.</p>
-<p><code>Application Dedicated Node (ADN) :</code> 필드 도메인에 위치한 ADN-AE를 포함하고 CSE를 포함하지 않는 논리적 기기이다. 즉 해당 ADN는 CSE가 없고, 1개 이상의 AE를 포함한다. 논리적 ADN에 매칭되는 물리적 기기로는 센서 및 액츄에이터와 같은 자원제약적인 M2M 디바이스를 예로 들 수 있다. ADN은 Mca 참조 포인트를 통해서 MN 또는 IN과 연동되는 구조를 갖는다.</p>
-<p>구성모델 아키텍처 읽고 밑줄넣고 공통서비스 기능부터</p>
-<p>lg전자파일 6p<br>oneM2M 어플리케이션 개발자 가이드 표준 해설서 파일 20p</p>
+<p><code>Infrastructure Node (IN) :</code> <u>인프라스트럭쳐 도메인에 위치하고 있는 IN-CSE를 포함하는 서버단에 위치하는 기기를 의미한다. 해당 IN은 서비스 프로바이더 당 한 개의 IN을 지원하는 것으로 정의되며 IN은 한 개의 CSE로만 구성이 되거나 1개 이상의 AE를 포함하는 형태로 구성되어질 수 있다.</u> 논리적 기기인 IN에 매칭되는 물리적 기기로는 서버를 예로 들 수 있다. IN은 Mcc 참조 포인트를 통해서 한 개 이상의 MN과 한 개 이상의 ASN과 연동되며 Mca 참조 포인트를 통해서 한 개 이상의 ADN과 연동될 수 있다. Mcc’을 통한 연동은 다른 서비스 프로바이더 영역에 위치한 IN노드와 연동된다.</p>
+<p><code>Middle Node (MN) :</code> <u>필드 도메인에 위치한 MN-CSE를 포함하는 논리적 기기로 일반적으로 여러 센서나 엑추에이터들이 연결되는 게이트웨이가 이에 해당한다고 보면 된다. MN은 한 개의 CSE로 구성이 되거나, 하나의 CSE에 1개 이상의 AE 를 포함하는 형태로 구성되어질 수 있다.</u> MN은 Mcc참조 포인트를 통해서 적어도 하나의 IN 또는 MN과 연동되며 Mcc 참조 포인트를 통해서 ASN과 연동 및 Mca 참조 포인트를 통한 ADN과 연동될 수 있다.</p>
+<p><code>Application Service Node (ASN) :</code> <u>필드 도메인에 위치한 ASN-CSE와 ASN-AE를 포함하고 있는 논리적 기기이다. 해당 ASN은 한 개의 CSE와 1개 이상의 AE를 포함하는 형태로 구성되며 논리적 ASN에 매칭되는 물리적 기기로는 M2M 디바이스를 예로 들 수 있다. ASN 은 Mcc 참조 포인트를 통해서 한 개의 MN 또는 한 개의 IN에 연동된다.</u></p>
+<p><code>Application Dedicated Node (ADN) :</code> <u>필드 도메인에 위치한 ADN-AE를 포함하고 CSE를 포함하지 않는 논리적 기기이다.</u> 즉 해당 ADN는 CSE가 없고, 1개 이상의 AE를 포함한다. 논리적 ADN에 매칭되는 물리적 기기로는 센서 및 액츄에이터와 같은 자원제약적인 M2M 디바이스를 예로 들 수 있다. ADN은 Mca 참조 포인트를 통해서 MN 또는 IN과 연동되는 구조를 갖는다.</p>
+<hr>
+<h3 id="oneM2M-공통-서비스-기능"><a href="#oneM2M-공통-서비스-기능" class="headerlink" title="oneM2M 공통 서비스 기능"></a>oneM2M 공통 서비스 기능</h3><p><u>oneM2M 공통 서비스 플랫폼 개발과 관련하여 아키텍처 표준 문서에서 다루고 있는 부분은 Common Service Entity (CSE)에 대한 기능들을 표준화하는 것이다.</u> 그리고 해당 기능들은 oneM2M이 지향하고 있는 리소스 기반 아키텍처 구조를 기반으로 각각의 리소스 타입으로 해당 공통 서비스 기능들이 표현되고 있다. oneM2M 표준화 작업 진행방식은 전체적으로 유스케이스 및 요구사항을 다루고, 이를 통해 필요한 기능들을 도출해 내어 시스템 아키텍처를 디자인하고, 상세 프로토콜을 개발하는 3GPP 표준화 방식에서 취한 Stage 기반의 접근 방식으로 표준 개발을 진행하였다.</p>
+<p>각각의 기능은 리소스 타입으로 표현되고 Mcc, Mca, Mcn 참조 포인트를 통해서 서비스가 제공된다.</p>
+<p><code>Common Service Function (CSF) :</code> 기능설명<br><code>Registration (REG) :</code> REG CSF는 AE와 CSE 또는 CSE와 CSE간의 등록을 담당하며, 이러한 등록 관계를 통해서 oneM2M 엔티티간의 접속 및 접근이 가능하며 oneM2M 엔티티간의 데이터 전달을 통한 oneM2M 서비스 구성이 가능해진다<br><code>Discovery (DIS) :</code> DIS CSF는 기본적으로 oneM2M 리소스 및 어트리뷰트에 담긴 서비스 정보에 대한 검색 기능을 제공한다. 기본적으로 텍스트 기반의 검색이 제공 되어지며, 그 이외에도 특징 기반의 검색 등이 제공되어질 수 있다.<br><code>Security (SEC) :</code> SEC CSF는 oneM2M 공통 서비스 플랫폼의 공통 기능으로서 접근권한, 키 관리와 같은 보안 메커니즘을 제공하는 기능을 담당한다.<br><code>Group Management (GMG) :</code> GMG CSF는 리소스들을 그룹으로 관리할 수 있도록 하는 기능을 담당한다. 이를 통해, 비슷한 역할을 하거나, 공동으로 관리되어져야 하는 리소스들을 그룹으로 관리할 수 있다.<br><code>Data Management &amp; Repository (DMR) :</code>DMR CSF는 기본적으로 데이터 저장소의 기능을 제공하는 것이다. 또한 데이터의 타입, 시맨틱 정보, 시간, 위치와 관련한 데이터의 분류 및 데이터 포맷의 변경 및 데이터 처리 기능을 제공한다.<br><code>Subscription &amp; Notification (SUB) :</code> SUB CSF는 리소스에 대한 구독정보를 관리하고 리소스 및 어트리뷰트에 대한 업데이트 발생, Child 리소스의 생성, 삭제 등 해당 리소스에 대한 트랙킹 및 관련된 변화 정보를 통지하는 역할을 담당한다.<br><code>Device Management (DMG) :</code> DMG CSF는 디바이스 관리 기능을 제공하는 공통 서비스 기능이다. 디바이스 관리라고 함은 디바이스에 설치된 펌웨어에 대한 관리, 디바이스 하드웨어 리소스 관리, 디바이스 동작 설정 관리, 진단을 포함한다.<br><code>Application &amp; Service Management (ASM) :</code> ASM CSF는 ADN, ASN, MN, IN에 위치한 AE와 CSE 소프트웨어에 대한 관리 기능을 담당한다. 해당 기능은 AE와 CSE의 재설치, 업데이트, 고장탐지, 설정에 관한 기능을 제공한다.<br><code>Communication Management &amp; Delivery Handling (CMDH) :</code> CSE간, AE와 CSE간, 데이터 전달 시에 NSE를 통한 데이터 전달 서비스를 제공하는 기능을 담당한다. CMDH CSF는 메시지 전달을 위해서 언제 보낼건지, 어떤 네트워크 연결을 활용하여 보낼지를 결정한다.<br><code>Network Service Exposure, Service Execution &amp; Triggering (NSSE) :</code>NSSE CSF는 기저 네트워크와 관련된 통신을 관리하며 Mcn 참조 포인트를 통한 네트워크 접근 서비스를 제공한다.<br><code>Location (LOC):</code> LOC CSF는 AE의 위치 정보 요청에 대해서 ASN, MN과 관련된 위치정보를 획득하기 위한 방법을 제공하는 CSF이다.<br><code>Service Charging &amp; Accounting (SCA) :</code> SCA CSF는 oneM2M 공통 서비스 플랫폼을 통해서 제공되는 서비스에 대한 과금 체계 및 방법에 대한 기능을 제공한다.</p>
 <hr>
 <h3 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h3><h4 id="LwM2M-Lightweight-M2M"><a href="#LwM2M-Lightweight-M2M" class="headerlink" title="LwM2M(Lightweight M2M)"></a>LwM2M(Lightweight M2M)</h4><p>LwM2M(Lightweight M2M)은 M2M 또는 IoT 장치 관리를 위하여 LwM2M 서버와 LwM2M 장치에 있는 LwM2M 클라이언트 간의 응용 프로그램 계층 통신 프로토콜을 정의함. 소형기기를 포함하여 다양한 사물인터넷 기기를 지원하기 위한 기기 관리 표준임.<br>1)센서 또는 셀룰러 네트워크를 통한 장치 관리 기능 제공<br>2)네트워크에서 장치로 서비스 데이터 전송<br>3)대부분의 모든 응용 프로그램의 요구사항을 충족하도록 확장 을 위하여 설계됨. 자원이 제한된 LwM2M 디바이스를 감안하여 효율적인 리소스 데이터 모델을 기반으로 가볍고 간결한 프로토콜로 IETF CoAP을 사용하고 있음</p>
 <h4 id="REST-Representational-State-Transfer"><a href="#REST-Representational-State-Transfer" class="headerlink" title="REST(Representational State Transfer)"></a>REST(Representational State Transfer)</h4><p>웹 상의 자료를 HTTP위에서 별도의 전송 계층 없이 전송하기 위한 아주 간단한 인터페이스이다. URI는 자원을 표현하는 데에 집중하고 행위에 대한 정의는 HTTP METHOD를 통해 하는 것이 REST한 API를 설계하는 중심 규칙이다.</p>
@@ -113,7 +115,8 @@
 <li>사물인터넷 디바이스의 제한된 성능을 고려하여 CoAP(Constrained Application Protocol)을 활용하여 경량 기기에서의 동작도 고려함</li>
 </ul>
 <hr>
-<h4 id="MQTT"><a href="#MQTT" class="headerlink" title="MQTT"></a>MQTT</h4><h4 id="요약내용"><a href="#요약내용" class="headerlink" title="요약내용"></a>요약내용</h4><p><a href="http://www.iotocean.org/common/download.asp?pach=/upload/Board/&amp;file=6VXFR20174271377.pdf" target="_blank" rel="external">http://www.iotocean.org/common/download.asp?pach=/upload/Board/&amp;file=6VXFR20174271377.pdf</a><br>(IoT 표준/기술 동향 2017-9호) 2017-9호_oneM2M Release 3 표준<br><a href="http://www.iotforum.kr/board1/read.asp?bdNum=101&amp;sc_field=&amp;sc_word=&amp;bdCode=13350" target="_blank" rel="external">http://www.iotforum.kr/board1/read.asp?bdNum=101&amp;sc_field=&amp;sc_word=&amp;bdCode=13350</a></p>
+<h4 id="MQTT"><a href="#MQTT" class="headerlink" title="MQTT"></a>MQTT</h4><p>MQTT(Message Queue for Telemetry Transport)는 M2M 또는 IoT 기기와 G/W의 연동을 위해 정의된 프로토콜입니다. 경량 프로토콜로 저전력 장비에서도 운용 가능하며 network bandwidth가 작은 곳에서도 충분히 운용 가능하도록 설계된 프로토콜입니다.</p>
+<h4 id="참고-1"><a href="#참고-1" class="headerlink" title="참고"></a>참고</h4><p><a href="http://www.iotocean.org/common/download.asp?pach=/upload/Board/&amp;file=6VXFR20174271377.pdf" target="_blank" rel="external">http://www.iotocean.org/common/download.asp?pach=/upload/Board/&amp;file=6VXFR20174271377.pdf</a><br>(IoT 표준/기술 동향 2017-9호) 2017-9호_oneM2M Release 3 표준<br><a href="http://www.iotforum.kr/board1/read.asp?bdNum=101&amp;sc_field=&amp;sc_word=&amp;bdCode=13350" target="_blank" rel="external">http://www.iotforum.kr/board1/read.asp?bdNum=101&amp;sc_field=&amp;sc_word=&amp;bdCode=13350</a><br><a href="http://woowabros.github.io/experience/2017/08/11/ost_mqtt_broker.html" target="_blank" rel="external">http://woowabros.github.io/experience/2017/08/11/ost_mqtt_broker.html</a></p>
 ]]></content>
     
     <summary type="html">
