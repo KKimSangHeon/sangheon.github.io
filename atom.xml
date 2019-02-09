@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-02-09T06:36:22.222Z</updated>
+  <updated>2019-02-09T06:43:07.460Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,12 +20,13 @@
     <link href="http://KKimSangHeon.github.io/2019/02/08/mine/"/>
     <id>http://KKimSangHeon.github.io/2019/02/08/mine/</id>
     <published>2019-02-08T10:53:12.000Z</published>
-    <updated>2019-02-09T06:36:22.222Z</updated>
+    <updated>2019-02-09T06:43:07.460Z</updated>
     
     <content type="html"><![CDATA[<h3 id="oneM2M"><a href="#oneM2M" class="headerlink" title="oneM2M"></a>oneM2M</h3><p>iot 솔루션을 제공함에 있어 여러 벤더를 맞추기란 힘들다… oneM2M이라는 표준을 만들고 이를 여러 벤더가 맞춤으로써 응용개발사 또한 iot시스템을 개발함에 있어 개발공수를 낮출 수 있게된다.<br>oneM2M에는 CSE라는게 있는데 공통서비스를 제공하는것이다. 가령 데이터 저장, 요금청구 등등 다양하게 있다..</p>
 <p>CSE는 REST 형태로 제공되어 편리하다는 장점이 있으며 최근에는 일반 응용개발에 oneM2M을 적용하여 CSE를 적절히 활용하는 경우도 있다. 이를 Distributed Platform 형태 라고 한다<br>통신사업자는 oneM2M 표준을 기반으로 CSE를 사용하는 플랫폼을 만들고 일반에 공개하게 되면 일반 개발자들은 통신사업자가 만든 플랫폼을 사용할 수 있게된다.(?? 맞는지 모르겠다.)</p>
 <h3 id="OMA-DM"><a href="#OMA-DM" class="headerlink" title="OMA-DM"></a>OMA-DM</h3><p>이는 이동통신장치 관리표주으로서 내부 데이터에 접근하고 제어하는 표준이라 이해했다. xml기반 마크업 언어 SyncML 기반으로 명령과 결과를 주고받으며 심지어 운영체제 설치 그리고 응용프로그램의 파라미터 까지 변경이 가능하다고 한다. 여기서 관리할수 있는 자원을 <code>관리객체(MO, Management Object)</code>라고 한다.</p>
-<h3 id="oneM2M과-OMA-DM의-상관관계"><a href="#oneM2M과-OMA-DM의-상관관계" class="headerlink" title="oneM2M과 OMA-DM의 상관관계???"></a>oneM2M과 OMA-DM의 상관관계???</h3><p>아래부터 개인적인생각입니다. 참고하지도 마세요!<br>oneM2M은 장치에서 받은 데이터를 활용하고 정제 저장하는 표준이라고 생각한다. 즉 디바이스의 정보를 뭐 제어하거나 어떻게 가져오는건 아니라 생각한다.<br>하지만 OMA-DM는 내부데이터 관리와 같은 디바이스 내부로 들어가는 표준인것같다.<br></p>
+<h3 id="oneM2M과-OMA-DM의-상관관계"><a href="#oneM2M과-OMA-DM의-상관관계" class="headerlink" title="oneM2M과 OMA-DM의 상관관계???"></a>oneM2M과 OMA-DM의 상관관계???</h3><p>아래부터 개인적인생각입니다. 참고하지도 마세요!<br>oneM2M은 장치에서 받은 데이터를 활용하고 정제 저장하는 표준이라고 생각한다. 즉 디바이스의 정보를 뭐 제어하거나 어떻게 가져오는건 아니라 생각한다.<br>하지만 OMA-DM는 내부데이터 관리와 같은 디바이스 내부로 들어가는 표준인것같다.</p>
+<p>아래 그림처럼 구분되나보다<br></p>
 ]]></content>
     
     <summary type="html">
@@ -81,9 +82,10 @@
     <link href="http://KKimSangHeon.github.io/2019/02/08/TR-069/"/>
     <id>http://KKimSangHeon.github.io/2019/02/08/TR-069/</id>
     <published>2019-02-08T05:52:45.000Z</published>
-    <updated>2019-02-08T06:49:24.432Z</updated>
+    <updated>2019-02-09T06:58:52.652Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="TR-069"><a href="#TR-069" class="headerlink" title="TR-069"></a>TR-069</h3><p>TR-069 (Technical Report 069 의 약자)는 DSL 포럼 (이후 Broadband 포럼으로 변경)의 기술 명세서이다. 이 문서의 정식 명칭은 CPE WAN Management Protocol (CWMP)이다. 이 문서는 말단 사용자 장치를 관리하기 위한 사용자 계층 프로토콜을 정의하고 있다.</p>
+    <content type="html"><![CDATA[<h3 id="TR-069"><a href="#TR-069" class="headerlink" title="TR-069"></a>TR-069</h3><p>customer-premises equipment (CPE, 말단 사용자 장치)<br>Auto Configuration Servers (ACS, 자동 설정 서버)</p>
+<p>TR-069 (Technical Report 069)는 DSL 포럼 (이후 Broadband 포럼으로 변경)의 기술 명세서이다. 이 문서의 정식 명칭은 CPE WAN Management Protocol (CWMP)이다. 이 문서는 말단 사용자 장치를 관리하기 위한 사용자 계층 프로토콜을 정의하고 있다.</p>
 <p><code>TR-069 프로토콜은 양방향 SOAP/HTTP 을 기반으로 customer-premises equipment (CPE, 말단 사용자 장치) 와 Auto Configuration Servers (ACS,자동 설정 서버) 간 통신을 가능하게 한다.</code> 또한 안전한 자동 설정 기능을 제공하며 통합 환경 내에서 다른 CPE 관리 함수를 제어하고 동작시킬 수 있도록 해준다.</p>
 <h3 id="TR-069-등장배경"><a href="#TR-069-등장배경" class="headerlink" title="TR-069 등장배경"></a>TR-069 등장배경</h3><p> 브로드밴드 시장이 활성화 되면서 여러개의 다른 종류의 인터넷 접속 또한 많이 생겨났다. ( 모뎀, 라우터, 게이트웨이, 세트톱박스, VoIP-phone 등). <code>또한 동시에 이러한 장비들을 설정하는 것은 더욱 복잡해졌다. 말단 사용자에게는 이러한 설정이 더욱 어려운데 이러한 이유로 TR-069 표준이 개발되었다. TR-069 표준은 여러가지 접속 방법에 대한 자동 설정을 제공한다.</code> 이에대한 구체적인 기술적인 사항은 Broadband 포럼에서 관리하고 발행하고 있다.<code>TR-069을 이용해서 말단 장비들은 자동 설정 서버 (Auto Configuration Servers) (ACS)에 접속하고 필요한 설정을 자동으로 받아오게 된다. 이렇게 함으로써 사용자가 따로 설정하지 않아도 필요한 서비스를 사용하는 것이 가능해진다.</code> TR-069는 DSL broadband 시장에서 터미널을 활성화하기 위해 현재 사용중인 표준이다.</p>
 <h4 id="ACS-연결방식"><a href="#ACS-연결방식" class="headerlink" title="ACS 연결방식"></a>ACS 연결방식</h4><p>ACS와 연결하기 위해서는 다음의 데이터가 필요하다.</p>
@@ -99,7 +101,7 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;TR-069&quot;&gt;&lt;a href=&quot;#TR-069&quot; class=&quot;headerlink&quot; title=&quot;TR-069&quot;&gt;&lt;/a&gt;TR-069&lt;/h3&gt;&lt;p&gt;TR-069 (Technical Report 069 의 약자)는 DSL 포럼 (이후 Broadba
+      &lt;h3 id=&quot;TR-069&quot;&gt;&lt;a href=&quot;#TR-069&quot; class=&quot;headerlink&quot; title=&quot;TR-069&quot;&gt;&lt;/a&gt;TR-069&lt;/h3&gt;&lt;p&gt;customer-premises equipment (CPE, 말단 사용자 장치)&lt;br&gt;Auto C
     
     </summary>
     
@@ -151,7 +153,7 @@
     <link href="http://KKimSangHeon.github.io/2019/02/07/onem2m/"/>
     <id>http://KKimSangHeon.github.io/2019/02/07/onem2m/</id>
     <published>2019-02-07T11:46:50.000Z</published>
-    <updated>2019-02-08T09:53:14.290Z</updated>
+    <updated>2019-02-09T06:51:54.249Z</updated>
     
     <content type="html"><![CDATA[<h3 id="M2M-Machine-to-Machine"><a href="#M2M-Machine-to-Machine" class="headerlink" title="M2M(Machine to Machine)"></a>M2M(Machine to Machine)</h3><ul>
 <li>사물 또는 지능화된 기기들이 사람을 대신해 통신의 양쪽 모두를 맡고 있는 기술을 의미</li>
@@ -159,7 +161,7 @@
 <li>M2M은 개별 장치들에 대한 연결성을 제공하는 것이 기본 목적</li>
 </ul>
 <hr>
-<h3 id="M2M"><a href="#M2M" class="headerlink" title="M2M"></a>M2M</h3><h4 id="기구-설명"><a href="#기구-설명" class="headerlink" title="기구 설명"></a>기구 설명</h4><p>1.에너지, 교통, 국방, 공공서비스 등 산업별로 종속적이고 폐쇄적으로 운영되는, 파편화된 서비스 플랫폼 개발 구조를 벗어나 응용서비스 인프라(플랫폼) 환경을 통합하고 공유하기위한 사물인터넷 공동서비스 플랫폼 개발을 위해 발족된 사실상 표준화 단체임</p>
+<h3 id="oneM2M"><a href="#oneM2M" class="headerlink" title="oneM2M"></a>oneM2M</h3><h4 id="기구-설명"><a href="#기구-설명" class="headerlink" title="기구 설명"></a>기구 설명</h4><p>1.에너지, 교통, 국방, 공공서비스 등 산업별로 종속적이고 폐쇄적으로 운영되는, 파편화된 서비스 플랫폼 개발 구조를 벗어나 응용서비스 인프라(플랫폼) 환경을 통합하고 공유하기위한 사물인터넷 공동서비스 플랫폼 개발을 위해 발족된 사실상 표준화 단체임</p>
 <p>2.oneM2M의 기술 워킹그룹(6개)은 요구사항을 다루는 Requirement(WG1), 시스템 구조를 다루는 Architecture(WG2), 프로토콜과 관련한 Protocols(WG3), 보안관련 Security(WG4), 장치관리 및 추상화, 시멘틱과 관련된 Management, Abstraction and Semantics(WG5), 테스킹 규격을 위한 Test(WG6)로 구성되어 있음</p>
 <img src="/2019/02/07/onem2m/image1.PNG" alt="oneM2M표준 적용 후" title="oneM2M표준 적용 후">
 <hr>
@@ -234,7 +236,10 @@
 <p>각각의 기능은 리소스 타입으로 표현되고 Mcc, Mca, Mcn 참조 포인트를 통해서 서비스가 제공된다.<br><img src="/2019/02/07/onem2m/image4.PNG" alt="공통 서비스 기능" title="공통 서비스 기능"></p>
 <p><code>Common Service Function (CSF) :</code> 기능설명<br><code>Registration (REG) :</code> REG CSF는 AE와 CSE 또는 CSE와 CSE간의 등록을 담당하며, 이러한 등록 관계를 통해서 oneM2M 엔티티간의 접속 및 접근이 가능하며 oneM2M 엔티티간의 데이터 전달을 통한 oneM2M 서비스 구성이 가능해진다<br><code>Discovery (DIS) :</code> DIS CSF는 기본적으로 oneM2M 리소스 및 어트리뷰트에 담긴 서비스 정보에 대한 검색 기능을 제공한다. 기본적으로 텍스트 기반의 검색이 제공 되어지며, 그 이외에도 특징 기반의 검색 등이 제공되어질 수 있다.<br><code>Security (SEC) :</code> SEC CSF는 oneM2M 공통 서비스 플랫폼의 공통 기능으로서 접근권한, 키 관리와 같은 보안 메커니즘을 제공하는 기능을 담당한다.<br><code>Group Management (GMG) :</code> GMG CSF는 리소스들을 그룹으로 관리할 수 있도록 하는 기능을 담당한다. 이를 통해, 비슷한 역할을 하거나, 공동으로 관리되어져야 하는 리소스들을 그룹으로 관리할 수 있다.<br><code>Data Management &amp; Repository (DMR) :</code>DMR CSF는 기본적으로 데이터 저장소의 기능을 제공하는 것이다. 또한 데이터의 타입, 시맨틱 정보, 시간, 위치와 관련한 데이터의 분류 및 데이터 포맷의 변경 및 데이터 처리 기능을 제공한다.<br><code>Subscription &amp; Notification (SUB) :</code> SUB CSF는 리소스에 대한 구독정보를 관리하고 리소스 및 어트리뷰트에 대한 업데이트 발생, Child 리소스의 생성, 삭제 등 해당 리소스에 대한 트랙킹 및 관련된 변화 정보를 통지하는 역할을 담당한다.<br><code>Device Management (DMG) :</code> DMG CSF는 디바이스 관리 기능을 제공하는 공통 서비스 기능이다. 디바이스 관리라고 함은 디바이스에 설치된 펌웨어에 대한 관리, 디바이스 하드웨어 리소스 관리, 디바이스 동작 설정 관리, 진단을 포함한다.<br><code>Application &amp; Service Management (ASM) :</code> ASM CSF는 ADN, ASN, MN, IN에 위치한 AE와 CSE 소프트웨어에 대한 관리 기능을 담당한다. 해당 기능은 AE와 CSE의 재설치, 업데이트, 고장탐지, 설정에 관한 기능을 제공한다.<br><code>Communication Management &amp; Delivery Handling (CMDH) :</code> CSE간, AE와 CSE간, 데이터 전달 시에 NSE를 통한 데이터 전달 서비스를 제공하는 기능을 담당한다. CMDH CSF는 메시지 전달을 위해서 언제 보낼건지, 어떤 네트워크 연결을 활용하여 보낼지를 결정한다.<br><code>Network Service Exposure, Service Execution &amp; Triggering (NSSE) :</code>NSSE CSF는 기저 네트워크와 관련된 통신을 관리하며 Mcn 참조 포인트를 통한 네트워크 접근 서비스를 제공한다.<br><code>Location (LOC):</code> LOC CSF는 AE의 위치 정보 요청에 대해서 ASN, MN과 관련된 위치정보를 획득하기 위한 방법을 제공하는 CSF이다.<br><code>Service Charging &amp; Accounting (SCA) :</code> SCA CSF는 oneM2M 공통 서비스 플랫폼을 통해서 제공되는 서비스에 대한 과금 체계 및 방법에 대한 기능을 제공한다.</p>
 <hr>
-<h3 id="별첨"><a href="#별첨" class="headerlink" title="별첨"></a>별첨</h3><h4 id="LwM2M-Lightweight-M2M"><a href="#LwM2M-Lightweight-M2M" class="headerlink" title="LwM2M(Lightweight M2M)"></a>LwM2M(Lightweight M2M)</h4><p>LwM2M(Lightweight M2M)은 M2M 또는 IoT 장치 관리를 위하여 LwM2M 서버와 LwM2M 장치에 있는 LwM2M 클라이언트 간의 응용 프로그램 계층 통신 프로토콜을 정의함. 소형기기를 포함하여 다양한 사물인터넷 기기를 지원하기 위한 기기 관리 표준임.<br>1)센서 또는 셀룰러 네트워크를 통한 장치 관리 기능 제공<br>2)네트워크에서 장치로 서비스 데이터 전송<br>3)대부분의 모든 응용 프로그램의 요구사항을 충족하도록 확장 을 위하여 설계됨. 자원이 제한된 LwM2M 디바이스를 감안하여 효율적인 리소스 데이터 모델을 기반으로 가볍고 간결한 프로토콜로 IETF CoAP을 사용하고 있음</p>
+<h3 id="oneM2M의-장치관리-표준"><a href="#oneM2M의-장치관리-표준" class="headerlink" title="oneM2M의 장치관리 표준"></a>oneM2M의 장치관리 표준</h3><p>oneM2M의 장치관리 표준은 ETSI TC M2M 규약에서 정한 BBF <u>TR-069</u>와 <u>OMA(Open Mobile Alli-ance)-DM(Device Management)</u> 표준을 그대로 승계하였고, 더 나아가 제약 많은 IoT 장치를 위한 <u>OMA LWM2M</u>까지 포함한다.</p>
+<p><code>OMA-DM, TR-069는 다음 포스트에서 다룬다</code></p>
+<hr>
+<h3 id="나만의-요약"><a href="#나만의-요약" class="headerlink" title="나만의 요약"></a>나만의 요약</h3><h2 id="oneM2M에서는-CSE가-핵심이다"><a href="#oneM2M에서는-CSE가-핵심이다" class="headerlink" title="oneM2M에서는 CSE가 핵심이다."></a>oneM2M에서는 CSE가 핵심이다.</h2><h3 id="별첨"><a href="#별첨" class="headerlink" title="별첨"></a>별첨</h3><h4 id="LwM2M-Lightweight-M2M"><a href="#LwM2M-Lightweight-M2M" class="headerlink" title="LwM2M(Lightweight M2M)"></a>LwM2M(Lightweight M2M)</h4><p>LwM2M(Lightweight M2M)은 M2M 또는 IoT 장치 관리를 위하여 LwM2M 서버와 LwM2M 장치에 있는 LwM2M 클라이언트 간의 응용 프로그램 계층 통신 프로토콜을 정의함. 소형기기를 포함하여 다양한 사물인터넷 기기를 지원하기 위한 기기 관리 표준임.<br>1)센서 또는 셀룰러 네트워크를 통한 장치 관리 기능 제공<br>2)네트워크에서 장치로 서비스 데이터 전송<br>3)대부분의 모든 응용 프로그램의 요구사항을 충족하도록 확장 을 위하여 설계됨. 자원이 제한된 LwM2M 디바이스를 감안하여 효율적인 리소스 데이터 모델을 기반으로 가볍고 간결한 프로토콜로 IETF CoAP을 사용하고 있음</p>
 <h4 id="REST-Representational-State-Transfer"><a href="#REST-Representational-State-Transfer" class="headerlink" title="REST(Representational State Transfer)"></a>REST(Representational State Transfer)</h4><p>웹 상의 자료를 HTTP위에서 별도의 전송 계층 없이 전송하기 위한 아주 간단한 인터페이스이다. URI는 자원을 표현하는 데에 집중하고 행위에 대한 정의는 HTTP METHOD를 통해 하는 것이 REST한 API를 설계하는 중심 규칙이다.</p>
 <h4 id="CoAP"><a href="#CoAP" class="headerlink" title="CoAP"></a>CoAP</h4><ul>
 <li>Internet에서 IoT device처럼 제한된 computing 성능을 갖는 device들의 통신을 위해 IETF의 CoRE(Constrained RESTful Environment) working-group에서 표준화한 protocol</li>
