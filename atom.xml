@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-02-10T12:52:37.669Z</updated>
+  <updated>2019-02-10T14:18:06.413Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2.운영체제의 역사</title>
+    <link href="http://KKimSangHeon.github.io/2019/02/10/os2/"/>
+    <id>http://KKimSangHeon.github.io/2019/02/10/os2/</id>
+    <published>2019-02-10T13:33:13.000Z</published>
+    <updated>2019-02-10T14:18:06.413Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="컴퓨터의-역사"><a href="#컴퓨터의-역사" class="headerlink" title="컴퓨터의 역사"></a>컴퓨터의 역사</h3><p>2차세계 대전 중 1940년대 말 만들어졌다.</p>
+<p><code>1.초기에는 운영체제가 존재하지 않았다.</code></p>
+<p><code>2.이후엔 Batch processing system(일괄처리)이 나왔다</code><br>이는 최초의 O/S로 볼 수 있다.</p>
+<p><code>3.Multiprogramming system</code><br>가령 수를 더해서 출력하고 다시 이를 특정 수를 반복해서 더하는 프로그램이 있다고 해보자.<br>수를 더하는것은 CPU가 할 것이고 출력은 입출력 장치가 하게될것이다.<br>이 때 CPU가 작업을 마치고 출력을 위해 입출력 장치가 출력을 실행하게 되면 느린 i/o의 성능으로 인해 CPU가 idle(노는시간) 즉 기다리는 시간이 생기게 된다. 이를 개선하기 위해 메모리에 여러 프로그램을 올리고 실행중인 프로그램이 <u>i/o</u>를 만나면 다른 프로그램을 실행토록 한다.</p>
+<p><u>이를 통해 CPU가 노는 시간이 없도록한다.</u><br>이와 관련하여 <u>CPU scheduling</u>가 나오게된다. 어떤 순으로 실행하여 성능을 좋게할까에 대한 알고리즘이다.<br><u>메모리 관리</u>또한 나오게된다. 이는 적절하게 프로그램을 메모리에 배치하기 위한 기법이다.<br><u>보호</u>개념또한 등장하게 되는데 메모리에서 다른 프로그램의 영역에 침범하면 안되므로!</p>
+<p><code>4.Time-sharing system</code><br>여러사람이 한 컴퓨터로 들어와 자신의 프로그램을 사용한다고 가정하자. 이 때 여러사람들은 Multiprogramming system에서는 동시에 사용하기란 불가능하다.(이는 I/O를 만나야 다른 프로그램을 동작시키는 로직이므로..)<br>그래서 <u>아주 짧은시간으로 나눠 여러 유저의 작업을 번갈아가며 CPU가 처리해주도록</u> 한다.</p>
+<p>이러한 시스템이 등장하며 특정유저가 다른 유저에게 데이터를 주고받는것이 즉 <u>프로세스간 통신</u>이 가능해졌다.<br>또한 누가 먼저 앞서고 뒤서는지에 대한 <u>동기</u>라는 개념이 등장한다.<br>또한 하드디스크의 일부를 메인메모리인냥 사용하는 기술인 <u>가상 메모리</u> 또한 등장하게된다.</p>
+<h3 id="OS-기술-천이"><a href="#OS-기술-천이" class="headerlink" title="OS 기술 천이"></a>OS 기술 천이</h3><p>컴퓨터의 규모별 분류는 다음과 같다.<br><code>과거의 분류 :</code><br>  Supercomputer &gt; Mainframe &gt; Mini &gt; Micro<br><code>현재의 분류 :</code><br>  Supercomputer &gt; Server &gt; Workstation &gt; PC &gt; Handheld &gt; Embedded<br>워크스테이션 : PC에서 처리못하는 조금 큰 작업 처리</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;컴퓨터의-역사&quot;&gt;&lt;a href=&quot;#컴퓨터의-역사&quot; class=&quot;headerlink&quot; title=&quot;컴퓨터의 역사&quot;&gt;&lt;/a&gt;컴퓨터의 역사&lt;/h3&gt;&lt;p&gt;2차세계 대전 중 1940년대 말 만들어졌다.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;1.초기에는 운영체제
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>1.운영체제 서론</title>
@@ -489,39 +520,6 @@
   </entry>
   
   <entry>
-    <title>줌인터넷 면접</title>
-    <link href="http://KKimSangHeon.github.io/2018/10/22/interview3/"/>
-    <id>http://KKimSangHeon.github.io/2018/10/22/interview3/</id>
-    <published>2018-10-22T03:36:14.000Z</published>
-    <updated>2018-10-24T00:02:11.674Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2018년 7월</p>
-<h3 id="코딩시험"><a href="#코딩시험" class="headerlink" title="코딩시험"></a>코딩시험</h3><p>문제의 난이도는 크게 어렵지 않은수준이었다.</p>
-<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>면접 때 코딩시험 내용을 질문한다는 후기를 많이 봐 와서 작성했던 코드를 철저하게 분석하여 갔지만 관련 내용은 질문하지 않으셨다.<br>면접관 다섯분과 지원자 한명 다대일 방식으로 면접이 진행되었다.</p>
-<p>면접 질문은 다음과 같다.</p>
-<p>자바8<br>자바 몇까지 써봄<br>프로미스<br>프로토타입<br>http 송신 수신시 헤더<br>di<br>aop<br>쿠키 세션<br>rest api?<br>예외의 종류 Error에 대한질문<br>stringbuffer stringbuilder 차이<br>인터페이스 staitc default<br>resultful api설계해본적<br>암호화기법<br>양방향 단방향</p>
-<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p>정말 많이많이 어려웠던 면접이었던것 같다. 지금까지 봤던 면접 중 가장 어려웠고 많은것을 다시한번 생각해볼 수 있었던 기회였다. 면접관 분들은 친절하셨지만 내 실력이 불친절했던것 같다.   </p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2018년 7월&lt;/p&gt;
-&lt;h3 id=&quot;코딩시험&quot;&gt;&lt;a href=&quot;#코딩시험&quot; class=&quot;headerlink&quot; title=&quot;코
-    
-    </summary>
-    
-      <category term="Etc" scheme="http://KKimSangHeon.github.io/categories/Etc/"/>
-    
-      <category term="면접" scheme="http://KKimSangHeon.github.io/categories/Etc/%EB%A9%B4%EC%A0%91/"/>
-    
-    
-      <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
-    
-      <category term="줌인터넷" scheme="http://KKimSangHeon.github.io/tags/%EC%A4%8C%EC%9D%B8%ED%84%B0%EB%84%B7/"/>
-    
-  </entry>
-  
-  <entry>
     <title>KT SW개발직무 면접</title>
     <link href="http://KKimSangHeon.github.io/2018/10/22/interview4/"/>
     <id>http://KKimSangHeon.github.io/2018/10/22/interview4/</id>
@@ -582,6 +580,39 @@
       <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
     
       <category term="알티캐스트" scheme="http://KKimSangHeon.github.io/tags/%EC%95%8C%ED%8B%B0%EC%BA%90%EC%8A%A4%ED%8A%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>줌인터넷 면접</title>
+    <link href="http://KKimSangHeon.github.io/2018/10/22/interview3/"/>
+    <id>http://KKimSangHeon.github.io/2018/10/22/interview3/</id>
+    <published>2018-10-22T03:36:14.000Z</published>
+    <updated>2018-10-24T00:02:11.674Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2018년 7월</p>
+<h3 id="코딩시험"><a href="#코딩시험" class="headerlink" title="코딩시험"></a>코딩시험</h3><p>문제의 난이도는 크게 어렵지 않은수준이었다.</p>
+<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>면접 때 코딩시험 내용을 질문한다는 후기를 많이 봐 와서 작성했던 코드를 철저하게 분석하여 갔지만 관련 내용은 질문하지 않으셨다.<br>면접관 다섯분과 지원자 한명 다대일 방식으로 면접이 진행되었다.</p>
+<p>면접 질문은 다음과 같다.</p>
+<p>자바8<br>자바 몇까지 써봄<br>프로미스<br>프로토타입<br>http 송신 수신시 헤더<br>di<br>aop<br>쿠키 세션<br>rest api?<br>예외의 종류 Error에 대한질문<br>stringbuffer stringbuilder 차이<br>인터페이스 staitc default<br>resultful api설계해본적<br>암호화기법<br>양방향 단방향</p>
+<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p>정말 많이많이 어려웠던 면접이었던것 같다. 지금까지 봤던 면접 중 가장 어려웠고 많은것을 다시한번 생각해볼 수 있었던 기회였다. 면접관 분들은 친절하셨지만 내 실력이 불친절했던것 같다.   </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2018년 7월&lt;/p&gt;
+&lt;h3 id=&quot;코딩시험&quot;&gt;&lt;a href=&quot;#코딩시험&quot; class=&quot;headerlink&quot; title=&quot;코
+    
+    </summary>
+    
+      <category term="Etc" scheme="http://KKimSangHeon.github.io/categories/Etc/"/>
+    
+      <category term="면접" scheme="http://KKimSangHeon.github.io/categories/Etc/%EB%A9%B4%EC%A0%91/"/>
+    
+    
+      <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
+    
+      <category term="줌인터넷" scheme="http://KKimSangHeon.github.io/tags/%EC%A4%8C%EC%9D%B8%ED%84%B0%EB%84%B7/"/>
     
   </entry>
   
@@ -703,34 +734,6 @@
     <summary type="html">
     
       &lt;h3 id=&quot;프로토타입-디자인-패턴&quot;&gt;&lt;a href=&quot;#프로토타입-디자인-패턴&quot; class=&quot;headerlink&quot; title=&quot;프로토타입 디자인 패턴&quot;&gt;&lt;/a&gt;프로토타입 디자인 패턴&lt;/h3&gt;&lt;p&gt;프로토타입 패턴은 객체를 복사품을 만드는것을 의미하는 
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="Design Pattern" scheme="http://KKimSangHeon.github.io/categories/CS/Design-Pattern/"/>
-    
-    
-      <category term="Design Pattern" scheme="http://KKimSangHeon.github.io/tags/Design-Pattern/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>팩토리 메서드 디자인 패턴</title>
-    <link href="http://KKimSangHeon.github.io/2018/09/22/factory-method/"/>
-    <id>http://KKimSangHeon.github.io/2018/09/22/factory-method/</id>
-    <published>2018-09-22T04:25:51.000Z</published>
-    <updated>2018-09-27T17:40:56.718Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="팩토리-메서드-패턴"><a href="#팩토리-메서드-패턴" class="headerlink" title="팩토리 메서드 패턴"></a>팩토리 메서드 패턴</h3><p>공장처럼 팩토리 메서드의 일은 객체를 생성하는것이다. 이는 생성패턴으로 클래스들 중 하나의 객체를 인스턴스화 하는데 사용된다. 생성자에 비해 많은장점을 갖으며 상황에 따라 생성자 대신 혹은 기존의 생성자에 덧붙여 제공하는것이 좋다.</p>
-<figure class="highlight c"><figcaption><span>Factory</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 팩토리 메서드 패턴으로 인스턴스화될 형으로 제공될 기본 클래스</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Pet</span> &#123;</span></div><div class="line">  <span class="keyword">public</span> :</div><div class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">petSound</span><span class="params">()</span> </span>= <span class="number">0</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">// 팩토리 메서드 패턴에 의해 인스턴스를 얻게 될 첫 번째 파생 클래스</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>:</span> <span class="keyword">public</span> Pet&#123;</div><div class="line">  <span class="keyword">public</span> :</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">petSound</span><span class="params">( )</span> </span>&#123;</div><div class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"Bow Bow..."</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// 팩토리 메서드 패턴에 의해 인스턴스를 얻게 될 두번째 파생 클래스</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> :</span> <span class="keyword">public</span> Pet &#123;</div><div class="line">  <span class="keyword">public</span> :</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">petSound</span><span class="params">()</span> </span>&#123;</div><div class="line">      <span class="built_in">cout</span>&lt;&lt; <span class="string">"Meaw Meaw..."</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">// 로직에 기반해서 객체들을 인스턴스화하는 팩토리 메서드 패턴 구현</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PetFactory</span> &#123;</span></div><div class="line">  <span class="keyword">public</span> :</div><div class="line">    <span class="function">Pet* <span class="title">getPet</span><span class="params">(<span class="keyword">int</span> petType)</span> </span>&#123;</div><div class="line">      Pet pet = <span class="literal">NULL</span>;</div><div class="line">      <span class="comment">// 비즈니스 로직에 기반한 객체의 인스턴스화</span></div><div class="line">      <span class="keyword">if</span> (petType == <span class="number">1</span>)</div><div class="line">          pet = <span class="keyword">new</span> Dog();</div><div class="line">      <span class="keyword">else</span> <span class="keyword">if</span>(petType ==<span class="number">2</span>)</div><div class="line">          pet = <span class="keyword">new</span> Cat();</div><div class="line"></div><div class="line">      <span class="keyword">return</span> pet;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
-<p>다음은 생성한 팩토리메소드를 활용하여 인스턴스를 생성하는 방식이다.</p>
-<figure class="highlight c"><figcaption><span>Factory</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">  PetFactory *PetFactory = <span class="keyword">new</span> PetFactory();</div><div class="line"></div><div class="line">  Pet pet = petFactory-&gt;getPet(<span class="number">2</span>);</div><div class="line"></div><div class="line">  <span class="built_in">cout</span>&lt;&lt; <span class="string">"Pet Sound"</span>;</div><div class="line">  pet-&gt;petSound();</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;팩토리-메서드-패턴&quot;&gt;&lt;a href=&quot;#팩토리-메서드-패턴&quot; class=&quot;headerlink&quot; title=&quot;팩토리 메서드 패턴&quot;&gt;&lt;/a&gt;팩토리 메서드 패턴&lt;/h3&gt;&lt;p&gt;공장처럼 팩토리 메서드의 일은 객체를 생성하는것이다. 이는 생성패턴으
     
     </summary>
     
