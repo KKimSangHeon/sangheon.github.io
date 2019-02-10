@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-02-09T06:43:07.460Z</updated>
+  <updated>2019-02-10T08:02:03.813Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,11 +20,12 @@
     <link href="http://KKimSangHeon.github.io/2019/02/08/mine/"/>
     <id>http://KKimSangHeon.github.io/2019/02/08/mine/</id>
     <published>2019-02-08T10:53:12.000Z</published>
-    <updated>2019-02-09T06:43:07.460Z</updated>
+    <updated>2019-02-10T08:02:03.813Z</updated>
     
     <content type="html"><![CDATA[<h3 id="oneM2M"><a href="#oneM2M" class="headerlink" title="oneM2M"></a>oneM2M</h3><p>iot 솔루션을 제공함에 있어 여러 벤더를 맞추기란 힘들다… oneM2M이라는 표준을 만들고 이를 여러 벤더가 맞춤으로써 응용개발사 또한 iot시스템을 개발함에 있어 개발공수를 낮출 수 있게된다.<br>oneM2M에는 CSE라는게 있는데 공통서비스를 제공하는것이다. 가령 데이터 저장, 요금청구 등등 다양하게 있다..</p>
 <p>CSE는 REST 형태로 제공되어 편리하다는 장점이 있으며 최근에는 일반 응용개발에 oneM2M을 적용하여 CSE를 적절히 활용하는 경우도 있다. 이를 Distributed Platform 형태 라고 한다<br>통신사업자는 oneM2M 표준을 기반으로 CSE를 사용하는 플랫폼을 만들고 일반에 공개하게 되면 일반 개발자들은 통신사업자가 만든 플랫폼을 사용할 수 있게된다.(?? 맞는지 모르겠다.)</p>
 <h3 id="OMA-DM"><a href="#OMA-DM" class="headerlink" title="OMA-DM"></a>OMA-DM</h3><p>이는 이동통신장치 관리표주으로서 내부 데이터에 접근하고 제어하는 표준이라 이해했다. xml기반 마크업 언어 SyncML 기반으로 명령과 결과를 주고받으며 심지어 운영체제 설치 그리고 응용프로그램의 파라미터 까지 변경이 가능하다고 한다. 여기서 관리할수 있는 자원을 <code>관리객체(MO, Management Object)</code>라고 한다.</p>
+<h3 id="TR-069"><a href="#TR-069" class="headerlink" title="TR-069"></a>TR-069</h3><p>CPE WAN Management Protocol (CWMP) 이라 불리며 CPE 즉 사용자 단말을 관리하는 프로토콜인것같다.</p>
 <h3 id="oneM2M과-OMA-DM의-상관관계"><a href="#oneM2M과-OMA-DM의-상관관계" class="headerlink" title="oneM2M과 OMA-DM의 상관관계???"></a>oneM2M과 OMA-DM의 상관관계???</h3><p>아래부터 개인적인생각입니다. 참고하지도 마세요!<br>oneM2M은 장치에서 받은 데이터를 활용하고 정제 저장하는 표준이라고 생각한다. 즉 디바이스의 정보를 뭐 제어하거나 어떻게 가져오는건 아니라 생각한다.<br>하지만 OMA-DM는 내부데이터 관리와 같은 디바이스 내부로 들어가는 표준인것같다.</p>
 <p>아래 그림처럼 구분되나보다<br></p>
 ]]></content>
@@ -82,21 +83,29 @@
     <link href="http://KKimSangHeon.github.io/2019/02/08/TR-069/"/>
     <id>http://KKimSangHeon.github.io/2019/02/08/TR-069/</id>
     <published>2019-02-08T05:52:45.000Z</published>
-    <updated>2019-02-10T06:37:52.857Z</updated>
+    <updated>2019-02-10T08:35:10.602Z</updated>
     
     <content type="html"><![CDATA[<h3 id="TR-069"><a href="#TR-069" class="headerlink" title="TR-069"></a>TR-069</h3><p>customer-premises equipment (CPE, 말단 사용자 장치)<br>Auto Configuration Servers (ACS, 자동 설정 서버)</p>
 <p>TR-069 (Technical Report 069)는 DSL 포럼 (이후 Broadband 포럼으로 변경)의 기술 명세서이다. 이 문서의 정식 명칭은 CPE WAN Management Protocol (CWMP)이다. 이 문서는 말단 사용자 장치를 관리하기 위한 사용자 계층 프로토콜을 정의하고 있다.</p>
 <p><code>TR-069 프로토콜은 양방향 SOAP/HTTP 을 기반으로 customer-premises equipment (CPE, 말단 사용자 장치) 와 Auto Configuration Servers (ACS,자동 설정 서버) 간 통신을 가능하게 한다.</code> 또한 안전한 자동 설정 기능을 제공하며 통합 환경 내에서 다른 CPE 관리 함수를 제어하고 동작시킬 수 있도록 해준다.</p>
 <h3 id="등장배경"><a href="#등장배경" class="headerlink" title="등장배경"></a>등장배경</h3><p> 브로드밴드 시장이 활성화 되면서 여러개의 다른 종류의 인터넷 접속 또한 많이 생겨났다. ( 모뎀, 라우터, 게이트웨이, 세트톱박스, VoIP-phone 등). <code>또한 동시에 이러한 장비들을 설정하는 것은 더욱 복잡해졌다. 말단 사용자에게는 이러한 설정이 더욱 어려운데 이러한 이유로 TR-069 표준이 개발되었다. TR-069 표준은 여러가지 접속 방법에 대한 자동 설정을 제공한다.</code> 이에대한 구체적인 기술적인 사항은 Broadband 포럼에서 관리하고 발행하고 있다.<code>TR-069을 이용해서 말단 장비들은 자동 설정 서버 (Auto Configuration Servers) (ACS)에 접속하고 필요한 설정을 자동으로 받아오게 된다. 이렇게 함으로써 사용자가 따로 설정하지 않아도 필요한 서비스를 사용하는 것이 가능해진다.</code> TR-069는 DSL broadband 시장에서 터미널을 활성화하기 위해 현재 사용중인 표준이다.</p>
-<h4 id="ACS-연결방식"><a href="#ACS-연결방식" class="headerlink" title="ACS 연결방식"></a>ACS 연결방식</h4><p>ACS와 연결하기 위해서는 다음의 데이터가 필요하다.</p>
+<h3 id="CPE-WAN-Management-Protocol-CWMP"><a href="#CPE-WAN-Management-Protocol-CWMP" class="headerlink" title="CPE WAN Management Protocol (CWMP)??"></a>CPE WAN Management Protocol (CWMP)??</h3><p>서비스 프로바이더가 ACS를 통해 CPE를 원격으로 데이터 모델을 관리할 수 있게 해준다. 제공기능은 다음과 같다.</p>
+<p>자동 구성 및 동적 서비스 프로비저닝<br>소프트웨어 / 펌웨어 이미지 관리<br>소프트웨어 모듈 관리 상태 및 성능 모니터링 진단</p>
+<h3 id="TR-069-아키텍처"><a href="#TR-069-아키텍처" class="headerlink" title="TR-069 아키텍처"></a>TR-069 아키텍처</h3><img src="/2019/02/08/TR-069/image1.png" alt="TR-069 아키텍처" title="TR-069 아키텍처">
+<p><u>All CWMP sessions begin with the CPE making the Inform RPC on the ACS.</u> This is also referred to as “sending an Inform” or “an Inform message”. An Inform RPC, and consequently, a CWMP session, is always made for a specific reason, called an Event. These Events drive CWMP operation.</p>
+<h4 id="TR-069-초기-세션"><a href="#TR-069-초기-세션" class="headerlink" title="TR-069 초기 세션"></a>TR-069 초기 세션</h4><p>ACS와 연결하기 위해서는 다음의 데이터가 필요하다.</p>
 <ul>
 <li>ACS URL : ACS에 접속하기 위한 URL</li>
 <li>주기적인 알림 : ACS와 주기적인 소통이 정의되어야 한다.</li>
 <li>Username and password - 옵션데이터이나 보안을 위해 하는것이 좋다.</li>
 </ul>
+<img src="/2019/02/08/TR-069/image2.png" alt="TR-069의 초기 세션" title="TR-069의 초기 세션">
+<p>1.First, the CPE initiates a TCP session with ACS and negotiates a secure connection.<br>2.The CPE begins every session by sending an Inform RPC to the ACS, with arguments that include the Event that caused the session. This is done over an HTTP Post.<br>3.In the HTTP Response, the the ACS sends an InformResponse. Once processed by the CPE, this means that the Inform RPC is complete.<br>4.There’s probably no other RPCs that CPE wishes to make on the ACS, so it sends an empty HTTP Post to indicate that it is finished. This may happen at any time during the session.<br>5.The ACS begins to send remote procedure calls to the CPE, such as the GetParamterValues RPC.<br>6.The CPE sends its GetParameterResponse in an HTTP Post, with the information the ACS was looking for. This ends the GetParameterValues RPC.<br>7.The ACS makes any other RPCs it needs to during this session, such as SetParameterValues to change the state of the CPE, or SetParameterAttributes to set up a notification.<br>8.When the ACS has no more RPCs to make, it sends an empty HTTP Response, just like the CPE did earlier. When both the CPE and the ACS have done this, the session is over and it’s time to tear down the connection.</p>
 <h3 id="전송방식"><a href="#전송방식" class="headerlink" title="전송방식"></a>전송방식</h3><p>CWMP는 텍스트 기반 프로토콜입니다. 장치 (CPE)와 자동 구성 서버 (ACS)간에 전송 된 주문은 HTTP 혹은 HTTPS 를 통해 전송됩니다. 이 수준 (HTTP)에서 CPE는 클라이언트 역할을하며 ACS는 HTTP 서버 역할을합니다.</p>
 <hr>
 <h2 id="별첨"><a href="#별첨" class="headerlink" title="별첨"></a>별첨</h2><h4 id="SOAP"><a href="#SOAP" class="headerlink" title="SOAP"></a>SOAP</h4><p>SOAP(Simple Object Access Protocol)은 일반적으로 널리 알려진 HTTP, HTTPS, SMTP 등을 통해 XML 기반의 메시지를 컴퓨터 네트워크 상에서 교환하는 프로토콜이다. SOAP은 웹 서비스에서 기본적인 메시지를 전달하는 기반이 된다.</p>
+<hr>
+<h3 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h3><p><a href="https://www.qacafe.com/tr-069-training/" target="_blank" rel="external">https://www.qacafe.com/tr-069-training/</a></p>
 ]]></content>
     
     <summary type="html">
