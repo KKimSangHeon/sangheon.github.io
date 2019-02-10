@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2019/02/10/os/</loc>
+        <lastmod>2019-02-10T12:47:21.793Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2019/02/08/oma-dm/</loc>
+        <lastmod>2019-02-10T08:41:54.697Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2019/02/08/TR-069/</loc>
         <lastmod>2019-02-10T08:35:10.602Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -25,14 +41,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2019/02/07/onem2m/</loc>
         <lastmod>2019-02-09T06:51:54.249Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2019/02/08/oma-dm/</loc>
-        <lastmod>2019-02-09T06:29:06.479Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

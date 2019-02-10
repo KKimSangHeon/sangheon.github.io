@@ -196,15 +196,22 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/CS/</loc>
-        <lastmod>2019-02-10T08:35:10.602Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/categories/CS/IOT/</loc>
+        <lastmod>2019-02-10T08:41:54.697Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/CS/IOT/</loc>
-        <lastmod>2019-02-10T08:35:10.602Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/categories/CS/</loc>
+        <lastmod>2019-02-10T12:47:21.793Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/CS/Operating-System/</loc>
+        <lastmod>2019-02-10T12:47:21.793Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
