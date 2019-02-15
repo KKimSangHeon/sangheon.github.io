@@ -8,15 +8,23 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2019/02/14/operating-system/</loc>
-        <lastmod>2019-02-14T13:48:27.482Z</lastmod>
+        <lastmod>2019-02-15T12:29:02.389Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/2019/02/11/os4/</loc>
-        <lastmod>2019-02-14T13:18:26.564Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/2019/02/15/os6/</loc>
+        <lastmod>2019-02-15T12:28:31.145Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2019/02/15/os7/</loc>
+        <lastmod>2019-02-15T12:28:28.743Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -24,7 +32,15 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2019/02/11/os3/</loc>
-        <lastmod>2019-02-11T11:55:00.724Z</lastmod>
+        <lastmod>2019-02-15T12:27:37.793Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2019/02/11/os4/</loc>
+        <lastmod>2019-02-15T12:27:37.482Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -32,7 +48,7 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2019/02/10/os2/</loc>
-        <lastmod>2019-02-10T14:18:06.413Z</lastmod>
+        <lastmod>2019-02-15T12:27:36.853Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -40,7 +56,7 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2019/02/10/os/</loc>
-        <lastmod>2019-02-10T12:52:37.669Z</lastmod>
+        <lastmod>2019-02-15T12:27:28.905Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

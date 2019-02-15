@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-02-14T13:48:27.482Z</updated>
+  <updated>2019-02-15T12:28:28.743Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,117 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>5.운영체제 서비스</title>
+    <title>7.스케쥴링 척도, FCFS</title>
+    <link href="http://KKimSangHeon.github.io/2019/02/15/os7/"/>
+    <id>http://KKimSangHeon.github.io/2019/02/15/os7/</id>
+    <published>2019-02-15T12:27:56.000Z</published>
+    <updated>2019-02-15T12:28:28.743Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="CPU-스케쥴링"><a href="#CPU-스케쥴링" class="headerlink" title="CPU 스케쥴링"></a>CPU 스케쥴링</h3><p>프로그램은 하드디스크안에 들어있고 아무런 동작도 하지안흔다. 메인메모리에 올라가서 실행이 되면 활동한다.</p>
+<p>활동중에 있는 프로그램을 프로세스라함.</p>
+<p>프로세스에 대한 것들을 PCB안에 넣어놓는다.</p>
+<p>컴퓨터 안에는 여러가지 큐는 있는데</p>
+<p>job queue<br>ready queue<br>device queue</p>
+<p>메인메모리에 여러 프로그램이 올라와있는게 멀티 프로그래밍<br>프로그램이 몇개인가에 대한것이 Degree of multiprogramming</p>
+<p>잡스케줄러가 하는일은 i/o-bound 를 CPU-bound process 적절히 분배하는것.</p>
+<p>short-term scheduler : 어떤 작업에 CPU를 줄까<br>Long-term scheduler : 잡 스케줄러</p>
+<p>메인메모리에 올라온 프로세스중에 일정시간동안 사용되지 않는것을 물리적인 하드디스크에 Swap out 한다.<br>Medium-term scheduler : Swap out 리스트중 어느것을 Swap in 할지에 대한것을 의미함.</p>
+<p>하드디스크는 파일시스템목적, Backing store(물리적인 하드디스크에 Swap out할 때 목적지) 용도로 사용된다.</p>
+<h3 id="Context-switching"><a href="#Context-switching" class="headerlink" title="Context switching"></a>Context switching</h3><p>CPU가 p1을 실행하다 p2로 넘어가는데 이를 문맥교환이라 한다.</p>
+<h3 id="Scheduler"><a href="#Scheduler" class="headerlink" title="Scheduler"></a>Scheduler</h3><p>레디큐에 있는 놈 중 어느놈을 CPU로 보내줄까에 대한것.<br>지금있는 프로세스가 끝나면 어느놈을 선택할것인가에 대한것.<br>O/S안에 들어있는 컴퓨터 프로그램이다.</p>
+<h3 id="Dispatcher"><a href="#Dispatcher" class="headerlink" title="Dispatcher"></a>Dispatcher</h3><p>스케줄러가 선택한 프로세스를 실행하도록 여러가지 상태를 변경해주는것.<br>p2가 선택되었다면 p2를 돌리기 위해 p1의 현재상태 프로그램카운터,스택포인터,레지스터,베이스레지스터 등을 P1의 PCB 에 저장해 놓아야한다.<br>즉 p1의 현재상태를 pcb1에 저장해놓는다. p2의 PCB에저장된 값을 복원(restore)<br>이런일을 하는것이 디스패처라 한다.<br>이런일을 하는것은 오버헤드(부담)이 발생하게 된다. 이를 Context Switching Overhead라고 한다.</p>
+<p>즉 컨텍스트 스위칭을 자주하는것은 손해이다.<br>Dispatcher는 주로 어셈블리어와같은 low 레벨로 짜서 효율을 높인다.</p>
+<h3 id="CPU스케줄링"><a href="#CPU스케줄링" class="headerlink" title="CPU스케줄링"></a>CPU스케줄링</h3><p>현재 실행중인 프로세스가 끝나면 어느것을 실행해줄까</p>
+<h3 id="Preemptive-vs-Non-preemptive"><a href="#Preemptive-vs-Non-preemptive" class="headerlink" title="Preemptive vs Non-preemptive"></a>Preemptive vs Non-preemptive</h3><p>Preemptive : CPU가 어떤일을 하고 있는데 IO를 만나거나 끝나지도 않았는데 강제로 끝내고 들어갈 수 있는것<br>Non-preemptive : 이미 어떤프로세스가 실행중이면 끝나거나 IO를 만나지 않으면 변경되지 않는것</p>
+<h3 id="Scheduling-criteria-척도"><a href="#Scheduling-criteria-척도" class="headerlink" title="Scheduling criteria(척도)"></a>Scheduling criteria(척도)</h3><ul>
+<li><p>CPU Utilization (CPU 이용률) : CPU가 놀지않고 얼마나 열심히 일하는가. a방법은 100%로 돌고 b방법은 80%로 들 때 a방법을 채택</p>
+</li>
+<li><p>Throughput (처리율) : 시간당 몇개의 작업을 처리하는가.</p>
+</li>
+<li><p>Turnaround time (반환시간) : 작업이 ready queue로 들어가 작업을 끝내고 나오는 시간.</p>
+</li>
+<li><p>Waiting time (대기시간) : CPU를 받기위해 ready queue에서 얼마나 기다려야 하는가. 당연히 짧을수록 좋다.</p>
+</li>
+<li><p>Response time (응답시간) : interactive 환경에서 중요하다. 처음 응답이 나올때 까지 걸리는 시간. 주로 대화형 컴퓨터에서 척도로 삼음<br>….</p>
+</li>
+</ul>
+<hr>
+<h3 id="First-Come-First-Served-FCFS"><a href="#First-Come-First-Served-FCFS" class="headerlink" title="First-Come, First-Served (FCFS)"></a>First-Come, First-Served (FCFS)</h3><p>먼저온놈을 먼저 처리해준다.  - Non-preemptive schedulling<br>레디큐에 프로세스가 대기중이다.</p>
+<p>p1은 burst time 24<br>p2는 3<br>p3는 3 일때</p>
+<p>평균적으로 기다린 시간은 (0 +24 + 27)/3 = 17 이다.</p>
+<p>P3,P2,P1 순으로 들어왔다고 할 경우 (0+3+6)/3 = 3 이라고 할 수 있다.<br>당연히 아래방식이 더 좋다.</p>
+<p>간트차트 추가</p>
+<p>즉 이런방식으로 해주면 평균 대기시간을 고려할 때 그리 좋은방법이 아니다.</p>
+<p>Convoy Effect (호위효과) : CPU를 많이 잡아먹는놈이 앞에있으면 뒤에놈들이 오래 기다려야 한다.</p>
+<h3 id="Shortest-Job-First-SJF"><a href="#Shortest-Job-First-SJF" class="headerlink" title="Shortest-Job-First (SJF)"></a>Shortest-Job-First (SJF)</h3><p>짧은 작업</p>
+<h3 id="Shortest-Remaining-Time-First"><a href="#Shortest-Remaining-Time-First" class="headerlink" title="Shortest-Remaining-Time-First"></a>Shortest-Remaining-Time-First</h3><h3 id="Priority"><a href="#Priority" class="headerlink" title="Priority"></a>Priority</h3><h3 id="Round-Robin-RR"><a href="#Round-Robin-RR" class="headerlink" title="Round-Robin (RR)"></a>Round-Robin (RR)</h3><h3 id="Multilevel-Queue"><a href="#Multilevel-Queue" class="headerlink" title="Multilevel Queue"></a>Multilevel Queue</h3><h3 id="Multilevel-Feedback-Queue"><a href="#Multilevel-Feedback-Queue" class="headerlink" title="Multilevel Feedback Queue"></a>Multilevel Feedback Queue</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;CPU-스케쥴링&quot;&gt;&lt;a href=&quot;#CPU-스케쥴링&quot; class=&quot;headerlink&quot; title=&quot;CPU 스케쥴링&quot;&gt;&lt;/a&gt;CPU 스케쥴링&lt;/h3&gt;&lt;p&gt;프로그램은 하드디스크안에 들어있고 아무런 동작도 하지안흔다. 메인메모리에 올라가서 
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>6.프로세스의 정의, CPU 스케쥴러, 멀티프로그래밍</title>
+    <link href="http://KKimSangHeon.github.io/2019/02/15/os6/"/>
+    <id>http://KKimSangHeon.github.io/2019/02/15/os6/</id>
+    <published>2019-02-15T12:24:01.000Z</published>
+    <updated>2019-02-15T12:28:31.145Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="프로세스-관리"><a href="#프로세스-관리" class="headerlink" title="프로세스 관리"></a>프로세스 관리</h3><p>CPU를 프로세스한테 어떻게 잘 나눠주는가에 대한것.</p>
+<p>Process<br>실행중인 프로그램.</p>
+<p>프로그램은 무덤속에 있는것. 프로세스는 살아있는것.<br>program in execution: text + data + stack, pc, sp, registers, …</p>
+<h3 id="프로세스의-상태"><a href="#프로세스의-상태" class="headerlink" title="프로세스의 상태"></a>프로세스의 상태</h3><p> new - 메인 메모리로 올라온 상태.<br>, ready - 실행할 준비가 모두 다 된상태 ( waiting이 끝나도 ready로 돌아옴)<br>, running - CPU가 실행중인 상태 (CPU를 잡게된 상태)<br>, waiting - 기다리는 상태. ( hwp 프로그램이 프린터를 요청하고 기다림. 즉 IO를 만나는 경우에도 wating상태가 된다,)<br>, terminated - 끝난상태.</p>
+<p>ready, running, wating의 반복으로 프로세스가 동작</p>
+<p>타임쉐어링 시스템은 일정시간이 지나면 바로 ready 상태로 간다</p>
+<h3 id="PCB-Process-Control-Block"><a href="#PCB-Process-Control-Block" class="headerlink" title="PCB(Process Control Block )"></a>PCB(Process Control Block )</h3><p>Task == Process<br>프로세스 제어 블록이며 Task Control Block (TCB) 이라고도 함.</p>
+<p>PCB는 프로세스에 대한 모든 정보를 담고있다.<br>하나의 프로세스에 대해 PCB를 갖고있다. 다른 프로세스로 처리가 넘어가다러도 다시 돌아올 수 있도록 관리.<br>상태정보, PC(지금은 몇번지인지. 번지정보), registers, MMU info (base, limit), CPU time(CPU 이용시간), process id, list of open files(얘가 지금 어떤파일을 사용하고 있는지)…</p>
+<p>PCB는 OS의 프로세스 관리 부서(프로세스 매니지먼트,모르겠으면 이전포스팅 참고) 안에 들어있다.</p>
+<p>모든프로그램은 원래 하드디스크 안에 들어있다.  </p>
+<p>하드디스크에서 메모리로 올라가기 위해서는 줄서서 기다려야한다. 그런것을 <code>Job queue</code>라고 한다.</p>
+<p>메인메모리에 올라와서 CPU를 받으려면 줄서야 하는데 이를 <code>Ready queue</code>라고 한다.</p>
+<p>I/O를 사용하려 해도 줄서서 기다려야 한다. 이를 <code>Device queue</code> 라고 한다.</p>
+<p>I/O를 끝내면 ready상태로 가는대 여기서도 줄서서 기다려야 한다.</p>
+<hr>
+<p>메인메모리에 올라가기 위해 job queue에 대기하는 프로그램중 어느놈을 먼저 올려야하는지에 대한것을 <code>Job scheduling(Long-term scheduler)</code>라 한다. 잡 스케줄링은 역시 O/S 안에 프로세스 관리안에 존재한다.<br>일반적으로 프로세스가 끝나고 메모리가 비워져야 일어나기 때문에 Long-term scheduler 라고도 한다. 즉 스케줄러가 일어나는 시간이 몇분이 걸린다.</p>
+<p>서비스를 위해 줄서있는 프로세스중 어느놈을 선택해서 서비스해줄지에 대한것을 <code>CPU Scheduler( Short-term scheduler )</code>이라 한다.<br>메인 메모리에 여러 프로그램이 있는데 스위칭이 빠르게 일어난다. 1초에 수십번,수백번도 발생한다.  그래서 Short-term scheduler 라고도 부른다. <u>다른 스케줄링 보다도 가장 중요한 스케줄링이다.</u></p>
+<p>디바이스 서비스를 받기위해 기다리는것을 <code>Device Scheduler</code>이라 한다.</p>
+<h3 id="멀티프로그래밍"><a href="#멀티프로그래밍" class="headerlink" title="멀티프로그래밍"></a>멀티프로그래밍</h3><p>메인메모리에 하나의 프로그램, 프로세스를 올리는것이 아니라 여러개를 올리는것.<br>Degree of multiprogramming - 멀티프로그래밍의 정도 ( 메인메모리에 몇개의 프로세스가 올라와있는가)</p>
+<p>프로세스는 크게 두가지로 나눌 수 있다,<br>i/o-bound : 프로세스가 하는게 주로 I/O를 사용하는것(ex. 워드프로세서)<br>CPU-bound process  : 프로세스가 주로 cpu를 사용함.(ex. 일기예보와 같은 계산)</p>
+<p>O/S는 작업을 적당히 섞어서 잡 스케줄링결과로 CPU 혹은 IO에만 작업이 치중해 한쪽이 놀지 않도록 한다.</p>
+<p>Medium-term scheduler<br>서버컴퓨터에 여러명이 사용중이라 가정하자. B라는 사람이 심심해서 커피를 마시러 갔다하자. 그동안 B를 위한 메모리는 올라와있지만 CPU는 아무역할도 하지 않는다. 즉 낭비다. B를 위한 자원을 쫒아내는것이 이득인데 이를 위해 디스크로 쫒아내고 비어있는 메모리공간을 확보한다. 여기서 쫒아내는 것을 <code>Swap out</code>라고 한다. 이처럼 디스크를 프로세스 이미지를 쫒아내는 목적으로 사용하는것을 <code>swap device</code> 라고 한다. 다시 B가 커피를 마시고 돌아와 마우스를 움직이면 Swap device로 갔던 프로세스를 불러들이는데 이를 <code>Swap in</code>이라 한다. swap device로 swap in되고 swap out 되는것을 Swapping 이라 한다.</p>
+<p>이때 쫒겨났을때 쫒겨난 자리로 그대로 들어가는것을 보장하지는 않는다.</p>
+<p>즉 Medium-term scheduler 는 현재 사용되고 있지 않은 어떤놈을 쫒아낼지 결정하는것이다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;프로세스-관리&quot;&gt;&lt;a href=&quot;#프로세스-관리&quot; class=&quot;headerlink&quot; title=&quot;프로세스 관리&quot;&gt;&lt;/a&gt;프로세스 관리&lt;/h3&gt;&lt;p&gt;CPU를 프로세스한테 어떻게 잘 나눠주는가에 대한것.&lt;/p&gt;
+&lt;p&gt;Process&lt;br&gt;실행
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>5.운영체제의 주요 서비스 프로세스, 메모리, 파일관리, 시스템 호출</title>
     <link href="http://KKimSangHeon.github.io/2019/02/14/operating-system/"/>
     <id>http://KKimSangHeon.github.io/2019/02/14/operating-system/</id>
     <published>2019-02-14T13:01:23.000Z</published>
-    <updated>2019-02-14T13:48:27.482Z</updated>
+    <updated>2019-02-15T12:29:02.389Z</updated>
     
     <content type="html"><![CDATA[<h3 id="운영체제-서비스"><a href="#운영체제-서비스" class="headerlink" title="운영체제 서비스"></a>운영체제 서비스</h3><p>지금은 서버컴퓨터 하나에 여러명이 동시에 사용하는 구조.<br>이러한 구조에선 한사람이 잘못된 것을 할 경우 해악이 될 수있다.</p>
 <p>다중유저시스템, 다중프로그래밍시스템에서 필요한 보호들</p>
@@ -60,11 +166,11 @@
   </entry>
   
   <entry>
-    <title>4.이중모드, 하드웨어 보호</title>
+    <title>4.사용자모드와 관리자모드, 하드웨어 보호</title>
     <link href="http://KKimSangHeon.github.io/2019/02/11/os4/"/>
     <id>http://KKimSangHeon.github.io/2019/02/11/os4/</id>
     <published>2019-02-11T12:29:11.000Z</published>
-    <updated>2019-02-14T13:18:26.564Z</updated>
+    <updated>2019-02-15T12:27:37.482Z</updated>
     
     <content type="html"><![CDATA[<h3 id="이중모드-하드웨어-보호"><a href="#이중모드-하드웨어-보호" class="headerlink" title="이중모드, 하드웨어 보호"></a>이중모드, 하드웨어 보호</h3><p>한 컴퓨터를 여러 사람이 동시에 사용하는 환경이다.<br>한사람의 실수가 전체에 영향을 끼칠 수  있으므로 일반유저는 STOP, HALT, RESET 등과같은 명령어는 일반 유저가 이용할 수 없도록 하는것. 이를 <code>이중모드</code>라 한다.</p>
 <p>이를 <u>사용자(user)모드, 관리자(supervisor) 모드</u> 라고 한다.<br>관리자 모드 = 시스템 모드 = 모니터 모드 = 특권 모드<br>특권 명령(ex. STOP, HALT, RESET, SET_TIMER, SET_HW 등은 관리자 모드에서만 사용 가능)</p>
@@ -97,11 +203,11 @@
   </entry>
   
   <entry>
-    <title>3.고등운영체제, 인터럽트 기반 운영체제</title>
+    <title>3.최근의 고급운영체제, 인터럽트에 기반한 현대 운영체제</title>
     <link href="http://KKimSangHeon.github.io/2019/02/11/os3/"/>
     <id>http://KKimSangHeon.github.io/2019/02/11/os3/</id>
     <published>2019-02-11T10:49:46.000Z</published>
-    <updated>2019-02-11T11:55:00.724Z</updated>
+    <updated>2019-02-15T12:27:37.793Z</updated>
     
     <content type="html"><![CDATA[<h3 id="다중-프로세서-시스템"><a href="#다중-프로세서-시스템" class="headerlink" title="다중 프로세서 시스템"></a>다중 프로세서 시스템</h3><p>메모리는 하난데 CPU가 여러개이다. 이를 병렬 시스템이라고도 한다.<br>장점 :</p>
 <ul>
@@ -137,11 +243,11 @@
   </entry>
   
   <entry>
-    <title>2.운영체제의 역사</title>
+    <title>2.일괄처리부터 시분할시스템까지 운영체제 변천 역사</title>
     <link href="http://KKimSangHeon.github.io/2019/02/10/os2/"/>
     <id>http://KKimSangHeon.github.io/2019/02/10/os2/</id>
     <published>2019-02-10T13:33:13.000Z</published>
-    <updated>2019-02-10T14:18:06.413Z</updated>
+    <updated>2019-02-15T12:27:36.853Z</updated>
     
     <content type="html"><![CDATA[<h3 id="컴퓨터의-역사"><a href="#컴퓨터의-역사" class="headerlink" title="컴퓨터의 역사"></a>컴퓨터의 역사</h3><p>2차세계 대전 중 1940년대 말 만들어졌다.</p>
 <p><code>1.초기에는 운영체제가 존재하지 않았다.</code></p>
@@ -168,11 +274,11 @@
   </entry>
   
   <entry>
-    <title>1.운영체제 서론</title>
+    <title>1.	운영체제의 정의와 역할</title>
     <link href="http://KKimSangHeon.github.io/2019/02/10/os/"/>
     <id>http://KKimSangHeon.github.io/2019/02/10/os/</id>
     <published>2019-02-10T12:03:53.000Z</published>
-    <updated>2019-02-10T12:52:37.669Z</updated>
+    <updated>2019-02-15T12:27:28.905Z</updated>
     
     <content type="html"><![CDATA[<p>운영체제 포스팅은 <a href="http://www.kocw.net/home/search/kemView.do?kemId=978503" target="_blank" rel="external">http://www.kocw.net/home/search/kemView.do?kemId=978503</a> (KOCW) 를 참고하여 작성됩니다.</p>
 <h3 id="운영체제가-없는-PC는-어떨까"><a href="#운영체제가-없는-PC는-어떨까" class="headerlink" title="운영체제가 없는 PC는 어떨까?"></a>운영체제가 없는 PC는 어떨까?</h3><p>야생마와 같다. 프로그램 실행과 같은 동작을 할 수 없게된다.<br>하드디스크에 있는 파일을 메모리에 올릴수 없다.<br>즉 하드디스크에 있는 파일을 운영체제가 올려주는것!</p>
@@ -705,70 +811,6 @@
       <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
     
       <category term="KT" scheme="http://KKimSangHeon.github.io/tags/KT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>알지피코리아(요기요,배달통) 면접</title>
-    <link href="http://KKimSangHeon.github.io/2018/10/22/interview/"/>
-    <id>http://KKimSangHeon.github.io/2018/10/22/interview/</id>
-    <published>2018-10-22T03:36:14.000Z</published>
-    <updated>2018-10-23T23:17:48.376Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2018년 7월</p>
-<p>사실 서류자체는 무난하게 복붙이 가능할 정도로 간단했다. 자소서를 작성하면서 정말 감사했던 기억이 난다.</p>
-<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>편안한 분위기속에서 면접관 두분과 면접을 진행했다. 난이도가 높은 면접은 아니었던걸로 기억한다.<br>질문내용은 다음과 같다.</p>
-<p>인터페이스 추상클래스 차이<br>가장인상깊었던 문제<br>개발하다 막히면 어떻게하나<br>비동기로 처리하는 방법<br>jap hibernate 차이</p>
-<h3 id="소감"><a href="#소감" class="headerlink" title="소감"></a>소감</h3><p>평범한 회사였고 자유로운 분위기를 느낄 수 있었다. 면접 후 신세계 상품권과 요기요 할인쿠폰을 잘 이용했다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2018년 7월&lt;/p&gt;
-&lt;p&gt;사실 서류자체는 무난하게 복붙이 가능할 정도로 간단했다. 자소서를 작성하면서 정말 감사했던 기억이
-    
-    </summary>
-    
-      <category term="Etc" scheme="http://KKimSangHeon.github.io/categories/Etc/"/>
-    
-      <category term="면접" scheme="http://KKimSangHeon.github.io/categories/Etc/%EB%A9%B4%EC%A0%91/"/>
-    
-    
-      <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
-    
-      <category term="알지피코리아" scheme="http://KKimSangHeon.github.io/tags/%EC%95%8C%EC%A7%80%ED%94%BC%EC%BD%94%EB%A6%AC%EC%95%84/"/>
-    
-      <category term="요기요 배달통" scheme="http://KKimSangHeon.github.io/tags/%EC%9A%94%EA%B8%B0%EC%9A%94-%EB%B0%B0%EB%8B%AC%ED%86%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>알티캐스트 면접</title>
-    <link href="http://KKimSangHeon.github.io/2018/10/22/interview2/"/>
-    <id>http://KKimSangHeon.github.io/2018/10/22/interview2/</id>
-    <published>2018-10-22T03:36:14.000Z</published>
-    <updated>2018-10-23T23:25:27.959Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2018년 6월</p>
-<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>면접관 두분과 지원자 두명 다대다 면접으로 진행된다.<br>경력에 대한 질문, 프로젝트에 대한 질문이 주를 이루며 자기소개서 내용이 거짓이 아니라면 충분히 대답이 가능한 수준이었다.</p>
-<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p>2차면접은 따로 없이 최종 합격통보를 받았다.<br>편안한 분위기속에서 진행되었으며 사옥을 이전한지 얼마되지 않아 깨끗한 느낌을 많이받았다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2018년 6월&lt;/p&gt;
-&lt;h3 id=&quot;1차면접&quot;&gt;&lt;a href=&quot;#1차면접&quot; class=&quot;headerlink&quot; title=&quot;1
-    
-    </summary>
-    
-      <category term="Etc" scheme="http://KKimSangHeon.github.io/categories/Etc/"/>
-    
-      <category term="면접" scheme="http://KKimSangHeon.github.io/categories/Etc/%EB%A9%B4%EC%A0%91/"/>
-    
-    
-      <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
-    
-      <category term="알티캐스트" scheme="http://KKimSangHeon.github.io/tags/%EC%95%8C%ED%8B%B0%EC%BA%90%EC%8A%A4%ED%8A%B8/"/>
     
   </entry>
   
