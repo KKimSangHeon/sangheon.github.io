@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-02-15T12:28:28.743Z</updated>
+  <updated>2019-02-16T05:24:59.201Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>8.SJF, Priority, RR 스케쥴링</title>
+    <link href="http://KKimSangHeon.github.io/2019/02/16/operating-system8/"/>
+    <id>http://KKimSangHeon.github.io/2019/02/16/operating-system8/</id>
+    <published>2019-02-16T04:17:07.000Z</published>
+    <updated>2019-02-16T05:24:59.201Z</updated>
+    
+    <content type="html"><![CDATA[<p>CPU 스케줄링 알고리즘</p>
+<p>CPU 스케줄링은 레디큐에서 프로세스들이 CPU의 작업을 기다리고있을 때 누가 먼저 들어갈것인가에 대한것.</p>
+<p>FCFS는 이전포스트 참고</p>
+<p>AWT를 평균대기시간이라 함.<br>ATT를 Average turnaround time 반환시간이라함.</p>
+<h3 id="SJF"><a href="#SJF" class="headerlink" title="SJF"></a>SJF</h3><p>가장 짧은것을 먼저하는것.<br>P1 6<br>P2 8<br>P3 7<br>P4 3<br>의 프로세스가있을 때 대기시간.</p>
+<p>p4, p1,p3,p2의 순서로 진행된다.<br>평균 대기시간은 (3+16+9+0)/4 = 7 이다.<br>FCFS로 하면<br>(0+6+14+21) /4 = 10.25 이다.</p>
+<p>실제로 프로세스가 얼마나 사용할지는 모른다. 해봐야 한다.<br>대기시간을 줄이기 위해 적절한 방법이긴 한데 CPU 사용시간을 예측을 해야한다.(이를 정확하게 예측하기 위해서는 과거를 기억해야 하는등 계산하는데 오버헤드가 발생한다.)</p>
+<p>실제로 적용하기엔 어렵다!</p>
+<p>Preemptive or Nonpreemtive 둘다 적용가능하다.</p>
+<h3 id="Priority-Scheduling"><a href="#Priority-Scheduling" class="headerlink" title="Priority Scheduling"></a>Priority Scheduling</h3><p>우선순위가 높은것을 먼저 처리</p>
+<p>우선순위는 내부적요소, 외부적 요소로 결정된다.<br>내부요소: 타임 리밋이 짧은것을 높게주기, 메모리 적게잡는놈 높게주기, IO가 길고 CPU burst가 짧은거 높게주기 등등<br>외부요소: 돈 많이 낸사람, 정치적요소</p>
+<p>일반적으로 많이 사용된다.</p>
+<p>이 또한 Preemptive or Nonpreemtive 둘다 적용가능하다.</p>
+<p>문제점: 기아상태<br>우선순위가 낮은 프로세스가 기다리는데 우선순위 높은것들이 자꾸 들어온다면 아무리 기다려도 자기 차례가 오지 않는다.<br>해결방법 : againg 어떤 프로세스가 오래머물러 있다면 점진적으로 우선순위를 높여준다</p>
+<h3 id="Round-Robin"><a href="#Round-Robin" class="headerlink" title="Round Robin"></a>Round Robin</h3><p>시간을 쪼개서 진행<br>Time quantum 시간양자 = time slice (보통 10 ~ 100msec으로 잡는)<br>Preemptive scheduling</p>
+<p>타임퀀텀을 얼마로 잡느냐에 따라 AWT가 달라진다.<br>즉 Time quantum에 의존적이다<br>Time quantum을 무한대로 주면 FCFS와 동일하다</p>
+<p>반대로 Time quantum을 0으로 주면 동시에 도는것과 같이느낄 수있다,<br>context switching overhead 가 발생함.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;CPU 스케줄링 알고리즘&lt;/p&gt;
+&lt;p&gt;CPU 스케줄링은 레디큐에서 프로세스들이 CPU의 작업을 기다리고있을 때 누가 먼저 들어갈것인가에 대한것.&lt;/p&gt;
+&lt;p&gt;FCFS는 이전포스트 참고&lt;/p&gt;
+&lt;p&gt;AWT를 평균대기시간이라 함.&lt;br&gt;ATT를 Av
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>7.스케쥴링 척도, FCFS</title>
@@ -743,40 +785,6 @@
     
     
       <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>비트 빅데이터 전문가 양성과정 면접</title>
-    <link href="http://KKimSangHeon.github.io/2018/10/22/interview5/"/>
-    <id>http://KKimSangHeon.github.io/2018/10/22/interview5/</id>
-    <published>2018-10-22T03:36:14.000Z</published>
-    <updated>2018-10-24T00:07:41.658Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2017년 6월</p>
-<p>국비지원 교육을 받기위해 필기시험, 면접을 진행한다. 보통 다른과정은 면접이 없지만 전문가 과정이라 회장님과의 면접이 있다고 들었다.</p>
-<h3 id="필기시험"><a href="#필기시험" class="headerlink" title="필기시험"></a>필기시험</h3><p>자바 필기시험을 진행하였으며 난이도는 쉬운편이었다. 오버라이딩, 인터페이스 수준정도의 개념까지만 잘 이해하고 있다면 쉽게 풀 수 있다.</p>
-<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>비트컴퓨터 회장님과 지원자들과 면접을 진행한다.<br>많은 지원자를 대상으로 면접을 진행하기 때문에 자신이 진행했던 프로젝트가 뭐가있는지 물어보고 기술력을 판단하신다. 당락은 그 자리에서 결정되는데 합격률이 생각보다 많이 낮았던 것이 인상깊었다.</p>
-<h3 id="후기"><a href="#후기" class="headerlink" title="후기"></a>후기</h3><p>합격하여 국비지원을 받으며 교육을 수강할 수 있었다. 강사님께서 정말 고수라 많은것을 배울 수 있었고 실무에서 인턴경험 이상으로 값진 경험이었다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2017년 6월&lt;/p&gt;
-&lt;p&gt;국비지원 교육을 받기위해 필기시험, 면접을 진행한다. 보통 다른과정은 면접이 없지만 전문가 과정이
-    
-    </summary>
-    
-      <category term="Etc" scheme="http://KKimSangHeon.github.io/categories/Etc/"/>
-    
-      <category term="면접" scheme="http://KKimSangHeon.github.io/categories/Etc/%EB%A9%B4%EC%A0%91/"/>
-    
-    
-      <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
-    
-      <category term="비트" scheme="http://KKimSangHeon.github.io/tags/%EB%B9%84%ED%8A%B8/"/>
-    
-      <category term="국비지원" scheme="http://KKimSangHeon.github.io/tags/%EA%B5%AD%EB%B9%84%EC%A7%80%EC%9B%90/"/>
     
   </entry>
   
