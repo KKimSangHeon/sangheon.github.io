@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-02-17T11:46:28.048Z</updated>
+  <updated>2019-02-18T13:34:32.742Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,79 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>10.프로세스 동기화의 중요성, 은행계좌 문제</title>
+    <link href="http://KKimSangHeon.github.io/2019/02/18/operating-system10/"/>
+    <id>http://KKimSangHeon.github.io/2019/02/18/operating-system10/</id>
+    <published>2019-02-18T13:31:45.000Z</published>
+    <updated>2019-02-18T13:34:32.742Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-쓰레드란"><a href="#1-쓰레드란" class="headerlink" title="1. 쓰레드란?"></a>1. 쓰레드란?</h3><p>프로그램 내부의 흐름, 맥</p>
+<p>맥이 하나만 있는 프로그램 : 싱글쓰레드<br>여러개있는것: 멀티(다중)쓰레드</p>
+<p>쓰레드가 여러개가 빠르게 동시에(왔다갔다하면서) 실행됨. 우리는 CPU하나임을 가정하고 공부하기 때문에</p>
+<h3 id="1-1-쓰레드-구조"><a href="#1-1-쓰레드-구조" class="headerlink" title="1.1 쓰레드 구조"></a>1.1 쓰레드 구조</h3><p>프로세스의 메모리 공간 공유 : (code, data)<br>프로세스의 자원 공유 : (file, i/o, …)<br>비공유: 개별적인 PC, SP, registers, stack</p>
+<p>운영체제의 프로세스 관리부서에서 중요한것은 프로세스 동기화 또는 쓰레드 동기화이다.</p>
+<h3 id="프로세스는-크게-두가지로-나뉜다"><a href="#프로세스는-크게-두가지로-나뉜다" class="headerlink" title="프로세스는 크게 두가지로 나뉜다."></a>프로세스는 크게 두가지로 나뉜다.</h3><p>Independent process : p1, p2가 영향이 없다<br>Cooperating process : p1, p2가 영향을 주던지 받던지 한다. 이런경우가 훨씬 많다.<br>프로세스간 통신: 전자우편, 파일 전송<br>프로세스간 자원 공유: 메모리 상의 자료들, 데이터베이스 등<br>명절 기차표 예약, 대학 온라인 수강신청, 실시간 주식거래</p>
+<h3 id="2-프로세스-쓰레드-동기화"><a href="#2-프로세스-쓰레드-동기화" class="headerlink" title="2. 프로세스(쓰레드) 동기화"></a>2. 프로세스(쓰레드) 동기화</h3><p><code>공통데이터에 접근하는것은 문제가 발생할 수 있다. (공유되는 프로세스가 동시에 접근할 때.)</code><br>동기화가 제대로 이뤄지지 않으면 똑같은 자리에 두명이상이 배정된다던가 하는 문제가 생긴다.</p>
+<p><u>프로세스간에 순서를 잘 지정해서 이상한 상태에 빠지지 않도록 하여 데이터의 일관성을 유지</u></p>
+<h3 id="2-1-BankAccount-Problem-은행계좌문제"><a href="#2-1-BankAccount-Problem-은행계좌문제" class="headerlink" title="2.1 BankAccount Problem (은행계좌문제)"></a>2.1 BankAccount Problem (은행계좌문제)</h3><p>부모님은 은행계좌에 입금; 자녀는 출금<br>입금(deposit)과 출금(withdraw) 은 독립적으로 일어난다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-쓰레드란&quot;&gt;&lt;a href=&quot;#1-쓰레드란&quot; class=&quot;headerlink&quot; title=&quot;1. 쓰레드란?&quot;&gt;&lt;/a&gt;1. 쓰레드란?&lt;/h3&gt;&lt;p&gt;프로그램 내부의 흐름, 맥&lt;/p&gt;
+&lt;p&gt;맥이 하나만 있는 프로그램 : 싱글쓰레드&lt;br&gt;여러
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>9.다중 큐 스케쥴링, 프로세스 생성과 소멸, 쓰레드</title>
+    <link href="http://KKimSangHeon.github.io/2019/02/18/operating-system9/"/>
+    <id>http://KKimSangHeon.github.io/2019/02/18/operating-system9/</id>
+    <published>2019-02-18T13:29:58.000Z</published>
+    <updated>2019-02-18T13:31:23.624Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="다중-큐-스케쥴링-프로세스-생성과-소멸-쓰레드"><a href="#다중-큐-스케쥴링-프로세스-생성과-소멸-쓰레드" class="headerlink" title="다중 큐 스케쥴링, 프로세스 생성과 소멸, 쓰레드"></a>다중 큐 스케쥴링, 프로세스 생성과 소멸, 쓰레드</h3><h3 id="다양한-CPU-스케줄링-알고리즘"><a href="#다양한-CPU-스케줄링-알고리즘" class="headerlink" title="다양한 CPU 스케줄링 알고리즘"></a>다양한 CPU 스케줄링 알고리즘</h3><p>First-Come, First-Served (FCFS)<br>Shortest-Job-First (SJF)<br>Priority<br>Round-Robin (RR)<br>Multilevel Queue<br>Multilevel Feedback Queue</p>
+<h3 id="1-Multilevel-Queue-Scheduling"><a href="#1-Multilevel-Queue-Scheduling" class="headerlink" title="1. Multilevel Queue Scheduling"></a>1. Multilevel Queue Scheduling</h3><h3 id="1-1-Process-groups-프로세스는-그룹별로-묶일-수-있다"><a href="#1-1-Process-groups-프로세스는-그룹별로-묶일-수-있다" class="headerlink" title="1.1 Process groups : 프로세스는 그룹별로 묶일 수 있다."></a>1.1 Process groups : 프로세스는 그룹별로 묶일 수 있다.</h3><p>System processes : 가장 긴급하고 먼저 처리되어야 하는것.<br>Interactive processes : 대화형 프로세스<br>Interactive editing processes : ex 워드프로세스<br>Batch processes : 인터액션이 따로 없다.<br>Student processes</p>
+<p>성격이 다양한것을 동일한 큐에 세우는것이 맞지 않다라고 판단.<br>입출금은 빠르게 끝나는데 대출은 오래 끝나니까!<br>이를 위해 <u>큐를 여러개를 두자 이를 멀티레벨 큐</u>.</p>
+<h3 id="1-2-Single-ready-queue-→-Several-separate-queues"><a href="#1-2-Single-ready-queue-→-Several-separate-queues" class="headerlink" title="1.2 Single ready queue → Several separate queues"></a>1.2 Single ready queue → Several separate queues</h3><p>각각의 Queue 에 절대적 우선순위 존재<br>또는 CPU time 을 각 Queue 에 차등배분<br>각 Queue 는 독립된 scheduling 정책</p>
+<p>큐가 여러개이므로 우선순위를 둬서 차등반영한다.<br>또한 각 큐별로 다른 스케줄링 기법을 사용한다.</p>
+<h3 id="2-Multilevel-Feedback-Queue-Scheduling"><a href="#2-Multilevel-Feedback-Queue-Scheduling" class="headerlink" title="2. Multilevel Feedback Queue Scheduling"></a>2. Multilevel Feedback Queue Scheduling</h3><p>큐를 여러개 둔다는점은 Multilevel Queue Scheduling와 같은데 <code>하나의 입구로 진입해서 거의 실행되지 않는다면 다른큐로 이동한다.</code></p>
+<h3 id="2-1-다른-Queue-로의-점진적-이동"><a href="#2-1-다른-Queue-로의-점진적-이동" class="headerlink" title="2.1 다른 Queue 로의 점진적 이동"></a>2.1 다른 Queue 로의 점진적 이동</h3><p>모든 프로세스는 하나의 입구로 진입<br>너무 많은 CPU time 사용 시 다른 Queue 로<br>기아 상태 우려 시 우선순위 높은 Queue 로</p>
+<p>상용운영체제는 여러 큐를 갖고있어 다양한 스케줄링 정책을 두어 적절히 활용한다.</p>
+<h3 id="3-Process-Creation"><a href="#3-Process-Creation" class="headerlink" title="3. Process Creation"></a>3. Process Creation</h3><p>프로세스는 사람과 비슷하다. <u>프로세스는 프로세스에 의해 만들어진다.</u></p>
+<p><code>그렇다면 제일 첫번째 프로세스는 어떻게 만들어졌을까??</code><br>O/S가 메모리로 올라가고 초기화 작업을 하면 제일 처음 프로세스를 만든다. 제일 첫번째 프로세스 이름을 유닉스의 경우 init프로세스(OS마다 다름)라 한다. 이 프로세스가 다른 프로세스를 만든다.</p>
+<h3 id="3-1-Process-Identifier-PID"><a href="#3-1-Process-Identifier-PID" class="headerlink" title="3.1 Process Identifier (PID)"></a>3.1 Process Identifier (PID)</h3><p>사람의 주민등록번호와 같은것.<br>처음 만들어지는 프로그램은 0이다.<br>PPID? 부모 PID</p>
+<h3 id="3-2-프로세스-생성"><a href="#3-2-프로세스-생성" class="headerlink" title="3.2 프로세스 생성"></a>3.2 프로세스 생성</h3><p>fork() system call - 새로운 프로세스 만드는것.<br>exec() - 만들어진 프로세스의 실행파일을 메모리로 갖고오는것.</p>
+<h3 id="3-3-프로세스-종료"><a href="#3-3-프로세스-종료" class="headerlink" title="3.3 프로세스 종료"></a>3.3 프로세스 종료</h3><p>exit() system call - 해당 프로세스가 가졌던 모든 자원은 OS에게 반환 (메모리, 파일, 입출력장치 등)</p>
+<h3 id="4-쓰레드"><a href="#4-쓰레드" class="headerlink" title="4. 쓰레드"></a>4. 쓰레드</h3><p><u>프로그램 내부의 흐름, 맥이라고 한다.</u></p>
+<h3 id="4-1-다중-쓰레드-Multithreads"><a href="#4-1-다중-쓰레드-Multithreads" class="headerlink" title="4.1 다중 쓰레드(Multithreads)"></a>4.1 다중 쓰레드(Multithreads)</h3><p><u>하나의 프로그램에 맥이 2개이상 있는것.</u><br>맥이 빠른 시간 간격으로 스위칭 된다 →  여러 맥이 동시에 실행되는 것처럼 보인다<br>Web browser : 화면 출력하는 쓰레드 + 데이터 읽어오는 쓰레드<br>Word processor : 화면 출력하는 쓰레드 + 키보드 입력 받는 쓰레드 + 철자/문법오류 확인 쓰레드</p>
+<p>이전강의까지는 P1이 끝나면 P2로 넘어간다 했는데 그건 예전의 OS이다.<br>즉 <u>현재의 컴퓨터는 컨텍스트 스위칭 단위가 프로세스가 아니라 쓰레드 단위이다</u>.</p>
+<p>각 쓰레드는 코드와 데이터 공유하고 스택은 공유하지 않는다.</p>
+<p>한 프로세스에는 기본 1개의 쓰레드 : <code>단일 쓰레드 (single thread) 프로그램</code><br>한 프로세스에 여러 개의 쓰레드 : <code>다중 쓰레드 (multi-thread) 프로그램</code></p>
+<h3 id="4-2-쓰레드-구조"><a href="#4-2-쓰레드-구조" class="headerlink" title="4.2 쓰레드 구조"></a>4.2 쓰레드 구조</h3><p>프로세스의 메모리 공간 공유 : (code, data)<br>프로세스의 자원 공유 : (file, i/o, …)<br>비공유: 개별적인 PC, SP, registers, stack</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;다중-큐-스케쥴링-프로세스-생성과-소멸-쓰레드&quot;&gt;&lt;a href=&quot;#다중-큐-스케쥴링-프로세스-생성과-소멸-쓰레드&quot; class=&quot;headerlink&quot; title=&quot;다중 큐 스케쥴링, 프로세스 생성과 소멸, 쓰레드&quot;&gt;&lt;/a&gt;다중 큐 스케쥴링
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>8.SJF, Priority, RR 스케쥴링</title>
@@ -753,70 +826,6 @@
     
     
       <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>중첩클래스의 접근제한</title>
-    <link href="http://KKimSangHeon.github.io/2018/11/20/java1/"/>
-    <id>http://KKimSangHeon.github.io/2018/11/20/java1/</id>
-    <published>2018-11-20T00:37:20.000Z</published>
-    <updated>2018-11-20T00:48:18.343Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="중첩클래스의-접근-제한"><a href="#중첩클래스의-접근-제한" class="headerlink" title="중첩클래스의 접근 제한"></a>중첩클래스의 접근 제한</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> field1;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">method1</span><span class="params">( )</span> </span>&#123; &#125;</div><div class="line"></div><div class="line">	<span class="keyword">static</span> <span class="keyword">int</span> field2;</div><div class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">( )</span> </span>&#123; &#125;</div><div class="line"></div><div class="line">	<span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;</div><div class="line">		<span class="function"><span class="keyword">void</span> <span class="title">method</span> <span class="params">( )</span> </span>&#123;</div><div class="line">			field1 = <span class="number">10</span>;</div><div class="line">			method1( );</div><div class="line"></div><div class="line">			field2 = <span class="number">10</span>;</div><div class="line">			method2( );</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">C</span> </span>&#123;</div><div class="line">		<span class="function"><span class="keyword">void</span> <span class="title">method</span><span class="params">( )</span> </span>&#123;</div><div class="line">			<span class="comment">//filed1 = 10;	//접근 불가</span></div><div class="line">			<span class="comment">//method1( );	//접근 불가</span></div><div class="line"></div><div class="line">			field2 = <span class="number">10</span>;</div><div class="line">			method2( );</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>로컬클래스(메소드 안에 클래스 생성)에서 사용 가능한 것은 final로 선언된 매개 변수와 로컬 변수뿐이다. 자바 7 이전에는 final이 붙어있지 않은 매개변수 혹은 변수를 로컬 클래스안에서 사용하고자 하면 컴파일 에러가 발생하였다. 하지만 자바 8부터는 컴파일 에러가 발생하지 않는다. 즉 내부적으로는 final의 특성(값을 변경할 수 없는)을 갖으며 final의 유무로 로컬클래스 내 복사 위치가 결정된다.(복사위치에 대해선 아래 설명)<br>다음은 7,8버전의 final 유무에 따른 접근관련 이슈이다.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Outter</span> </span>&#123;</div><div class="line">	<span class="comment">//자바7 이전</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> arg)</span> </span>&#123;</div><div class="line">		<span class="keyword">final</span> <span class="keyword">int</span> localVariable = <span class="number">1</span>;</div><div class="line">		<span class="comment">//arg = 100;	//불가능</span></div><div class="line">		<span class="comment">//localVariable = 100 //불가능</span></div><div class="line">		<span class="class"><span class="keyword">class</span> <span class="title">Inner</span> </span>&#123;</div><div class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">( )</span> </span>&#123;</div><div class="line">				<span class="keyword">int</span> result = arg + localVariable;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">	<span class="comment">//자바8 이후</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">(<span class="keyword">int</span> arg)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> localVariable = <span class="number">1</span>;</div><div class="line">		<span class="comment">//arg = 100;	//불가능</span></div><div class="line">		<span class="comment">//localVariable = 100 //불가능</span></div><div class="line">		<span class="class"><span class="keyword">class</span> <span class="title">Inner</span> </span>&#123;</div><div class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">( )</span> </span>&#123;</div><div class="line">				<span class="keyword">int</span> result = arg + localVariable;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure></p>
-<p>위의 코드와 같이 final이 없더라도 값 변경은 허용하지 않는다는것이다.</p>
-<p>※ final의 유무로 로컬클래스 내 복사 위치가 결정된다?<br>먼저 다음과 같은 코드가 있다고 가정하자.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">outMethod</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> arg1, <span class="keyword">int</span> arg2)</span> </span>&#123;</div><div class="line">	<span class="keyword">final</span> <span class="keyword">int</span> var1 = <span class="number">1</span>;</div><div class="line">	<span class="keyword">int</span> var2 = <span class="number">2</span>;</div><div class="line"></div><div class="line">	<span class="class"><span class="keyword">class</span> <span class="title">LocalClass</span> </span>&#123;</div><div class="line">		<span class="function"><span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</div><div class="line">			<span class="keyword">int</span> result = arg1+arg2+var1+var2;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure><br>위의 LocalClass에 복사된 변수를 보면 다음과 같다.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">LocalClass</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> arg2 = 매개값;	<span class="comment">//final이 붙지 않아 필드로 복사</span></div><div class="line">	<span class="keyword">int</span> var2 = <span class="number">2</span>;	<span class="comment">//final이 붙지 않아 필드로 복사</span></div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">method</span><span class="params">( )</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> arg1 = 매개값;	<span class="comment">//final이 붙은것은 로컬 변수로 복사</span></div><div class="line">		<span class="keyword">int</span> var1 = <span class="number">1</span>;	<span class="comment">//final이 붙은것은 로컬 변수로 복사</span></div><div class="line">		<span class="keyword">int</span> result = arg1 + arg2+ var1+ var2;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure><br>복사된 영역을 신경쓸 필요는 없으나 알고 있는것이 좋겠다!</p>
-<h3 id="중첩클래스에서-바깥-클래스-참조-얻기"><a href="#중첩클래스에서-바깥-클래스-참조-얻기" class="headerlink" title="중첩클래스에서 바깥 클래스 참조 얻기"></a>중첩클래스에서 바깥 클래스 참조 얻기</h3><p>중첩 클래스 내부에서 this키워드를 사용하면 어떻게 될까? 말 그대로 중첩클래스가 this가 되게된다. 그렇다면 바깥 클래스를 가르키기 위해선 어떻게 해야될까.<br>정답은 바깥클래스.this 를 활용하면 된다. 아래를 참고하자</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Outter</span> </span>&#123;</div><div class="line">	String field = <span class="string">"Outter-filed"</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">method</span><span class="params">( )</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"Outter-method"</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Nested</span> </span>&#123;</div><div class="line">		String field = <span class="string">"Nested-field"</span>;</div><div class="line">		<span class="function"><span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</div><div class="line">			System.out.println(<span class="string">"Nested-method"</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">( )</span> </span>&#123;</div><div class="line">		System.out.println(<span class="keyword">this</span>.field);		<span class="comment">//중첩객체 참조</span></div><div class="line">		<span class="keyword">this</span>.method( );			<span class="comment">//중첩객체 참조</span></div><div class="line"></div><div class="line">		System.out.println(Outter.<span class="keyword">this</span>.field);	<span class="comment">//바깥객체 참조</span></div><div class="line">		Outter.<span class="keyword">this</span>.method( );		<span class="comment">//바깥객체 참조</span></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OutterExample</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Outter outter = <span class="keyword">new</span> Outter( );</div><div class="line">		outter.Nested nested = outter.new Nested( );</div><div class="line">		nested.print( );</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;중첩클래스의-접근-제한&quot;&gt;&lt;a href=&quot;#중첩클래스의-접근-제한&quot; class=&quot;headerlink&quot; title=&quot;중첩클래스의 접근 제한&quot;&gt;&lt;/a&gt;중첩클래스의 접근 제한&lt;/h3&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;t
-    
-    </summary>
-    
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>KT SW개발직무 면접</title>
-    <link href="http://KKimSangHeon.github.io/2018/10/22/interview4/"/>
-    <id>http://KKimSangHeon.github.io/2018/10/22/interview4/</id>
-    <published>2018-10-22T03:36:14.000Z</published>
-    <updated>2018-10-23T23:37:44.676Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="시기"><a href="#시기" class="headerlink" title="시기"></a>시기</h3><p>2018년 8월 ~ 2018년 10월</p>
-<h3 id="채용공고"><a href="#채용공고" class="headerlink" title="채용공고"></a>채용공고</h3><img src="/2018/10/22/interview4/kt.jpg" alt="공고" title="공고">
-<h3 id="필기시험"><a href="#필기시험" class="headerlink" title="필기시험"></a>필기시험</h3><p>적성이 아닌 전공, 인성검사로서 진성여중에서 시험을 치뤘었다. 정말 많은사람들이 왔었고 문제의 난이도는 평소 CS에 대한 공부만 충실했다면 무난한 난이도였다.</p>
-<h3 id="1차면접"><a href="#1차면접" class="headerlink" title="1차면접"></a>1차면접</h3><p>면접관 3분과 지원자 1명의 면접형태로서 면접 전 간단한 코딩 테스트를 본다. 푼 문제를 복사하여 면접관분들께 설명드리면서 면접이 시작된다. 이후엔 자기소개서 위주의 프로젝트, 경력관련 질문들이 주를 이뤘다. 여기서 자신감을 갖고 대답했던것이 좋게 작용했던것 같다.</p>
-<h3 id="2차면접"><a href="#2차면접" class="headerlink" title="2차면접"></a>2차면접</h3><p>마찬가지로 면접관 3분과 면접을 본다. 정말 많이 떨렸지만 충분히 준비하고 또 준비했기에 떨지않고 잘 대답할 수 있었다. 주로 경력에 관한 질문이 많았으며 인성질문도 있었다.</p>
-<h3 id="건강검진"><a href="#건강검진" class="headerlink" title="건강검진"></a>건강검진</h3><p>건강검진 이틀전 술을 마신탓에 약간 걱정은 됐으나 다행히 별 탈 없이 통과할 수 있었다.</p>
-<h3 id="합격"><a href="#합격" class="headerlink" title="합격"></a>합격</h3><p>두달간의 긴 여정을 잘 마무리 짓고 최종합격할 수 있었다.<br><img src="/2018/10/22/interview4/kt2.jpg" alt="합격!" title="합격!"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;시기&quot;&gt;&lt;a href=&quot;#시기&quot; class=&quot;headerlink&quot; title=&quot;시기&quot;&gt;&lt;/a&gt;시기&lt;/h3&gt;&lt;p&gt;2018년 8월 ~ 2018년 10월&lt;/p&gt;
-&lt;h3 id=&quot;채용공고&quot;&gt;&lt;a href=&quot;#채용공고&quot; class=&quot;headerli
-    
-    </summary>
-    
-      <category term="Etc" scheme="http://KKimSangHeon.github.io/categories/Etc/"/>
-    
-      <category term="면접" scheme="http://KKimSangHeon.github.io/categories/Etc/%EB%A9%B4%EC%A0%91/"/>
-    
-    
-      <category term="면접" scheme="http://KKimSangHeon.github.io/tags/%EB%A9%B4%EC%A0%91/"/>
-    
-      <category term="KT" scheme="http://KKimSangHeon.github.io/tags/KT/"/>
     
   </entry>
   
