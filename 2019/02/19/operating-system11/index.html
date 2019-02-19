@@ -3,23 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>operating-system11 | Kim Sang Heon&#39;s Bolg</title>
+    <title>11.임계구역 문제, 동기화 도구 | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="" />
     
     
 
-      <meta name="description" content="Welcome to Sang Heon&apos;s Blog.">
+      <meta name="description" content="앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기 동기화의 목적우리가 원하는대로 프로세스 혹은 쓰레드의 실행 순서를 결정 지을 수 있는것. O/S 가 가진 여러 매니지먼">
 <meta property="og:type" content="article">
-<meta property="og:title" content="operating-system11">
+<meta property="og:title" content="11.임계구역 문제, 동기화 도구">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2019/02/19/operating-system11/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="Welcome to Sang Heon&apos;s Blog.">
-<meta property="og:updated_time" content="2019-02-19T11:04:12.434Z">
+<meta property="og:description" content="앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기 동기화의 목적우리가 원하는대로 프로세스 혹은 쓰레드의 실행 순서를 결정 지을 수 있는것. O/S 가 가진 여러 매니지먼">
+<meta property="og:image" content="http://kkimsangheon.github.io/images/os.png">
+<meta property="og:updated_time" content="2019-02-19T12:24:14.330Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="operating-system11">
-<meta name="twitter:description" content="Welcome to Sang Heon&apos;s Blog.">
+<meta name="twitter:title" content="11.임계구역 문제, 동기화 도구">
+<meta name="twitter:description" content="앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기 동기화의 목적우리가 원하는대로 프로세스 혹은 쓰레드의 실행 순서를 결정 지을 수 있는것. O/S 가 가진 여러 매니지먼">
+<meta name="twitter:image" content="http://kkimsangheon.github.io/images/os.png">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
 
@@ -131,7 +133,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    uncategorized
+    <a class="page-title-link" href="/categories/CS/">CS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/CS/Operating-System/">Operating System</a>
     </h1>
 </div>
                         <div class="main-body-content">
@@ -153,7 +155,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        operating-system11
+        11.임계구역 문제, 동기화 도구
         </h1>
     
 
@@ -173,7 +175,22 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p>앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기앞에 추가하기</p>
+<h3 id="동기화의-목적"><a href="#동기화의-목적" class="headerlink" title="동기화의 목적"></a>동기화의 목적</h3><p><u>우리가 원하는대로 프로세스 혹은 쓰레드의 실행 순서를 결정 지을 수 있는것.</u></p>
+<p>O/S 가 가진 여러 매니지먼트(프로세스 매니지먼트,메모리 매니지먼트,파일 시스템 매니지먼트, I/O 매니지먼트) 중 가장 중요한것은 프로세스 매니지먼트. 프로세스 매니지먼트는 두 가지로 나뉘는데 하나는 <u>CPU Scheduling, Synchronization</u></p>
+<h3 id="Synchronization를-위한도구"><a href="#Synchronization를-위한도구" class="headerlink" title="Synchronization를 위한도구"></a>Synchronization를 위한도구</h3><p>세마포어 모니터가 있다.</p>
+<p><code>Semaphores</code> : 기차역에서 출발신호를 의미하는 깃발이다. 네덜란드사람 딕스트라가 만듦.<br>내부구조는 정수 하나와 동작 두개로 구성된다. <u>하나는 P 동작 하나는 V 동작</u><br>P: Proberen (test) 즉 acquire()  검사<br>V: Verhogen (increment) 즉 release() 증가.</p>
+<p>스택에는 푸쉬, 팝이라는 동작이 있다. 마찬가지로 세마포어도 내부에 정수가 있고 P,V가 존재한다.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">acquire</span><span class="params">()</span> </span>&#123;</div><div class="line">  value--;</div><div class="line">    <span class="keyword">if</span> (value &lt; <span class="number">0</span>) &#123;</div><div class="line">        add <span class="keyword">this</span> process/thread to list;  <span class="comment">// 누가 호출하면 큐안에 넣는다.</span></div><div class="line">        block;</div><div class="line">      &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">release</span><span class="params">()</span> </span>&#123;</div><div class="line">  value++;</div><div class="line">    <span class="keyword">if</span> (value &lt;= <span class="number">0</span>) &#123;</div><div class="line">        remove a process P from list; <span class="comment">//누군가 갇혀있으면 깨워준다.</span></div><div class="line">        wakeup P;</div><div class="line">      &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>저번에 배웠듯이 레디큐에서 CPU의 서비스를 받기 위해 기다리던 프로세스들이 CPU 서비스를 받다 IO를 만나면 IO서비스를 받으려 하는데 누가 IO서비스를 받고있다면 IO Queue(Device Queue)에서 대기하다 IO서비스를 받고 끝나면 다시 레디큐로 돌아온다.</p>
+<p>타임쉐어링 시스템의 경우엔 IO를 만나지 않더라도 시간이 지나면 다시 레디큐로 돌아간다.</p>
+<p>이는 프로세스의 큐잉 모델 즉 줄서서 기다리는 모델이다.</p>
+<p>세마포어는 정수값도 있고 세마포어 큐도 있다. 어떤 프로세스가 레디큐에 있다 CPU를 쓰다가 acquire를 호출했는데 if문이 맞으면 갇혀버린다.(like 감옥) 이후에 누가 release를 해주면 감옥에서 탈출하여 다른 레디큐로 갈 수 있다.</p>
+<p>위에서 value는 권한의 갯수로 생각하면 된다.</p>
+<h3 id="세마포어는-Mutual-exclusion-상호베타를-위해-동작한다"><a href="#세마포어는-Mutual-exclusion-상호베타를-위해-동작한다" class="headerlink" title="세마포어는 Mutual exclusion 상호베타를 위해 동작한다."></a>세마포어는 Mutual exclusion 상호베타를 위해 동작한다.</h3><p>세마포어의 초깃값이 1이라 하자. 이때 레디큐에 A, B가 있다고 하자.<br>먼저 A가 acquire(); 을 호출하면 0이 되고 크리티컬 섹션 안으로 들어간다.(블록 걸리지 않음)<br>이때 컨텍스트 스위칭이 되고 B가 acquire를 호출하면 이때는 value가 -1이므로 세마포어 큐에 갇히게 된다.  (크리티컬 섹션 안으로 못들어간다). 그 후 A가 작업을 마치고 release를 호출하게 되면 value를 늘리고 세마포어 큐에 갇혀있는 B를 깨워 다시 레디큐로 들어가게 한다.</p>
+<p> 이를 상호베타라 한다.</p>
+<p><code>Monitors</code> :</p>
+<p>메모리 매니지먼트라<br>파일 시스템 매니지먼트<br>I/O 매니지먼트</p>
+
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
@@ -314,7 +331,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">16</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Travel/">Travel</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/">CS</a><span class="category-list-count">21</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Data-Base/">Data Base</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Design-Pattern/">Design Pattern</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/IOT/">IOT</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Operating-System/">Operating System</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/">Etc</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/HEX-Team/">HEX Team</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/면접/">면접</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/아무거나/">아무거나</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/자격증/">자격증</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">55</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/C/">C++</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Embeded-C/">Embeded C</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Java/">Java</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Python/">Python</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/SQL-Oracle/">SQL(Oracle)</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/OS/Linux/">Linux</a><span class="category-list-count">45</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/">Web/App</a><span class="category-list-count">25</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Angular2/">Angular2</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Firebase/">Firebase</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Servlet-JSP/">Servlet/JSP</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Spring/">Spring</a><span class="category-list-count">7</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">16</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Travel/">Travel</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/">CS</a><span class="category-list-count">22</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Data-Base/">Data Base</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Design-Pattern/">Design Pattern</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/IOT/">IOT</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Operating-System/">Operating System</a><span class="category-list-count">11</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/">Etc</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/HEX-Team/">HEX Team</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/면접/">면접</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/아무거나/">아무거나</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/자격증/">자격증</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">55</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/C/">C++</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Embeded-C/">Embeded C</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Java/">Java</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Python/">Python</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/SQL-Oracle/">SQL(Oracle)</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/OS/Linux/">Linux</a><span class="category-list-count">45</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/">Web/App</a><span class="category-list-count">25</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Angular2/">Angular2</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Firebase/">Firebase</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Servlet-JSP/">Servlet/JSP</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Spring/">Spring</a><span class="category-list-count">7</span></li></ul></li></ul>
         </div>
     </div>
 
