@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-02-20T14:17:22.281Z</updated>
+  <updated>2019-02-21T13:12:27.326Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>13.전통적 동기화 문제, 생산자-소비자 문제</title>
+    <link href="http://KKimSangHeon.github.io/2019/02/21/operating-system13/"/>
+    <id>http://KKimSangHeon.github.io/2019/02/21/operating-system13/</id>
+    <published>2019-02-21T13:10:14.000Z</published>
+    <updated>2019-02-21T13:12:27.326Z</updated>
+    
+    <content type="html"><![CDATA[<p>전통적 동기화 문제, 생산자-소비자 문제</p>
+<p>OS에서 가장중요한게 프로세스 관리<br>이중 CPU 스케줄링, 프로세스 동기화가 중요하다.<br>이때 임계구역 처리를 잘해야한다.</p>
+<h3 id="전통적-동기화-예제"><a href="#전통적-동기화-예제" class="headerlink" title="전통적 동기화 예제"></a>전통적 동기화 예제</h3><p>1.Producer and Consumer Problem(생산자-소비자 문제, 유한버퍼 문제 (Bounded Buffer Problem))<br>2.Readers-Writers Problem(공유 데이터베이스 접근)<br>3.Dining Philosopher Problem(식사하는 철학자 문제)</p>
+<hr>
+<h3 id="Producer-Consumer-Problem"><a href="#Producer-Consumer-Problem" class="headerlink" title="Producer-Consumer Problem"></a>Producer-Consumer Problem</h3><h4 id="생산자-소비자-문제"><a href="#생산자-소비자-문제" class="headerlink" title="생산자-소비자 문제"></a>생산자-소비자 문제</h4><p>생산자가 데이터를 생산하면 소비자는 그것을 소비<br>예: 컴파일러 &gt; 어셈블러, 파일 서버 &gt; 클라이언트, 웹 서버 &gt; 웹 클라이언트</p>
+<h4 id="Bounded-Buffer"><a href="#Bounded-Buffer" class="headerlink" title="Bounded Buffer"></a>Bounded Buffer</h4><p>보통 생산소비와 소비속도는 다르다.<br>그래서 보통 창고(버퍼)에 저장하고 컨슈머가 조금씩 빼먹는다.</p>
+<p>생산된 데이터는 버퍼에 일단 저장 (속도 차이 등)<br>현실 시스템에서 버퍼 크기는 유한<br>생산자는 버퍼가 가득 차면 더 넣을 수 없다.<br>소비자는 버퍼가 비면 뺄 수 없다</p>
+<p>버퍼가 가득차면 생산자는 버퍼가 비워질때까지 기다려야한다.<br>버퍼가 비면 소비자는 빼갈것이 없다.</p>
+<p>생산자가 10000번 넣고 소비자가 10000번 넣으면 0이되지 않을 수 있다.<br><code>이유</code> : 공통변수 count, buf[] 에 대한 동시 업데이트<br>공통변수 업데이트 구간(= 임계구역)에 대한 동시 진입</p>
+<p><code>해결법</code> : 임계구역에 대한 동시 접근 방지 (상호배타)<br>세마포를 사용한 상호배타 (mutual exclusion, mutex)</p>
+<h3 id="Busy-wait"><a href="#Busy-wait" class="headerlink" title="Busy-wait"></a>Busy-wait</h3><p>바쁘게 기다린다.<br>생산자: 버퍼가 가득 차면 기다려야 == 빈(empty) 공간이 있어야 한다<br>소비자: 버퍼가 비면 기다려야 == 찬(full) 공간이 있어야 한다</p>
+<p>이때 무한루프를 돌면서 기다리면 CPU는 다른일을 못하고 잡히게 된다. -&gt; 비효율적<br><code>해결법</code> : 두개의 세마포어를 사용. empty의 초깃값은 BUF_SIZE 만큼 full의 초깃값은 0으로 하여 사용<br>생산자 :<br>empty.acquire();<br>PRODUCE;<br>full.release();</p>
+<p>소비자 :<br>full.acquire();<br>CONSUME;</p>
+<h2 id="empty-release"><a href="#empty-release" class="headerlink" title="empty.release();"></a>empty.release();</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;전통적 동기화 문제, 생산자-소비자 문제&lt;/p&gt;
+&lt;p&gt;OS에서 가장중요한게 프로세스 관리&lt;br&gt;이중 CPU 스케줄링, 프로세스 동기화가 중요하다.&lt;br&gt;이때 임계구역 처리를 잘해야한다.&lt;/p&gt;
+&lt;h3 id=&quot;전통적-동기화-예제&quot;&gt;&lt;a href=&quot;
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>12.세마포를 사용한 프로세스 동기화</title>
@@ -821,31 +858,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>StringBuffer, StringBuilder</title>
-    <link href="http://KKimSangHeon.github.io/2018/11/20/java4/"/>
-    <id>http://KKimSangHeon.github.io/2018/11/20/java4/</id>
-    <published>2018-11-20T00:37:37.000Z</published>
-    <updated>2018-11-20T00:43:28.993Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="String-클래스"><a href="#String-클래스" class="headerlink" title="String 클래스"></a>String 클래스</h3><p>String은 내부의 문자열을 수정할 수 없다. StringBuffer()메소드는 내부의 문자를 대치하는 것이 아니라, 대치된 새로운 문자열을 리턴한다.<br>문자열을 결합하는 + 연산을 많이 사용하면 할수록 그만큼 String 객체의 수가 ㅇ늘어나기 때문에 프로그램 성능을 느리게 한다. 문자열을 변경하는 작업이 많을 경우 StringBuffer, StringBuilder클래스를 사용하는것이 좋다. 이 두 클래스는 내부 버퍼에 문자열을 저장해두고 그 안에서 추가, 수정, 삭제 작업을 할 수 있도록 설계되어 있기 때문이다.<br>StringBuffer는 멀티 스레드 환경에서 사용할 수 있도록 동기화가 적용되어 있어 스레드에 안전하지만 StringBuilder는 단일 스레드 환경에서만 사용하도록 설계되어 있다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;String-클래스&quot;&gt;&lt;a href=&quot;#String-클래스&quot; class=&quot;headerlink&quot; title=&quot;String 클래스&quot;&gt;&lt;/a&gt;String 클래스&lt;/h3&gt;&lt;p&gt;String은 내부의 문자열을 수정할 수 없다. StringBuffe
-    
-    </summary>
-    
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
     
   </entry>
   
