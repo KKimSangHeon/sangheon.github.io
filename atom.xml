@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-02-22T13:51:04.604Z</updated>
+  <updated>2019-02-22T13:55:01.757Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,43 +16,126 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>operating-system16</title>
+    <title>16.프로세스 동기화의 다른 도구인 모니터 사용</title>
     <link href="http://KKimSangHeon.github.io/2019/02/22/operating-system16/"/>
     <id>http://KKimSangHeon.github.io/2019/02/22/operating-system16/</id>
     <published>2019-02-22T13:51:04.000Z</published>
-    <updated>2019-02-22T13:51:04.604Z</updated>
+    <updated>2019-02-22T13:55:01.757Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="모니터"><a href="#모니터" class="headerlink" title="모니터"></a>모니터</h3><p>동기화 도구로 세마포어를 배웠다. 세마포어는 조금 오래된 동기화 도구인데 지금은 모니터를 많이쓴다. 주로 자바에서 많이쓴다.<br>즉 세마포 이후 프로세스 동기화 도구 이며 세마포 보다 고수준 개념</p>
+<h3 id="세마포어의-구조"><a href="#세마포어의-구조" class="headerlink" title="세마포어의 구조"></a>세마포어의 구조</h3><p>정수변수, 큐, P(acquire)동작, V(release)동작</p>
+<h3 id="모니터의-구조"><a href="#모니터의-구조" class="headerlink" title="모니터의 구조"></a>모니터의 구조</h3><p>공유자원 , 공유자원 접근함수 , 2개의 큐</p>
+<p>2개의 큐?<br>하나는 배타동기. 즉 한쓰레드만 공유자원에 접근할 수 있도록 하는 큐<br>하나는 조건동기를 위한 큐</p>
+<p>베타동기를 위한큐 | 다양한 함수 | 조건동기를 위한큐</p>
+<p>1.쓰레드 한개만 공유자원 접근 함수에 접근할 수 있다. 즉 들어오고 싶어하는 애들은 베타동기를 위한 큐에서 기다려야 한다.<br>2.진입 쓰레드가 조건을 만족하면(wait를 콜) 조건동기 큐로 들어가는데 이땐 블록된다. 그러면 새 쓰레드가 진입가능<br>3.새 쓰레드는 조건동기로 블록된 쓰레드를 notify를 호출하여 깨울 수 있다<br>4.깨워진 쓰레드는 현재 쓰레드가 나가면 재진입할 수 있다.<br>(하나의 쓰레드만 접근 가능하므로)</p>
+<p>세마포어에 비해 복잡하나 사용하기 편리하다.</p>
+<p><code>배타동기</code>: synchronized 키워드 사용하여 지정<br><code>조건동기</code>: wait(), notify(), notifyAll() 메소드 사용</p>
+<p>베타동기: 하나만 특정함수에 들어갈 수 있다. 자바에서는 함수 정의 앞에 synchronized 키워드를 붙인다.<br>조건동기는 wait 함수를 호출하여 조건동기를 위한 큐에 갇히게 할 수 있고 notify(하나깨우기) 혹은 notify all(전체깨우기) 을 호출하여 깨울 수 도 있다.</p>
+<h4 id="상호배제-용도로-사용"><a href="#상호배제-용도로-사용" class="headerlink" title="상호배제 용도로 사용"></a>상호배제 용도로 사용</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BankAccount</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> balance;</div><div class="line">	<span class="function"><span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">deposit</span><span class="params">(<span class="keyword">int</span> amt)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> temp = balance + amt;</div><div class="line">		System.out.print(<span class="string">"+"</span>);</div><div class="line">		balance = temp;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">withdraw</span><span class="params">(<span class="keyword">int</span> amt)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> temp = balance - amt;</div><div class="line">		System.out.print(<span class="string">"-"</span>);</div><div class="line">		balance = temp;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getBalance</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> balance;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<p>위처럼 하면 동기화가 가능하다. 세마포어 보다 쉽다!</p>
+<h4 id="Ordering-용도로-사용"><a href="#Ordering-용도로-사용" class="headerlink" title="Ordering 용도로 사용"></a>Ordering 용도로 사용</h4><p>P1은 공백/ S1/notify();<br>P2는 wait/S2/공백</p>
+<p>P1이 입금, P2가 출금 로직이라고 가정하고 생각해보자.</p>
+<p>P1,P2 반복해서 출력되게 하려면 boolean 변수 하나를 둬서 처리<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">int</span> balacne = <span class="number">0</span>;</div><div class="line"><span class="keyword">boolean</span> p_turn;</div><div class="line"><span class="function"><span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">deposit</span><span class="params">(<span class="keyword">int</span> amt)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> temp = balance + amt;</div><div class="line">	balance = temp;</div><div class="line">	notify();</div><div class="line">	p_turn = <span class="keyword">false</span>;</div><div class="line">	wait();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">withdraw</span><span class="params">(<span class="keyword">int</span> amt)</span> </span>&#123;</div><div class="line">	<span class="keyword">while</span>(p_turn)</div><div class="line">		wait();</div><div class="line"></div><div class="line">	<span class="keyword">int</span> temp = balance - amt;</div><div class="line">	balance = temp;</div><div class="line">	p_turn = <span class="keyword">true</span>;</div><div class="line">	notify();</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">---</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Buffer</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span>[] buf;</div><div class="line">	<span class="keyword">int</span> size, count, in, out;</div><div class="line">	Buffer(<span class="keyword">int</span> size) &#123;</div><div class="line">		buf = <span class="keyword">new</span> <span class="keyword">int</span>[size];</div><div class="line">		<span class="keyword">this</span>.size = size;</div><div class="line">		count = in = out = <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> item)</span> </span>&#123;</div><div class="line">	<span class="keyword">while</span> (count == size)</div><div class="line">	<span class="keyword">try</span> &#123;</div><div class="line">		wait();</div><div class="line">	&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;&#125;</div><div class="line">	buf[in] = item;</div><div class="line">	in = (in+<span class="number">1</span>)%size;</div><div class="line">	notify();</div><div class="line">	count++;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">synchronized</span> <span class="keyword">int</span> <span class="title">remove</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">while</span> (count == <span class="number">0</span>)</div><div class="line">	<span class="keyword">try</span> &#123;</div><div class="line">		wait();</div><div class="line">	&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;&#125;</div><div class="line">	<span class="keyword">int</span> item = buf[out];</div><div class="line">	out = (out+<span class="number">1</span>)%size;</div><div class="line">	count--;</div><div class="line">	notify();</div><div class="line">	<span class="keyword">return</span> item;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">---</div><div class="line">교착상태에 대한 고려는 되지 않음.</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Chopstick</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">boolean</span> inUse = <span class="keyword">false</span>;</div><div class="line">	<span class="function"><span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">acquire</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</div><div class="line">		<span class="keyword">while</span> (inUse)</div><div class="line">		wait();</div><div class="line">		inUse = <span class="keyword">true</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">release</span><span class="params">()</span> </span>&#123;</div><div class="line">		inUse = <span class="keyword">false</span>;</div><div class="line">		notify();</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure></p>
+]]></content>
     
     <summary type="html">
     
+      &lt;h3 id=&quot;모니터&quot;&gt;&lt;a href=&quot;#모니터&quot; class=&quot;headerlink&quot; title=&quot;모니터&quot;&gt;&lt;/a&gt;모니터&lt;/h3&gt;&lt;p&gt;동기화 도구로 세마포어를 배웠다. 세마포어는 조금 오래된 동기화 도구인데 지금은 모니터를 많이쓴다. 주로 자바에서 많이
+    
     </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
     
     
   </entry>
   
   <entry>
-    <title>operating-system15</title>
+    <title>15.교착상태 필요조건, 교착상태의 해결법</title>
     <link href="http://KKimSangHeon.github.io/2019/02/22/operating-system15/"/>
     <id>http://KKimSangHeon.github.io/2019/02/22/operating-system15/</id>
     <published>2019-02-22T13:50:56.000Z</published>
-    <updated>2019-02-22T13:50:56.375Z</updated>
+    <updated>2019-02-22T13:55:08.281Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="교착상태"><a href="#교착상태" class="headerlink" title="교착상태"></a>교착상태</h3><p>발생이유 : 프로세스들이 자원을 많이 필요로 한다. 하지만 누가 사용하고 있으면 기다려야한다.<br>이러한 형태가 원을 이루면 교착상태가 발생한다.</p>
+<h3 id="교창상태-필요조건"><a href="#교창상태-필요조건" class="headerlink" title="교창상태 필요조건."></a>교창상태 필요조건.</h3><p>Mutual exclusion (상호배타) : 자원을 서로 공유하지 못함<br>Hold and wait (보유 및 대기) : 하나를 잡고있으면서 다른것을 원함<br>No Preemption (비선점) : 다른것을 강제로 뺏어오지 못함.<br>Circular wait (환형대기) : 자원을 갖고있으면서 기다리는데 원형형태</p>
+<p><u>네가지가 만족되면 일어날 수 있다. 반드시 일어나는것은 아님</u></p>
+<h3 id="교착상태-처리"><a href="#교착상태-처리" class="headerlink" title="교착상태 처리"></a>교착상태 처리</h3><p>교착상태 처리는 크게 네가지가 있다.<br>1.교착상태 방지<br>Deadlock Prevention</p>
+<p>2.교착상태 회피<br>Deadlock Avoidance</p>
+<ol>
+<li><p>교착상태 검출 및 복구<br>Deadlock Detection &amp; Recovery</p>
+</li>
+<li><p>교착상태 무시<br>Don’t Care</p>
+</li>
+</ol>
+<h3 id="1-교착상태-방지"><a href="#1-교착상태-방지" class="headerlink" title="1.교착상태 방지"></a>1.교착상태 방지</h3><p><code>설명</code> : 필요조건 중 네가지 조건중에 하나라도 깨도록 하는것.<br><code>상호베타 조건을 깨기</code>: 이를 위해 공유가 가능하게 해야한다. 현실적으로 어렵다. 읽어내기만 하는 파일 같은 경우에는 가능하지만 일반적으로는 부적절</p>
+<p><code>보유 및 대기 깨기</code>: 동시에 젓가락 갖게하기. 왼쪽 젓가락 잡고 오른쪽 젓가락 잡을라 했는데 누가 오른쪽을 갖고있으면 왼쪽도 놓기. 이는 굶어 죽을 확률이 생김. 자원의 활용도가 떨어진다. 상호베타 조건깨는것보다는 쉽다.<br>자원을 가지고 있으면서 다른 자원을 기다리지 않게 즉 자원이 없는 상태에서 모든 자원 대기; 일부 자원만 가용하면 보유 자원을 모두 놓아주기<br>단점: 자원 활용률 저하, 기아 (starvation)</p>
+<p><code>비선점 깨기</code>: CPU의 경우에는 일부 가능하겠으나 일반적으로 불가능</p>
+<p><code>환형대기 깨기</code> : 자원에다 번호 부여하고 자원의 오름차순으로 자원을 요청토록 함. 즉 R1,R2,R3 가 있을때 R1, R2 요청/ R2,R3 요청/ R1,R3요청처럼 구현. 자원의 활용도가 떨어진다.</p>
+<p>보통 보유 및 대기 깨기 혹은 환형대기 깨기를 사용한다.</p>
+<h3 id="2-교착상태-회피"><a href="#2-교착상태-회피" class="headerlink" title="2.교착상태 회피"></a>2.교착상태 회피</h3><p><code>설명</code> : 자원을 할당할 때 위험한 할당이 되지 않도록 하는것.<br>자원을 프로세스 한테 골고루 나눠주는것을 OS가 한다. 이를 리소스 매지저 / 올로케이터라 한다.<br>교착상태는 자원요청에 대한 잘못된 승인에 기인한다고 본다.</p>
+<p>불안전한 할당 (Unsafe allocation)<br>운영체제는 자원을 할당할 때 불안전 할당 되지 않도록<br>불안전 할당 → 교착상태 유발<br>대출전문 은행과 유사: Banker’s Algorithm</p>
+<h3 id="3-교착상태-검출-및-복구"><a href="#3-교착상태-검출-및-복구" class="headerlink" title="3.교착상태 검출 및 복구"></a>3.교착상태 검출 및 복구</h3><p><code>설명</code> : 프로세스가 필요한 대로 자원을 나눠주고 데드락이 발생하면 OS의 프로세스 복구.<br>교착상태가 일어나는 것을 허용 그리고 주기적 검사진행. 주기적 검사는 이를 하기 위한 오버헤드가 크다.<br>교착상태 발생 시 복구하기위해 주기적으로 이전의 상태를 기억하고 있어야 한다.<br>이를 위해 한 프로세스를 강제로 종료시키거나 혹은 자원을 선점하여 일부 프로세스에게 할당.</p>
+<h3 id="4-교착상태-무시"><a href="#4-교착상태-무시" class="headerlink" title="4. 교착상태 무시"></a>4. 교착상태 무시</h3><p><code>설명</code> : 교착상태는 실제로 잘 일어나지 않으므로 그냥 무시해버린다.<br>교착상태 발생 시 재시동.</p>
+<p>컴퓨터에서 가장 중요한것은 메모리 관리이다. 이를 프로세스 매니지먼트 부서가 하는데 이는 CPU 스케줄링 부서, 프로세스 싱크로나이즈 부서로 구성된다. 싱크로나이즈에서는 데드락관리또한 중요.</p>
+<p>메인메모리 관리가 메모리 매니지 부서가 있다. 다음부터 공부한다.</p>
+]]></content>
     
     <summary type="html">
     
+      &lt;h3 id=&quot;교착상태&quot;&gt;&lt;a href=&quot;#교착상태&quot; class=&quot;headerlink&quot; title=&quot;교착상태&quot;&gt;&lt;/a&gt;교착상태&lt;/h3&gt;&lt;p&gt;발생이유 : 프로세스들이 자원을 많이 필요로 한다. 하지만 누가 사용하고 있으면 기다려야한다.&lt;br&gt;이러한 형태
+    
     </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
     
     
   </entry>
   
   <entry>
-    <title>operating-system14</title>
+    <title>14.읽기-쓰기 문제, 식사하는 철학자 문제</title>
     <link href="http://KKimSangHeon.github.io/2019/02/22/operating-system14/"/>
     <id>http://KKimSangHeon.github.io/2019/02/22/operating-system14/</id>
     <published>2019-02-22T13:50:49.000Z</published>
-    <updated>2019-02-22T13:50:49.890Z</updated>
+    <updated>2019-02-22T13:53:18.540Z</updated>
+    
+    <content type="html"><![CDATA[<p>읽기-쓰기 문제, 식사하는 철학자 문제</p>
+<h3 id="Reader-amp-Writer"><a href="#Reader-amp-Writer" class="headerlink" title="Reader &amp; Writer"></a>Reader &amp; Writer</h3><p>DB 읽기만 하는 프로세스 DB를 바꾸는 프로세스</p>
+<p>A가 DB를 읽고 있을 때 B가 읽을 수 있다.<br>즉 한 프로세스가 DB를 읽을 때 다른 프로세스도 읽을 수 있게 허용해줘야 한다.</p>
+<p>The first R/W problem (readers-preference)<br>리더가 있으면 라이터가 미뤄지는것</p>
+<p>The second R/W problem (writers-preference)<br>라이터가 먼저 우선순위가 주어지는것</p>
+<p>The Third R/W problem<br>아무한테도 주지 않는것</p>
+<p><code>정리</code> : 즉 리더가 들어왔는데 라이터가 들어오려면 블록되어야 하고<br>라이터가 들어왔는데 리더가 들어오려면 블록되어야 하고<br>리더가 들어와있는데 리더가 들어오면 허용해야한다</p>
+<h3 id="Dining-Philosopher-Problem"><a href="#Dining-Philosopher-Problem" class="headerlink" title="Dining Philosopher Problem"></a>Dining Philosopher Problem</h3><p><code>다음 프로그램 설명</code><br>철학자 5명이 둥근탁상에 앉아있다. 젓가락은 5개뿐. 즉 자신의 왼쪽 오른쪽에 젓가락이 위치.<br>젓가락을 세마포어로 만들고 초기화를 1로한다.<br>무한루프를 돌면서 왼쪽젓가락, 오른쪽 젓가락을 acquire 하고. 먹고 다시 왼쪽 오른쪽 젓가락을 release한다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.concurrent.Semaphore;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Philosopher</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> id; <span class="comment">// philosopher id</span></div><div class="line">	Semaphore lstick, rstick; <span class="comment">// left, right chopsticks</span></div><div class="line">	Philosopher(<span class="keyword">int</span> id, Semaphore lstick, Semaphore rstick) &#123;</div><div class="line">		<span class="keyword">this</span>.id = id;</div><div class="line">		<span class="keyword">this</span>.lstick = lstick;</div><div class="line">		<span class="keyword">this</span>.rstick = rstick;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			<span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</div><div class="line">				lstick.acquire();</div><div class="line">				rstick.acquire();</div><div class="line">				eating();</div><div class="line">				lstick.release();</div><div class="line">				rstick.release();</div><div class="line">				thinking();</div><div class="line">			&#125;</div><div class="line">		&#125;<span class="keyword">catch</span> (InterruptedException e) &#123; &#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">eating</span><span class="params">()</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"["</span> + id + <span class="string">"] eating"</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">thinking</span><span class="params">()</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"["</span> + id + <span class="string">"] thinking"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line">	<span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> num = <span class="number">5</span>; <span class="comment">// number of philosphers &amp; chopsticks</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> i;</div><div class="line">		<span class="comment">/* chopsticks */</span></div><div class="line">		Semaphore[] stick = <span class="keyword">new</span> Semaphore[num];</div><div class="line">		<span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;num; i++)</div><div class="line">			stick[i] = <span class="keyword">new</span> Semaphore(<span class="number">1</span>);</div><div class="line"></div><div class="line">		<span class="comment">/* philosophers */</span></div><div class="line">		Philosopher[] phil = <span class="keyword">new</span> Philosopher[num];</div><div class="line">		<span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;num; i++)</div><div class="line">			phil[i] = <span class="keyword">new</span> Philosopher(i, stick[i], stick[(i+<span class="number">1</span>)%num]);</div><div class="line"></div><div class="line">		<span class="comment">/* let philosophers eat and think */</span></div><div class="line">		<span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;num; i++)</div><div class="line">			phil[i].start();</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<p>위의 프로그램은 쭉 가다가 정지된다. 그 이유는 <u>기아상태</u> 유발<br>모든사람이 각자의 왼쪽 젓가락을 들었을 때 해당상황이 발생<br>이를 <u>교착상태</u>라 한다.</p>
+<p>운영체제에서 중요한것은 프로세스 관리. 이중 중요한것이 CPU 스케줄링, 동기화 문제이다.<br>동기화에서 중요한건 크리티컬 섹션문제, 효율성 증대 즉 ordering 인데 ordering를 잘못하면 <u>교착상태(Deadlock)</u>에 빠지게 된다.</p>
+<h3 id="교착상태-Deadlocks"><a href="#교착상태-Deadlocks" class="headerlink" title="교착상태(Deadlocks)"></a>교착상태(Deadlocks)</h3><p>프로세스가 실행되기 위해서는 하드웨어 자원이 필요하다. 이를 리소스 즉 자원이라 한다. 자원을 사용하는 애플리케이션 즉 프로세스가 있고 중간에 OS가 있다. OS는 애플리케이션한테 자원을 잘 나눠줘야 한다. 자원은 한정되어 있는데 이를 사용하고자 하는 프로세스는 많다. 여기서 잘 나눠주지 못하면 교착상태가 발생한다.</p>
+<p>어떤 자원은 갖고 있으나 다른 자원은 갖지 못할 때 (e.g., 다른 프로세스가 사용 중) 대기해야 한다.<br>다른 프로세스 역시 다른 자원을 가지려고 대기할 때 교착상태 가능성 발생</p>
+<p>교착상태는 어떤자원을 갖고있을 때 다른 자원을 갖고자 할 때 발생</p>
+<h3 id="교착상태-필요-조건-Necessary-Conditions"><a href="#교착상태-필요-조건-Necessary-Conditions" class="headerlink" title="교착상태 필요 조건 (Necessary Conditions)"></a>교착상태 필요 조건 (Necessary Conditions)</h3><p>Mutual exclusion (상호배타) : 리소스가 상호 배타적이다. 즉 한프로세스가 A를 쓰고 있다면 다른 프로세스는 A를 쓰지 못한다.<br>Hold and wait (보유 및 대기) : 왼쪽 젓가락 잡고있으면서 오른쪽 젓가락을 기다리는것.<br>No Preemption (비선점) : 다른사람의 젓가락 하나를 강제로 뺏을 수 없다.<br>Circular wait (환형대기) : 대기하는 형태가 원을 이룸.</p>
+<h3 id="교착상태"><a href="#교착상태" class="headerlink" title="교착상태"></a>교착상태</h3><p>OS에서는 데드락이 일어나지 않도록 미리 조취를 해야한다.</p>
+<h4 id="자원의-사용"><a href="#자원의-사용" class="headerlink" title="자원의 사용"></a>자원의 사용</h4><p><u>요청 (request) → 사용 (use) → 반납 </u><br>프로세스가 자원을 쓰려면 OS에게 요청을 한다. 그 요청이 올바르면 OS는 그것을 허용하고 프로세스가 자원을 다 쓰면 OS에게 반납한다.</p>
+<h4 id="동일-자원"><a href="#동일-자원" class="headerlink" title="동일 자원"></a>동일 자원</h4><p>동일 형식 (type) 자원이 여러 개 있을 수 있다 (instance) - 예: 동일 CPU 2개, 동일 프린터 3개 등</p>
+<h3 id="자원-할당도-Resource-Allocation-Graph"><a href="#자원-할당도-Resource-Allocation-Graph" class="headerlink" title="자원 할당도 (Resource Allocation Graph)"></a>자원 할당도 (Resource Allocation Graph)</h3><p><u>시스템 내에 어느 자원이 있고 어떤 프로세스에게 할당되었는가에 대한 그래프</u><br>어떤 자원이 어떤 프로세스에게 할당되었는가?<br>어떤 프로세스가 어떤 자원을 할당 받으려고 기다리고 있는가?<br><u>자원: 사각형, 프로세스: 원, 할당: 화살표</u></p>
+<p>그래프 강의는 37분부터 보자</p>
+<h4 id="교착상태-필요조건"><a href="#교착상태-필요조건" class="headerlink" title="교착상태 필요조건"></a>교착상태 필요조건</h4><p>자원 할당도 상에 원이 만들어져야 (환형대기) - 충분조건은 아님!<br>자원에서 프로세스를 가르키면 프로세스가 자원을 할당받은 상태<br>프로세스에서 자원을 가르키면 자원을 요청한 상태</p>
+<p>짝수번 철학자는 왼쪽들고 오른쪽 들고<br>홀수번 철학자는 오른쪽들고 왼쪽거 들기. 그러면 원형이 깨지게 되어 교착상태가 발생하지 않게된다.</p>
+]]></content>
     
     <summary type="html">
     
+      &lt;p&gt;읽기-쓰기 문제, 식사하는 철학자 문제&lt;/p&gt;
+&lt;h3 id=&quot;Reader-amp-Writer&quot;&gt;&lt;a href=&quot;#Reader-amp-Writer&quot; class=&quot;headerlink&quot; title=&quot;Reader &amp;amp; Writer&quot;&gt;&lt;/a&gt;Read
+    
     </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
     
     
   </entry>
@@ -62,10 +145,9 @@
     <link href="http://KKimSangHeon.github.io/2019/02/21/operating-system13/"/>
     <id>http://KKimSangHeon.github.io/2019/02/21/operating-system13/</id>
     <published>2019-02-21T13:10:14.000Z</published>
-    <updated>2019-02-21T13:12:27.326Z</updated>
+    <updated>2019-02-22T13:52:46.125Z</updated>
     
-    <content type="html"><![CDATA[<p>전통적 동기화 문제, 생산자-소비자 문제</p>
-<p>OS에서 가장중요한게 프로세스 관리<br>이중 CPU 스케줄링, 프로세스 동기화가 중요하다.<br>이때 임계구역 처리를 잘해야한다.</p>
+    <content type="html"><![CDATA[<p>OS에서 가장중요한게 프로세스 관리<br>이중 CPU 스케줄링, 프로세스 동기화가 중요하다.<br>이때 임계구역 처리를 잘해야한다.</p>
 <h3 id="전통적-동기화-예제"><a href="#전통적-동기화-예제" class="headerlink" title="전통적 동기화 예제"></a>전통적 동기화 예제</h3><p>1.Producer and Consumer Problem(생산자-소비자 문제, 유한버퍼 문제 (Bounded Buffer Problem))<br>2.Readers-Writers Problem(공유 데이터베이스 접근)<br>3.Dining Philosopher Problem(식사하는 철학자 문제)</p>
 <hr>
 <h3 id="Producer-Consumer-Problem"><a href="#Producer-Consumer-Problem" class="headerlink" title="Producer-Consumer Problem"></a>Producer-Consumer Problem</h3><h4 id="생산자-소비자-문제"><a href="#생산자-소비자-문제" class="headerlink" title="생산자-소비자 문제"></a>생산자-소비자 문제</h4><p>생산자가 데이터를 생산하면 소비자는 그것을 소비<br>예: 컴파일러 &gt; 어셈블러, 파일 서버 &gt; 클라이언트, 웹 서버 &gt; 웹 클라이언트</p>
@@ -81,9 +163,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;전통적 동기화 문제, 생산자-소비자 문제&lt;/p&gt;
-&lt;p&gt;OS에서 가장중요한게 프로세스 관리&lt;br&gt;이중 CPU 스케줄링, 프로세스 동기화가 중요하다.&lt;br&gt;이때 임계구역 처리를 잘해야한다.&lt;/p&gt;
-&lt;h3 id=&quot;전통적-동기화-예제&quot;&gt;&lt;a href=&quot;
+      &lt;p&gt;OS에서 가장중요한게 프로세스 관리&lt;br&gt;이중 CPU 스케줄링, 프로세스 동기화가 중요하다.&lt;br&gt;이때 임계구역 처리를 잘해야한다.&lt;/p&gt;
+&lt;h3 id=&quot;전통적-동기화-예제&quot;&gt;&lt;a href=&quot;#전통적-동기화-예제&quot; class=&quot;headerlink
     
     </summary>
     
