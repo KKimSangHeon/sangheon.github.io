@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-02-22T13:56:23.045Z</updated>
+  <updated>2019-02-22T14:07:13.829Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,13 +20,14 @@
     <link href="http://KKimSangHeon.github.io/2019/02/22/operating-system16/"/>
     <id>http://KKimSangHeon.github.io/2019/02/22/operating-system16/</id>
     <published>2019-02-22T13:51:04.000Z</published>
-    <updated>2019-02-22T13:56:23.045Z</updated>
+    <updated>2019-02-22T14:07:13.829Z</updated>
     
     <content type="html"><![CDATA[<h3 id="모니터"><a href="#모니터" class="headerlink" title="모니터"></a>모니터</h3><p>동기화 도구로 세마포어를 배웠다. 세마포어는 조금 오래된 동기화 도구인데 지금은 모니터를 많이쓴다. 주로 자바에서 많이쓴다.<br>즉 세마포 이후 프로세스 동기화 도구 이며 세마포 보다 고수준 개념</p>
 <h3 id="세마포어의-구조"><a href="#세마포어의-구조" class="headerlink" title="세마포어의 구조"></a>세마포어의 구조</h3><p>정수변수, 큐, P(acquire)동작, V(release)동작</p>
 <h3 id="모니터의-구조"><a href="#모니터의-구조" class="headerlink" title="모니터의 구조"></a>모니터의 구조</h3><p>공유자원 , 공유자원 접근함수 , 2개의 큐</p>
 <p>2개의 큐?<br>하나는 배타동기. 즉 한쓰레드만 공유자원에 접근할 수 있도록 하는 큐<br>하나는 조건동기를 위한 큐</p>
 <p>베타동기를 위한큐 | 다양한 함수 | 조건동기를 위한큐</p>
+
 <p>1.쓰레드 한개만 공유자원 접근 함수에 접근할 수 있다. 즉 들어오고 싶어하는 애들은 베타동기를 위한 큐에서 기다려야 한다.<br>2.진입 쓰레드가 조건을 만족하면(wait를 콜) 조건동기 큐로 들어가는데 이땐 블록된다. 그러면 새 쓰레드가 진입가능<br>3.새 쓰레드는 조건동기로 블록된 쓰레드를 notify를 호출하여 깨울 수 있다<br>4.깨워진 쓰레드는 현재 쓰레드가 나가면 재진입할 수 있다.<br>(하나의 쓰레드만 접근 가능하므로)</p>
 <p>세마포어에 비해 복잡하나 사용하기 편리하다.</p>
 <p><code>배타동기</code>: synchronized 키워드 사용하여 지정<br><code>조건동기</code>: wait(), notify(), notifyAll() 메소드 사용</p>
