@@ -421,7 +421,7 @@
     <link href="http://KKimSangHeon.github.io/2019/02/15/os6/"/>
     <id>http://KKimSangHeon.github.io/2019/02/15/os6/</id>
     <published>2019-02-15T12:24:01.000Z</published>
-    <updated>2019-02-17T11:13:03.347Z</updated>
+    <updated>2019-02-22T14:32:45.181Z</updated>
     
     <content type="html"><![CDATA[<h3 id="프로세스-관리"><a href="#프로세스-관리" class="headerlink" title="프로세스 관리"></a>프로세스 관리</h3><p>CPU를 프로세스한테 어떻게 잘 나눠주는가에 대한것.</p>
 <p>Process<br>실행중인 프로그램.</p>
@@ -438,6 +438,7 @@
 <p>I/O를 사용하려 해도 줄서서 기다려야 한다. 이를 <code>Device queue</code> 라고 한다.</p>
 <p>I/O를 끝내면 ready상태로 가는데 여기서도 줄서서 기다려야 한다.</p>
 <hr>
+<img src="/2019/02/15/os6/image1.png" alt="여러가지의 Queue" title="여러가지의 Queue">
 <h3 id="Job-scheduling-Long-term-scheduler"><a href="#Job-scheduling-Long-term-scheduler" class="headerlink" title="Job scheduling(Long-term scheduler)"></a>Job scheduling(Long-term scheduler)</h3><p>하드디스크에서 메인메모리에 올라가기 위해 <u>job queue에 대기하는 프로그램중 어느놈을 먼저 올려야하는지에 대한것</u>을 <code>Job scheduling(Long-term scheduler)</code>라 한다. 잡 스케줄링은 역시 O/S 안에 프로세스 관리안에 존재한다.<br>일반적으로 프로세스가 끝나고 메모리가 비워져야 일어나기 때문에 Long-term scheduler 라고도 한다. 즉 스케줄러가 일어나는 시간이 몇분이 걸린다.</p>
 <h3 id="CPU-Scheduler-Short-term-scheduler"><a href="#CPU-Scheduler-Short-term-scheduler" class="headerlink" title="CPU Scheduler( Short-term scheduler )"></a>CPU Scheduler( Short-term scheduler )</h3><p><u>메모리에 올라온 프로세스들은 CPU를 받기위해 줄서있는데 어느놈을 선택해서 서비스해줄지에 대한것</u>을 <code>CPU Scheduler( Short-term scheduler )</code>이라 한다.<br>메인 메모리에 여러 프로그램이 있는데 스위칭이 빠르게 일어난다. 1초에 수십번,수백번도 발생한다.  그래서 Short-term scheduler 라고도 부른다. <u>다른 스케줄링 보다도 가장 중요한 스케줄링이다.</u></p>
 <h3 id="Device-Scheduler"><a href="#Device-Scheduler" class="headerlink" title="Device Scheduler"></a>Device Scheduler</h3><p>디바이스 서비스를 받기위해 기다리는것을 <code>Device Scheduler</code>이라 한다.</p>
