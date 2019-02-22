@@ -164,6 +164,150 @@ ga('send', 'pageview');
         <article class="article article-summary">
     <div class="article-summary-inner">
         
+        <a href="/2018/03/30/linux-bash-profile/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/centoslogo.png)" alt="리눅스 개인폴더에 설치된 디렉토리 사용하기" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2018/03/30/linux-bash-profile/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/OS/">OS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/OS/Linux/">Linux</a>
+            </div>
+            <div class="date"><time datetime="2018-03-29T23:29:17.000Z" itemprop="datePublished">2018-03-30</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2018/03/30/linux-bash-profile/">리눅스 개인폴더에 설치된 디렉토리 사용하기</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            서버에 curl이 설치되어 있고 내 로컬에도 curl이 설치되어 있을 때 내 curl을 사용하기 위한 방법
+vi ~/.bash_profile을 열고 아래를 입력하고
+export CURL_DIR=”$HOME/apps/usr/curl/bin”export PATH=$CURL_DIR:$PATH
+source ~/.bash_profile을 입력
+curl -V를 통해 
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2018/03/23/apache-add-module/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2018/03/23/apache-add-module/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Etc/">Etc</a>
+            </div>
+            <div class="date"><time datetime="2018-03-23T11:39:06.000Z" itemprop="datePublished">2018-03-23</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2018/03/23/apache-add-module/">아파치 모듈추가</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            아파치 모듈 추가/home/sangheon/apps/apache 이라는 경로에 아파치가 설치되어있다고 가정.
+
+./apxs -n modulename -g 로 모듈추가. 그럼 현재 위치(bin)에 modulename디렉토리가 생성된다.
+/home/sangheon/apps/apache/conf 경로로 이동하여 httpd.conf를 열자
+약 150라인 정도 다음
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2018/03/20/mytip/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2018/03/20/mytip/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            
+            </div>
+            <div class="date"><time datetime="2018-03-19T15:00:00.000Z" itemprop="datePublished">2018-03-20</time></div>
+        </div>
+        
+        <p class="article-excerpt">
+            vi 관련
+코드 정렬하기ggvG=gg는 파일 처음으로이동하고v는 비쥬얼 모드로 전환하고G는 끝까지 드래그=는 정렬
+함수 정의를 찾아가고싶을 때ctag 를 사용하자http://bowbowbow.tistory.com/15
+ ~/.vimrcset hlsearchset nuset autoindentset scrolloff=2set wildmode=longest,l
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
         <a href="/2018/03/19/effectiveJava4/" class="thumbnail">
     
     
@@ -201,10 +345,14 @@ ga('send', 'pageview');
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -246,14 +394,10 @@ ga('send', 'pageview');
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -297,10 +441,14 @@ ga('send', 'pageview');
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -347,14 +495,10 @@ ga('send', 'pageview');
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -397,10 +541,14 @@ ga('send', 'pageview');
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -443,14 +591,10 @@ ga('send', 'pageview');
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -494,153 +638,6 @@ ga('send', 'pageview');
     </div>
 </article>
     
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/01/27/usefulsite/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2018/01/27/usefulsite/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2018-01-27T13:41:25.000Z" itemprop="datePublished">2018-01-27</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/01/27/usefulsite/">유용한 사이트 모음</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            알고리즘, 코딩관련https://app.codility.com/programmers/lessons/1-iterations/
-트렌드 분석https://trends.google.com/trends/?hl=ko검색어를 입력하여 해당검색어에 대한 연관이슈 등에 대해 알 수 있다..
-IT 관련http://www.itfind.or.kr/IT 관련 이슈를 접할 수 있으
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/01/15/angular2/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/angular2.png)" alt="4장. 컴포넌트" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2018/01/15/angular2/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Web-App/">Web/App</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Web-App/Angular2/">Angular2</a>
-            </div>
-            <div class="date"><time datetime="2018-01-15T14:22:50.000Z" itemprop="datePublished">2018-01-15</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/01/15/angular2/">4장. 컴포넌트</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            4장. 컴포넌트컴포넌트앵귤러에서 화면하는 구성하는 중요한 구성요소이다.
-웹 컴포넌트HTML , CSS, 자바스크립트를 하나의 단위로 묶어주는 기술이다. 웹 컴포넌트 기술은 하나의 기능이 아니라 여러가지 기술들이 합쳐져 하나의 웹 컴포넌트를 구성 웹 컴포넌트는 앵귤러2 컴포넌트의 기반기술이다 앵귤러 2 컴포넌트는 웹 컴포넌트의 기술요소를 기반으로 하므로 웹 
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/01/13/interview6/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/interview.png)" alt="마인즈랩" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2018/01/13/interview6/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Etc/">Etc</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Etc/면접/">면접</a>
-            </div>
-            <div class="date"><time datetime="2018-01-13T13:31:35.000Z" itemprop="datePublished">2018-01-13</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/01/13/interview6/">마인즈랩</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            시기2017년 9월
-면접내용판교에서 열린 취업박람회에 참가하여 처음면접을 진행했으며 개발팀이 아닌 분들과 면접을 진행했습니다. 진행했던 프로젝트 그리고 어필하고 싶은 분야에 대한 프로젝트에 대해 설명했습니다.
-2차면접은 사무실 내 회의실에서 진행하였으며 각팀의 개발팀 팀장님들 그리고 전무님과 면접을 진행했습니다. 면접 질문은 다음과 같습니다.
-
-자기소개
-영
-        </p>
-    </div>
-</article>
-    
         </div>
     
 
@@ -649,8 +646,8 @@ IT 관련http://www.itfind.or.kr/IT 관련 이슈를 접할 수 있으
 
 
     <nav id="page-nav">
-        <span class="pages">Page 8 of 20</span>
-        <a class="extend prev" rel="prev" href="/page/7/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/9/">&raquo;</a>
+        <span class="pages">Page 8 of 21</span>
+        <a class="extend prev" rel="prev" href="/page/7/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/9/">&raquo;</a>
     </nav>
 
 
