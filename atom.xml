@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-02-22T13:55:01.757Z</updated>
+  <updated>2019-02-22T13:56:23.045Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://KKimSangHeon.github.io/2019/02/22/operating-system16/"/>
     <id>http://KKimSangHeon.github.io/2019/02/22/operating-system16/</id>
     <published>2019-02-22T13:51:04.000Z</published>
-    <updated>2019-02-22T13:55:01.757Z</updated>
+    <updated>2019-02-22T13:56:23.045Z</updated>
     
     <content type="html"><![CDATA[<h3 id="모니터"><a href="#모니터" class="headerlink" title="모니터"></a>모니터</h3><p>동기화 도구로 세마포어를 배웠다. 세마포어는 조금 오래된 동기화 도구인데 지금은 모니터를 많이쓴다. 주로 자바에서 많이쓴다.<br>즉 세마포 이후 프로세스 동기화 도구 이며 세마포 보다 고수준 개념</p>
 <h3 id="세마포어의-구조"><a href="#세마포어의-구조" class="headerlink" title="세마포어의 구조"></a>세마포어의 구조</h3><p>정수변수, 큐, P(acquire)동작, V(release)동작</p>
@@ -56,19 +56,15 @@
     <link href="http://KKimSangHeon.github.io/2019/02/22/operating-system15/"/>
     <id>http://KKimSangHeon.github.io/2019/02/22/operating-system15/</id>
     <published>2019-02-22T13:50:56.000Z</published>
-    <updated>2019-02-22T13:55:08.281Z</updated>
+    <updated>2019-02-22T13:56:55.165Z</updated>
     
     <content type="html"><![CDATA[<h3 id="교착상태"><a href="#교착상태" class="headerlink" title="교착상태"></a>교착상태</h3><p>발생이유 : 프로세스들이 자원을 많이 필요로 한다. 하지만 누가 사용하고 있으면 기다려야한다.<br>이러한 형태가 원을 이루면 교착상태가 발생한다.</p>
 <h3 id="교창상태-필요조건"><a href="#교창상태-필요조건" class="headerlink" title="교창상태 필요조건."></a>교창상태 필요조건.</h3><p>Mutual exclusion (상호배타) : 자원을 서로 공유하지 못함<br>Hold and wait (보유 및 대기) : 하나를 잡고있으면서 다른것을 원함<br>No Preemption (비선점) : 다른것을 강제로 뺏어오지 못함.<br>Circular wait (환형대기) : 자원을 갖고있으면서 기다리는데 원형형태</p>
 <p><u>네가지가 만족되면 일어날 수 있다. 반드시 일어나는것은 아님</u></p>
 <h3 id="교착상태-처리"><a href="#교착상태-처리" class="headerlink" title="교착상태 처리"></a>교착상태 처리</h3><p>교착상태 처리는 크게 네가지가 있다.<br>1.교착상태 방지<br>Deadlock Prevention</p>
 <p>2.교착상태 회피<br>Deadlock Avoidance</p>
-<ol>
-<li><p>교착상태 검출 및 복구<br>Deadlock Detection &amp; Recovery</p>
-</li>
-<li><p>교착상태 무시<br>Don’t Care</p>
-</li>
-</ol>
+<p>3.교착상태 검출 및 복구<br>Deadlock Detection &amp; Recovery</p>
+<p>4.교착상태 무시<br>Don’t Care</p>
 <h3 id="1-교착상태-방지"><a href="#1-교착상태-방지" class="headerlink" title="1.교착상태 방지"></a>1.교착상태 방지</h3><p><code>설명</code> : 필요조건 중 네가지 조건중에 하나라도 깨도록 하는것.<br><code>상호베타 조건을 깨기</code>: 이를 위해 공유가 가능하게 해야한다. 현실적으로 어렵다. 읽어내기만 하는 파일 같은 경우에는 가능하지만 일반적으로는 부적절</p>
 <p><code>보유 및 대기 깨기</code>: 동시에 젓가락 갖게하기. 왼쪽 젓가락 잡고 오른쪽 젓가락 잡을라 했는데 누가 오른쪽을 갖고있으면 왼쪽도 놓기. 이는 굶어 죽을 확률이 생김. 자원의 활용도가 떨어진다. 상호베타 조건깨는것보다는 쉽다.<br>자원을 가지고 있으면서 다른 자원을 기다리지 않게 즉 자원이 없는 상태에서 모든 자원 대기; 일부 자원만 가용하면 보유 자원을 모두 놓아주기<br>단점: 자원 활용률 저하, 기아 (starvation)</p>
 <p><code>비선점 깨기</code>: CPU의 경우에는 일부 가능하겠으나 일반적으로 불가능</p>
