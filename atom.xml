@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-02-23T15:00:51.899Z</updated>
+  <updated>2019-02-24T03:00:09.984Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>18.동적적재, 동적연결, 스와핑</title>
+    <link href="http://KKimSangHeon.github.io/2019/02/24/operating-system18/"/>
+    <id>http://KKimSangHeon.github.io/2019/02/24/operating-system18/</id>
+    <published>2019-02-24T02:25:43.000Z</published>
+    <updated>2019-02-24T03:00:09.984Z</updated>
+    
+    <content type="html"><![CDATA[<p>컴퓨터에서 메모리는 CPU 만큼 중요하다.<br>하드디스크에 파일들이 들어있다. 파워를키면 OS가 메인메모리에 올라가고 특정 프로그램을 실행시키면 그 프로그램이 메인메모리로 올라간다. 이 메모리를 어떻게 잘 관리할것인가가 <code>메모리 매니지먼트</code></p>
+<h3 id="실행파일을-메모리에-올리기"><a href="#실행파일을-메모리에-올리기" class="headerlink" title="실행파일을 메모리에 올리기"></a>실행파일을 메모리에 올리기</h3><p>src-obj-exe</p>
+<p>메모리 몇 번지에?<br>다중 프로그래밍 환경에서는?</p>
+<p>항상 똑같은 곳에 올리는것을 보장하지 못함. 그래서 MMU를 활용. CPU가 메모리에 몇번째 주소를 읽겠다 하면 메모리는 CPU로 데이터를 전송해준다. <u>MMU는 특정프로그램이 다른 프로그램으로 접근하지 못하게 해준다.</u> CPU가 메모리에 주소를 전달할 때 MMU를 거치는데 자기영역에 맞는 주소를요청하는지 파악한다.(base, limit 레지스터 활용)<br>MMU는 이뿐만 아니라 <u>Relocation register</u>을 둔다. 가령 A라는 프로그램이 있다고 하자. 개발자는 해당 프로그램이 0번지부터 시작한다고 생각하고 코딩을 했다. 하지만 이는 보장되지 않기 때문에 예측할 수 없다. 실제로는 프로그램이 1000번지에 로드되면 MMU 안에 Relocation register에 1000을 넣는다. 그러면 <u>CPU는 0번지를 요청하지만 MMU를 거치면서 1000이 더해져 실제로 저장되어 있는 1000번지로 접근하게 된다</u>. 즉 CPU를 속이게 된다.<br>그 다음날 A라는 프로그램이 실행되었을 때 5000번지에 실행될 경우 이때는 Relocation register에 5000이 들어가고 CPU는 5000번지에 접근하여 데이터를 읽어올 수 있다.</p>
+<p>여기서 CPU가 보내는 주소를 <u>논리주소(logical address)</u> 라 하고 실제로 메인메모리로 들어가는 주소를 <u>물리주소 (physical address)</u>라 한다.</p>
+<p>link</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;컴퓨터에서 메모리는 CPU 만큼 중요하다.&lt;br&gt;하드디스크에 파일들이 들어있다. 파워를키면 OS가 메인메모리에 올라가고 특정 프로그램을 실행시키면 그 프로그램이 메인메모리로 올라간다. 이 메모리를 어떻게 잘 관리할것인가가 &lt;code&gt;메모리 매니지
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>17.주기억장치 관리 개요</title>
     <link href="http://KKimSangHeon.github.io/2019/02/23/operating-system17/"/>
     <id>http://KKimSangHeon.github.io/2019/02/23/operating-system17/</id>
     <published>2019-02-23T00:48:52.000Z</published>
-    <updated>2019-02-23T15:00:51.899Z</updated>
+    <updated>2019-02-23T15:18:11.112Z</updated>
     
     <content type="html"><![CDATA[<p>CPU / 메모리 / 보조기억장치가 존재.<br>O/S는 프로세스 관리를한다. CPU 관리를 하는데 이를 프로세스 매니지먼트라함.<br>또한 O/S는 메모리 관리 즉 메모리 매니지먼트를 한다.</p>
 <p>OS : 하드웨어를 어플리케이션이 활용할 수 있도록 함.<br><code>CPU 자원을 나눠주는 곳</code> : 프로세스 매니지먼트<br><code>메인메모리를 관리하는곳</code> : 메모리 매니지먼트.</p>
@@ -743,49 +771,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=tBQ085PvR9E&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.youtube.com/watch?v=tBQ085PvR9E&lt;/a&gt; 요약&lt;/
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="IOT" scheme="http://KKimSangHeon.github.io/categories/CS/IOT/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>TR-069</title>
-    <link href="http://KKimSangHeon.github.io/2019/02/08/TR-069/"/>
-    <id>http://KKimSangHeon.github.io/2019/02/08/TR-069/</id>
-    <published>2019-02-08T05:52:45.000Z</published>
-    <updated>2019-02-10T08:35:10.602Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="TR-069"><a href="#TR-069" class="headerlink" title="TR-069"></a>TR-069</h3><p>customer-premises equipment (CPE, 말단 사용자 장치)<br>Auto Configuration Servers (ACS, 자동 설정 서버)</p>
-<p>TR-069 (Technical Report 069)는 DSL 포럼 (이후 Broadband 포럼으로 변경)의 기술 명세서이다. 이 문서의 정식 명칭은 CPE WAN Management Protocol (CWMP)이다. 이 문서는 말단 사용자 장치를 관리하기 위한 사용자 계층 프로토콜을 정의하고 있다.</p>
-<p><code>TR-069 프로토콜은 양방향 SOAP/HTTP 을 기반으로 customer-premises equipment (CPE, 말단 사용자 장치) 와 Auto Configuration Servers (ACS,자동 설정 서버) 간 통신을 가능하게 한다.</code> 또한 안전한 자동 설정 기능을 제공하며 통합 환경 내에서 다른 CPE 관리 함수를 제어하고 동작시킬 수 있도록 해준다.</p>
-<h3 id="등장배경"><a href="#등장배경" class="headerlink" title="등장배경"></a>등장배경</h3><p> 브로드밴드 시장이 활성화 되면서 여러개의 다른 종류의 인터넷 접속 또한 많이 생겨났다. ( 모뎀, 라우터, 게이트웨이, 세트톱박스, VoIP-phone 등). <code>또한 동시에 이러한 장비들을 설정하는 것은 더욱 복잡해졌다. 말단 사용자에게는 이러한 설정이 더욱 어려운데 이러한 이유로 TR-069 표준이 개발되었다. TR-069 표준은 여러가지 접속 방법에 대한 자동 설정을 제공한다.</code> 이에대한 구체적인 기술적인 사항은 Broadband 포럼에서 관리하고 발행하고 있다.<code>TR-069을 이용해서 말단 장비들은 자동 설정 서버 (Auto Configuration Servers) (ACS)에 접속하고 필요한 설정을 자동으로 받아오게 된다. 이렇게 함으로써 사용자가 따로 설정하지 않아도 필요한 서비스를 사용하는 것이 가능해진다.</code> TR-069는 DSL broadband 시장에서 터미널을 활성화하기 위해 현재 사용중인 표준이다.</p>
-<h3 id="CPE-WAN-Management-Protocol-CWMP"><a href="#CPE-WAN-Management-Protocol-CWMP" class="headerlink" title="CPE WAN Management Protocol (CWMP)??"></a>CPE WAN Management Protocol (CWMP)??</h3><p>서비스 프로바이더가 ACS를 통해 CPE를 원격으로 데이터 모델을 관리할 수 있게 해준다. 제공기능은 다음과 같다.</p>
-<p>자동 구성 및 동적 서비스 프로비저닝<br>소프트웨어 / 펌웨어 이미지 관리<br>소프트웨어 모듈 관리 상태 및 성능 모니터링 진단</p>
-<h3 id="TR-069-아키텍처"><a href="#TR-069-아키텍처" class="headerlink" title="TR-069 아키텍처"></a>TR-069 아키텍처</h3><img src="/2019/02/08/TR-069/image1.png" alt="TR-069 아키텍처" title="TR-069 아키텍처">
-<p><u>All CWMP sessions begin with the CPE making the Inform RPC on the ACS.</u> This is also referred to as “sending an Inform” or “an Inform message”. An Inform RPC, and consequently, a CWMP session, is always made for a specific reason, called an Event. These Events drive CWMP operation.</p>
-<h4 id="TR-069-초기-세션"><a href="#TR-069-초기-세션" class="headerlink" title="TR-069 초기 세션"></a>TR-069 초기 세션</h4><p>ACS와 연결하기 위해서는 다음의 데이터가 필요하다.</p>
-<ul>
-<li>ACS URL : ACS에 접속하기 위한 URL</li>
-<li>주기적인 알림 : ACS와 주기적인 소통이 정의되어야 한다.</li>
-<li>Username and password - 옵션데이터이나 보안을 위해 하는것이 좋다.</li>
-</ul>
-<img src="/2019/02/08/TR-069/image2.png" alt="TR-069의 초기 세션" title="TR-069의 초기 세션">
-<p>1.First, the CPE initiates a TCP session with ACS and negotiates a secure connection.<br>2.The CPE begins every session by sending an Inform RPC to the ACS, with arguments that include the Event that caused the session. This is done over an HTTP Post.<br>3.In the HTTP Response, the the ACS sends an InformResponse. Once processed by the CPE, this means that the Inform RPC is complete.<br>4.There’s probably no other RPCs that CPE wishes to make on the ACS, so it sends an empty HTTP Post to indicate that it is finished. This may happen at any time during the session.<br>5.The ACS begins to send remote procedure calls to the CPE, such as the GetParamterValues RPC.<br>6.The CPE sends its GetParameterResponse in an HTTP Post, with the information the ACS was looking for. This ends the GetParameterValues RPC.<br>7.The ACS makes any other RPCs it needs to during this session, such as SetParameterValues to change the state of the CPE, or SetParameterAttributes to set up a notification.<br>8.When the ACS has no more RPCs to make, it sends an empty HTTP Response, just like the CPE did earlier. When both the CPE and the ACS have done this, the session is over and it’s time to tear down the connection.</p>
-<h3 id="전송방식"><a href="#전송방식" class="headerlink" title="전송방식"></a>전송방식</h3><p>CWMP는 텍스트 기반 프로토콜입니다. 장치 (CPE)와 자동 구성 서버 (ACS)간에 전송 된 주문은 HTTP 혹은 HTTPS 를 통해 전송됩니다. 이 수준 (HTTP)에서 CPE는 클라이언트 역할을하며 ACS는 HTTP 서버 역할을합니다.</p>
-<hr>
-<h2 id="별첨"><a href="#별첨" class="headerlink" title="별첨"></a>별첨</h2><h4 id="SOAP"><a href="#SOAP" class="headerlink" title="SOAP"></a>SOAP</h4><p>SOAP(Simple Object Access Protocol)은 일반적으로 널리 알려진 HTTP, HTTPS, SMTP 등을 통해 XML 기반의 메시지를 컴퓨터 네트워크 상에서 교환하는 프로토콜이다. SOAP은 웹 서비스에서 기본적인 메시지를 전달하는 기반이 된다.</p>
-<hr>
-<h3 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h3><p><a href="https://www.qacafe.com/tr-069-training/" target="_blank" rel="external">https://www.qacafe.com/tr-069-training/</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;TR-069&quot;&gt;&lt;a href=&quot;#TR-069&quot; class=&quot;headerlink&quot; title=&quot;TR-069&quot;&gt;&lt;/a&gt;TR-069&lt;/h3&gt;&lt;p&gt;customer-premises equipment (CPE, 말단 사용자 장치)&lt;br&gt;Auto C
     
     </summary>
     
