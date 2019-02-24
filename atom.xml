@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-02-24T03:00:09.984Z</updated>
+  <updated>2019-02-24T23:30:27.014Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,18 +16,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>operating-system19</title>
+    <link href="http://KKimSangHeon.github.io/2019/02/25/operating-system19/"/>
+    <id>http://KKimSangHeon.github.io/2019/02/25/operating-system19/</id>
+    <published>2019-02-24T23:30:26.000Z</published>
+    <updated>2019-02-24T23:30:27.014Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>18.동적적재, 동적연결, 스와핑</title>
     <link href="http://KKimSangHeon.github.io/2019/02/24/operating-system18/"/>
     <id>http://KKimSangHeon.github.io/2019/02/24/operating-system18/</id>
     <published>2019-02-24T02:25:43.000Z</published>
-    <updated>2019-02-24T03:00:09.984Z</updated>
+    <updated>2019-02-24T03:24:56.823Z</updated>
     
     <content type="html"><![CDATA[<p>컴퓨터에서 메모리는 CPU 만큼 중요하다.<br>하드디스크에 파일들이 들어있다. 파워를키면 OS가 메인메모리에 올라가고 특정 프로그램을 실행시키면 그 프로그램이 메인메모리로 올라간다. 이 메모리를 어떻게 잘 관리할것인가가 <code>메모리 매니지먼트</code></p>
 <h3 id="실행파일을-메모리에-올리기"><a href="#실행파일을-메모리에-올리기" class="headerlink" title="실행파일을 메모리에 올리기"></a>실행파일을 메모리에 올리기</h3><p>src-obj-exe</p>
 <p>메모리 몇 번지에?<br>다중 프로그래밍 환경에서는?</p>
 <p>항상 똑같은 곳에 올리는것을 보장하지 못함. 그래서 MMU를 활용. CPU가 메모리에 몇번째 주소를 읽겠다 하면 메모리는 CPU로 데이터를 전송해준다. <u>MMU는 특정프로그램이 다른 프로그램으로 접근하지 못하게 해준다.</u> CPU가 메모리에 주소를 전달할 때 MMU를 거치는데 자기영역에 맞는 주소를요청하는지 파악한다.(base, limit 레지스터 활용)<br>MMU는 이뿐만 아니라 <u>Relocation register</u>을 둔다. 가령 A라는 프로그램이 있다고 하자. 개발자는 해당 프로그램이 0번지부터 시작한다고 생각하고 코딩을 했다. 하지만 이는 보장되지 않기 때문에 예측할 수 없다. 실제로는 프로그램이 1000번지에 로드되면 MMU 안에 Relocation register에 1000을 넣는다. 그러면 <u>CPU는 0번지를 요청하지만 MMU를 거치면서 1000이 더해져 실제로 저장되어 있는 1000번지로 접근하게 된다</u>. 즉 CPU를 속이게 된다.<br>그 다음날 A라는 프로그램이 실행되었을 때 5000번지에 실행될 경우 이때는 Relocation register에 5000이 들어가고 CPU는 5000번지에 접근하여 데이터를 읽어올 수 있다.</p>
 <p>여기서 CPU가 보내는 주소를 <u>논리주소(logical address)</u> 라 하고 실제로 메인메모리로 들어가는 주소를 <u>물리주소 (physical address)</u>라 한다.</p>
-<p>link</p>
+<h3 id="메모리-낭비-방지"><a href="#메모리-낭비-방지" class="headerlink" title="메모리 낭비 방지"></a>메모리 낭비 방지</h3><p>운영체제는 컴퓨터 사용을 쉽게, 효율을 높게 하는것이 목표다.<br>이를 위해 어떤노력을 하는지 알아보자,<br>1.Dynamic Loading<br>2.Dynamic Linking<br>3.Swapping</p>
+<p><code>Loading</code> : 프로그램(실행파일)을 메모리로 올리는것.<br><code>Booting</code> : OS를 메모리로 올리는것.</p>
+<h4 id="메모리-낭비-방지-기법-Dynamic-Loading"><a href="#메모리-낭비-방지-기법-Dynamic-Loading" class="headerlink" title="메모리 낭비 방지 기법 : Dynamic Loading"></a>메모리 낭비 방지 기법 : Dynamic Loading</h4><p>프로그램을 메모리에 올릴때 오류처리 혹은 크게 생성한 배열 같은것들을 안올리고 오류가 일어나면 올린다.</p>
+<p><code>나오게 된 배경</code>:<br>모든 루틴(routine)이 다 사용되는 것은 아니다 (예: 오류처리)<br>모든 데이터(data)가 다 사용되는 것은 아니다 (예: 배열)<br>자바: 모든 클래스가 다 사용되는 것은 아니다</p>
+<p><u>즉 프로그램 실행에 반드시 필요한 루틴/데이터만 적재</u><br>현대의 운영체제는 이를 활용. 이전에는 모든것을 올리는 정적 적재(Static loading)를 활용했다.</p>
+<h4 id="메모리-낭비-방지-기법-Dynamic-Linking"><a href="#메모리-낭비-방지-기법-Dynamic-Linking" class="headerlink" title="메모리 낭비 방지 기법 : Dynamic Linking"></a>메모리 낭비 방지 기법 : Dynamic Linking</h4><p><u>프로그램을 메인메모리에 올리는데 공통 라이브러리 루틴(library routine)를 메모리에 중복으로 올<br>리는 것은 낭비</u></p>
+<p>이메일전송,  파일전송 둘다 네트워크를 사용한다. 즉 둘이 같은 라이브러리를 쓸것이다. 하나로 통 칠수있는경우이다. <u>이 기법은 오직 하나의 라이브러리 루틴만 메모리에 적재한다. 또한 exe파일을 만들때 link를 하지 않고 프로그램 실행 때 link하여 갖다 쓴게 한다. 그리고 다른 애플리케이션 실행 시 이 루틴과 연결(link)된다.</u><br>원래는 link를 exe파일이 만들어지기 전에 한다(정적 연결,Static Linking)</p>
+<p>리눅스에서는 공유 라이브러리 (shared library)라 부른다 – Linux<br>윈도우에서는 동적 연결 라이브러리 (Dynamic Linking Library)라 부른다. - Windows</p>
+<p>윈도우에서 .DLL파일을 본적이 있을것이다. 리눅스에는 .SO 파일.<br>C:\Windows\System32 에 많다.</p>
+<h4 id="메모리-낭비-방지-기법-Swapping"><a href="#메모리-낭비-방지-기법-Swapping" class="headerlink" title="메모리 낭비 방지 기법 : Swapping"></a>메모리 낭비 방지 기법 : Swapping</h4><p><u>메모리에 적재되어 있으나 현재 사용되지 않고 있는 프로세스 이미지를 몰아낸다</u><br>프로그램을 사용하다 화장실에 갈경우 해당 프로그램은 아무것도 하지 않으면서 메모리를 잡아먹게 된다.<br>이 경우 해당 프로세스를 쫒아낸다. 즉 프로세스 이미지를 하드디스크 일부에 몰아낸다. 이는 메모리 활용도 높이기 위해 <u>Backing store (= swap device라고도 함)<u> 로 몰아낸다 한다.<br>Backing store (= swap device라고도 함)의 크기는 대략 메인메모리의 크기 정도면 충분하다.(메인메모리의 내용만 쫒아내는 구역이기 때문에.)</u></u></p>
+<p>몰아내는것을 <u>Swap-out</u>라 하고 화장실에서 다시 돌아와 메모리로 다시 올리는것을 <u>Swap-in</u>이라고 한다. 서버는 Backing store 를위한 디스크를 따로 두기도 하며 슈퍼컴퓨터의 경우 Backing store를 하나의 메모리로 두기도 한다.(디스크 접근이 느리기 때문에)</p>
 ]]></content>
     
     <summary type="html">
@@ -736,41 +760,6 @@
     <summary type="html">
     
       &lt;h3 id=&quot;oneM2M&quot;&gt;&lt;a href=&quot;#oneM2M&quot; class=&quot;headerlink&quot; title=&quot;oneM2M&quot;&gt;&lt;/a&gt;oneM2M&lt;/h3&gt;&lt;p&gt;iot 솔루션을 제공함에 있어 여러 벤더를 맞추기란 힘들다… oneM2M이라는 표준을 만들고 이를
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="IOT" scheme="http://KKimSangHeon.github.io/categories/CS/IOT/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>onem2m</title>
-    <link href="http://KKimSangHeon.github.io/2019/02/08/onem2m/"/>
-    <id>http://KKimSangHeon.github.io/2019/02/08/onem2m/</id>
-    <published>2019-02-08T09:44:50.000Z</published>
-    <updated>2019-02-08T10:39:25.022Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://www.youtube.com/watch?v=tBQ085PvR9E" target="_blank" rel="external">https://www.youtube.com/watch?v=tBQ085PvR9E</a> 요약</p>
-<h3 id="IOT의-4계층"><a href="#IOT의-4계층" class="headerlink" title="IOT의 4계층"></a>IOT의 4계층</h3><p>Application layer - 스마트홈, 스마트카, 헬스케어<br>Service layer - IoT 서비스 개발이 용이하도록 공통으로 요구되는 기능 제공 <code>oneM2M, AllJoyn, OIC</code><br>Network layer - 장치 간 또는 서비스간 연결, 정보전달 <code>HTTP, CoAP, MQTT, Wi-Fi ...</code><br>Device layer - 센서 또는 다른 하드웨어</p>
-<h3 id="oneM2M"><a href="#oneM2M" class="headerlink" title="oneM2M ?"></a>oneM2M ?</h3><p>IoT 응용 개발이 용이하도록 공통 기능을 제공하는 국제표준 플랫폼 기술</p>
-<p>데이터관리, 연결 제어, 구독/통지, 보안, 그룹관리 ….</p>
-<p>등을 제공하는데 응용 개발자는 이를 적절히 활용하여 개발공수를 줄일 수 있다.</p>
-<h3 id="oneM2M발생이유"><a href="#oneM2M발생이유" class="headerlink" title="oneM2M발생이유"></a>oneM2M발생이유</h3><p>기존엔 응용이 특정한 디바이스를 타겟으로 개발되었다. 이를 개선할 수 있는것이 oneM2M</p>
-<h3 id="oneM2M-1"><a href="#oneM2M-1" class="headerlink" title="oneM2M"></a>oneM2M</h3><p>먼저 Use Case를 기반으로 요구사항을 도출해봤더니 다음과 같았다.<br><code>일반요구사항:</code> 성능, 네트워크 연결지원에 따른 다양한 IoT장치 지원, QoS 기반 메시지 전달, 과금관리…<br><code>장치관리요구사항:</code> <u>OMA DM</u>/ BBF TR-069, 펌웨어, 소프트웨어 제어, 고장제어<br><code>보안 요구사항:</code>요청자에 대한 인증/권한 부여, 기반 네트워크 보안기능 활용</p>
-<p>이를 기반으로 공통기능 CSE를 도출해냄<br>데이터관리 : 장치가 데이터를 저장할 수 없을때 플랫폼이 저장해준다<br>연결제어 : 레이턴시는 10ms 이하여야 한다.(예시)<br>구독. 통지 : 온도가 40도 이상이면 문자보내줘<br>과금 : 통신플랫폼의 사업자 이므로 이 또한 가능<br>이종 플랫폼 연동<br>사업자간 로밍 : 나의 커넥티드 카가 해외로 넘어가게 되면 로밍을 제공<br>기타 많은 공통기능 제공</p>
-<p>oneM2M 안드로이드 플랫폼이랑 유사하다. CSE는 공통기능이 포함된 엔티티다.</p>
-<p>AE를 카카오톡이라고 보면 좋다. 카톡은 안드로이드에 존재하는 간단한 API를 호출해 메세지를 보낸다.<br>즉 AE개발자는 CSE를 적절히 활용하면 된다.</p>
-<p>여러플랫폼이 서로 연결되어 큰 iot를 만들어 낼 수 있게된다.</p>
-<h3 id="Distributed-Platform-형태인-oneM2M"><a href="#Distributed-Platform-형태인-oneM2M" class="headerlink" title="Distributed Platform 형태인 oneM2M"></a>Distributed Platform 형태인 oneM2M</h3><p>IOT의 호출순서는 다음과 같다고 가정 하자.<br><code>디바이스 - 게이트웨이 - 클라우드 - 게이트웨이 - 디바이스</code><br>과거에는 클라우드에만 CSE를 탑재하여 호출하였지만 최근에는 게이트웨이, 디바이스에도 이를 탑재하여 분산처리를 한다.<br>물론 하드웨어의 용량이 부족할 경우 플랫폼 기능을 배제하기도 한다. 이 경우 <u>Constrained Device Support</u> 라고 한다.</p>
-<h3 id="그렇다면-CSE를-어떻게-호출할까"><a href="#그렇다면-CSE를-어떻게-호출할까" class="headerlink" title="그렇다면 CSE를 어떻게 호출할까?"></a>그렇다면 CSE를 어떻게 호출할까?</h3><p>과거에는 RPC(Remote Procedure Call)을 활용하였지만 REST 기반 API구조를 사용한다.<br>CSE의 기능들을 REST 형태로 개방한다. 즉 URI만 갖고있으면 웹브라우저에서 기능을 호출할 수 있다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=tBQ085PvR9E&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.youtube.com/watch?v=tBQ085PvR9E&lt;/a&gt; 요약&lt;/
     
     </summary>
     
