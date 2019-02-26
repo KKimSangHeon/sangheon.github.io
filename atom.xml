@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-02-25T13:54:57.309Z</updated>
+  <updated>2019-02-26T00:02:13.052Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>20.페이지 테이블, 주소변환/페이징에서의 주소변환</title>
+    <link href="http://KKimSangHeon.github.io/2019/02/26/operating-system20/"/>
+    <id>http://KKimSangHeon.github.io/2019/02/26/operating-system20/</id>
+    <published>2019-02-25T23:57:15.000Z</published>
+    <updated>2019-02-26T00:02:13.052Z</updated>
+    
+    <content type="html"><![CDATA[<p>페이지 테이블, 주소변환</p>
+<h2 id="주소변환"><a href="#주소변환" class="headerlink" title="주소변환?"></a>주소변환?</h2><p>컴퓨터에는 CPU, 메모리, 보조기억장치가 존재.<br>파워를 켜면 메모리 안에 OS가 들어오고 요청하는 대로 프로그램들이 메모리로 들어온다.<br>프로그램들이 연속으로 들어갈 경우 외부단편화 문제가 발생한다. 그래서 메모리를 프레임 단위로 쪼개서 넣는다. 프로세스들은 흩어져서 프레임 단위로 저장된다. 이것이 가능한것은 CPU와 메모리 사이에 페이지테이블이 존재하기 때문에..<br>즉 CPU는 페이지 테이블로 인해 CPU는 프로세스가 연속한 상태로 착각한다.<br>메모리 빈곳(hole)을 다합치면 메모리가 큰데 프로세스를 넣을 수 없는것을 외부단편화라 함</p>
+<h3 id="메모리-낭비를-위한기술"><a href="#메모리-낭비를-위한기술" class="headerlink" title="메모리 낭비를 위한기술"></a>메모리 낭비를 위한기술</h3><p>다이나믹 로딩<br>링킹<br>스와핑</p>
+<h3 id="페이징-메모리-낭비를-줄이기-위한기술"><a href="#페이징-메모리-낭비를-줄이기-위한기술" class="headerlink" title="페이징(메모리 낭비를 줄이기 위한기술)"></a>페이징(메모리 낭비를 줄이기 위한기술)</h3><p>메모리를 꼭 연속된 공간에 넣을 필요는 없다. 프로그램을 프레임 단위로 잘라서 메모리에 흩어져서 넣는다.<br>프로세스는 페이지(page)의 집합<br>메모리는 프레임(frame)의 집합</p>
+<p><code>페이지를 프레임에 할당</code><br>MMU 내의 재배치 레지스터 값을 바꿈으로서<br>CPU 는 프로세스가 연속된 메모리 공간에 위치한다고 착각<br>MMU 는 페이지 테이블 (page table) 이 된다.</p>
+<p><code>예제</code><br>Page size = 4 bytes<br>Page Table: 5 6 1 2<br><u>논리주소 13 번지는 물리주소 몇 번지?</u></p>
+<p>CPU가 내는 주소는 13이다. 이진수로 나타내면 1101(2) 인데 앞 두숫자 11이 p 이고 01이 d라고 볼 수 있다. (p는 페이지 사이즈 크기만큼 크기를 할당. 페이지 크기가 4이므로 두자리가 된다.) 페이지 테이블의 3번째 인덱스에 저장된 2가 f가 되고 d는 그대로 온다. 즉 10 01이 피지컬 어드레스가 된다. 즉 물리주소는 9번지가 된다. 9번지는 두번째 프레임에서 01만큼 떨어져있다고 할 수 있다.</p>
+<p><code>예제</code><br>Page Size = 1KB<br>Page Table: 1 2 5 4 8 3 0 6<br><u>논리주소 3000번지는 물리주소 몇 번지?</u></p>
+<p>1kb는 10bit. 3000은 101110111000(2) 이다. 페이지 사이즈는 2^10 이므로 10bit로 표현 가능하다. 즉 d는 뒤의 10자리(1110111000(2)) 이고 p는 앞에 두개(10(2))이다. 즉 2번째 인덱스인 101(2) 그리고 d를 붙인 1110111000 (2) 가 물리주소이다.</p>
+<p><u>물리주소 0x1A53 번지는 논리주소 몇 번지?</u></p>
+<p>1 1010 0101 0011 인데 뒤의 10개가 d 나머지 앞에 110이 프레임 넘버. 6은 페이지 테이블의 7번지에 저장되어 있으므로<br>111과  10 0101 0011 을 붙인것이 논리주소이다.</p>
+<h3 id="내부단편화"><a href="#내부단편화" class="headerlink" title="내부단편화"></a>내부단편화</h3><p>페이지 사이즈가 4바이트일때 15바이트프로세스를 올리기 위해서는 페이지 4개가 필요하다.<br>4/4/4/3만큼 할당이 되는데 마지막 페이지의 1바이트가 비게된다. 이는 아무도 쓸수 없으므로 내부단편화 발생.</p>
+<p>외부단편화를 페이지로 없앴는데 내부단편화가 발생한다. 내부단편화는 외부단편화에 비해 크기가 미미하므로 큰 문제가 되지 않는다.</p>
+<p>페이지 테이블은 CPU안에 넣을 수 있다. 그러면 레지스터로 만들수도있다. 또는 메모리에 넣을 수도 있다.<br>‘CPU에 넣는경우’:페이지 테이블을 CPU레지스터로 만드면 주소변환이 정말 빠르다. 단점은 CPU에 넣어야 하므로 많은 데이터를 넣을 수없다.<br><code>메모리 안에 넣을 경우</code>: 페이지 테이블이 커도 문제가 되지 않는다. 그러나 변환속도가 느리다. 페이지테이블을 읽기위해 메모리를 한번읽고 또 한번 메모리를 읽어야 하므로 2배로 느려진다.</p>
+<p><code>캐쉬메모리에 페이지 테이블을 넣는경우(실제로 사용됨)</code>: 페이지 테이블을 넣는 캐쉬메모리를 TLB (Translation Look-aside Buffer) 라 한다. 메모리에 넣는것보다 빠르고 CPU에 넣는것보다 많이 넣을 수 있다. 캐쉬메모리와 유사한 원리로 동작</p>
+<p>CPU에서 낸 주소를 읽어오는덱 걸리는 시간을 유효메모리 접근시간이라 한다.<br>Tm(메모리 읽는속도) = 100ns, Tb(버퍼 읽는속도) = 20ns, hit ratio = 80%<br>CPU가 낸 주소가 페이지테이블 안에 존재할 경우 hit라고 한다,<br>유효 메모리 접근시간 : hit확률 <em>  (Tb+Tm) + hit되지 않을 확률 </em> (Tb+Tm)</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;페이지 테이블, 주소변환&lt;/p&gt;
+&lt;h2 id=&quot;주소변환&quot;&gt;&lt;a href=&quot;#주소변환&quot; class=&quot;headerlink&quot; title=&quot;주소변환?&quot;&gt;&lt;/a&gt;주소변환?&lt;/h2&gt;&lt;p&gt;컴퓨터에는 CPU, 메모리, 보조기억장치가 존재.&lt;br&gt;파워를 켜면 메
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>19.최초적합, 최적적합, 최악적합</title>
@@ -770,34 +809,6 @@
       <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
     
       <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>oneM2M, OMA-DM 생각정리..</title>
-    <link href="http://KKimSangHeon.github.io/2019/02/08/mine/"/>
-    <id>http://KKimSangHeon.github.io/2019/02/08/mine/</id>
-    <published>2019-02-08T10:53:12.000Z</published>
-    <updated>2019-02-10T08:02:03.813Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="oneM2M"><a href="#oneM2M" class="headerlink" title="oneM2M"></a>oneM2M</h3><p>iot 솔루션을 제공함에 있어 여러 벤더를 맞추기란 힘들다… oneM2M이라는 표준을 만들고 이를 여러 벤더가 맞춤으로써 응용개발사 또한 iot시스템을 개발함에 있어 개발공수를 낮출 수 있게된다.<br>oneM2M에는 CSE라는게 있는데 공통서비스를 제공하는것이다. 가령 데이터 저장, 요금청구 등등 다양하게 있다..</p>
-<p>CSE는 REST 형태로 제공되어 편리하다는 장점이 있으며 최근에는 일반 응용개발에 oneM2M을 적용하여 CSE를 적절히 활용하는 경우도 있다. 이를 Distributed Platform 형태 라고 한다<br>통신사업자는 oneM2M 표준을 기반으로 CSE를 사용하는 플랫폼을 만들고 일반에 공개하게 되면 일반 개발자들은 통신사업자가 만든 플랫폼을 사용할 수 있게된다.(?? 맞는지 모르겠다.)</p>
-<h3 id="OMA-DM"><a href="#OMA-DM" class="headerlink" title="OMA-DM"></a>OMA-DM</h3><p>이는 이동통신장치 관리표주으로서 내부 데이터에 접근하고 제어하는 표준이라 이해했다. xml기반 마크업 언어 SyncML 기반으로 명령과 결과를 주고받으며 심지어 운영체제 설치 그리고 응용프로그램의 파라미터 까지 변경이 가능하다고 한다. 여기서 관리할수 있는 자원을 <code>관리객체(MO, Management Object)</code>라고 한다.</p>
-<h3 id="TR-069"><a href="#TR-069" class="headerlink" title="TR-069"></a>TR-069</h3><p>CPE WAN Management Protocol (CWMP) 이라 불리며 CPE 즉 사용자 단말을 관리하는 프로토콜인것같다.</p>
-<h3 id="oneM2M과-OMA-DM의-상관관계"><a href="#oneM2M과-OMA-DM의-상관관계" class="headerlink" title="oneM2M과 OMA-DM의 상관관계???"></a>oneM2M과 OMA-DM의 상관관계???</h3><p>아래부터 개인적인생각입니다. 참고하지도 마세요!<br>oneM2M은 장치에서 받은 데이터를 활용하고 정제 저장하는 표준이라고 생각한다. 즉 디바이스의 정보를 뭐 제어하거나 어떻게 가져오는건 아니라 생각한다.<br>하지만 OMA-DM는 내부데이터 관리와 같은 디바이스 내부로 들어가는 표준인것같다.</p>
-<p>아래 그림처럼 구분되나보다<br></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;oneM2M&quot;&gt;&lt;a href=&quot;#oneM2M&quot; class=&quot;headerlink&quot; title=&quot;oneM2M&quot;&gt;&lt;/a&gt;oneM2M&lt;/h3&gt;&lt;p&gt;iot 솔루션을 제공함에 있어 여러 벤더를 맞추기란 힘들다… oneM2M이라는 표준을 만들고 이를
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="IOT" scheme="http://KKimSangHeon.github.io/categories/CS/IOT/"/>
     
     
   </entry>
