@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-02-26T23:48:40.479Z</updated>
+  <updated>2019-02-28T05:39:51.604Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>operating-system23</title>
+    <link href="http://KKimSangHeon.github.io/2019/02/28/operating-system23/"/>
+    <id>http://KKimSangHeon.github.io/2019/02/28/operating-system23/</id>
+    <published>2019-02-28T05:39:51.000Z</published>
+    <updated>2019-02-28T05:39:51.604Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>22.가상메모리 개요와 원리</title>
@@ -775,46 +789,6 @@
     <summary type="html">
     
       &lt;h3 id=&quot;이중모드-하드웨어-보호&quot;&gt;&lt;a href=&quot;#이중모드-하드웨어-보호&quot; class=&quot;headerlink&quot; title=&quot;이중모드, 하드웨어 보호&quot;&gt;&lt;/a&gt;이중모드, 하드웨어 보호&lt;/h3&gt;&lt;p&gt;한 컴퓨터를 여러 사람이 동시에 사용하는 환경이다.
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>3.최근의 고급운영체제, 인터럽트에 기반한 현대 운영체제</title>
-    <link href="http://KKimSangHeon.github.io/2019/02/11/os3/"/>
-    <id>http://KKimSangHeon.github.io/2019/02/11/os3/</id>
-    <published>2019-02-11T10:49:46.000Z</published>
-    <updated>2019-02-15T12:27:37.793Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="다중-프로세서-시스템"><a href="#다중-프로세서-시스템" class="headerlink" title="다중 프로세서 시스템"></a>다중 프로세서 시스템</h3><p>메모리는 하난데 CPU가 여러개이다. 이를 병렬 시스템이라고도 한다.<br>장점 :</p>
-<ul>
-<li>병렬 시스템을 통한 성능향상을 목표</li>
-<li>비용 : 하나의 강한 CPU 보다 여러개의 저렴한 CPU로 구성하는것이 일반적으로 저렴하다.</li>
-<li>신뢰성 제공 : 하나가 고장나도 다른 CPU로 돌릴 수 있다.</li>
-</ul>
-<p>CPU가 여러개일 때 운영체제를 다중 프로세서 운영체제라 한다. 또한 강결합이라 한다.</p>
-<h3 id="분산-시스템"><a href="#분산-시스템" class="headerlink" title="분산 시스템"></a>분산 시스템</h3><p>멀티컴퓨터 시스템이라고도 하며 네트워크(LAN) 등으로 연결되어 있다.<br>이는 메인메모리가 따로있고 랜으로 연결되어있으므로 소결합이라 한다.<br>OS도 서로 다 따로따로 있다. 이를 분산 운영체제라 한다.</p>
-<h3 id="다중프로세서-시스템-분산시스템의-공통점"><a href="#다중프로세서-시스템-분산시스템의-공통점" class="headerlink" title="다중프로세서 시스템, 분산시스템의 공통점"></a>다중프로세서 시스템, 분산시스템의 공통점</h3><p>신뢰성, 성능, 비용절감을 목표로 한다.</p>
-<h3 id="실시간-시스템"><a href="#실시간-시스템" class="headerlink" title="실시간 시스템"></a>실시간 시스템</h3><p>특정 시간내에 반드시 연산이 끝나야 하는것.<br>시간제약 즉 Deadline를 정해둔다. 실시간 시스템은 네비게이션에서도 쓰인다. 실시간 경로안내할때 그 지점에 도착하기 전에 계산이 끝나야하기 때문에<br>주로 공장자동화, 군사, 항공, 우주 분야에서도 쓰인다.<br>실시간 시스템을 위한 운영체제는 실시간 운영체제(Real-time OS = RTOS)라 한다.</p>
-<h3 id="인터럽트"><a href="#인터럽트" class="headerlink" title="인터럽트"></a>인터럽트</h3><p>현대 운영체제는 인터럽트 기반 시스템이다.</p>
-<p>컴퓨터를 키면 ROM에 있는 부트로더가 디스크에서 O/S를 메모리로 갖고온다. 이를 부팅이라 한다.<br>이 후 운영체제는 메모리에 상주하게 된다.<br>이 다음에는 아이콘이 나타나고 깜빡거린다.<br>이러다 <u>우리가 마우스를 움직이면 전기신호가 발생하고 CPU에 인터럽트 선을 통해 전기신호를 올려준다</u>.<br>그럼 CPU는 지금하던일을 중지하고 OS안에 마우스가 어떤 전기신호를 보냈을 때 어떤 행동을 하라고 정의되어있는지(<u>mouse interrupt service routine</u>)에 따라 처리한다.</p>
-<h3 id="하드웨어-인터럽트"><a href="#하드웨어-인터럽트" class="headerlink" title="하드웨어 인터럽트"></a>하드웨어 인터럽트</h3><p>인터럽트 결과 운영체제 내의 특정코드를 실행한다.(ISR)<br>interrupt Service Routine 종료 후 다시 대기</p>
-<h3 id="소프트웨어-인터럽트"><a href="#소프트웨어-인터럽트" class="headerlink" title="소프트웨어 인터럽트"></a>소프트웨어 인터럽트</h3><p>SWI 명령어는 인터럽트가 걸리는것이다. 보통 인터럽트는 하드웨어가 걸리는데</p>
-<p>SWI(Software interrupt) - ARM에서의 소프트웨어 인터럽트 명령<br>INT - 팬티엄에서의 인터럽트 명령</p>
-<p>hwp 프로그램이 실행되다가 하드디스크에 있는 내용을 읽어온다고 가정하자.<br>하드디스크를 읽어오는 루틴은 O/S안에 존재한다. 이것또한 ISR이다. 아무튼 <u>하드디스크 내용을 읽기위해 소프트웨어 인터럽트가 걸리게 되고 O/S안에 있는 하드디스크를 읽어오는 루틴을 실행하고 원래 실행중인 곳으로 돌아온다.</u></p>
-<h3 id="운영체제는-평소에는-대기상태이다"><a href="#운영체제는-평소에는-대기상태이다" class="headerlink" title="운영체제는 평소에는 대기상태이다"></a>운영체제는 평소에는 대기상태이다</h3><p><u>운영체제는 평소에는 대기상태이다. 그러나 하드웨어 인터럽트, 소프트웨어 인터럽트, 내부인터럽트에 의해 운영체제 코드를 실행한다.</u></p>
-<p>내부 인터럽트는 5를 0으로 나누는것과 같은 논리적인 오류가 있을 때 발생하는 인터럽트이다. 이 땐 divide by zero를 처리하는 ISR이 호출된다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;다중-프로세서-시스템&quot;&gt;&lt;a href=&quot;#다중-프로세서-시스템&quot; class=&quot;headerlink&quot; title=&quot;다중 프로세서 시스템&quot;&gt;&lt;/a&gt;다중 프로세서 시스템&lt;/h3&gt;&lt;p&gt;메모리는 하난데 CPU가 여러개이다. 이를 병렬 시스템이라고도
     
     </summary>
     
