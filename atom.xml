@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-02-28T05:39:51.604Z</updated>
+  <updated>2019-02-28T05:40:18.477Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,15 +16,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>operating-system23</title>
+    <title>23.페이지 교체 필요성, 희생 페이지 설정 원칙</title>
     <link href="http://KKimSangHeon.github.io/2019/02/28/operating-system23/"/>
     <id>http://KKimSangHeon.github.io/2019/02/28/operating-system23/</id>
     <published>2019-02-28T05:39:51.000Z</published>
-    <updated>2019-02-28T05:39:51.604Z</updated>
+    <updated>2019-02-28T05:40:18.477Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="가상메모리"><a href="#가상메모리" class="headerlink" title="가상메모리"></a>가상메모리</h3><p>프로세스를 페이지 크기로 쪼개서 메인메모리로 올리는데 당장 필요한 것들만 올리고 보자</p>
+<p>그러다 메모리가 꽉차게 되면 한놈을 쫒아내고 필요한놈을 불러온다,</p>
+<h3 id="Demand-Paging"><a href="#Demand-Paging" class="headerlink" title="Demand Paging"></a>Demand Paging</h3><p>프로세스 이미지는 backing store 에 저장<br>프로세스는 페이지의 집합</p>
+<h3 id="가상메모리를-위한-하드웨어-지원"><a href="#가상메모리를-위한-하드웨어-지원" class="headerlink" title="가상메모리를 위한 하드웨어 지원"></a>가상메모리를 위한 하드웨어 지원</h3><p>valid 비트 추가된 페이지 테이블<br>backing store (= swap device)</p>
+<h3 id="Memory-full"><a href="#Memory-full" class="headerlink" title="Memory full!"></a>Memory full!</h3><p>메모리가 가득 차면 추가로 페이지를 가져오기 위해<br>어떤 페이지는 backing store 로 몰아내고 (page-out)<br>그 빈 공간으로 페이지를 가져온다 (page-in) -  용어: victim page</p>
+<h3 id="어느-페이지를-몰아낼-것인가"><a href="#어느-페이지를-몰아낼-것인가" class="headerlink" title="어느 페이지를 몰아낼 것인가?"></a>어느 페이지를 몰아낼 것인가?</h3><p>i/o 시간 절약을 위해 기왕이면 modify 되지 않은 페이지를 victim 으로 선택<br>방법: modified bit (= dirty bit)</p>
+<h3 id="Page-reference-string"><a href="#Page-reference-string" class="headerlink" title="Page reference string"></a>Page reference string</h3><p>CPU 가 내는 주소: 100 101 102 432 612 103 104 611 612<br>Page size = 100 바이트라면<br>페이지 번호 = 1 1 1 4 6 1 1 6 6<br>Page reference string = 1 4 6 1 6</p>
+<p><code>설명</code>: fault가 발생하면 100바이트씩 (한페이지씩) 갖고오게 되기 떄문에 100번지를 못찾을경우 100~199까지 갖고오므로 그다음의 101은 fault가 발생하지 않는다. 즉 연속적일 때 앞에서 한번만 갖고오게 한다.</p>
+<h3 id="Page-Replacement-Algorithms"><a href="#Page-Replacement-Algorithms" class="headerlink" title="Page Replacement Algorithms"></a>Page Replacement Algorithms</h3><p><code>FIFO (First-In First-Out)</code> : 메인메모리에 먼저 올라온놈을 내보낸다.<br><code>OPT (Optimal)</code> :<br><code>LRU (Least-Recently-Used)</code></p>
+<h3 id="FIFO-기법"><a href="#FIFO-기법" class="headerlink" title="FIFO 기법"></a>FIFO 기법</h3><p><code>Idea</code>: 초기화 코드는 더 이상 사용되지 않을 것이라는 생각을 바탕으로 만들어짐! 가장 간단하다.</p>
+<p><code>예제</code><br>페이지 참조열 = 7 0 1 2 0 3 0 4 2 3 0 3 2 1 2 0 1 7 0 1<br>of frames = 3<br>15 page faults</p>
+<h3 id="Optimal-OPT"><a href="#Optimal-OPT" class="headerlink" title="Optimal(OPT)"></a>Optimal(OPT)</h3>]]></content>
     
     <summary type="html">
     
+      &lt;h3 id=&quot;가상메모리&quot;&gt;&lt;a href=&quot;#가상메모리&quot; class=&quot;headerlink&quot; title=&quot;가상메모리&quot;&gt;&lt;/a&gt;가상메모리&lt;/h3&gt;&lt;p&gt;프로세스를 페이지 크기로 쪼개서 메인메모리로 올리는데 당장 필요한 것들만 올리고 보자&lt;/p&gt;
+&lt;p&gt;그러다
+    
     </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
     
     
   </entry>
