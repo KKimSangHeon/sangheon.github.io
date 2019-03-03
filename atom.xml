@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-02-28T05:40:18.477Z</updated>
+  <updated>2019-03-03T23:56:00.906Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>FIFO, OPT, LRU, 전역/지역교체</title>
+    <link href="http://KKimSangHeon.github.io/2019/03/04/operating-system24/"/>
+    <id>http://KKimSangHeon.github.io/2019/03/04/operating-system24/</id>
+    <published>2019-03-03T23:22:17.000Z</published>
+    <updated>2019-03-03T23:56:00.906Z</updated>
+    
+    <content type="html"><![CDATA[<p>메모리 용량이 작을수록 페이지 폴트가 자주일어난다</p>
+<h3 id="Belady’s-Anomaly"><a href="#Belady’s-Anomaly" class="headerlink" title="Belady’s Anomaly"></a>Belady’s Anomaly</h3><p>메모리 용량이 늘어나느데도 페이지 폴트가 발생하는 이상한 현상이 발생한다.<br>언제? FIFO를 사용할때!</p>
+<h3 id="Optimal-OPT"><a href="#Optimal-OPT" class="headerlink" title="Optimal (OPT)"></a>Optimal (OPT)</h3><p>2를 몰아냈는데 2가 필요한 경우가 생길 수 있다. 즉 억울한 경우<br>이런일이 안일어나게 하기위해 <u>앞으로 사용되지 않을것을 희생자로 선택한다.</u><br><u>이는 비현실적이다. 앞으로 뭐가 사용안될지 잘 모르는것이다,</u><br>SJF와 비슷하다. 이 또한 어떤놈이 제일 짧은지 알 수 없다.</p>
+<h3 id="Least-Recently-Used-LRU"><a href="#Least-Recently-Used-LRU" class="headerlink" title="Least-Recently-Used (LRU)"></a>Least-Recently-Used (LRU)</h3><p><u>최근에 가장 적게 사용된놈을 희생양으로 삼는다. 대부분의 컴퓨터가 사용하는 방식.</u><br>가장 좋은것은 앞으로 사용안될것을 희생양으로 삼는게 좋겠지만 현실적으로 판단하기 어려움으로,</p>
+<h3 id="Global-vs-Local-Replacement"><a href="#Global-vs-Local-Replacement" class="headerlink" title="Global vs Local Replacement"></a>Global vs Local Replacement</h3><p><code>Global replacement</code> - 희생자를 선택할 때 메모리 상의 모든 프로세스 페이지에 대해 교체<br><code>Local replacement</code>- 희생자를 선택할 때 메모리 상의 자기 프로세스 페이지에 대해 교체</p>
+<p><code>성능 비교</code> - Global replacement 가 더 효율적일 수 있다.</p>
+<hr>
+<p>CPU utilization vs Degree of multiprogramming</p>
+<p>CPU utilization - CPU 이용률<br>Degree of multiprogramming - 메인메모리에 올라와있는 프로세스의 갯수</p>
+<p>메모리 안에프로세스를 많이 올리니까 일정범위를 넘어서면 CPU의 이용률이 감소했다.<br><code>왜그럴까?</code> : 너무 많은 프로세스로 인해 빈번한 page in/out가 발생한다. 즉 디스크 IO가 많아져서 CPU이용율이 떨어진다. 이를 <u>쓰레싱(Thrashing)</u>라고 한다.</p>
+<p><code>쓰레싱???</code> : 일정범위를 넘어서면 CPU이용율이 떨어지는데 이범위를 쓰레싱이라 한다.</p>
+<h3 id="쓰레싱을-극복하기-위한-방법"><a href="#쓰레싱을-극복하기-위한-방법" class="headerlink" title="쓰레싱을 극복하기 위한 방법."></a>쓰레싱을 극복하기 위한 방법.</h3><p>Global replacement 보다는 local replacement 활용<br>프로세스당 충분한/적절한 수의 메모리(프레임) 할당</p>
+<h3 id="프레임-할당-Allocation-of-Frames"><a href="#프레임-할당-Allocation-of-Frames" class="headerlink" title="프레임 할당(Allocation of Frames)"></a>프레임 할당(Allocation of Frames)</h3><p><u>프레임 할당은 크게 <u>정적할당 동적할당</u>으로 나뉜다.</u></p>
+<h4 id="정적-할당-static-allocation-또한-균등할당-비례할당으로-나뉜다"><a href="#정적-할당-static-allocation-또한-균등할당-비례할당으로-나뉜다" class="headerlink" title="정적 할당 (static allocation) 또한 균등할당, 비례할당으로 나뉜다."></a>정적 할당 (static allocation) 또한 균등할당, 비례할당으로 나뉜다.</h4><p><code>균등 할당 (Equal allocation)</code> : 메인메모리에 프레임 수가 100개고 프로세스 수가 3개면 각 프레세스에 프레임을 33개씩 할당해주는것. 조금 적절하지 않다. hwp와 메모장이 올라와 있을 때 동일하게 분배한다는것은 옳지않다!! hwp는 조금더 무겁잖아<br><code>비례 할당 (Proportional allocation)</code> : 사이즈가 큰놈한텐 많이 나눠주고 작은놈한텐 적게 나눠주는것.</p>
+<p>사실 hwp에서 특별한 기능은 많이 쓰지 않으므로 정적할당은 올바르지 않다,</p>
+<h4 id="동적-할당-dynamic-allocation-또한-Working-set-model-Page-fault-frequency-등으로-나뉜다"><a href="#동적-할당-dynamic-allocation-또한-Working-set-model-Page-fault-frequency-등으로-나뉜다" class="headerlink" title="동적 할당 (dynamic allocation) 또한 Working set model , Page fault frequency 등으로 나뉜다."></a>동적 할당 (dynamic allocation) 또한 Working set model , Page fault frequency 등으로 나뉜다.</h4><p><code>Working set model</code> :<br><code>Page fault frequency</code> :</p>
+<p>다음 포스팅에서….</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;메모리 용량이 작을수록 페이지 폴트가 자주일어난다&lt;/p&gt;
+&lt;h3 id=&quot;Belady’s-Anomaly&quot;&gt;&lt;a href=&quot;#Belady’s-Anomaly&quot; class=&quot;headerlink&quot; title=&quot;Belady’s Anomaly&quot;&gt;&lt;/a&gt;Bel
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>23.페이지 교체 필요성, 희생 페이지 설정 원칙</title>
@@ -772,43 +812,6 @@
     <summary type="html">
     
       &lt;h3 id=&quot;운영체제-서비스&quot;&gt;&lt;a href=&quot;#운영체제-서비스&quot; class=&quot;headerlink&quot; title=&quot;운영체제 서비스&quot;&gt;&lt;/a&gt;운영체제 서비스&lt;/h3&gt;&lt;p&gt;지금은 서버컴퓨터 하나에 여러명이 동시에 사용하는 구조.&lt;br&gt;이러한 구조에선 한사
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>4.사용자모드와 관리자모드, 하드웨어 보호</title>
-    <link href="http://KKimSangHeon.github.io/2019/02/11/os4/"/>
-    <id>http://KKimSangHeon.github.io/2019/02/11/os4/</id>
-    <published>2019-02-11T12:29:11.000Z</published>
-    <updated>2019-02-15T12:27:37.482Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="이중모드-하드웨어-보호"><a href="#이중모드-하드웨어-보호" class="headerlink" title="이중모드, 하드웨어 보호"></a>이중모드, 하드웨어 보호</h3><p>한 컴퓨터를 여러 사람이 동시에 사용하는 환경이다.<br>한사람의 실수가 전체에 영향을 끼칠 수  있으므로 일반유저는 STOP, HALT, RESET 등과같은 명령어는 일반 유저가 이용할 수 없도록 하는것. 이를 <code>이중모드</code>라 한다.</p>
-<p>이를 <u>사용자(user)모드, 관리자(supervisor) 모드</u> 라고 한다.<br>관리자 모드 = 시스템 모드 = 모니터 모드 = 특권 모드<br>특권 명령(ex. STOP, HALT, RESET, SET_TIMER, SET_HW 등은 관리자 모드에서만 사용 가능)</p>
-<h3 id="이중모드-동작방식"><a href="#이중모드-동작방식" class="headerlink" title="이중모드 동작방식"></a>이중모드 동작방식</h3><p>CPU안에 레지스터 ALU, 제어유닛이 있다,</p>
-<p>레지스터는 비트들의 모음(32bit의 경우 32개가 있다.)<br>레지스터 비트는 carry,zero, negative, overflow 와 같은 플래그도 갖고있다,<br><u>또한 이중모드를 나타내기 위한 플래그(모니터 비트라 함) 또한 레즈스터에 존재한다.</u></p>
-<p>모니터 비트가 1이면 시스템모드 0이면 유저모드이다.</p>
-<h3 id="가령-게임을-실행하고-저장한다고-가정해보자"><a href="#가령-게임을-실행하고-저장한다고-가정해보자" class="headerlink" title="가령 게임을 실행하고 저장한다고 가정해보자."></a>가령 게임을 실행하고 저장한다고 가정해보자.</h3><p>1.처음 파워를 키면 부팅이 일어난다 이때는 모니터 비트가 1이다.(시스템 모드)<br>2.OS의 부트가 끝나고 특정 게임을 실행한다고 하자, 그럼 디스크에서 게임을 메모리로 갖고올 것이다.<br>3.그리고 실행이 게임으로 넘어갈 때 모니터 비트는 0 (유저모드)로 변경된다.<br>4.다시 게임내용을 하드디스크에 저장할 때는 OS에게 부탁(SWI,소프트웨어 인터럽트)하여 OS가 저장하게 한다(다른파일을 덮어쓰는지와 같은 부정한 행위를 하는지에 대한 판단을 하고 저장하게 해줌). 이때는 모니터 비트가 다시 1이된다. //물론 게임 자체적으로 디스크에 저장할 수 있지만 보안상의 이슈 존재!<br>5.저장을 완료하면 다시 게임 프로그램으로 돌아오고 모니터 비트가 0이된다.</p>
-<p>운영체제 서비스 실행될 때는 관리자 모드<br>사용자 프로그램 실행될 때는 사용자 모드<br>하드웨어/소프트웨어 인터럽트 발생하면 관리자 모드<br>운영체제 서비스가 끝나면 다시 사용자 모드</p>
-<h3 id="하드웨어-보호"><a href="#하드웨어-보호" class="headerlink" title="하드웨어 보호"></a>하드웨어 보호</h3><p>1.입출력장치에 대한 보호</p>
-<p>하드웨어에 대한 적절한 보호가 없을 때의 경우<br>내가 프린트하는데 누가 방해할라고 그놈도 계속 프린트 명령을 보내는상황이 발생했을 때.<br>내가원하는 출력물, 상대가 원하는 출력물이 섞여서 나오는 경우가 생길 수 있다.</p>
-<p>어떻게?<br><code>아무유저나 In,Out 명령을 내리지 못하도록 특권명령으로 한다.</code></p>
-<h3 id="사용자가-입출력-명령을-직접-내린-경우"><a href="#사용자가-입출력-명령을-직접-내린-경우" class="headerlink" title="사용자가 입출력 명령을 직접 내린 경우?"></a>사용자가 입출력 명령을 직접 내린 경우?</h3><p>Privileged instruction violation 이라 하며 해당 프로그램을 강제로 중지시킨다.</p>
-<h3 id="메모리-보호"><a href="#메모리-보호" class="headerlink" title="메모리 보호"></a>메모리 보호</h3><p>멀티프로그래밍, 타임쉐어링 프로그래밍에서는 동시에 여러프로그램이 돌고있다.<br>특정 프로그램이 돌면서 다른 프로그램 혹은 OS의 영역에 기웃거리지 못하게 한다.</p>
-<p>어떻게?<br>메모리에 접근하려면 어드레스 버스를 통해야하는데 어드레스 버스에 문지기를 두어 자기것에만 접근하는지 확인한다.<br>확인할 때는 base, limit 를 참고한다. 잘못된 범위를 읽을 땐 인터럽트를 O/S로 보낸다. 잘못된 번지를 읽을 때 보내는 신호를 보통 <u>Segment violation</u> 라고 부른다.</p>
-<p>여기서 문지기를 <code>MMU(Memory Management Unit)라고 한다. base 와 limit 사이에 들어오는지 확인하며 base와 limit는 OS가 관리한다. 또한 base와 limit는 아무나 설정하면 안되므로 특권명령으로 관리된다.</code></p>
-<p>3.CPU 보호</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;이중모드-하드웨어-보호&quot;&gt;&lt;a href=&quot;#이중모드-하드웨어-보호&quot; class=&quot;headerlink&quot; title=&quot;이중모드, 하드웨어 보호&quot;&gt;&lt;/a&gt;이중모드, 하드웨어 보호&lt;/h3&gt;&lt;p&gt;한 컴퓨터를 여러 사람이 동시에 사용하는 환경이다.
     
     </summary>
     
