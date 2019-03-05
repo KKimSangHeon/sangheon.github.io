@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-03-05T13:04:00.231Z</updated>
+  <updated>2019-03-05T13:10:06.078Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://KKimSangHeon.github.io/2019/03/05/operating-system28/"/>
     <id>http://KKimSangHeon.github.io/2019/03/05/operating-system28/</id>
     <published>2019-03-05T13:03:20.000Z</published>
-    <updated>2019-03-05T13:04:00.231Z</updated>
+    <updated>2019-03-05T13:10:06.078Z</updated>
     
     <content type="html"><![CDATA[<p>보조기억장치중 하드디스크를 배운다<br>동심원이 있고 원판이 있다. 원판에 자성물질을 발라서 디스크 헤더에 전기를 흘려 기록을 하고 읽을 때는 고속으로 회전시켜 코일에 전류가 유도되는데 이를통해 읽는다.<br>이를 트랙이라 하고 보통 디스크는 앞 뒤로 쓰는데 트랙이라는 용어보다는 실린더라는 용어를 많이 쓰고 있다.<br>트랙을 쪼개서 섹터라 한다 섹터는 512b정도 된다. 이를 네개정도 모아서 블록이라고 한다.<br>하드디스크를 포멧하면 내용을 다지우고 나면 poll of block이라 한다.</p>
 <h3 id="연속할당"><a href="#연속할당" class="headerlink" title="연속할당"></a>연속할당</h3><p>블록 하나가 1kb라고 가정하자 3.6kb파일을 하나 만들었을때 블록을 연속적으로 만들어주면 내부단편화가 발생한다.<br>하지만 헤더가 많이 안움직여도 되므로 빠르다.  디스크 헤더의 이동 최소화 = 빠른 i/o 성능<br>하지만 데이터를 지웠을 때 외부단편화가 발생한다.(곳곳에 흩어지는 holes로 인해)</p>
@@ -31,9 +31,12 @@
 <p>인덱스 블록을 위해 블록을 할당해야 하는것이 단점이다. 1바이트 짜리를 저장하는데도 블록의 크기만큼(예를들었을 경우 1kb)만큼 할당해줘야 한다.</p>
 <p><code>파일의 최대크기</code>: 1블록의 크기가 512바이트라 가정해보자. 주소를 표현하는데는 4바이트 이므로 128개의 인덱스를 갖을 수 있다. 여기서 512바이트 * 128을 계산하면 64kb이다. 즉 파일의 최대 크기는 64kb이다.</p>
 <p>예제: 1블록 = 1KB = 4바이트 x 256개 인덱스<br>즉 256 * 1KB = 256KB</p>
-<p>그림1<br><code>해결방법1:</code> Linked : 이를 개선하기 위해 인덱스를 갖는 블록이 다른 인덱스 블록을 가르키는것.</p>
-<p>그림2<br><code>해결방법2:</code> Multilevel index : 하나의 인덱스 블록이 여러개의 인덱스 블록을 가르키는것.</p>
-<p>그림3<br><code>해결방법3:</code> Combined : 처음 인덱스 블록에서 앞쪽은 실제로 데이터를 가르키고 나머지 블록은 인덱스 블록을 가르키고..이는 유닉스에서 쓰임..</p>
+<img src="/2019/03/05/operating-system28/image1.png" alt="Linked" title="Linked">
+<p><code>해결방법1:</code> Linked : 이를 개선하기 위해 인덱스를 갖는 블록이 다른 인덱스 블록을 가르키는것.</p>
+<img src="/2019/03/05/operating-system28/image1.png" alt="Multilevel index" title="Multilevel index">
+<p><code>해결방법2:</code> Multilevel index : 하나의 인덱스 블록이 여러개의 인덱스 블록을 가르키는것.</p>
+<img src="/2019/03/05/operating-system28/image1.png" alt="Combined" title="Combined">
+<p><code>해결방법3:</code> Combined : 처음 인덱스 블록에서 앞쪽은 실제로 데이터를 가르키고 나머지 블록은 인덱스 블록을 가르키고..이는 유닉스에서 쓰임..</p>
 <h3 id="디스크-스케줄링"><a href="#디스크-스케줄링" class="headerlink" title="디스크 스케줄링."></a>디스크 스케줄링.</h3><p>대표적인 보조기억장치는 하드디스크이다. 디스크는 원판에 트랙이 있고 디스크를 움직여서 해당되는 트랙으로 이동한다. 제일 오래 걸리는 시간이 헤더를 움직이는 Seek time이 오래걸린다, 디스크가 도는 시간은  rotational delay(1분에 7200번돈다) 트랙이 헤더를 지나가면서 읽히는 시간이 transfer time이라 한다.</p>
 <p>다중 프로그래밍 환경에서 여러개의 프로세스가 동시에 돌아간다. <u>여러프로세스가 디스크를 사용하려면 디스크 큐에 들어가야한다. 이때 어떻게 하면 탐색시간 즉 디스크 헤더를 가장 적게 움직일 수 있을까…</u></p>
 <h3 id="디스크-스케줄링-1-FCFS"><a href="#디스크-스케줄링-1-FCFS" class="headerlink" title="디스크 스케줄링 1. FCFS"></a>디스크 스케줄링 1. FCFS</h3><p>먼저온놈한테 먼저 서비스를 제공.<br>200 cylinder disk, 0 .. 199<br>Disk queue: 98 183 37 122 14 124 65 67<br>Head is currently at cylinder 53<br>Total head movement = 640 cylinders</p>
@@ -118,6 +121,30 @@
       <category term="CS" scheme="http://KKimSangHeon.github.io/tags/CS/"/>
     
       <category term="Operating System" scheme="http://KKimSangHeon.github.io/tags/Operating-System/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://KKimSangHeon.github.io/2019/03/05/operating-system28/adsense/"/>
+    <id>http://KKimSangHeon.github.io/2019/03/05/operating-system28/adsense/</id>
+    <published>2019-03-04T15:00:00.000Z</published>
+    <updated>2019-03-05T13:05:59.701Z</updated>
+    
+    <content type="html"><![CDATA[<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2850951807285210" data-ad-slot="1831621923"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;script async src=&quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&gt;&lt;/script&gt;
+&lt;ins class=&quot;adsbygoogle&quot; style=&quot;display:block; text-a
+    
+    </summary>
+    
     
   </entry>
   
@@ -722,47 +749,6 @@
     
       &lt;h3 id=&quot;1-쓰레드란&quot;&gt;&lt;a href=&quot;#1-쓰레드란&quot; class=&quot;headerlink&quot; title=&quot;1. 쓰레드란?&quot;&gt;&lt;/a&gt;1. 쓰레드란?&lt;/h3&gt;&lt;p&gt;프로그램 내부의 흐름, 맥&lt;/p&gt;
 &lt;p&gt;맥이 하나만 있는 프로그램 : 싱글쓰레드&lt;br&gt;여러
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>9.다중 큐 스케쥴링, 프로세스 생성과 소멸, 쓰레드</title>
-    <link href="http://KKimSangHeon.github.io/2019/02/18/operating-system9/"/>
-    <id>http://KKimSangHeon.github.io/2019/02/18/operating-system9/</id>
-    <published>2019-02-18T13:29:58.000Z</published>
-    <updated>2019-02-18T13:31:23.624Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="다중-큐-스케쥴링-프로세스-생성과-소멸-쓰레드"><a href="#다중-큐-스케쥴링-프로세스-생성과-소멸-쓰레드" class="headerlink" title="다중 큐 스케쥴링, 프로세스 생성과 소멸, 쓰레드"></a>다중 큐 스케쥴링, 프로세스 생성과 소멸, 쓰레드</h3><h3 id="다양한-CPU-스케줄링-알고리즘"><a href="#다양한-CPU-스케줄링-알고리즘" class="headerlink" title="다양한 CPU 스케줄링 알고리즘"></a>다양한 CPU 스케줄링 알고리즘</h3><p>First-Come, First-Served (FCFS)<br>Shortest-Job-First (SJF)<br>Priority<br>Round-Robin (RR)<br>Multilevel Queue<br>Multilevel Feedback Queue</p>
-<h3 id="1-Multilevel-Queue-Scheduling"><a href="#1-Multilevel-Queue-Scheduling" class="headerlink" title="1. Multilevel Queue Scheduling"></a>1. Multilevel Queue Scheduling</h3><h3 id="1-1-Process-groups-프로세스는-그룹별로-묶일-수-있다"><a href="#1-1-Process-groups-프로세스는-그룹별로-묶일-수-있다" class="headerlink" title="1.1 Process groups : 프로세스는 그룹별로 묶일 수 있다."></a>1.1 Process groups : 프로세스는 그룹별로 묶일 수 있다.</h3><p>System processes : 가장 긴급하고 먼저 처리되어야 하는것.<br>Interactive processes : 대화형 프로세스<br>Interactive editing processes : ex 워드프로세스<br>Batch processes : 인터액션이 따로 없다.<br>Student processes</p>
-<p>성격이 다양한것을 동일한 큐에 세우는것이 맞지 않다라고 판단.<br>입출금은 빠르게 끝나는데 대출은 오래 끝나니까!<br>이를 위해 <u>큐를 여러개를 두자 이를 멀티레벨 큐</u>.</p>
-<h3 id="1-2-Single-ready-queue-→-Several-separate-queues"><a href="#1-2-Single-ready-queue-→-Several-separate-queues" class="headerlink" title="1.2 Single ready queue → Several separate queues"></a>1.2 Single ready queue → Several separate queues</h3><p>각각의 Queue 에 절대적 우선순위 존재<br>또는 CPU time 을 각 Queue 에 차등배분<br>각 Queue 는 독립된 scheduling 정책</p>
-<p>큐가 여러개이므로 우선순위를 둬서 차등반영한다.<br>또한 각 큐별로 다른 스케줄링 기법을 사용한다.</p>
-<h3 id="2-Multilevel-Feedback-Queue-Scheduling"><a href="#2-Multilevel-Feedback-Queue-Scheduling" class="headerlink" title="2. Multilevel Feedback Queue Scheduling"></a>2. Multilevel Feedback Queue Scheduling</h3><p>큐를 여러개 둔다는점은 Multilevel Queue Scheduling와 같은데 <code>하나의 입구로 진입해서 거의 실행되지 않는다면 다른큐로 이동한다.</code></p>
-<h3 id="2-1-다른-Queue-로의-점진적-이동"><a href="#2-1-다른-Queue-로의-점진적-이동" class="headerlink" title="2.1 다른 Queue 로의 점진적 이동"></a>2.1 다른 Queue 로의 점진적 이동</h3><p>모든 프로세스는 하나의 입구로 진입<br>너무 많은 CPU time 사용 시 다른 Queue 로<br>기아 상태 우려 시 우선순위 높은 Queue 로</p>
-<p>상용운영체제는 여러 큐를 갖고있어 다양한 스케줄링 정책을 두어 적절히 활용한다.</p>
-<h3 id="3-Process-Creation"><a href="#3-Process-Creation" class="headerlink" title="3. Process Creation"></a>3. Process Creation</h3><p>프로세스는 사람과 비슷하다. <u>프로세스는 프로세스에 의해 만들어진다.</u></p>
-<p><code>그렇다면 제일 첫번째 프로세스는 어떻게 만들어졌을까??</code><br>O/S가 메모리로 올라가고 초기화 작업을 하면 제일 처음 프로세스를 만든다. 제일 첫번째 프로세스 이름을 유닉스의 경우 init프로세스(OS마다 다름)라 한다. 이 프로세스가 다른 프로세스를 만든다.</p>
-<h3 id="3-1-Process-Identifier-PID"><a href="#3-1-Process-Identifier-PID" class="headerlink" title="3.1 Process Identifier (PID)"></a>3.1 Process Identifier (PID)</h3><p>사람의 주민등록번호와 같은것.<br>처음 만들어지는 프로그램은 0이다.<br>PPID? 부모 PID</p>
-<h3 id="3-2-프로세스-생성"><a href="#3-2-프로세스-생성" class="headerlink" title="3.2 프로세스 생성"></a>3.2 프로세스 생성</h3><p>fork() system call - 새로운 프로세스 만드는것.<br>exec() - 만들어진 프로세스의 실행파일을 메모리로 갖고오는것.</p>
-<h3 id="3-3-프로세스-종료"><a href="#3-3-프로세스-종료" class="headerlink" title="3.3 프로세스 종료"></a>3.3 프로세스 종료</h3><p>exit() system call - 해당 프로세스가 가졌던 모든 자원은 OS에게 반환 (메모리, 파일, 입출력장치 등)</p>
-<h3 id="4-쓰레드"><a href="#4-쓰레드" class="headerlink" title="4. 쓰레드"></a>4. 쓰레드</h3><p><u>프로그램 내부의 흐름, 맥이라고 한다.</u></p>
-<h3 id="4-1-다중-쓰레드-Multithreads"><a href="#4-1-다중-쓰레드-Multithreads" class="headerlink" title="4.1 다중 쓰레드(Multithreads)"></a>4.1 다중 쓰레드(Multithreads)</h3><p><u>하나의 프로그램에 맥이 2개이상 있는것.</u><br>맥이 빠른 시간 간격으로 스위칭 된다 →  여러 맥이 동시에 실행되는 것처럼 보인다<br>Web browser : 화면 출력하는 쓰레드 + 데이터 읽어오는 쓰레드<br>Word processor : 화면 출력하는 쓰레드 + 키보드 입력 받는 쓰레드 + 철자/문법오류 확인 쓰레드</p>
-<p>이전강의까지는 P1이 끝나면 P2로 넘어간다 했는데 그건 예전의 OS이다.<br>즉 <u>현재의 컴퓨터는 컨텍스트 스위칭 단위가 프로세스가 아니라 쓰레드 단위이다</u>.</p>
-<p>각 쓰레드는 코드와 데이터 공유하고 스택은 공유하지 않는다.</p>
-<p>한 프로세스에는 기본 1개의 쓰레드 : <code>단일 쓰레드 (single thread) 프로그램</code><br>한 프로세스에 여러 개의 쓰레드 : <code>다중 쓰레드 (multi-thread) 프로그램</code></p>
-<h3 id="4-2-쓰레드-구조"><a href="#4-2-쓰레드-구조" class="headerlink" title="4.2 쓰레드 구조"></a>4.2 쓰레드 구조</h3><p>프로세스의 메모리 공간 공유 : (code, data)<br>프로세스의 자원 공유 : (file, i/o, …)<br>비공유: 개별적인 PC, SP, registers, stack</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;다중-큐-스케쥴링-프로세스-생성과-소멸-쓰레드&quot;&gt;&lt;a href=&quot;#다중-큐-스케쥴링-프로세스-생성과-소멸-쓰레드&quot; class=&quot;headerlink&quot; title=&quot;다중 큐 스케쥴링, 프로세스 생성과 소멸, 쓰레드&quot;&gt;&lt;/a&gt;다중 큐 스케쥴링
     
     </summary>
     
