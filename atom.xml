@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-03-05T13:10:06.078Z</updated>
+  <updated>2019-03-05T13:12:20.311Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://KKimSangHeon.github.io/2019/03/05/operating-system28/"/>
     <id>http://KKimSangHeon.github.io/2019/03/05/operating-system28/</id>
     <published>2019-03-05T13:03:20.000Z</published>
-    <updated>2019-03-05T13:10:06.078Z</updated>
+    <updated>2019-03-05T13:12:20.311Z</updated>
     
     <content type="html"><![CDATA[<p>보조기억장치중 하드디스크를 배운다<br>동심원이 있고 원판이 있다. 원판에 자성물질을 발라서 디스크 헤더에 전기를 흘려 기록을 하고 읽을 때는 고속으로 회전시켜 코일에 전류가 유도되는데 이를통해 읽는다.<br>이를 트랙이라 하고 보통 디스크는 앞 뒤로 쓰는데 트랙이라는 용어보다는 실린더라는 용어를 많이 쓰고 있다.<br>트랙을 쪼개서 섹터라 한다 섹터는 512b정도 된다. 이를 네개정도 모아서 블록이라고 한다.<br>하드디스크를 포멧하면 내용을 다지우고 나면 poll of block이라 한다.</p>
 <h3 id="연속할당"><a href="#연속할당" class="headerlink" title="연속할당"></a>연속할당</h3><p>블록 하나가 1kb라고 가정하자 3.6kb파일을 하나 만들었을때 블록을 연속적으로 만들어주면 내부단편화가 발생한다.<br>하지만 헤더가 많이 안움직여도 되므로 빠르다.  디스크 헤더의 이동 최소화 = 빠른 i/o 성능<br>하지만 데이터를 지웠을 때 외부단편화가 발생한다.(곳곳에 흩어지는 holes로 인해)</p>
@@ -33,9 +33,9 @@
 <p>예제: 1블록 = 1KB = 4바이트 x 256개 인덱스<br>즉 256 * 1KB = 256KB</p>
 <img src="/2019/03/05/operating-system28/image1.png" alt="Linked" title="Linked">
 <p><code>해결방법1:</code> Linked : 이를 개선하기 위해 인덱스를 갖는 블록이 다른 인덱스 블록을 가르키는것.</p>
-<img src="/2019/03/05/operating-system28/image1.png" alt="Multilevel index" title="Multilevel index">
+<img src="/2019/03/05/operating-system28/image2.png" alt="Multilevel index" title="Multilevel index">
 <p><code>해결방법2:</code> Multilevel index : 하나의 인덱스 블록이 여러개의 인덱스 블록을 가르키는것.</p>
-<img src="/2019/03/05/operating-system28/image1.png" alt="Combined" title="Combined">
+<img src="/2019/03/05/operating-system28/image3.png" alt="Combined" title="Combined">
 <p><code>해결방법3:</code> Combined : 처음 인덱스 블록에서 앞쪽은 실제로 데이터를 가르키고 나머지 블록은 인덱스 블록을 가르키고..이는 유닉스에서 쓰임..</p>
 <h3 id="디스크-스케줄링"><a href="#디스크-스케줄링" class="headerlink" title="디스크 스케줄링."></a>디스크 스케줄링.</h3><p>대표적인 보조기억장치는 하드디스크이다. 디스크는 원판에 트랙이 있고 디스크를 움직여서 해당되는 트랙으로 이동한다. 제일 오래 걸리는 시간이 헤더를 움직이는 Seek time이 오래걸린다, 디스크가 도는 시간은  rotational delay(1분에 7200번돈다) 트랙이 헤더를 지나가면서 읽히는 시간이 transfer time이라 한다.</p>
 <p>다중 프로그래밍 환경에서 여러개의 프로세스가 동시에 돌아간다. <u>여러프로세스가 디스크를 사용하려면 디스크 큐에 들어가야한다. 이때 어떻게 하면 탐색시간 즉 디스크 헤더를 가장 적게 움직일 수 있을까…</u></p>
