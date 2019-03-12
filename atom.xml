@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-03-12T11:26:52.300Z</updated>
+  <updated>2019-03-12T11:29:27.864Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,15 +20,15 @@
     <link href="http://KKimSangHeon.github.io/2019/03/12/spring1/"/>
     <id>http://KKimSangHeon.github.io/2019/03/12/spring1/</id>
     <published>2019-03-12T07:48:03.000Z</published>
-    <updated>2019-03-12T11:26:52.300Z</updated>
+    <updated>2019-03-12T11:29:27.864Z</updated>
     
     <content type="html"><![CDATA[<h3 id="IoC"><a href="#IoC" class="headerlink" title="IoC?"></a>IoC?</h3><p>의존성이 뒤바뀐것. 어떻게 바뀐거야?<br>내가 만드는것이 아니라 밖에서 넣어주는 형태<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ShController</span> </span>&#123;    </div><div class="line">   <span class="keyword">private</span> ShRepository repo;</div><div class="line"></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="title">ShController</span><span class="params">(ShRepository repo)</span> </span>&#123;        </div><div class="line">     <span class="keyword">this</span>.repo = repo;    </div><div class="line">   &#125;  </div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
 <h3 id="IoC-컨테이너"><a href="#IoC-컨테이너" class="headerlink" title="IoC 컨테이너"></a>IoC 컨테이너</h3><p>ApplicationContext 는 IoC 컨테이너로써 우리가 직접 쓸 일은 거의 없다(Spring boot에서)<br>빈들을 만들고 빈들의 의존성을 엮어주는 역할을 한다. (객체생성 관리등…)</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Autowired</span></div><div class="line">ApplicationContext applicationContxt;</div><div class="line">.....</div><div class="line">applicationContxt.getBean(A.class); <span class="comment">//객체를 가져올 수 있다.</span></div></pre></td></tr></table></figure>
 <h3 id="빈"><a href="#빈" class="headerlink" title="빈"></a>빈</h3><p>스프링 IoC가 관리하는 객체이다. 즉 ApplicationContext안에서 관리되는 객체<br>인터페이스도 빈이 될수 있을까? 그렇다.</p>
 <h3 id="빈을-등록하는-방법은"><a href="#빈을-등록하는-방법은" class="headerlink" title="빈을 등록하는 방법은?"></a>빈을 등록하는 방법은?</h3><p>빈을 쓰기위해서는 그것(클래스) 또한 빈이어야 한다.<br>why? 빈만 빈을 쓸 수 있다/</p>
-<p><code>@ComponentScan</code><br>얘가 @Component인 애들을 찾아 빈으로 등록한다. @Controller은 왜 빈으로 인식되는거야? @컨트롤러 코드를 열어보면 @Componet로 되어있다. 즉 같은것으로 볼 수 있다.</p>
-<p>2.XML이나 자바 설정 파일에 등록</p>
+<p><code>1.@ComponentScan</code><br>얘가 @Component인 애들을 찾아 빈으로 등록한다. @Controller은 왜 빈으로 인식되는거야? @컨트롤러 코드를 열어보면 @Componet로 되어있다. 즉 같은것으로 볼 수 있다.</p>
+<p><code>2.XML이나 자바 설정 파일에 등록</code></p>
 <p><code>3.직접 등록하는 방법</code></p>
 <p><u>이때는 @Configuration 이라는 애노테이션을 갖고있는 클래스에서 등록이 이뤄져야 한다.</u><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Configuration</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BeanTest</span></span>&#123;</div><div class="line">  <span class="meta">@Bean</span></div><div class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">sh</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"sh"</span>;</div><div class="line">  &#125;</div><div class="line"><span class="comment">//String type의 빈을 하나 등록.</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AController</span></span>&#123;</div><div class="line">  <span class="meta">@Autowired</span></div><div class="line">  String sh;  <span class="comment">//sh가 들어간다        </span></div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
