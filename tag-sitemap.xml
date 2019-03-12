@@ -289,13 +289,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Spring/</loc>
-        <lastmod>2018-09-03T05:57:42.527Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/Python/</loc>
         <lastmod>2018-09-03T05:58:11.517Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -648,6 +641,13 @@
     <url>
         <loc>http://KKimSangHeon.github.io/tags/Sang-Heon-Kim/</loc>
         <lastmod>2019-01-21T15:15:16.932Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Spring/</loc>
+        <lastmod>2019-03-12T11:26:52.300Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

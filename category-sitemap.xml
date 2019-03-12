@@ -35,13 +35,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/Web-App/Spring/</loc>
-        <lastmod>2018-09-03T05:57:42.527Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/categories/Language/Python/</loc>
         <lastmod>2018-09-03T05:58:11.517Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -107,13 +100,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/categories/Etc/%EC%9E%90%EA%B2%A9%EC%A6%9D/</loc>
         <lastmod>2018-09-03T06:05:21.232Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/categories/Web-App/</loc>
-        <lastmod>2018-09-04T10:12:55.152Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -212,6 +198,20 @@
     <url>
         <loc>http://KKimSangHeon.github.io/categories/CS/Operating-System/</loc>
         <lastmod>2019-03-06T13:49:55.622Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/Web-App/</loc>
+        <lastmod>2019-03-12T11:26:52.300Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/Web-App/Spring/</loc>
+        <lastmod>2019-03-12T11:26:52.300Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

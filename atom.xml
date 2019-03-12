@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-03-06T13:45:55.148Z</updated>
+  <updated>2019-03-12T11:26:52.300Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>다시돌아온 간략한 스프링정리시간</title>
+    <link href="http://KKimSangHeon.github.io/2019/03/12/spring1/"/>
+    <id>http://KKimSangHeon.github.io/2019/03/12/spring1/</id>
+    <published>2019-03-12T07:48:03.000Z</published>
+    <updated>2019-03-12T11:26:52.300Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="IoC"><a href="#IoC" class="headerlink" title="IoC?"></a>IoC?</h3><p>의존성이 뒤바뀐것. 어떻게 바뀐거야?<br>내가 만드는것이 아니라 밖에서 넣어주는 형태<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ShController</span> </span>&#123;    </div><div class="line">   <span class="keyword">private</span> ShRepository repo;</div><div class="line"></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="title">ShController</span><span class="params">(ShRepository repo)</span> </span>&#123;        </div><div class="line">     <span class="keyword">this</span>.repo = repo;    </div><div class="line">   &#125;  </div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<h3 id="IoC-컨테이너"><a href="#IoC-컨테이너" class="headerlink" title="IoC 컨테이너"></a>IoC 컨테이너</h3><p>ApplicationContext 는 IoC 컨테이너로써 우리가 직접 쓸 일은 거의 없다(Spring boot에서)<br>빈들을 만들고 빈들의 의존성을 엮어주는 역할을 한다. (객체생성 관리등…)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Autowired</span></div><div class="line">ApplicationContext applicationContxt;</div><div class="line">.....</div><div class="line">applicationContxt.getBean(A.class); <span class="comment">//객체를 가져올 수 있다.</span></div></pre></td></tr></table></figure>
+<h3 id="빈"><a href="#빈" class="headerlink" title="빈"></a>빈</h3><p>스프링 IoC가 관리하는 객체이다. 즉 ApplicationContext안에서 관리되는 객체<br>인터페이스도 빈이 될수 있을까? 그렇다.</p>
+<h3 id="빈을-등록하는-방법은"><a href="#빈을-등록하는-방법은" class="headerlink" title="빈을 등록하는 방법은?"></a>빈을 등록하는 방법은?</h3><p>빈을 쓰기위해서는 그것(클래스) 또한 빈이어야 한다.<br>why? 빈만 빈을 쓸 수 있다/</p>
+<p><code>@ComponentScan</code><br>얘가 @Component인 애들을 찾아 빈으로 등록한다. @Controller은 왜 빈으로 인식되는거야? @컨트롤러 코드를 열어보면 @Componet로 되어있다. 즉 같은것으로 볼 수 있다.</p>
+<p>2.XML이나 자바 설정 파일에 등록</p>
+<p><code>3.직접 등록하는 방법</code></p>
+<p><u>이때는 @Configuration 이라는 애노테이션을 갖고있는 클래스에서 등록이 이뤄져야 한다.</u><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Configuration</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BeanTest</span></span>&#123;</div><div class="line">  <span class="meta">@Bean</span></div><div class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">sh</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"sh"</span>;</div><div class="line">  &#125;</div><div class="line"><span class="comment">//String type의 빈을 하나 등록.</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AController</span></span>&#123;</div><div class="line">  <span class="meta">@Autowired</span></div><div class="line">  String sh;  <span class="comment">//sh가 들어간다        </span></div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<h3 id="의존성-주입"><a href="#의존성-주입" class="headerlink" title="의존성 주입"></a>의존성 주입</h3><p>@Autowired , @Inject이라는 어노테이션을 활용하여 의존성을 주입한다.</p>
+<p>어떤 빈에 생성자가 하나만있고 생성자의 매개변수 타입이 빈으로 등록되어있다면 빈을 주입해준다.@Autowired가 없더라도..즉 아래와 같은 형태</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AController</span></span>&#123;</div><div class="line">  <span class="keyword">private</span> <span class="keyword">final</span> ARepository aRepository;</div><div class="line">  <span class="keyword">private</span> <span class="keyword">final</span> BRepository bRepository;</div><div class="line"></div><div class="line">  <span class="comment">//방법 1</span></div><div class="line">  <span class="comment">//@Autowired 없어도 됨.(있어도 됨)</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">AController</span><span class="params">(ARepository aRepository,BRepository aRepository)</span> </span>&#123;</div><div class="line">    <span class="keyword">this</span>.aRepository = aRepository;</div><div class="line">    <span class="keyword">this</span>.bRepository = bRepository;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>의존성 주입하는 두번째 방법<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AController</span></span>&#123;</div><div class="line">  <span class="meta">@Autowired</span></div><div class="line">  <span class="keyword">private</span> <span class="keyword">final</span> ARepository aRepository;</div><div class="line"></div><div class="line">  <span class="meta">@Autowired</span></div><div class="line">  <span class="keyword">private</span> <span class="keyword">final</span> BRepository bRepository;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>즉 위의 두가지 모두 의존성이 주입된다고 볼 수 있다.</p>
+<h3 id="Autowired-Inject은-어디에-붙이는것이-좋은가"><a href="#Autowired-Inject은-어디에-붙이는것이-좋은가" class="headerlink" title="@Autowired , @Inject은 어디에 붙이는것이 좋은가?"></a>@Autowired , @Inject은 어디에 붙이는것이 좋은가?</h3><p><code>클래스에 반드시 필요한 객체</code>일경우 생성자로 의존성주입하는것이 좋다.<br><code>세터가 있다면</code> 세터에 붙이고<br><code>세터가 없다면</code> 필드에 붙이는것이 좋다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;IoC&quot;&gt;&lt;a href=&quot;#IoC&quot; class=&quot;headerlink&quot; title=&quot;IoC?&quot;&gt;&lt;/a&gt;IoC?&lt;/h3&gt;&lt;p&gt;의존성이 뒤바뀐것. 어떻게 바뀐거야?&lt;br&gt;내가 만드는것이 아니라 밖에서 넣어주는 형태&lt;br&gt;&lt;figure clas
+    
+    </summary>
+    
+      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/categories/Web-App/Spring/"/>
+    
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/tags/Spring/"/>
+    
+  </entry>
   
   <entry>
     <title>29. SCAN 알고리즘 및 변종</title>
@@ -735,38 +775,6 @@
     <summary type="html">
     
       &lt;h3 id=&quot;임계구역-문제-critical-section-problem&quot;&gt;&lt;a href=&quot;#임계구역-문제-critical-section-problem&quot; class=&quot;headerlink&quot; title=&quot;임계구역 문제(critical-section pro
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>10.프로세스 동기화의 중요성, 은행계좌 문제</title>
-    <link href="http://KKimSangHeon.github.io/2019/02/18/operating-system10/"/>
-    <id>http://KKimSangHeon.github.io/2019/02/18/operating-system10/</id>
-    <published>2019-02-18T13:31:45.000Z</published>
-    <updated>2019-02-18T13:34:32.742Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1-쓰레드란"><a href="#1-쓰레드란" class="headerlink" title="1. 쓰레드란?"></a>1. 쓰레드란?</h3><p>프로그램 내부의 흐름, 맥</p>
-<p>맥이 하나만 있는 프로그램 : 싱글쓰레드<br>여러개있는것: 멀티(다중)쓰레드</p>
-<p>쓰레드가 여러개가 빠르게 동시에(왔다갔다하면서) 실행됨. 우리는 CPU하나임을 가정하고 공부하기 때문에</p>
-<h3 id="1-1-쓰레드-구조"><a href="#1-1-쓰레드-구조" class="headerlink" title="1.1 쓰레드 구조"></a>1.1 쓰레드 구조</h3><p>프로세스의 메모리 공간 공유 : (code, data)<br>프로세스의 자원 공유 : (file, i/o, …)<br>비공유: 개별적인 PC, SP, registers, stack</p>
-<p>운영체제의 프로세스 관리부서에서 중요한것은 프로세스 동기화 또는 쓰레드 동기화이다.</p>
-<h3 id="프로세스는-크게-두가지로-나뉜다"><a href="#프로세스는-크게-두가지로-나뉜다" class="headerlink" title="프로세스는 크게 두가지로 나뉜다."></a>프로세스는 크게 두가지로 나뉜다.</h3><p>Independent process : p1, p2가 영향이 없다<br>Cooperating process : p1, p2가 영향을 주던지 받던지 한다. 이런경우가 훨씬 많다.<br>프로세스간 통신: 전자우편, 파일 전송<br>프로세스간 자원 공유: 메모리 상의 자료들, 데이터베이스 등<br>명절 기차표 예약, 대학 온라인 수강신청, 실시간 주식거래</p>
-<h3 id="2-프로세스-쓰레드-동기화"><a href="#2-프로세스-쓰레드-동기화" class="headerlink" title="2. 프로세스(쓰레드) 동기화"></a>2. 프로세스(쓰레드) 동기화</h3><p><code>공통데이터에 접근하는것은 문제가 발생할 수 있다. (공유되는 프로세스가 동시에 접근할 때.)</code><br>동기화가 제대로 이뤄지지 않으면 똑같은 자리에 두명이상이 배정된다던가 하는 문제가 생긴다.</p>
-<p><u>프로세스간에 순서를 잘 지정해서 이상한 상태에 빠지지 않도록 하여 데이터의 일관성을 유지</u></p>
-<h3 id="2-1-BankAccount-Problem-은행계좌문제"><a href="#2-1-BankAccount-Problem-은행계좌문제" class="headerlink" title="2.1 BankAccount Problem (은행계좌문제)"></a>2.1 BankAccount Problem (은행계좌문제)</h3><p>부모님은 은행계좌에 입금; 자녀는 출금<br>입금(deposit)과 출금(withdraw) 은 독립적으로 일어난다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;1-쓰레드란&quot;&gt;&lt;a href=&quot;#1-쓰레드란&quot; class=&quot;headerlink&quot; title=&quot;1. 쓰레드란?&quot;&gt;&lt;/a&gt;1. 쓰레드란?&lt;/h3&gt;&lt;p&gt;프로그램 내부의 흐름, 맥&lt;/p&gt;
-&lt;p&gt;맥이 하나만 있는 프로그램 : 싱글쓰레드&lt;br&gt;여러
     
     </summary>
     
