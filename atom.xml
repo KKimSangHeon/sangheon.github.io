@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-03-12T11:29:27.864Z</updated>
+  <updated>2019-03-13T12:33:16.618Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://KKimSangHeon.github.io/2019/03/12/spring1/"/>
     <id>http://KKimSangHeon.github.io/2019/03/12/spring1/</id>
     <published>2019-03-12T07:48:03.000Z</published>
-    <updated>2019-03-12T11:29:27.864Z</updated>
+    <updated>2019-03-13T12:33:16.618Z</updated>
     
     <content type="html"><![CDATA[<h3 id="IoC"><a href="#IoC" class="headerlink" title="IoC?"></a>IoC?</h3><p>의존성이 뒤바뀐것. 어떻게 바뀐거야?<br>내가 만드는것이 아니라 밖에서 넣어주는 형태<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ShController</span> </span>&#123;    </div><div class="line">   <span class="keyword">private</span> ShRepository repo;</div><div class="line"></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="title">ShController</span><span class="params">(ShRepository repo)</span> </span>&#123;        </div><div class="line">     <span class="keyword">this</span>.repo = repo;    </div><div class="line">   &#125;  </div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
 <h3 id="IoC-컨테이너"><a href="#IoC-컨테이너" class="headerlink" title="IoC 컨테이너"></a>IoC 컨테이너</h3><p>ApplicationContext 는 IoC 컨테이너로써 우리가 직접 쓸 일은 거의 없다(Spring boot에서)<br>빈들을 만들고 빈들의 의존성을 엮어주는 역할을 한다. (객체생성 관리등…)</p>
@@ -38,6 +38,16 @@
 <p>의존성 주입하는 두번째 방법<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AController</span></span>&#123;</div><div class="line">  <span class="meta">@Autowired</span></div><div class="line">  <span class="keyword">private</span> <span class="keyword">final</span> ARepository aRepository;</div><div class="line"></div><div class="line">  <span class="meta">@Autowired</span></div><div class="line">  <span class="keyword">private</span> <span class="keyword">final</span> BRepository bRepository;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>즉 위의 두가지 모두 의존성이 주입된다고 볼 수 있다.</p>
 <h3 id="Autowired-Inject은-어디에-붙이는것이-좋은가"><a href="#Autowired-Inject은-어디에-붙이는것이-좋은가" class="headerlink" title="@Autowired , @Inject은 어디에 붙이는것이 좋은가?"></a>@Autowired , @Inject은 어디에 붙이는것이 좋은가?</h3><p><code>클래스에 반드시 필요한 객체</code>일경우 생성자로 의존성주입하는것이 좋다.<br><code>세터가 있다면</code> 세터에 붙이고<br><code>세터가 없다면</code> 필드에 붙이는것이 좋다.</p>
+<h3 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h3><p>흩어진 코드를 한곳으로 모아라</p>
+<h3 id="AOP를-구현하는-기법"><a href="#AOP를-구현하는-기법" class="headerlink" title="AOP를 구현하는 기법"></a>AOP를 구현하는 기법</h3><ol>
+<li><p>바이트 코드를 조작하는방법<br>컴파일을 하면 .class가 나오는데 이를 조작하는것. 컴파일된 코드안에 공통되는 부분을 끼워넣는 방법</p>
+</li>
+<li><p>프록시 패턴을 사용하는 방법<br>A 클래스를 상속받아<br>class AProxy extends A{ }<br>안에서 공통되는 부분을 호출하는것.</p>
+</li>
+</ol>
+<p>사방으로 흩어진 코드를 한곳으로 모으고 다른 클래스들은 자신의 일만 하도록 하는것<br>즉 Single Response Principle에 적합하게 코딩하도록 도와주는 코딩기법.</p>
+<h3 id="PSA-Portable-Sevice-Abstract"><a href="#PSA-Portable-Sevice-Abstract" class="headerlink" title="PSA Portable Sevice Abstract"></a>PSA Portable Sevice Abstract</h3><p>잘만든 인터페이스라 보자.<br>어떤 기술에 특화되어있는 코드, 확장성이 좋지 않은 코드를 쓰면 테스트를 만들기도 어렵고 기술이 변경될 때 마다 코드를 변경해야 한다. 잘만든 인터페이스를 활용한다면 테스트하기도 좋고 바꿔끼기도 좋다.</p>
+<p>어노테이션의 정의가 바뀌더라도 우리는 그대로 쓸 수 있다!</p>
 ]]></content>
     
     <summary type="html">
