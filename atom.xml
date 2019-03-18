@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-03-13T12:33:16.618Z</updated>
+  <updated>2019-03-18T13:11:53.409Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>운영체제 핵심!</title>
+    <link href="http://KKimSangHeon.github.io/2019/03/18/operating-system/"/>
+    <id>http://KKimSangHeon.github.io/2019/03/18/operating-system/</id>
+    <published>2019-03-18T13:11:03.000Z</published>
+    <updated>2019-03-18T13:11:53.409Z</updated>
+    
+    <content type="html"><![CDATA[<p>운영체제란<br>부팅<br>커널, 쉘?<br>배치프로세싱시스템<br>멀티프로그래밍 시스템<br>타임쉐어링 시스템<br>다중프로세서 시스템<br>분산시스템<br>실시간 시스템<br>인터럽트- 하드웨어인터럽트 , 소프트웨어인터럽트<br>ISR<br>이중모드-모니터비트<br>MMU<br>운영체제의 매니지먼트들 - 프로세스 메인메모리 파일 보조기억장치 입출력장치<br>프로세스의 상태-new ready running wating terminated<br>PCB-상태정보, PC(지금은 몇번지인지. 번지정보), registers, MMU info (base, limit), CPU time(CPU 이용시간), process id, list of open files(얘가 지금 어떤파일을 사용하고 있는지)</p>
+<p>job queue , ready queue, device queue<br>Job scheduling(Long-term scheduler)</p>
+<p>CPU Scheduler( Short-term scheduler )</p>
+<p>Device Scheduler<br>Medium-term scheduler<br>프로세스는 크게 두가지로 나눌 수 있다,<br>i/o-bound<br>CPU-bound process</p>
+<p>context switching<br>Dispatcher<br>CPU스케줄링<br>Preemptive vs Non-preemptive<br>Scheduling criteria(척도)</p>
+<ul>
+<li>응답시간, 대기시간, 반환시간, 처리율,cpu 이용율</li>
+</ul>
+<p>fcfs,sjf,Shortest-Remaining-Time-First<br>Priority,<br>Round-Robin (RR),<br>Multilevel Queue,<br>Multilevel Feedback Queue,</p>
+<p>쓰레드<br>쓰레드 구조<br>프로세스의 메모리 공간 공유 : (code, data)<br>프로세스의 자원 공유 : (file, i/o, …)<br>비공유: 개별적인 PC, SP, registers, stack</p>
+<p>프로세스(쓰레드) 동기화<br>임계영역 해결을 위한 방법 3가지<br>상호베타 진행 유한대기</p>
+<p>동기화<br>세마포어 모니터(2개의 큐?)<br>odering 상호베제 용도로 쓰임</p>
+<p>교착상태<br>교착상태 필요조건<br>상호베타 점유및대기 비선점 환형대기</p>
+<p>메모리 낭비방지기법<br>1.Dynamic Loading<br>2.Dynamic Linking<br>3.Swapping</p>
+<p>외부단편화<br>first fit<br>best fit<br>worst fit</p>
+<p>외부단편화 해결: compaction, 페이징<br>페이지테이블(mmu의 집합,TLB에 저장)<br>내부단편화 해결 : 세그멘테이션</p>
+<p>페이지, 세그멘테이션의 보호적인 측면의 차이</p>
+<p>가상메모리<br>요구페이징<br>pure demand paging vs prepaging<br>Page Replacement Algorithms: FIFO,OPT,LRU<br>Belady’s Anomaly<br>Global vs Local Replacement<br>쓰레싱(Thrashing</p>
+<p>프레임 할당은 크게 정적할당 동적할당으로 나뉜다.</p>
+<p>정적 할당 (static allocation) 또한 균등할당, 비례할당으로 나뉜다.</p>
+<p>block device<br>character device<br>연속 할당 (Contiguous Allocation) - 장단점<br>연결 할당 (Linked Allocation) - 장단점 및 디렉토리 / FAT<br>색인 할당 (Indexed Allocation) - linked,multi level, combined</p>
+<p>디스크 스케줄링<br>fcfs, sstf, scan scheduling(cscan,look,c-look)</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;운영체제란&lt;br&gt;부팅&lt;br&gt;커널, 쉘?&lt;br&gt;배치프로세싱시스템&lt;br&gt;멀티프로그래밍 시스템&lt;br&gt;타임쉐어링 시스템&lt;br&gt;다중프로세서 시스템&lt;br&gt;분산시스템&lt;br&gt;실시간 시스템&lt;br&gt;인터럽트- 하드웨어인터럽트 , 소프트웨어인터럽트&lt;br&gt;ISR&lt;br&gt;
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>다시돌아온 간략한 스프링정리시간</title>
@@ -745,46 +789,6 @@
     
       &lt;hr&gt;
 &lt;h3 id=&quot;프로세스-관리에서-중요한것들&quot;&gt;&lt;a href=&quot;#프로세스-관리에서-중요한것들&quot; class=&quot;headerlink&quot; title=&quot;프로세스 관리에서 중요한것들&quot;&gt;&lt;/a&gt;프로세스 관리에서 중요한것들&lt;/h3&gt;&lt;p&gt;CPU 스케줄링 : 이전
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>11.임계구역 문제, 동기화 도구</title>
-    <link href="http://KKimSangHeon.github.io/2019/02/19/operating-system11/"/>
-    <id>http://KKimSangHeon.github.io/2019/02/19/operating-system11/</id>
-    <published>2019-02-19T11:04:12.000Z</published>
-    <updated>2019-02-20T14:16:20.363Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="임계구역-문제-critical-section-problem"><a href="#임계구역-문제-critical-section-problem" class="headerlink" title="임계구역 문제(critical-section problem)"></a>임계구역 문제(critical-section problem)</h3><p>여러개의 쓰레드로 이뤄진 시스템에서 각각의 쓰레드는 코드영역을 갖고있는데 이를 크리티컬 섹션이라한다. 또한 쓰레드로 부터 공통으로 사용되고 변경될 수 있는 부분을 의미한다.</p>
-<p><u>어떤 복수개의 쓰레드들이 공통적으로 사용하는 부분.</u></p>
-<h3 id="임계영역-해결"><a href="#임계영역-해결" class="headerlink" title="임계영역 해결"></a>임계영역 해결</h3><p>이를 해결하기 위해 다음 세가지가 만족되어야 한다.</p>
-<p><code>Mutual exclusion (상호배타)</code>: 오직 한 쓰레드만 진입<br><code>Progress (진행)</code>: 진입 결정은 유한 시간 내. 즉 누가 먼저 들어가야되는지 유한시간내에 결정해야 한다.<br><code>Bounded waiting (유한대기)</code>: 어느 쓰레드라도 유한 시간 내 크리티컬 섹션안에 들어갈 수 있어야한다. 기다리는 시간이 한계가 정해져 있다.</p>
-<h3 id="동기화의-목적"><a href="#동기화의-목적" class="headerlink" title="동기화의 목적"></a>동기화의 목적</h3><p><u>우리가 원하는대로 프로세스 혹은 쓰레드의 실행 순서를 결정 지을 수 있는것.</u></p>
-<p>O/S 가 가진 여러 매니지먼트(프로세스 매니지먼트,메모리 매니지먼트,파일 시스템 매니지먼트, I/O 매니지먼트) 중 가장 중요한것은 프로세스 매니지먼트. 프로세스 매니지먼트는 두 가지로 나뉘는데 하나는 <u>CPU Scheduling, Synchronization</u></p>
-<h3 id="Synchronization를-위한도구"><a href="#Synchronization를-위한도구" class="headerlink" title="Synchronization를 위한도구"></a>Synchronization를 위한도구</h3><p>세마포어 모니터가 있다.</p>
-<p><code>Semaphores</code> : 기차역에서 출발신호를 의미하는 깃발이다. 네덜란드사람 딕스트라가 만듦.<br>내부구조는 정수 하나와 동작 두개로 구성된다. <u>하나는 P 동작 하나는 V 동작</u><br>P: Proberen (test) 즉 acquire()  검사<br>V: Verhogen (increment) 즉 release() 증가.</p>
-<p>스택에는 푸쉬, 팝이라는 동작이 있다. 마찬가지로 세마포어도 내부에 정수가 있고 P,V가 존재한다.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">acquire</span><span class="params">()</span> </span>&#123;</div><div class="line">  value--;</div><div class="line">    <span class="keyword">if</span> (value &lt; <span class="number">0</span>) &#123;</div><div class="line">        add <span class="keyword">this</span> process/thread to list;  <span class="comment">// 누가 호출하면 큐안에 넣는다.</span></div><div class="line">        block;</div><div class="line">      &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">release</span><span class="params">()</span> </span>&#123;</div><div class="line">  value++;</div><div class="line">    <span class="keyword">if</span> (value &lt;= <span class="number">0</span>) &#123;</div><div class="line">        remove a process P from list; <span class="comment">//누군가 갇혀있으면 깨워준다.</span></div><div class="line">        wakeup P;</div><div class="line">      &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>저번에 배웠듯이 레디큐에서 CPU의 서비스를 받기 위해 기다리던 프로세스들이 CPU 서비스를 받다 IO를 만나면 IO서비스를 받으려 하는데 누가 IO서비스를 받고있다면 IO Queue(Device Queue)에서 대기하다 IO서비스를 받고 끝나면 다시 레디큐로 돌아온다.</p>
-<p>타임쉐어링 시스템의 경우엔 IO를 만나지 않더라도 시간이 지나면 다시 레디큐로 돌아간다.</p>
-<p>이는 프로세스의 큐잉 모델 즉 줄서서 기다리는 모델이다.</p>
-<p>세마포어는 정수값도 있고 세마포어 큐도 있다. 어떤 프로세스가 레디큐에 있다 CPU를 쓰다가 acquire를 호출했는데 if문이 맞으면 갇혀버린다.(like 감옥) 이후에 누가 release를 해주면 감옥에서 탈출하여 다른 레디큐로 갈 수 있다.</p>
-<p>위에서 value는 권한의 갯수로 생각하면 된다.</p>
-<h3 id="세마포어는-Mutual-exclusion-상호베타를-위해-동작한다"><a href="#세마포어는-Mutual-exclusion-상호베타를-위해-동작한다" class="headerlink" title="세마포어는 Mutual exclusion 상호베타를 위해 동작한다."></a>세마포어는 Mutual exclusion 상호베타를 위해 동작한다.</h3><p>세마포어의 초깃값이 1이라 하자. 이때 레디큐에 A, B가 있다고 하자.<br>먼저 A가 acquire(); 을 호출하면 0이 되고 크리티컬 섹션 안으로 들어간다.(블록 걸리지 않음)<br>이때 컨텍스트 스위칭이 되고 B가 acquire를 호출하면 이때는 value가 -1이므로 세마포어 큐에 갇히게 된다.  (크리티컬 섹션 안으로 못들어간다). 그 후 A가 작업을 마치고 release를 호출하게 되면 value를 늘리고 세마포어 큐에 갇혀있는 B를 깨워 다시 레디큐로 들어가게 한다.</p>
-<p> 이를 상호베타라 한다.</p>
-<p><code>Monitors</code> :</p>
-<p>메모리 매니지먼트라<br>파일 시스템 매니지먼트<br>I/O 매니지먼트</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;임계구역-문제-critical-section-problem&quot;&gt;&lt;a href=&quot;#임계구역-문제-critical-section-problem&quot; class=&quot;headerlink&quot; title=&quot;임계구역 문제(critical-section pro
     
     </summary>
     
