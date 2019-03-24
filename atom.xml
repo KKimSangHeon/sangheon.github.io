@@ -88,7 +88,7 @@ Date end = gmtCal.getTime();
     <link href="http://KKimSangHeon.github.io/2019/03/23/writethedocs/"/>
     <id>http://KKimSangHeon.github.io/2019/03/23/writethedocs/</id>
     <published>2019-03-23T05:06:12.000Z</published>
-    <updated>2019-03-24T04:20:34.092Z</updated>
+    <updated>2019-03-24T04:22:53.399Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Write-the-docs"><a href="#Write-the-docs" class="headerlink" title="Write the docs"></a>Write the docs</h3><p>밋업도 열고 구인구지도 하고 문서화에 대한 다양한 이야기를 진행한다.</p>
 <h3 id="글쓰는-개발자-모임-글또"><a href="#글쓰는-개발자-모임-글또" class="headerlink" title="글쓰는 개발자 모임, 글또"></a>글쓰는 개발자 모임, 글또</h3><p>변성윤님(쏘카 데이터 그룹 머신러닝 엔지니어)</p>
@@ -160,7 +160,7 @@ Date end = gmtCal.getTime();
     <link href="http://KKimSangHeon.github.io/2019/03/18/operating-system/"/>
     <id>http://KKimSangHeon.github.io/2019/03/18/operating-system/</id>
     <published>2019-03-18T13:11:03.000Z</published>
-    <updated>2019-03-23T05:23:30.581Z</updated>
+    <updated>2019-03-24T04:23:07.112Z</updated>
     
     <content type="html"><![CDATA[<p>운영체제란<br>부팅<br>커널, 쉘?<br>배치프로세싱시스템<br>멀티프로그래밍 시스템<br>타임쉐어링 시스템<br>다중프로세서 시스템<br>분산시스템<br>실시간 시스템<br>인터럽트- 하드웨어인터럽트 , 소프트웨어인터럽트<br>ISR<br>이중모드-모니터비트<br>MMU<br>운영체제의 매니지먼트들 - 프로세스 메인메모리 파일 보조기억장치 입출력장치<br>프로세스의 상태-new ready running wating terminated<br>PCB-상태정보, PC(지금은 몇번지인지. 번지정보), registers, MMU info (base, limit), CPU time(CPU 이용시간), process id, list of open files(얘가 지금 어떤파일을 사용하고 있는지)</p>
 <p>job queue , ready queue, device queue<br>Job scheduling(Long-term scheduler)</p>

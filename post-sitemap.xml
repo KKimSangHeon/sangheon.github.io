@@ -7,8 +7,16 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2019/03/18/operating-system/</loc>
+        <lastmod>2019-03-24T04:23:07.112Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2019/03/23/writethedocs/</loc>
-        <lastmod>2019-03-24T04:20:34.092Z</lastmod>
+        <lastmod>2019-03-24T04:22:53.399Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -33,14 +41,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2018/03/14/effectiveJava2/</loc>
         <lastmod>2019-03-24T04:04:49.459Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2019/03/18/operating-system/</loc>
-        <lastmod>2019-03-23T05:23:30.581Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
