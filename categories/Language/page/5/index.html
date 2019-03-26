@@ -162,6 +162,151 @@ ga('send', 'pageview');
         <article class="article article-summary">
     <div class="article-summary-inner">
         
+        <a href="/2017/08/21/database8/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/db.jpg)" alt="8. Commit, Transaction, Delete, Update, CONSTRAINT" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2017/08/21/database8/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Language/">Language</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Language/SQL-Oracle/">SQL(Oracle)</a>
+            </div>
+            <div class="date"><time datetime="2017-08-21T00:23:06.000Z" itemprop="datePublished">2017-08-21</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2017/08/21/database8/">8. Commit, Transaction, Delete, Update, CONSTRAINT</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            Commit일련의 과정을 거친 후 커밋을 해줘야 데이터베이스에 반영이 된다.오라클의 경우 DDL은 자동으로 커밋이 되며 DML은 직접 커밋을 해줘야 한다.커밋의 과정중 에러가 나면 롤백시킨다.
+Transaction여러개의 job를 묶어 놓은것을 Transaction이라 한다.
+DELETEDELETEFROM BOOKWHERE NO = 1;
+COMMIT;   
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2017/08/18/database7/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/db.jpg)" alt="7. TOP - K" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2017/08/18/database7/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Language/">Language</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Language/SQL-Oracle/">SQL(Oracle)</a>
+            </div>
+            <div class="date"><time datetime="2017-08-18T04:04:24.000Z" itemprop="datePublished">2017-08-18</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2017/08/18/database7/">7. TOP - K</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            – TOP -KSELECT ROWNUM,EMPLOYEE_ID, SALARY  FROM EMPLOYEES WHERE HIRE_DATE LIKE ‘06%’ ORDER BY SALARY원하는대로 출력이 되지 않을 것이다.
+이를 원하는대로 출력하기 위해서는 다음과 같이!SELECT ROWNUM, EMPLOYEE_ID, SALARYFROM (      SELECT 
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2017/08/18/database6/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/db.jpg)" alt="6. SUBQUERY" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2017/08/18/database6/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Language/">Language</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Language/SQL-Oracle/">SQL(Oracle)</a>
+            </div>
+            <div class="date"><time datetime="2017-08-18T01:22:43.000Z" itemprop="datePublished">2017-08-18</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2017/08/18/database6/">6. SUBQUERY</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            서브쿼리Lex보다 많이 받는 사원 구하기
+SELECT FIRST_NAME, SALARYFROM   EMPLOYEESWHERE  SALARY &gt; (SELECT                    SALARY                 FROM EMPLOYEES                 WHERE FIRST_NAME = ‘Lex’);
+SELECT A.
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
         <a href="/2017/08/18/database5/" class="thumbnail">
     
     
@@ -200,10 +345,14 @@ ga('send', 'pageview');
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -245,14 +394,10 @@ ga('send', 'pageview');
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -297,10 +442,14 @@ N
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -343,14 +492,10 @@ DBMS가 하는일데이터 통합, 저장, 운영, 공유 기능 담당. 이를 
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -396,10 +541,14 @@ alter user hr account unlock; //hr계정을 언락함(사용하
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -443,14 +592,10 @@ UDP Echo ServerUDPEchoServe
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -488,150 +633,6 @@ UDP Echo ServerUDPEchoServe
 
         <p class="article-excerpt">
             여러 클라이언트가 접속가능한 서버EchoServerReceiveThread.java123456789101112131415161718192021222324252627282930313233343536373839public class EchoServer &#123;	private static final int SERVER_PORT = 5000;	public st
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/08/09/bigdata11/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/java.png)" alt="10.쓰레드" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2017/08/09/bigdata11/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Language/">Language</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Language/Java/">Java</a>
-            </div>
-            <div class="date"><time datetime="2017-08-09T02:42:34.000Z" itemprop="datePublished">2017-08-09</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/08/09/bigdata11/">10.쓰레드</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            MultiThreadEx.java12345678910111213141516171819202122232425public class MultiThreadEx &#123;	public static void main(String[] args) &#123;		Thread thread1 = new AlphabetThread();		//쓰레드 생성방법1		Thread 
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/08/09/bigdata10/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/java.png)" alt="9. TCP 소켓 프로그래밍1" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2017/08/09/bigdata10/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Language/">Language</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Language/Java/">Java</a>
-            </div>
-            <div class="date"><time datetime="2017-08-09T00:05:06.000Z" itemprop="datePublished">2017-08-09</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/08/09/bigdata10/">9. TCP 소켓 프로그래밍1</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            TCPTCP : 스트림(stream) 통신 프로토콜양쪽의 소켓이 연결된 상태에서 통신이 가능하다. (연결지향 프로토콜)신뢰성 있는 데이터 통신한 번 연결이 되면 연결이 끊어 질 때까지 송신한 데이터는 차례대로 목적지의 소켓에 전달자바는  java.net 패키지에  TCP 소켓 프로그래밍을  쉽게 하도록  관련 클래스를  제공하고 있다.라이브러리의 사용법과 
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2017/08/07/bigdata9/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/java.png)" alt="8. 네트워크와 소켓의 이해" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2017/08/07/bigdata9/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Language/">Language</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Language/Java/">Java</a>
-            </div>
-            <div class="date"><time datetime="2017-08-07T05:01:36.000Z" itemprop="datePublished">2017-08-07</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2017/08/07/bigdata9/">8. 네트워크와 소켓의 이해</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            네트워크란?“유/무선 으로 연결되어 있는  Device들의  집합 ”
-네트워킹?디바이스들 간에 미리 정의된 프로토콜을 사용하여 데이터를 교환 하는것.이를위해서는 프로토콜이 필요하다.
-클라이언트 서버구조Client  -&gt; Serverrequest
-Server -&gt; Clientresponse(ACK)
-서버 : 서버프로그램이 돌고있는 장비
-프로토콜디바
         </p>
     </div>
 </article>
@@ -684,7 +685,7 @@ Server -&gt; Clientresponse(ACK)
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">16</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Travel/">Travel</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/">CS</a><span class="category-list-count">41</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Data-Base/">Data Base</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Design-Pattern/">Design Pattern</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/IOT/">IOT</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Operating-System/">Operating System</a><span class="category-list-count">30</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/">Etc</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/HEX-Team/">HEX Team</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/면접/">면접</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/아무거나/">아무거나</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/자격증/">자격증</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">57</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/C/">C++</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Embeded-C/">Embeded C</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Java/">Java</a><span class="category-list-count">26</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Python/">Python</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/SQL-Oracle/">SQL(Oracle)</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/OS/Linux/">Linux</a><span class="category-list-count">45</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/">Web/App</a><span class="category-list-count">26</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Angular2/">Angular2</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Firebase/">Firebase</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Servlet-JSP/">Servlet/JSP</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Spring/">Spring</a><span class="category-list-count">8</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">16</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Travel/">Travel</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/">CS</a><span class="category-list-count">41</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Data-Base/">Data Base</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Design-Pattern/">Design Pattern</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/IOT/">IOT</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Operating-System/">Operating System</a><span class="category-list-count">30</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/">Etc</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/HEX-Team/">HEX Team</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/면접/">면접</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/아무거나/">아무거나</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/자격증/">자격증</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">60</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/C/">C++</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Embeded-C/">Embeded C</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Java/">Java</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Python/">Python</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/SQL-Oracle/">SQL(Oracle)</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/OS/Linux/">Linux</a><span class="category-list-count">45</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/">Web/App</a><span class="category-list-count">26</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Angular2/">Angular2</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Firebase/">Firebase</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Servlet-JSP/">Servlet/JSP</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Spring/">Spring</a><span class="category-list-count">8</span></li></ul></li></ul>
         </div>
     </div>
 
