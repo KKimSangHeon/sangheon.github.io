@@ -8,7 +8,15 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2019/03/26/effectivejava2/</loc>
-        <lastmod>2019-03-26T13:24:29.236Z</lastmod>
+        <lastmod>2019-03-27T13:58:49.642Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2019/03/27/effective/</loc>
+        <lastmod>2019-03-27T13:58:47.028Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
