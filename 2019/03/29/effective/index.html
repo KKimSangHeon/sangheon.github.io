@@ -3,26 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>10장. 메일서버 개념, 메일서버를 위한 네임서버 구현 | Kim Sang Heon&#39;s Bolg</title>
+    <title>effective | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Linux,This Is Linux" />
+        <meta name="keywords" content="" />
     
     
 
-      <meta name="description" content="메일서버네임서버에 대한이해가 필수적이므로 이해하고 넘어올것.E-mail의 송수신에서 사용되는 프로토콜 다음, 네이버의 메일서버 계정을 갖고있다면 kim@daum.net  /   lee.naver.com 가 있다. kim@daum.net -&amp;gt; lee.naver.com 메일전송smtp를 통해 kim 메일서버의 큐에 들어가고 여유가 있을 때 smtp 프로토">
-<meta name="keywords" content="Linux,This Is Linux">
+      <meta name="description" content="Welcome to Sang Heon&apos;s Blog.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="10장. 메일서버 개념, 메일서버를 위한 네임서버 구현">
-<meta property="og:url" content="http://KKimSangHeon.github.io/2017/07/11/ThisIsLinux27/index.html">
+<meta property="og:title" content="effective">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2019/03/29/effective/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="메일서버네임서버에 대한이해가 필수적이므로 이해하고 넘어올것.E-mail의 송수신에서 사용되는 프로토콜 다음, 네이버의 메일서버 계정을 갖고있다면 kim@daum.net  /   lee.naver.com 가 있다. kim@daum.net -&amp;gt; lee.naver.com 메일전송smtp를 통해 kim 메일서버의 큐에 들어가고 여유가 있을 때 smtp 프로토">
-<meta property="og:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
-<meta property="og:updated_time" content="2018-09-03T05:51:16.962Z">
+<meta property="og:description" content="Welcome to Sang Heon&apos;s Blog.">
+<meta property="og:updated_time" content="2019-03-29T11:30:46.925Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="10장. 메일서버 개념, 메일서버를 위한 네임서버 구현">
-<meta name="twitter:description" content="메일서버네임서버에 대한이해가 필수적이므로 이해하고 넘어올것.E-mail의 송수신에서 사용되는 프로토콜 다음, 네이버의 메일서버 계정을 갖고있다면 kim@daum.net  /   lee.naver.com 가 있다. kim@daum.net -&amp;gt; lee.naver.com 메일전송smtp를 통해 kim 메일서버의 큐에 들어가고 여유가 있을 때 smtp 프로토">
-<meta name="twitter:image" content="http://kkimsangheon.github.io/images/centoslogo.png">
+<meta name="twitter:title" content="effective">
+<meta name="twitter:description" content="Welcome to Sang Heon&apos;s Blog.">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
 
@@ -134,7 +131,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/OS/">OS</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/OS/Linux/">Linux</a>
+    uncategorized
     </h1>
 </div>
                         <div class="main-body-content">
@@ -149,14 +146,14 @@ ga('send', 'pageview');
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-                            <article id="post-ThisIsLinux27" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-effective" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        10장. 메일서버 개념, 메일서버를 위한 네임서버 구현
+        effective
         </h1>
     
 
@@ -166,34 +163,17 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/07/11/ThisIsLinux27/" class="article-date">
-            <time datetime="2017-07-10T15:56:35.000Z" itemprop="datePublished">2017-07-11</time>
+        <a href="/2019/03/29/effective/" class="article-date">
+            <time datetime="2019-03-29T11:30:46.000Z" itemprop="datePublished">2019-03-29</time>
         </a>
     </div>
 
                 
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Linux/">Linux</a>, <a class="tag-link" href="/tags/This-Is-Linux/">This Is Linux</a>
-    </div>
-
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="메일서버"><a href="#메일서버" class="headerlink" title="메일서버"></a>메일서버</h3><p>네임서버에 대한이해가 필수적이므로 이해하고 넘어올것.<br>E-mail의 송수신에서 사용되는 프로토콜</p>
-<p>다음, 네이버의 메일서버 계정을 갖고있다면 kim@daum.net  /   lee.naver.com 가 있다.</p>
-<p>kim@daum.net -&gt; lee.naver.com 메일전송<br>smtp를 통해 kim 메일서버의 큐에 들어가고 여유가 있을 때 smtp 프로토콜을 이용해 lee의 메일서버로 보내놓는다. 메일서버는 메일 박스에 넣어놓고 lee는 pop3 imap프로토콜을 써서 자신의 컴퓨터로 확인한다.<br>보내는 프로토콜 : smtp<br>받는 프로토콜 : POP3 IMAP</p>
-<h3 id="실습계획"><a href="#실습계획" class="headerlink" title="실습계획"></a>실습계획</h3><p>Server : naver 메일서버, 네임서버 역할을 한다.<br>Server(B) : daum 메일 서버<br>WinClient : 메일 클라이언트<br>Client : 메일 클라이언트</p>
-<h4 id="1-메일서버를-구현하기-전에-네임서버를-구현하자"><a href="#1-메일서버를-구현하기-전에-네임서버를-구현하자" class="headerlink" title="1. 메일서버를 구현하기 전에 네임서버를 구현하자"></a>1. 메일서버를 구현하기 전에 네임서버를 구현하자</h4><h5 id="1-1-다음을-서버에서-실행하자"><a href="#1-1-다음을-서버에서-실행하자" class="headerlink" title="1.1 다음을 서버에서 실행하자"></a>1.1 다음을 서버에서 실행하자</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"># vi /etc/hostname    </div><div class="line">   첫줄 지우고 mail.naver.com 입력</div><div class="line"></div><div class="line"># vi /etc/hosts</div><div class="line">   맨 뒤에 다음 입력</div><div class="line">   192.168.111.100     mail.naver.com</div><div class="line"></div><div class="line"># yum -y install sendmail   //메일서버를 구현하려면 sendmail이 설치되어 있어야함</div><div class="line"># vi /etc/mail/local-host-names</div><div class="line">    아래 mail.naver.com 입력</div><div class="line"></div><div class="line"># vi /etc/sysconfig/network</div><div class="line">    HOSTNAME=mail.naver.com 입력</div><div class="line"></div><div class="line"># reboot</div></pre></td></tr></table></figure>
-<h5 id="1-2-다음을-서버-B에서-실행하자"><a href="#1-2-다음을-서버-B에서-실행하자" class="headerlink" title="1.2 다음을 서버 B에서 실행하자"></a>1.2 다음을 서버 B에서 실행하자</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"># yum -y install sendmail</div><div class="line"></div><div class="line"># vi /etc/hostname</div><div class="line">    첫줄 지우고 mail.daum.net 입력</div><div class="line"></div><div class="line"># vi /etc/hosts</div><div class="line">   맨 뒤에 다음 입력</div><div class="line">   192.168.111.200     mail.daum.net</div><div class="line"></div><div class="line"># vi /etc/mail/local-host-names</div><div class="line">    아래 mail.daum.net 입력</div><div class="line"></div><div class="line"># vi /etc/sysconfig/network</div><div class="line">    HOSTNAME=mail.daum.net 입력</div><div class="line"></div><div class="line"># reboot    </div></pre></td></tr></table></figure>
-<h5 id="1-3-서버를-마스터네임-서버로-만들자-서버에서-실행하자"><a href="#1-3-서버를-마스터네임-서버로-만들자-서버에서-실행하자" class="headerlink" title="1.3 서버를 마스터네임 서버로 만들자 (서버에서 실행하자)"></a>1.3 서버를 마스터네임 서버로 만들자 (서버에서 실행하자)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line"># yum -y install bind bind-chroot</div><div class="line"></div><div class="line"># vi /etc/named.conf</div><div class="line">:set number</div><div class="line">11행 127.0.0.1 지우고 any로</div><div class="line">12행 ::1 지우고 none로</div><div class="line">17행 localhost 지우고 any로</div><div class="line">여기까지만 하면 캐싱전용 네임서버이다.</div><div class="line">우리가 만들것은 마스터 네임서버이므로 맨아래 다음을 추가</div><div class="line">zone      &quot;naver.com&quot;     IN &#123;</div><div class="line">          type        master;</div><div class="line">          file        &quot;naver.com.db&quot;;</div><div class="line">          allow-update  &#123; none; &#125;;</div><div class="line">&#125;;</div><div class="line">zone 위에 커서 올리고 5yy 누르고 p(5줄 복사)</div><div class="line">zone      &quot;daum.net&quot;     IN &#123;</div><div class="line">          type        master;</div><div class="line">          file        &quot;daum.net.db&quot;;</div><div class="line">          allow-update  &#123; none; &#125;;</div><div class="line">&#125;;</div><div class="line">저장 후 종료</div><div class="line"></div><div class="line"># cd /var/named</div><div class="line"># touch naver.com.db</div><div class="line"># vi naver.com.db</div><div class="line">$TTL          3H</div><div class="line">@             SOA    @  root.  ( 2 1D 1H 1W 1H )</div><div class="line">              IN     NS @</div><div class="line">              IN     A  192.168.111.100</div><div class="line">              IN     MX 10    mail.naver.com.      </div><div class="line">              //달라진부분; mail exchange 메일이 오면 mail.naver.com한테 메일처리를 하게해라</div><div class="line">mail          IN     A  192.168.111.100</div><div class="line"></div><div class="line"># cp naver.com.db    daum.net.db</div><div class="line">      //내용이 비슷하니까 복붙</div><div class="line"># vi daum.net.db</div><div class="line">$TTL          3H</div><div class="line">@             SOA    @  root.  ( 2 1D 1H 1W 1H )</div><div class="line">              IN     NS @</div><div class="line">              IN     A  192.168.111.200</div><div class="line">              IN     MX 10    mail.daum.net.</div><div class="line"></div><div class="line">mail          IN     A  192.168.111.200</div><div class="line">으로 수정</div><div class="line"></div><div class="line"># named-checkconf   //name.conf파일을 확인</div><div class="line">    //아무메세지가 없으면 문법문제 없음</div><div class="line"># named-checkzone naver.com  naver.com.db</div><div class="line"># named-checkzone daum.net  daum.net.db</div><div class="line"></div><div class="line">포트는 여러개 열어야 하는데 복잡하므로 아얘</div><div class="line">포트문제는 생기지 않도록 다 열어놓자. 즉 방화벽을 꺼놓자.</div><div class="line"># systemctl  stop  firewalld    //방화벽 끄기</div><div class="line"># systemctl  disable firewalld  //재부팅해도 꺼지도록</div><div class="line"></div><div class="line"># systemctl restart named   //네임서버 시작</div><div class="line"># systemctl enable named    //재부팅해도 켜지도록</div><div class="line"></div><div class="line"># systemctl status named    //잘 돌고있는지 확인</div><div class="line"></div><div class="line"># nslookup //실제 내부에서 잘동작하는지 확인</div><div class="line">&gt;server 192.168.111.100</div><div class="line">&gt;mail.naver.com</div><div class="line">Address: 192.168.111.100  //성공</div><div class="line"></div><div class="line">&gt;mail.daum.net</div><div class="line">Address: 192.168.111.200  //성공</div></pre></td></tr></table></figure>
-<h4 id="2-각-컴퓨터의-로컬네임-서버를-생성한-네임서버로-지정하자"><a href="#2-각-컴퓨터의-로컬네임-서버를-생성한-네임서버로-지정하자" class="headerlink" title="2.각 컴퓨터의 로컬네임 서버를 생성한 네임서버로 지정하자"></a>2.각 컴퓨터의 로컬네임 서버를 생성한 네임서버로 지정하자</h4><h5 id="2-1-서버의-네임서버를-지정"><a href="#2-1-서버의-네임서버를-지정" class="headerlink" title="2.1 서버의 네임서버를 지정"></a>2.1 서버의 네임서버를 지정</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># cd /etc/sysconfig/network-scripts/</div><div class="line"># ls      //수정할 파일을 확인하자 ens....</div><div class="line"># # vi ifcfg-ens32  // 껏다 켜도 유지되도록 설정</div><div class="line">DNS1=192.168.111.100 으로 하자</div><div class="line"># systemctl restart network</div><div class="line"># cat /etc/resolv.conf    //확인</div></pre></td></tr></table></figure>
-<h5 id="서버-B의-네임서버를-지정"><a href="#서버-B의-네임서버를-지정" class="headerlink" title="서버 B의 네임서버를 지정"></a>서버 B의 네임서버를 지정</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># cd /etc/sysconfig/network-scripts/</div><div class="line"># ls      //수정할 파일을 확인하자 ens....</div><div class="line"># # vi ifcfg-ens32  // 껏다 켜도 유지되도록 설정</div><div class="line">DNS1=192.168.111.100 으로 하자</div><div class="line"># systemctl restart network</div><div class="line"># cat /etc/resolv.conf    //확인</div></pre></td></tr></table></figure>
-<h5 id="2-2-클라이언트의-네임서버-지정"><a href="#2-2-클라이언트의-네임서버-지정" class="headerlink" title="2.2 클라이언트의 네임서버 지정"></a>2.2 클라이언트의 네임서버 지정</h5><p>클라이언트는 고정ip가 아니기 때문에 껏다 켜면 vmware가 제공하는 2번으로 바뀌기 때문에 클라이언트는 껏다 켜지 않겠다. 그러므로 conf파일만 수정하자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$ su -</div><div class="line"># vi /etc/resolv.conf</div><div class="line">nameserver 192.168.111.100</div><div class="line">으로 수정</div><div class="line"># exit</div><div class="line"></div><div class="line"># nslookup</div><div class="line">&gt; mail.daum.net</div><div class="line">Address: 192.168.111.200   //확인</div><div class="line"></div><div class="line">&gt; mail.naver.com</div><div class="line">Address: 192.168.111.100  //확인</div></pre></td></tr></table></figure></p>
-<h5 id="2-3-윈도우-클라이언트-설정"><a href="#2-3-윈도우-클라이언트-설정" class="headerlink" title="2.3 윈도우 클라이언트 설정"></a>2.3 윈도우 클라이언트 설정</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">cmd 열기</div><div class="line"></div><div class="line">ipconfig    //</div><div class="line">이더넷 어댑터 로컬 영역 연결</div><div class="line"></div><div class="line">netsh interface ip set dns &quot;로컬 영역 연결&quot; static 192.168.111.100</div><div class="line"></div><div class="line">ping mail.daum.net</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#</div></pre></td></tr></table></figure>
-
+            
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
@@ -211,7 +191,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/07/11/ThisIsLinux27/" data-id="cjttzkhc40034mwv7apahh6lr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2019/03/29/effective/" data-id="cjttzki2300xvmwv70ssgg3fr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -317,20 +297,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/07/11/ThisIsLinux28/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            10장. 센드메일 서버의 구현
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/07/09/ThisIsLinux26/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/03/27/effective/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">9장. 마스터 네임서버 구축, 라운드 로빈 방식 네임서버</p>
+        <p class="article-nav-title">규칙 9. equals를 재정의 할 때는 반드시 hasCode도 재정의 하라</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -388,7 +358,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'https-kkimsangheon-github-io-2';
     
     
-    var disqus_url = 'http://KKimSangHeon.github.io/2017/07/11/ThisIsLinux27/';
+    var disqus_url = 'http://KKimSangHeon.github.io/2019/03/29/effective/';
     
     (function() {
     var dsq = document.createElement('script');
