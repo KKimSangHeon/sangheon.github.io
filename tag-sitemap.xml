@@ -513,6 +513,13 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/tags/%EC%9E%90%EA%B2%A9%EC%A6%9D/</loc>
+        <lastmod>2018-09-03T06:05:21.232Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/tags/SQLD/</loc>
         <lastmod>2018-09-03T06:05:21.232Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -521,13 +528,6 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/tags/SQL-%EA%B0%9C%EB%B0%9C%EC%9E%90/</loc>
-        <lastmod>2018-09-03T06:05:21.232Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/%EC%9E%90%EA%B2%A9%EC%A6%9D/</loc>
         <lastmod>2018-09-03T06:05:21.232Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
