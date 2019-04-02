@@ -79,14 +79,14 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Reco-Beacon/</loc>
+        <loc>http://KKimSangHeon.github.io/tags/Beacon/</loc>
         <lastmod>2017-10-03T18:02:21.818Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Beacon/</loc>
+        <loc>http://KKimSangHeon.github.io/tags/Reco-Beacon/</loc>
         <lastmod>2017-10-03T18:02:21.818Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -654,7 +654,7 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/tags/Java/</loc>
-        <lastmod>2019-04-01T13:33:11.545Z</lastmod>
+        <lastmod>2019-04-02T12:09:45.075Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
