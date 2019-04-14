@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-04-12T11:38:23.446Z</updated>
+  <updated>2019-04-14T08:13:02.730Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,14 +16,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>규칙 17. 계승을 위한 설계와 문서를 갖추거나, 그럴 수 없다면 계승을 금지하라</title>
+    <link href="http://KKimSangHeon.github.io/2019/04/14/effective/"/>
+    <id>http://KKimSangHeon.github.io/2019/04/14/effective/</id>
+    <published>2019-04-14T07:39:51.000Z</published>
+    <updated>2019-04-14T08:13:02.730Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="계승을-위한-설계와-문서를-갖춘다는것은-무슨의미일까"><a href="#계승을-위한-설계와-문서를-갖춘다는것은-무슨의미일까" class="headerlink" title="계승을 위한 설계와 문서를 갖춘다는것은 무슨의미일까?"></a>계승을 위한 설계와 문서를 갖춘다는것은 무슨의미일까?</h4><p><u>메서드를 재정의 하면 어떤일이 생기는 지 문서에 잘 남겨야 한다. 즉 재정의 가능 메소드가 내부적으로 어떻게 동작하는지 문서에 남기라는 것이다.</u> public, protected로 선언된 모든 메서드와 생성자에 대해 어떤 재정의 가능 메서드를 어떤 순서로 호출하는지 호출결과는 어떤 영향을 미치는지 남기라는 것이다.<br>예를들어 후면 스레드가 호출할 수도 있고 static 초기화 구문 안에서 호출할 수도 있다. 관습적으로는 재정의 가능 메서드를 어떤식으로 호출하는지 주석 마지막에 명시한다.</p>
+<h4 id="좋은-API-문서는-메서드가-하는-일이-무엇인지-명시하지-어떻게-하는지-명시하면-안되지-않아"><a href="#좋은-API-문서는-메서드가-하는-일이-무엇인지-명시하지-어떻게-하는지-명시하면-안되지-않아" class="headerlink" title="좋은 API 문서는 메서드가 하는 일이 무엇인지 명시하지 어떻게 하는지 명시하면 안되지 않아?"></a>좋은 API 문서는 메서드가 하는 일이 무엇인지 명시하지 어떻게 하는지 명시하면 안되지 않아?</h4><p>그렇다. 이는 맞는말이다. 계승이 캡슐화 원칙을 침해하기 때문에 발생하는 결과로 볼 수 있다. 문서만 제대로 썼다고 계승에 적합한 설계가 되지는 않는다. 너무 애쓰지 않고도 효율적인 하위클래스를 정의하기 위해서는 <u>클래스 내부 동작에 개입할 수 있는 훅을 신중하게 고른 protected 메서드 형태로 제공해야 한다.</u></p>
+<h4 id="그렇다면-클래스를-설계할-때-protected로-선언할-멤버는-어떻게-정해"><a href="#그렇다면-클래스를-설계할-때-protected로-선언할-멤버는-어떻게-정해" class="headerlink" title="그렇다면 클래스를 설계할 때 protected로 선언할 멤버는 어떻게 정해?"></a>그렇다면 클래스를 설계할 때 protected로 선언할 멤버는 어떻게 정해?</h4><p>딱히 정해진 방법은 없다. 생각하고 신중하게 고른 다음 실제로 하위 클래스를 만들어 보면서 테스트하는것이 최선이다. protected 멤버 개수는 가능한 한 줄여야 하는데 구현 세부사항에 대한 일종의 서약 구실을 하기 떄문이다.<br>즉 계승을 위해 설계할 클래스를 테스트할 유일한 방법은 하위 클래스를 직접 만들어 보는것이다. 만일 중요한 멤버를 protected로 선언하는것을 잊었다면 하위클래스에서 고통스러울 수 있다. 반대로 하위 클래스를 몇개 만들어봐도 사용할 일이 없는 protected 멤버는 private로 선언해야 한다.</p>
+<h4 id="그렇게-까지-신중하게-정해야하나"><a href="#그렇게-까지-신중하게-정해야하나" class="headerlink" title="그렇게 까지 신중하게 정해야하나?"></a>그렇게 까지 신중하게 정해야하나?</h4><p>널리 사용될 클래스를 계승에 맞게 설계할 때는 문서에 명시한 내부 호출 패턴 뿐 아니라 메서드와 필드를 protected로 선언하는 과정에 함축된 구현 관련 결정들을 영원히 고수해야 한다는 점을 기억해야 한다. 따라서 다음 릴리스에 성능이나 기능을 개선하기 어려워진다.<br>또한 계승용 문서는 API문서를 어지럽힐 수 있다.</p>
+<h4 id="계승을-허용하기-위해-따라야-할-제약사항"><a href="#계승을-허용하기-위해-따라야-할-제약사항" class="headerlink" title="계승을 허용하기 위해 따라야 할 제약사항."></a>계승을 허용하기 위해 따라야 할 제약사항.</h4><p>1.생성자는 직접적이건 간접적이건 재정의 가능 메서드를 호출해서는 안된다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;계승을-위한-설계와-문서를-갖춘다는것은-무슨의미일까&quot;&gt;&lt;a href=&quot;#계승을-위한-설계와-문서를-갖춘다는것은-무슨의미일까&quot; class=&quot;headerlink&quot; title=&quot;계승을 위한 설계와 문서를 갖춘다는것은 무슨의미일까?&quot;&gt;&lt;/a&gt;계
+    
+    </summary>
+    
+      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
+    
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
     <title>규칙 16.계승하는 대신 구성하라</title>
     <link href="http://KKimSangHeon.github.io/2019/04/07/effective1/"/>
     <id>http://KKimSangHeon.github.io/2019/04/07/effective1/</id>
     <published>2019-04-07T03:51:41.000Z</published>
-    <updated>2019-04-12T11:38:23.446Z</updated>
+    <updated>2019-04-14T07:40:36.571Z</updated>
     
-    <content type="html"><![CDATA[<p>####</p>
-<p>계승은 코드 재사용을 돕는 강력한 도구지만 항상 최선은 아니다. 계승을 적절히 사용하지 못한 소프트웨어는 깨지기 쉽다. 계승은 상위 클래스와 하위 클래스 구현을 같을 프로그래머가 통제하는 단일 패키지 안에서 사용하면 안전하다. 또한 계승을 고려하여 설계되고 그에 맞는 문서를 갖춘 클래스에 사용하는것도 안전하다. 일반적인 객체 생성 가능 클래스라면 해당클래스가 속한 패키지 밖에서 계승을 시도하는 것은 위험하다.</p>
+    <content type="html"><![CDATA[<p>계승은 코드 재사용을 돕는 강력한 도구지만 항상 최선은 아니다. 계승을 적절히 사용하지 못한 소프트웨어는 깨지기 쉽다. 계승은 상위 클래스와 하위 클래스 구현을 같을 프로그래머가 통제하는 단일 패키지 안에서 사용하면 안전하다. 또한 계승을 고려하여 설계되고 그에 맞는 문서를 갖춘 클래스에 사용하는것도 안전하다. 일반적인 객체 생성 가능 클래스라면 해당클래스가 속한 패키지 밖에서 계승을 시도하는 것은 위험하다.</p>
 <h4 id="계승은-캡슐화-원칙을-위반한다"><a href="#계승은-캡슐화-원칙을-위반한다" class="headerlink" title="계승은 캡슐화 원칙을 위반한다."></a>계승은 캡슐화 원칙을 위반한다.</h4><p>하위 클래스가 정상 동작하기 위해서는 상의 클래스의 구현에 의존할수밖에 없다. 상위 클래스는 릴리즈가 계속되면서 바뀔 수 있는데 이때 하위클래스는 망가질 수 있다. 또한 하위클래스는 상위클래스의 변화에 발맞춰 진화해야 한다.</p>
 <h4 id="HashSet-를-계승하여-요소가-몇개나-추가되었는지에-대한-코드를-작성한다-가정해보자"><a href="#HashSet-를-계승하여-요소가-몇개나-추가되었는지에-대한-코드를-작성한다-가정해보자" class="headerlink" title="HashSet 를 계승하여 요소가 몇개나 추가되었는지에 대한 코드를 작성한다 가정해보자."></a>HashSet<e> 를 계승하여 요소가 몇개나 추가되었는지에 대한 코드를 작성한다 가정해보자.</e></h4><p>public class InstrumentHashSet<e> extends HashSet<e> {<br>    //요소 삽입횟수<br>    private int addCount = 0;</e></e></p>
 <pre><code>public InstrumentedHashSet(){
@@ -86,8 +114,7 @@ public boolean contains(Object o) {return s.contains(o);}
     
     <summary type="html">
     
-      &lt;p&gt;####&lt;/p&gt;
-&lt;p&gt;계승은 코드 재사용을 돕는 강력한 도구지만 항상 최선은 아니다. 계승을 적절히 사용하지 못한 소프트웨어는 깨지기 쉽다. 계승은 상위 클래스와 하위 클래스 구현을 같을 프로그래머가 통제하는 단일 패키지 안에서 사용하면 안전하다
+      &lt;p&gt;계승은 코드 재사용을 돕는 강력한 도구지만 항상 최선은 아니다. 계승을 적절히 사용하지 못한 소프트웨어는 깨지기 쉽다. 계승은 상위 클래스와 하위 클래스 구현을 같을 프로그래머가 통제하는 단일 패키지 안에서 사용하면 안전하다. 또한 계승을 고려하
     
     </summary>
     
@@ -771,36 +798,6 @@ Date end = gmtCal.getTime();
     
       &lt;p&gt;하드디스크는 poll of free blocks 즉 빈 블록들의 집합이다.&lt;/p&gt;
 &lt;p&gt;한블록이 1kb이고 파일A 5kb, 파일B 3kb, 파일C 4kb 일때 어느블록에 넣을까?&lt;br&gt;0~19까지의 블록이 있을때 어떤식으로 배치할 수 있을까??&lt;
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>26. 파일할당</title>
-    <link href="http://KKimSangHeon.github.io/2019/03/05/operating-system26/"/>
-    <id>http://KKimSangHeon.github.io/2019/03/05/operating-system26/</id>
-    <published>2019-03-05T13:02:47.000Z</published>
-    <updated>2019-03-06T13:44:45.174Z</updated>
-    
-    <content type="html"><![CDATA[<p>OS 프로세스관리 배웠고/ 메인메모리 관리 배웠고/ 파일시스템중 파일 할당에 대해 배운다</p>
-<p>OS는 컴퓨터 자원을 관리한다.<br>CPU: 프로세스 관리 (CPU 스케쥴링, 프로세스 동기화)<br>주기억장치: 메인 메모리 관리 (페이징, 가상 메모리)<br>보조기억장치: 파일 시스템 관리</p>
-<p>파일이 어떻게 할당되어지는가에 대해 알아보자.<br><code>하드디스크는 구조</code>: 원판에 자성물질을 바르고 모터를 달아서 돌린다.  데이터는 동심원 상에 저장된다. 또한 헤더가 존재하는데 헤더에는 코일이 감겨있고 여기에 전기를 흘리면 데이터가 기록된다. 데이터를 읽을 때는 판을 빨리 돌리면 판이 지나가면서 전기가 유도되는데 이 값을 통해 데이터를 읽어낸다.<br>하드디스크에는 트랙이 있고 이를 잘라 섹터라 한다. 실린더는 하나의 하드디스크 안에 여러 판을 넣을 수 있다. 즉 <u>실린더란 같은 거리에 있는 트랙들의 집합<u>을 의미한다. 즉 원통같은것을 의미.</u></u></p>
-<p>보통 한섹터는 512 bytes이고 섹터를 모아놓은것을 block이라 한다. 하드디스크에 읽고 쓰는것은 블록 단위로 이뤄지는데 이때문에 하드디스크를 <u>block device</u>라고 한다. 이와 반대되는것을 <u>character device</u>라 하는데 대표적인것이 키보드가 있다.</p>
-<p>메모장을 켜서 한글자를 입력하고 저장만 하고 속성을 들어가보자, 이때 크기는 1바이트인데 디스크 할당크기는 4바이트이다. 이를 통해 한 블록 크기가 4바이트인것을 알 수 있다.(억울하다,,,) 블록 크기는 운영체제 설계자가 정한다,</p>
-<p>디스크는 pool of free blocks 즉 free 블록들의 모음이다. 각각의 파일에 대해 free block을 어떻게 할당해줄까???<br>연속적으로 할당할 수 도 있고 떨어져있는것들로 할수도있고.. 어떤것이 더 좋을까/???</p>
-<p>이는 3가지로 나뉘는데 연속 할당 (Contiguous Allocation) /연결 할당 (Linked Allocation) / 색인 할당 (Indexed Allocation)<br>이 존재한다. 이에 대해서는 다음포스팅에서 알아보자.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;OS 프로세스관리 배웠고/ 메인메모리 관리 배웠고/ 파일시스템중 파일 할당에 대해 배운다&lt;/p&gt;
-&lt;p&gt;OS는 컴퓨터 자원을 관리한다.&lt;br&gt;CPU: 프로세스 관리 (CPU 스케쥴링, 프로세스 동기화)&lt;br&gt;주기억장치: 메인 메모리 관리 (페이징,
     
     </summary>
     
