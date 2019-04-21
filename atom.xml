@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-04-17T14:06:46.323Z</updated>
+  <updated>2019-04-21T10:49:26.182Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,85 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>swarm</title>
+    <title>(Docker) 4. Stacks</title>
+    <link href="http://KKimSangHeon.github.io/2019/04/21/docker4/"/>
+    <id>http://KKimSangHeon.github.io/2019/04/21/docker4/</id>
+    <published>2019-04-21T10:40:15.000Z</published>
+    <updated>2019-04-21T10:49:26.182Z</updated>
+    
+    <content type="html"><![CDATA[<p>docker-machine start $(docker-machine ls -q)<br>를 입력하여 도커머신들을 띄우자</p>
+<h4 id="Swarm"><a href="#Swarm" class="headerlink" title="Swarm?"></a>Swarm?</h4><p><code>스웜</code>은 <u>도커를 실행하는 머신들의 클러스터이며 애플리케이션을 배포할 수 있다. 컨테이너를 실행하고 여러머신에서 실행할 수 있다.</u></p>
+<h4 id="Stack"><a href="#Stack" class="headerlink" title="Stack?"></a>Stack?</h4><p>이번에는 구조중 가장 맨위에 있는 스택을 다루겠다. <code>스택</code>은 <u>의존성을 공유하고 있는 관련있는 서비스들의 집합이다. 스택은 전체 어플리케이션과 어떻게 조화를 이루어야하는지 짤 수 있다. 복잡한 어플리케이션의 경우 여러개의 스택을 사용할 수 있다.</u></p>
+<p>docker-machine ssh myvm1 “docker swarm init –advertise-addr <myvm1의 ip="">“<br>을 입력하여 스웜 매니저로 띄워주자<br>위를 입력하면 docker swarm join –token …..이라고 출력되는데 이는 스웜에 워커를 추가하고 싶으면 이렇게 입력하라는 것이다,</myvm1의></p>
+<p>두번째 머신에 아래와 같이 입력하여 워커를 추가하자<br>docker-machine ssh myvm2 “위에서 출력된값 복붙”</p>
+<p>이제 머신 두개를 띄웠다.<br>즉 스웜 매니저, 워커로 띄움</p>
+<p>여러개의 멀티 머신에서 띄워보자.</p>
+<p>yml 파일을 아래와 같이 수정하자.<br>이전것에서 visualizer 라는 서비스가 추가됨.<br>추가된것은 호스트에 있는 파일을 컨테이너 안에다 집어넣어놨다.(dockersamples/visualizer:stable 안에 /var/run/docker.sock:/var/run/docker.sock 파일 넣음)</p>
+<p>`version: “3”<br>services:<br>  web:</p>
+<pre><code># replace username/repo:tag with your name and image details
+image: username/repo:tag
+deploy:
+  replicas: 5
+  restart_policy:
+    condition: on-failure
+  resources:
+    limits:
+      cpus: &quot;0.1&quot;
+      memory: 50M
+ports:
+  - &quot;80:80&quot;
+networks:
+  - webnet
+</code></pre><p>  visualizer:<br>    image: dockersamples/visualizer:stable<br>    ports:</p>
+<pre><code>  - &quot;8080:8080&quot;
+volumes:
+  - &quot;/var/run/docker.sock:/var/run/docker.sock&quot;
+deploy:
+  placement:
+    constraints: [node.role == manager]
+networks:
+  - webnet
+</code></pre><p>networks:<br>  webnet:`</p>
+<p>docker-machine ev myvm1<br>을 입력하여 매니저와 연결하자.</p>
+<p> docker stack deploy -c docker-compose.yml getstartedlab<br> 를 입력하자. (이는 myvm1에서 실행하는것이다.)</p>
+<p> docker-machine ls를 입력하여 머신의 ip를 입력하고 8080포트로 접속해보자.</p>
+<p>아래를 입력하여 레디스를 추가하자<br>` redis:<br>   image: redis<br>   ports:</p>
+<pre><code>- &quot;6379:6379&quot;
+</code></pre><p>   volumes:</p>
+<pre><code>- &quot;/home/docker/data:/data&quot;
+</code></pre><p>   deploy:<br>     placement:<br>       constraints: [node.role == manager]<br>   command: redis-server –appendonly yes<br>   networks:</p>
+<pre><code>- webnet`
+</code></pre><p> docker stack deploy -c docker-compose.yml getstartedlab<br> 를 입력하여 디플로이 하자.</p>
+<p>레디스는 매니저에서만 실행되므로 동일한 파일 시스템을 쓴다.(워커것과 섞이지 않음)<br>영속화를 위해 볼륨파일을 로컬에서 갖다 쓰고 매니저에서만 돌린다.</p>
+<p>docker service ls<br>를 입력해서 돌아가고 있는 서비스를 확인해보자.</p>
+<p>docker container ls<br>를 입력해서 각 떠있는 컨테이너들을 확인하자.</p>
+<h4 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h4><p>배포하는 방법은 CE(Cloud Provider),Enterprise(Cloud provier), Enterprise(On-Premise)가 있다</p>
+<p>도커 클라우드를 써서 앱을 관리할 수 있다.<br>외부 클라우드에 배포하는 방법을 알아보자.</p>
+<p>도커 클라우드는 스탠다드모드, 스웜모드로 쓸 수 있다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;docker-machine start $(docker-machine ls -q)&lt;br&gt;를 입력하여 도커머신들을 띄우자&lt;/p&gt;
+&lt;h4 id=&quot;Swarm&quot;&gt;&lt;a href=&quot;#Swarm&quot; class=&quot;headerlink&quot; title=&quot;Swarm?&quot;&gt;&lt;
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
+    
+    
+      <category term="Docker" scheme="http://KKimSangHeon.github.io/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(Docker) 3. Swarms</title>
     <link href="http://KKimSangHeon.github.io/2019/04/17/docker3/"/>
     <id>http://KKimSangHeon.github.io/2019/04/17/docker3/</id>
     <published>2019-04-17T14:06:35.000Z</published>
-    <updated>2019-04-17T14:06:46.323Z</updated>
+    <updated>2019-04-21T10:49:24.025Z</updated>
     
     <content type="html"><![CDATA[<h4 id="이전강의에서는-만든-앱을-가져와서-어떻게-컴포즈로-정의해야-하는지-docker-compose-yml파일로-정의했었다"><a href="#이전강의에서는-만든-앱을-가져와서-어떻게-컴포즈로-정의해야-하는지-docker-compose-yml파일로-정의했었다" class="headerlink" title="이전강의에서는 만든 앱을 가져와서 어떻게 컴포즈로 정의해야 하는지 docker-compose.yml파일로 정의했었다."></a>이전강의에서는 만든 앱을 가져와서 어떻게 컴포즈로 정의해야 하는지 docker-compose.yml파일로 정의했었다.</h4><p>이번에는 애플리케이션을 클러스터에 배포한다. 멀티 컨테이너, 멀티 머신, 멀티 어플리케이션을 스웜이라 불리는 도커나이저 클러스터인 스웜에 배포할것이다.</p>
 <h3 id="스웜"><a href="#스웜" class="headerlink" title="스웜?"></a>스웜?</h3><p>스웜은 도커로 실행하는 머신들의 그룹이고 클러스터로 조인되어있다. 도커 커맨드를 그대로 사용할 수 있고 클러스터에 있는 <u>스웜매니저</u>에 도커 커맨드를 쓰는것이다. 스웜에 있는 머신들을 물리적, 가상적이어도 되고 스웜에 들어가있는 머신들을 노드라고 한다.</p>
@@ -61,25 +135,31 @@
     
     </summary>
     
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
+    
+    
+      <category term="Docker" scheme="http://KKimSangHeon.github.io/tags/Docker/"/>
     
   </entry>
   
   <entry>
-    <title>Docker Services</title>
+    <title>(Docker) 2. Docker Services</title>
     <link href="http://KKimSangHeon.github.io/2019/04/17/docker2/"/>
     <id>http://KKimSangHeon.github.io/2019/04/17/docker2/</id>
-    <published>2019-04-17T14:04:48.000Z</published>
-    <updated>2019-04-17T14:06:05.188Z</updated>
+    <published>2019-04-17T14:05:48.000Z</published>
+    <updated>2019-04-21T10:49:20.302Z</updated>
     
     <content type="html"><![CDATA[<h4 id="Docker-Services"><a href="#Docker-Services" class="headerlink" title="Docker Services"></a>Docker Services</h4><p><a href="https://docs.docker.com/get-started" target="_blank" rel="external">https://docs.docker.com/get-started</a> 를 참고하여 진행</p>
 <p>Compose를 설치하자. (보통 도커 설치하면 미리 깔린다.)</p>
-<p>이번엔 어플리케이션을 로드밸런싱하고 스케일한다. 즉 여러개 띄운다.</p>
+<p>이번엔 어플리케이션을 로드밸런싱하고 스케일한다. 즉 컨테이너를 여러개 띄운다.</p>
 <p>지난번엔 컨테이너를 했고 이번엔 서비스를 배운다.<br>이전에도 얘기했듯이 컨테이너 위에 서비스 서비스 위에 스택이 존재한다.</p>
-<h4 id="서비스"><a href="#서비스" class="headerlink" title="서비스?"></a>서비스?</h4><p>분산된 앱에서는 각각을 서비스라 한다. 비디오 어플리케이션에서 데이터를 db에 저장하는 서비스, 비디오를 변환하는 서비스, 프론트엔드를 위한 서비스가 있을것이다. 서비스는 실제환경에서 쓰이는 컨테이너를 의미. 서비스는 오직 하나의 이미지만 실행한다. 서비스는 어떤 포트를 사용하고 얼마나 띄워야할지 씨피유는 얼마나 써야할지를 codify한다.</p>
+<h4 id="서비스"><a href="#서비스" class="headerlink" title="서비스?"></a>서비스?</h4><p>분산된 앱에서는 각각을 서비스라 한다. 비디오 어플리케이션에서 데이터를 db에 저장하는 서비스, 비디오를 변환하는 서비스, 프론트엔드를 위한 서비스가 있을것이다. 서비스는 실제환경에서 쓰이는 컨테이너를 의미. 서비스는 오직 하나의 이미지만 실행한다. 서비스는 컨테이너들이 어떤 포트를 사용하고 얼마나 띄워야할지 씨피유는 얼마나 써야할지를 codify한다.</p>
 <h4 id="스케일링"><a href="#스케일링" class="headerlink" title="스케일링?"></a>스케일링?</h4><p>서비스를 스케일링하는것은 실행할 컨테이너의 갯수를 변경하는것을 의미한다.<br>또한 더많은 컴퓨터 자원을 서비스에 할당하는것을 의미</p>
 <p>이는 도커에서 매우 쉽다.<br>docker-compose.yml 파일을 사용하면 된다.<br>이는 도커컨테이너가 프로덕션 환경에서 어떻게 동작해야 하는지 정의한다.</p>
 <h3 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h3><p>docker-compose.yml을 만들고</p>
-<p>version: “3”<br>services:</p>
+<p>`version: “3”<br>services:</p>
 <h1 id="서비스의-이름은-web이다"><a href="#서비스의-이름은-web이다" class="headerlink" title="서비스의 이름은 web이다."></a>서비스의 이름은 web이다.</h1><p>  web:</p>
 <pre><code># replace username/repo:tag with your name and image details
 # 아래의 이미지를 읽어와라
@@ -103,7 +183,7 @@ ports:
 networks:
   - webnet
   # webnet의 정의
-</code></pre><p>networks:<br>  webnet:</p>
+</code></pre><p>networks:<br>  webnet:`</p>
 <p>  를 붙여넣음</p>
 <p>위 파일은 도커한테 어떤 행동을 해야할지 알려주는것.</p>
 <p>docker swarm init<br>을 입력하자</p>
@@ -125,24 +205,31 @@ networks:
     
     </summary>
     
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
+    
+    
+      <category term="Docker" scheme="http://KKimSangHeon.github.io/tags/Docker/"/>
     
   </entry>
   
   <entry>
-    <title>Docker Orientation, Container</title>
+    <title>(Docker) 1. Docker Orientation, Container</title>
     <link href="http://KKimSangHeon.github.io/2019/04/17/docker1/"/>
     <id>http://KKimSangHeon.github.io/2019/04/17/docker1/</id>
     <published>2019-04-17T14:04:15.000Z</published>
-    <updated>2019-04-17T14:05:48.717Z</updated>
+    <updated>2019-04-21T10:49:21.876Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="Docker-Orientation-Container"><a href="#Docker-Orientation-Container" class="headerlink" title="Docker Orientation, Container"></a>Docker Orientation, Container</h4><p>도커란?<br>도커는 개발자, 시스템관리자를 위한 플랫폼이다. 애플리케이션을 컨테이너를 사용해 개발하고 배포할 수 있는 시스템.</p>
-<p>컨테이너는 이미지를 실행한 런타임 인스턴스<br>이미지는 실행 가능한 패키지.</p>
+    <content type="html"><![CDATA[<h3 id="Docker-Orientation-Container"><a href="#Docker-Orientation-Container" class="headerlink" title="Docker Orientation, Container"></a>Docker Orientation, Container</h3><h4 id="도커란"><a href="#도커란" class="headerlink" title="도커란?"></a>도커란?</h4><p>도커는 개발자, 시스템관리자를 위한 플랫폼이다. 애플리케이션을 컨테이너를 사용해 개발하고 배포할 수 있는 시스템.</p>
+<h4 id="컨테이너"><a href="#컨테이너" class="headerlink" title="컨테이너?"></a>컨테이너?</h4><p>컨테이너는 이미지를 실행한 런타임 인스턴스</p>
+<h4 id="이미지"><a href="#이미지" class="headerlink" title="이미지?"></a>이미지?</h4><p>이미지는 실행 가능한 패키지.</p>
 <p><a href="https://blog.hanumoka.net/2018/04/28/docker-20180428-windows10pro-install-docker/" target="_blank" rel="external">https://blog.hanumoka.net/2018/04/28/docker-20180428-windows10pro-install-docker/</a></p>
-<p>하이라키의 맨아래는 컨테이너이고 그 위는 서비스 그위에는 스택이 있다,<br>스택 - 서비스들간 어떻게 동작해야 하는지<br>서비스 - 어떻게 컨테이너들이 프로덕트에서 동작하는지 정의<br>컨테이너- 이미지를 실행한 런타임 인스턴스</p>
+<h4 id="도커의-구성"><a href="#도커의-구성" class="headerlink" title="도커의 구성"></a>도커의 구성</h4><p>하이라키의 맨아래는 컨테이너이고 그 위는 서비스 그위에는 스택이 있다,<br><code>스택</code> - 서비스들간 어떻게 동작해야 하는지 (yml 파일의미)<br><code>서비스</code> - 어떻게 컨테이너들이 프로덕트에서 동작하는지 정의 (yml안에서 정의됨 )<br><code>컨테이너</code>- 이미지를 실행한 런타임 인스턴스</p>
 <p>과거엔 파이선을 시작할때 환경을 설치하는것 부터 시작했다. 이를 위해 로컬에 완벽한 환경을 세팅했어야헀다.<br>도커는 포터블한 파이썬 이미지를 가져와 빌드를 가능하게 했다. 이는 도커 파일로 정의한다.<br>도커파일은 컨테이너 안에 있는 파일들을 어떻게 구성해야하는지에 정의하는것이다. 네트워크 환경, 디스크 드라이브 등.<br>도커파일을 한번 세팅해서 빌드하면 어디서 하든 동일하게 동작한다.</p>
 <p><a href="https://docs.docker.com/get-started" target="_blank" rel="external">https://docs.docker.com/get-started</a> 를 참고하여 진행</p>
 <h3 id="도커-이미지-빌드-및-컨테이너-실행"><a href="#도커-이미지-빌드-및-컨테이너-실행" class="headerlink" title="도커 이미지 빌드 및 컨테이너 실행."></a>도커 이미지 빌드 및 컨테이너 실행.</h3><p>한 디렉토리에 app.py , Dockerfile, requirements.txt 를 만들고</p>
-<p>docker build –tag=friendlyhello .<br>를 입력하여 이미지를 빌트한다.</p>
+<p>docker build –tag=friendlyhello .<br>를 입력하여 이미지를 빌드한다.</p>
 <p>docker image ls<br>를 입력하여 확인가능</p>
 <p>docker run -p 4000:80 friendlyhello<br>를 입력하여 파이썬은 80번을 통해 서비스하고 로컬에서는 4000을 통해 접속할 수 있게된다.</p>
 <p><a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a><br>를 입력하여 접속하여 보자</p>
@@ -161,10 +248,16 @@ networks:
     
     <summary type="html">
     
-      &lt;h4 id=&quot;Docker-Orientation-Container&quot;&gt;&lt;a href=&quot;#Docker-Orientation-Container&quot; class=&quot;headerlink&quot; title=&quot;Docker Orientation, Container&quot;&gt;&lt;/a&gt;D
+      &lt;h3 id=&quot;Docker-Orientation-Container&quot;&gt;&lt;a href=&quot;#Docker-Orientation-Container&quot; class=&quot;headerlink&quot; title=&quot;Docker Orientation, Container&quot;&gt;&lt;/a&gt;D
     
     </summary>
     
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
+    
+    
+      <category term="Docker" scheme="http://KKimSangHeon.github.io/tags/Docker/"/>
     
   </entry>
   
@@ -790,56 +883,6 @@ Date end = gmtCal.getTime();
     
       <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>다시돌아온 간략한 스프링정리시간</title>
-    <link href="http://KKimSangHeon.github.io/2019/03/12/spring1/"/>
-    <id>http://KKimSangHeon.github.io/2019/03/12/spring1/</id>
-    <published>2019-03-12T07:48:03.000Z</published>
-    <updated>2019-03-13T12:33:16.618Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="IoC"><a href="#IoC" class="headerlink" title="IoC?"></a>IoC?</h3><p>의존성이 뒤바뀐것. 어떻게 바뀐거야?<br>내가 만드는것이 아니라 밖에서 넣어주는 형태<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ShController</span> </span>&#123;    </div><div class="line">   <span class="keyword">private</span> ShRepository repo;</div><div class="line"></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="title">ShController</span><span class="params">(ShRepository repo)</span> </span>&#123;        </div><div class="line">     <span class="keyword">this</span>.repo = repo;    </div><div class="line">   &#125;  </div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
-<h3 id="IoC-컨테이너"><a href="#IoC-컨테이너" class="headerlink" title="IoC 컨테이너"></a>IoC 컨테이너</h3><p>ApplicationContext 는 IoC 컨테이너로써 우리가 직접 쓸 일은 거의 없다(Spring boot에서)<br>빈들을 만들고 빈들의 의존성을 엮어주는 역할을 한다. (객체생성 관리등…)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Autowired</span></div><div class="line">ApplicationContext applicationContxt;</div><div class="line">.....</div><div class="line">applicationContxt.getBean(A.class); <span class="comment">//객체를 가져올 수 있다.</span></div></pre></td></tr></table></figure>
-<h3 id="빈"><a href="#빈" class="headerlink" title="빈"></a>빈</h3><p>스프링 IoC가 관리하는 객체이다. 즉 ApplicationContext안에서 관리되는 객체<br>인터페이스도 빈이 될수 있을까? 그렇다.</p>
-<h3 id="빈을-등록하는-방법은"><a href="#빈을-등록하는-방법은" class="headerlink" title="빈을 등록하는 방법은?"></a>빈을 등록하는 방법은?</h3><p>빈을 쓰기위해서는 그것(클래스) 또한 빈이어야 한다.<br>why? 빈만 빈을 쓸 수 있다/</p>
-<p><code>1.@ComponentScan</code><br>얘가 @Component인 애들을 찾아 빈으로 등록한다. @Controller은 왜 빈으로 인식되는거야? @컨트롤러 코드를 열어보면 @Componet로 되어있다. 즉 같은것으로 볼 수 있다.</p>
-<p><code>2.XML이나 자바 설정 파일에 등록</code></p>
-<p><code>3.직접 등록하는 방법</code></p>
-<p><u>이때는 @Configuration 이라는 애노테이션을 갖고있는 클래스에서 등록이 이뤄져야 한다.</u><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Configuration</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BeanTest</span></span>&#123;</div><div class="line">  <span class="meta">@Bean</span></div><div class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">sh</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"sh"</span>;</div><div class="line">  &#125;</div><div class="line"><span class="comment">//String type의 빈을 하나 등록.</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AController</span></span>&#123;</div><div class="line">  <span class="meta">@Autowired</span></div><div class="line">  String sh;  <span class="comment">//sh가 들어간다        </span></div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
-<h3 id="의존성-주입"><a href="#의존성-주입" class="headerlink" title="의존성 주입"></a>의존성 주입</h3><p>@Autowired , @Inject이라는 어노테이션을 활용하여 의존성을 주입한다.</p>
-<p>어떤 빈에 생성자가 하나만있고 생성자의 매개변수 타입이 빈으로 등록되어있다면 빈을 주입해준다.@Autowired가 없더라도..즉 아래와 같은 형태</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AController</span></span>&#123;</div><div class="line">  <span class="keyword">private</span> <span class="keyword">final</span> ARepository aRepository;</div><div class="line">  <span class="keyword">private</span> <span class="keyword">final</span> BRepository bRepository;</div><div class="line"></div><div class="line">  <span class="comment">//방법 1</span></div><div class="line">  <span class="comment">//@Autowired 없어도 됨.(있어도 됨)</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">AController</span><span class="params">(ARepository aRepository,BRepository aRepository)</span> </span>&#123;</div><div class="line">    <span class="keyword">this</span>.aRepository = aRepository;</div><div class="line">    <span class="keyword">this</span>.bRepository = bRepository;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>의존성 주입하는 두번째 방법<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AController</span></span>&#123;</div><div class="line">  <span class="meta">@Autowired</span></div><div class="line">  <span class="keyword">private</span> <span class="keyword">final</span> ARepository aRepository;</div><div class="line"></div><div class="line">  <span class="meta">@Autowired</span></div><div class="line">  <span class="keyword">private</span> <span class="keyword">final</span> BRepository bRepository;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>즉 위의 두가지 모두 의존성이 주입된다고 볼 수 있다.</p>
-<h3 id="Autowired-Inject은-어디에-붙이는것이-좋은가"><a href="#Autowired-Inject은-어디에-붙이는것이-좋은가" class="headerlink" title="@Autowired , @Inject은 어디에 붙이는것이 좋은가?"></a>@Autowired , @Inject은 어디에 붙이는것이 좋은가?</h3><p><code>클래스에 반드시 필요한 객체</code>일경우 생성자로 의존성주입하는것이 좋다.<br><code>세터가 있다면</code> 세터에 붙이고<br><code>세터가 없다면</code> 필드에 붙이는것이 좋다.</p>
-<h3 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h3><p>흩어진 코드를 한곳으로 모아라</p>
-<h3 id="AOP를-구현하는-기법"><a href="#AOP를-구현하는-기법" class="headerlink" title="AOP를 구현하는 기법"></a>AOP를 구현하는 기법</h3><ol>
-<li><p>바이트 코드를 조작하는방법<br>컴파일을 하면 .class가 나오는데 이를 조작하는것. 컴파일된 코드안에 공통되는 부분을 끼워넣는 방법</p>
-</li>
-<li><p>프록시 패턴을 사용하는 방법<br>A 클래스를 상속받아<br>class AProxy extends A{ }<br>안에서 공통되는 부분을 호출하는것.</p>
-</li>
-</ol>
-<p>사방으로 흩어진 코드를 한곳으로 모으고 다른 클래스들은 자신의 일만 하도록 하는것<br>즉 Single Response Principle에 적합하게 코딩하도록 도와주는 코딩기법.</p>
-<h3 id="PSA-Portable-Sevice-Abstract"><a href="#PSA-Portable-Sevice-Abstract" class="headerlink" title="PSA Portable Sevice Abstract"></a>PSA Portable Sevice Abstract</h3><p>잘만든 인터페이스라 보자.<br>어떤 기술에 특화되어있는 코드, 확장성이 좋지 않은 코드를 쓰면 테스트를 만들기도 어렵고 기술이 변경될 때 마다 코드를 변경해야 한다. 잘만든 인터페이스를 활용한다면 테스트하기도 좋고 바꿔끼기도 좋다.</p>
-<p>어노테이션의 정의가 바뀌더라도 우리는 그대로 쓸 수 있다!</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;IoC&quot;&gt;&lt;a href=&quot;#IoC&quot; class=&quot;headerlink&quot; title=&quot;IoC?&quot;&gt;&lt;/a&gt;IoC?&lt;/h3&gt;&lt;p&gt;의존성이 뒤바뀐것. 어떻게 바뀐거야?&lt;br&gt;내가 만드는것이 아니라 밖에서 넣어주는 형태&lt;br&gt;&lt;figure clas
-    
-    </summary>
-    
-      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
-    
-      <category term="Spring" scheme="http://KKimSangHeon.github.io/categories/Web-App/Spring/"/>
-    
-    
-      <category term="Spring" scheme="http://KKimSangHeon.github.io/tags/Spring/"/>
     
   </entry>
   
