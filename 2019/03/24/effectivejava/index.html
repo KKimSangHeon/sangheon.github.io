@@ -10,18 +10,18 @@
     
     
 
-      <meta name="description" content="###정적 메서드나 필드만 모은 클래스가 필요한 경우는 다음 세가지로 볼 수 있다.1.자바의 기본 자료형 값 또는 배열에 적용되는 메서드를 한군데 모아둘 때.(java.lang.Math, java.lang.Arrays)2.특정 인터페이스를 구현하는 개체를 만드는 팩터리 메서드 등의 정적 메서드를 모아놓을 때(java.util.Collection)3.fina">
+      <meta name="description" content="정적 메서드나 필드만 모은 클래스가 필요한 경우는 다음 세가지로 볼 수 있다.1.자바의 기본 자료형 값 또는 배열에 적용되는 메서드를 한군데 모아둘 때.(java.lang.Math, java.lang.Arrays)2.특정 인터페이스를 구현하는 개체를 만드는 팩터리 메서드 등의 정적 메서드를 모아놓을 때(java.util.Collection)3.final 클">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="규칙 4. 객체 생성을 막을 때는 private 생성자를 사용해라">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2019/03/24/effectivejava/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="###정적 메서드나 필드만 모은 클래스가 필요한 경우는 다음 세가지로 볼 수 있다.1.자바의 기본 자료형 값 또는 배열에 적용되는 메서드를 한군데 모아둘 때.(java.lang.Math, java.lang.Arrays)2.특정 인터페이스를 구현하는 개체를 만드는 팩터리 메서드 등의 정적 메서드를 모아놓을 때(java.util.Collection)3.fina">
+<meta property="og:description" content="정적 메서드나 필드만 모은 클래스가 필요한 경우는 다음 세가지로 볼 수 있다.1.자바의 기본 자료형 값 또는 배열에 적용되는 메서드를 한군데 모아둘 때.(java.lang.Math, java.lang.Arrays)2.특정 인터페이스를 구현하는 개체를 만드는 팩터리 메서드 등의 정적 메서드를 모아놓을 때(java.util.Collection)3.final 클">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/effectivejava.png">
-<meta property="og:updated_time" content="2019-03-26T13:24:20.405Z">
+<meta property="og:updated_time" content="2019-04-21T10:51:09.748Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="규칙 4. 객체 생성을 막을 때는 private 생성자를 사용해라">
-<meta name="twitter:description" content="###정적 메서드나 필드만 모은 클래스가 필요한 경우는 다음 세가지로 볼 수 있다.1.자바의 기본 자료형 값 또는 배열에 적용되는 메서드를 한군데 모아둘 때.(java.lang.Math, java.lang.Arrays)2.특정 인터페이스를 구현하는 개체를 만드는 팩터리 메서드 등의 정적 메서드를 모아놓을 때(java.util.Collection)3.fina">
+<meta name="twitter:description" content="정적 메서드나 필드만 모은 클래스가 필요한 경우는 다음 세가지로 볼 수 있다.1.자바의 기본 자료형 값 또는 배열에 적용되는 메서드를 한군데 모아둘 때.(java.lang.Math, java.lang.Arrays)2.특정 인터페이스를 구현하는 개체를 만드는 팩터리 메서드 등의 정적 메서드를 모아놓을 때(java.util.Collection)3.final 클">
 <meta name="twitter:image" content="http://kkimsangheon.github.io/images/effectivejava.png">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
@@ -181,7 +181,7 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>###<br>정적 메서드나 필드만 모은 클래스가 필요한 경우는 다음 세가지로 볼 수 있다.<br>1.자바의 기본 자료형 값 또는 배열에 적용되는 메서드를 한군데 모아둘 때.(java.lang.Math, java.lang.Arrays)<br>2.특정 인터페이스를 구현하는 개체를 만드는 팩터리 메서드 등의 정적 메서드를 모아놓을 때(java.util.Collection)<br>3.final 클래스에 적용할 메서드들을 모아놓을 때(상속하여 메서드 추가가 불가능하므로)</p>
+            <h3 id="정적-메서드나-필드만-모은-클래스가-필요한-경우는-다음-세가지로-볼-수-있다"><a href="#정적-메서드나-필드만-모은-클래스가-필요한-경우는-다음-세가지로-볼-수-있다" class="headerlink" title="정적 메서드나 필드만 모은 클래스가 필요한 경우는 다음 세가지로 볼 수 있다."></a>정적 메서드나 필드만 모은 클래스가 필요한 경우는 다음 세가지로 볼 수 있다.</h3><p>1.자바의 기본 자료형 값 또는 배열에 적용되는 메서드를 한군데 모아둘 때.(java.lang.Math, java.lang.Arrays)<br>2.특정 인터페이스를 구현하는 개체를 만드는 팩터리 메서드 등의 정적 메서드를 모아놓을 때(java.util.Collection)<br>3.final 클래스에 적용할 메서드들을 모아놓을 때(상속하여 메서드 추가가 불가능하므로)</p>
 <p><code>위의 경우에 객체를 생성하는건 이상하다!.</code><br>하지만 생성자를 생략하면 디폴트 생성자가 만들어진다. 이로인해 자신이 생각도 못한사이에 API에 추가되어 있을 수 있다<br>그렇다고 abstract로 선언하는것도 바보같은일이다. 상속으로 인해 객체 생성이 가능하므로…<br><u>객체생성을 막기위해서는 private 생성자를 생성하자</u><br>이를 통해 하위 클래스 또한 만들 수 없게 할수 있다.</p>
 
         </div>

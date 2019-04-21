@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="Docker Serviceshttps://docs.docker.com/get-started 를 참고하여 진행 Compose를 설치하자. (보통 도커 설치하면 미리 깔린다.) 이번엔 어플리케이션을 로드밸런싱하고 스케일한다. 즉 컨테이너를 여러개 띄운다. 지난번엔 컨테이너를 했고 이번엔 서비스를 배운다.이전에도 얘기했듯이 컨테이너 위에 서비스 서비스 위에 스택">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/docker.png">
-<meta property="og:updated_time" content="2019-04-21T10:49:20.302Z">
+<meta property="og:updated_time" content="2019-04-21T10:52:29.843Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(Docker) 2. Docker Services">
 <meta name="twitter:description" content="Docker Serviceshttps://docs.docker.com/get-started 를 참고하여 진행 Compose를 설치하자. (보통 도커 설치하면 미리 깔린다.) 이번엔 어플리케이션을 로드밸런싱하고 스케일한다. 즉 컨테이너를 여러개 띄운다. 지난번엔 컨테이너를 했고 이번엔 서비스를 배운다.이전에도 얘기했듯이 컨테이너 위에 서비스 서비스 위에 스택">
@@ -188,32 +188,7 @@ ga('send', 'pageview');
 <h4 id="서비스"><a href="#서비스" class="headerlink" title="서비스?"></a>서비스?</h4><p>분산된 앱에서는 각각을 서비스라 한다. 비디오 어플리케이션에서 데이터를 db에 저장하는 서비스, 비디오를 변환하는 서비스, 프론트엔드를 위한 서비스가 있을것이다. 서비스는 실제환경에서 쓰이는 컨테이너를 의미. 서비스는 오직 하나의 이미지만 실행한다. 서비스는 컨테이너들이 어떤 포트를 사용하고 얼마나 띄워야할지 씨피유는 얼마나 써야할지를 codify한다.</p>
 <h4 id="스케일링"><a href="#스케일링" class="headerlink" title="스케일링?"></a>스케일링?</h4><p>서비스를 스케일링하는것은 실행할 컨테이너의 갯수를 변경하는것을 의미한다.<br>또한 더많은 컴퓨터 자원을 서비스에 할당하는것을 의미</p>
 <p>이는 도커에서 매우 쉽다.<br>docker-compose.yml 파일을 사용하면 된다.<br>이는 도커컨테이너가 프로덕션 환경에서 어떻게 동작해야 하는지 정의한다.</p>
-<h3 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h3><p>docker-compose.yml을 만들고</p>
-<p>`version: “3”<br>services:</p>
-<h1 id="서비스의-이름은-web이다"><a href="#서비스의-이름은-web이다" class="headerlink" title="서비스의 이름은 web이다."></a>서비스의 이름은 web이다.</h1><p>  web:</p>
-<pre><code># replace username/repo:tag with your name and image details
-# 아래의 이미지를 읽어와라
-image: tkdgjs1501/get-started:part2
-deploy:
-#다섯개의 컨테이너를 만든다.
-  replicas: 5
-  resources:
-    limits:
-    #각각의 컨테이너는 10%의 CPU를 사용하고
-      cpus: &quot;0.1&quot;
-    #50M를 할당한다.
-      memory: 50M
-    #무언가 잘못되었을 때 컨테이너를 다시 띄운다.
-  restart_policy:
-    condition: on-failure
-    #컨테이너의 호스트의 4000번 컨테이너의 80번 포트를 연결
-ports:
-  - &quot;4000:80&quot;
-  #다섯개의 컨테이는 로드밸런스를 통해 호스트의 80번 포트를 공유해야한다. 이를 위해 네트웍을 webnet 사용
-networks:
-  - webnet
-  # webnet의 정의
-</code></pre><p>networks:<br>  webnet:`</p>
+<h3 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h3><p>docker-compose.yml을 만들고<br><figure class="highlight"><figcaption><span>default</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">version: "3"</div><div class="line">services:</div><div class="line"># 서비스의 이름은 web이다.</div><div class="line">  web:</div><div class="line">    # replace username/repo:tag with your name and image details</div><div class="line">    # 아래의 이미지를 읽어와라</div><div class="line">    image: tkdgjs1501/get-started:part2</div><div class="line">    deploy:</div><div class="line">    #다섯개의 컨테이너를 만든다.</div><div class="line">      replicas: 5</div><div class="line">      resources:</div><div class="line">        limits:</div><div class="line">        #각각의 컨테이너는 10%의 CPU를 사용하고</div><div class="line">          cpus: "0.1"</div><div class="line">        #50M를 할당한다.</div><div class="line">          memory: 50M</div><div class="line">        #무언가 잘못되었을 때 컨테이너를 다시 띄운다.</div><div class="line">      restart_policy:</div><div class="line">        condition: on-failure</div><div class="line">        #컨테이너의 호스트의 4000번 컨테이너의 80번 포트를 연결</div><div class="line">    ports:</div><div class="line">      - "4000:80"</div><div class="line">      #다섯개의 컨테이는 로드밸런스를 통해 호스트의 80번 포트를 공유해야한다. 이를 위해 네트웍을 webnet 사용</div><div class="line">    networks:</div><div class="line">      - webnet</div><div class="line">      # webnet의 정의</div><div class="line">networks:</div><div class="line">  webnet:</div><div class="line">  </div></pre></td></tr></table></figure></p>
 <p>  를 붙여넣음</p>
 <p>위 파일은 도커한테 어떤 행동을 해야할지 알려주는것.</p>
 <p>docker swarm init<br>을 입력하자</p>

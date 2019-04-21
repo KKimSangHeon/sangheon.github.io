@@ -8,7 +8,71 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2019/04/21/docker4/</loc>
-        <lastmod>2019-04-21T10:49:26.182Z</lastmod>
+        <lastmod>2019-04-21T10:53:13.101Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2019/04/17/docker2/</loc>
+        <lastmod>2019-04-21T10:52:29.843Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2019/04/07/effective1/</loc>
+        <lastmod>2019-04-21T10:52:11.245Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2019/04/06/effective1/</loc>
+        <lastmod>2019-04-21T10:51:51.806Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2019/04/06/effective/</loc>
+        <lastmod>2019-04-21T10:51:44.200Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2019/04/04/effective/</loc>
+        <lastmod>2019-04-21T10:51:39.143Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2019/04/02/effective1/</loc>
+        <lastmod>2019-04-21T10:51:26.853Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2019/03/24/effectivejava/</loc>
+        <lastmod>2019-04-21T10:51:09.748Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2019/03/24/effectivejava-1/</loc>
+        <lastmod>2019-04-21T10:51:03.005Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -31,56 +95,8 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/2019/04/17/docker2/</loc>
-        <lastmod>2019-04-21T10:49:20.302Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/2019/04/14/effective/</loc>
         <lastmod>2019-04-14T08:59:41.039Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2019/04/07/effective1/</loc>
-        <lastmod>2019-04-14T07:40:36.571Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2019/04/06/effective1/</loc>
-        <lastmod>2019-04-06T04:39:52.235Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2019/04/06/effective/</loc>
-        <lastmod>2019-04-06T04:39:34.598Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2019/04/04/effective/</loc>
-        <lastmod>2019-04-04T13:05:48.224Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2019/04/02/effective1/</loc>
-        <lastmod>2019-04-02T12:09:45.075Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -135,14 +151,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/2019/03/24/effectivejava/</loc>
-        <lastmod>2019-03-26T13:24:20.405Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/2019/03/18/operating-system/</loc>
         <lastmod>2019-03-24T04:23:07.112Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -153,14 +161,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2019/03/23/writethedocs/</loc>
         <lastmod>2019-03-24T04:22:53.399Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2019/03/24/effectivejava-1/</loc>
-        <lastmod>2019-03-24T04:07:38.416Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

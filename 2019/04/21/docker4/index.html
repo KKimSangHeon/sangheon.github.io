@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="docker-machine start $(docker-machine ls -q)를 입력하여 도커머신들을 띄우자 Swarm?스웜은 도커를 실행하는 머신들의 클러스터이며 애플리케이션을 배포할 수 있다. 컨테이너를 실행하고 여러머신에서 실행할 수 있다. Stack?이번에는 구조중 가장 맨위에 있는 스택을 다루겠다. 스택은 의존성을 공유하고 있는 관련있는 서비스들">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/docker.png">
-<meta property="og:updated_time" content="2019-04-21T10:49:26.182Z">
+<meta property="og:updated_time" content="2019-04-21T10:53:13.101Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(Docker) 4. Stacks">
 <meta name="twitter:description" content="docker-machine start $(docker-machine ls -q)를 입력하여 도커머신들을 띄우자 Swarm?스웜은 도커를 실행하는 머신들의 클러스터이며 애플리케이션을 배포할 수 있다. 컨테이너를 실행하고 여러머신에서 실행할 수 있다. Stack?이번에는 구조중 가장 맨위에 있는 스택을 다루겠다. 스택은 의존성을 공유하고 있는 관련있는 서비스들">
@@ -188,42 +188,12 @@ ga('send', 'pageview');
 <p>두번째 머신에 아래와 같이 입력하여 워커를 추가하자<br>docker-machine ssh myvm2 “위에서 출력된값 복붙”</p>
 <p>이제 머신 두개를 띄웠다.<br>즉 스웜 매니저, 워커로 띄움</p>
 <p>여러개의 멀티 머신에서 띄워보자.</p>
-<p>yml 파일을 아래와 같이 수정하자.<br>이전것에서 visualizer 라는 서비스가 추가됨.<br>추가된것은 호스트에 있는 파일을 컨테이너 안에다 집어넣어놨다.(dockersamples/visualizer:stable 안에 /var/run/docker.sock:/var/run/docker.sock 파일 넣음)</p>
-<p>`version: “3”<br>services:<br>  web:</p>
-<pre><code># replace username/repo:tag with your name and image details
-image: username/repo:tag
-deploy:
-  replicas: 5
-  restart_policy:
-    condition: on-failure
-  resources:
-    limits:
-      cpus: &quot;0.1&quot;
-      memory: 50M
-ports:
-  - &quot;80:80&quot;
-networks:
-  - webnet
-</code></pre><p>  visualizer:<br>    image: dockersamples/visualizer:stable<br>    ports:</p>
-<pre><code>  - &quot;8080:8080&quot;
-volumes:
-  - &quot;/var/run/docker.sock:/var/run/docker.sock&quot;
-deploy:
-  placement:
-    constraints: [node.role == manager]
-networks:
-  - webnet
-</code></pre><p>networks:<br>  webnet:`</p>
+<p>yml 파일을 아래와 같이 수정하자.<br>이전것에서 visualizer 라는 서비스가 추가됨.<br>추가된것은 호스트에 있는 파일을 컨테이너 안에다 집어넣어놨다.(dockersamples/visualizer:stable 안에 /var/run/docker.sock:/var/run/docker.sock 파일 넣음)<br><figure class="highlight"><figcaption><span>default</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">version: "3"</div><div class="line">services:</div><div class="line">  web:</div><div class="line">    # replace username/repo:tag with your name and image details</div><div class="line">    image: username/repo:tag</div><div class="line">    deploy:</div><div class="line">      replicas: 5</div><div class="line">      restart_policy:</div><div class="line">        condition: on-failure</div><div class="line">      resources:</div><div class="line">        limits:</div><div class="line">          cpus: "0.1"</div><div class="line">          memory: 50M</div><div class="line">    ports:</div><div class="line">      - "80:80"</div><div class="line">    networks:</div><div class="line">      - webnet</div><div class="line">  visualizer:</div><div class="line">    image: dockersamples/visualizer:stable</div><div class="line">    ports:</div><div class="line">      - "8080:8080"</div><div class="line">    volumes:</div><div class="line">      - "/var/run/docker.sock:/var/run/docker.sock"</div><div class="line">    deploy:</div><div class="line">      placement:</div><div class="line">        constraints: [node.role == manager]</div><div class="line">    networks:</div><div class="line">      - webnet</div><div class="line">networks:</div><div class="line">  webnet:</div><div class="line">  </div></pre></td></tr></table></figure></p>
 <p>docker-machine ev myvm1<br>을 입력하여 매니저와 연결하자.</p>
 <p> docker stack deploy -c docker-compose.yml getstartedlab<br> 를 입력하자. (이는 myvm1에서 실행하는것이다.)</p>
 <p> docker-machine ls를 입력하여 머신의 ip를 입력하고 8080포트로 접속해보자.</p>
-<p>아래를 입력하여 레디스를 추가하자<br>` redis:<br>   image: redis<br>   ports:</p>
-<pre><code>- &quot;6379:6379&quot;
-</code></pre><p>   volumes:</p>
-<pre><code>- &quot;/home/docker/data:/data&quot;
-</code></pre><p>   deploy:<br>     placement:<br>       constraints: [node.role == manager]<br>   command: redis-server –appendonly yes<br>   networks:</p>
-<pre><code>- webnet`
-</code></pre><p> docker stack deploy -c docker-compose.yml getstartedlab<br> 를 입력하여 디플로이 하자.</p>
+<p>아래를 입력하여 레디스를 추가하자<br><figure class="highlight java"><figcaption><span>default</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">redis:</div><div class="line">  image: redis</div><div class="line">  ports:</div><div class="line">    - <span class="string">"6379:6379"</span></div><div class="line">  volumes:</div><div class="line">    - <span class="string">"/home/docker/data:/data"</span></div><div class="line">  deploy:</div><div class="line">    placement:</div><div class="line">      constraints: [node.role == manager]</div><div class="line">  command: redis-server --appendonly yes</div><div class="line">  networks:</div><div class="line">    - webnet</div><div class="line">    </div></pre></td></tr></table></figure></p>
+<p> docker stack deploy -c docker-compose.yml getstartedlab<br> 를 입력하여 디플로이 하자.</p>
 <p>레디스는 매니저에서만 실행되므로 동일한 파일 시스템을 쓴다.(워커것과 섞이지 않음)<br>영속화를 위해 볼륨파일을 로컬에서 갖다 쓰고 매니저에서만 돌린다.</p>
 <p>docker service ls<br>를 입력해서 돌아가고 있는 서비스를 확인해보자.</p>
 <p>docker container ls<br>를 입력해서 각 떠있는 컨테이너들을 확인하자.</p>
