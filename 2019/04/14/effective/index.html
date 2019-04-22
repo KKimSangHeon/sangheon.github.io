@@ -6,12 +6,11 @@
     <title>규칙 17. 계승을 위한 설계와 문서를 갖추거나, 그럴 수 없다면 계승을 금지하라 | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Java" />
+        <meta name="keywords" content="" />
     
     
 
       <meta name="description" content="계승을 위한 설계와 문서를 갖춘다는것은 무슨의미일까?메서드를 재정의 하면 어떤일이 생기는 지 문서에 잘 남겨야 한다. 즉 재정의 가능 메소드가 내부적으로 어떻게 동작하는지 문서에 남기라는 것이다. public, protected로 선언된 모든 메서드와 생성자에 대해 어떤 재정의 가능 메서드를 어떤 순서로 호출하는지 호출결과는 어떤 영향을 미치는지 남기라는">
-<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="규칙 17. 계승을 위한 설계와 문서를 갖추거나, 그럴 수 없다면 계승을 금지하라">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2019/04/14/effective/index.html">
@@ -79,7 +78,7 @@ ga('send', 'pageview');
                                     <a class="main-nav-list-link" href="/2017/06/29/about-me/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/">About Me</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/Introduction/">Introduction</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/My-Projects/">My Projects</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/Travel/">Travel</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Search/">Search</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Sort/">Sort</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/">CS</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/Data-Base/">Data Base</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/Design-Pattern/">Design Pattern</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/IOT/">IOT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/MSA/">MSA</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/Operating-System/">Operating System</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/">Etc</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/HEX-Team/">HEX Team</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/면접/">면접</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/아무거나/">아무거나</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/자격증/">자격증</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/">Language</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/C/">C++</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/Embeded-C/">Embeded C</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/Python/">Python</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/SQL-Oracle/">SQL(Oracle)</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/OS/">OS</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/OS/Linux/">Linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/">Web/App</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/Angular2/">Angular2</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/Firebase/">Firebase</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/Servlet-JSP/">Servlet/JSP</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/Spring/">Spring</a></li></ul></li></ul>
+                                        <ul class="main-nav-list"></ul>
                                     
                         </ul>
                         <nav id="sub-nav">
@@ -134,7 +133,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Language/">Language</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Language/Java/">Java</a>
+    uncategorized
     </h1>
 </div>
                         <div class="main-body-content">
@@ -172,11 +171,6 @@ ga('send', 'pageview');
     </div>
 
                 
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Java/">Java</a>
-    </div>
-
             </div>
         
         
@@ -207,7 +201,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2019/04/14/effective/" data-id="cjuqt5xmk00k0a0v7pq25wdqb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2019/04/14/effective/" data-id="cjusgqtjo00k23gv71vakskab" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -340,7 +334,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">16</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Travel/">Travel</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/">CS</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Data-Base/">Data Base</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Design-Pattern/">Design Pattern</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/IOT/">IOT</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/MSA/">MSA</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Operating-System/">Operating System</a><span class="category-list-count">30</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/">Etc</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/HEX-Team/">HEX Team</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/면접/">면접</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/아무거나/">아무거나</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/자격증/">자격증</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">69</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/C/">C++</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Embeded-C/">Embeded C</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Java/">Java</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Python/">Python</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/SQL-Oracle/">SQL(Oracle)</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/OS/Linux/">Linux</a><span class="category-list-count">45</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/">Web/App</a><span class="category-list-count">26</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Angular2/">Angular2</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Firebase/">Firebase</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Servlet-JSP/">Servlet/JSP</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Spring/">Spring</a><span class="category-list-count">8</span></li></ul></li></ul>
+            <ul class="category-list"></ul>
         </div>
     </div>
 

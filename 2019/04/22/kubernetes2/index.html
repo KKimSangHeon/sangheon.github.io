@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>(K8s) 2. 클러스터 생성 및 앱 배포, 마스터 / 노드 | Kim Sang Heon&#39;s Bolg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="" />
+    
+    
+
+      <meta name="description" content="클러스터 생성 및 앱 배포이번에는 쿠버네티스란 무엇인지, 미니큐브는 무엇인지에 대해 알아보자. https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/ 참고 쿠버네티스 클러스터쿠버네티스는 높은 가용성을 클러스터 하는것이다. 즉 하나의 유닛으로 일하는 여러 컴">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(K8s) 2. 클러스터 생성 및 앱 배포, 마스터 &#x2F; 노드">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2019/04/22/kubernetes2/index.html">
+<meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
+<meta property="og:description" content="클러스터 생성 및 앱 배포이번에는 쿠버네티스란 무엇인지, 미니큐브는 무엇인지에 대해 알아보자. https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/ 참고 쿠버네티스 클러스터쿠버네티스는 높은 가용성을 클러스터 하는것이다. 즉 하나의 유닛으로 일하는 여러 컴">
+<meta property="og:image" content="http://kkimsangheon.github.io/images/K8s.png">
+<meta property="og:updated_time" content="2019-04-22T14:35:57.517Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(K8s) 2. 클러스터 생성 및 앱 배포, 마스터 &#x2F; 노드">
+<meta name="twitter:description" content="클러스터 생성 및 앱 배포이번에는 쿠버네티스란 무엇인지, 미니큐브는 무엇인지에 대해 알아보자. https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/ 참고 쿠버네티스 클러스터쿠버네티스는 높은 가용성을 클러스터 하는것이다. 즉 하나의 유닛으로 일하는 여러 컴">
+<meta name="twitter:image" content="http://kkimsangheon.github.io/images/K8s.png">
+        <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-101744076-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/2017/06/29/about-me/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    uncategorized
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2850951807285210"
+     data-ad-slot="1831621923"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                            <article id="post-kubernetes2" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        (K8s) 2. 클러스터 생성 및 앱 배포, 마스터 / 노드
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/04/22/kubernetes2/" class="article-date">
+            <time datetime="2019-04-22T14:21:53.000Z" itemprop="datePublished">2019-04-22</time>
+        </a>
+    </div>
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h4 id="클러스터-생성-및-앱-배포"><a href="#클러스터-생성-및-앱-배포" class="headerlink" title="클러스터 생성 및 앱 배포"></a>클러스터 생성 및 앱 배포</h4><p>이번에는 쿠버네티스란 무엇인지, 미니큐브는 무엇인지에 대해 알아보자.</p>
+<p><a href="https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/" target="_blank" rel="external">https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/</a> 참고</p>
+<h4 id="쿠버네티스-클러스터"><a href="#쿠버네티스-클러스터" class="headerlink" title="쿠버네티스 클러스터"></a>쿠버네티스 클러스터</h4><p>쿠버네티스는 높은 가용성을 클러스터 하는것이다. 즉 하나의 유닛으로 일하는 여러 컴퓨터들의 클러스터를 의미한다. 도커이미지를 배포할 수 있는 클러스터이다.<br>특정 머신한테 배포 설정하는것이 아니라 쿠버네티스한테 배포하라고 던지면 쿠버네티스가 알아서 배포한다.</p>
+<p>이를 사용하려면 어플리케이션은 특정 호스트에 묶이지 않은상태로 패키지 되어야 한다.</p>
+<p>컨테이나이저 어플리케이션은 예전 배포모델보다 유연하다. (예전모델은 특정 머신에 의존성이 있었다.)</p>
+<p>쿠버네티스는 좀더 효율적인 방법으로 클러스터에 어플리케이션을 어떻게 배포하고 스케줄링해야되는지에 대해 자동화함.</p>
+<p>쿠버네티스는 오픈소스이며 클러스터 환경에서 쓸 수 있다.</p>
+<p>쿠버네티스는 마스터, 노드로 구성된다.<br>(스웜으로 비교하자면 각각 매니저, 워커이다. 스웜에서는 매니저, 워커 둘다 컨테이너를 띄울 수 있었다. 쿠버네티스에서는 노드에서만 컨테이너를 띄울 수 있다.)</p>
+<h4 id="쿠버네티스의-마스터-노드"><a href="#쿠버네티스의-마스터-노드" class="headerlink" title="쿠버네티스의 마스터, 노드"></a>쿠버네티스의 마스터, 노드</h4><p>마스터는 어플리케이션 스케줄링, 특정 상태로 만드는일, 스케일링하는일, 새 버전을 차곡차곡 배포해 나가는것을 관리함</p>
+<p>노드들은 vm이거나 물리적인 컴퓨터인데 쿠버네티스에서 워커 머신역할을 한다.<br>각각의 노드는 큐블릿을 갖고있는데 이는 노드를 관리하기 위한 에이전트이고 쿠버네티스 매니저와 의사소통한다.</p>
+<p>노드는 도커 혹은 rkt와 같은 컨테이너 오퍼레이팅 툴이 필요하다.</p>
+<p>쿠버네티스 클러스터는 프로덕션 트래픽을 다룰 수 있는데 이를 위해 최소 3개 이상의 노드를 갖고있어야 한다.</p>
+<h4 id="쿠버네티스의-배포과정"><a href="#쿠버네티스의-배포과정" class="headerlink" title="쿠버네티스의 배포과정"></a>쿠버네티스의 배포과정</h4><ul>
+<li>애플리케이션을 쿠버네티스에 배포할 때 마스터한테 어플리케이션 클러스터를 실행하라고 한다.</li>
+<li>그럼 마스터는 컨테이너들을 클러스터 노드들에게 실행하도록 스케줄링 한다.</li>
+<li>그럼 노드는 쿠버네티스 API를 활용해 마스터와 의사소통해서 쿠버네티스 API를 호출할 수 있다.</li>
+<li>엔드유저 또한 API를 사용할 수 있다.</li>
+</ul>
+<h4 id="미니큐브-활용"><a href="#미니큐브-활용" class="headerlink" title="미니큐브 활용"></a>미니큐브 활용</h4><p>쿠버네티스 클러스터는 vm 혹은 물리적 컴퓨터에도 배포할 수 있다. 배포를 위해서는 미니큐브를 사용하라. 이는 쿠버네티스 경량버전이며 vm이 하나만 있다. 로컬머신에 설치할 수 있고 노드가 하나이다.<br>즉 미니큐브는 vm을 만들어주는것이고 이 안에는 노드가 하나만 들어있다.</p>
+<h4 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h4><p>미뉴큐브가 미리 설치되어있는 온라인 환경에서 진행한다.</p>
+<p>minikube start<br>를 입력하여 미니큐브를 실행하자</p>
+<p>kubectl version<br>을 입력하여 버전을 한번 보자.</p>
+<p>kubctl cluster-info<br>를 입력해보자.</p>
+<p>kubctl get nodes<br>를 입력하여 노드 정보를 보자.<br>아까 말한대로(미니큐브에서는 노드 하나만 들어있는) 하나가 떠있는것을 볼 수 있다.</p>
+<h4 id="kubectl을-활용하여-애플리케이션-배포"><a href="#kubectl을-활용하여-애플리케이션-배포" class="headerlink" title="kubectl을 활용하여 애플리케이션 배포"></a>kubectl을 활용하여 애플리케이션 배포</h4><p>동작하는 쿠버네티스가 있으면 컨테나이저된 앱을 배포할 수 있는데 이를 위해 쿠버네티스 배포 설정을 만들어야 한다.<br><code>배포 설정</code>은 쿠버네티스가 어떻게 인스턴스를 만들고 갱신해야하는지에 대한 역할을 한다.</p>
+<p>이를 만들면 마스터가 노드에 배포를 한다.</p>
+<p>애플리케이션 인스턴스가 한번 만들어지면 쿠버네티스 배포 컨트롤러는 지속적으로 인스턴스를 모니터링 한다. 만약 노드가 다운되거나 삭제되면 다른 노드에 배포하게 함으로서 셀프 힐링 매커니즘을 제공한다.</p>
+<p>오케스트레이션이 없던시절에서는 스크립트를 사용했었다. 머신에 문제가 있을때 처리방법은 없었다.  쿠버네티스는 애플리케이션 인스턴스를 만들고 노드에 계속 실행하는것으로서 이전과는 다르다.</p>
+<p>kubectl을 통해 배포를 관리하고 만들 수 있다. 이는 쿠버네티스 API를 통해 소통한다(즉 마스터와 소통한다.) 배포를 만들때는 컨테이너 이미지를 적어야되고, 몇개의 어플리케이션을 실행하기 원하는지 적어줘야함.</p>
+<p>kubectl get nodes<br>입력하여 노드를 확인</p>
+<p>이제 앱 배포를 따라해보자</p>
+<p>kubectl run은 배포를 새로만드는것이다.<br>이를 위해 앱 이름과, 위치를 알려줘야 한다. 도커허브에 올라가있는 이미지가 아닌경우 레파지토리 uri까지 줘야한다. 앱을 특정포트에서 실행하고 싶다면 포트 파라미터까지 줘야한다.</p>
+<p>kubectl run kubernetes-bootcamp –image=gcr.io/google-samples/kubernetes-bootcamp:v1 –port=8080<br>을 입력하여 배포하자. deployment 를 만듦과 동시에 배포됨.<br>이를 통해 앱을 배포할 적절한 노드를찾았고 스케줄링을 했고 클러스터를 설정했다.</p>
+<p>kubectl get deployments<br>를 입력하여 deployments정보를 얻어보자</p>
+<p>파드란 쿠버네티스 안에서 도는것인데 private 하고 isolate하다. 기본적으로 쿠버네티스 안에있는 파드, 서비스들 끼리는 볼 수 있지만 쿠버네티스 클러스터 밖에서는 박에서 못본다, kubectl을 사용하여 api endpoint를 사용해서 어플리케이션과 의사소통할 수 있다.</p>
+<p>어플리케이션을 쿠버네티스 클러스터에서 노출시키는 방법은 모듈 4에서 본다.</p>
+<p>kubectl proxy<br>를 입력하여 프록시 다른탭에서 만들면 클러스터 wide , private network와 의사소통 할 수 있게된다. 프록시를 컨트롤 씨로 종료시킬 수도 있다</p>
+<p>디폴리먼트 하나, 파드하나 , 레플리카 셋이 하나 있는것을 웹 프리뷰로 볼 수 있다.</p>
+<p>이를 만들면 호스트와 쿠버네티스 클러스트간에 연결된것이고, 프록시를 사용하면 API 를 직접 사용할 수 있다.</p>
+<p>여기서 말하는 API는 쿠버네티스 매니저의 API</p>
+<p>API서버는 자동으로 endpoint 를 각각의 pod기반으로 만들어준다. 우리는 pod네임을 가져오려면 다음과 같이하면된다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export POD_NAME=$(kubectl get pods -o go-template --template &apos;&#123;&#123;range .items&#125;&#125;&#123;&#123;.metadata.name&#125;&#125;&#123;&#123;&quot;\n&quot;&#125;&#125;&#123;&#123;end&#125;&#125;&apos;)</div><div class="line">echo Name of the Pod: $POD_NAME</div></pre></td></tr></table></figure></p>
+<p>curl <a href="http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME/proxy/" target="_blank" rel="external">http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME/proxy/</a><br>를 입력하여 pod의 api로 라우팅할수있다.</p>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2850951807285210"
+     data-ad-slot="1831621923"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://KKimSangHeon.github.io/2019/04/22/kubernetes2/" data-id="cjusgqtkl00kj3gv7m1xscz4b" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/KKimSangHeon/" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/tkdgjs1501/" target="_blank">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/04/22/kubernetes3/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            (K8s) 3. Pods and Nodes
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/04/22/kubernetes1/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">(K8s) 1. 쿠버네티스 개요</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="auto"
+     data-ad-client="ca-pub-2850951807285210"
+     data-ad-slot="1831621923"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Kim Sang Heon</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'https-kkimsangheon-github-io-2';
+    
+    
+    var disqus_url = 'http://KKimSangHeon.github.io/2019/04/22/kubernetes2/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

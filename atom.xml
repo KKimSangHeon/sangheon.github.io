@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-04-21T10:53:13.101Z</updated>
+  <updated>2019-04-22T14:34:50.161Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,183 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>(K8s) 4. 서비스를 사용하여 앱을 외부로 공개하기 , 서비스 / 레이블</title>
+    <link href="http://KKimSangHeon.github.io/2019/04/22/kubernetes4/"/>
+    <id>http://KKimSangHeon.github.io/2019/04/22/kubernetes4/</id>
+    <published>2019-04-22T14:22:04.000Z</published>
+    <updated>2019-04-22T14:34:50.161Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="서비스를-사용하여-앱을-외부로-공개하기"><a href="#서비스를-사용하여-앱을-외부로-공개하기" class="headerlink" title="서비스를 사용하여 앱을 외부로 공개하기"></a>서비스를 사용하여 앱을 외부로 공개하기</h4><p><a href="https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/expose/expose-intro/" target="_blank" rel="external">https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/expose/expose-intro/</a></p>
+<p>지금까지의 앱은 컨테이너 안에서 도는데 private하고 네트웍도 isolate되어있었다. 그러므로 proxy 를 붙여서 동작했었다</p>
+<h4 id="쿠버네티스-서비스에-대한-개요"><a href="#쿠버네티스-서비스에-대한-개요" class="headerlink" title="쿠버네티스 서비스에 대한 개요"></a>쿠버네티스 서비스에 대한 개요</h4><p>파드는 언젠가 죽는것이다. 즉 라이프사이클이 있다. 어떤 워커노드가 죽으면 그 노드에서 돌고있는 파드도 죽는다.<br> 그렇게되면 ReplicationController 가 클러스터를 동적으로 새로운노드를 만듬으로서 복구한다. 예를들어 이미지 처리하는 백엔드가 3개의 어플리케이션을 갖고있다 해보자. 프론트엔드는 백엔드 파드가 없어지는것 생기는것에 대해 신경쓰지 말고 동작하여야 한다. 각 파드는 유니크한 아이피를 갖고있는데 애플리케이션이 계속해서 동작할 수 있도록 발생하는 변화들을 서로 감지하는 방법이 필요하다.</p>
+<h3 id="서비스"><a href="#서비스" class="headerlink" title="서비스"></a>서비스</h3><p>쿠버네티스에 있는 서비스는 파드의 set을 논리적으로 정의 한것이고 그 파드들에게 어떻게 접근할 수 있는지에 대한 정책을 정의한것이다.<br>서비스는 파드들간에 커플링을 낮춘다. 서비스는 모든 쿠버네티스 오브젝트들과 같이 YAML (보다 선호하는) 또는 JSON을 이용하여 정의되고. 서비스가 대상으로 하는 파드 셋은 보통 LabelSelector에 의해 결정된다</p>
+<h4 id="서비스-외부로-노출하기"><a href="#서비스-외부로-노출하기" class="headerlink" title="서비스 외부로 노출하기"></a>서비스 외부로 노출하기</h4><p>비록 각각의 파드가 제각각의 IP를 갖고있지만 서비스 없이는 클러스터 바깥으로 노출되지 않는다. 서비스는 어플리케이션이 트래픽을 받게할 수 있는데 ServiceSpec에 type을 지정하여 노출 할 수 있다.</p>
+<h4 id="ServiceSpec의-type"><a href="#ServiceSpec의-type" class="headerlink" title="ServiceSpec의 type"></a>ServiceSpec의 type</h4><ul>
+<li>ClusterIP (기본값) - 클러스터 내에서 내부 IP 에 대해 서비스를 노출해준다. 이 방식은 오직 클러스터 내에서만 서비스가 접근될 수 있도록 해준다.</li>
+<li>NodePort - NAT가 이용되는 클러스터 내에서 각각 선택된 노드들의 동일한 포트에 서비스를 노출시켜준다. <nodeip>:<nodeport>를 이용하여 클러스터 외부로부터 서비스가 접근할 수 있도록 해준다. CluserIP의 상위 집합이다.</nodeport></nodeip></li>
+<li>LoadBalancer - (지원 가능한 경우) 기존 클라우드에서 외부용 로드밸런서를 생성하고 서비스에 고정된 공인 IP를 할당해준다. NodePort의 상위 집합이다.</li>
+<li>ExternalName - 프록시를 사용하지 않고 임의의 Name을 사용해서 expose 하는방법으로 externalName을 스펙에다 정의함(YAML 혹은 JSON)  kube-dns 1.7 이상 요구됨</li>
+</ul>
+<p>추가적으로 셀렉터를 지정하지 않는경우도 있는데 셀렉터를 지정하지 않은것은 엔드포인트를 오브젝트를 만들지 않을것이다. 그렇게 함으로써 유저들로 하여금 직접 서비스를 특정엔드포인트에 매핑할 수 있도록 해준다. selector를 생략하게 되는 또 다른 가능성은 여러분이 type: ExternalName을 이용하겠다고 확고하게 의도하는 경우이다.</p>
+<h4 id="서비스와-레이블"><a href="#서비스와-레이블" class="headerlink" title="서비스와 레이블"></a>서비스와 레이블</h4><p>서비스는 파드들의 묶음인데 하나의 ip로 묶인다. 하나의 아이피는 외부에 노출되어 서비스안에 존재하는 파드들에 접근할 수 있게해준다. 서비스는 파드셋에다가 트래픽을 라우팅(쿠버네티스 서비스들에 의해 처리된다.)하는데 서비스는 파드가 애플리케이션에 영향을 주지않고 혼자 죽거나 살아날 수 있도록 한다.</p>
+<p>파드 셋을 label이랑 selector을 사용하여 매치한다. label은 key / value 쌍이며 오브젝트에 붙어있고 여러가지 방식으로 사용될 수 있다.</p>
+<ul>
+<li>개발, 테스트, 그리고 상용환경에 대한 객체들의 지정</li>
+<li>임베디드된 버전 태그들</li>
+<li>태그들을 이용하는 객체들에 대한 분류</li>
+</ul>
+<p>레이블은 오브젝트가 만들어 질때 붙일수도 있고 나중에 붙일수있고 아무때나 수정할 수 있다.</p>
+<p>39:21부터</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;서비스를-사용하여-앱을-외부로-공개하기&quot;&gt;&lt;a href=&quot;#서비스를-사용하여-앱을-외부로-공개하기&quot; class=&quot;headerlink&quot; title=&quot;서비스를 사용하여 앱을 외부로 공개하기&quot;&gt;&lt;/a&gt;서비스를 사용하여 앱을 외부로 공개하기&lt;/
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>(K8s) 3. Pods and Nodes</title>
+    <link href="http://KKimSangHeon.github.io/2019/04/22/kubernetes3/"/>
+    <id>http://KKimSangHeon.github.io/2019/04/22/kubernetes3/</id>
+    <published>2019-04-22T14:21:59.000Z</published>
+    <updated>2019-04-22T14:36:19.330Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="Pods"><a href="#Pods" class="headerlink" title="Pods"></a>Pods</h4><p><a href="https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/explore/explore-intro/" target="_blank" rel="external">https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/explore/explore-intro/</a></p>
+<p>디플로이먼트를 만들면 쿠버네티스는 파드를 만들어 어플리케이션 인스턴스를 호스트 해준다. 파드는 쿠버네티스 인스턴스이며 하나 또는 여러 컨테이너(도커나 rkt) 그룹을 추상화한것이다. 컨테이너 뿐만아니라 컨테이너들이 사용하는 리소스도 포함해서 파드라고 한다.</p>
+<p>리소스는 다음을 포함한다.</p>
+<ul>
+<li>볼륨과 같은, 공유 스토리지</li>
+<li>클러스터 IP 주소와 같은, 네트워킹</li>
+<li>컨테이너 이미지 버전 또는 사용할 특정 포트와 같이, 각 컨테이너가 동작하는 방식에 대한 정보</li>
+</ul>
+<p>파드는 어플리케이션에 특화된 논리적인 호스트를 모델링한것이고 다른 어플리케이션 컨테이너를 이 안에 담아놓을 수 있으며 비교적 관련있는것들 끼리 모아놓은것이다. 예를 들어 하나의 팟안에다 두개의 컨테이너를 하나에 파드에 넣을 수 있다, 하나의 파드안에 들은 컨테이너들은 IP와 포트를 공유한다. 그래서 항상 같이 존재하며 같이 스케줄링된다.</p>
+<p>파드는 atomic unit 이다. 쿠버네티스에서 디플로이먼트를 만들었을때 디플로이먼트는 컨테이너를 갖고있는 파드를 만든다.(컨테이너를 직접 만드는것이 아님)<br>각각의 파드가 특정한 노드에 묶이게 되고 그 노드안에서 살게된다. 노드가 실패하면 동일한 파드를 또다른 클러스터에 있는 다른노드에서 실행한다.<br>즉 파드 단위로 옮겨다닌다.</p>
+<h4 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h4><p>파드를 실행하는게 노드이며 노드는 쿠버네티스에서 워커머신이다.(쿠버네티스는 마스터, 워커노드가 존재) 노드는 버츄얼 피지컬 머신일 수 도있다. 노드는 마스터에서 관리되면 여러개의 파드를 갖고있으며 쿠버네티스 마스터는 자동으로 어떤 파드를 노드에 올릴지 클러스터링 한다. 마스터의 자동 스케줄링은 가용한 리소스를 고용해서..</p>
+<p>모든 쿠버네티스 노드는 최소한 다음을 실행한다</p>
+<ul>
+<li><p>Kubelet(팀장님)은, 쿠버네티스 마스터(본부장님)와 노드 간 통신을 책임지는 프로세스이며, 하나의 머신 상에서 동작하는 파드와 컨테이너를 관리한다.</p>
+</li>
+<li><p>(도커, rkt)와 같은 컨테이너 런타임은 레지스트리에서 컨테이너 이미지를 가져와 묶여 있는 것을 풀고 애플리케이션을 동작시키는 책임을 맡는다.</p>
+</li>
+</ul>
+<p>노드 개요<br>노드안에 파드가 여러개 들어갈 수 있고 파드는 각 아이피를 할당받는다. Kubelet이 노드들을 관리</p>
+<p>kubectl을 통해서 배포된 앱들의 정보를 가져올 수 있다.<br>kubectl get - 자원을 나열한다<br>kubectl describe - 자원에 대해 상세한 정보를 보여준다.<br>kubectl logs - 파드 내 컨테이너의 로그들을 출력한다<br>kubectl exec - 파드 내 컨테이너에 대한 명령을 실행한다.</p>
+<p>언제 애플리케이션이 배포되었으며, 현재 상태가 어떠한지, 그것의 구성은 어떠한지 등을 보기 위해 이러한 명령을 이용할 수 있다.</p>
+<p>kubectl get pods<br>를 입력하여 파드가 있나 확인해보고 없으면 빌드를 다시해라</p>
+<p>kubectl describe pods<br>를 입력하여 파드에 대한 자세한 정보를 보자.IP, Port, Event<br>결과물은</p>
+<p>kubectl describe node<br>를 입력하여 노드 정보를 갖고올 수 있다.</p>
+<p>파드가 isolate, private 네트웍에서 동작하기에 kubectl proxy를 써서 사용하였었다.</p>
+<p>kubectl proxy<br>를 입력하여 프록시르 띄우자</p>
+<p>파드네임과 쿼리를 갖고와 프록시를 해보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export POD_NAME=$(kubectl get pods -o go-template --template &apos;&#123;&#123;range .items&#125;&#125;&#123;&#123;.metadata.name&#125;&#125;&#123;&#123;&quot;\n&quot;&#125;&#125;&#123;&#123;end&#125;&#125;&apos;)</div><div class="line">echo Name of the Pod: $POD_NAME</div></pre></td></tr></table></figure></p>
+<p>동작하고 있는 애플리케이션 정보를 보고싶다면<br>curl <a href="http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME/proxy/" target="_blank" rel="external">http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME/proxy/</a><br>를 입력하면 된다.</p>
+<p>애플리케이션에서 보통 STDOUT로 내보내는데 그것이 로그가 된다. 이를 쿠버네티스 다음명령오로 가져올 수 있다.<br>kubectl logs $POD_NAME<br>(지금은 컨테이너가 파드안에 하나이기 때문에 지정하지 않아도 된다.)</p>
+<p>파드가 동작하고 있으면 그안에 컨테이너에게 명령어를 실행할 수 있는데 다음과 같이 하면된다.<br>kubectl exec $POD_NAME env<br>(컨테이너 이름을 생략할수 있는것은 지금은 파드안에 컨테이너가 하나이기 때문에)</p>
+<p>kubectl exec -ti $POD_NAME bash<br>를 입력하여 NodeJS 가 돌고있는 배쉬가 생겼다.<br>이를통해 컨테이너 안에서 명령들을 동작해볼 수 있다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;Pods&quot;&gt;&lt;a href=&quot;#Pods&quot; class=&quot;headerlink&quot; title=&quot;Pods&quot;&gt;&lt;/a&gt;Pods&lt;/h4&gt;&lt;p&gt;&lt;a href=&quot;https://kubernetes.io/ko/docs/tutorials/kubernetes-ba
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>(K8s) 2. 클러스터 생성 및 앱 배포, 마스터 / 노드</title>
+    <link href="http://KKimSangHeon.github.io/2019/04/22/kubernetes2/"/>
+    <id>http://KKimSangHeon.github.io/2019/04/22/kubernetes2/</id>
+    <published>2019-04-22T14:21:53.000Z</published>
+    <updated>2019-04-22T14:35:57.517Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="클러스터-생성-및-앱-배포"><a href="#클러스터-생성-및-앱-배포" class="headerlink" title="클러스터 생성 및 앱 배포"></a>클러스터 생성 및 앱 배포</h4><p>이번에는 쿠버네티스란 무엇인지, 미니큐브는 무엇인지에 대해 알아보자.</p>
+<p><a href="https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/" target="_blank" rel="external">https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/</a> 참고</p>
+<h4 id="쿠버네티스-클러스터"><a href="#쿠버네티스-클러스터" class="headerlink" title="쿠버네티스 클러스터"></a>쿠버네티스 클러스터</h4><p>쿠버네티스는 높은 가용성을 클러스터 하는것이다. 즉 하나의 유닛으로 일하는 여러 컴퓨터들의 클러스터를 의미한다. 도커이미지를 배포할 수 있는 클러스터이다.<br>특정 머신한테 배포 설정하는것이 아니라 쿠버네티스한테 배포하라고 던지면 쿠버네티스가 알아서 배포한다.</p>
+<p>이를 사용하려면 어플리케이션은 특정 호스트에 묶이지 않은상태로 패키지 되어야 한다.</p>
+<p>컨테이나이저 어플리케이션은 예전 배포모델보다 유연하다. (예전모델은 특정 머신에 의존성이 있었다.)</p>
+<p>쿠버네티스는 좀더 효율적인 방법으로 클러스터에 어플리케이션을 어떻게 배포하고 스케줄링해야되는지에 대해 자동화함.</p>
+<p>쿠버네티스는 오픈소스이며 클러스터 환경에서 쓸 수 있다.</p>
+<p>쿠버네티스는 마스터, 노드로 구성된다.<br>(스웜으로 비교하자면 각각 매니저, 워커이다. 스웜에서는 매니저, 워커 둘다 컨테이너를 띄울 수 있었다. 쿠버네티스에서는 노드에서만 컨테이너를 띄울 수 있다.)</p>
+<h4 id="쿠버네티스의-마스터-노드"><a href="#쿠버네티스의-마스터-노드" class="headerlink" title="쿠버네티스의 마스터, 노드"></a>쿠버네티스의 마스터, 노드</h4><p>마스터는 어플리케이션 스케줄링, 특정 상태로 만드는일, 스케일링하는일, 새 버전을 차곡차곡 배포해 나가는것을 관리함</p>
+<p>노드들은 vm이거나 물리적인 컴퓨터인데 쿠버네티스에서 워커 머신역할을 한다.<br>각각의 노드는 큐블릿을 갖고있는데 이는 노드를 관리하기 위한 에이전트이고 쿠버네티스 매니저와 의사소통한다.</p>
+<p>노드는 도커 혹은 rkt와 같은 컨테이너 오퍼레이팅 툴이 필요하다.</p>
+<p>쿠버네티스 클러스터는 프로덕션 트래픽을 다룰 수 있는데 이를 위해 최소 3개 이상의 노드를 갖고있어야 한다.</p>
+<h4 id="쿠버네티스의-배포과정"><a href="#쿠버네티스의-배포과정" class="headerlink" title="쿠버네티스의 배포과정"></a>쿠버네티스의 배포과정</h4><ul>
+<li>애플리케이션을 쿠버네티스에 배포할 때 마스터한테 어플리케이션 클러스터를 실행하라고 한다.</li>
+<li>그럼 마스터는 컨테이너들을 클러스터 노드들에게 실행하도록 스케줄링 한다.</li>
+<li>그럼 노드는 쿠버네티스 API를 활용해 마스터와 의사소통해서 쿠버네티스 API를 호출할 수 있다.</li>
+<li>엔드유저 또한 API를 사용할 수 있다.</li>
+</ul>
+<h4 id="미니큐브-활용"><a href="#미니큐브-활용" class="headerlink" title="미니큐브 활용"></a>미니큐브 활용</h4><p>쿠버네티스 클러스터는 vm 혹은 물리적 컴퓨터에도 배포할 수 있다. 배포를 위해서는 미니큐브를 사용하라. 이는 쿠버네티스 경량버전이며 vm이 하나만 있다. 로컬머신에 설치할 수 있고 노드가 하나이다.<br>즉 미니큐브는 vm을 만들어주는것이고 이 안에는 노드가 하나만 들어있다.</p>
+<h4 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h4><p>미뉴큐브가 미리 설치되어있는 온라인 환경에서 진행한다.</p>
+<p>minikube start<br>를 입력하여 미니큐브를 실행하자</p>
+<p>kubectl version<br>을 입력하여 버전을 한번 보자.</p>
+<p>kubctl cluster-info<br>를 입력해보자.</p>
+<p>kubctl get nodes<br>를 입력하여 노드 정보를 보자.<br>아까 말한대로(미니큐브에서는 노드 하나만 들어있는) 하나가 떠있는것을 볼 수 있다.</p>
+<h4 id="kubectl을-활용하여-애플리케이션-배포"><a href="#kubectl을-활용하여-애플리케이션-배포" class="headerlink" title="kubectl을 활용하여 애플리케이션 배포"></a>kubectl을 활용하여 애플리케이션 배포</h4><p>동작하는 쿠버네티스가 있으면 컨테나이저된 앱을 배포할 수 있는데 이를 위해 쿠버네티스 배포 설정을 만들어야 한다.<br><code>배포 설정</code>은 쿠버네티스가 어떻게 인스턴스를 만들고 갱신해야하는지에 대한 역할을 한다.</p>
+<p>이를 만들면 마스터가 노드에 배포를 한다.</p>
+<p>애플리케이션 인스턴스가 한번 만들어지면 쿠버네티스 배포 컨트롤러는 지속적으로 인스턴스를 모니터링 한다. 만약 노드가 다운되거나 삭제되면 다른 노드에 배포하게 함으로서 셀프 힐링 매커니즘을 제공한다.</p>
+<p>오케스트레이션이 없던시절에서는 스크립트를 사용했었다. 머신에 문제가 있을때 처리방법은 없었다.  쿠버네티스는 애플리케이션 인스턴스를 만들고 노드에 계속 실행하는것으로서 이전과는 다르다.</p>
+<p>kubectl을 통해 배포를 관리하고 만들 수 있다. 이는 쿠버네티스 API를 통해 소통한다(즉 마스터와 소통한다.) 배포를 만들때는 컨테이너 이미지를 적어야되고, 몇개의 어플리케이션을 실행하기 원하는지 적어줘야함.</p>
+<p>kubectl get nodes<br>입력하여 노드를 확인</p>
+<p>이제 앱 배포를 따라해보자</p>
+<p>kubectl run은 배포를 새로만드는것이다.<br>이를 위해 앱 이름과, 위치를 알려줘야 한다. 도커허브에 올라가있는 이미지가 아닌경우 레파지토리 uri까지 줘야한다. 앱을 특정포트에서 실행하고 싶다면 포트 파라미터까지 줘야한다.</p>
+<p>kubectl run kubernetes-bootcamp –image=gcr.io/google-samples/kubernetes-bootcamp:v1 –port=8080<br>을 입력하여 배포하자. deployment 를 만듦과 동시에 배포됨.<br>이를 통해 앱을 배포할 적절한 노드를찾았고 스케줄링을 했고 클러스터를 설정했다.</p>
+<p>kubectl get deployments<br>를 입력하여 deployments정보를 얻어보자</p>
+<p>파드란 쿠버네티스 안에서 도는것인데 private 하고 isolate하다. 기본적으로 쿠버네티스 안에있는 파드, 서비스들 끼리는 볼 수 있지만 쿠버네티스 클러스터 밖에서는 박에서 못본다, kubectl을 사용하여 api endpoint를 사용해서 어플리케이션과 의사소통할 수 있다.</p>
+<p>어플리케이션을 쿠버네티스 클러스터에서 노출시키는 방법은 모듈 4에서 본다.</p>
+<p>kubectl proxy<br>를 입력하여 프록시 다른탭에서 만들면 클러스터 wide , private network와 의사소통 할 수 있게된다. 프록시를 컨트롤 씨로 종료시킬 수도 있다</p>
+<p>디폴리먼트 하나, 파드하나 , 레플리카 셋이 하나 있는것을 웹 프리뷰로 볼 수 있다.</p>
+<p>이를 만들면 호스트와 쿠버네티스 클러스트간에 연결된것이고, 프록시를 사용하면 API 를 직접 사용할 수 있다.</p>
+<p>여기서 말하는 API는 쿠버네티스 매니저의 API</p>
+<p>API서버는 자동으로 endpoint 를 각각의 pod기반으로 만들어준다. 우리는 pod네임을 가져오려면 다음과 같이하면된다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export POD_NAME=$(kubectl get pods -o go-template --template &apos;&#123;&#123;range .items&#125;&#125;&#123;&#123;.metadata.name&#125;&#125;&#123;&#123;&quot;\n&quot;&#125;&#125;&#123;&#123;end&#125;&#125;&apos;)</div><div class="line">echo Name of the Pod: $POD_NAME</div></pre></td></tr></table></figure></p>
+<p>curl <a href="http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME/proxy/" target="_blank" rel="external">http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME/proxy/</a><br>를 입력하여 pod의 api로 라우팅할수있다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;클러스터-생성-및-앱-배포&quot;&gt;&lt;a href=&quot;#클러스터-생성-및-앱-배포&quot; class=&quot;headerlink&quot; title=&quot;클러스터 생성 및 앱 배포&quot;&gt;&lt;/a&gt;클러스터 생성 및 앱 배포&lt;/h4&gt;&lt;p&gt;이번에는 쿠버네티스란 무엇인지, 미니큐브
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>(K8s) 1. 쿠버네티스 개요</title>
+    <link href="http://KKimSangHeon.github.io/2019/04/22/kubernetes1/"/>
+    <id>http://KKimSangHeon.github.io/2019/04/22/kubernetes1/</id>
+    <published>2019-04-22T14:21:47.000Z</published>
+    <updated>2019-04-22T14:30:34.160Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="쿠버네티스-개요"><a href="#쿠버네티스-개요" class="headerlink" title="쿠버네티스 개요"></a>쿠버네티스 개요</h4><p><a href="https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/" target="_blank" rel="external">https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/</a> 참고</p>
+<p>컨테이너화된 애플리케이션들을 관리할 수 있게 해준다.</p>
+<ul>
+<li>컨테이너화 된 어플리케이션을 클러스터에 배포하는가. 즉 도커이미지로 만든것을 클러스터 배포하는가. 이번엔 스웜이 아닌 쿠버네티스라는 클러스터에 배포하는것.</li>
+<li>어떻게 스케일할것인가.</li>
+<li>어떻게 새 버전을 배포할것인가</li>
+<li>어떻게 디버깅할것인지</li>
+</ul>
+<p>카타코드를 사용하여 가상머신을 웹에서 실행 할 수 있다.<br>미니큐브는 작게 만든 쿠버네티스이며 아무곳에서나 설치할 수 있다.</p>
+<h4 id="쿠버네티스로-할수-있는것"><a href="#쿠버네티스로-할수-있는것" class="headerlink" title="쿠버네티스로 할수 있는것."></a>쿠버네티스로 할수 있는것.</h4><p>모던한 서비스는 24시간 7일동안 무정지를 기대한다. 개발자들도 새버전을 하루에 몇번씩 배포 할 수 있다는것을 기대한다. 즉 배포에 대한 수준이 높아졌다.</p>
+<p>커테나이제이션을 통해 위의 높아진 수준에 부응할 수 있다. 쿠버네티스는 컨테나이저된 어플리케이션을 어디서든 실행할 수 있도록 도와준다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;쿠버네티스-개요&quot;&gt;&lt;a href=&quot;#쿠버네티스-개요&quot; class=&quot;headerlink&quot; title=&quot;쿠버네티스 개요&quot;&gt;&lt;/a&gt;쿠버네티스 개요&lt;/h4&gt;&lt;p&gt;&lt;a href=&quot;https://kubernetes.io/ko/docs/tutoria
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>(Docker) 4. Stacks</title>
@@ -50,12 +227,6 @@
     
     </summary>
     
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="Docker" scheme="http://KKimSangHeon.github.io/tags/Docker/"/>
     
   </entry>
   
@@ -105,12 +276,6 @@
     
     </summary>
     
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="Docker" scheme="http://KKimSangHeon.github.io/tags/Docker/"/>
     
   </entry>
   
@@ -150,12 +315,6 @@
     
     </summary>
     
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="Docker" scheme="http://KKimSangHeon.github.io/tags/Docker/"/>
     
   </entry>
   
@@ -197,12 +356,6 @@
     
     </summary>
     
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="Docker" scheme="http://KKimSangHeon.github.io/tags/Docker/"/>
     
   </entry>
   
@@ -229,12 +382,6 @@
     
     </summary>
     
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
     
   </entry>
   
@@ -265,12 +412,6 @@
     
     </summary>
     
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
     
   </entry>
   
@@ -301,12 +442,6 @@
     
     </summary>
     
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
     
   </entry>
   
@@ -329,12 +464,6 @@
     
     </summary>
     
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
     
   </entry>
   
@@ -363,12 +492,6 @@
     
     </summary>
     
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
     
   </entry>
   
@@ -397,12 +520,6 @@
     
     </summary>
     
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
     
   </entry>
   
@@ -437,12 +554,6 @@
     
     </summary>
     
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
     
   </entry>
   
@@ -467,12 +578,6 @@
     
     </summary>
     
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
     
   </entry>
   
@@ -502,12 +607,6 @@
     
     </summary>
     
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
     
   </entry>
   
@@ -530,12 +629,6 @@
     
     </summary>
     
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
     
   </entry>
   
@@ -561,12 +654,6 @@
     
     </summary>
     
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
     
   </entry>
   
@@ -591,182 +678,6 @@
 &lt;h4 id=&quot;만기참조를-없애라&quot;&gt;&lt;a href=&quot;#만기참조를-없애라&quot; class=&quot;headerlink&quot; title=&quot;만기참조를 없애라&quot;&gt;&lt;/a&gt;만
     
     </summary>
-    
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>규칙 5.불필요한 객체는 만들지 말라</title>
-    <link href="http://KKimSangHeon.github.io/2019/03/24/effectivejava-1/"/>
-    <id>http://KKimSangHeon.github.io/2019/03/24/effectivejava-1/</id>
-    <published>2019-03-24T04:06:59.000Z</published>
-    <updated>2019-04-21T10:51:03.005Z</updated>
-    
-    <content type="html"><![CDATA[<p>기능적으로 동일한 객체는 매번 만드는것보다 재사용하는 편이 낫다.<br>가령 String s = new String(“test”);라는 문장을 반복문안에 넣을경우 매번 String 객체가 생성된다.<br>이는 String s = “test”; 로 대체하는것이 낫다. 이는 실행할 때마다 객체를 만드는 대신 동일한 String 객체를 사용하며 같은 JVM안에서는 해당 객체를 재사용하게 된다.<br>생성자와 정적팩터리 메서드를 함께 제공하는 변경 불가능 클래스의 경우 생성자 대신 정적 팩터리 메소드를 이용하면 불필요한 객체 생성을 피할 수 있을 때가 많다. (Boolean(String) 보다는 Boolean.valueOf(String)쪽이 더 바람직하다. 생성자는 호출할 때마다 객체를 만들지만 정적 팩터리 메서드는 그러지 않는다.) 변경 불가능한 객체 뿐 아니라 변경가능한 객체도 재사용할 수 있다.<br><figure class="highlight java"><figcaption><span>default</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">..</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isIn</span><span class="params">( )</span></span>&#123;</div><div class="line">	Calendar gmtCal = Calendar.getInstance(TimeZone.getTimeZone(<span class="string">"GMT"</span>));</div><div class="line"></div><div class="line">	gmtCal.set(.....);</div><div class="line">	Date strart = gmtCal.getTime();</div><div class="line"></div><div class="line">	gmaCal.set(...);</div><div class="line">	Date end = gmtCal.getTime();</div><div class="line">	...</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>와 같은 코드가 존재할 때 isIn메서드는 호출될 때 마다 Caendar, TimeZone,Date객체 두개를 쓸데없이 만들어낸다.<br>이는 <code>정적 초기화 블록</code>을 통해 개선하는것이 좋다.<br><figure class="highlight java"><figcaption><span>default</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Date START;</div><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Date END;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isIn</span><span class="params">( )</span> </span>&#123;</div><div class="line">	<span class="keyword">static</span>&#123;</div><div class="line">		Calendar gmtCal = Calendar.getInstance(TimeZone.getTimeZone(<span class="string">"GMT"</span>));</div><div class="line">		gmtCal.set(.....);</div><div class="line">		START = gmtCal.getTime();</div><div class="line"></div><div class="line">		gmaCal.set(...);</div><div class="line">		END = gmtCal.getTime();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>이렇게 할 경우 Caendar, TimeZone,Date <u>객체는 클래스가 초기화 될 때 한번만 만들어진다</u>. 이를통해 성능향상, 코드가 명료해진다(START, END가 상수라는것을 한눈에 알 수 있다)</p>
-<p>만약 isIn() 메소드가 호출되지 않는다면 쓸데없는 초기화 과정이 진행된것인데 이는 <u>초기화 지연기법</u>을 사용하면 피할 수있다. 즉 isIn() 메서드가 처음 호출될 때 초기화한다. 이는 구현이 복잡해지고 성능을 개선시키기 어려워 질 수 있는상황을 만들수있다,</p>
-<p><code>객체를 무작정 만들지 말라는것은 아니고 코드의 명확성, 단순성을 높이고 프로그램의 능력을 향상시킬 수 있을 때 만들라는것!</code><br>객체 풀을 만들어 객체 생성을 피하는 기법 또한 객체생성 비용이 극단적으로 높지않다면 사용하지 말라.(DB접속 할때는 허용) 최신 JVM은 고도로 최적화된 GC를 갖고있으므로 풀보다 월등한 성능을 보여준다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;기능적으로 동일한 객체는 매번 만드는것보다 재사용하는 편이 낫다.&lt;br&gt;가령 String s = new String(“test”);라는 문장을 반복문안에 넣을경우 매번 String 객체가 생성된다.&lt;br&gt;이는 String s = “test”; 로
-    
-    </summary>
-    
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>규칙 4. 객체 생성을 막을 때는 private 생성자를 사용해라</title>
-    <link href="http://KKimSangHeon.github.io/2019/03/24/effectivejava/"/>
-    <id>http://KKimSangHeon.github.io/2019/03/24/effectivejava/</id>
-    <published>2019-03-24T04:06:27.000Z</published>
-    <updated>2019-04-21T10:51:09.748Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="정적-메서드나-필드만-모은-클래스가-필요한-경우는-다음-세가지로-볼-수-있다"><a href="#정적-메서드나-필드만-모은-클래스가-필요한-경우는-다음-세가지로-볼-수-있다" class="headerlink" title="정적 메서드나 필드만 모은 클래스가 필요한 경우는 다음 세가지로 볼 수 있다."></a>정적 메서드나 필드만 모은 클래스가 필요한 경우는 다음 세가지로 볼 수 있다.</h3><p>1.자바의 기본 자료형 값 또는 배열에 적용되는 메서드를 한군데 모아둘 때.(java.lang.Math, java.lang.Arrays)<br>2.특정 인터페이스를 구현하는 개체를 만드는 팩터리 메서드 등의 정적 메서드를 모아놓을 때(java.util.Collection)<br>3.final 클래스에 적용할 메서드들을 모아놓을 때(상속하여 메서드 추가가 불가능하므로)</p>
-<p><code>위의 경우에 객체를 생성하는건 이상하다!.</code><br>하지만 생성자를 생략하면 디폴트 생성자가 만들어진다. 이로인해 자신이 생각도 못한사이에 API에 추가되어 있을 수 있다<br>그렇다고 abstract로 선언하는것도 바보같은일이다. 상속으로 인해 객체 생성이 가능하므로…<br><u>객체생성을 막기위해서는 private 생성자를 생성하자</u><br>이를 통해 하위 클래스 또한 만들 수 없게 할수 있다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;정적-메서드나-필드만-모은-클래스가-필요한-경우는-다음-세가지로-볼-수-있다&quot;&gt;&lt;a href=&quot;#정적-메서드나-필드만-모은-클래스가-필요한-경우는-다음-세가지로-볼-수-있다&quot; class=&quot;headerlink&quot; title=&quot;정적 메서드나 
-    
-    </summary>
-    
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>190323. Write the docs 밋업 참가</title>
-    <link href="http://KKimSangHeon.github.io/2019/03/23/writethedocs/"/>
-    <id>http://KKimSangHeon.github.io/2019/03/23/writethedocs/</id>
-    <published>2019-03-23T05:06:12.000Z</published>
-    <updated>2019-03-24T04:22:53.399Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Write-the-docs"><a href="#Write-the-docs" class="headerlink" title="Write the docs"></a>Write the docs</h3><p>밋업도 열고 구인구지도 하고 문서화에 대한 다양한 이야기를 진행한다.</p>
-<h3 id="글쓰는-개발자-모임-글또"><a href="#글쓰는-개발자-모임-글또" class="headerlink" title="글쓰는 개발자 모임, 글또"></a>글쓰는 개발자 모임, 글또</h3><p>변성윤님(쏘카 데이터 그룹 머신러닝 엔지니어)</p>
-<p>네이버 블로그를 통해 글을 꾸준히 쓰던 습관 형성<br>까먹는게 싫어서 개발 블로그 시작</p>
-<p><code>글또?</code>- 글쓰는 똘아이가 세상을 바꾼다<br>10마넌을 넣어넣고 주니어개발자들 끼리 진행했다. 글을 안쓰면 마넌씩 삭감<br>여러가지의 규칙을 만들어 놓고 진행해나감..(월 2개의 포스팅을 작성, 800자이상 등…)</p>
-<p><code>어떤글을올렸나?</code><br>에러가 왜 발생했을까? 해결방안만 올리지 않고 원인을 정리, 프로젝트 진행하는것, 회고(1년 주기로) 등..</p>
-<p>13명의 글을 2주마다 피드백을 통해 더 나은 글을 목표로함<br>점검은 오타, 전개바식, 이해 가능성, 가독성, 이미지 품질.</p>
-<p>지금까지 낙오자 없이 잘 끝났다!</p>
-<p><code>성과</code> : 구성원들의 글쓰기 역량 향상! 높은 충성도! 이직할때 도움(실제로 도움을 받았다고 하심!)! 양질의 글로 개발 생태계에 기여 사람을 만날수 있는 연결고리!<br><code>결론</code> : 글을 쓰는건 쉽지 않지만 함꼐하면 꾸준히 할수 있따! 물론 예치금이 중요하지만 ㅋㅋ</p>
-<hr>
-<h3 id="기술블로그-생존전략-구글시대의-글쓰기"><a href="#기술블로그-생존전략-구글시대의-글쓰기" class="headerlink" title="기술블로그 생존전략: 구글시대의 글쓰기"></a>기술블로그 생존전략: 구글시대의 글쓰기</h3><p>김대권님(당근마켓 인프라 클라우드 개발)<br>44bits.io 운영 중</p>
-<p><code>우리는 왜 글을 쓸까요?</code> 읽히기 위해서!<br><code>사람들을 어떤 경로를 통해 블로그로 접근할까?</code><br>Social, Organic Search 검색이 주요 유입원.<br>SNS의 경우 생명령이 짧다. 짧으면 3일 길어봤자 1주일… 그렇지만 즉각적인 반응이 장점!<br>물론 팔로워가 없으면 효과가 떨어짐…<br>방치된 블로그의 경우 Organic Search 가 주요 유입원이다.</p>
-<p>즉 블로그는 소셜보다 오랫동안 읽혀질 확률이 높다!! 하지만 이는 예측이 어렵다..(즉각적인 반응이 없다)<br>또한 티끌모아 태산이다!! 신뢰성을 쌓게되면 검색에서의 결과로 뜰 수 있어진다.!!</p>
-<p>컨텐츠가 더 잘 발견되기 위해서는 장기적으로 봤을때 검색유입을 목표로 하자<br><code>구글을 어떻게 검색결과를 보여줄까???</code><br> 정밀도, 재현도를고려한다는데 이해하기 어렵다… 검색엔진은 백과사전이 아니라 거대한 추천시스템이다.  즉 수집한 문서들 중 검색 키워드 중 가장 추천할 만한 글을 정렬해서 보여준다.</p>
-<p><code>어떻게 해야 내 글이 검색될까?</code><br>문서와 웹 사이트<br>문서 - 검색엔진이 검색한것은 웹사이트가 아니라 <u>문서</u>이다! 사이트를 잘만드는것도 중요하지만 구성요소 즉 문서를 단단히 하는것이 중요하다.<br>메타데이터보다는 제목과 본문이 중요하다. 좋은 제목은 아무리 강조해도 지나치지 않음. 핵심 키워드가 포함되고, 본문을 잘 드러내야 한다. 그리고 본문의 질이 좋아야 한다.<br>구글을 글을 보고 질 좋은 컨텐츠를 알아볼 수 있다. 그러므로 메타데이터는 중요하지 않다고 한것!</p>
-<p><code>질좋은 컨텐츠를 위핸 제언</code><br>1.완성된 글을 작성한다.  </p>
-<ul>
-<li>이상한 글을 쓰면 블로그의 신뢰도를 떨어뜨린다.(예를들어 한줄짜리, 자신의 메모, 완성되지 않은 문장, 설명보다 코드가 긴 글, 링크만 모아놓은 글, 개인노트를 그대로 공개한 글, 직접 작성한 내용이 없는 글)<br>2.적당한 분량의 글을 작성한다.</li>
-<li>7분정도 읽히는글(5600자 정도 즉 7페이지)이 가장 좋다!</li>
-<li>그림의 유무 여백에 따라서 다르지만 600~1200자 정도가 적당!!!!!!!</li>
-<li>짧은 뉴스는 2000~3000 긴글을 20000~30000 이것보다 길면 나눠서 쓰자!</li>
-</ul>
-<p><code>블로그에 쓸 수 있는글</code><br>튜토리얼, 하우투, 해설, 뉴스기사, 에세이</p>
-<p><code>Page Rank</code><br>과거에는 페이지의 랭크를 구글에서 제공했다. 페이지의 신뢰도를 쌓아라. 나무위키의 경우에도 잘못된 정보들이 많지만 랭커는 높다.<br>장기적인 관점에서 잘 운영하는것이 중요하다!!!</p>
-<p><code>처음 블로그를 시작하려면</code><br>관심사 -&gt; 키워드 -&gt; 글쓰기 -&gt; 공유<br>1.관심사들을 정리하고 키워드를 정하여 구글에서 검색해보자. 아직 좋은 글이 별로없는, 적당한 범위의 키워드를 정하자.<br>2.5000자 이상의 글을 작성하자. 제목에는 반드시 키워드를 포함하자.<br>3.게시하고 공유하고 기다려라.</p>
-<hr>
-<h3 id="지식-공유를-시작하려는-개발자"><a href="#지식-공유를-시작하려는-개발자" class="headerlink" title="지식 공유를 시작하려는 개발자"></a>지식 공유를 시작하려는 개발자</h3><p>홍연의님(LINE+ Developer Realations 팀)</p>
-<p><code>Developer Realations팀에 어떻게 가게 되었나요?</code> IT출판사에서 IT도서 기획 편집자로 일을 시작했다.<br>다양한 커뮤니티 활동을 진행했다. 또한 책을 만들어내기 위해 저자의 전문지식을 잘 가공해서 지식공유를 돕는일을 진했했었다. DE팀에서 라인 개발자달의 전문성을 세상사람이 알 수 있게 해는것.</p>
-<p><code>하는일</code> : 사내개발자 기고 글관리 등…개발자 대상 행사 주최. 라인의 개발자와 개발자 문화를 세상에 알릴 수 있는 모든 일. 라인의 개발자가 쉽게 지식 공유할 수 있도록 돕는 일</p>
-<p><code>지식공유를 시작하려는 개발자에게...</code><br>블로그, 책, 영상, 강의, 발표등을 통해 지식고유를 할 수 있지만 쉽지만은 않다. 지식공유를 통해 인생의 또다른 기회를 갖게될 수 있따. 기회뿐만이 아니라 누군가에게 도움이 된다는 뿌듯함을 얻을 수도 있다.</p>
-<hr>
-<h3 id="사용자를-외면하지-않는-릴리스-노트"><a href="#사용자를-외면하지-않는-릴리스-노트" class="headerlink" title="사용자를 외면하지 않는 릴리스 노트"></a>사용자를 외면하지 않는 릴리스 노트</h3><p>조은별님(시큐아이, 보안회사 테크니컬 라이터)</p>
-<p><code>테크니컬 라이터는 어떤 일은 하나요?</code><br>기술사업 분야에서 특정사용자를 대상으로 기술적인 정보를 제공하는 문서를 제작.<br>사용자메뉴얼, 릴리스노트, API문서, 화이트 페이퍼, UI용어/메시지 등….</p>
-<p><code>릴리스 노트의 정의</code><br>문제를 정의하고 해결점을 기술한 문서. 즉 소프트웨어가 업데이트 될때 마다 업데이트 정보를 제공하기 위해 요약되어 작성되는 문서<br>신규기능, 개선된기능, 오류수정..</p>
-<p><code>릴리스 노트의 필요성</code><br>앱스토어에서도 자주 보여진다. 자세하게 어떤부분이 어떻게 업데이트 되었는지 알려주는것이 매력적이다.<br>함축적이고 연관된 이슈에 대해 알려주는것도 좋은방법이라 할 수 있다.</p>
-<p><code>릴리스 노트의 포멧</code><br>신규기능을 나누고 신규기능에 대한 설명을 통해 직관성을 제공하는것이 좋다.<br>ex:<br>[신규기능]<br>ㅁㅁ메뉴에 xx추가했습니다.</p>
-<p>[개선된기능]<br>보기의 ㅇㅇ을 ㅇㅇ할수있도록 개선했습니다.</p>
-<p><code>릴리스 노트 작성 시 고려할것</code><br>1.제품/사용자 특성 : 누가 읽는것인지?<br>2.일관된 문서 포맷: 어떻게 읽는 것인지?</p>
-<h2 id="3-세-줄-요약-무엇을-익는-것인지"><a href="#3-세-줄-요약-무엇을-익는-것인지" class="headerlink" title="3.세 줄 요약 : 무엇을 익는 것인지?"></a>3.세 줄 요약 : 무엇을 익는 것인지?</h2><h3 id="개발자는-왜-블로그를-해야하나요"><a href="#개발자는-왜-블로그를-해야하나요" class="headerlink" title="개발자는 왜 블로그를 해야하나요?"></a>개발자는 왜 블로그를 해야하나요?</h3><p>이동욱님(우아한 형제들, 백엔드 개발자, jojuldu 블로그 운영)</p>
-<p>마크타운 파일을 티스토리에 올릴 수 있는 플러그인 개발</p>
-<p>플로그를 좋아하고 개선하고 혜택을 받음<br><code>블로그를 하면 좋은이유</code><br>한달에 1000달러 정도… 출판제의, 신간제의 등 부수익 창출기회. 다른 회사의 wiki에 내 블로그에 링크된다. 멀리서 세미나 발표로, 책으로 보기만 했던 개발자분의 채용추천. 사내 기술 블로그 작성 요청에 부담이 적음.</p>
-<p><code>왜 블로그를 해야하나요</code><br>연봉/회사/직위/재산 빼면 나를 표현할 수 있는게 뭐가있을까? 블로그는 자신을 표현할 수 있다.<br>블로그는 아이덴티티라고 생각한다.</p>
-<h3 id="개발-관련-기술-블로그-운영하기"><a href="#개발-관련-기술-블로그-운영하기" class="headerlink" title="개발 관련 기술 블로그 운영하기"></a>개발 관련 기술 블로그 운영하기</h3><p>변정훈님(Outsider’s Dev Story 운영)<br><code>글 작성</code><br>3일에 글 1개 작성목표, 글 1개에 짧게는 2~4시간 길게는 2~3일, 퇴고는 잘 하지 않는다.</p>
-<p><code>글의 주제</code><br>개발하면서 적을 수 있는건 전부<br>새로운 도구, 환경 설치/절정<br>새로 알게된 라이브러리.도구의 사용법<br>최근에 겪고 해결한 장애와 처리방법<br>개발관련 공유할 만한 내용</p>
-<p><code>왜 개발 블로그를 운영하는가</code><br>공부할게 많으니까. 글쓰는것 공부하는것을 같은것으로 본다.<br>처음엔 배운걸 자꾸 잊어버려서, 전에 겪어본것들인데 기억이 안나서.<br>회고와 비슷하다.</p>
-<p><code>어디에 적어놓았는가</code><br>개인노트, TIL(Today I learned), 공개블로그</p>
-<p><code>글을 공개로 쓸 때의 장점</code><br>글을 정리하려면 잘 알고 있어야 한다. 또한 글로 정리하면서 다시 고민해 볼 수 있다. 명성이 오른다.</p>
-<p><code>글을 흐름</code><br>1.하고자 했던일을 적는다.(Context, 왜 웹사이트를 만들고 싶은지, 왜 이기술을 쓰고싶은지, 어떻게 하다가 해당 장애를 만났는지)<br>2.경험한 문제 상황 정리(격리된 상황, )<br>3.시도해본 방법(내가아는 지식, )<br>4.왜 동작이 안되는가? 왜 동작하는가?(가설)<br>5.문제상황 재현</p>
-<p><code>MCVE</code><br>최소한의, 완성된, 입증가능한 예제<br>(Minimum, Complete, and Verifiable Example)<br>해결책을 받고싶으면 스택오버플로우에서 이런식으로 질문을 올려라는것!<br>블로그도 마찬가지이다.!</p>
-<p><code>블로그를 하는 이유?</code><br>공유문화를 좋아한다.<br>일하면서도 글을 많이 작성한다.(Slack, Issue tracker, Wiki)</p>
-<p><code>글을 지속적으로 쓰려면 어떻게 해야 하나요?</code><br>블로그를 만들기만 하는 개발자들이 많다. 새로운 스킨적용 스킨 변경의 반복….<br>열심히 해라 지속적으로 하다보면 근육처럼 붙게된다. 하다보면 어느순간 도움이 된다는것을 깨달을 수 있다.</p>
-<p><code>사람들이 많이 보는 글</code><br>자잘한 팁</p>
-<p><code>돈이 되나요?</code><br>안됩니다. 돈이 목표라면 기술블로그 보다는 다른영역으로 해라</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Write-the-docs&quot;&gt;&lt;a href=&quot;#Write-the-docs&quot; class=&quot;headerlink&quot; title=&quot;Write the docs&quot;&gt;&lt;/a&gt;Write the docs&lt;/h3&gt;&lt;p&gt;밋업도 열고 구인구지도 하고 문서화에 대
-    
-    </summary>
-    
-    
-      <category term="Write the docs," scheme="http://KKimSangHeon.github.io/tags/Write-the-docs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>운영체제 핵심!</title>
-    <link href="http://KKimSangHeon.github.io/2019/03/18/operating-system/"/>
-    <id>http://KKimSangHeon.github.io/2019/03/18/operating-system/</id>
-    <published>2019-03-18T13:11:03.000Z</published>
-    <updated>2019-03-24T04:23:07.112Z</updated>
-    
-    <content type="html"><![CDATA[<p>운영체제란<br>부팅<br>커널, 쉘?<br>배치프로세싱시스템<br>멀티프로그래밍 시스템<br>타임쉐어링 시스템<br>다중프로세서 시스템<br>분산시스템<br>실시간 시스템<br>인터럽트- 하드웨어인터럽트 , 소프트웨어인터럽트<br>ISR<br>이중모드-모니터비트<br>MMU<br>운영체제의 매니지먼트들 - 프로세스 메인메모리 파일 보조기억장치 입출력장치<br>프로세스의 상태-new ready running wating terminated<br>PCB-상태정보, PC(지금은 몇번지인지. 번지정보), registers, MMU info (base, limit), CPU time(CPU 이용시간), process id, list of open files(얘가 지금 어떤파일을 사용하고 있는지)</p>
-<p>job queue , ready queue, device queue<br>Job scheduling(Long-term scheduler)</p>
-<p>CPU Scheduler( Short-term scheduler )</p>
-<p>Device Scheduler<br>Medium-term scheduler<br>프로세스는 크게 두가지로 나눌 수 있다,<br>i/o-bound<br>CPU-bound process</p>
-<p>context switching<br>Dispatcher<br>CPU스케줄링<br>Preemptive vs Non-preemptive<br>Scheduling criteria(척도)</p>
-<ul>
-<li>응답시간, 대기시간, 반환시간, 처리율,cpu 이용율</li>
-</ul>
-<p>fcfs,sjf,Shortest-Remaining-Time-First<br>Priority,<br>Round-Robin (RR),<br>Multilevel Queue,<br>Multilevel Feedback Queue,</p>
-<p>쓰레드<br>쓰레드 구조<br>프로세스의 메모리 공간 공유 : (code, data)<br>프로세스의 자원 공유 : (file, i/o, …)<br>비공유: 개별적인 PC, SP, registers, stack</p>
-<p>프로세스(쓰레드) 동기화<br>임계영역 해결을 위한 방법 3가지<br>상호베타 진행 유한대기</p>
-<p>동기화<br>세마포어 모니터(2개의 큐?)<br>odering 상호베제 용도로 쓰임</p>
-<p>교착상태<br>교착상태 필요조건<br>상호베타 점유및대기 비선점 환형대기</p>
-<p>메모리 낭비방지기법<br>1.Dynamic Loading<br>2.Dynamic Linking<br>3.Swapping</p>
-<p>외부단편화<br>first fit<br>best fit<br>worst fit</p>
-<p>외부단편화 해결: compaction, 페이징<br>페이지테이블(mmu의 집합,TLB에 저장)<br>내부단편화 해결 : 세그멘테이션</p>
-<p>페이지, 세그멘테이션의 보호적인 측면의 차이</p>
-<p>가상메모리<br>요구페이징<br>pure demand paging vs prepaging<br>Page Replacement Algorithms: FIFO,OPT,LRU<br>Belady’s Anomaly<br>Global vs Local Replacement<br>쓰레싱(Thrashing</p>
-<p>프레임 할당은 크게 정적할당 동적할당으로 나뉜다.</p>
-<p>정적 할당 (static allocation) 또한 균등할당, 비례할당으로 나뉜다.</p>
-<p>block device<br>character device<br>연속 할당 (Contiguous Allocation) - 장단점<br>연결 할당 (Linked Allocation) - 장단점 및 디렉토리 / FAT<br>색인 할당 (Indexed Allocation) - linked,multi level, combined</p>
-<p>디스크 스케줄링<br>fcfs, sstf, scan scheduling(cscan,look,c-look)</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;운영체제란&lt;br&gt;부팅&lt;br&gt;커널, 쉘?&lt;br&gt;배치프로세싱시스템&lt;br&gt;멀티프로그래밍 시스템&lt;br&gt;타임쉐어링 시스템&lt;br&gt;다중프로세서 시스템&lt;br&gt;분산시스템&lt;br&gt;실시간 시스템&lt;br&gt;인터럽트- 하드웨어인터럽트 , 소프트웨어인터럽트&lt;br&gt;ISR&lt;br&gt;
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="Operating System" scheme="http://KKimSangHeon.github.io/categories/CS/Operating-System/"/>
     
     
   </entry>
