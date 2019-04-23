@@ -3,7 +3,7 @@
 
     <sitemap>
         <loc>http://KKimSangHeon.github.io/post-sitemap.xml</loc>
-        <lastmod>2019-04-22T14:36:19.330Z</lastmod>
+        <lastmod>2019-04-21T10:53:13.101Z</lastmod>
     </sitemap>
 
     <sitemap>
@@ -13,7 +13,12 @@
 
     <sitemap>
         <loc>http://KKimSangHeon.github.io/category-sitemap.xml</loc>
-        
+        <lastmod>2018-09-03T05:45:52.539Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://KKimSangHeon.github.io/tag-sitemap.xml</loc>
+        <lastmod>2017-06-30T04:32:05.752Z</lastmod>
     </sitemap>
 
 </sitemapindex>
