@@ -30,30 +30,120 @@
   </entry>
   
   <entry>
-    <title>kubernetes4</title>
+    <title>(K8s) 4. 서비스를 사용하여 앱을 외부로 공개하기 , 서비스 / 레이블</title>
     <link href="http://KKimSangHeon.github.io/2019/04/23/kubernetes4/"/>
     <id>http://KKimSangHeon.github.io/2019/04/23/kubernetes4/</id>
     <published>2019-04-23T12:08:01.000Z</published>
-    <updated>2019-04-23T12:08:01.768Z</updated>
+    <updated>2019-04-23T12:18:16.726Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="서비스를-사용하여-앱을-외부로-공개하기"><a href="#서비스를-사용하여-앱을-외부로-공개하기" class="headerlink" title="서비스를 사용하여 앱을 외부로 공개하기"></a>서비스를 사용하여 앱을 외부로 공개하기</h4><p><a href="https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/expose/expose-intro/" target="_blank" rel="external">https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/expose/expose-intro/</a></p>
+<p>지금까지의 앱은 컨테이너 안에서 도는데 private하고 네트웍도 isolate되어있었다. 그러므로 proxy 를 붙여서 동작했었다</p>
+<h4 id="쿠버네티스-서비스에-대한-개요"><a href="#쿠버네티스-서비스에-대한-개요" class="headerlink" title="쿠버네티스 서비스에 대한 개요"></a>쿠버네티스 서비스에 대한 개요</h4><p>파드는 언젠가 죽는것이다. 즉 라이프사이클이 있다. 어떤 워커노드가 죽으면 그 노드에서 돌고있는 파드도 죽는다.<br> 그렇게되면 ReplicationController 가 클러스터를 동적으로 새로운노드를 만듬으로서 복구한다. 예를들어 이미지 처리하는 백엔드가 3개의 어플리케이션을 갖고있다 해보자. 프론트엔드는 백엔드 파드가 없어지는것 생기는것에 대해 신경쓰지 말고 동작하여야 한다. 각 파드는 유니크한 아이피를 갖고있는데 애플리케이션이 계속해서 동작할 수 있도록 발생하는 변화들을 서로 감지하는 방법이 필요하다.</p>
+<h3 id="서비스"><a href="#서비스" class="headerlink" title="서비스"></a>서비스</h3><p>쿠버네티스에 있는 서비스는 파드의 set을 논리적으로 정의 한것이고 그 파드들에게 어떻게 접근할 수 있는지에 대한 정책을 정의한것이다.<br>서비스는 파드들간에 커플링을 낮춘다. 서비스는 모든 쿠버네티스 오브젝트들과 같이 YAML (보다 선호하는) 또는 JSON을 이용하여 정의되고. 서비스가 대상으로 하는 파드 셋은 보통 LabelSelector에 의해 결정된다</p>
+<h4 id="서비스-외부로-노출하기"><a href="#서비스-외부로-노출하기" class="headerlink" title="서비스 외부로 노출하기"></a>서비스 외부로 노출하기</h4><p>비록 각각의 파드가 제각각의 IP를 갖고있지만 서비스 없이는 클러스터 바깥으로 노출되지 않는다. 서비스는 어플리케이션이 트래픽을 받게할 수 있는데 ServiceSpec에 type을 지정하여 노출 할 수 있다.</p>
+<h4 id="ServiceSpec의-type"><a href="#ServiceSpec의-type" class="headerlink" title="ServiceSpec의 type"></a>ServiceSpec의 type</h4><ul>
+<li>ClusterIP (기본값) - 클러스터 내에서 내부 IP 에 대해 서비스를 노출해준다. 이 방식은 오직 클러스터 내에서만 서비스가 접근될 수 있도록 해준다.</li>
+<li>NodePort - NAT가 이용되는 클러스터 내에서 각각 선택된 노드들의 동일한 포트에 서비스를 노출시켜준다. <nodeip>:<nodeport>를 이용하여 클러스터 외부로부터 서비스가 접근할 수 있도록 해준다. CluserIP의 상위 집합이다.</nodeport></nodeip></li>
+<li>LoadBalancer - (지원 가능한 경우) 기존 클라우드에서 외부용 로드밸런서를 생성하고 서비스에 고정된 공인 IP를 할당해준다. NodePort의 상위 집합이다.</li>
+<li>ExternalName - 프록시를 사용하지 않고 임의의 Name을 사용해서 expose 하는방법으로 externalName을 스펙에다 정의함(YAML 혹은 JSON)  kube-dns 1.7 이상 요구됨</li>
+</ul>
+<p>추가적으로 셀렉터를 지정하지 않는경우도 있는데 셀렉터를 지정하지 않은것은 엔드포인트를 오브젝트를 만들지 않을것이다. 그렇게 함으로써 유저들로 하여금 직접 서비스를 특정엔드포인트에 매핑할 수 있도록 해준다. selector를 생략하게 되는 또 다른 가능성은 여러분이 type: ExternalName을 이용하겠다고 확고하게 의도하는 경우이다.</p>
+<h4 id="서비스와-레이블"><a href="#서비스와-레이블" class="headerlink" title="서비스와 레이블"></a>서비스와 레이블</h4><p>서비스는 파드들의 묶음인데 하나의 ip로 묶인다. 하나의 아이피는 외부에 노출되어 서비스안에 존재하는 파드들에 접근할 수 있게해준다. 서비스는 파드셋에다가 트래픽을 라우팅(쿠버네티스 서비스들에 의해 처리된다.)하는데 서비스는 파드가 애플리케이션에 영향을 주지않고 혼자 죽거나 살아날 수 있도록 한다.</p>
+<p>파드 셋을 label이랑 selector을 사용하여 매치한다. label은 key / value 쌍이며 오브젝트에 붙어있고 여러가지 방식으로 사용될 수 있다.</p>
+<ul>
+<li>개발, 테스트, 그리고 상용환경에 대한 객체들의 지정</li>
+<li>임베디드된 버전 태그들</li>
+<li>태그들을 이용하는 객체들에 대한 분류</li>
+</ul>
+<p>레이블은 오브젝트가 만들어 질때 붙일수도 있고 나중에 붙일수있고 아무때나 수정할 수 있다.</p>
+<p>kubectl get pods<br>를 입력하고 파드들을 확인해보자.</p>
+<p>kubectl get services<br>를 입력하여 서비스를 확인해보자. 만들지도 않았는데 하나가 돌아가고 있는데 클러스터에서 미니큐브를 만들면 실행되는것이다.</p>
+<p>새로운 서비스를 만들고 노출하려면 다음과 노트 포트를 파라미터로 줘야한다.<br>kubectl expose deployment/kubernetes-bootcamp –type=”NodePort” –port 8080<br>내부 8080포트에 붙으라는것.</p>
+<p>kubectl get services<br>를 입력하여 서비스를 확인해보자.<br>하나가 더 추가가 된것을 알 수 있다.</p>
+<p>서비스가 클러스터ip로 인터널, external 포트가 있다.</p>
+<p>kubectl describe services/kubernetes-bootcamp<br>를 입력하여 자세히 살펴보자.</p>
+<p>노드포트라는 환경변수를 만들자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">export NODE_PORT=$(kubectl get services/kubernetes-bootcamp -o go-template=&apos;&#123;&#123;(index .spec.ports 0).nodePort&#125;&#125;&apos;)</div><div class="line"></div><div class="line">echo NODE_PORT=$NODE_PORT</div></pre></td></tr></table></figure></p>
+<p>아래를 입력하여 접근해보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl $(minikube ip):$NODE_PORT</div></pre></td></tr></table></figure></p>
+<p>디플로이먼트는 자동으로 레이블이 하나있다.<br>이를통해 파드리스트를 쿼리해보자.<br>kubectl get pods -l run=kubernetes-bootcamp<br>run=kubernetes-bootcamp이 label이다.</p>
+<p>kubectl get services -l run=kubernetes-bootcamp<br>를 입력하여 run=kubernetes-bootcamp 이라는 레이블을 갖고있는 서비스를 조회해보자.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export POD_NAME=$(kubectl get pods -o go-template --template &apos;&#123;&#123;range .items&#125;&#125;&#123;&#123;.metadata.name&#125;&#125;&#123;&#123;&quot;\n&quot;&#125;&#125;&#123;&#123;end&#125;&#125;&apos;)</div><div class="line">echo Name of the Pod: $POD_NAME</div></pre></td></tr></table></figure>
+<p>를 입력하여 파드 네임을 환경변수에 넣어보자.</p>
+<p>app=v1으로 새로운이름을 주자.<br>kubectl label pod $POD_NAME app=v1</p>
+<p>kubectl describe pods $POD_NAME<br>레이블 확인해보자.</p>
+<p>kubectl get pods -l app=v1<br>바뀐 레이블로 파드를 조회해보자.</p>
+<p>kubectl delete service -l run=kubernetes-bootcamp<br>를 입력하여 서비스를 삭제하자.</p>
+<p>kubectl get services<br>서비스를 확인해보자.</p>
+<p>라우팅도 잘 안되나 확인해보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl $(minikube ip):$NODE_PORT</div></pre></td></tr></table></figure></p>
+<p>파드안에서 동작하는 아래의 명령어를 통해 아직 파드가 동작는지 보자.<br>kubectl exec -ti $POD_NAME curl localhost:8080</p>
+]]></content>
     
     <summary type="html">
     
+      &lt;h4 id=&quot;서비스를-사용하여-앱을-외부로-공개하기&quot;&gt;&lt;a href=&quot;#서비스를-사용하여-앱을-외부로-공개하기&quot; class=&quot;headerlink&quot; title=&quot;서비스를 사용하여 앱을 외부로 공개하기&quot;&gt;&lt;/a&gt;서비스를 사용하여 앱을 외부로 공개하기&lt;/
+    
     </summary>
     
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
+    
+    
+      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
     
   </entry>
   
   <entry>
-    <title>kubernetes3</title>
+    <title>(K8s) 3. Pods and Nodes</title>
     <link href="http://KKimSangHeon.github.io/2019/04/23/kubernetes3/"/>
     <id>http://KKimSangHeon.github.io/2019/04/23/kubernetes3/</id>
     <published>2019-04-23T12:07:56.000Z</published>
-    <updated>2019-04-23T12:07:56.848Z</updated>
+    <updated>2019-04-23T12:14:58.383Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="Pods"><a href="#Pods" class="headerlink" title="Pods"></a>Pods</h4><p><a href="https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/explore/explore-intro/" target="_blank" rel="external">https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/explore/explore-intro/</a></p>
+<p>디플로이먼트를 만들면 쿠버네티스는 파드를 만들어 어플리케이션 인스턴스를 호스트 해준다. 파드는 쿠버네티스 인스턴스이며 하나 또는 여러 컨테이너(도커나 rkt) 그룹을 추상화한것이다. 컨테이너 뿐만아니라 컨테이너들이 사용하는 리소스도 포함해서 파드라고 한다.</p>
+<p>리소스는 다음을 포함한다.</p>
+<ul>
+<li>볼륨과 같은, 공유 스토리지</li>
+<li>클러스터 IP 주소와 같은, 네트워킹</li>
+<li>컨테이너 이미지 버전 또는 사용할 특정 포트와 같이, 각 컨테이너가 동작하는 방식에 대한 정보</li>
+</ul>
+<p>파드는 어플리케이션에 특화된 논리적인 호스트를 모델링한것이고 다른 어플리케이션 컨테이너를 이 안에 담아놓을 수 있으며 비교적 관련있는것들 끼리 모아놓은것이다. 예를 들어 하나의 팟안에다 두개의 컨테이너를 하나에 파드에 넣을 수 있다, 하나의 파드안에 들은 컨테이너들은 IP와 포트를 공유한다. 그래서 항상 같이 존재하며 같이 스케줄링된다.</p>
+<p>파드는 atomic unit 이다. 쿠버네티스에서 디플로이먼트를 만들었을때 디플로이먼트는 컨테이너를 갖고있는 파드를 만든다.(컨테이너를 직접 만드는것이 아님)<br>각각의 파드가 특정한 노드에 묶이게 되고 그 노드안에서 살게된다. 노드가 실패하면 동일한 파드를 또다른 클러스터에 있는 다른노드에서 실행한다.<br>즉 파드 단위로 옮겨다닌다.</p>
+<h4 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h4><p>파드를 실행하는게 노드이며 노드는 쿠버네티스에서 워커머신이다.(쿠버네티스는 마스터, 워커노드가 존재) 노드는 버츄얼 피지컬 머신일 수 도있다. 노드는 마스터에서 관리되면 여러개의 파드를 갖고있으며 쿠버네티스 마스터는 자동으로 어떤 파드를 노드에 올릴지 클러스터링 한다. 마스터의 자동 스케줄링은 가용한 리소스를 고용해서..</p>
+<p>모든 쿠버네티스 노드는 최소한 다음을 실행한다</p>
+<ul>
+<li><p>Kubelet(팀장님)은, 쿠버네티스 마스터(본부장님)와 노드 간 통신을 책임지는 프로세스이며, 하나의 머신 상에서 동작하는 파드와 컨테이너를 관리한다.</p>
+</li>
+<li><p>(도커, rkt)와 같은 컨테이너 런타임은 레지스트리에서 컨테이너 이미지를 가져와 묶여 있는 것을 풀고 애플리케이션을 동작시키는 책임을 맡는다.</p>
+</li>
+</ul>
+<p>노드 개요<br>노드안에 파드가 여러개 들어갈 수 있고 파드는 각 아이피를 할당받는다. Kubelet이 노드들을 관리</p>
+<p>kubectl을 통해서 배포된 앱들의 정보를 가져올 수 있다.<br>kubectl get - 자원을 나열한다<br>kubectl describe - 자원에 대해 상세한 정보를 보여준다.<br>kubectl logs - 파드 내 컨테이너의 로그들을 출력한다<br>kubectl exec - 파드 내 컨테이너에 대한 명령을 실행한다.</p>
+<p>언제 애플리케이션이 배포되었으며, 현재 상태가 어떠한지, 그것의 구성은 어떠한지 등을 보기 위해 이러한 명령을 이용할 수 있다.</p>
+<p>kubectl get pods<br>를 입력하여 파드가 있나 확인해보고 없으면 빌드를 다시해라</p>
+<p>kubectl describe pods<br>를 입력하여 파드에 대한 자세한 정보를 보자.IP, Port, Event<br>결과물은</p>
+<p>kubectl describe node<br>를 입력하여 노드 정보를 갖고올 수 있다.</p>
+<p>파드가 isolate, private 네트웍에서 동작하기에 kubectl proxy를 써서 사용하였었다.</p>
+<p>kubectl proxy<br>를 입력하여 프록시르 띄우자</p>
+<p>파드네임과 쿼리를 갖고와 프록시를 해보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export POD_NAME=$(kubectl get pods -o go-template --template &apos;&#123;&#123;range .items&#125;&#125;&#123;&#123;.metadata.name&#125;&#125;&#123;&#123;&quot;\n&quot;&#125;&#125;&#123;&#123;end&#125;&#125;&apos;)</div><div class="line">echo Name of the Pod: $POD_NAME</div></pre></td></tr></table></figure></p>
+<p>동작하고 있는 애플리케이션 정보를 보고싶다면<br>curl <a href="http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME/proxy/" target="_blank" rel="external">http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME/proxy/</a><br>를 입력하면 된다.</p>
+<p>애플리케이션에서 보통 STDOUT로 내보내는데 그것이 로그가 된다. 이를 쿠버네티스 다음명령오로 가져올 수 있다.<br>kubectl logs $POD_NAME<br>(지금은 컨테이너가 파드안에 하나이기 때문에 지정하지 않아도 된다.)</p>
+<p>파드가 동작하고 있으면 그안에 컨테이너에게 명령어를 실행할 수 있는데 다음과 같이 하면된다.<br>kubectl exec $POD_NAME env<br>(컨테이너 이름을 생략할수 있는것은 지금은 파드안에 컨테이너가 하나이기 때문에)</p>
+<p>kubectl exec -ti $POD_NAME bash<br>를 입력하여 NodeJS 가 돌고있는 배쉬가 생겼다.<br>이를통해 컨테이너 안에서 명령들을 동작해볼 수 있다.</p>
+]]></content>
     
     <summary type="html">
     
+      &lt;h4 id=&quot;Pods&quot;&gt;&lt;a href=&quot;#Pods&quot; class=&quot;headerlink&quot; title=&quot;Pods&quot;&gt;&lt;/a&gt;Pods&lt;/h4&gt;&lt;p&gt;&lt;a href=&quot;https://kubernetes.io/ko/docs/tutorials/kubernetes-ba
+    
     </summary>
     
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
+    
+    
+      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
     
   </entry>
   
