@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2019/04/23/kubernetes2/</loc>
+        <lastmod>2019-04-23T12:12:46.994Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2019/04/23/kubernetes1/</loc>
         <lastmod>2019-04-23T12:09:25.350Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -33,14 +41,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2019/04/23/kubernetes3/</loc>
         <lastmod>2019-04-23T12:07:56.848Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2019/04/23/kubernetes2/</loc>
-        <lastmod>2019-04-23T12:07:53.315Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
