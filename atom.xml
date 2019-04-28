@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-04-23T14:34:29.039Z</updated>
+  <updated>2019-04-28T02:47:42.827Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://KKimSangHeon.github.io/2019/04/23/kubernetes5/"/>
     <id>http://KKimSangHeon.github.io/2019/04/23/kubernetes5/</id>
     <published>2019-04-23T12:08:06.000Z</published>
-    <updated>2019-04-23T14:34:29.039Z</updated>
+    <updated>2019-04-28T02:47:42.827Z</updated>
     
     <content type="html"><![CDATA[<h4 id="Scaling"><a href="#Scaling" class="headerlink" title="Scaling"></a>Scaling</h4><p>애플리케이션 스케일링하기<br>이전 모듈에서 서비스를 만들고 퍼블릭하게 노출했다. 해당 디플로이멘트는 하나의 파드로 증가하도록 했다. 트래픽이 증가하면 사용자가 요구하는대로 어플리케이션을 실행할 필요 있다,.<br>스케일링은 디플러이먼트의 어플리케이션 replicas를 몇개할지 정하는것이다.</p>
 <p>하나만 감싸고 있는 서비스를 여러노드에 거쳐 서비스를 스케일 아웃을 할 수 있다.<br>디플로이먼트를 스케일 아웃하면 신규 파드가 생성되어서 가용한 자원이 있는 노드에 스케줄된다. 스케일링 인은 파드개수를 줄이는것을 의미한다.</p>
@@ -66,7 +66,6 @@
 <p>kubectl describe pods<br>를 입력하여 파드들의 상태를 보자. 이미지가 바뀐지 보자<br>봤는데 이미지가 바뀌지 않은것을 확인할 수 있다.<br>레파지토리에 v10 이 없어서 그렇다. 그러므로 롤백하자.</p>
 <p>kubectl get pods<br>를 입력하여 4개가 잘 돌고있는지 보고</p>
 <p>kubectl describe pods<br>를 입력하여 이미지가 잘 돌고있는지 보자</p>
-<p>/</p>
 ]]></content>
     
     <summary type="html">
