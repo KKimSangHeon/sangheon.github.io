@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-04-28T02:47:42.827Z</updated>
+  <updated>2019-05-06T14:28:07.985Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,49 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>(K8s) 6. 윈도우에서 실습해보기</title>
+    <link href="http://KKimSangHeon.github.io/2019/05/06/kubernetes6/"/>
+    <id>http://KKimSangHeon.github.io/2019/05/06/kubernetes6/</id>
+    <published>2019-05-06T14:26:48.000Z</published>
+    <updated>2019-05-06T14:28:07.985Z</updated>
+    
+    <content type="html"><![CDATA[<p>도커툴박스설치</p>
+<p><a href="https://docs.docker.com/toolbox/overview/" target="_blank" rel="external">https://docs.docker.com/toolbox/overview/</a></p>
+<p>virtual machine 가 없다면 체크하여 설치</p>
+<p>PowerShell 관리자 권한으로 실행</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">$ ExecutionPolicy      &lt;-- 현재상태확인</div><div class="line">$ Set-ExecutionPolicy Unrestricted</div><div class="line"></div><div class="line"></div><div class="line">$ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString(&apos;https://chocolatey.org/install.ps1&apos;))</div><div class="line"></div><div class="line">$ choco install minikube kubernetes-cli</div><div class="line"></div><div class="line">$ kubectl run sangheonkim --image=gcr.io/google-samples/kubernetes-bootcamp:v1 --port=8080</div><div class="line"></div><div class="line"></div><div class="line">$ minikube dashboard</div></pre></td></tr></table></figure>
+<p>파드 내부에서 출력하는 로그를 보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ kubectl get pods</div><div class="line">를 통해 파드의 정보를 복사하자,</div><div class="line">$ kubectl logs $POD_NAME</div></pre></td></tr></table></figure></p>
+<p>컨테이너로 들어가서 여러 명령어를 실행해보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ kubectl exec $POD_NAME env</div><div class="line"></div><div class="line">$ kubectl exec -ti $POD_NAME bash</div></pre></td></tr></table></figure></p>
+<p>서비스를 만들어보자</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ kubectl get services</div><div class="line">서비스를 확인해보자. 미니쿠베가 만든게 하나 존재한다.</div><div class="line"></div><div class="line">$ kubectl expose deployment/sangheonkim --type=&quot;NodePort&quot; --port 8080</div><div class="line">서비스를 노출시켜보자</div><div class="line"></div><div class="line">$ kubectl describe services/sangheonkim</div><div class="line">서비스를 자세히 보자</div></pre></td></tr></table></figure>
+<p>Deployment를 자세히보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kubectl describe deployments</div></pre></td></tr></table></figure></p>
+<p>보면 레이블이 있는것을 확인할 수 있는데 디플로이먼트는 저절로 레이블이 하나 생긴다.</p>
+<p>레이블을 변경해보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ kubectl label pod $POD_NAME app=v1</div><div class="line">를 입력하여 레이블을 app=v1 으로 변경하고</div><div class="line"></div><div class="line">$ kubectl describe pods $POD_NAME</div><div class="line">을 입력하여 확인해보자.</div><div class="line"></div><div class="line">$ kubectl get pods -l app=v1</div><div class="line">을 입력하여 잘반영되었나 확인해보자</div></pre></td></tr></table></figure></p>
+<p>서비스를 삭제해보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kubectl delete service -l run=sangheonkim</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;도커툴박스설치&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.docker.com/toolbox/overview/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://docs.docker.com/toolbox/overvie
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
+    
+    
+      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
     <title>(K8s) 5. 여러 인스턴스를 실행하기. Scaling 하기</title>
     <link href="http://KKimSangHeon.github.io/2019/04/23/kubernetes5/"/>
     <id>http://KKimSangHeon.github.io/2019/04/23/kubernetes5/</id>
     <published>2019-04-23T12:08:06.000Z</published>
-    <updated>2019-04-28T02:47:42.827Z</updated>
+    <updated>2019-04-28T09:42:12.109Z</updated>
     
     <content type="html"><![CDATA[<h4 id="Scaling"><a href="#Scaling" class="headerlink" title="Scaling"></a>Scaling</h4><p>애플리케이션 스케일링하기<br>이전 모듈에서 서비스를 만들고 퍼블릭하게 노출했다. 해당 디플로이멘트는 하나의 파드로 증가하도록 했다. 트래픽이 증가하면 사용자가 요구하는대로 어플리케이션을 실행할 필요 있다,.<br>스케일링은 디플러이먼트의 어플리케이션 replicas를 몇개할지 정하는것이다.</p>
 <p>하나만 감싸고 있는 서비스를 여러노드에 거쳐 서비스를 스케일 아웃을 할 수 있다.<br>디플로이먼트를 스케일 아웃하면 신규 파드가 생성되어서 가용한 자원이 있는 노드에 스케줄된다. 스케일링 인은 파드개수를 줄이는것을 의미한다.</p>
@@ -814,37 +852,6 @@
     <summary type="html">
     
       &lt;p&gt;equals는 생각보다 재정의 하기 어렵다. 실수로 인한 결과는 끔찍해 질 수 있다.&lt;br&gt; 다음중 하나라도 만족할 경우에는 equals를 재정의 하지 않아도 된다.&lt;br&gt;1.각각의 객체가 고유하다.(ex. Thread 객체)&lt;br&gt;2.클래스에 
-    
-    </summary>
-    
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>규칙 7. 종료자 사용을 피하라</title>
-    <link href="http://KKimSangHeon.github.io/2019/03/26/effectivejava1/"/>
-    <id>http://KKimSangHeon.github.io/2019/03/26/effectivejava1/</id>
-    <published>2019-03-26T13:21:22.000Z</published>
-    <updated>2019-03-26T13:24:26.546Z</updated>
-    
-    <content type="html"><![CDATA[<p>종료자는 예측 불가능하며 대체로 위험하고 일반적으로 불필요하다.</p>
-<h3 id="종료자의-단점-및-주의할-점"><a href="#종료자의-단점-및-주의할-점" class="headerlink" title="종료자의 단점 및 주의할 점"></a>종료자의 단점 및 주의할 점</h3><p>1.C++의 소멸자와는 다른개념이다. 종료자는 즉시 실행되리라는 보장이 전혀 없다. 그러므로 긴급한 작업을 종료자 안에서 처리하면 안된다. 종료자의 실행시점은 GC 알고리즘에 좌우되는데 이는 JVM 구현마다 크게 다르다. 또한 클래스에 종료자를 붙여놓으면 객체 메모리 반환이 지연될 수 있다.<br>2.종료자는 즉시 실행되는것을 보장하지 않기때문에 <u>지속성이 보장되어야 하는 중요상태정보는 종료자로 갱신하면 안된다.</u><br>3.종료자를 사용하면 프로그램 성능이 떨어진다.<br><code>즉 종료자를 사용하지 말고 명시적인 종료메서드를 하나 정의하고 이를 호출해라! 또한 종료여부를 객체안에 private로 보관하라</code><br>명시적 종료의 예로 OutputStream, InputStream의 close 메서드가 있다. 주로 finally안에서 호출하여 예외가 발생해도 실행될 수 있도록 한다,</p>
-<h3 id="종료자의-쓰임"><a href="#종료자의-쓰임" class="headerlink" title="종료자의 쓰임"></a>종료자의 쓰임</h3><p>1.명시적 종료메서드 호출을 잊을 경우에 대비하는 안전망으로의 역할</p>
-<p>2.네이티브 피어와 연결된 객체를 다룰 때 - 일반 객체가 아니므로 GC가 알 수 없다.</p>
-<h3 id="하위클래스에서의-종료자-생성"><a href="#하위클래스에서의-종료자-생성" class="headerlink" title="하위클래스에서의 종료자 생성"></a>하위클래스에서의 종료자 생성</h3><p>하위클래스에서 종료자를 오버라이딩 하면 상위클래스의 종료자를 호출 해 줘야 한다. 하지만 이를 잊어먹고 하지 않는경우 이로인한 문제가 발생한다.<br>이를 방지하기 위해 익명클래스 안에 종료자를 정의하여 사용하는 방법이 좋다. 이를 종료 보호자(finalizer guardian)라 함.<br>종료보호자에 대한 설명: 익명클래스로 finalize를 오버라이딩 하면 해당 스코프를 벗어나면 GC가 finalize를 호출하게 되어 상속받은 하위클래스가 super.finalize를 호출하지 않아도 된다.<br><a href="https://stackoverflow.com/questions/6872857/how-does-a-finalizer-guardian-work-in-java" target="_blank" rel="external">https://stackoverflow.com/questions/6872857/how-does-a-finalizer-guardian-work-in-java</a></p>
-<p>즉 네이티브 자원을 종료시키려는것이 아니라면 종료자는 사용하지 말고 종료자를 불가피하게 사용해야할 경우에는 super.finalize()를 호출해라.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;종료자는 예측 불가능하며 대체로 위험하고 일반적으로 불필요하다.&lt;/p&gt;
-&lt;h3 id=&quot;종료자의-단점-및-주의할-점&quot;&gt;&lt;a href=&quot;#종료자의-단점-및-주의할-점&quot; class=&quot;headerlink&quot; title=&quot;종료자의 단점 및 주의할 점&quot;&gt;&lt;/
     
     </summary>
     
