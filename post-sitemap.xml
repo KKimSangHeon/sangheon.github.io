@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2017/08/11/dg-chat-bot/</loc>
+        <lastmod>2019-05-12T04:10:36.532Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2019/05/06/kubernetes6/</loc>
         <lastmod>2019-05-06T14:28:07.985Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1817,14 +1825,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2018/07/27/project/</loc>
         <lastmod>2018-09-03T05:45:52.539Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2017/08/11/dg-chat-bot/</loc>
-        <lastmod>2018-06-02T01:13:31.070Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
