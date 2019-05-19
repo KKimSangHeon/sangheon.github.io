@@ -196,20 +196,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/CS/</loc>
-        <lastmod>2019-05-06T14:28:07.985Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/categories/CS/MSA/</loc>
-        <lastmod>2019-05-06T14:28:07.985Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/categories/About-Me/</loc>
         <lastmod>2019-05-12T04:10:36.532Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -219,6 +205,20 @@
     <url>
         <loc>http://KKimSangHeon.github.io/categories/About-Me/My-Projects/</loc>
         <lastmod>2019-05-12T04:10:36.532Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/CS/</loc>
+        <lastmod>2019-05-19T07:05:11.856Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/CS/MSA/</loc>
+        <lastmod>2019-05-19T07:05:11.856Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
