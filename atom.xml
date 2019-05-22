@@ -34,7 +34,7 @@
     <link href="http://KKimSangHeon.github.io/2019/05/21/kube2/"/>
     <id>http://KKimSangHeon.github.io/2019/05/21/kube2/</id>
     <published>2019-05-21T10:16:49.000Z</published>
-    <updated>2019-05-22T13:21:47.487Z</updated>
+    <updated>2019-05-22T13:30:27.722Z</updated>
     
     <content type="html"><![CDATA[<p>도커에서 제공하는 스크립트로 설치</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo wget -qO- https://get.docker.com/ | sh</div><div class="line">$ sudo usermod -aG docker shkim</div></pre></td></tr></table></figure>
@@ -70,6 +70,8 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker image build -t sh/golang:latest .</div></pre></td></tr></table></figure>
 <p>아래 명령어는 컨테이너 안에 들어가 <code>go version</code>을 입력한 것과 같다.<br>즉 아래 명령어의 version이 도커파일의 CMD 부분에 대입되는것이다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker container run sh/golang:latest version</div></pre></td></tr></table></figure></p>
 <p>이처럼 ENTRYPOINT는 이미지를 생성하는 사람이 컨테이너의 용도를 어느정도 제한하려는 경우에도 유용하다.</p>
+<h3 id="도커-컨테이너-실행"><a href="#도커-컨테이너-실행" class="headerlink" title="도커 컨테이너 실행"></a>도커 컨테이너 실행</h3><p>다음 명령어로 실행 할 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker container run example/echo:latest</div></pre></td></tr></table></figure></p>
+<p>다음 명령어로 데몬으로 실행할 수 있다. 명령어의 결과로 나오는 값은 컨테이너의 id이다. 도커 명령으로 컨테이너를 조작할 때 사용된다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker container run -d example/echo:latest</div></pre></td></tr></table></figure></p>
 <p>/</p>
 ]]></content>
     

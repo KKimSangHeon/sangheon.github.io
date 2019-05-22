@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="도커에서 제공하는 스크립트로 설치 12$ sudo wget -qO- https://get.docker.com/ | sh$ sudo usermod -aG docker shkim 도커 이미지 : 도커 컨테이너를 구성하는 파일 시스템과 실행할 어플리케이션 설정을 하나로 합친것으로, 컨테이너를 생성하는 템플릿 역할을 한다. 도커 컨테이너 : 도커 이미지를 기반으로">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/dockerandkube.jpg">
-<meta property="og:updated_time" content="2019-05-22T13:21:47.487Z">
+<meta property="og:updated_time" content="2019-05-22T13:30:27.722Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2.도커 컨테이너 배포">
 <meta name="twitter:description" content="도커에서 제공하는 스크립트로 설치 12$ sudo wget -qO- https://get.docker.com/ | sh$ sudo usermod -aG docker shkim 도커 이미지 : 도커 컨테이너를 구성하는 파일 시스템과 실행할 어플리케이션 설정을 하나로 합친것으로, 컨테이너를 생성하는 템플릿 역할을 한다. 도커 컨테이너 : 도커 이미지를 기반으로">
@@ -215,6 +215,8 @@ ga('send', 'pageview');
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker image build -t sh/golang:latest .</div></pre></td></tr></table></figure>
 <p>아래 명령어는 컨테이너 안에 들어가 <code>go version</code>을 입력한 것과 같다.<br>즉 아래 명령어의 version이 도커파일의 CMD 부분에 대입되는것이다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker container run sh/golang:latest version</div></pre></td></tr></table></figure></p>
 <p>이처럼 ENTRYPOINT는 이미지를 생성하는 사람이 컨테이너의 용도를 어느정도 제한하려는 경우에도 유용하다.</p>
+<h3 id="도커-컨테이너-실행"><a href="#도커-컨테이너-실행" class="headerlink" title="도커 컨테이너 실행"></a>도커 컨테이너 실행</h3><p>다음 명령어로 실행 할 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker container run example/echo:latest</div></pre></td></tr></table></figure></p>
+<p>다음 명령어로 데몬으로 실행할 수 있다. 명령어의 결과로 나오는 값은 컨테이너의 id이다. 도커 명령으로 컨테이너를 조작할 때 사용된다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker container run -d example/echo:latest</div></pre></td></tr></table></figure></p>
 <p>/</p>
 
         </div>
