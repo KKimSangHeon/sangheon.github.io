@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-05-23T13:31:14.693Z</updated>
+  <updated>2019-05-23T14:07:31.673Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,11 +20,13 @@
     <link href="http://KKimSangHeon.github.io/2019/05/22/kube3/"/>
     <id>http://KKimSangHeon.github.io/2019/05/22/kube3/</id>
     <published>2019-05-22T11:48:50.000Z</published>
-    <updated>2019-05-23T13:31:14.693Z</updated>
+    <updated>2019-05-23T14:07:31.673Z</updated>
     
     <content type="html"><![CDATA[<p>도커이미지는 도커 컨테이너를 만들기 위한 템플릿이다<br>컨테이너의 템플릿 역할을 하는 이미지를 만드는 과정을 일반적으로 도커 이미지를 빌드한다고 한다. 그리고 컨테이너를 실행할 때 빌드된 이미지를 사용한다.</p>
 <p><code>docker image build</code><br>도커파일에 기술된 구성을 따라 도커 이미지를 생성하는 명령.<br>docker image build -t 이미지명[:태그명] Dockerfile의 경로</p>
-<p><code>docker search</code></p>
+<p><code>docker search</code><br>docker search [options] 검색_키워드<br>도커 허브에 등록된 레파지토리를 검색할 수 있다.<br>docker search jenkins 를 하면<br>docker search library/jenkins와 같다.<br>공식 레파지토리의 네임스페이스는 일률적으로 library이다.</p>
+<p><code>docker image pull</code><br>docker image pull [options] 리포지토리명[:태그명]<br>인자로 지정한 레포지토리명과 태그는 도커 허브에 이미 존재하야 한다.</p>
+<p><code>docker image ls</code><br>호스트 운영체제에 저장된 도커 이미지의 목록을 보여준다.</p>
 ]]></content>
     
     <summary type="html">
