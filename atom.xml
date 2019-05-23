@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-05-22T11:48:50.376Z</updated>
+  <updated>2019-05-23T13:08:48.232Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,25 +16,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>kube3</title>
+    <title>3. 도커 이미지 다루기</title>
     <link href="http://KKimSangHeon.github.io/2019/05/22/kube3/"/>
     <id>http://KKimSangHeon.github.io/2019/05/22/kube3/</id>
     <published>2019-05-22T11:48:50.000Z</published>
-    <updated>2019-05-22T11:48:50.376Z</updated>
+    <updated>2019-05-23T13:08:48.232Z</updated>
+    
+    <content type="html"><![CDATA[<p>도커이미지는 도커 컨테이너를 만들기 위한 템플릿이다<br>컨테이너의 템플릿 역할을 하는 이미지를 만드는 과정을 일반적으로 도커 이미지를 빌드한다고 한다. 그리고 컨테이너를 실행할 때 빌드된 이미지를 사용한다.</p>
+]]></content>
     
     <summary type="html">
     
+      &lt;p&gt;도커이미지는 도커 컨테이너를 만들기 위한 템플릿이다&lt;br&gt;컨테이너의 템플릿 역할을 하는 이미지를 만드는 과정을 일반적으로 도커 이미지를 빌드한다고 한다. 그리고 컨테이너를 실행할 때 빌드된 이미지를 사용한다.&lt;/p&gt;
+
+    
     </summary>
     
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
+    
+    
+      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
     
   </entry>
   
   <entry>
-    <title>2.도커 컨테이너 배포</title>
+    <title>2.도커 컨테이너 실행</title>
     <link href="http://KKimSangHeon.github.io/2019/05/21/kube2/"/>
     <id>http://KKimSangHeon.github.io/2019/05/21/kube2/</id>
     <published>2019-05-21T10:16:49.000Z</published>
-    <updated>2019-05-23T13:05:47.142Z</updated>
+    <updated>2019-05-23T13:06:39.516Z</updated>
     
     <content type="html"><![CDATA[<p>도커에서 제공하는 스크립트로 설치</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo wget -qO- https://get.docker.com/ | sh</div><div class="line">$ sudo usermod -aG docker shkim</div></pre></td></tr></table></figure>
@@ -74,7 +86,7 @@
 <p>다음 명령어로 데몬으로 실행할 수 있다. 명령어의 결과로 나오는 값은 컨테이너의 id이다. 도커 명령으로 컨테이너를 조작할 때 사용된다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker container run -d example/echo:latest</div></pre></td></tr></table></figure></p>
 <h3 id="포트-포트포워딩"><a href="#포트-포트포워딩" class="headerlink" title="포트 포트포워딩"></a>포트 포트포워딩</h3><p>HTTP 요청을 받는 애플리케이션은 컨테이너 밖에서 온 요청을 컨테이너 안에 있는 어플리케이션에 전달해줘야 한다. 이를 바로 포트 포워딩이라 한다. 포트 포워딩이란 호스트 머신의 포트를 컨테이너 포트와 연결해 컨테이너 밖에서 온 통신을 컨테이너 포트로 전달한다. 이 기능 덕분에 컨테이너 포트를 컨테이너 외부에서도 이용할 수 있다.</p>
 <p>다음 명령어로 포트포워딩을 할 수 있다. 9000포트로 접속할 경우 컨테이너 내부 8080포트로 연결된다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker container run -d -p 9000:8080 example/echo:latest</div></pre></td></tr></table></figure></p>
-<p>또는 아래와 같이 빈 포트로 자동할당되도록 할 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$ docker container run -d -p 8080 example/echo:latest</div><div class="line">// 빈 포트가 에페메랄 포트로 자동 할당된다.</div><div class="line">$</div></pre></td></tr></table></figure></p>
+<p>또는 아래와 같이 빈 포트로 자동할당되도록 할 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$ docker container run -d -p 8080 example/echo:latest</div><div class="line">// 빈 포트가 에페메랄 포트로 자동 할당된다.</div><div class="line">$ docker container ls</div><div class="line">//포트를 확인해보자</div></pre></td></tr></table></figure></p>
 <p>/</p>
 ]]></content>
     
