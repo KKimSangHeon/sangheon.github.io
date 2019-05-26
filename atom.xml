@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-05-26T08:32:39.825Z</updated>
+  <updated>2019-05-26T11:20:14.781Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,11 +20,15 @@
     <link href="http://KKimSangHeon.github.io/2019/05/26/kube5/"/>
     <id>http://KKimSangHeon.github.io/2019/05/26/kube5/</id>
     <published>2019-05-26T08:30:05.000Z</published>
-    <updated>2019-05-26T08:32:39.825Z</updated>
+    <updated>2019-05-26T11:20:14.781Z</updated>
     
     <content type="html"><![CDATA[<p><code>docker container prune</code><br>docker container prune [options]<br>도커를 오래 사용하다 보면 디스케이 컨테이너와 이미지가 점점 늘어나게 된다. 이런 경우 prune 명령을 사용해 필요없는 컨테이너를 일괄 삭제할 수 있다.</p>
 <p>docker image prune [options]<br>도커를 오래 사용하다 보면 디스케이 컨테이너와 이미지가 점점 늘어나게 된다. 이런 경우 prune 명령을 사용해 필요없는 이미지를 일괄 삭제할 수 있다.</p>
 <p>docker system prune [options]<br>사용하지 않는 도커 이미지 및 컨테이너,볼륨,네트워크 등 모든 리소스를 일괄적으로 삭제할 수 있다.</p>
+<p><code>docker iamge prune</code><br>docker image prune [options]<br>이미지도 컨테이너와 마찬가지로 사용하지 않는 것이 점차 누적된다. 디스크 용량을 너무 차지하지 않도록 정기적으로 삭제 해줘야 한다. docker image prune명령은 태그가 붙지않은 모든 이미지를 삭제한다.</p>
+<p><code>docker system prune</code><br>사용하지 않는 도커 이미지 및 컨테이너, 볼륨, 네트워크 등 모든 도커 리소스를 일괄적으로 삭제한다.</p>
+<p><code>docker container stats</code><br>시스템 리소스 사용 현황을 컨테이너 단위로 확인할 때 사용한다. 유닉스 계열 운영 체제의 top 명령과 같은 역할을 한다고 보면 된다.<br>docker container stats [options] [대상_컨테이너ID]</p>
+<p>80P부터</p>
 ]]></content>
     
     <summary type="html">
