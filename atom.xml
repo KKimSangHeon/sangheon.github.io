@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-05-29T10:21:11.518Z</updated>
+  <updated>2019-05-29T10:25:00.262Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,73 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>8. 인그레스</title>
+    <link href="http://KKimSangHeon.github.io/2019/05/29/kube8/"/>
+    <id>http://KKimSangHeon.github.io/2019/05/29/kube8/</id>
+    <published>2019-05-29T10:23:51.000Z</published>
+    <updated>2019-05-29T10:25:00.262Z</updated>
+    
+    <content type="html"><![CDATA[<p>인그레스</p>
+<p>NodePort의 경우 L4레벨까지 다룰수 있기 때문에 HTTP/HTTPS처럼 경로를 기반으로 서비스를 전환하는 L7레벨의 제어는 불가능하다.<br>이를 해결하기 위한것이 인그레스이다. 서비스를 이용한 쿠버네티스 외부에 대한 노출(NodePort)과 가상 호스트 및 경로 기반의 정교한 HTTP 라우팅(인그레스)을 양립시킬 수 있다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.16.2/deploy/mandatory.yaml</div><div class="line"></div><div class="line">$ kubectl get pod,svc -n ingress-nginx</div></pre></td></tr></table></figure>
+<p>서비스를 다음과 같이 생성하고 반영시켜보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">apiVersion: v1</div><div class="line">kind: Service</div><div class="line">metadata:</div><div class="line">  name: echo</div><div class="line">spec:</div><div class="line">  selector:</div><div class="line">    app: echo</div><div class="line">  ports:</div><div class="line">    - name: http</div><div class="line">      port: 80</div></pre></td></tr></table></figure></p>
+<p>다음과같이 인그레스를 정의하고 반영해보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">apiVersion: extensions/v1beta1</div><div class="line">kind: Ingress</div><div class="line">metadata:</div><div class="line">  name: echo</div><div class="line">spec:</div><div class="line">  rules:</div><div class="line">  - host: ch05.gihyo.local</div><div class="line">    http:</div><div class="line">      paths:</div><div class="line">      - path: /</div><div class="line">        backend:</div><div class="line">          serviceName: echo</div><div class="line">          servicePort: 80</div></pre></td></tr></table></figure></p>
+<p>잘 생성되었는지 확인해보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kubectl get ingress</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;인그레스&lt;/p&gt;
+&lt;p&gt;NodePort의 경우 L4레벨까지 다룰수 있기 때문에 HTTP/HTTPS처럼 경로를 기반으로 서비스를 전환하는 L7레벨의 제어는 불가능하다.&lt;br&gt;이를 해결하기 위한것이 인그레스이다. 서비스를 이용한 쿠버네티스 외부에 대한
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
+    
+    
+      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>7. 서비스</title>
+    <link href="http://KKimSangHeon.github.io/2019/05/29/kube7/"/>
+    <id>http://KKimSangHeon.github.io/2019/05/29/kube7/</id>
+    <published>2019-05-29T10:23:39.000Z</published>
+    <updated>2019-05-29T10:24:38.043Z</updated>
+    
+    <content type="html"><![CDATA[<p>쿠버네티스 클러스터 안에서 파드의 집합(주로 레플리카세트)에 대한 경로나 서비스 디스커버리(API 주소가 동적으로 바뀌어도 클라이언트가 대상을 바꾸지않고 접근할 수 있음)를 제공하는 리소스이다. 서비스의 대상이 되는 파드는 서비스에서 정의하는 레이블 셀렉터로 정해진다. spec.selector 속성값으로 특정 파트의 레이블값을 설정하여 특정 파드만 접근할 수 있도록 yaml파일을 작성해보자.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">apiVersion: v1</div><div class="line">kind: Service</div><div class="line">metadata:</div><div class="line">  name: echo</div><div class="line">spec:</div><div class="line">  selector:     # 특정 파드만 접근할수 있도록 함.</div><div class="line">    app: echo</div><div class="line">    release: summer</div><div class="line">  ports:</div><div class="line">    - name: http</div><div class="line">      port: 80</div></pre></td></tr></table></figure>
+<p>위의 서비스를 실행하고 컨테이너 안에 존재하는 아무 컨테이너에 들어가서 <code>curl http://echo</code> 를 입력하면 잘 동작하는것을 확인할 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ kubectl exec -it 파드명 bash</div><div class="line"></div><div class="line">혹은</div><div class="line"></div><div class="line">$ kubectl run -i --rm --tty debug --image=gihyodocker/fundamental:0.1.0 --restart=Never -- bash -il</div><div class="line"></div><div class="line"></div><div class="line"># curl http://echo</div></pre></td></tr></table></figure></p>
+<p>다음명령어를 통해 로그를 summer안에서 생기는 로그를 확인할 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kubeclt logs -f echo-summer-dtblk -c echo</div></pre></td></tr></table></figure></p>
+<p>쿠버네티스 클러스터는 <code>서비스명.네임스페이스명.svc.local</code>로 연결해준다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ curl http://echo.default.svc.local</div><div class="line"></div><div class="line">$ curl http://echo.default</div><div class="line"># svc.local 생략가능</div><div class="line"></div><div class="line">$ curl http://echo  </div><div class="line"># 같은네임스페이스일 경우만 가능</div></pre></td></tr></table></figure>
+<h3 id="ClusterIP-서비스"><a href="#ClusterIP-서비스" class="headerlink" title="ClusterIP 서비스"></a>ClusterIP 서비스</h3><p>서비스의 종류는 여러가지가 있고 기본값은 ClusterIP 서비스이다. ClusterIP를 통해 클러스터 내부 IP 주소에 서비스를 공개할 수 있다.</p>
+<h3 id="NodePort-서비스"><a href="#NodePort-서비스" class="headerlink" title="NodePort 서비스"></a>NodePort 서비스</h3><p>이는 클러스터 외부에서 접근할 수 있는 서비스이다. ClusterIP를 만든다는 점은 ClusterIP 서비스와 같다. 각 노드에서 서비스 포트로 접속하기 위한 글로벌 포트를 개방하는것이 차이점이다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">apiVersion: v1</div><div class="line">kind: Service</div><div class="line">metadata:</div><div class="line">  name: echo</div><div class="line">spec:</div><div class="line">  type: NodePort  # 추가함</div><div class="line">  selector:     </div><div class="line">    app: echo</div><div class="line">    release: summer</div><div class="line">  ports:</div><div class="line">    - name: http</div><div class="line">      port: 80</div></pre></td></tr></table></figure>
+<p>다음 명령어를 통해 포트를 알아내고 curl요청을 보낼 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kubectl get svc echo</div></pre></td></tr></table></figure></p>
+<h3 id="LoadBalancer-서비스"><a href="#LoadBalancer-서비스" class="headerlink" title="LoadBalancer 서비스"></a>LoadBalancer 서비스</h3><p>이는 각 클라우드 플랫폼에서 제공하는 로드밸런서와 연동하기 위해 사용된다.</p>
+<h3 id="ExternalName-서비스"><a href="#ExternalName-서비스" class="headerlink" title="ExternalName 서비스"></a>ExternalName 서비스</h3><p>이는 셀렉터도 포트 정의도 없는 특이한 서비스다. 쿠버네티스 클러스터에서 외부 호스트를 네임 레졸루션 하기위한 별칭을 제공한다.<br>아래의 경우 gihyo.jp를 gihyo로 참조할 수 있게해준다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">apiVersion: v1</div><div class="line">kind: Service</div><div class="line">metadata:</div><div class="line">  name: gihyo</div><div class="line">spec:</div><div class="line">  type: ExternalName  # 추가함</div><div class="line">  externalName: gihyo.jp</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;쿠버네티스 클러스터 안에서 파드의 집합(주로 레플리카세트)에 대한 경로나 서비스 디스커버리(API 주소가 동적으로 바뀌어도 클라이언트가 대상을 바꾸지않고 접근할 수 있음)를 제공하는 리소스이다. 서비스의 대상이 되는 파드는 서비스에서 정의하는 레
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
+    
+    
+      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
+    
+  </entry>
   
   <entry>
     <title>6.쿠버네티스의 주요 개념(리소스 개요,파드,네임스페이스,레플리카세트,디플로이먼트</title>
@@ -857,70 +924,6 @@
     <summary type="html">
     
       &lt;p&gt;계승은 코드 재사용을 돕는 강력한 도구지만 항상 최선은 아니다. 계승을 적절히 사용하지 못한 소프트웨어는 깨지기 쉽다. 계승은 상위 클래스와 하위 클래스 구현을 같을 프로그래머가 통제하는 단일 패키지 안에서 사용하면 안전하다. 또한 계승을 고려하
-    
-    </summary>
-    
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>규칙 15.변경 가능성을 최소화하라</title>
-    <link href="http://KKimSangHeon.github.io/2019/04/06/effective1/"/>
-    <id>http://KKimSangHeon.github.io/2019/04/06/effective1/</id>
-    <published>2019-04-06T04:39:07.000Z</published>
-    <updated>2019-04-21T10:51:51.806Z</updated>
-    
-    <content type="html"><![CDATA[<p>변경 불가능 클래스는 그 객체를 수정할 수 없는 클래스이다. 객체 내부의 정보는 객체가 생성돌 때 주어진 것이며, 객체가 살아있는 동안 그대로 보존된다.<br>변경불가능 클래스를 만드는 이유는 변경 가능 클래스보다 설계하기 쉽고 구현하기 쉬우며, 사용하기도 쉽다. 오류 가능성도 적고, 더 안전하다.</p>
-<h4 id="변경-불가능-클래스가-따라야-할-규칙"><a href="#변경-불가능-클래스가-따라야-할-규칙" class="headerlink" title="변경 불가능 클래스가 따라야 할 규칙"></a>변경 불가능 클래스가 따라야 할 규칙</h4><p>1.객체 상태를 변경하는 메서드를 제공하지 않는다.<br>2.계승(상속)할 수 없도록 한다. 보통 final을 붙인다.<br>3.모든 필드를 final로 선언한다. - 객체에 대한 참조가 동기화 없이 다른 스레드로 전달되어도 안전.<br>4.모든 필드를 private로 선언한다.<br>5.변경 가능 컴포넌트에 대한 독점적 접근권을 보장한다. - 클래스에 포함된 변경가능 객체에 대한 참조를 클라이언트는 획득할 수 없어야한다. 그런 필드는 클라이언트가 제공하는 객체로 초기화해서는 안되고 접근자 또한 그런 필드를 반환해서는 안된다. 따라서 생성자나 접근자, readObject 메서드 안에서는 방어적 복사본을 만들어야 한다.</p>
-<h4 id="대부분의-변경-불가능-클래스는-함수형-접근법을-사용한다"><a href="#대부분의-변경-불가능-클래스는-함수형-접근법을-사용한다" class="headerlink" title="대부분의 변경 불가능 클래스는 함수형 접근법을 사용한다."></a>대부분의 변경 불가능 클래스는 함수형 접근법을 사용한다.</h4><p>특정 연산 후 this객체를 변경하는 대신 새로운 객체를 만들어 반환하는것을 함수형 접근법이라 한다. 이르 사용하는 이유는 피연산자를 변경하는 대신 연산을 적용한 결과를 새롭게 만들어 반환하기 때문이다.</p>
-<h4 id="함수형-접근법의-장점"><a href="#함수형-접근법의-장점" class="headerlink" title="함수형 접근법의 장점"></a>함수형 접근법의 장점</h4><p>함수형 접근법은 불가능성을 보장하므로 장점이 많다.<br>1.변경불가능 객체는 단순하다. - 생성될 때 부여된 한 가지 상태만 갖는다. 따라서 생성자가 불변식을 확실히 따른다면 해당 객체는 불변식을 절대로 어기지 않게된다.</p>
-<h4 id="변경-불가능-객체의-장단점"><a href="#변경-불가능-객체의-장단점" class="headerlink" title="변경 불가능 객체의 장단점"></a>변경 불가능 객체의 장단점</h4><p>1.변경 불가능 객체는 스레드에 안전할수밖에 없다. 어떤 동기화도 필요없으며 여러 스레드가 동시에 사용해도 상태가 훼손될 일이 없다. 그러므로 변경불가능한 객체는 자유롭게 공유할 수 있다.</p>
-<p>변경 불가능 클래스는 클라이언트가 기존 객체를 재사용하도록 적극 장려해서 이런 장점을 충분히 살릴 필요가 있다. 그렇게 하는 가장 쉬운 한가지 방법은 자주 사용되는 값을 public static final 상수로 만들어 제공하는 것이다.<br>가령 Complex클래스는(변경 불가능클래스, 필드가 private final이며 생성자를 통해 한번만 초기화되고 setter또한 없다) 아래와 같이 제공될 수 있다.<br>public static final Complex ZERO = new Complex(0,0);</p>
-<p>2.자주 사용하는 객체를 캐시하여 이미 있는 객체가 거듭 생성되지 않도록 하는 정적 팩터리를 제공할 수있다. - 기존 객체를 공유하므로 메모리 요구량,GC비용이 줄어든다.<br>3.변경 불가능 객체를 자유롭게 공유할 수 있다는점은 방어적 복사본을 만들 필요가 없다는 뜻이기도 하다. 사실 복사본을 만드는 메소드가 불필요하다.아니 만들면 안된다.(어차피 자기자신과 동일할테니)<br>4.변경 불가능한 객체는 그 내부도 공유할 수 있다. 다른 클래스가 변경불가능 객체내에 있는 배열필드를 사용해도 된다.<br>5.변경 불가능 객체는 다른 객체의 구성요소로도 훌륭하다. - 변경 불가능 객체는 맵의 키나 집합의 원소로 활용하기 좋다. (변하지 않으므로)</p>
-<p>단점1.변경 불가능 객체의 유일한 단점은 값마다 별도의 객체를 만들어야 한다는 것이다.<br>이는 단계별로 새로운 객체를 만들고 결국에는 마지막 객체를 제외한 모든 객체를 버리는 연산을 수행해야 하는 경우 성능 문제는 커진다.<br>이를 해결하기 위한 방법은 두가지가 있다.<br>첫 번째 방법은 다단계 연산 가운데 자주 요구되는것을 기본연산으로 제공하는 것이다. (BigInteger클래스는 package-private로 선언된 변경 가능 동료클래스를 사용해 모듈라 멱승같은 연산의 속도를 높인다. 이는 다단계 연산이 어떻게 적용될지 확실하게 예측할 수 있을때 쓴다.)<br>두 번째 방법은 변경 가능한 public 동료 클래스를 제공하는것이다.</p>
-<h4 id="변경-불가능-클래스의-두번째-구현방법"><a href="#변경-불가능-클래스의-두번째-구현방법" class="headerlink" title="변경 불가능 클래스의 두번째 구현방법"></a>변경 불가능 클래스의 두번째 구현방법</h4><p>보통은 하위 클래스 정의가 불가능하도록 하기 위해 final로 선언하지만 다른방법도 있다.<br>이는 모든 생성자를 private나 package-private로 선언하고 public 생성자 대신 public 정적 팩터리를 제공하는 것이다.</p>
-<h4 id="방어적-복사"><a href="#방어적-복사" class="headerlink" title="방어적 복사?"></a>방어적 복사?</h4><p>BigInteger, BigDecimal은 클래스가 만들어질 당시 변경 불가능 클래스를 final로 선언해야 한다는 사실을 이해하지 못했기 때문에 final로 되어있지 않다. 즉 상속을 할 경우 해당 클래스는 변경이 가능할 수도 있다.<br>만일 신뢰할 수 없는 클라이언트가 전달한 BigInteger나 BigDecimal 인자의 변경 불가능성에 보안이 좌우되는 클래스를 작성할 때는 전달된 인자가 BigInteger나 BigDecimal의 하위 클래스가 아니라 진짜 BigInteger나 BigDecimal 클래스 인지 확인해야 한다. 만일 하위 클래스 객체라면 해당 객체가 변경 가능한 객체일지도 모른다는 가정하에 방어적복사를 시행해야 한다.<br><figure class="highlight java"><figcaption><span>default</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> BigInteger <span class="title">safeInstace</span><span class="params">(BigInteger val)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span>(val.getClass() !=BigInteger.class)</div><div class="line">		<span class="keyword">return</span> <span class="keyword">new</span> BigInteger(val.toByteArray());</div><div class="line">	<span class="keyword">return</span> val;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4 id="요약"><a href="#요약" class="headerlink" title="요약"></a>요약</h4><p>변경 가능한 클래스로 만들 타당한 이유가 없다면 변경 불가능 클래스로 만들어라.<br>변경 불가능한 클래스로 만들 수 없다면, 변경 가능성을 최대한 제한하라.</p>
-<p>특별한 이유가 없다면 생성자 이외의 public 초기화 메서드나 정적 팩터리 메서드를 제공하지 마라.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;변경 불가능 클래스는 그 객체를 수정할 수 없는 클래스이다. 객체 내부의 정보는 객체가 생성돌 때 주어진 것이며, 객체가 살아있는 동안 그대로 보존된다.&lt;br&gt;변경불가능 클래스를 만드는 이유는 변경 가능 클래스보다 설계하기 쉽고 구현하기 쉬우며,
-    
-    </summary>
-    
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>규칙 14. public 클래스 안에는 public 필드를 두지 말고 접근자 메서드를 사용하라.</title>
-    <link href="http://KKimSangHeon.github.io/2019/04/06/effective/"/>
-    <id>http://KKimSangHeon.github.io/2019/04/06/effective/</id>
-    <published>2019-04-06T04:37:42.000Z</published>
-    <updated>2019-04-21T10:51:44.200Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight java"><figcaption><span>default</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">double</span> x;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">double</span> y;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>데이터 필드를 직접 조작할 수 있어서 캡슐화의 이점을 누릴 수 없다. API를 변경하지 않고서는 내부 표현을 변경할 수 없고, 불변식도 강제할 수 없고, 필드를 사용하는 순간에 어떤 동작이 실행되도록 만들수도 없다. <u>이는 private 필드와 public 접근자 메서드로 바꿔야 한다.</u></p>
-<p>public 클래스의 데이터 필드를 공개하게 되면, 그 내부 표현을 변경할 수 없게 된다. 변경하면 이미 작성된 클라이언트 코드를 깨뜨리게 되게 때문이다. 하지만 package-private 클래스나 priavte 중첩 클래스는 데이터 필드를 공개하더라도 잘못이라 말할 수 없다.</p>
-<h4 id="요약"><a href="#요약" class="headerlink" title="요약"></a>요약</h4><p>public 클래스는 변경 가능 필드를 외부로 공개하면 안된다. 변경 불가능 필드인 경우에는 외부로 공개하더라도 많이 위험하진 않지만, 그럴 필요가 있을까? package-private나 private로 선언된 중첩 클래스의 필드는 그 변경 가능 여부와는 상관없이 외부로 공개하는것이 바람직할 때도 있다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;figure class=&quot;highlight java&quot;&gt;&lt;figcaption&gt;&lt;span&gt;default&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div
     
     </summary>
     

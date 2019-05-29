@@ -422,14 +422,14 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Web/</loc>
+        <loc>http://KKimSangHeon.github.io/tags/Angular2/</loc>
         <lastmod>2018-09-03T06:01:02.191Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Angular2/</loc>
+        <loc>http://KKimSangHeon.github.io/tags/Web/</loc>
         <lastmod>2018-09-03T06:01:02.191Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -668,7 +668,7 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/tags/kubernetes/</loc>
-        <lastmod>2019-05-29T10:21:11.518Z</lastmod>
+        <lastmod>2019-05-29T10:25:00.262Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
