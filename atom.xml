@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-06-01T05:18:20.971Z</updated>
+  <updated>2019-06-01T08:58:04.802Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,9 +20,22 @@
     <link href="http://KKimSangHeon.github.io/2019/06/01/kube10/"/>
     <id>http://KKimSangHeon.github.io/2019/06/01/kube10/</id>
     <published>2019-06-01T04:17:08.000Z</published>
-    <updated>2019-06-01T05:18:20.971Z</updated>
+    <updated>2019-06-01T08:58:04.802Z</updated>
+    
+    <content type="html"><![CDATA[<p>마스터 슬레이브 형태로 MySQL을 구성하자.</p>
+<p>쿠버네티스에서는 호스트에서 분리할 수 있는 외부 스토리지를 볼륨으로 사용할 수 있다. 파드가 다른 호스트로 재배치 되어도 외부 스토리지 형태의 볼륨은 새로 배치된 호스트에 자동으로 할당된다. 그러므로 호스트와 데이터 볼륨의 결합이 느슨해지고 외부 스토리지를 사용하므로 퍼시스턴스 데이터를 다루는 애플리케이션을 컨테이너로 운영하기가 쉽다.<br>쿠버네티스에서 관련 리소스는 다음의 요소들이 있다.</p>
+<ul>
+<li>퍼시스턴트볼륨</li>
+<li>퍼시스턴트볼륨클레임</li>
+<li>스토리지클래스</li>
+<li>스테이트풀세트</li>
+</ul>
+]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;마스터 슬레이브 형태로 MySQL을 구성하자.&lt;/p&gt;
+&lt;p&gt;쿠버네티스에서는 호스트에서 분리할 수 있는 외부 스토리지를 볼륨으로 사용할 수 있다. 파드가 다른 호스트로 재배치 되어도 외부 스토리지 형태의 볼륨은 새로 배치된 호스트에 자동으로 할당된
     
     </summary>
     

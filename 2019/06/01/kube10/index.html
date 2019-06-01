@@ -10,18 +10,18 @@
     
     
 
-      <meta name="description" content="Welcome to Sang Heon&apos;s Blog.">
+      <meta name="description" content="마스터 슬레이브 형태로 MySQL을 구성하자. 쿠버네티스에서는 호스트에서 분리할 수 있는 외부 스토리지를 볼륨으로 사용할 수 있다. 파드가 다른 호스트로 재배치 되어도 외부 스토리지 형태의 볼륨은 새로 배치된 호스트에 자동으로 할당된다. 그러므로 호스트와 데이터 볼륨의 결합이 느슨해지고 외부 스토리지를 사용하므로 퍼시스턴스 데이터를 다루는 애플리케이션을 컨">
 <meta name="keywords" content="kubernetes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="10. GKE에 TODO 앱 구축">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2019/06/01/kube10/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="Welcome to Sang Heon&apos;s Blog.">
+<meta property="og:description" content="마스터 슬레이브 형태로 MySQL을 구성하자. 쿠버네티스에서는 호스트에서 분리할 수 있는 외부 스토리지를 볼륨으로 사용할 수 있다. 파드가 다른 호스트로 재배치 되어도 외부 스토리지 형태의 볼륨은 새로 배치된 호스트에 자동으로 할당된다. 그러므로 호스트와 데이터 볼륨의 결합이 느슨해지고 외부 스토리지를 사용하므로 퍼시스턴스 데이터를 다루는 애플리케이션을 컨">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/dockerandkube.jpg">
-<meta property="og:updated_time" content="2019-06-01T05:18:20.971Z">
+<meta property="og:updated_time" content="2019-06-01T08:58:04.802Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="10. GKE에 TODO 앱 구축">
-<meta name="twitter:description" content="Welcome to Sang Heon&apos;s Blog.">
+<meta name="twitter:description" content="마스터 슬레이브 형태로 MySQL을 구성하자. 쿠버네티스에서는 호스트에서 분리할 수 있는 외부 스토리지를 볼륨으로 사용할 수 있다. 파드가 다른 호스트로 재배치 되어도 외부 스토리지 형태의 볼륨은 새로 배치된 호스트에 자동으로 할당된다. 그러므로 호스트와 데이터 볼륨의 결합이 느슨해지고 외부 스토리지를 사용하므로 퍼시스턴스 데이터를 다루는 애플리케이션을 컨">
 <meta name="twitter:image" content="http://kkimsangheon.github.io/images/dockerandkube.jpg">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
@@ -181,7 +181,15 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p>마스터 슬레이브 형태로 MySQL을 구성하자.</p>
+<p>쿠버네티스에서는 호스트에서 분리할 수 있는 외부 스토리지를 볼륨으로 사용할 수 있다. 파드가 다른 호스트로 재배치 되어도 외부 스토리지 형태의 볼륨은 새로 배치된 호스트에 자동으로 할당된다. 그러므로 호스트와 데이터 볼륨의 결합이 느슨해지고 외부 스토리지를 사용하므로 퍼시스턴스 데이터를 다루는 애플리케이션을 컨테이너로 운영하기가 쉽다.<br>쿠버네티스에서 관련 리소스는 다음의 요소들이 있다.</p>
+<ul>
+<li>퍼시스턴트볼륨</li>
+<li>퍼시스턴트볼륨클레임</li>
+<li>스토리지클래스</li>
+<li>스테이트풀세트</li>
+</ul>
+
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
