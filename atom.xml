@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-05-29T12:56:24.086Z</updated>
+  <updated>2019-06-01T04:17:08.545Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>kube10</title>
+    <link href="http://KKimSangHeon.github.io/2019/06/01/kube10/"/>
+    <id>http://KKimSangHeon.github.io/2019/06/01/kube10/</id>
+    <published>2019-06-01T04:17:08.000Z</published>
+    <updated>2019-06-01T04:17:08.545Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>9. GCP 를 활용한 실습환경 구축</title>
+    <link href="http://KKimSangHeon.github.io/2019/06/01/kube9/"/>
+    <id>http://KKimSangHeon.github.io/2019/06/01/kube9/</id>
+    <published>2019-06-01T04:15:34.000Z</published>
+    <updated>2019-06-01T04:48:08.565Z</updated>
+    
+    <content type="html"><![CDATA[<p>GCP를 생성하고 구글 클라우드 SDK를 설치하자</p>
+<p>아래의 링크에서 GCP 설치<br><a href="https://cloud.google.com/sdk/docs/quickstart-windows?hl=ko" target="_blank" rel="external">https://cloud.google.com/sdk/docs/quickstart-windows?hl=ko</a></p>
+<p>환경변수에 다음 추가<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">C:\Users\SangHeon\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin</div></pre></td></tr></table></figure></p>
+<p>gcloud 버전 업데이트<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gcloud components update</div></pre></td></tr></table></figure></p>
+<p>아래 입력 후 계정입력<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gcloud auth login</div></pre></td></tr></table></figure></p>
+<p>아래를 입력하여 대상 프로젝트 ID 선택<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gcloud config set project xxxx</div></pre></td></tr></table></figure></p>
+<p>아래 입력 하여 리전 설정<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gcloud config set compute/zone asia-northeast1-a</div></pre></td></tr></table></figure></p>
+<h3 id="쿠버네티스-클러스터를-생성해보자"><a href="#쿠버네티스-클러스터를-생성해보자" class="headerlink" title="쿠버네티스 클러스터를 생성해보자"></a>쿠버네티스 클러스터를 생성해보자</h3><p> <a href="https://console.cloud.google.com/apis/api/container.googleapis.com/overview?project=xxxxxx" target="_blank" rel="external">https://console.cloud.google.com/apis/api/container.googleapis.com/overview?project=xxxxxx</a><br> 으로 접속해서 사용 설정가능토록 해주자</p>
+<p>아래 명령어로 클러스터 생성<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gcloud container clusters create sangheon --cluster-version=latest --machine-type=n1-standard-1 --num-nodes=3</div></pre></td></tr></table></figure></p>
+<p>–cluster-version 으로 클러스터 버전 지정<br>–num-nodes  으로 인스턴수 수 지정</p>
+<p>/</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;GCP를 생성하고 구글 클라우드 SDK를 설치하자&lt;/p&gt;
+&lt;p&gt;아래의 링크에서 GCP 설치&lt;br&gt;&lt;a href=&quot;https://cloud.google.com/sdk/docs/quickstart-windows?hl=ko&quot; target=&quot;_blank
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>8. 인그레스</title>
@@ -866,74 +910,6 @@
     
     
       <category term="Docker" scheme="http://KKimSangHeon.github.io/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>규칙 17. 계승을 위한 설계와 문서를 갖추거나, 그럴 수 없다면 계승을 금지하라</title>
-    <link href="http://KKimSangHeon.github.io/2019/04/14/effective/"/>
-    <id>http://KKimSangHeon.github.io/2019/04/14/effective/</id>
-    <published>2019-04-14T07:39:51.000Z</published>
-    <updated>2019-04-14T08:59:41.039Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="계승을-위한-설계와-문서를-갖춘다는것은-무슨의미일까"><a href="#계승을-위한-설계와-문서를-갖춘다는것은-무슨의미일까" class="headerlink" title="계승을 위한 설계와 문서를 갖춘다는것은 무슨의미일까?"></a>계승을 위한 설계와 문서를 갖춘다는것은 무슨의미일까?</h4><p><u>메서드를 재정의 하면 어떤일이 생기는 지 문서에 잘 남겨야 한다. 즉 재정의 가능 메소드가 내부적으로 어떻게 동작하는지 문서에 남기라는 것이다.</u> public, protected로 선언된 모든 메서드와 생성자에 대해 어떤 재정의 가능 메서드를 어떤 순서로 호출하는지 호출결과는 어떤 영향을 미치는지 남기라는 것이다.<br>예를들어 후면 스레드가 호출할 수도 있고 static 초기화 구문 안에서 호출할 수도 있다. 관습적으로는 재정의 가능 메서드를 어떤식으로 호출하는지 주석 마지막에 명시한다.</p>
-<h4 id="좋은-API-문서는-메서드가-하는-일이-무엇인지-명시하지-어떻게-하는지-명시하면-안되지-않아"><a href="#좋은-API-문서는-메서드가-하는-일이-무엇인지-명시하지-어떻게-하는지-명시하면-안되지-않아" class="headerlink" title="좋은 API 문서는 메서드가 하는 일이 무엇인지 명시하지 어떻게 하는지 명시하면 안되지 않아?"></a>좋은 API 문서는 메서드가 하는 일이 무엇인지 명시하지 어떻게 하는지 명시하면 안되지 않아?</h4><p>그렇다. 이는 맞는말이다. 계승이 캡슐화 원칙을 침해하기 때문에 발생하는 결과로 볼 수 있다. 문서만 제대로 썼다고 계승에 적합한 설계가 되지는 않는다. 너무 애쓰지 않고도 효율적인 하위클래스를 정의하기 위해서는 <u>클래스 내부 동작에 개입할 수 있는 훅을 신중하게 고른 protected 메서드 형태로 제공해야 한다.</u></p>
-<h4 id="그렇다면-클래스를-설계할-때-protected로-선언할-멤버는-어떻게-정해"><a href="#그렇다면-클래스를-설계할-때-protected로-선언할-멤버는-어떻게-정해" class="headerlink" title="그렇다면 클래스를 설계할 때 protected로 선언할 멤버는 어떻게 정해?"></a>그렇다면 클래스를 설계할 때 protected로 선언할 멤버는 어떻게 정해?</h4><p>딱히 정해진 방법은 없다. 생각하고 신중하게 고른 다음 실제로 하위 클래스를 만들어 보면서 테스트하는것이 최선이다. protected 멤버 개수는 가능한 한 줄여야 하는데 구현 세부사항에 대한 일종의 서약 구실을 하기 떄문이다.<br>즉 계승을 위해 설계할 클래스를 테스트할 유일한 방법은 하위 클래스를 직접 만들어 보는것이다. 만일 중요한 멤버를 protected로 선언하는것을 잊었다면 하위클래스에서 고통스러울 수 있다. 반대로 하위 클래스를 몇개 만들어봐도 사용할 일이 없는 protected 멤버는 private로 선언해야 한다.</p>
-<h4 id="그렇게-까지-신중하게-정해야하나"><a href="#그렇게-까지-신중하게-정해야하나" class="headerlink" title="그렇게 까지 신중하게 정해야하나?"></a>그렇게 까지 신중하게 정해야하나?</h4><p>널리 사용될 클래스를 계승에 맞게 설계할 때는 문서에 명시한 내부 호출 패턴 뿐 아니라 메서드와 필드를 protected로 선언하는 과정에 함축된 구현 관련 결정들을 영원히 고수해야 한다는 점을 기억해야 한다. 따라서 다음 릴리스에 성능이나 기능을 개선하기 어려워진다.<br>또한 계승용 문서는 API문서를 어지럽힐 수 있다.</p>
-<h4 id="계승을-허용하기-위해-따라야-할-제약사항"><a href="#계승을-허용하기-위해-따라야-할-제약사항" class="headerlink" title="계승을 허용하기 위해 따라야 할 제약사항."></a>계승을 허용하기 위해 따라야 할 제약사항.</h4><p>1.생성자는 직접적이건 간접적이건 재정의 가능 메서드를 호출해서는 안된다.<br><code>이유:</code>상위클래스 생성자는 하위클래스의 생성자보다 먼저 실행되므로, 하위클래스에서 재정의한 메서드는 하위클래스 생성가가 실행되기 전엔 호출될 것이다. 재정의한 메서드가 하위 클래스 생성자가 초기화한 결과에 의존할 경우 그 메서드는 원하는대로 실행되지 않을것이기 떄문에.</p>
-<p>2.계승용 클래스가 Cloneable과 Serializable 와 같은 인터페이스를 구현하도록 하는것은 바람직하지 않다.<br><code>이유:</code>클래스를 계승할 프로그래머에게 과도한 책임을 지우기 때문이다. 하지만 하위 클래스 프로그래머가 이들 인터페이스를 선택적으로 구현할 수 있도록 하는 특별한 방법들이 있는데, 이런 조치들에 대해서는 규칙 11, 규칙 74에서 설명한다.<br>만약 계승용 클래스가 Cloneable과 Serializable 와 같은 인터페이스를 구현해야 한다면 clone이나 readObject 메서드 안에서 직접적이건 간접적이건 재정의 가능한 메서드를 호출하지 않도록 주의해야 한다.</p>
-<p>3.Serializable 인터페이스를 구현하는 계승용 클래스에 readResolve와 writeReplace 메서드가 있다면 priavte가 아닌 protected로 선언해야 한다.<br><code>이유 :</code>private로 선언해 버리면 하위 클래스는 해당 메서드들을 조용히 무시하게 된다. 이것은 계승을 허용하기 위해 구현 세부사항을 클래스 API의 일부로 포함시켜야 하는 사례 가운데 하나다.</p>
-<h4 id="정리"><a href="#정리" class="headerlink" title="정리"></a>정리</h4><p>계승에 맞도록 설계하고 문서화 하지 않은 클래스에 대한 하위클래스는 만들지 말라.<br>가장 쉬운 방법은 클래스를 final로 선언하거나 모든 생성자를 private나 package-private로 선언하고 생성자 대신 public 정적 팩터리 메서드를 추가하는것. 규칙 15에서 설명한 대로 이방법을 사용하면 클래스나 패키지 내부에서는 하위 클래스를 만들어 쓸수도 있으므로 편리하다.<br>계승을 반드시 허용해야 한다고 느껴지면 재정의 가능 메서드는 절대로 호출하지 않도록 하고 그 사실을 반드시 문서에 남겨라.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;계승을-위한-설계와-문서를-갖춘다는것은-무슨의미일까&quot;&gt;&lt;a href=&quot;#계승을-위한-설계와-문서를-갖춘다는것은-무슨의미일까&quot; class=&quot;headerlink&quot; title=&quot;계승을 위한 설계와 문서를 갖춘다는것은 무슨의미일까?&quot;&gt;&lt;/a&gt;계
-    
-    </summary>
-    
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>규칙 16.계승하는 대신 구성하라</title>
-    <link href="http://KKimSangHeon.github.io/2019/04/07/effective1/"/>
-    <id>http://KKimSangHeon.github.io/2019/04/07/effective1/</id>
-    <published>2019-04-07T03:51:41.000Z</published>
-    <updated>2019-04-21T10:52:11.245Z</updated>
-    
-    <content type="html"><![CDATA[<p>계승은 코드 재사용을 돕는 강력한 도구지만 항상 최선은 아니다. 계승을 적절히 사용하지 못한 소프트웨어는 깨지기 쉽다. 계승은 상위 클래스와 하위 클래스 구현을 같을 프로그래머가 통제하는 단일 패키지 안에서 사용하면 안전하다. 또한 계승을 고려하여 설계되고 그에 맞는 문서를 갖춘 클래스에 사용하는것도 안전하다. 일반적인 객체 생성 가능 클래스라면 해당클래스가 속한 패키지 밖에서 계승을 시도하는 것은 위험하다.</p>
-<h4 id="계승은-캡슐화-원칙을-위반한다"><a href="#계승은-캡슐화-원칙을-위반한다" class="headerlink" title="계승은 캡슐화 원칙을 위반한다."></a>계승은 캡슐화 원칙을 위반한다.</h4><p>하위 클래스가 정상 동작하기 위해서는 상의 클래스의 구현에 의존할수밖에 없다. 상위 클래스는 릴리즈가 계속되면서 바뀔 수 있는데 이때 하위클래스는 망가질 수 있다. 또한 하위클래스는 상위클래스의 변화에 발맞춰 진화해야 한다.</p>
-<h4 id="HashSet-를-계승하여-요소가-몇개나-추가되었는지에-대한-코드를-작성한다-가정해보자"><a href="#HashSet-를-계승하여-요소가-몇개나-추가되었는지에-대한-코드를-작성한다-가정해보자" class="headerlink" title="HashSet 를 계승하여 요소가 몇개나 추가되었는지에 대한 코드를 작성한다 가정해보자."></a>HashSet<e> 를 계승하여 요소가 몇개나 추가되었는지에 대한 코드를 작성한다 가정해보자.</e></h4><figure class="highlight java"><figcaption><span>default</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InstrumentHashSet</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">HashSet</span>&lt;<span class="title">E</span>&gt; </span>&#123;</div><div class="line">	<span class="comment">//요소 삽입횟수</span></div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> addCount = <span class="number">0</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">InstrumentedHashSet</span><span class="params">()</span></span>&#123;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">InstrumentedHashSet</span><span class="params">(<span class="keyword">int</span> initCap, <span class="keyword">float</span> loadFactor)</span> </span>&#123;</div><div class="line">		<span class="keyword">super</span>(initCap, loadFactor);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span> </span>&#123;</div><div class="line">		addCount++;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">super</span>.add(e);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">addAll</span><span class="params">(Collection&lt;? extends E&gt; c)</span> </span>&#123;</div><div class="line">		addCount+= c.size();</div><div class="line">		<span class="keyword">return</span> <span class="keyword">super</span>.addAll(c);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAddCount</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> addCount;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>위의 코드는 제대로 동작하지 않는다. 가령 다음과같은 코드를 실행한다 해보자.<br>InstrumentedHashSet<string> s = new InstrumentedHashSet<string>();<br>s.addAll(Arrays.asList(“A”,”B”,”C”));</string></string></p>
-<p><u>addAll은 3을 반환하는것이 아니라 6을 반환한다.</u></p>
-<p>HashSet의 addAll 메소드는 add메서드를 통해 구현되어 있기 때문이다. 이는 HashSet 문서에는 나와있지 않은 내용이다.<br><u>하위클래스에서 재정의한 addAll 메서드를 삭제하거나 addAll메서드가 반복하며 add를 호출하도록 하여 해결할 수 있지만 이는 addAll 메소드가 add 위에서 구현되었다는 사실에 의존적이다. 이 또한 add메서드가 private일 경우 사용할 수 없다.</u><br>또한 <u>상위 클래스에 새로운 메서드가 추가될 경우 하위클래스의 구현을 망가뜨릴 수 있다.</u><br>예를들어 특정 리스트에 데이터를 삽입할 때 “ksh” 라는 문자열이 붙도록 하는 메소드가 어느순간 추가되었을 때 삽입 작업만 호출하는 부모클래스의 메소드만을 호출할 때 ..</p>
-<p>즉 InstrumentedHashSet 클래스는 깨지기 쉬운 클래스일수밖에 없다.</p>
-<h4 id="구성과-전달을-활용해-위의-문제를-해결하는-방법"><a href="#구성과-전달을-활용해-위의-문제를-해결하는-방법" class="headerlink" title="구성과 전달을 활용해 위의 문제를 해결하는 방법"></a>구성과 전달을 활용해 위의 문제를 해결하는 방법</h4><p>기존 클래스를 계승하는 대신, <u>새로운 클래스에 기존 클래스 객체를 참조하는 privae 필드를 하나 두는것</u>. 이를 구성이라 하며 기존클래스가 새 클래스의 일부가 되는것을 말한다.<br>새로운 클래스에 포함된 각각의 메서드는 기존 클래스에 있는 메서드 가운데 필요한 것을 호출해서 결과를 반환하면 된다. 이러한 구현 기법을 <u>전달(forwarding)이라고 하고 전달 기법을 사용해 구현된 메소드를 전달메서드(forwarding method)라고 부른다</u>.<br>구성기법을 통해 구현된 클래스는 기존 클래스의 구현 세부사항에 종속되지 않기 때문에 견고하다.(기존 클래스에 또다른 메서드가 추가되더라도 새로운 클래스에 영향이 없음)</p>
-<figure class="highlight java"><figcaption><span>default</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//계승 대신 구성을 사용하는 포장(wrapper) 클래스</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">instrumentedSet</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">ForadingSet</span>&lt;<span class="title">E</span>&gt; </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> addCount = <span class="number">0</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">InstrumentedSet</span><span class="params">(Set&lt;E&gt; s)</span></span>&#123;</div><div class="line">		<span class="keyword">super</span>(s);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span></span>&#123;</div><div class="line">		addCount++;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">super</span>.add(e);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">addAll</span><span class="params">(Coolection&lt;? extends E&gt; c)</span></span>&#123;</div><div class="line">		addCount += c.size();</div><div class="line">		<span class="keyword">return</span> <span class="keyword">super</span>.addAll(c);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAddCount</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> addCount;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//재사용 가능한 전달(forwarding) 클래스</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ForwardingSet</span>&lt;<span class="title">E</span>&gt; <span class="title">implemetns</span> <span class="title">Set</span>&lt;<span class="title">E</span>&gt; </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">final</span> Set&lt;E&gt; s;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ForwardingSet</span><span class="params">(Set&lt;E&gt; s)</span> </span>&#123; <span class="keyword">this</span>.s = s; &#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span> </span>&#123;s.clear();&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(Object o)</span> </span>&#123;<span class="keyword">return</span> s.contains(o);&#125;</div><div class="line">	.....</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>InstrumentedSet을 이렇게 설계할 수 있는것은 HashSet이 제공해야 할 기능을 규정하는 Set라는 인터페이스가 있기 때문이다. 이런 설계는 안정적일 뿐 아니라 유연성도 아주 높다.<br>이전의 예제중 계승을 한 것에서는 한 클래스에서만 적용이 가능하고 상위 클래스 생성자마다 별도의 생성자를 구현해야 했다.<br>하지만 포장 클래스 기법을 쓰면 어떤 Set 구현도 원하는대로 수정할 수 있고 이미 있는 생성자도 그대로 사용할 수 있다.</p>
-<p>포장클래스의 단점이 별로 없으나 callback프레임워크와 함께 사용하기에는 적합하지 않다. 역호출 프레임워크에서 객체는 포장 객체에 대해서는 모르기 때문에, 자기 자신에 대한참조를 전달할 것이다. 따라서 역호출 과정에서 포장 객체는 제외된다. 이 문제는 SELF문제로 알려져있다.</p>
-<h4 id="요약"><a href="#요약" class="headerlink" title="요약"></a>요약</h4><p>계승은 강령하지만 캡슐화 원칙을 침해하므로 문제를 발생시킬 소지가 있다. 상위, 하위 클래스가 IS-A 관계일 때만 사용하는것이 좋고 그렇지 않을때는 구성과 전달기법을 사용하는것이 좋다. 포장 클래스 구현에 적당한 인터페이스가 있다면 더욱 그렇다.<br>포장 클래스는 하위 클래스보다 견고할 뿐 아니라 더 강력하다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;계승은 코드 재사용을 돕는 강력한 도구지만 항상 최선은 아니다. 계승을 적절히 사용하지 못한 소프트웨어는 깨지기 쉽다. 계승은 상위 클래스와 하위 클래스 구현을 같을 프로그래머가 통제하는 단일 패키지 안에서 사용하면 안전하다. 또한 계승을 고려하
-    
-    </summary>
-    
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
     
   </entry>
   
