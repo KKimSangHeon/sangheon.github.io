@@ -34,7 +34,7 @@
     <link href="http://KKimSangHeon.github.io/2019/06/01/kube9/"/>
     <id>http://KKimSangHeon.github.io/2019/06/01/kube9/</id>
     <published>2019-06-01T04:15:34.000Z</published>
-    <updated>2019-06-01T04:48:08.565Z</updated>
+    <updated>2019-06-01T04:58:54.989Z</updated>
     
     <content type="html"><![CDATA[<p>GCP를 생성하고 구글 클라우드 SDK를 설치하자</p>
 <p>아래의 링크에서 GCP 설치<br><a href="https://cloud.google.com/sdk/docs/quickstart-windows?hl=ko" target="_blank" rel="external">https://cloud.google.com/sdk/docs/quickstart-windows?hl=ko</a></p>
@@ -46,6 +46,9 @@
 <h3 id="쿠버네티스-클러스터를-생성해보자"><a href="#쿠버네티스-클러스터를-생성해보자" class="headerlink" title="쿠버네티스 클러스터를 생성해보자"></a>쿠버네티스 클러스터를 생성해보자</h3><p> <a href="https://console.cloud.google.com/apis/api/container.googleapis.com/overview?project=xxxxxx" target="_blank" rel="external">https://console.cloud.google.com/apis/api/container.googleapis.com/overview?project=xxxxxx</a><br> 으로 접속해서 사용 설정가능토록 해주자</p>
 <p>아래 명령어로 클러스터 생성<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gcloud container clusters create sangheon --cluster-version=latest --machine-type=n1-standard-1 --num-nodes=3</div></pre></td></tr></table></figure></p>
 <p>–cluster-version 으로 클러스터 버전 지정<br>–num-nodes  으로 인스턴수 수 지정</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gcloud components install kubectl</div></pre></td></tr></table></figure>
+<p>kubectl 에 인증정보 설정<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gcloud container clusters get-credentials sangheon</div></pre></td></tr></table></figure></p>
+<p>잘되었나 확인해보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kubectl get nodes</div></pre></td></tr></table></figure></p>
 <p>/</p>
 ]]></content>
     
@@ -56,6 +59,12 @@
     
     </summary>
     
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
+    
+    
+      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
     
   </entry>
   
