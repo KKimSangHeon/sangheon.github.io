@@ -3,26 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>6. SUBQUERY | Kim Sang Heon&#39;s Bolg</title>
+    <title>kube11 | Kim Sang Heon&#39;s Bolg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Data Base" />
+        <meta name="keywords" content="" />
     
     
 
-      <meta name="description" content="서브쿼리Lex보다 많이 받는 사원 구하기 SELECT FIRST_NAME, SALARYFROM   EMPLOYEESWHERE  SALARY &amp;gt; (SELECT                    SALARY                 FROM EMPLOYEES                 WHERE FIRST_NAME = ‘Lex’); SELECT A.">
-<meta name="keywords" content="Data Base">
+      <meta name="description" content="Welcome to Sang Heon&apos;s Blog.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="6. SUBQUERY">
-<meta property="og:url" content="http://KKimSangHeon.github.io/2017/08/18/database6/index.html">
+<meta property="og:title" content="kube11">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2019/06/02/kube11/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="서브쿼리Lex보다 많이 받는 사원 구하기 SELECT FIRST_NAME, SALARYFROM   EMPLOYEESWHERE  SALARY &amp;gt; (SELECT                    SALARY                 FROM EMPLOYEES                 WHERE FIRST_NAME = ‘Lex’); SELECT A.">
-<meta property="og:image" content="http://kkimsangheon.github.io/images/db.jpg">
-<meta property="og:updated_time" content="2018-09-03T05:54:04.658Z">
+<meta property="og:description" content="Welcome to Sang Heon&apos;s Blog.">
+<meta property="og:updated_time" content="2019-06-02T08:11:53.023Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="6. SUBQUERY">
-<meta name="twitter:description" content="서브쿼리Lex보다 많이 받는 사원 구하기 SELECT FIRST_NAME, SALARYFROM   EMPLOYEESWHERE  SALARY &amp;gt; (SELECT                    SALARY                 FROM EMPLOYEES                 WHERE FIRST_NAME = ‘Lex’); SELECT A.">
-<meta name="twitter:image" content="http://kkimsangheon.github.io/images/db.jpg">
+<meta name="twitter:title" content="kube11">
+<meta name="twitter:description" content="Welcome to Sang Heon&apos;s Blog.">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
 
@@ -134,7 +131,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Language/">Language</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Language/SQL-Oracle/">SQL(Oracle)</a>
+    uncategorized
     </h1>
 </div>
                         <div class="main-body-content">
@@ -149,14 +146,14 @@ ga('send', 'pageview');
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-                            <article id="post-database6" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-kube11" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        6. SUBQUERY
+        kube11
         </h1>
     
 
@@ -166,40 +163,17 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/08/18/database6/" class="article-date">
-            <time datetime="2017-08-18T01:22:43.000Z" itemprop="datePublished">2017-08-18</time>
+        <a href="/2019/06/02/kube11/" class="article-date">
+            <time datetime="2019-06-02T08:11:52.000Z" itemprop="datePublished">2019-06-02</time>
         </a>
     </div>
 
                 
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Data-Base/">Data Base</a>
-    </div>
-
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h4 id="서브쿼리"><a href="#서브쿼리" class="headerlink" title="서브쿼리"></a>서브쿼리</h4><p>Lex보다 많이 받는 사원 구하기</p>
-<p>SELECT FIRST_NAME, SALARY<br>FROM   EMPLOYEES<br>WHERE  SALARY &gt; (SELECT<br>                    SALARY<br>                 FROM EMPLOYEES<br>                 WHERE FIRST_NAME = ‘Lex’);</p>
-<p>SELECT A.FIRST_NAME, B.SALARY<br>FROM   EMPLOYEES A,<br>       (SELECT<br>           SALARY<br>        FROM EMPLOYEES<br>        WHERE FIRST_NAME = ‘Lex’) B<br>WHERE A.SALARY &gt; B.SALARY;<br>– 조인으로도 처리 가능                </p>
-<p>SELECT FIRST_NAME, SALARY<br>FROM   EMPLOYEES<br>WHERE   SALARY &gt; (SELECT AVG(SALARY)<br>                  FROM EMPLOYEES );         </p>
-<p>–SINGLE LOW SUB QUERY</p>
-<hr>
-<p>– 문_ JOB_ID가 ‘IT_PROG’인 직원이 받는 월급보다 많이 받고 있는 직원의 이름과 월급</p>
-<p>SELECT FIRST_NAME,<br>       SALARY<br>FROM   EMPLOYEES<br>WHERE  SALARY &gt; ALL (SELECT SALARY<br>                     FROM EMPLOYEES<br>                     WHERE JOB_ID = ‘IT_PROG’)</p>
-<p>– MULTI ROW SUB QUERY</p>
-<hr>
-<p>–문) 각 부서별로 최고 월급을 받는 직원의 이름과 직원의 이름과 월급 출력</p>
-<p>WHERE을 활용</p>
-<p>SELECT FIRST_NAME<br>FROM   EMPLOYEES<br>WHERE  (SALARY,DEPARTMENT_ID) IN (<br>                                SELECT MAX(SALARY),DEPARTMENT_ID<br>                                FROM EMPLOYEES<br>                                GROUP BY DEPARTMENT_ID<br>                                );</p>
-<p>FROM을 활용<br>SELECT A.DEPARTMENT_ID, FIRST_NAME, SALARY<br>FROM   EMPLOYEES A,<br>    ( SELECT DEPARTMENT_ID,<br>             MAX(SALARY) AS MAX_SALARY<br>      FROM EMPLOYEES<br>      GROUP BY DEPARTMENT_ID<br>    ) B<br>WHERE A.DEPARTMENT_ID = B.DEPARTMENT_ID<br>AND   A.SALARY = B.MAX_SALARY;        </p>
-<p>CORELATED 활용<br>SELECT DEPARTMENT_ID, FIRST_NAME, SALARY<br>FROM EMPLOYEES A<br>WHERE SALARY = ( SELECT MAX(SALARY)<br>                 FROM EMPLOYEES<br>                 WHERE A.DEPARTMENT_ID = DEPARTMENT_ID);</p>
-<p>– CORELATED SUBQUERY</p>
-<hr>
-<p>자기 부서의 평균월급 보다 적은 월급을 받는 사원을 구하라</p>
-
+            
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
@@ -217,7 +191,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://KKimSangHeon.github.io/2017/08/18/database6/" data-id="cjwew2zc9006c6cv7nl1jo99q" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://KKimSangHeon.github.io/2019/06/02/kube11/" data-id="cjwew32gn01af6cv7coi9f6wf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -323,20 +297,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2017/08/18/database7/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            7. TOP - K
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/08/18/database5/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/06/01/kube10/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">5. ROLLUP, CUBE</p>
+        <p class="article-nav-title">10. 쿠버네티스의 스토리지</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -394,7 +358,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'https-kkimsangheon-github-io-2';
     
     
-    var disqus_url = 'http://KKimSangHeon.github.io/2017/08/18/database6/';
+    var disqus_url = 'http://KKimSangHeon.github.io/2019/06/02/kube11/';
     
     (function() {
     var dsq = document.createElement('script');
