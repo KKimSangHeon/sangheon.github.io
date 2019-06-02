@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="마스터 슬레이브 형태로 MySQL을 구성하자. 쿠버네티스의 스토리지쿠버네티스에서는 호스트에서 분리할 수 있는 외부 스토리지를 볼륨으로 사용할 수 있다. 파드가 다른 호스트로 재배치 되어도 외부 스토리지 형태의 볼륨은 새로 배치된 호스트에 자동으로 할당된다. 그러므로 호스트와 데이터 볼륨의 결합이 느슨해지고 외부 스토리지를 사용하므로 퍼시스턴스 데이터를 다루">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/dockerandkube.jpg">
-<meta property="og:updated_time" content="2019-06-01T11:01:16.262Z">
+<meta property="og:updated_time" content="2019-06-02T06:53:41.604Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="10. GKE에 TODO 앱 구축">
 <meta name="twitter:description" content="마스터 슬레이브 형태로 MySQL을 구성하자. 쿠버네티스의 스토리지쿠버네티스에서는 호스트에서 분리할 수 있는 외부 스토리지를 볼륨으로 사용할 수 있다. 파드가 다른 호스트로 재배치 되어도 외부 스토리지 형태의 볼륨은 새로 배치된 호스트에 자동으로 할당된다. 그러므로 호스트와 데이터 볼륨의 결합이 느슨해지고 외부 스토리지를 사용하므로 퍼시스턴스 데이터를 다루">
@@ -195,7 +195,7 @@ ga('send', 'pageview');
 <h3 id="스토리지클래스"><a href="#스토리지클래스" class="headerlink" title="스토리지클래스"></a>스토리지클래스</h3><p>스토리지클래스는 퍼시스턴트볼륨으로 확보한 스토리지 종류를 정의하는 리소스다. 앞에서의 storageClassName속성값의 실체가 이것이다. GCP의 경우 storageClassName의 종류는 표준,SSD가 있다.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">kind: StorageClass</div><div class="line">apiVersion: storage.k8s.io/v1</div><div class="line">metadata:</div><div class="line">  name: ssd</div><div class="line">  annotations:</div><div class="line">    storageclass.kubernetes.io/is-default-class: &quot;false&quot;</div><div class="line">  labels:</div><div class="line">    kubernetes.io/cluster-service: &quot;true&quot;</div><div class="line">provisioner: kubernetes.io/gce-pd</div><div class="line">parameters:</div><div class="line">  type: pd-ssd</div></pre></td></tr></table></figure>
 <p>SSD 스토리지를 사용하도록 스토리지 클래스의  name 속성을 ssd로 하고 provisioner는 GCP 의 퍼시스턴스 스토리지인 GCEPersistentDisk에 해당하는 gcd-pd로 지정한다. 그리고 파라미터의 type 속성값을 pd-ssd로 지정한다.</p>
-<p>/</p>
+<h3 id="스테이트풀세트"><a href="#스테이트풀세트" class="headerlink" title="스테이트풀세트"></a>스테이트풀세트</h3><p>/</p>
 
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
