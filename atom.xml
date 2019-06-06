@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-06-02T08:11:53.023Z</updated>
+  <updated>2019-06-06T08:17:59.664Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,16 +16,84 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>kube11</title>
-    <link href="http://KKimSangHeon.github.io/2019/06/02/kube11/"/>
-    <id>http://KKimSangHeon.github.io/2019/06/02/kube11/</id>
-    <published>2019-06-02T08:11:52.000Z</published>
-    <updated>2019-06-02T08:11:53.023Z</updated>
+    <title>kube13</title>
+    <link href="http://KKimSangHeon.github.io/2019/06/06/kube13/"/>
+    <id>http://KKimSangHeon.github.io/2019/06/06/kube13/</id>
+    <published>2019-06-06T08:17:59.000Z</published>
+    <updated>2019-06-06T08:17:59.664Z</updated>
     
     <summary type="html">
     
     </summary>
     
+    
+  </entry>
+  
+  <entry>
+    <title>12. 사용자 관리와 RBAC(role-based access control)</title>
+    <link href="http://KKimSangHeon.github.io/2019/06/06/kube12/"/>
+    <id>http://KKimSangHeon.github.io/2019/06/06/kube12/</id>
+    <published>2019-06-06T08:17:55.000Z</published>
+    <updated>2019-06-06T08:27:54.525Z</updated>
+    
+    <content type="html"><![CDATA[<p>쿠버네티스 사용자마다 권한을 제어하는 것은 쿠버네티스 운영하는데 있어 보안을 확보하는 기본적인 방법이다.</p>
+<p>쿠버네티스 사용자는 두 가지 개념으로 나뉜다.<br><code>일반사용자</code>: 클러스터 외부에서 쿠버네티스를 조작하는 사용자로 다양한 방법으로 인증을 거친다. 개발자 및 운영 실무자가 쿠버네티스를 조작하기 위해 사용하며 쿠버네티스 클러스터 외부로부터 들어오는 접근을 관리하기 위한 사용자이다.<br>배포와 관련된 서비스나 디플로이먼트의 접근 권한을 일부 사용자에게만 허용하거나 파드의 로그 열람 권한을 다른 일반 사용자에게도 허용하는 등의 정책을 일반 사용자 권한 부여로 실현할 수있다.</p>
+<p><code>서비스 계정</code>: 쿠버네티스 내부적으로 관리되며 파드가 쿠버네티스 API를 다룰 때 사용하는 사용자.(kubectl또한 쿠버네티스 API와 통신해 작동함) 주어진 권한에 따라 쿠버네티스 리소스(파드, 디플로이먼트 등)를 다룰 수 있다.<br>서비스 계정은 어플리케이션을 통해 쿠버네티스 조작을 통제할 수 있다는 점이 장점이다. 클러스터 안에서 봇을 동작시키는 파드에 권한을 부여해두고, 이 봇으로 기존 디플로이먼트를 업데이트하거나 레플리카 수를 조절하는 식으로 활용할 수 있다.</p>
+<p>서비스 계정 및 일반 사용자의 권한은 RBAC(role-based access control) 라는 메커니즘을 통해 제어된다. RBAC는 롤에 따라 리소스에 대한 권한을 제어하는 기능이자 개념이다.</p>
+<p>Role, Cluster Role은 접근가능한것에 대한 범위이고 binding은 롤을 주는것을 의미한다고 판단.</p>
+<p><code>롤</code> : 각 쿠버네티스 API의 사용권한을 정의. 네임스페이스 안에서만 유효<br><code>롤바인딩</code> : 일반 사용자 및 그룹/서비스 계정과 롤을 연결<br><code>클러스터롤</code>: 각 쿠버네티스 API의 사용 권한을 정의. 클러스터 전체에서 유효<br><code>클러스터롤바인딩</code>: 일반사용자 및 그룹/서비스 계정과 클러스터롤을 연결</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;쿠버네티스 사용자마다 권한을 제어하는 것은 쿠버네티스 운영하는데 있어 보안을 확보하는 기본적인 방법이다.&lt;/p&gt;
+&lt;p&gt;쿠버네티스 사용자는 두 가지 개념으로 나뉜다.&lt;br&gt;&lt;code&gt;일반사용자&lt;/code&gt;: 클러스터 외부에서 쿠버네티스를 조작하는 
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
+    
+    
+      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>11. 쿠버네티스 실전편(잡, 크론잡, 시크릿)</title>
+    <link href="http://KKimSangHeon.github.io/2019/06/02/kube11/"/>
+    <id>http://KKimSangHeon.github.io/2019/06/02/kube11/</id>
+    <published>2019-06-02T08:11:52.000Z</published>
+    <updated>2019-06-06T08:27:16.197Z</updated>
+    
+    <content type="html"><![CDATA[<p>파드, 레플리카세트, 디플로이먼트, 서비스, 인그레스는 데몬으로 동작하는 서버 어플리케이션을 구축할 때 사용되는 기본 리소스이다<br>쿠버네티스는 데몬으로 동작하는 서버 어플리케이션 외에도 배치 서버등 다양한 형태의 어플리케이션을 구축할 수 있다.</p>
+<h3 id="잡"><a href="#잡" class="headerlink" title="잡"></a>잡</h3><p>잡은 하나 이상의 파드를 생성해 지정된 수의 파드가 정상 종료될 때까지 이를 관리하는 리소스다.<br>잡이 생성한 파드는 정상 종료된 후에도 삭제되지 않고 그대로 남아있기 때문에 작업이 종료된 후에 파드의 로그나 실행 결과를 분석할 수 있다. 그러므로 배치작업 위추의 어플리케이션에 적합하다.<br>잡은 파드 여러개를 병렬로 실행하는 방법으로 쉽게 스케일 아웃이 가능하다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">apiVersion: batch/v1</div><div class="line">kind: Job</div><div class="line">metadata:</div><div class="line">  name: pingpong</div><div class="line">  labels:</div><div class="line">    app: pingpong</div><div class="line">spec:</div><div class="line">  parallelism: 3    # 동시에 실행하는 파드의 수를 지정하는 속성. 파드를 병렬로 실행해야할 때 편리</div><div class="line">  template:</div><div class="line">    metadata:</div><div class="line">      labels:</div><div class="line">        app: pingpong</div><div class="line">    spec:</div><div class="line">      containers:</div><div class="line">      - name: pingpong</div><div class="line">        image: gihyodocker/alpine:bash</div><div class="line">        command: [&quot;/bin/sh&quot;]</div><div class="line">        args:</div><div class="line">          - &quot;-c&quot;</div><div class="line">          - |</div><div class="line">            echo [`date`] ping!</div><div class="line">            sleep 10</div><div class="line">            echo [`date`] pong!</div><div class="line">      restartPolicy: Never</div></pre></td></tr></table></figure>
+<p>위의 코드를 yaml파일로 만들고 아래 명령어를 통해 확인해보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ kubectl apply -f test.yaml</div><div class="line">$ kubectl get pod -l app=pingpong --show-all</div></pre></td></tr></table></figure></p>
+<p>parallelism와 replicas의 차이점은 무엇일까?<br>replicas가 3이면 동일한 파드를 3개 만들라는 것이고, parallelism이 이면 동시에 3개의 파드를 실행하는것인데… 확인해보니 parallelism도 파드를 3개 만들긴함.</p>
+<p>잡 리소스는 restartPolicy 속성을 Never, OnFailure중 하나를 설정해야 한다.</p>
+<h3 id="크론잡"><a href="#크론잡" class="headerlink" title="크론잡"></a>크론잡</h3><p>잡 리소스는 파드가 단 한번만 실행되는데 반해 크론잡 리소스는 스케줄을 지정해 정기적으로 파드를 실행할 수 있다. 즉 정기적으로 파드를 실행할 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">apiVersion: batch/v1beta1</div><div class="line">kind: CronJob</div><div class="line">metadata:</div><div class="line">  name: pingpong</div><div class="line">spec:</div><div class="line">  schedule: &quot;*/1 * * * *&quot;</div><div class="line">  jobTemplate:</div><div class="line">    spec:</div><div class="line">      template:</div><div class="line">        metadata:</div><div class="line">          labels:</div><div class="line">            app: pingpong</div><div class="line">        spec:</div><div class="line">          containers:</div><div class="line">          - name: pingpong</div><div class="line">            image: gihyodocker/alpine:bash</div><div class="line">            command: [&quot;/bin/sh&quot;]</div><div class="line">            args:</div><div class="line">              - &quot;-c&quot;</div><div class="line">              - |</div><div class="line">                echo [`date`] ping!</div><div class="line">                sleep 10</div><div class="line">                echo [`date`] pong!</div><div class="line">          restartPolicy: OnFailure</div></pre></td></tr></table></figure></p>
+<p>spec.schedule속성에 Cron과 같은 포맷으로 파드를 실행할 스케줄을 정의한다. 또한 spec.jobTemplate 아래에 잡 리소스와 마찬가지로 파드 정의가 들어가면 된다.<br>보통의 경우 리눅스 crontab으로 스케줄에 맞춰 스크립트를 실행하는게 대부분이었따. 하지만 크론잡 리소스를 이용하면 이 모든것을 컨테이너로 해결할 수 있다.</p>
+<h3 id="시크릿"><a href="#시크릿" class="headerlink" title="시크릿"></a>시크릿</h3><p>쿠버네티스의 시크릿 리소스를 사용하면 기밀정보 문자열을 Base 인코딩으로 만들 수 있다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">apiVersion: v1</div><div class="line">kind: Secret</div><div class="line">metadata:</div><div class="line">  name: nginx-secret</div><div class="line">type: Opaque</div><div class="line">data:</div><div class="line">  .htpasswd: eW91cl91c2VybmFtZTpyejc5SXpTalplaWZvCg==</div></pre></td></tr></table></figure>
+<p>위 코드를 활용해 아래에 적용가능하다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line">apiVersion: v1</div><div class="line">kind: Service</div><div class="line">metadata:</div><div class="line">  name: basic-auth</div><div class="line">spec:</div><div class="line">  type: NodePort</div><div class="line">  selector:</div><div class="line">    app: basic-auth</div><div class="line">  ports:</div><div class="line">  - protocol: TCP</div><div class="line">    port: 80</div><div class="line">    targetPort: http</div><div class="line">    nodePort: 30060</div><div class="line"></div><div class="line">---</div><div class="line">apiVersion: apps/v1</div><div class="line">kind: Deployment</div><div class="line">metadata:</div><div class="line">  name: basic-auth</div><div class="line">  labels:</div><div class="line">    app: basic-auth</div><div class="line">spec:</div><div class="line">  replicas: 1</div><div class="line">  selector:</div><div class="line">    matchLabels:</div><div class="line">      app: basic-auth</div><div class="line">  template:</div><div class="line">    metadata:</div><div class="line">      labels:</div><div class="line">        app: basic-auth</div><div class="line">    spec:</div><div class="line">      containers:</div><div class="line">      - name: nginx</div><div class="line">        image: &quot;gihyodocker/nginx:latest&quot;</div><div class="line">        imagePullPolicy: Always</div><div class="line">        ports:</div><div class="line">          - name: http</div><div class="line">            containerPort: 80</div><div class="line">        env:</div><div class="line">          - name: BACKEND_HOST</div><div class="line">            value: &quot;localhost:8080&quot;</div><div class="line">          - name: BASIC_AUTH_FILE</div><div class="line">            value: &quot;/etc/nginx/secret/.htpasswd&quot;    </div><div class="line">        volumeMounts:</div><div class="line">          - mountPath: /etc/nginx/secret    # 이 경로에 .htpasswd가 생성된다.</div><div class="line">            name: nginx-secret</div><div class="line">            readOnly: true</div><div class="line">      - name: echo</div><div class="line">        image: &quot;gihyodocker/echo:latest&quot;</div><div class="line">        imagePullPolicy: Always</div><div class="line">        ports:</div><div class="line">          - containerPort: 8080</div><div class="line">        env:</div><div class="line">          - name: HTTP_PORT</div><div class="line">            value: &quot;8080&quot;</div><div class="line">      volumes:</div><div class="line">      - name: nginx-secret</div><div class="line">        secret:</div><div class="line">          secretName: nginx-secret</div></pre></td></tr></table></figure>
+<p>인증정보를 환경 변수로 관리하는 기법또한 존재한다. 이는 259p를 참고하자.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;파드, 레플리카세트, 디플로이먼트, 서비스, 인그레스는 데몬으로 동작하는 서버 어플리케이션을 구축할 때 사용되는 기본 리소스이다&lt;br&gt;쿠버네티스는 데몬으로 동작하는 서버 어플리케이션 외에도 배치 서버등 다양한 형태의 어플리케이션을 구축할 수 있다
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
+    
+    
+      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
     
   </entry>
   
@@ -77,9 +145,10 @@
     <link href="http://KKimSangHeon.github.io/2019/06/01/kube9/"/>
     <id>http://KKimSangHeon.github.io/2019/06/01/kube9/</id>
     <published>2019-06-01T04:15:34.000Z</published>
-    <updated>2019-06-01T05:16:30.305Z</updated>
+    <updated>2019-06-06T08:26:31.099Z</updated>
     
-    <content type="html"><![CDATA[<p>GCP를 생성하고 구글 클라우드 SDK를 설치하자</p>
+    <content type="html"><![CDATA[<p>온프레미스 환경 또는 퍼블릭 클라우드에서 쿠버네티스를 실제로 사용해 보자.<br>클라우드에서 Google Kubernetes Engine을이용하거나 온프레미스 환경에서 Kuberspray를 이용해 클러스터를 구축하자</p>
+<p>GCP를 생성하고 구글 클라우드 SDK를 설치하자</p>
 <p>아래의 링크에서 GCP 설치<br><a href="https://cloud.google.com/sdk/docs/quickstart-windows?hl=ko" target="_blank" rel="external">https://cloud.google.com/sdk/docs/quickstart-windows?hl=ko</a></p>
 <p>환경변수에 다음 추가<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">C:\Users\SangHeon\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin</div></pre></td></tr></table></figure></p>
 <p>gcloud 버전 업데이트<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gcloud components update</div></pre></td></tr></table></figure></p>
@@ -98,8 +167,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;GCP를 생성하고 구글 클라우드 SDK를 설치하자&lt;/p&gt;
-&lt;p&gt;아래의 링크에서 GCP 설치&lt;br&gt;&lt;a href=&quot;https://cloud.google.com/sdk/docs/quickstart-windows?hl=ko&quot; target=&quot;_blank
+      &lt;p&gt;온프레미스 환경 또는 퍼블릭 클라우드에서 쿠버네티스를 실제로 사용해 보자.&lt;br&gt;클라우드에서 Google Kubernetes Engine을이용하거나 온프레미스 환경에서 Kuberspray를 이용해 클러스터를 구축하자&lt;/p&gt;
+&lt;p&gt;GCP를 생성하고
     
     </summary>
     
@@ -807,106 +876,6 @@
     
       &lt;p&gt;docker-machine start $(docker-machine ls -q)&lt;br&gt;를 입력하여 도커머신들을 띄우자&lt;/p&gt;
 &lt;h4 id=&quot;Swarm&quot;&gt;&lt;a href=&quot;#Swarm&quot; class=&quot;headerlink&quot; title=&quot;Swarm?&quot;&gt;&lt;
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="Docker" scheme="http://KKimSangHeon.github.io/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(Docker) 3. Swarms</title>
-    <link href="http://KKimSangHeon.github.io/2019/04/17/docker3/"/>
-    <id>http://KKimSangHeon.github.io/2019/04/17/docker3/</id>
-    <published>2019-04-17T14:06:35.000Z</published>
-    <updated>2019-04-21T10:49:24.025Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="이전강의에서는-만든-앱을-가져와서-어떻게-컴포즈로-정의해야-하는지-docker-compose-yml파일로-정의했었다"><a href="#이전강의에서는-만든-앱을-가져와서-어떻게-컴포즈로-정의해야-하는지-docker-compose-yml파일로-정의했었다" class="headerlink" title="이전강의에서는 만든 앱을 가져와서 어떻게 컴포즈로 정의해야 하는지 docker-compose.yml파일로 정의했었다."></a>이전강의에서는 만든 앱을 가져와서 어떻게 컴포즈로 정의해야 하는지 docker-compose.yml파일로 정의했었다.</h4><p>이번에는 애플리케이션을 클러스터에 배포한다. 멀티 컨테이너, 멀티 머신, 멀티 어플리케이션을 스웜이라 불리는 도커나이저 클러스터인 스웜에 배포할것이다.</p>
-<h3 id="스웜"><a href="#스웜" class="headerlink" title="스웜?"></a>스웜?</h3><p>스웜은 도커로 실행하는 머신들의 그룹이고 클러스터로 조인되어있다. 도커 커맨드를 그대로 사용할 수 있고 클러스터에 있는 <u>스웜매니저</u>에 도커 커맨드를 쓰는것이다. 스웜에 있는 머신들을 물리적, 가상적이어도 되고 스웜에 들어가있는 머신들을 노드라고 한다.</p>
-<p><code>스웜매니저</code> : 여러개의 컨테이너를 어떻게 실행할지에 대한 전략이 있다. empiiest node 전략을 사용하면 컨테이너를 띄우가 위해 최소한의 머신을 쓴다.golbal전략은 컨테이너가 하나의 인스턴스를 갖도록 해준다. 즉 모든서버가 컨테이너 하나는 갖도록 해준다. 이는 컴포즈 파일을 통해 스웜매니저에게 알려줘야 한다.<br>스웜에 들어간것은 노드라 하는데 이들에게 명령을 내릴수 있는건 스웜매니저라 하고 이러한 매니저들은 다른 스웜에 워커로 조인할 수 있도록 해준다. 워커는 컨테이너를 돌릴 수 있는 리소스를 제공해주고 다른머신에 작업을 명령할 권한은 없다.</p>
-<p>도커는 스웜모드로 변경될 수 있다. 스웜모드로 바꾸면 현재의 머신이 스웜매니저가 되고 명령어는 현재머신에 시키는것이 아니라 스웜매니저에 시킨다.</p>
-<p>스웜은 여러개의 물리 혹은 가상의 머신으로 이뤄진다.</p>
-<p>docker swarm init으로 스웜모드를 실행시키면 현재 머신이 스웜 매니저가 된다.<br>docker swarm join을 다른 머신에서 사용하면 다른 머신에서 내가 만든 스웜매니저에 조인하게 된다.</p>
-<p>docker-machine create –driver virtualbox myvm1<br>docker-machine create –driver virtualbox myvm2<br>을 입력해 도커 머신을 생성하자.</p>
-<p>docker-machin ls 를 입력하면 생성된 머신을 확인할 수 있다.</p>
-<p>이후<br>docker-machine start myvm1 을 입력하여 머신을 띄우자.</p>
-<p>이제 myvm1을 스웜매니저로 만들고 myvm2을 워커로 만들것이다.</p>
-<p>첫번째 머신을 매니저로 먼들기위해 도커에 명령을 보내야한다.<br>docker-machine ssh myvm1 “docker swarm init –advertise-addr <myvm1의 ip="">“<br>을 입력하면 docker swarm join –token …..이라고 출력되는데 이는 스웜에 워커를 추가하고 싶으면 이렇게 입력하라는 것이다,<br>두번째 머신에 아래와 같이 입력하여 워커를 추가하자<br>docker-machine ssh myvm2 “위에서 출력된값 복붙”</myvm1의></p>
-<p>docker-machine ssh myvm1 “docker”</p>
-<p>앱을 스웜클러스터에 배포<br>스웜매니저(myvm1)만 도커 커맨드를 실행할 수 있다는점을 잊지말자</p>
-<p>지금까지는 ssh를 활용하여 가상머신에다 가상명령어를 실행했는데 다른방법으로는 docker-machine env <machine> 를 활용하여 쉘에서 도커데몬 vm을 연결하여 활용할 수 있다.<br>이는 로컬에 있는 docker-compose.yml을 쓸 수 있으므로 유용하게 쓸 수 있다.<br>다시설명하자면 이전에는 docker-compose.yml파일을 주고 디플로이를 해야했다. vm에는 해당 파일이 없으므로 vm에 떠있는 스웜매니저와 쉘을 연결하여 쉽게 사용할 수 있다.</machine></p>
-<p>docker-machine env myvm1<br>을 입력하여 쉘이랑 머신을 붙이고 맨아래 나오는 커맨드를 입력하자.<br>그럼 myvm1에 들어온것과 같다.</p>
-<p>docker node ls<br>를 입력하여 사용할 수 있는데 마치 myvm1이라는 스웜매니저에 들어온것같이 도커 커맨드를 사용할 수 있다.</p>
-<p>즉 도커 디플로이를 하면서도 로컬에 있는 파일을 사용할 수 있게되었다! vm으로 파일을 옮기거나 하는 작업들이 필요없어졌다.</p>
-<p>docker stack deploy -c docker-compose.yml getstartedlab<br>을 입력하여 배포 가능하다.</p>
-<p>그러면 vm들에 컨테이너가 들어가게 된다.</p>
-<p>docker stack ps getstartedlab을 입력하여 여러 노드에 깔린것을 확인할 수 있다.</p>
-<p>쉘이 다른 머신에 붙도록 하고싶으면 docker-machine env 명령을 활용하면 된다. 하지만 myvm2는 도커 매니저가 아니라 워커이기 때문에 도커 명령어를 실행할 수 없다.</p>
-<p>접속해보자. docker-machine ls를 입력하여 ip를 확인하고 들어가보자.</p>
-<p>네트웍은 두 노드끼리 공유되고 로드밸런싱된다.</p>
-<p>yml 파일의 replicas를 4로 바꾸고<br>docker stack deploy -c docker-compose.yml getstartedlab<br>을 입력하여 업데이트 하고<br>docker stack ps getstartedlab<br>을 입력하여 확인해보자</p>
-<p>2개,2개씩 골고루 배치된것을 확인할 수 있다.</p>
-<h3 id="cleanup-and-reboot"><a href="#cleanup-and-reboot" class="headerlink" title="cleanup and reboot"></a>cleanup and reboot</h3><p>docker stack rm getstartedlab<br>을 입력하여 도커를 내려보자,</p>
-<p>docker-machine ssh myvm2 “docker swarm leave”<br>를 통해 도커 스웜에서 제거하자(워커는 이렇게 제거하면 된다.)</p>
-<p>docker-machine ssh myvm1 “docker swarm leave –force”<br>를 통해 도커 스웜에서 제거하자(매니저는 이렇게 force를 넣어 제거하면 된다.)</p>
-<p>eval $(docker-machine env -u)<br>env에 붙은 도커 머신 떼어내자.<br>쉘이 도커 머신에서 떨어져 나간다.<br>이제 로컬에 있는 도커 커맨드가 실행된다..</p>
-<p>docker-machine stop<br>를 입력하여 도커 머신을 멈추자.</p>
-<p><a href="https://www.youtube.com/watch?v=p58k2_HMWRM&amp;list=PLfI752FpVCS84hxOeCyI4SBPUwt4Itd0T&amp;index=2" target="_blank" rel="external">https://www.youtube.com/watch?v=p58k2_HMWRM&amp;list=PLfI752FpVCS84hxOeCyI4SBPUwt4Itd0T&amp;index=2</a><br>의 53분부터 보면 요약 잘해주신다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;이전강의에서는-만든-앱을-가져와서-어떻게-컴포즈로-정의해야-하는지-docker-compose-yml파일로-정의했었다&quot;&gt;&lt;a href=&quot;#이전강의에서는-만든-앱을-가져와서-어떻게-컴포즈로-정의해야-하는지-docker-compose-yml파
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="Docker" scheme="http://KKimSangHeon.github.io/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(Docker) 2. Docker Services</title>
-    <link href="http://KKimSangHeon.github.io/2019/04/17/docker2/"/>
-    <id>http://KKimSangHeon.github.io/2019/04/17/docker2/</id>
-    <published>2019-04-17T14:05:48.000Z</published>
-    <updated>2019-04-21T10:52:29.843Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="Docker-Services"><a href="#Docker-Services" class="headerlink" title="Docker Services"></a>Docker Services</h4><p><a href="https://docs.docker.com/get-started" target="_blank" rel="external">https://docs.docker.com/get-started</a> 를 참고하여 진행</p>
-<p>Compose를 설치하자. (보통 도커 설치하면 미리 깔린다.)</p>
-<p>이번엔 어플리케이션을 로드밸런싱하고 스케일한다. 즉 컨테이너를 여러개 띄운다.</p>
-<p>지난번엔 컨테이너를 했고 이번엔 서비스를 배운다.<br>이전에도 얘기했듯이 컨테이너 위에 서비스 서비스 위에 스택이 존재한다.</p>
-<h4 id="서비스"><a href="#서비스" class="headerlink" title="서비스?"></a>서비스?</h4><p>분산된 앱에서는 각각을 서비스라 한다. 비디오 어플리케이션에서 데이터를 db에 저장하는 서비스, 비디오를 변환하는 서비스, 프론트엔드를 위한 서비스가 있을것이다. 서비스는 실제환경에서 쓰이는 컨테이너를 의미. 서비스는 오직 하나의 이미지만 실행한다. 서비스는 컨테이너들이 어떤 포트를 사용하고 얼마나 띄워야할지 씨피유는 얼마나 써야할지를 codify한다.</p>
-<h4 id="스케일링"><a href="#스케일링" class="headerlink" title="스케일링?"></a>스케일링?</h4><p>서비스를 스케일링하는것은 실행할 컨테이너의 갯수를 변경하는것을 의미한다.<br>또한 더많은 컴퓨터 자원을 서비스에 할당하는것을 의미</p>
-<p>이는 도커에서 매우 쉽다.<br>docker-compose.yml 파일을 사용하면 된다.<br>이는 도커컨테이너가 프로덕션 환경에서 어떻게 동작해야 하는지 정의한다.</p>
-<h3 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h3><p>docker-compose.yml을 만들고<br><figure class="highlight"><figcaption><span>default</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">version: "3"</div><div class="line">services:</div><div class="line"># 서비스의 이름은 web이다.</div><div class="line">  web:</div><div class="line">    # replace username/repo:tag with your name and image details</div><div class="line">    # 아래의 이미지를 읽어와라</div><div class="line">    image: tkdgjs1501/get-started:part2</div><div class="line">    deploy:</div><div class="line">    #다섯개의 컨테이너를 만든다.</div><div class="line">      replicas: 5</div><div class="line">      resources:</div><div class="line">        limits:</div><div class="line">        #각각의 컨테이너는 10%의 CPU를 사용하고</div><div class="line">          cpus: "0.1"</div><div class="line">        #50M를 할당한다.</div><div class="line">          memory: 50M</div><div class="line">        #무언가 잘못되었을 때 컨테이너를 다시 띄운다.</div><div class="line">      restart_policy:</div><div class="line">        condition: on-failure</div><div class="line">        #컨테이너의 호스트의 4000번 컨테이너의 80번 포트를 연결</div><div class="line">    ports:</div><div class="line">      - "4000:80"</div><div class="line">      #다섯개의 컨테이는 로드밸런스를 통해 호스트의 80번 포트를 공유해야한다. 이를 위해 네트웍을 webnet 사용</div><div class="line">    networks:</div><div class="line">      - webnet</div><div class="line">      # webnet의 정의</div><div class="line">networks:</div><div class="line">  webnet:</div><div class="line">  </div></pre></td></tr></table></figure></p>
-<p>  를 붙여넣음</p>
-<p>위 파일은 도커한테 어떤 행동을 해야할지 알려주는것.</p>
-<p>docker swarm init<br>을 입력하자</p>
-<p>docker stack deploy -c docker-compose.yml getstartedlab<br>getstartedlab 라는 앱 네임으로</p>
-<p>docker service ls<br>getstartedlab_web라는게 생성되는데 앱네임 뒤에 web이 붙여진것이다.</p>
-<p>서비스안에 돌고있는 다섯개의 컨테이너를 태스크라 부르는데 태스크는 각각의 ID가 있고 순차적으로 증가한다.</p>
-<p>docker service ps getstartedlab_web<br>를 입력하여 태스크를 나열해 볼 수 있다.<br>task에 대한 정보들</p>
-<p><a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a><br>를 접속할 수 있는데 접속할때마다 호스트 네임이 바뀌는것을 확인할 수 있다.<br>호스트네임 == 컨테이너 ID</p>
-<p>docker container ls<br>컨테이너에 대한 정보들</p>
-<h4 id="스케일링-하기"><a href="#스케일링-하기" class="headerlink" title="스케일링 하기"></a>스케일링 하기</h4><p>docker-compose.yml 파일의 replicas를 수정하여 스케일링 할 수 있다.</p>
-<p>replicas: 7<br>로 바꾸고<br>docker stack deploy -c docker-compose.yml getstartedlab<br>를 입력하면 업데이트를 한다.</p>
-<p>docker service ps getstartedlab_web<br>를 입력하면 7개로 변경된것을 확인할 수 있다.</p>
-<h4 id="정리하기"><a href="#정리하기" class="headerlink" title="정리하기"></a>정리하기</h4><p>docker stack rm getstartedlab<br>docker swarm leave –force</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;Docker-Services&quot;&gt;&lt;a href=&quot;#Docker-Services&quot; class=&quot;headerlink&quot; title=&quot;Docker Services&quot;&gt;&lt;/a&gt;Docker Services&lt;/h4&gt;&lt;p&gt;&lt;a href=&quot;https://d
     
     </summary>
     

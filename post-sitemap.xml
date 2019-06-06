@@ -7,8 +7,32 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2019/06/06/kube12/</loc>
+        <lastmod>2019-06-06T08:27:54.525Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2019/06/02/kube11/</loc>
-        <lastmod>2019-06-02T08:11:53.023Z</lastmod>
+        <lastmod>2019-06-06T08:27:16.197Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2019/06/01/kube9/</loc>
+        <lastmod>2019-06-06T08:26:31.099Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2019/06/06/kube13/</loc>
+        <lastmod>2019-06-06T08:17:59.664Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,14 +41,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2019/06/01/kube10/</loc>
         <lastmod>2019-06-02T08:11:02.042Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2019/06/01/kube9/</loc>
-        <lastmod>2019-06-01T05:16:30.305Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
