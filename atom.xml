@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-06-08T05:20:00.803Z</updated>
+  <updated>2019-06-08T05:23:44.886Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://KKimSangHeon.github.io/2019/06/08/msa4/"/>
     <id>http://KKimSangHeon.github.io/2019/06/08/msa4/</id>
     <published>2019-06-08T05:19:44.000Z</published>
-    <updated>2019-06-08T05:20:00.803Z</updated>
+    <updated>2019-06-08T05:23:44.886Z</updated>
     
     <content type="html"><![CDATA[<h3 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h3><p>Using DevOps to Solve your Delivery Challenges</p>
 <ul>
@@ -186,15 +186,7 @@
 <li>작은성공을 기반으로 나아가라</li>
 <li>비효율적인 경우 그룹간 역할 및 책임을 조율하라.</li>
 </ul>
-<p>215</p>
-<h4 id="The-deployment-pipeline-concept"><a href="#The-deployment-pipeline-concept" class="headerlink" title="The deployment pipeline concept"></a>The deployment pipeline concept</h4><p>피드백 머커니즘. 하지않았다면 돌아갈 수 있다.<br>피드백의 주체는 누구인가? 메커니즘이다.</p>
-<p>216</p>
-<p>217</p>
-<p>218</p>
-<p>219</p>
-<h4 id="Bottom-Up-Implementation-1"><a href="#Bottom-Up-Implementation-1" class="headerlink" title="Bottom-Up Implementation"></a>Bottom-Up Implementation</h4><p>탑다운은</p>
-<p>220</p>
-<h4 id="Top-Down-Implementation-1"><a href="#Top-Down-Implementation-1" class="headerlink" title="Top-Down Implementation"></a>Top-Down Implementation</h4>]]></content>
+]]></content>
     
     <summary type="html">
     
