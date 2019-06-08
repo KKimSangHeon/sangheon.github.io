@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>msa1 | Kim Sang Heon&#39;s Bolg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="" />
+    
+    
+
+      <meta name="description" content="Event storming?프로그램 도메인에서 어떤일이 일어나는지 신속하게 알 수 있게 해준다. 또한 복잡한 비즈니스 문제를 이해하고 탐구하는데 어려움을 겪는 팀에게 문제를 모델링할 수 있게 해주며 비즈니스를 어떻게 지원해야할지에 대한 통찰력을 기를 수 있게 해준다. 진행방법Step 1: Create domain eventsStep 2: Add the co">
+<meta property="og:type" content="article">
+<meta property="og:title" content="msa1">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2019/06/06/msa1/index.html">
+<meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
+<meta property="og:description" content="Event storming?프로그램 도메인에서 어떤일이 일어나는지 신속하게 알 수 있게 해준다. 또한 복잡한 비즈니스 문제를 이해하고 탐구하는데 어려움을 겪는 팀에게 문제를 모델링할 수 있게 해주며 비즈니스를 어떻게 지원해야할지에 대한 통찰력을 기를 수 있게 해준다. 진행방법Step 1: Create domain eventsStep 2: Add the co">
+<meta property="og:updated_time" content="2019-06-08T05:20:03.875Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="msa1">
+<meta name="twitter:description" content="Event storming?프로그램 도메인에서 어떤일이 일어나는지 신속하게 알 수 있게 해준다. 또한 복잡한 비즈니스 문제를 이해하고 탐구하는데 어려움을 겪는 팀에게 문제를 모델링할 수 있게 해주며 비즈니스를 어떻게 지원해야할지에 대한 통찰력을 기를 수 있게 해준다. 진행방법Step 1: Create domain eventsStep 2: Add the co">
+        <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-101744076-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/2017/06/29/about-me/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/">About Me</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/Introduction/">Introduction</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/My-Projects/">My Projects</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/Travel/">Travel</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Search/">Search</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Sort/">Sort</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/">CS</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/Data-Base/">Data Base</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/Design-Pattern/">Design Pattern</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/IOT/">IOT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/MSA/">MSA</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/Operating-System/">Operating System</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/">Etc</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/HEX-Team/">HEX Team</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/면접/">면접</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/아무거나/">아무거나</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/자격증/">자격증</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/">Language</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/C/">C++</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/Embeded-C/">Embeded C</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/Python/">Python</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/SQL-Oracle/">SQL(Oracle)</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/OS/">OS</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/OS/Linux/">Linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/">Web/App</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/Angular2/">Angular2</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/Firebase/">Firebase</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/Servlet-JSP/">Servlet/JSP</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/Spring/">Spring</a></li></ul></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    uncategorized
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2850951807285210"
+     data-ad-slot="1831621923"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                            <article id="post-msa1" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        msa1
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/06/06/msa1/" class="article-date">
+            <time datetime="2019-06-06T10:26:59.000Z" itemprop="datePublished">2019-06-06</time>
+        </a>
+    </div>
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h3 id="Event-storming"><a href="#Event-storming" class="headerlink" title="Event storming?"></a>Event storming?</h3><p><u>프로그램 도메인에서 어떤일이 일어나는지 신속하게 알 수 있게 해준다</u>. 또한 복잡한 비즈니스 문제를 이해하고 탐구하는데 어려움을 겪는 팀에게 문제를 모델링할 수 있게 해주며 비즈니스를 어떻게 지원해야할지에 대한 통찰력을 기를 수 있게 해준다.</p>
+<h4 id="진행방법"><a href="#진행방법" class="headerlink" title="진행방법"></a>진행방법</h4><p>Step 1: Create domain events<br>Step 2: Add the commands that caused the domain event<br>Step 2b: Add the actor that executes the command<br>Step 3: Add corresponding aggregate</p>
+<h4 id="Event-storming의-장애물이-될-수-있는것"><a href="#Event-storming의-장애물이-될-수-있는것" class="headerlink" title="Event storming의 장애물이 될 수 있는것"></a>Event storming의 장애물이 될 수 있는것</h4><ul>
+<li>성공과 관련해 많은 지식을 갖고있는 전문가.<br>(기술자는 비즈니스적으로 비즈니스 전문가는 기술적으로 보도록 해보자!)</li>
+<li>참가하지 않는 인원.</li>
+</ul>
+<h4 id="Event-storming의-장점"><a href="#Event-storming의-장점" class="headerlink" title="Event storming의 장점"></a>Event storming의 장점</h4><ul>
+<li>잠재적 솔루션 도출</li>
+<li>비즈니스의 시각화 및 각 부분의 관련성 도출</li>
+<li>누락된 개념을 찾아낼 수 있다.</li>
+<li>짧은시간안에 결과가 도출된다.</li>
+<li>다양한 관점을 통해 더 강력한 솔루션을 만들 수 있다.</li>
+<li>진정한 비즈니스 가치를 찾을 수 있다.</li>
+<li>실제 비즈니스 사례에 중점을 둔다.</li>
+</ul>
+<h3 id="Software-Design"><a href="#Software-Design" class="headerlink" title="Software Design"></a>Software Design</h3><p>해당 비즈니스에 전문가, 비전문가가 모여 진행한다.</p>
+<h4 id="진행절차"><a href="#진행절차" class="headerlink" title="진행절차"></a>진행절차</h4><ol>
+<li>Event<br>전문가는 시간순으로 발생할 수 있는 이벤트를 과거형으로 작성한다.<br>(빨간 포스트잇 사용)</li>
+</ol>
+<p>이 중 이상한 내용은 과감하게 버리고 애매한 내용은 연분홍색으로 덧붙인다.</p>
+<ol>
+<li><p>Actor &amp; Command<br>Actor가 어떤 커맨드를 통해 도메인 이벤트가 발생한다고 했을 때 Actor은 노란색으로 붙이고 커맨드 내용은 현재형으로 하고 파란색으로 붙인다. 즉 다음과 같은 형태가 된다.</p>
+</li>
+<li><p>Business rule<br>시스템이 이벤트까지 어떻게 발생는데 있어 정책, 제약사항, 암묵적인 정책, 명시적인 정책을 보라색 포스트잇으로 붙인다.</p>
+</li>
+<li><p>Bounded Context<br>하나의 트랜잭션, specific function 단위로 나누어 그루핑한다.</p>
+</li>
+<li><p>Bounded Context 기반 Highest priority/Hard to solve/Requires experiments 로 투표진행</p>
+</li>
+<li><p>Bounded Context에 투표했던 결과중 가장 효과적이라 투표된것만 따로 빼내고 이에서 파생되는 서브도메인을 초록 포스트잇으로 붙이고 이에 해당하는 시나리오를 파랑 포스트잇으로 붙여보자.<br>여기까지 Micro Service의 Level 2까지 진행했다고 볼 수 있다. (Level 1 - Value Domain/ Level 2- Capability Domain)</p>
+</li>
+<li><p>시퀀스 다이어그램을 그리자.</p>
+</li>
+</ol>
+<hr>
+<h3 id="Implementing-Domain-Driven-Design-For-Microservices-Architecture"><a href="#Implementing-Domain-Driven-Design-For-Microservices-Architecture" class="headerlink" title="Implementing Domain-Driven Design For Microservices Architecture"></a>Implementing Domain-Driven Design For Microservices Architecture</h3><h4 id="DDD의-원칙"><a href="#DDD의-원칙" class="headerlink" title="DDD의 원칙"></a>DDD의 원칙</h4><p><code>Values:</code> Meaning, Unity, Usability, Fitness, Flexibility, Maintainability<br><code>Principles:</code>  Continuous Learning, Knowledge Rich Design, Ubiquitous Language, Model-Driven Design, Separation of Concerns<br>Deep Models, Declarative Style<br><code>Patterns:</code><br>Layered Architecture<br>Ubiquitous Language (Entities, Value Objects, Services, Modules, Aggregates, Factories, Specification) /<br>Supple Design (Intention-Revealing Interfaces, Side-Effect Free Functions, Assertions, Conceptual Contours, Standalone Classes, Closure of Operations)</p>
+<h3 id="What-is-Domain-Driven-Design"><a href="#What-is-Domain-Driven-Design" class="headerlink" title="What is Domain Driven Design"></a>What is Domain Driven Design</h3><p>도메인 전문가, 기술 전문가가 소프트웨어 개발를 위해 협엽하는 기술<br>아이디어와 도메인은 공통언어를 통해 코드에 반영되어야 한다.<br>Domain Driven Design 에 대해 알아보기 위해 다양한 Domain에 대해 알아보자.</p>
+<h4 id="Domain"><a href="#Domain" class="headerlink" title="Domain?"></a>Domain?</h4><p>팀은 특정 비즈니스 도메인에 맞게 일한다.<br>팀은 비즈니스 도메인에 초점을 맞춘다<br>도메인의 세부사항은 팀의 포지션마다 다르다.</p>
+<p>도메인의 예시<br>Hotel / Banking / Mortgage / Credit / Debit Accounts / Credit Cards / Retails loans</p>
+<h4 id="Subdomains"><a href="#Subdomains" class="headerlink" title="Subdomains"></a>Subdomains</h4><ul>
+<li>도메인은 서브도메인으로 구성된다.</li>
+<li>서브도메인은 Bounded Context와 유사하며 이는 서로 커뮤니케이션할 수 있다.</li>
+<li>서브도메인은 또다른 서버도메인을 포함할 수 있다.</li>
+</ul>
+<h4 id="Core-domain"><a href="#Core-domain" class="headerlink" title="Core domain"></a>Core domain</h4><ul>
+<li>돈을 벌게해주는 중요한 도메인</li>
+<li>경쟁업체와 높은 차별성을 갖음</li>
+</ul>
+<h4 id="Supporting-Subdomain"><a href="#Supporting-Subdomain" class="headerlink" title="Supporting Subdomain"></a>Supporting Subdomain</h4><p>기술적으로 서포팅하지만 COTS-Software가 아니다.<br>외부지원으로 구현될수 있지만 사내 팀이 주도해야 한다.</p>
+<p><code>Commercial, off-the-shelf</code><br>COTS 란 완성품으로 일반 대중에게 판매, 대여 또는 권한을 부여할 수 있는 컴퓨터 소프트웨어나 하드웨어, 기술 또는 컴퓨터 제품 등을 의미한다.</p>
+<h4 id="Generic-Subdomain"><a href="#Generic-Subdomain" class="headerlink" title="Generic Subdomain"></a>Generic Subdomain</h4><p>Suitable for Outsourcing, COTS</p>
+<h4 id="Bounded-Contexts"><a href="#Bounded-Contexts" class="headerlink" title="Bounded Contexts"></a>Bounded Contexts</h4><p>큰 도메인을 작은 Context로 나눈것.<br>각각의 Context는 자신만의 공통언어, 모델을 갖을 수 있다.<br>또한 Bounded Contexts는 일부 도메인을 공유할 수 있다.<br>Ubiquitous Language(공통언어)로 모델되어야 하며 프로그램에서 비즈니스 니즈를 정의한다.</p>
+<h3 id="This-is-Domain-Driven-Design"><a href="#This-is-Domain-Driven-Design" class="headerlink" title="This is Domain Driven Design"></a>This is Domain Driven Design</h3><h4 id="DDD의-Concepts-and-Overview"><a href="#DDD의-Concepts-and-Overview" class="headerlink" title="DDD의 Concepts and Overview"></a>DDD의 Concepts and Overview</h4><p>Domain-Driven Desigin은 <u>기본 비즈니스 이해에 중점을 둔 소프트웨어 디자인방식이다.</u><br>이러한 접근방식은 다음 두가지 전제를 둔다.</p>
+<ul>
+<li>복잡한 도메인 디자인은 모델을 기반으로 한다.</li>
+<li>대부분의 소프트웨어 프로젝트는 도메인 및 도메인로직에 중점을 둔다. (시스템 구현을 위한 특정 기술에 중점을 두는것이 아님)</li>
+</ul>
+<h4 id="전통적인-Layered-Architecture"><a href="#전통적인-Layered-Architecture" class="headerlink" title="전통적인 Layered Architecture"></a>전통적인 Layered Architecture</h4><p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!그림 추가할것</p>
+<p><code>User Interface</code>: 정보를 보여주고 사용자의 명령을 해석<br><code>Application</code> : 비즈니스 rule,지식 미포함 / 작업 조율 그리고 도메인에 작업 위임역할<br><code>Domain</code> : 비즈니스로직, 룰 포함/ 소프트웨어의 심장부<br><code>Infrastructure</code> : 상위 레이어를 지원하는 기술제공</p>
+<h4 id="Domain-Driven-Design-with-Onion-Architecture"><a href="#Domain-Driven-Design-with-Onion-Architecture" class="headerlink" title="Domain-Driven Design with Onion Architecture"></a>Domain-Driven Design with Onion Architecture</h4><p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!그림 추가할것</p>
+<p><code>Core</code>: 특정 도메인이나 기술에 국한되지 않는 building blocks로 볼 수 있다. 예로 List, Maps, Case Classes, Actor and Lenses가 있다.<br><code>Domain</code> : 공통언어를 통해 작성된 비즈니스 로직 관련 메소드, 클래스가 상주하는 영역이다.<br><code>API</code> :  도메인의 진입점 역할을 한다. API는 도메인을 조작하지 못하도록 immutable한 객체만 노출해야 한다. 코어, 도메인은 API에 액세스할 수 있지만 Infrastructure는 API에 액세스할 수 없다.<br><code>Infrastructure</code> : DB, 사용자 인터페이스 같은 다얗안 기술을 포함하는 가장 바깥쪽 영역이다. 모든 영역은 Infrastructure 영역에 접근 할 수 있다.</p>
+<h4 id="Bounded-Contexts-에-대해-자세히-알아보자"><a href="#Bounded-Contexts-에-대해-자세히-알아보자" class="headerlink" title="Bounded Contexts 에 대해 자세히 알아보자"></a>Bounded Contexts 에 대해 자세히 알아보자</h4><p>전체 비즈니스 모델은 너무 커 한번에 이해하기 힘들다. Bounded Contexts는 서로 다른 모델간 경계와 관계를 표현하기 위해 존재하는 명시적인 경계로서 경계 내의 Ubiquitous Language는 특정한 의미를 갖는다.</p>
+<p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!그림 추가할것</p>
+<h4 id="Bounded-Context의-구현"><a href="#Bounded-Context의-구현" class="headerlink" title="Bounded Context의 구현"></a>Bounded Context의 구현</h4><ul>
+<li>Bounded Context당 한팀이 존재한다.</li>
+<li>코드 Repository가 Bounded Context마다 존재한다.</li>
+<li>Domain Model + DB Schema + UI + Web Services (API)로 구성된다.</li>
+</ul>
+<p><u>Bounded Context는 Ubiquitous Language와 domain model을 캡슐화하나 도메인 모델과 상호작용하는 것, 도메인 모델을 서포트 하는 기능을 포함한다.  </u></p>
+<p>또한 Bounded Context안에  Aggregates Entity(유니크한 트랜잭션), Value Object(불변의 객체)가 존재하는데 이는 바로 뒤에서 설명하니 참고하도록 하자.</p>
+<h4 id="What-are-Entities"><a href="#What-are-Entities" class="headerlink" title="What are Entities?"></a>What are Entities?</h4><p><u>Domain object를 엔티티로 정의하는데 그것은 제각각 다르다</u>. 또한 엔티티의 정체성을 적절히 결정하고 어떻게 가져올지 결정한다.<br>최종 사용자,각 어플리케이션,data store은 <u>identity</u>를 만들어낸다.</p>
+<h3 id="Aggregates"><a href="#Aggregates" class="headerlink" title="Aggregates"></a>Aggregates</h3><p>Aggregates는 루트엔티티로 간주되는 연관된 객체 그룹이다. (트랜잭션과 같음)</p>
+<h4 id="Aggregates의-특징"><a href="#Aggregates의-특징" class="headerlink" title="Aggregates의 특징"></a>Aggregates의 특징</h4><ul>
+<li>트랜잭션과 마찬가지로 Atomic, Consistent, Isolated, Durable 특징을 갖는다.<br>(사람모형 레고는 2개의 팔, 다리, 얼굴을 갖는데 이를 Product’s Invariant(불변성)이라 한다.)</li>
+<li>경계가 명확하다.(외부 개체는 신경쓰지 않음)</li>
+<li>내부 개체를 보호한다. 외부개체는 루트 Aggregates를 통해 접근 가능하며 Aggregates의 상태는 변경 불가능하다.</li>
+<li>Aggregates는 자신이 소유한 entity, value object들의 무결성을 보호해야할 책임이 있다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">@Entity</div><div class="line">public class Cart implements Aggregate &#123;</div><div class="line">  @EmbeddedId</div><div class="line">  private CartId id;</div><div class="line">  @Embedded</div><div class="line">  private CustomerId customerId;</div><div class="line">  @OneToMany(cascade = CascadeType.All, orhanRemoval = true)</div><div class="line">  @JoinColumn(name=&quot;cartId&quot;)</div><div class="line">  private Set&lt;CartItem&gt; items;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위와같은 코드가 있을 때 cart id는 루트 엔티티 이다. 또한 CartItem이라는 엔티티들의 레퍼런스를 갖고 있으며 CustomerId를 ValueObject로서 사용한다.</p>
+<h4 id="Aggregates-rule"><a href="#Aggregates-rule" class="headerlink" title="Aggregates rule"></a>Aggregates rule</h4><ol>
+<li>모델은 불변해야 하며 일관되게 경계안에 있어야 한다.</li>
+<li>Aggregates 작게 디자인해라.(클 경우 확장성 저하 가능성)</li>
+<li>다른 Aggregates참조는 Identity로 하라.</li>
+<li>경계밖에서의 일관성유지</li>
+</ol>
+<h4 id="Relationships-Between-Aggregate"><a href="#Relationships-Between-Aggregate" class="headerlink" title="Relationships Between Aggregate"></a>Relationships Between Aggregate</h4><p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!사진넣기</p>
+<p>Aggregate Root만 다른 Bounded Context의 Aggregate Root에 접근 가능</p>
+<h4 id="Aggregate-팁"><a href="#Aggregate-팁" class="headerlink" title="Aggregate 팁"></a>Aggregate 팁</h4><ul>
+<li>Aggregate는 항상 정답이 아니다.</li>
+<li>Aggregates는 루트와 연결될 수 있다.</li>
+<li>루트가 아닌 엔티티를 FK로 사용하는것을 간과하지 마라.</li>
+</ul>
+<h4 id="Aggregates가-중요한-이유"><a href="#Aggregates가-중요한-이유" class="headerlink" title="Aggregates가 중요한 이유"></a>Aggregates가 중요한 이유</h4><p>개체를 그룹화하고 카테고리화 하면 복잡한것을 쉽게 관리할 수 있다.<br>주인없는 레코드를 방지하여 GC가 쉬워진다.<br>DB와의 고수준의 통신이 가능케한다.</p>
+<h3 id="Value-Object"><a href="#Value-Object" class="headerlink" title="Value Object"></a>Value Object</h3><p>가능한 엔티티 대신 값 개체를 사용하여 모델을 작성해야 한다.<br>Value 인지 아닌지 결정하기위해 다음 것들을 확인해보자.</p>
+<ul>
+<li>도메인을 측정하고, 정량화 할수있는지</li>
+<li>불변의 상태로 유지될 수 할수있는지</li>
+<li>관련된 속성을 필수 단위로 하여 전체를 구성하는지</li>
+<li>상황이 바뀌면 교체 가능한지.</li>
+<li>Value를 사용하는 다른값과 비교될 수 할수있는지</li>
+<li>collaborators에게 부작용을 없는 행동을 하는지</li>
+</ul>
+<h3 id="What-are-Domain-Services"><a href="#What-are-Domain-Services" class="headerlink" title="What are Domain Services"></a>What are Domain Services</h3><p>도메인의 일부는 객체로 모델링하는것이 자연스럽지 않다.<br>Application Service와 다르다. Application Service는 Domain Service의 클라이언트다.<br>일반적인 사용 예</p>
+<ul>
+<li>성능이 중요한 비즈니스 프로세스</li>
+<li>도메인 객체를 다른것의 구성요소로 변환할 때</li>
+<li>둘 이상의 도메인 객체에서 입력을 요구할 때</li>
+</ul>
+<h3 id="Domain-Building-Blocks"><a href="#Domain-Building-Blocks" class="headerlink" title="Domain Building Blocks"></a>Domain Building Blocks</h3><p>Entity :</p>
+<ul>
+<li>identity가 있는 명사</li>
+<li>가변적이며 다른 엔티티 혹은 value object와 연관될 수 있다.</li>
+<li>공유될 수 없다.</li>
+</ul>
+<p>Value Object :</p>
+<ul>
+<li>identity가 없는 명사</li>
+<li>불변하며 다른 엔티티와 연관될 수 있다..</li>
+<li>공유될 수 있다.</li>
+</ul>
+<p>Aggregate :</p>
+<ul>
+<li>하나의 Aggregate당 하나의 root entity가 있다.</li>
+<li>관련있는 Aggregate는 루트 entity를 통해 참조할 수 있지만 Aggregate의 다른 entity는 참조할 수 없다.</li>
+<li>모든 작업은 루트를 통해 수행된다.</li>
+</ul>
+<p>Service :</p>
+<ul>
+<li>서비스는 어플리케이션에서의 액션이다.</li>
+<li>서비스는 엔티티의 상태변화를 일으킨다</li>
+<li>서비스는 상태가 없다.</li>
+<li>서비스는 어플리케이션,도메인, 인프라스트럭쳐의 어느 곳의 일부가 될 수 있다.</li>
+</ul>
+<p>Factory :</p>
+<ul>
+<li>엔티티나 value object를 생성한다</li>
+<li>엔티티의 생성이 복잡할 때 사용한다.</li>
+</ul>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2850951807285210"
+     data-ad-slot="1831621923"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://KKimSangHeon.github.io/2019/06/06/msa1/" data-id="cjwn2kyjm00ls38v75ta5caly" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/KKimSangHeon/" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/tkdgjs1501/" target="_blank">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/06/08/msa2/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            msa2
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/06/06/kube13/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">kube13</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">16</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Travel/">Travel</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/">CS</a><span class="category-list-count">63</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Data-Base/">Data Base</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Design-Pattern/">Design Pattern</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/IOT/">IOT</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/MSA/">MSA</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Operating-System/">Operating System</a><span class="category-list-count">30</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/">Etc</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/HEX-Team/">HEX Team</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/면접/">면접</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/아무거나/">아무거나</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/자격증/">자격증</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">69</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/C/">C++</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Embeded-C/">Embeded C</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Java/">Java</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Python/">Python</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/SQL-Oracle/">SQL(Oracle)</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/OS/Linux/">Linux</a><span class="category-list-count">45</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/">Web/App</a><span class="category-list-count">26</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Angular2/">Angular2</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Firebase/">Firebase</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Servlet-JSP/">Servlet/JSP</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Spring/">Spring</a><span class="category-list-count">8</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="auto"
+     data-ad-client="ca-pub-2850951807285210"
+     data-ad-slot="1831621923"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Kim Sang Heon</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'https-kkimsangheon-github-io-2';
+    
+    
+    var disqus_url = 'http://KKimSangHeon.github.io/2019/06/06/msa1/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

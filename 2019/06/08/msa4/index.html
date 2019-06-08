@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>msa4 | Kim Sang Heon&#39;s Bolg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="" />
+    
+    
+
+      <meta name="description" content="DevOpsUsing DevOps to Solve your Delivery Challenges  배포는 너무 오래걸린다. 테스트에 대해 혼란스럽다. 특정 개인에 대한 높은 의존성. 데브옵스 모델은 lock을 제거한다. 데브옵스 모델은 프로비저닝한다.  Delivery는 Continuous integration + continuous deployment를 의">
+<meta property="og:type" content="article">
+<meta property="og:title" content="msa4">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2019/06/08/msa4/index.html">
+<meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
+<meta property="og:description" content="DevOpsUsing DevOps to Solve your Delivery Challenges  배포는 너무 오래걸린다. 테스트에 대해 혼란스럽다. 특정 개인에 대한 높은 의존성. 데브옵스 모델은 lock을 제거한다. 데브옵스 모델은 프로비저닝한다.  Delivery는 Continuous integration + continuous deployment를 의">
+<meta property="og:updated_time" content="2019-06-08T05:20:00.803Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="msa4">
+<meta name="twitter:description" content="DevOpsUsing DevOps to Solve your Delivery Challenges  배포는 너무 오래걸린다. 테스트에 대해 혼란스럽다. 특정 개인에 대한 높은 의존성. 데브옵스 모델은 lock을 제거한다. 데브옵스 모델은 프로비저닝한다.  Delivery는 Continuous integration + continuous deployment를 의">
+        <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-101744076-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/2017/06/29/about-me/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/">About Me</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/Introduction/">Introduction</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/My-Projects/">My Projects</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/Travel/">Travel</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Search/">Search</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Sort/">Sort</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/">CS</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/Data-Base/">Data Base</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/Design-Pattern/">Design Pattern</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/IOT/">IOT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/MSA/">MSA</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/Operating-System/">Operating System</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/">Etc</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/HEX-Team/">HEX Team</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/면접/">면접</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/아무거나/">아무거나</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/자격증/">자격증</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/">Language</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/C/">C++</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/Embeded-C/">Embeded C</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/Python/">Python</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/SQL-Oracle/">SQL(Oracle)</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/OS/">OS</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/OS/Linux/">Linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/">Web/App</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/Angular2/">Angular2</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/Firebase/">Firebase</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/Servlet-JSP/">Servlet/JSP</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/Spring/">Spring</a></li></ul></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    uncategorized
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2850951807285210"
+     data-ad-slot="1831621923"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                            <article id="post-msa4" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        msa4
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/06/08/msa4/" class="article-date">
+            <time datetime="2019-06-08T05:19:44.000Z" itemprop="datePublished">2019-06-08</time>
+        </a>
+    </div>
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h3 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h3><p>Using DevOps to Solve your Delivery Challenges</p>
+<ul>
+<li>배포는 너무 오래걸린다.</li>
+<li>테스트에 대해 혼란스럽다.</li>
+<li>특정 개인에 대한 높은 의존성.</li>
+<li>데브옵스 모델은 lock을 제거한다.</li>
+<li>데브옵스 모델은 프로비저닝한다.</li>
+</ul>
+<p><code>Delivery는 Continuous integration + continuous deployment를 의미한다.</code></p>
+<h4 id="데프옵스의-특징"><a href="#데프옵스의-특징" class="headerlink" title="데프옵스의 특징"></a>데프옵스의 특징</h4><ul>
+<li>높은신뢰성, 높은 퍼포먼스</li>
+<li>데브옵스는 프로덕트, 툴이아니다. 데브옵스는 문화이다.</li>
+<li>고수준의 자동화 프로세스</li>
+<li>정기적이고 반복적인 플로우를 따른다. 싸이클은 짧고, 작고 잦은 변경을 선호한다.</li>
+</ul>
+<h4 id="DevOps-1"><a href="#DevOps-1" class="headerlink" title="DevOps"></a>DevOps</h4><ul>
+<li>데브옵스의 철학은 개발과 운영의 통합 문화를 만들고, 협업 변화를 촉진하기 위해 기술의 linked toolchain 을 요구하는 것이다.<br><code>toolchain?</code> : Target 시스템의 Software 개발을 진행하기 위해 필요한 host system의 Cross Compile(교차 컴파일) 환경이다.</li>
+<li>DevOps의 toolchain은 수십개의 non-collaborative 툴을 포함할 수 있고, 복잡하고 어려운 작업을 자동화를 통해 task로 만들 수 있다.</li>
+<li>DepOps의 정의에 따르면 one-size-fits-all이 해결책이 아니다.</li>
+<li>DevOps는 특정 문제 및 과제에 대한 정보를 제공한다.</li>
+</ul>
+<h4 id="DevOps를-위한-microservice-requirements"><a href="#DevOps를-위한-microservice-requirements" class="headerlink" title="DevOps를 위한 microservice requirements"></a>DevOps를 위한 microservice requirements</h4><ul>
+<li>microservice에 기반한 새로운 어플리케이션을 빌드하라</li>
+<li>기존 microservice 어플리케이션을 클라우드로 마이그레이션하라</li>
+<li>하이브리드 microservice 어플리케이션을 배포하라</li>
+<li>존재하는 어플리케이션들을 microservice architecture로 발전하라.</li>
+</ul>
+<h4 id="Microservice-배포를-위해-따라야-할-Roles"><a href="#Microservice-배포를-위해-따라야-할-Roles" class="headerlink" title="Microservice 배포를 위해 따라야 할 Roles"></a>Microservice 배포를 위해 따라야 할 Roles</h4><ul>
+<li>개발자는 테스트를 반복하며 각 테스트는 pass해야한다. 또한 계속되는 피드백에 대비하자.</li>
+<li>테스터는 자동화 된 파이프라인에 컴포넌트, 통합, 회귀를 포함하고 크로스 플랫폼간 API를 통해 테스트가 가능토록 하자.</li>
+<li>성능테스터는 로딩 테스팅을 모니터링하고 blue/green, rolling 배포를 하자.</li>
+</ul>
+<p><code>rolling 배포:</code>일반적인 배포를 의미하는데, 단순하게 한 대씩 재시작한다. 코드 변경에 따른 side effect가 발생할 수 있다<br><code>blue-green 배포:</code> 예전 배포물을 블루(blue), 신규 배포물을 그린(green)이라고 해서 붙여진 이름이다. 새로운 배포물을 배포하고 모든 연결을 새로운 배포물만 보게 하며 코드 변경에 따른 side effect가 없다. (배포시 중단시점이 없음!)</p>
+<ul>
+<li>Release 하는사람은 성능 측정을 해야한다.</li>
+<li>운영자는 가용성을 모니터링하고 blue/green 배포를 해야한다.</li>
+<li>엔드유저는 지속적인 피드백을 주고 변경에 대해 대비한다.</li>
+</ul>
+<h4 id="DevOps의-평가기준"><a href="#DevOps의-평가기준" class="headerlink" title="DevOps의 평가기준"></a>DevOps의 평가기준</h4><p>배포빈도(얼마나 자주 배포하나)</p>
+<ul>
+<li>최상: 요구될때마다</li>
+<li>보통: 일주일 혹은 한달에 한번</li>
+<li>최하: 한달에서 여섯달 사이에 한번</li>
+</ul>
+<p>Lead time for changes(ie.코드가 커밋되고 정상적으로 동작하는데 걸리는 시간)</p>
+<ul>
+<li>최상: 한시간 이내</li>
+<li>보통: 일주일 ~ 한달사이</li>
+<li>최하: 한달~여섯달 사이</li>
+</ul>
+<p>Mean time to recover(복구하는데 걸리는 시간)</p>
+<ul>
+<li>최상: 한시간 이내</li>
+<li>보통: 하루 이상</li>
+<li>최하: 하루 이상</li>
+</ul>
+<p>Change failure rate</p>
+<ul>
+<li>최상: 0~15%</li>
+<li>보통: 31~45%</li>
+<li>최하: 16~30%</li>
+</ul>
+<h4 id="Database-관련-생각해봐야-할것들"><a href="#Database-관련-생각해봐야-할것들" class="headerlink" title="Database 관련 생각해봐야 할것들"></a>Database 관련 생각해봐야 할것들</h4><ul>
+<li>Production data에 대한 보호,보안(바꾸는 것은 리스크가 있다)</li>
+<li>Test data 필요</li>
+<li>환경이 다름</li>
+<li>의존성</li>
+<li>다수 어플리케이션이 동일 db에 접근한다.</li>
+<li>이전버전과 호환성 유지</li>
+<li>롤백을 어떻게 할지</li>
+</ul>
+<h4 id="DevOps-Values"><a href="#DevOps-Values" class="headerlink" title="DevOps Values"></a>DevOps Values</h4><p>CALMS</p>
+<ul>
+<li>Culture - 변화를 수용하라</li>
+<li>Automation - CI/CD</li>
+<li>Lean - 엔드유저가 생상하는 value에 초점을 맞추고, 배치사이즈를 작게하라</li>
+<li>Measurement - 모든것을 측정하고 개선된것을 보여줘라</li>
+<li>Sharing - 정보를 공유하고 협업하라</li>
+</ul>
+<h4 id="DevOps-Tools"><a href="#DevOps-Tools" class="headerlink" title="DevOps Tools"></a>DevOps Tools</h4><p><code>Configuration Automation / Management:</code> Puppet, Ansible, Chef, Salt<br><code>Continuous Integration:</code>Jenkins, CruiseControl, Capistrano<br><code>Monitoring:</code>Icinga (nagios), Zenoss, Sweet, Graphite<br><code>Containerization:</code> Docker, Rocket</p>
+<h4 id="DevOps-관련용어"><a href="#DevOps-관련용어" class="headerlink" title="DevOps 관련용어"></a>DevOps 관련용어</h4><p>CI/CD</p>
+<ul>
+<li>Continuous Integration 그리고 Continuous Deployment의 약어</li>
+</ul>
+<p>Continuous integration</p>
+<ul>
+<li>최신코드에서 변경된것을 사용가능하도록 빌드한다.</li>
+</ul>
+<p>Continuous deployment</p>
+<ul>
+<li>가능한 빠르게 배포 단계를 거치고 빌드된 해당 패키지가 프로덕션 환경으로 전환되도록 한다.</li>
+</ul>
+<p>Continuous delivery</p>
+<ul>
+<li>Continuous integration + continuous deployment</li>
+</ul>
+<p>Delivery pipeline</p>
+<ul>
+<li>일련의 자동화 단계로써 CI/CD를 수행한다.</li>
+</ul>
+<h4 id="Continuous-Integration"><a href="#Continuous-Integration" class="headerlink" title="Continuous Integration"></a>Continuous Integration</h4><p>아래와 같은 단계를 빈번하게 수행한다.</p>
+<p><code>1. Development</code></p>
+<ul>
+<li>배치 테스를 거친 작은 변화들이 빠르게 구현된다.</li>
+</ul>
+<p><code>2. SCM(Source Code management)</code></p>
+<ul>
+<li>여러 개발자의 변경된것사항을 병합한다.(GitHub, SVN … 활용)</li>
+</ul>
+<p><code>3. Build</code></p>
+<ul>
+<li>배포할것을 만든다.(Jenkins, Gradle, Maven …  활용)</li>
+</ul>
+<p><code>4. Package</code></p>
+<ul>
+<li>런타임때 빌드를 설치한다.</li>
+<li>변경할 수 없는 이미지를 런타임때 releasing 한다.</li>
+<li>클라우드에 푸쉬하고 컨테이너 이미지 빌드</li>
+</ul>
+<h4 id="Continuous-integration-–-package-step"><a href="#Continuous-integration-–-package-step" class="headerlink" title="Continuous integration – package step"></a>Continuous integration – package step</h4><p>package step에선 변경 불가능한 이미지가 만들어진다. 이는 deploying instance를 생성할 때 사용된다. 이미지를 변경하고 싶다면 삭제하고 새로 만들어야 한다.</p>
+<h4 id="Continuous-Deployment"><a href="#Continuous-Deployment" class="headerlink" title="Continuous Deployment"></a>Continuous Deployment</h4><p>Production 배포까지의 과정<br><code>1. Deploy to Test</code></p>
+<ul>
+<li>functional testing 진행, test tool을 활용한 자동화<br><code>2. Deploy to Stage</code></li>
+<li>Production 배포 전 리허설</li>
+<li>통합 testing 진행<br><code>3. Deploy to Prod</code></li>
+<li>사용자가 사용할 수 있도록 빌드</li>
+</ul>
+<h4 id="Continuous-Delivery-vs-continuous-Deployment"><a href="#Continuous-Delivery-vs-continuous-Deployment" class="headerlink" title="Continuous Delivery vs continuous Deployment"></a>Continuous Delivery vs continuous Deployment</h4><p>!!!!!!!!!!!!!!!!!!!!!!!!!!Continuous Delivery vs continuous Deployment</p>
+<h4 id="Zero-Downtime-Deployment"><a href="#Zero-Downtime-Deployment" class="headerlink" title="Zero Downtime Deployment"></a>Zero Downtime Deployment</h4><p>서비스 중단없이 새로운 버전을 배포하는것을 의미한다. DevOps는 잦은 배포를 하므로 필요하다.</p>
+<h4 id="Zero-Downtime-Deployment-특징"><a href="#Zero-Downtime-Deployment-특징" class="headerlink" title="Zero Downtime Deployment 특징"></a>Zero Downtime Deployment 특징</h4><ul>
+<li>어플리케이션은 항상 사용가능하다.</li>
+<li>사용자가 중단(Downtime)없이 사용할 수 있다.</li>
+<li>이전버전, 새버전이 동시에 배포됨 - 트래픽이 둘 다로 전달됨.</li>
+</ul>
+<h4 id="Implementing-Zero-Downtime-Deployment-–-Blue-Green"><a href="#Implementing-Zero-Downtime-Deployment-–-Blue-Green" class="headerlink" title="Implementing Zero Downtime Deployment – Blue Green"></a>Implementing Zero Downtime Deployment – Blue Green</h4><p>Deployment<br>필요한경우 이전버전으로 신성하게 되돌릴 수 있다.</p>
+<p>1.v1(blue)이 배포되어 사용자들이 사용하고 있을 때  v2(green)을 배포한다.<br>2.자동화된 테스트 도구로 테스트, 검증을 진행하고 사용자를 v1에서 v2환경으로 변환한다.<br>3.v1(blue)을 삭제한다.</p>
+<h4 id="DevOps로의-Transformation"><a href="#DevOps로의-Transformation" class="headerlink" title="DevOps로의 Transformation"></a>DevOps로의 Transformation</h4><ul>
+<li>Top to Bottom문화를 변화시키는 것이 핵심이다.</li>
+<li>교육을 늘리고 커뮤니케이션하고 cross-skilling 하라</li>
+<li>DevOps가 가능한 새로운 프로세스를 평가하라</li>
+<li>스스로 재평가하고 재빌드하라</li>
+<li>DevOps를 지원하는 새로운 기술 평가</li>
+<li>조직을 작게 나눠라</li>
+</ul>
+<h4 id="Bottom-Up-Implementation"><a href="#Bottom-Up-Implementation" class="headerlink" title="Bottom-Up Implementation"></a>Bottom-Up Implementation</h4><ul>
+<li>협업을 위한 방법을 찾아라. (사람들을 초기부터 참가시킨다.)</li>
+<li>자동화 방법을 찾아라</li>
+<li>metrics driven이 되어라</li>
+<li>새로운것을 배우고 지속적으로 개선해라</li>
+<li>작은 batches와 함께 병렬적으로 일해라</li>
+<li>리팩토링을 허락해라</li>
+<li>경영진에게 비즈니스 가치를 입증해라</li>
+<li>비즈니스의 목표, metrics, 우선순위를 이해하라.</li>
+</ul>
+<h4 id="Top-Down-Implementation"><a href="#Top-Down-Implementation" class="headerlink" title="Top-Down Implementation"></a>Top-Down Implementation</h4><ul>
+<li>시험 케이스를 파일럿으로 선택하라</li>
+<li>우수 사레를 문서화하고 전파하라</li>
+<li>팀의 역량을 강화하고 가치를 이끌어내라</li>
+<li>측정 가능한 결과를 요구하라</li>
+<li>과거의 baseline이 충분치 않을때 변명하지 마라</li>
+<li>빠르게 실패하고 지속적으로 향상하라</li>
+<li>작은성공을 기반으로 나아가라</li>
+<li>비효율적인 경우 그룹간 역할 및 책임을 조율하라.</li>
+</ul>
+<p>215</p>
+<h4 id="The-deployment-pipeline-concept"><a href="#The-deployment-pipeline-concept" class="headerlink" title="The deployment pipeline concept"></a>The deployment pipeline concept</h4><p>피드백 머커니즘. 하지않았다면 돌아갈 수 있다.<br>피드백의 주체는 누구인가? 메커니즘이다.</p>
+<p>216</p>
+<p>217</p>
+<p>218</p>
+<p>219</p>
+<h4 id="Bottom-Up-Implementation-1"><a href="#Bottom-Up-Implementation-1" class="headerlink" title="Bottom-Up Implementation"></a>Bottom-Up Implementation</h4><p>탑다운은</p>
+<p>220</p>
+<h4 id="Top-Down-Implementation-1"><a href="#Top-Down-Implementation-1" class="headerlink" title="Top-Down Implementation"></a>Top-Down Implementation</h4>
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2850951807285210"
+     data-ad-slot="1831621923"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://KKimSangHeon.github.io/2019/06/08/msa4/" data-id="cjwn2kyjp00lv38v7jnecrw2j" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/KKimSangHeon/" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/tkdgjs1501/" target="_blank">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/06/08/msa3/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">msa3</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">16</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Travel/">Travel</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/">CS</a><span class="category-list-count">63</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Data-Base/">Data Base</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Design-Pattern/">Design Pattern</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/IOT/">IOT</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/MSA/">MSA</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Operating-System/">Operating System</a><span class="category-list-count">30</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/">Etc</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/HEX-Team/">HEX Team</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/면접/">면접</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/아무거나/">아무거나</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/자격증/">자격증</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">69</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/C/">C++</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Embeded-C/">Embeded C</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Java/">Java</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Python/">Python</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/SQL-Oracle/">SQL(Oracle)</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/OS/Linux/">Linux</a><span class="category-list-count">45</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/">Web/App</a><span class="category-list-count">26</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Angular2/">Angular2</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Firebase/">Firebase</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Servlet-JSP/">Servlet/JSP</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Spring/">Spring</a><span class="category-list-count">8</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="auto"
+     data-ad-client="ca-pub-2850951807285210"
+     data-ad-slot="1831621923"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Kim Sang Heon</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'https-kkimsangheon-github-io-2';
+    
+    
+    var disqus_url = 'http://KKimSangHeon.github.io/2019/06/08/msa4/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

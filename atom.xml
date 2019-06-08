@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-06-06T08:17:59.664Z</updated>
+  <updated>2019-06-08T05:20:00.803Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,658 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>msa4</title>
+    <link href="http://KKimSangHeon.github.io/2019/06/08/msa4/"/>
+    <id>http://KKimSangHeon.github.io/2019/06/08/msa4/</id>
+    <published>2019-06-08T05:19:44.000Z</published>
+    <updated>2019-06-08T05:20:00.803Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h3><p>Using DevOps to Solve your Delivery Challenges</p>
+<ul>
+<li>배포는 너무 오래걸린다.</li>
+<li>테스트에 대해 혼란스럽다.</li>
+<li>특정 개인에 대한 높은 의존성.</li>
+<li>데브옵스 모델은 lock을 제거한다.</li>
+<li>데브옵스 모델은 프로비저닝한다.</li>
+</ul>
+<p><code>Delivery는 Continuous integration + continuous deployment를 의미한다.</code></p>
+<h4 id="데프옵스의-특징"><a href="#데프옵스의-특징" class="headerlink" title="데프옵스의 특징"></a>데프옵스의 특징</h4><ul>
+<li>높은신뢰성, 높은 퍼포먼스</li>
+<li>데브옵스는 프로덕트, 툴이아니다. 데브옵스는 문화이다.</li>
+<li>고수준의 자동화 프로세스</li>
+<li>정기적이고 반복적인 플로우를 따른다. 싸이클은 짧고, 작고 잦은 변경을 선호한다.</li>
+</ul>
+<h4 id="DevOps-1"><a href="#DevOps-1" class="headerlink" title="DevOps"></a>DevOps</h4><ul>
+<li>데브옵스의 철학은 개발과 운영의 통합 문화를 만들고, 협업 변화를 촉진하기 위해 기술의 linked toolchain 을 요구하는 것이다.<br><code>toolchain?</code> : Target 시스템의 Software 개발을 진행하기 위해 필요한 host system의 Cross Compile(교차 컴파일) 환경이다.</li>
+<li>DevOps의 toolchain은 수십개의 non-collaborative 툴을 포함할 수 있고, 복잡하고 어려운 작업을 자동화를 통해 task로 만들 수 있다.</li>
+<li>DepOps의 정의에 따르면 one-size-fits-all이 해결책이 아니다.</li>
+<li>DevOps는 특정 문제 및 과제에 대한 정보를 제공한다.</li>
+</ul>
+<h4 id="DevOps를-위한-microservice-requirements"><a href="#DevOps를-위한-microservice-requirements" class="headerlink" title="DevOps를 위한 microservice requirements"></a>DevOps를 위한 microservice requirements</h4><ul>
+<li>microservice에 기반한 새로운 어플리케이션을 빌드하라</li>
+<li>기존 microservice 어플리케이션을 클라우드로 마이그레이션하라</li>
+<li>하이브리드 microservice 어플리케이션을 배포하라</li>
+<li>존재하는 어플리케이션들을 microservice architecture로 발전하라.</li>
+</ul>
+<h4 id="Microservice-배포를-위해-따라야-할-Roles"><a href="#Microservice-배포를-위해-따라야-할-Roles" class="headerlink" title="Microservice 배포를 위해 따라야 할 Roles"></a>Microservice 배포를 위해 따라야 할 Roles</h4><ul>
+<li>개발자는 테스트를 반복하며 각 테스트는 pass해야한다. 또한 계속되는 피드백에 대비하자.</li>
+<li>테스터는 자동화 된 파이프라인에 컴포넌트, 통합, 회귀를 포함하고 크로스 플랫폼간 API를 통해 테스트가 가능토록 하자.</li>
+<li>성능테스터는 로딩 테스팅을 모니터링하고 blue/green, rolling 배포를 하자.</li>
+</ul>
+<p><code>rolling 배포:</code>일반적인 배포를 의미하는데, 단순하게 한 대씩 재시작한다. 코드 변경에 따른 side effect가 발생할 수 있다<br><code>blue-green 배포:</code> 예전 배포물을 블루(blue), 신규 배포물을 그린(green)이라고 해서 붙여진 이름이다. 새로운 배포물을 배포하고 모든 연결을 새로운 배포물만 보게 하며 코드 변경에 따른 side effect가 없다. (배포시 중단시점이 없음!)</p>
+<ul>
+<li>Release 하는사람은 성능 측정을 해야한다.</li>
+<li>운영자는 가용성을 모니터링하고 blue/green 배포를 해야한다.</li>
+<li>엔드유저는 지속적인 피드백을 주고 변경에 대해 대비한다.</li>
+</ul>
+<h4 id="DevOps의-평가기준"><a href="#DevOps의-평가기준" class="headerlink" title="DevOps의 평가기준"></a>DevOps의 평가기준</h4><p>배포빈도(얼마나 자주 배포하나)</p>
+<ul>
+<li>최상: 요구될때마다</li>
+<li>보통: 일주일 혹은 한달에 한번</li>
+<li>최하: 한달에서 여섯달 사이에 한번</li>
+</ul>
+<p>Lead time for changes(ie.코드가 커밋되고 정상적으로 동작하는데 걸리는 시간)</p>
+<ul>
+<li>최상: 한시간 이내</li>
+<li>보통: 일주일 ~ 한달사이</li>
+<li>최하: 한달~여섯달 사이</li>
+</ul>
+<p>Mean time to recover(복구하는데 걸리는 시간)</p>
+<ul>
+<li>최상: 한시간 이내</li>
+<li>보통: 하루 이상</li>
+<li>최하: 하루 이상</li>
+</ul>
+<p>Change failure rate</p>
+<ul>
+<li>최상: 0~15%</li>
+<li>보통: 31~45%</li>
+<li>최하: 16~30%</li>
+</ul>
+<h4 id="Database-관련-생각해봐야-할것들"><a href="#Database-관련-생각해봐야-할것들" class="headerlink" title="Database 관련 생각해봐야 할것들"></a>Database 관련 생각해봐야 할것들</h4><ul>
+<li>Production data에 대한 보호,보안(바꾸는 것은 리스크가 있다)</li>
+<li>Test data 필요</li>
+<li>환경이 다름</li>
+<li>의존성</li>
+<li>다수 어플리케이션이 동일 db에 접근한다.</li>
+<li>이전버전과 호환성 유지</li>
+<li>롤백을 어떻게 할지</li>
+</ul>
+<h4 id="DevOps-Values"><a href="#DevOps-Values" class="headerlink" title="DevOps Values"></a>DevOps Values</h4><p>CALMS</p>
+<ul>
+<li>Culture - 변화를 수용하라</li>
+<li>Automation - CI/CD</li>
+<li>Lean - 엔드유저가 생상하는 value에 초점을 맞추고, 배치사이즈를 작게하라</li>
+<li>Measurement - 모든것을 측정하고 개선된것을 보여줘라</li>
+<li>Sharing - 정보를 공유하고 협업하라</li>
+</ul>
+<h4 id="DevOps-Tools"><a href="#DevOps-Tools" class="headerlink" title="DevOps Tools"></a>DevOps Tools</h4><p><code>Configuration Automation / Management:</code> Puppet, Ansible, Chef, Salt<br><code>Continuous Integration:</code>Jenkins, CruiseControl, Capistrano<br><code>Monitoring:</code>Icinga (nagios), Zenoss, Sweet, Graphite<br><code>Containerization:</code> Docker, Rocket</p>
+<h4 id="DevOps-관련용어"><a href="#DevOps-관련용어" class="headerlink" title="DevOps 관련용어"></a>DevOps 관련용어</h4><p>CI/CD</p>
+<ul>
+<li>Continuous Integration 그리고 Continuous Deployment의 약어</li>
+</ul>
+<p>Continuous integration</p>
+<ul>
+<li>최신코드에서 변경된것을 사용가능하도록 빌드한다.</li>
+</ul>
+<p>Continuous deployment</p>
+<ul>
+<li>가능한 빠르게 배포 단계를 거치고 빌드된 해당 패키지가 프로덕션 환경으로 전환되도록 한다.</li>
+</ul>
+<p>Continuous delivery</p>
+<ul>
+<li>Continuous integration + continuous deployment</li>
+</ul>
+<p>Delivery pipeline</p>
+<ul>
+<li>일련의 자동화 단계로써 CI/CD를 수행한다.</li>
+</ul>
+<h4 id="Continuous-Integration"><a href="#Continuous-Integration" class="headerlink" title="Continuous Integration"></a>Continuous Integration</h4><p>아래와 같은 단계를 빈번하게 수행한다.</p>
+<p><code>1. Development</code></p>
+<ul>
+<li>배치 테스를 거친 작은 변화들이 빠르게 구현된다.</li>
+</ul>
+<p><code>2. SCM(Source Code management)</code></p>
+<ul>
+<li>여러 개발자의 변경된것사항을 병합한다.(GitHub, SVN … 활용)</li>
+</ul>
+<p><code>3. Build</code></p>
+<ul>
+<li>배포할것을 만든다.(Jenkins, Gradle, Maven …  활용)</li>
+</ul>
+<p><code>4. Package</code></p>
+<ul>
+<li>런타임때 빌드를 설치한다.</li>
+<li>변경할 수 없는 이미지를 런타임때 releasing 한다.</li>
+<li>클라우드에 푸쉬하고 컨테이너 이미지 빌드</li>
+</ul>
+<h4 id="Continuous-integration-–-package-step"><a href="#Continuous-integration-–-package-step" class="headerlink" title="Continuous integration – package step"></a>Continuous integration – package step</h4><p>package step에선 변경 불가능한 이미지가 만들어진다. 이는 deploying instance를 생성할 때 사용된다. 이미지를 변경하고 싶다면 삭제하고 새로 만들어야 한다.</p>
+<h4 id="Continuous-Deployment"><a href="#Continuous-Deployment" class="headerlink" title="Continuous Deployment"></a>Continuous Deployment</h4><p>Production 배포까지의 과정<br><code>1. Deploy to Test</code></p>
+<ul>
+<li>functional testing 진행, test tool을 활용한 자동화<br><code>2. Deploy to Stage</code></li>
+<li>Production 배포 전 리허설</li>
+<li>통합 testing 진행<br><code>3. Deploy to Prod</code></li>
+<li>사용자가 사용할 수 있도록 빌드</li>
+</ul>
+<h4 id="Continuous-Delivery-vs-continuous-Deployment"><a href="#Continuous-Delivery-vs-continuous-Deployment" class="headerlink" title="Continuous Delivery vs continuous Deployment"></a>Continuous Delivery vs continuous Deployment</h4><p>!!!!!!!!!!!!!!!!!!!!!!!!!!Continuous Delivery vs continuous Deployment</p>
+<h4 id="Zero-Downtime-Deployment"><a href="#Zero-Downtime-Deployment" class="headerlink" title="Zero Downtime Deployment"></a>Zero Downtime Deployment</h4><p>서비스 중단없이 새로운 버전을 배포하는것을 의미한다. DevOps는 잦은 배포를 하므로 필요하다.</p>
+<h4 id="Zero-Downtime-Deployment-특징"><a href="#Zero-Downtime-Deployment-특징" class="headerlink" title="Zero Downtime Deployment 특징"></a>Zero Downtime Deployment 특징</h4><ul>
+<li>어플리케이션은 항상 사용가능하다.</li>
+<li>사용자가 중단(Downtime)없이 사용할 수 있다.</li>
+<li>이전버전, 새버전이 동시에 배포됨 - 트래픽이 둘 다로 전달됨.</li>
+</ul>
+<h4 id="Implementing-Zero-Downtime-Deployment-–-Blue-Green"><a href="#Implementing-Zero-Downtime-Deployment-–-Blue-Green" class="headerlink" title="Implementing Zero Downtime Deployment – Blue Green"></a>Implementing Zero Downtime Deployment – Blue Green</h4><p>Deployment<br>필요한경우 이전버전으로 신성하게 되돌릴 수 있다.</p>
+<p>1.v1(blue)이 배포되어 사용자들이 사용하고 있을 때  v2(green)을 배포한다.<br>2.자동화된 테스트 도구로 테스트, 검증을 진행하고 사용자를 v1에서 v2환경으로 변환한다.<br>3.v1(blue)을 삭제한다.</p>
+<h4 id="DevOps로의-Transformation"><a href="#DevOps로의-Transformation" class="headerlink" title="DevOps로의 Transformation"></a>DevOps로의 Transformation</h4><ul>
+<li>Top to Bottom문화를 변화시키는 것이 핵심이다.</li>
+<li>교육을 늘리고 커뮤니케이션하고 cross-skilling 하라</li>
+<li>DevOps가 가능한 새로운 프로세스를 평가하라</li>
+<li>스스로 재평가하고 재빌드하라</li>
+<li>DevOps를 지원하는 새로운 기술 평가</li>
+<li>조직을 작게 나눠라</li>
+</ul>
+<h4 id="Bottom-Up-Implementation"><a href="#Bottom-Up-Implementation" class="headerlink" title="Bottom-Up Implementation"></a>Bottom-Up Implementation</h4><ul>
+<li>협업을 위한 방법을 찾아라. (사람들을 초기부터 참가시킨다.)</li>
+<li>자동화 방법을 찾아라</li>
+<li>metrics driven이 되어라</li>
+<li>새로운것을 배우고 지속적으로 개선해라</li>
+<li>작은 batches와 함께 병렬적으로 일해라</li>
+<li>리팩토링을 허락해라</li>
+<li>경영진에게 비즈니스 가치를 입증해라</li>
+<li>비즈니스의 목표, metrics, 우선순위를 이해하라.</li>
+</ul>
+<h4 id="Top-Down-Implementation"><a href="#Top-Down-Implementation" class="headerlink" title="Top-Down Implementation"></a>Top-Down Implementation</h4><ul>
+<li>시험 케이스를 파일럿으로 선택하라</li>
+<li>우수 사레를 문서화하고 전파하라</li>
+<li>팀의 역량을 강화하고 가치를 이끌어내라</li>
+<li>측정 가능한 결과를 요구하라</li>
+<li>과거의 baseline이 충분치 않을때 변명하지 마라</li>
+<li>빠르게 실패하고 지속적으로 향상하라</li>
+<li>작은성공을 기반으로 나아가라</li>
+<li>비효율적인 경우 그룹간 역할 및 책임을 조율하라.</li>
+</ul>
+<p>215</p>
+<h4 id="The-deployment-pipeline-concept"><a href="#The-deployment-pipeline-concept" class="headerlink" title="The deployment pipeline concept"></a>The deployment pipeline concept</h4><p>피드백 머커니즘. 하지않았다면 돌아갈 수 있다.<br>피드백의 주체는 누구인가? 메커니즘이다.</p>
+<p>216</p>
+<p>217</p>
+<p>218</p>
+<p>219</p>
+<h4 id="Bottom-Up-Implementation-1"><a href="#Bottom-Up-Implementation-1" class="headerlink" title="Bottom-Up Implementation"></a>Bottom-Up Implementation</h4><p>탑다운은</p>
+<p>220</p>
+<h4 id="Top-Down-Implementation-1"><a href="#Top-Down-Implementation-1" class="headerlink" title="Top-Down Implementation"></a>Top-Down Implementation</h4>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;DevOps&quot;&gt;&lt;a href=&quot;#DevOps&quot; class=&quot;headerlink&quot; title=&quot;DevOps&quot;&gt;&lt;/a&gt;DevOps&lt;/h3&gt;&lt;p&gt;Using DevOps to Solve your Delivery Challenges&lt;/p&gt;
+&lt;ul
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>msa3</title>
+    <link href="http://KKimSangHeon.github.io/2019/06/08/msa3/"/>
+    <id>http://KKimSangHeon.github.io/2019/06/08/msa3/</id>
+    <published>2019-06-08T05:18:22.000Z</published>
+    <updated>2019-06-08T05:20:02.058Z</updated>
+    
+    <content type="html"><![CDATA[<p>Microservice Architecture는 3계층이다.<br>Container/ Orchestration /Application</p>
+<h3 id="Database-Design-for-Microservices"><a href="#Database-Design-for-Microservices" class="headerlink" title="Database Design for Microservices"></a>Database Design for Microservices</h3><p>트랜잭션, Aggregates에 영향을 많이끼친다,</p>
+<p>Front Microservice는 쉽다.</p>
+<h4 id="ACID가-적용되는-것들"><a href="#ACID가-적용되는-것들" class="headerlink" title="ACID가 적용되는 것들"></a>ACID가 적용되는 것들</h4><p>Transaction, Aggregates, Entity</p>
+<h3 id="ACID-vs-BASE"><a href="#ACID-vs-BASE" class="headerlink" title="ACID vs BASE"></a>ACID vs BASE</h3><p>ACID</p>
+<ul>
+<li>Atomicity, Consistency, Isolation, and Durability</li>
+<li>Strong consistency</li>
+<li>commit에 초점을 맞춘다.</li>
+<li>보수적이다.(혁신이 어렵다)</li>
+</ul>
+<p>BASE</p>
+<ul>
+<li>Basically Available, Soft-state, Eventual consistency</li>
+<li>Weak consistency</li>
+<li>Availability first</li>
+<li>간단하고 빠르다(혁신이 쉽다)</li>
+</ul>
+<h4 id="구현을-위해-생각해보자"><a href="#구현을-위해-생각해보자" class="headerlink" title="구현을 위해 생각해보자"></a>구현을 위해 생각해보자</h4><ul>
+<li>마이크로서비스에서 데이터는 dependency를 갖기 때문에 어려운부분이다.</li>
+<li>microservice에 각각의 db가 있을 때 어떻게 읽고 어떻게 업데이트할까? join활용</li>
+<li>data inside, 서비스, data outside 를 이해할 필요가있다.</li>
+<li>데이터를 어떻게 읽고 업데이트하는가?</li>
+<li>읽고 쓰는 명령 쿼리를 분할한다.(CQRS, Command Query Responsibility Segregation)</li>
+</ul>
+<h4 id="Two-phase-commit"><a href="#Two-phase-commit" class="headerlink" title="Two-phase commit"></a>Two-phase commit</h4><p>모든 트랜잭션은 트랜잭션 관리자를 거쳐야 한다. 이는 모든 서비스에서 트랜잭션을 보장하며 커밋 요청, 커밋 두단계의 메커니즘을 거친다.</p>
+<p>커밋요청단계(커밋 투표단계라고도 함) : 관리자가 모든 서비스에 커밋메세지 쿼리를 보낸다. 관리자는 모든 서비스의 투표 결과를 대기하고 각 서버는 커밋해야 할 지점까지 트랜잭션을 수행한다. 서비스는 일부가 준비되지 않아도 동의한다는 응답을 보낸다.</p>
+<p>커밋단계(완료단계라고도 함)</p>
+<ul>
+<li>관리자가 모든 서비스에서 동의를 받았을 때: 관리자는 트랜잭션 커밋을 요청하는 메세지를 모든 서비스에게 전송한다. 커밋 후에 서비스는 트랜잭션이 끝났다는 확인을 관리자에게 보낸다.</li>
+<li>관리자가 하나 이상의 거절을 받았을 때 : 관리자는 모든 서비스들에게 롤백을 요청하고 서비스는 롤백 후 관리자에게 승인응답을 보낸다.</li>
+</ul>
+<h4 id="Two-phase-commit-의-장점"><a href="#Two-phase-commit-의-장점" class="headerlink" title="Two-phase commit 의 장점"></a>Two-phase commit 의 장점</h4><p>많은 DB가 영향을 받을경우 이를 하나의 트랜잭션으로 다루는것이 좋다.<br>준비단계는 모든 구성요소가 커밋을 허용하는지 확인하는 단계이다.</p>
+<h4 id="Two-phase-commit-의-단점"><a href="#Two-phase-commit-의-단점" class="headerlink" title="Two-phase commit 의 단점"></a>Two-phase commit 의 단점</h4><ul>
+<li>관리자는 서비스에서 메세지를 수신할 때 까지 잠금이 걸려 리소스가 해제되지 않음.(가용성 측면)</li>
+<li>서비스 중 하나가 커밋을 거부하면 모든 서비스가 롤백한다.(일관성을 유지할 수 있다는 장점)</li>
+<li>서비스에서 응답을 수신할 때 까지 잠금,리소스가 해제되지 않음</li>
+<li>NoSQL을 지원하지 않음.</li>
+<li>최소 O(4n) 메세지 발생, 여러번시도할 경우 O(n^2)</li>
+<li>lock으로 인한 처리량 감소</li>
+</ul>
+<h4 id="Distributed-Transactions-in-Microservices"><a href="#Distributed-Transactions-in-Microservices" class="headerlink" title="Distributed Transactions in Microservices"></a>Distributed Transactions in Microservices</h4><p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Distributed Transactions in Microservices<br>microservice에는 ACID를 적용하기가 복잡하다. 이는 microservice Architecture가  Single Responsibility Principle (SRP)를 따르므로 각 microservice가 해당 데이터를 유지하고 관리해야하고, microservice의 책임에 대한 지식없이는 다른서비의 데이터에 접근할 수 없기때문이다.</p>
+<p>위 그림에서 두개의 microservice가 하나의 db에 연결되어있는게 왜 잘못되었을까? 우측의 경우에는 API, Queue로 해당 호출이 가능하다. 하지만 좌측의 경우에는 두개의 db 아답터가 가 존재해야 하는데 Isolation 원칙을 위배한다.</p>
+<h4 id="Distributed-Transaction-–-Event-Driven-Architecture-amp-Two-Phase-Commit"><a href="#Distributed-Transaction-–-Event-Driven-Architecture-amp-Two-Phase-Commit" class="headerlink" title="Distributed Transaction – Event Driven Architecture &amp; Two Phase Commit"></a>Distributed Transaction – Event Driven Architecture &amp; Two Phase Commit</h4><p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Distributed Transaction – Event Driven Architecture &amp; Two Phase Commit1</p>
+<ul>
+<li>이는 가장 일관된 시스템을 제공하지만 Two Phase Commit으로 인해 시스템 성능에 부정적 영향을 끼친다.</li>
+<li>이벤트는 트랜잭션의 매 단계를 실행시키는 트리거이며 각 이벤트는 고유한 ID를 갖는다. 또한 작업이 처리되었으면 커밋되었음을 나타내야 한다.</li>
+</ul>
+<p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Distributed Transaction – Event Driven Architecture &amp; Two Phase Commit2<br>위의 그림은 microservice1이 microservice2에 자동이체를 하는 트랜잭션이다.</p>
+<ul>
+<li>completed라는 컬럼은 트랜잭션이 커밋되어야 하는지를 나타내며 microservice1이 완료되면 microservice2를 호출하여 트랜잭션을 완료한다.(그림은 microservice1의 작업이 커밋되고 microservice2의 작업이 커밋되기 전 단계)</li>
+</ul>
+<h4 id="CAP-Theorem"><a href="#CAP-Theorem" class="headerlink" title="CAP Theorem"></a>CAP Theorem</h4><p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!CAP Theorem<br> 분산시스템에서는 일관성(Consistency), 가용성(Availability,항상 데이터를 읽고 쓸 수 있음), 분할 용인(Partition tolerance,데이터베이스를 분할할 수 있고 네트워크 중단에도 계속 동작할 수 있다.)이라는 세 가지 조건을 모두 만족할 수 없다. 대부분 세 조건중 두 가지만 만족시킬 수 있다.<br>만약 가용성을 만족시키려면 BASE(Basically available, soft state, eventually consistent)를 생각해 볼 수 있다. 이를 위해 앞서 설명한 Event Driven Architecture를 도입할 수 있다.<br><code>BASE</code> : 기본적으로 Availability하고, 사용자가 관리하지 않으면 데이터가 expire 될 수 있으며, 언젠가는 데이터가 일관성을 가진다는 것.</p>
+<h4 id="Eventual-Consistency-and-Compensation"><a href="#Eventual-Consistency-and-Compensation" class="headerlink" title="Eventual Consistency and Compensation"></a>Eventual Consistency and Compensation</h4><ul>
+<li>microservice에서 일관성을 다루는 것중 가장 실현 가능한것은 Eventual Consistency이다.</li>
+<li>microservice에서 분산 ACID 트랜잭션을 사용하지 않는다. 대신 미래의 어떤시점에서는 시스템이 결국 일관성을 유지할것을 제안한다.</li>
+<li>Eventual Consistency 서비스는 종종 BASE를 제공하는것으로 분류된다.</li>
+<li>Eventual Consistency는 분산 소프트웨어의 복잡성을 증가시킨다고 비판받기도 하는데 이는 동일값을 읽는다는 안전보장을 하지 않기 때문에 발생한다(결국에는 읽었을 때 동일값을 반환 함 예시로 배치프로그램이 있음).</li>
+</ul>
+<h4 id="Eventual-Consistency의-예시"><a href="#Eventual-Consistency의-예시" class="headerlink" title="Eventual Consistency의 예시"></a>Eventual Consistency의 예시</h4><p>다음의 문제를 해결해야 된다고 가정해보자.</p>
+<ul>
+<li>user profile 등록</li>
+<li>백그라운드에서는 사용자가 시스템에 접근할 수 있는지 자동으로 확인</li>
+</ul>
+<p>Eventual Consistenc 적용을 하려면..</p>
+<ul>
+<li>user의 접근 가능유무는 반드시 필요하다.</li>
+<li>user검증 시간이 오래 걸리더라도 microservice로 분할해야한다.</li>
+</ul>
+<p>compensation을 포함한 message-driven방법 적용</p>
+<ul>
+<li>user profile을 등록하는 작업</li>
+<li>백그라운드에서 유효성을 검사하는 microservice</li>
+<li>지속적인 큐를 제공하는 메세지 플랫폼<br>(메세지 플랫폼은 microservice가 보낸 메세지가 지속가능토록 한다. 수신부가 문제가 있다면 나중에 배달해주기도 함)<br>-이는 하나의 microservice가 중지될 경우 정보는 다른 큐, 서비스에 존재한다. 즉 지속성을 보장한다.</li>
+</ul>
+<p>위의 방법을 적용했을 때 좋은 시나리오</p>
+<ul>
+<li>user microservice는 user를 등록하고 로컬 db에 정보를 저장한다.</li>
+<li>user microservice는 플래그를 활용해 해당 user가 검증 과정을 거치지 않음을 표시한다.</li>
+<li>user에게 지금 당장은 접근 불가능하다는 경고를 보낸다.</li>
+<li>user microservice는 백그라운드에서 user검증을 위해 validation microservice에 메세지를 보낸다.</li>
+<li>검증결과 접근가능하다면 user microservice는 user를 unblock한다/ 검증결과 접근 불가능하다면 user microservice는 user 계정을 제거한다. (이를 compensation(보상)단계라고 볼 수 있다.)</li>
+</ul>
+<p>일련의 과정을 거친후에는 시스템은 일관된 상태이다. 하지만 일정기간동안은 사용자 엔티티가 불완전한 상태였다.</p>
+<p>위의 방법을 적용했을 때 좋지 않은 시나리오</p>
+<ul>
+<li>validation microservice에 접근할수 없는경우 메세지 플랫폼은 나중에 validation microservice가 접근 가능하게 되었을 때 validation microservice는 메세지를 받아볼 수 있다.</li>
+<li>메세지 플랫폼에 문제가 발생하면 user microservice는 또 다시 다른 user의 검증 메세지를 보낸다.</li>
+<li>validation microservice가 메세지를 받게되면 user를 검증하지만 메세지 플랫폼 문제가 발생하면 응답을 보내지 못하고 추 후 다시 보낸다.</li>
+</ul>
+<p>그러나 일부메세지가 여러번 발행되더라도 데이터 일관성에는 영향을 미치지 않는다.<br>발생할 수 있는 좋지 않은 시나리오들을 고려함으로써 Eventual Consistency를 충족시킬 수 있으며 비용소모가 심한  distributed transactions를 처리할 필요가 없다.</p>
+<h4 id="Distributed-Transactions-The-Solution"><a href="#Distributed-Transactions-The-Solution" class="headerlink" title="Distributed Transactions: The Solution"></a>Distributed Transactions: The Solution</h4><p>결제하고 배송하는 시스템을 Distributed Transaction방식으로 구현한다고 해보자<br>!!!!!!!!!!!!!!!!!!!!!Distributed Transactions The Solution1</p>
+<p>위와 같은 방식으로 할 수 있으나 일련의 과정은 동기방식이다.<br>이를 비동기 방식으로 처리하기 위해 아래와 같은 방식을 따르면 된다. 즉 쓰레드를 하나 만들어서 처리한다.</p>
+<p>!!!!!!!!!!!!!!!!!!!!!Distributed Transactions The Solution2</p>
+<p>안전한 Distributed Transactions를 위해서</p>
+<ul>
+<li>원격 업데이트에 대한 영향 감수</li>
+<li>원격 업데이트를 시도하고 응답을 받지 못했을 경우 재시도를 해야한다. 또한 응답이 오더라도 자체 대기열을 업데이트하지 못할 경우 대기열이 사용가능해지면 다시 시도해서 업데이트 해야한다.</li>
+<li>재시도로 발생하는 중복수신은한번만 처리한다</li>
+<li>하나의 작업단위를 완료하더라도 시스템 오류가 발생하면 동기화 되지 않을 수 있다.</li>
+<li>이를통해볼 때 microservice는 Distributed 트랜잭션에 호의적이지 않다.</li>
+</ul>
+<p>동기관련 문제를 해결할 수 있는 메세지 브로커<br>!!!!!!!!!!!!!!!!!!!!!Distributed Transactions The Solution3</p>
+<p>————————여기부터 지라에 추가</p>
+<h4 id="Two-Consequences-of-Eventual-Consistency"><a href="#Two-Consequences-of-Eventual-Consistency" class="headerlink" title="Two Consequences of Eventual Consistency"></a>Two Consequences of Eventual Consistency</h4><ul>
+<li>재시도를 하는것은 시스템에 문제가 생긴것을 의미한다.</li>
+<li>일관성이 결국에는 생기는것이기 때문에 비즈니스 일관성이 충돌하는 경우도 있을 수 있다.<br>만약 책을 구매하는 비즈니스가 있다고 할 때 결제를 하는순간 재고가 있어 결제가 진행되었는데 결제가 완료되는 순간 재고가 없을 때를 가정해보자. 이 때는 비동기식으로 사용자에게 다시 보고하지 않고 환불절차를 진행 후 직원이 처리 할 내용을 conflicts큐에 넣고 제공할 수 있다.</li>
+</ul>
+<h4 id="Saga-Pattern-microservice에서-어떻게-비즈니스-트랜잭션을-구현-할것인가"><a href="#Saga-Pattern-microservice에서-어떻게-비즈니스-트랜잭션을-구현-할것인가" class="headerlink" title="Saga Pattern : microservice에서 어떻게 비즈니스 트랜잭션을 구현 할것인가."></a>Saga Pattern : microservice에서 어떻게 비즈니스 트랜잭션을 구현 할것인가.</h4><p>트랜잭션은 어플리케이션의 필수적인 부분이다. 트랜잭션이 없다면 데이터의 일관성을 유지하는 것은 불가능하다.</p>
+<p>가장 강력한 트랜잭션 유형중 하나는 Two-Phase Commit이다. 이는 여러 엔티티를 동시에 업데이트 할 때 유용하다.(ex. 주문확인 및 재고 업데이트)</p>
+<p>그러나 microservice로 작업할 경우 데이터베이스가 분리되므로 로컬  Two-Phase Commit를 활용하여 전체 시스템의 일관성을 간단하게 유지할 수 없다. 이 경우 RDBMS와 마찬가지로 단일엔티티 원자 트랜잭션이 가능한 Couchbase와 같은 NoSQL 데이터베이스를 사용하면 수십배 빠르게 처리할 수 있다. 그래서 microservice를 사용하는 대다수 기업들이 NoSQL을 사용하고 있다.</p>
+<h4 id="SAGA-Pattern"><a href="#SAGA-Pattern" class="headerlink" title="SAGA Pattern"></a>SAGA Pattern</h4><ul>
+<li>분산 트랜잭션의 잘알려진 패턴중 하나가 SAGA이다.</li>
+<li>SAGA는 일련의 local 트랙잭션들을 의미하며 각 트랜잭션은 하나의 서비스안에서 데이터를 업데이트 한다. 첫 번째 트랜잭션은 시스템 작업에 해당하는 외부 요청에 의해 시작되고 이후엔 이전단계 완료가 될 때마다 트리거링되어 작동한다.<br>-SAGA 트랜잭션을 구현하는 인기있는 두 가지 방법이 있다.<h4 id="1-Events-Choreography"><a href="#1-Events-Choreography" class="headerlink" title="1. Events/Choreography"></a>1. Events/Choreography</h4>각 서비스는 다른 서비스의 event, decides를 보고 action을 할지 말지 결정하며 non centralize 한것. (발레와 유사함)</li>
+</ul>
+<p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!EventsChoreography<br>첫번째 서비스는 트랜잭션을 실행하고 이벤트를 publish한다. 발행된 이벤트는 하나 혹은 그 이상의 서비스가 지켜보며 해당 이벤트는 로컬 트랜잭션을 실행하고 새로운 이벤트를 publish한다.<br>분산 트랜잭션은 마지막에 서비스가 로컬 트랜잭션을 실행할 때 종료된되며 마지막 이벤트는 이벤트를 publish하지 않는다.<br>분산 트랜잭션의 경우 롤백에 대한 로직은 직접 만들어야 한다.</p>
+<p>Event/Choreography design의 장단점</p>
+<ul>
+<li>이해하기 쉽고 SAGA패턴을 구현하는 자연스러운 방법이다. 구축에 많은 노력이 필요하지 않으며 느슨한 결합을 유지한다. 2~4단계로 구성되는 트랜잭션에 매우 적합하다.</li>
+<li>어떤 서비스가 어떤 이벤트를 수신하는지 추적하기 어렵기 때문에 단계를 계속 추가할 경우 혼란스러울 수 있다.</li>
+</ul>
+<h4 id="2-Command-Orchestration-coordinator-서비스가-의사결정-및-sequncing-비즈니스-로직에-대한-책임이-있는-것-즉-centralize-한것-오케스트라와-유사함"><a href="#2-Command-Orchestration-coordinator-서비스가-의사결정-및-sequncing-비즈니스-로직에-대한-책임이-있는-것-즉-centralize-한것-오케스트라와-유사함" class="headerlink" title="2. Command/Orchestration : coordinator 서비스가 의사결정 및 sequncing 비즈니스 로직에 대한 책임이 있는 것. 즉 centralize 한것. (오케스트라와 유사함)"></a>2. Command/Orchestration : coordinator 서비스가 의사결정 및 sequncing 비즈니스 로직에 대한 책임이 있는 것. 즉 centralize 한것. (오케스트라와 유사함)</h4><p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!CommandOrchestration</p>
+<ul>
+<li>Orchestration 접근법에서는 각 참가자에게 할 일을 알려줄 책임이 있는 새로운 서비스를 정의한다. 각 서비스와 명령/응답 형태로 통신하여 수행해야 할 작업을 알려준다.</li>
+<li>위 그림의 경우 Orchestration은 트랜잭션을 실행하는데 필요한 흐름을 알고있다.</li>
+<li>만약 트랜잭션이 실패하면 이전 작업을 취소하기 위해 각 참가자에게 롤백 명령을 보내야 한다. 롤백은 Orchestrator을 갖고있으면 훨씬 쉽다.</li>
+<li>saga orchestrator을 모델링하는 표준 방법은 각 변환이 명령 또는 메세지에 해당하는지에 대한 State Machine이다. State Machine는 구현하기 쉽고 테스트에 적합하기 때문에 잘 정의된 동작을 구조화 하는데 훌륭한 패턴이다.</li>
+</ul>
+<p>Event/Choreography design의 장단점</p>
+<ul>
+<li>saga orchestrator는 saga participants를 호출할 수 있지만 saga participants는 saga orchestrator를 호출할수 없기에  서비스간 cyclic 종속성을 피할수 있다.</li>
+<li>command에 대해 응답 혹은 실행만 하므로 participants간 복잡성을 줄일 수 있다.</li>
+<li>새로운 단계가 추가될 때 트랜잭션의 복잡성은 linear하게 늘어난다.</li>
+<li>쉬운 롤백관리 가능</li>
+<li>첫번째,두번째 트랜잭션이 동일한 개체를 변경하고자 할 때 orchestrator를 활용하여 첫번째 트랜잭션이 끝날때 까지 두번째 트랜잭션을 보류상태로 둘 수 있다.</li>
+<li>하지만 이는 orchestrator에 많은 로직이 들어가 risk가 있다</li>
+<li>추가 서비스를 관리해야 하므로 인프라 복잡성이 증가한다.</li>
+</ul>
+<h4 id="Saga-Pattern-Tips"><a href="#Saga-Pattern-Tips" class="headerlink" title="Saga Pattern Tips"></a>Saga Pattern Tips</h4><p>트랜잭션마다 unique Id를 만들어라</p>
+<ul>
+<li>이를 통해 추적이 가능하고 participants간 통신을 위한 표준방법을 갖는데 도움을 준다.<br>command에 응답 address를 추가해라</li>
+<li>participant가 고정된 주소에 응답하기 보다는 message에 응답 address를 추가하여 보내는것을 고려해봐라. 이를 통해 participants는 여러 orchestrator에 응답할 수 있다.</li>
+<li>큐(SQS, Kafka, RabbitMQ, etc)를 사용할 경우 서비스간 통신할 수 있다.</li>
+<li>버그로 인해 원치않은 메세지를 수신함으로써 데이터베이스가 엉망이 될 수 있다.<br>동기식 통신을 피하라</li>
+<li>이를 통해 더 많은 데이터를 요청할 수 있고 다른 서비스가 오프라인 일 때도 서비스가 로컬 트랜잭션을 실행할 수 있다.</li>
+<li>orchestrator는 각 요청/응답을 다뤄야하므로 선형적으로 복잡성이 증가한다.</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Microservice Architecture는 3계층이다.&lt;br&gt;Container/ Orchestration /Application&lt;/p&gt;
+&lt;h3 id=&quot;Database-Design-for-Microservices&quot;&gt;&lt;a href=&quot;#Datab
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>msa2</title>
+    <link href="http://KKimSangHeon.github.io/2019/06/08/msa2/"/>
+    <id>http://KKimSangHeon.github.io/2019/06/08/msa2/</id>
+    <published>2019-06-08T05:18:16.000Z</published>
+    <updated>2019-06-08T05:20:02.962Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="DDD의-이점"><a href="#DDD의-이점" class="headerlink" title="DDD의 이점"></a>DDD의 이점</h4><ul>
+<li>기술보다는 비즈니스에 초점을 맞춘다,</li>
+<li>코드르 재사용하고 읽기 쉽다.</li>
+<li>개선사항이 있을 때 유연하다.</li>
+</ul>
+<h4 id="성공적인-DDD"><a href="#성공적인-DDD" class="headerlink" title="성공적인 DDD"></a>성공적인 DDD</h4><ul>
+<li>도메인전문가, 기술 전문가의 협업을 통해 모델 빌드</li>
+<li>어플리케이션의 반복적인 빌드</li>
+<li>테스트하고 테스트하고 또 테스트하라</li>
+</ul>
+<h4 id="세계지도에서-DDD가-어떻게-적용되는지-보자"><a href="#세계지도에서-DDD가-어떻게-적용되는지-보자" class="headerlink" title="세계지도에서 DDD가 어떻게 적용되는지 보자."></a>세계지도에서 DDD가 어떻게 적용되는지 보자.</h4><p>Model Driven Desigin<br>Domain = Word Map<br>Sub domain = 오세아니아, 아시아, 북아메리카,….<br>Bounded Context = Countries(South Korea)<br>Ubiquitous Language = Korean Language<br>Domain Model = Map of Korea</p>
+<h3 id="Microservices-Architecture"><a href="#Microservices-Architecture" class="headerlink" title="Microservices  Architecture"></a>Microservices  Architecture</h3><ul>
+<li>비즈니스 로직을 나누었다.</li>
+<li>큰 프로그램 대신 몇몇의 작은 어플리케이션이다.</li>
+<li>잘 정의된 API로 소통한다.(HTTP, AMQP 활용)</li>
+<li>하나의 서비스가 정지될경우 다른것에 영향을 미치지 않는다</li>
+</ul>
+<h4 id="What-is-Microservice-Architecture"><a href="#What-is-Microservice-Architecture" class="headerlink" title="What is Microservice Architecture?"></a>What is Microservice Architecture?</h4><ul>
+<li>각각의 컴포넌트를 시스템에 집어넣는것이며 각각 빌드되고 배포될수 있다.</li>
+<li>Microservice 는 vertical 하며 layered하다. 또한 Process driven 형태이다.</li>
+<li>Microservice를 잘 정의하면 TDD가 가능하다.</li>
+<li>엔터프라이즈 아키텍처가 아니다. Microservice Architecture는 SOA와 유사하다.</li>
+<li>단일 비즈니스 기능을 구현한다.</li>
+<li>자신만의 데이터베이스를 갖는것이 일반적이나 데이터베이스를 갖지않는경우도 있다.</li>
+<li>HTTP, AMQP 로 통신한다.</li>
+<li>독립적으로 배포가 가능하다.</li>
+<li>각각의 레파지토리를 갖는다.</li>
+<li>마이크로 서비스 팀은 몇명이 적당할까? 피자 두판을 먹을 수 있을만한 인원수! 6명 ? 좋다!</li>
+</ul>
+<h4 id="Microservice의-구성"><a href="#Microservice의-구성" class="headerlink" title="Microservice의 구성"></a>Microservice의 구성</h4><ul>
+<li>Data Store</li>
+<li>Application/Logic</li>
+<li>Public API(POST, GET )</li>
+</ul>
+<h4 id="Microservices-application의-전형적인-생태계"><a href="#Microservices-application의-전형적인-생태계" class="headerlink" title="Microservices application의 전형적인 생태계"></a>Microservices application의 전형적인 생태계</h4><p>원칙1. Microservices들은 각 public API에 서로 의존한다.</p>
+<ul>
+<li>백엔드의 마이크로 서비스는 노출되면 안된다. 오직 프론트 마이크로 서비스만 노출되어야 한다.</li>
+</ul>
+<p>원칙2. 작업에 적합한 tool(ex. 프레임워크)을 사용하라.</p>
+<p>원칙3. 서비스 보안에 신경써라</p>
+<p>원칙4. 생태계에서 좋은 시민이 되어라!</p>
+<ul>
+<li>모니터링, 로깅, 추적을 분산하라</li>
+</ul>
+<p>원칙5. 기술 변화 이상의 것이다.</p>
+<ul>
+<li>조직 변화를 수용하라</li>
+</ul>
+<p>원칙6. 모든것을 자동화하라(DevOps!)</p>
+<h4 id="Micro-Service를-위해서…"><a href="#Micro-Service를-위해서…" class="headerlink" title="Micro Service를 위해서…"></a>Micro Service를 위해서…</h4><ul>
+<li>비즈니스 도메인을 이해하자</li>
+<li>일관성 유지하자</li>
+<li>서비스 발견해보자</li>
+<li>불필요한 상호통신이 많다면 조정해보자</li>
+</ul>
+<h4 id="Microservice-계획하기"><a href="#Microservice-계획하기" class="headerlink" title="Microservice 계획하기"></a>Microservice 계획하기</h4><ul>
+<li>정말 옳은 선택인가?(트레이드 오프 고려)</li>
+<li>시스템의 주요기능을 식별하자</li>
+<li>서비스 컴포넌트의 스코프를 세부적으로 결정하라(Function의 크기, 타입, 복잡성)</li>
+<li>API들을 디자인하라</li>
+<li>커뮤니케이션의 메커니즘을 결정하라</li>
+<li>데이터 모델을 결정하라(중앙 데이터베이스 vs 여러 데이터 저장소)</li>
+</ul>
+<h4 id="Benefits-of-microservices"><a href="#Benefits-of-microservices" class="headerlink" title="Benefits of microservices"></a>Benefits of microservices</h4><ul>
+<li>각각의 microservices를 쉽개 확장할 수 있다</li>
+<li>빠른 빌드, 테스트, 릴리즈의 싸이클</li>
+<li>agility의 증가</li>
+<li>빠른혁신이 가능하다.</li>
+<li>명확한 소유권 그리고 책임의 분배.</li>
+</ul>
+<h4 id="Microservice-Architecture"><a href="#Microservice-Architecture" class="headerlink" title="Microservice Architecture"></a>Microservice Architecture</h4><p>!!!!!!!!!!!!!!!!!!!그림넣기(Microservice Architecture)</p>
+<ul>
+<li>각 microservice는 컨테이너에 할당된다. 컨테이너는 microservice 기반 어플리케이션을 개별적으로 개발, 배포하기 좋은 방법이다.</li>
+<li>microservice 간 stateless server 형태로 소통한다.</li>
+<li>클라이언트는 서비스를 바로 호출할수 없고 API 게이트웨이가 클라이언트의 요청을 적절한 microservice로 전달한다.<br>(API 게이트웨이는microservice로인가요? 하드웨어나 소프트웨어로 볼 수 있다. microservice로 일수도 있지만 아닐수도 있다.)</li>
+<li>각 서비스는 상호 독립적이다.</li>
+<li>Single-responsibility 원칙을 따름</li>
+<li>아무것도 공유하지 않는다.</li>
+<li>비동기가 가능하다.</li>
+<li>configuration의 외부화</li>
+<li>결합도가 느슨하다.</li>
+<li>하나의 서비스가 문제를 일으켜도 나머지는 상관없다.</li>
+</ul>
+<h4 id="Microservices-Disadvantages"><a href="#Microservices-Disadvantages" class="headerlink" title="Microservices - Disadvantages"></a>Microservices - Disadvantages</h4><p>Complex networking으로 인해 데이터베이스, 서버의 오버헤드 발생</p>
+<h4 id="Monolithic-Architecture-vs-Microservice-Architecture"><a href="#Monolithic-Architecture-vs-Microservice-Architecture" class="headerlink" title="Monolithic Architecture vs Microservice Architecture"></a>Monolithic Architecture vs Microservice Architecture</h4><p>!!!!!!!!!!!!!!!!!!!그림넣기(Monolithic Architecture vs Microservice)</p>
+<p><code>Monolithic Architecture</code> : 모든 기능이 단일 코드베이스에 위치하고 하나의 DB를 사용한다. 또한 한 기능이 마비되면 전체가 마비되며 크고 복잡한 어플리케이션형태</p>
+<h4 id="Microservices-vs-SOA"><a href="#Microservices-vs-SOA" class="headerlink" title="Microservices vs SOA"></a>Microservices vs SOA</h4><p>!!!!!!!!!!!!!!!!!!!그림넣기(MicroservicesvsSOA)<br>SOA 컨센은 centrallize이다.<br>MS는 not centrallize이다.<br>즉 SOA는 오케스트라와 같다. (한 지위자가 전체를 통솔한다) Microservices는 발레와 같다. (각 댄서가 각자 율동한다)</p>
+<h4 id="Monolithic-Architecture-vs-SOA-vs-Microservices"><a href="#Monolithic-Architecture-vs-SOA-vs-Microservices" class="headerlink" title="Monolithic Architecture vs SOA vs Microservices"></a>Monolithic Architecture vs SOA vs Microservices</h4><p>!!!!!!!!!!!!!!!!!!1그림넣기(Monolithic Architecture vs SOA vs Microservices)</p>
+<p><code>coarse-grained</code> : 특정 프로세스(서비스)를 큰 덩어리로 나누는것<br><code>fine-grained</code> :  특정 프로세스(서비스)를 잘게 쪼개는 것</p>
+<h3 id="Microservices를-구현해야-하는-9가지-이유"><a href="#Microservices를-구현해야-하는-9가지-이유" class="headerlink" title="Microservices를 구현해야 하는 9가지 이유"></a>Microservices를 구현해야 하는 9가지 이유</h3><ul>
+<li>Easy To Build &amp; Maintain</li>
+<li>Continuous Delivery</li>
+<li>Hybrid Technologies</li>
+<li>Cross Team Coordination</li>
+<li>Higher Quality Code</li>
+<li>Smarter Scaling</li>
+<li>Risk Reduction</li>
+<li>Promote Big Data Best Practices</li>
+<li>Improved ROI with reduced TCO</li>
+</ul>
+<h4 id="Illustration-of-Monolithic-Module-Refactoring"><a href="#Illustration-of-Monolithic-Module-Refactoring" class="headerlink" title="Illustration of Monolithic Module Refactoring"></a>Illustration of Monolithic Module Refactoring</h4><p>!!!!!!!!!!!!!!!!!!!그림넣기(Illustration of Monolithic Module Refactoring)</p>
+<hr>
+<p>.</p>
+<p>Top 9 Reasons to implement Microservices</p>
+<ul>
+<li>Easy To Build &amp; Maintain</li>
+<li>Continuous Delivery</li>
+<li>Hybrid Technologies</li>
+<li>Cross Team Coordination</li>
+<li>Higher Quality Code</li>
+<li>Smarter Scaling</li>
+<li>Risk Reduction</li>
+<li>Promote Big Data Best Practices</li>
+<li>Improved ROI with reduced TCO</li>
+</ul>
+<h4 id="Illustration-of-Monolithic-Module-Refactoring-1"><a href="#Illustration-of-Monolithic-Module-Refactoring-1" class="headerlink" title="Illustration of Monolithic Module Refactoring"></a>Illustration of Monolithic Module Refactoring</h4><p>!!!!!!!!!!!!!! 그림넣기</p>
+<h4 id="The-twelve-Factors"><a href="#The-twelve-Factors" class="headerlink" title="The twelve Factors"></a>The twelve Factors</h4><p>I. Codebase: One codebase that is tracked in revision control, with many deployments<br>II. Dependencies: Explicitly declare and isolate dependencies<br>III.Configuration: Store Configuration in the environment<br>IV.Backing services: Treat backing services as attached resources<br>V. Build, release, run: Strictly separate build and run stages<br>VI.Processes: Execute the app as one or more stateless processes<br>VII.Port binding: Export services with port binding<br>VIII.Concurrency: Scale out using the process model<br>IX.Disposability: 빠른 시작 및 효율적인 종료가 가능하다.<br>X. Development and production parity: Keep development, staging, and production as similar as possible<br>XI.Logs: Treat logs as event streams<br>XII.Admin processes: Run administrative and management tasks as one-off processes</p>
+<p>-</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;DDD의-이점&quot;&gt;&lt;a href=&quot;#DDD의-이점&quot; class=&quot;headerlink&quot; title=&quot;DDD의 이점&quot;&gt;&lt;/a&gt;DDD의 이점&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;기술보다는 비즈니스에 초점을 맞춘다,&lt;/li&gt;
+&lt;li&gt;코드르 재사용하고 읽기 쉽
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>msa1</title>
+    <link href="http://KKimSangHeon.github.io/2019/06/06/msa1/"/>
+    <id>http://KKimSangHeon.github.io/2019/06/06/msa1/</id>
+    <published>2019-06-06T10:26:59.000Z</published>
+    <updated>2019-06-08T05:20:03.875Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Event-storming"><a href="#Event-storming" class="headerlink" title="Event storming?"></a>Event storming?</h3><p><u>프로그램 도메인에서 어떤일이 일어나는지 신속하게 알 수 있게 해준다</u>. 또한 복잡한 비즈니스 문제를 이해하고 탐구하는데 어려움을 겪는 팀에게 문제를 모델링할 수 있게 해주며 비즈니스를 어떻게 지원해야할지에 대한 통찰력을 기를 수 있게 해준다.</p>
+<h4 id="진행방법"><a href="#진행방법" class="headerlink" title="진행방법"></a>진행방법</h4><p>Step 1: Create domain events<br>Step 2: Add the commands that caused the domain event<br>Step 2b: Add the actor that executes the command<br>Step 3: Add corresponding aggregate</p>
+<h4 id="Event-storming의-장애물이-될-수-있는것"><a href="#Event-storming의-장애물이-될-수-있는것" class="headerlink" title="Event storming의 장애물이 될 수 있는것"></a>Event storming의 장애물이 될 수 있는것</h4><ul>
+<li>성공과 관련해 많은 지식을 갖고있는 전문가.<br>(기술자는 비즈니스적으로 비즈니스 전문가는 기술적으로 보도록 해보자!)</li>
+<li>참가하지 않는 인원.</li>
+</ul>
+<h4 id="Event-storming의-장점"><a href="#Event-storming의-장점" class="headerlink" title="Event storming의 장점"></a>Event storming의 장점</h4><ul>
+<li>잠재적 솔루션 도출</li>
+<li>비즈니스의 시각화 및 각 부분의 관련성 도출</li>
+<li>누락된 개념을 찾아낼 수 있다.</li>
+<li>짧은시간안에 결과가 도출된다.</li>
+<li>다양한 관점을 통해 더 강력한 솔루션을 만들 수 있다.</li>
+<li>진정한 비즈니스 가치를 찾을 수 있다.</li>
+<li>실제 비즈니스 사례에 중점을 둔다.</li>
+</ul>
+<h3 id="Software-Design"><a href="#Software-Design" class="headerlink" title="Software Design"></a>Software Design</h3><p>해당 비즈니스에 전문가, 비전문가가 모여 진행한다.</p>
+<h4 id="진행절차"><a href="#진행절차" class="headerlink" title="진행절차"></a>진행절차</h4><ol>
+<li>Event<br>전문가는 시간순으로 발생할 수 있는 이벤트를 과거형으로 작성한다.<br>(빨간 포스트잇 사용)</li>
+</ol>
+<p>이 중 이상한 내용은 과감하게 버리고 애매한 내용은 연분홍색으로 덧붙인다.</p>
+<ol>
+<li><p>Actor &amp; Command<br>Actor가 어떤 커맨드를 통해 도메인 이벤트가 발생한다고 했을 때 Actor은 노란색으로 붙이고 커맨드 내용은 현재형으로 하고 파란색으로 붙인다. 즉 다음과 같은 형태가 된다.</p>
+</li>
+<li><p>Business rule<br>시스템이 이벤트까지 어떻게 발생는데 있어 정책, 제약사항, 암묵적인 정책, 명시적인 정책을 보라색 포스트잇으로 붙인다.</p>
+</li>
+<li><p>Bounded Context<br>하나의 트랜잭션, specific function 단위로 나누어 그루핑한다.</p>
+</li>
+<li><p>Bounded Context 기반 Highest priority/Hard to solve/Requires experiments 로 투표진행</p>
+</li>
+<li><p>Bounded Context에 투표했던 결과중 가장 효과적이라 투표된것만 따로 빼내고 이에서 파생되는 서브도메인을 초록 포스트잇으로 붙이고 이에 해당하는 시나리오를 파랑 포스트잇으로 붙여보자.<br>여기까지 Micro Service의 Level 2까지 진행했다고 볼 수 있다. (Level 1 - Value Domain/ Level 2- Capability Domain)</p>
+</li>
+<li><p>시퀀스 다이어그램을 그리자.</p>
+</li>
+</ol>
+<hr>
+<h3 id="Implementing-Domain-Driven-Design-For-Microservices-Architecture"><a href="#Implementing-Domain-Driven-Design-For-Microservices-Architecture" class="headerlink" title="Implementing Domain-Driven Design For Microservices Architecture"></a>Implementing Domain-Driven Design For Microservices Architecture</h3><h4 id="DDD의-원칙"><a href="#DDD의-원칙" class="headerlink" title="DDD의 원칙"></a>DDD의 원칙</h4><p><code>Values:</code> Meaning, Unity, Usability, Fitness, Flexibility, Maintainability<br><code>Principles:</code>  Continuous Learning, Knowledge Rich Design, Ubiquitous Language, Model-Driven Design, Separation of Concerns<br>Deep Models, Declarative Style<br><code>Patterns:</code><br>Layered Architecture<br>Ubiquitous Language (Entities, Value Objects, Services, Modules, Aggregates, Factories, Specification) /<br>Supple Design (Intention-Revealing Interfaces, Side-Effect Free Functions, Assertions, Conceptual Contours, Standalone Classes, Closure of Operations)</p>
+<h3 id="What-is-Domain-Driven-Design"><a href="#What-is-Domain-Driven-Design" class="headerlink" title="What is Domain Driven Design"></a>What is Domain Driven Design</h3><p>도메인 전문가, 기술 전문가가 소프트웨어 개발를 위해 협엽하는 기술<br>아이디어와 도메인은 공통언어를 통해 코드에 반영되어야 한다.<br>Domain Driven Design 에 대해 알아보기 위해 다양한 Domain에 대해 알아보자.</p>
+<h4 id="Domain"><a href="#Domain" class="headerlink" title="Domain?"></a>Domain?</h4><p>팀은 특정 비즈니스 도메인에 맞게 일한다.<br>팀은 비즈니스 도메인에 초점을 맞춘다<br>도메인의 세부사항은 팀의 포지션마다 다르다.</p>
+<p>도메인의 예시<br>Hotel / Banking / Mortgage / Credit / Debit Accounts / Credit Cards / Retails loans</p>
+<h4 id="Subdomains"><a href="#Subdomains" class="headerlink" title="Subdomains"></a>Subdomains</h4><ul>
+<li>도메인은 서브도메인으로 구성된다.</li>
+<li>서브도메인은 Bounded Context와 유사하며 이는 서로 커뮤니케이션할 수 있다.</li>
+<li>서브도메인은 또다른 서버도메인을 포함할 수 있다.</li>
+</ul>
+<h4 id="Core-domain"><a href="#Core-domain" class="headerlink" title="Core domain"></a>Core domain</h4><ul>
+<li>돈을 벌게해주는 중요한 도메인</li>
+<li>경쟁업체와 높은 차별성을 갖음</li>
+</ul>
+<h4 id="Supporting-Subdomain"><a href="#Supporting-Subdomain" class="headerlink" title="Supporting Subdomain"></a>Supporting Subdomain</h4><p>기술적으로 서포팅하지만 COTS-Software가 아니다.<br>외부지원으로 구현될수 있지만 사내 팀이 주도해야 한다.</p>
+<p><code>Commercial, off-the-shelf</code><br>COTS 란 완성품으로 일반 대중에게 판매, 대여 또는 권한을 부여할 수 있는 컴퓨터 소프트웨어나 하드웨어, 기술 또는 컴퓨터 제품 등을 의미한다.</p>
+<h4 id="Generic-Subdomain"><a href="#Generic-Subdomain" class="headerlink" title="Generic Subdomain"></a>Generic Subdomain</h4><p>Suitable for Outsourcing, COTS</p>
+<h4 id="Bounded-Contexts"><a href="#Bounded-Contexts" class="headerlink" title="Bounded Contexts"></a>Bounded Contexts</h4><p>큰 도메인을 작은 Context로 나눈것.<br>각각의 Context는 자신만의 공통언어, 모델을 갖을 수 있다.<br>또한 Bounded Contexts는 일부 도메인을 공유할 수 있다.<br>Ubiquitous Language(공통언어)로 모델되어야 하며 프로그램에서 비즈니스 니즈를 정의한다.</p>
+<h3 id="This-is-Domain-Driven-Design"><a href="#This-is-Domain-Driven-Design" class="headerlink" title="This is Domain Driven Design"></a>This is Domain Driven Design</h3><h4 id="DDD의-Concepts-and-Overview"><a href="#DDD의-Concepts-and-Overview" class="headerlink" title="DDD의 Concepts and Overview"></a>DDD의 Concepts and Overview</h4><p>Domain-Driven Desigin은 <u>기본 비즈니스 이해에 중점을 둔 소프트웨어 디자인방식이다.</u><br>이러한 접근방식은 다음 두가지 전제를 둔다.</p>
+<ul>
+<li>복잡한 도메인 디자인은 모델을 기반으로 한다.</li>
+<li>대부분의 소프트웨어 프로젝트는 도메인 및 도메인로직에 중점을 둔다. (시스템 구현을 위한 특정 기술에 중점을 두는것이 아님)</li>
+</ul>
+<h4 id="전통적인-Layered-Architecture"><a href="#전통적인-Layered-Architecture" class="headerlink" title="전통적인 Layered Architecture"></a>전통적인 Layered Architecture</h4><p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!그림 추가할것</p>
+<p><code>User Interface</code>: 정보를 보여주고 사용자의 명령을 해석<br><code>Application</code> : 비즈니스 rule,지식 미포함 / 작업 조율 그리고 도메인에 작업 위임역할<br><code>Domain</code> : 비즈니스로직, 룰 포함/ 소프트웨어의 심장부<br><code>Infrastructure</code> : 상위 레이어를 지원하는 기술제공</p>
+<h4 id="Domain-Driven-Design-with-Onion-Architecture"><a href="#Domain-Driven-Design-with-Onion-Architecture" class="headerlink" title="Domain-Driven Design with Onion Architecture"></a>Domain-Driven Design with Onion Architecture</h4><p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!그림 추가할것</p>
+<p><code>Core</code>: 특정 도메인이나 기술에 국한되지 않는 building blocks로 볼 수 있다. 예로 List, Maps, Case Classes, Actor and Lenses가 있다.<br><code>Domain</code> : 공통언어를 통해 작성된 비즈니스 로직 관련 메소드, 클래스가 상주하는 영역이다.<br><code>API</code> :  도메인의 진입점 역할을 한다. API는 도메인을 조작하지 못하도록 immutable한 객체만 노출해야 한다. 코어, 도메인은 API에 액세스할 수 있지만 Infrastructure는 API에 액세스할 수 없다.<br><code>Infrastructure</code> : DB, 사용자 인터페이스 같은 다얗안 기술을 포함하는 가장 바깥쪽 영역이다. 모든 영역은 Infrastructure 영역에 접근 할 수 있다.</p>
+<h4 id="Bounded-Contexts-에-대해-자세히-알아보자"><a href="#Bounded-Contexts-에-대해-자세히-알아보자" class="headerlink" title="Bounded Contexts 에 대해 자세히 알아보자"></a>Bounded Contexts 에 대해 자세히 알아보자</h4><p>전체 비즈니스 모델은 너무 커 한번에 이해하기 힘들다. Bounded Contexts는 서로 다른 모델간 경계와 관계를 표현하기 위해 존재하는 명시적인 경계로서 경계 내의 Ubiquitous Language는 특정한 의미를 갖는다.</p>
+<p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!그림 추가할것</p>
+<h4 id="Bounded-Context의-구현"><a href="#Bounded-Context의-구현" class="headerlink" title="Bounded Context의 구현"></a>Bounded Context의 구현</h4><ul>
+<li>Bounded Context당 한팀이 존재한다.</li>
+<li>코드 Repository가 Bounded Context마다 존재한다.</li>
+<li>Domain Model + DB Schema + UI + Web Services (API)로 구성된다.</li>
+</ul>
+<p><u>Bounded Context는 Ubiquitous Language와 domain model을 캡슐화하나 도메인 모델과 상호작용하는 것, 도메인 모델을 서포트 하는 기능을 포함한다.  </u></p>
+<p>또한 Bounded Context안에  Aggregates Entity(유니크한 트랜잭션), Value Object(불변의 객체)가 존재하는데 이는 바로 뒤에서 설명하니 참고하도록 하자.</p>
+<h4 id="What-are-Entities"><a href="#What-are-Entities" class="headerlink" title="What are Entities?"></a>What are Entities?</h4><p><u>Domain object를 엔티티로 정의하는데 그것은 제각각 다르다</u>. 또한 엔티티의 정체성을 적절히 결정하고 어떻게 가져올지 결정한다.<br>최종 사용자,각 어플리케이션,data store은 <u>identity</u>를 만들어낸다.</p>
+<h3 id="Aggregates"><a href="#Aggregates" class="headerlink" title="Aggregates"></a>Aggregates</h3><p>Aggregates는 루트엔티티로 간주되는 연관된 객체 그룹이다. (트랜잭션과 같음)</p>
+<h4 id="Aggregates의-특징"><a href="#Aggregates의-특징" class="headerlink" title="Aggregates의 특징"></a>Aggregates의 특징</h4><ul>
+<li>트랜잭션과 마찬가지로 Atomic, Consistent, Isolated, Durable 특징을 갖는다.<br>(사람모형 레고는 2개의 팔, 다리, 얼굴을 갖는데 이를 Product’s Invariant(불변성)이라 한다.)</li>
+<li>경계가 명확하다.(외부 개체는 신경쓰지 않음)</li>
+<li>내부 개체를 보호한다. 외부개체는 루트 Aggregates를 통해 접근 가능하며 Aggregates의 상태는 변경 불가능하다.</li>
+<li>Aggregates는 자신이 소유한 entity, value object들의 무결성을 보호해야할 책임이 있다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">@Entity</div><div class="line">public class Cart implements Aggregate &#123;</div><div class="line">  @EmbeddedId</div><div class="line">  private CartId id;</div><div class="line">  @Embedded</div><div class="line">  private CustomerId customerId;</div><div class="line">  @OneToMany(cascade = CascadeType.All, orhanRemoval = true)</div><div class="line">  @JoinColumn(name=&quot;cartId&quot;)</div><div class="line">  private Set&lt;CartItem&gt; items;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위와같은 코드가 있을 때 cart id는 루트 엔티티 이다. 또한 CartItem이라는 엔티티들의 레퍼런스를 갖고 있으며 CustomerId를 ValueObject로서 사용한다.</p>
+<h4 id="Aggregates-rule"><a href="#Aggregates-rule" class="headerlink" title="Aggregates rule"></a>Aggregates rule</h4><ol>
+<li>모델은 불변해야 하며 일관되게 경계안에 있어야 한다.</li>
+<li>Aggregates 작게 디자인해라.(클 경우 확장성 저하 가능성)</li>
+<li>다른 Aggregates참조는 Identity로 하라.</li>
+<li>경계밖에서의 일관성유지</li>
+</ol>
+<h4 id="Relationships-Between-Aggregate"><a href="#Relationships-Between-Aggregate" class="headerlink" title="Relationships Between Aggregate"></a>Relationships Between Aggregate</h4><p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!사진넣기</p>
+<p>Aggregate Root만 다른 Bounded Context의 Aggregate Root에 접근 가능</p>
+<h4 id="Aggregate-팁"><a href="#Aggregate-팁" class="headerlink" title="Aggregate 팁"></a>Aggregate 팁</h4><ul>
+<li>Aggregate는 항상 정답이 아니다.</li>
+<li>Aggregates는 루트와 연결될 수 있다.</li>
+<li>루트가 아닌 엔티티를 FK로 사용하는것을 간과하지 마라.</li>
+</ul>
+<h4 id="Aggregates가-중요한-이유"><a href="#Aggregates가-중요한-이유" class="headerlink" title="Aggregates가 중요한 이유"></a>Aggregates가 중요한 이유</h4><p>개체를 그룹화하고 카테고리화 하면 복잡한것을 쉽게 관리할 수 있다.<br>주인없는 레코드를 방지하여 GC가 쉬워진다.<br>DB와의 고수준의 통신이 가능케한다.</p>
+<h3 id="Value-Object"><a href="#Value-Object" class="headerlink" title="Value Object"></a>Value Object</h3><p>가능한 엔티티 대신 값 개체를 사용하여 모델을 작성해야 한다.<br>Value 인지 아닌지 결정하기위해 다음 것들을 확인해보자.</p>
+<ul>
+<li>도메인을 측정하고, 정량화 할수있는지</li>
+<li>불변의 상태로 유지될 수 할수있는지</li>
+<li>관련된 속성을 필수 단위로 하여 전체를 구성하는지</li>
+<li>상황이 바뀌면 교체 가능한지.</li>
+<li>Value를 사용하는 다른값과 비교될 수 할수있는지</li>
+<li>collaborators에게 부작용을 없는 행동을 하는지</li>
+</ul>
+<h3 id="What-are-Domain-Services"><a href="#What-are-Domain-Services" class="headerlink" title="What are Domain Services"></a>What are Domain Services</h3><p>도메인의 일부는 객체로 모델링하는것이 자연스럽지 않다.<br>Application Service와 다르다. Application Service는 Domain Service의 클라이언트다.<br>일반적인 사용 예</p>
+<ul>
+<li>성능이 중요한 비즈니스 프로세스</li>
+<li>도메인 객체를 다른것의 구성요소로 변환할 때</li>
+<li>둘 이상의 도메인 객체에서 입력을 요구할 때</li>
+</ul>
+<h3 id="Domain-Building-Blocks"><a href="#Domain-Building-Blocks" class="headerlink" title="Domain Building Blocks"></a>Domain Building Blocks</h3><p>Entity :</p>
+<ul>
+<li>identity가 있는 명사</li>
+<li>가변적이며 다른 엔티티 혹은 value object와 연관될 수 있다.</li>
+<li>공유될 수 없다.</li>
+</ul>
+<p>Value Object :</p>
+<ul>
+<li>identity가 없는 명사</li>
+<li>불변하며 다른 엔티티와 연관될 수 있다..</li>
+<li>공유될 수 있다.</li>
+</ul>
+<p>Aggregate :</p>
+<ul>
+<li>하나의 Aggregate당 하나의 root entity가 있다.</li>
+<li>관련있는 Aggregate는 루트 entity를 통해 참조할 수 있지만 Aggregate의 다른 entity는 참조할 수 없다.</li>
+<li>모든 작업은 루트를 통해 수행된다.</li>
+</ul>
+<p>Service :</p>
+<ul>
+<li>서비스는 어플리케이션에서의 액션이다.</li>
+<li>서비스는 엔티티의 상태변화를 일으킨다</li>
+<li>서비스는 상태가 없다.</li>
+<li>서비스는 어플리케이션,도메인, 인프라스트럭쳐의 어느 곳의 일부가 될 수 있다.</li>
+</ul>
+<p>Factory :</p>
+<ul>
+<li>엔티티나 value object를 생성한다</li>
+<li>엔티티의 생성이 복잡할 때 사용한다.</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Event-storming&quot;&gt;&lt;a href=&quot;#Event-storming&quot; class=&quot;headerlink&quot; title=&quot;Event storming?&quot;&gt;&lt;/a&gt;Event storming?&lt;/h3&gt;&lt;p&gt;&lt;u&gt;프로그램 도메인에서 어떤일이 일
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>kube13</title>
@@ -685,206 +1337,6 @@
     
     
       <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(K8s) 3. Pods and Nodes</title>
-    <link href="http://KKimSangHeon.github.io/2019/04/23/kubernetes3/"/>
-    <id>http://KKimSangHeon.github.io/2019/04/23/kubernetes3/</id>
-    <published>2019-04-23T12:07:56.000Z</published>
-    <updated>2019-04-23T12:14:58.383Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="Pods"><a href="#Pods" class="headerlink" title="Pods"></a>Pods</h4><p><a href="https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/explore/explore-intro/" target="_blank" rel="external">https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/explore/explore-intro/</a></p>
-<p>디플로이먼트를 만들면 쿠버네티스는 파드를 만들어 어플리케이션 인스턴스를 호스트 해준다. 파드는 쿠버네티스 인스턴스이며 하나 또는 여러 컨테이너(도커나 rkt) 그룹을 추상화한것이다. 컨테이너 뿐만아니라 컨테이너들이 사용하는 리소스도 포함해서 파드라고 한다.</p>
-<p>리소스는 다음을 포함한다.</p>
-<ul>
-<li>볼륨과 같은, 공유 스토리지</li>
-<li>클러스터 IP 주소와 같은, 네트워킹</li>
-<li>컨테이너 이미지 버전 또는 사용할 특정 포트와 같이, 각 컨테이너가 동작하는 방식에 대한 정보</li>
-</ul>
-<p>파드는 어플리케이션에 특화된 논리적인 호스트를 모델링한것이고 다른 어플리케이션 컨테이너를 이 안에 담아놓을 수 있으며 비교적 관련있는것들 끼리 모아놓은것이다. 예를 들어 하나의 팟안에다 두개의 컨테이너를 하나에 파드에 넣을 수 있다, 하나의 파드안에 들은 컨테이너들은 IP와 포트를 공유한다. 그래서 항상 같이 존재하며 같이 스케줄링된다.</p>
-<p>파드는 atomic unit 이다. 쿠버네티스에서 디플로이먼트를 만들었을때 디플로이먼트는 컨테이너를 갖고있는 파드를 만든다.(컨테이너를 직접 만드는것이 아님)<br>각각의 파드가 특정한 노드에 묶이게 되고 그 노드안에서 살게된다. 노드가 실패하면 동일한 파드를 또다른 클러스터에 있는 다른노드에서 실행한다.<br>즉 파드 단위로 옮겨다닌다.</p>
-<h4 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h4><p>파드를 실행하는게 노드이며 노드는 쿠버네티스에서 워커머신이다.(쿠버네티스는 마스터, 워커노드가 존재) 노드는 버츄얼 피지컬 머신일 수 도있다. 노드는 마스터에서 관리되면 여러개의 파드를 갖고있으며 쿠버네티스 마스터는 자동으로 어떤 파드를 노드에 올릴지 클러스터링 한다. 마스터의 자동 스케줄링은 가용한 리소스를 고용해서..</p>
-<p>모든 쿠버네티스 노드는 최소한 다음을 실행한다</p>
-<ul>
-<li><p>Kubelet(팀장님)은, 쿠버네티스 마스터(본부장님)와 노드 간 통신을 책임지는 프로세스이며, 하나의 머신 상에서 동작하는 파드와 컨테이너를 관리한다.</p>
-</li>
-<li><p>(도커, rkt)와 같은 컨테이너 런타임은 레지스트리에서 컨테이너 이미지를 가져와 묶여 있는 것을 풀고 애플리케이션을 동작시키는 책임을 맡는다.</p>
-</li>
-</ul>
-<p>노드 개요<br>노드안에 파드가 여러개 들어갈 수 있고 파드는 각 아이피를 할당받는다. Kubelet이 노드들을 관리</p>
-<p>kubectl을 통해서 배포된 앱들의 정보를 가져올 수 있다.<br>kubectl get - 자원을 나열한다<br>kubectl describe - 자원에 대해 상세한 정보를 보여준다.<br>kubectl logs - 파드 내 컨테이너의 로그들을 출력한다<br>kubectl exec - 파드 내 컨테이너에 대한 명령을 실행한다.</p>
-<p>언제 애플리케이션이 배포되었으며, 현재 상태가 어떠한지, 그것의 구성은 어떠한지 등을 보기 위해 이러한 명령을 이용할 수 있다.</p>
-<p>kubectl get pods<br>를 입력하여 파드가 있나 확인해보고 없으면 빌드를 다시해라</p>
-<p>kubectl describe pods<br>를 입력하여 파드에 대한 자세한 정보를 보자.IP, Port, Event<br>결과물은</p>
-<p>kubectl describe node<br>를 입력하여 노드 정보를 갖고올 수 있다.</p>
-<p>파드가 isolate, private 네트웍에서 동작하기에 kubectl proxy를 써서 사용하였었다.</p>
-<p>kubectl proxy<br>를 입력하여 프록시르 띄우자</p>
-<p>파드네임과 쿼리를 갖고와 프록시를 해보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export POD_NAME=$(kubectl get pods -o go-template --template &apos;&#123;&#123;range .items&#125;&#125;&#123;&#123;.metadata.name&#125;&#125;&#123;&#123;&quot;\n&quot;&#125;&#125;&#123;&#123;end&#125;&#125;&apos;)</div><div class="line">echo Name of the Pod: $POD_NAME</div></pre></td></tr></table></figure></p>
-<p>동작하고 있는 애플리케이션 정보를 보고싶다면<br>curl <a href="http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME/proxy/" target="_blank" rel="external">http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME/proxy/</a><br>를 입력하면 된다.</p>
-<p>애플리케이션에서 보통 STDOUT로 내보내는데 그것이 로그가 된다. 이를 쿠버네티스 다음명령오로 가져올 수 있다.<br>kubectl logs $POD_NAME<br>(지금은 컨테이너가 파드안에 하나이기 때문에 지정하지 않아도 된다.)</p>
-<p>파드가 동작하고 있으면 그안에 컨테이너에게 명령어를 실행할 수 있는데 다음과 같이 하면된다.<br>kubectl exec $POD_NAME env<br>(컨테이너 이름을 생략할수 있는것은 지금은 파드안에 컨테이너가 하나이기 때문에)</p>
-<p>kubectl exec -ti $POD_NAME bash<br>를 입력하여 NodeJS 가 돌고있는 배쉬가 생겼다.<br>이를통해 컨테이너 안에서 명령들을 동작해볼 수 있다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;Pods&quot;&gt;&lt;a href=&quot;#Pods&quot; class=&quot;headerlink&quot; title=&quot;Pods&quot;&gt;&lt;/a&gt;Pods&lt;/h4&gt;&lt;p&gt;&lt;a href=&quot;https://kubernetes.io/ko/docs/tutorials/kubernetes-ba
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(K8s) 2. 클러스터 생성 및 앱 배포, 마스터 / 노드</title>
-    <link href="http://KKimSangHeon.github.io/2019/04/23/kubernetes2/"/>
-    <id>http://KKimSangHeon.github.io/2019/04/23/kubernetes2/</id>
-    <published>2019-04-23T12:07:53.000Z</published>
-    <updated>2019-04-23T12:12:46.994Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="클러스터-생성-및-앱-배포"><a href="#클러스터-생성-및-앱-배포" class="headerlink" title="클러스터 생성 및 앱 배포"></a>클러스터 생성 및 앱 배포</h4><p>이번에는 쿠버네티스란 무엇인지, 미니큐브는 무엇인지에 대해 알아보자.</p>
-<p><a href="https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/" target="_blank" rel="external">https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/</a> 참고</p>
-<h4 id="쿠버네티스-클러스터"><a href="#쿠버네티스-클러스터" class="headerlink" title="쿠버네티스 클러스터"></a>쿠버네티스 클러스터</h4><p>쿠버네티스는 높은 가용성을 클러스터 하는것이다. 즉 하나의 유닛으로 일하는 여러 컴퓨터들의 클러스터를 의미한다. 도커이미지를 배포할 수 있는 클러스터이다.<br>특정 머신한테 배포 설정하는것이 아니라 쿠버네티스한테 배포하라고 던지면 쿠버네티스가 알아서 배포한다.</p>
-<p>이를 사용하려면 어플리케이션은 특정 호스트에 묶이지 않은상태로 패키지 되어야 한다.</p>
-<p>컨테이나이저 어플리케이션은 예전 배포모델보다 유연하다. (예전모델은 특정 머신에 의존성이 있었다.)</p>
-<p>쿠버네티스는 좀더 효율적인 방법으로 클러스터에 어플리케이션을 어떻게 배포하고 스케줄링해야되는지에 대해 자동화함.</p>
-<p>쿠버네티스는 오픈소스이며 클러스터 환경에서 쓸 수 있다.</p>
-<p>쿠버네티스는 마스터, 노드로 구성된다.<br>(스웜으로 비교하자면 각각 매니저, 워커이다. 스웜에서는 매니저, 워커 둘다 컨테이너를 띄울 수 있었다. 쿠버네티스에서는 노드에서만 컨테이너를 띄울 수 있다.)</p>
-<h4 id="쿠버네티스의-마스터-노드"><a href="#쿠버네티스의-마스터-노드" class="headerlink" title="쿠버네티스의 마스터, 노드"></a>쿠버네티스의 마스터, 노드</h4><p>마스터는 어플리케이션 스케줄링, 특정 상태로 만드는일, 스케일링하는일, 새 버전을 차곡차곡 배포해 나가는것을 관리함</p>
-<p>노드들은 vm이거나 물리적인 컴퓨터인데 쿠버네티스에서 워커 머신역할을 한다.<br>각각의 노드는 큐블릿을 갖고있는데 이는 노드를 관리하기 위한 에이전트이고 쿠버네티스 매니저와 의사소통한다.</p>
-<p>노드는 도커 혹은 rkt와 같은 컨테이너 오퍼레이팅 툴이 필요하다.</p>
-<p>쿠버네티스 클러스터는 프로덕션 트래픽을 다룰 수 있는데 이를 위해 최소 3개 이상의 노드를 갖고있어야 한다.</p>
-<h4 id="쿠버네티스의-배포과정"><a href="#쿠버네티스의-배포과정" class="headerlink" title="쿠버네티스의 배포과정"></a>쿠버네티스의 배포과정</h4><ul>
-<li>애플리케이션을 쿠버네티스에 배포할 때 마스터한테 어플리케이션 클러스터를 실행하라고 한다.</li>
-<li>그럼 마스터는 컨테이너들을 클러스터 노드들에게 실행하도록 스케줄링 한다.</li>
-<li>그럼 노드는 쿠버네티스 API를 활용해 마스터와 의사소통해서 쿠버네티스 API를 호출할 수 있다.</li>
-<li>엔드유저 또한 API를 사용할 수 있다.</li>
-</ul>
-<h4 id="미니큐브-활용"><a href="#미니큐브-활용" class="headerlink" title="미니큐브 활용"></a>미니큐브 활용</h4><p>쿠버네티스 클러스터는 vm 혹은 물리적 컴퓨터에도 배포할 수 있다. 배포를 위해서는 미니큐브를 사용하라. 이는 쿠버네티스 경량버전이며 vm이 하나만 있다. 로컬머신에 설치할 수 있고 노드가 하나이다.<br>즉 미니큐브는 vm을 만들어주는것이고 이 안에는 노드가 하나만 들어있다.</p>
-<h4 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h4><p>미뉴큐브가 미리 설치되어있는 온라인 환경에서 진행한다.</p>
-<p>minikube start<br>를 입력하여 미니큐브를 실행하자</p>
-<p>kubectl version<br>을 입력하여 버전을 한번 보자.</p>
-<p>kubctl cluster-info<br>를 입력해보자.</p>
-<p>kubctl get nodes<br>를 입력하여 노드 정보를 보자.<br>아까 말한대로(미니큐브에서는 노드 하나만 들어있는) 하나가 떠있는것을 볼 수 있다.</p>
-<h4 id="kubectl을-활용하여-애플리케이션-배포"><a href="#kubectl을-활용하여-애플리케이션-배포" class="headerlink" title="kubectl을 활용하여 애플리케이션 배포"></a>kubectl을 활용하여 애플리케이션 배포</h4><p>동작하는 쿠버네티스가 있으면 컨테나이저된 앱을 배포할 수 있는데 이를 위해 쿠버네티스 배포 설정을 만들어야 한다.<br><code>배포 설정</code>은 쿠버네티스가 어떻게 인스턴스를 만들고 갱신해야하는지에 대한 역할을 한다.</p>
-<p>이를 만들면 마스터가 노드에 배포를 한다.</p>
-<p>애플리케이션 인스턴스가 한번 만들어지면 쿠버네티스 배포 컨트롤러는 지속적으로 인스턴스를 모니터링 한다. 만약 노드가 다운되거나 삭제되면 다른 노드에 배포하게 함으로서 셀프 힐링 매커니즘을 제공한다.</p>
-<p>오케스트레이션이 없던시절에서는 스크립트를 사용했었다. 머신에 문제가 있을때 처리방법은 없었다.  쿠버네티스는 애플리케이션 인스턴스를 만들고 노드에 계속 실행하는것으로서 이전과는 다르다.</p>
-<p>kubectl을 통해 배포를 관리하고 만들 수 있다. 이는 쿠버네티스 API를 통해 소통한다(즉 마스터와 소통한다.) 배포를 만들때는 컨테이너 이미지를 적어야되고, 몇개의 어플리케이션을 실행하기 원하는지 적어줘야함.</p>
-<p>kubectl get nodes<br>입력하여 노드를 확인</p>
-<p>이제 앱 배포를 따라해보자</p>
-<p>kubectl run은 배포를 새로만드는것이다.<br>이를 위해 앱 이름과, 위치를 알려줘야 한다. 도커허브에 올라가있는 이미지가 아닌경우 레파지토리 uri까지 줘야한다. 앱을 특정포트에서 실행하고 싶다면 포트 파라미터까지 줘야한다.</p>
-<p>kubectl run kubernetes-bootcamp –image=gcr.io/google-samples/kubernetes-bootcamp:v1 –port=8080<br>을 입력하여 배포하자. deployment 를 만듦과 동시에 배포됨.<br>이를 통해 앱을 배포할 적절한 노드를찾았고 스케줄링을 했고 클러스터를 설정했다.</p>
-<p>kubectl get deployments<br>를 입력하여 deployments정보를 얻어보자</p>
-<p>파드란 쿠버네티스 안에서 도는것인데 private 하고 isolate하다. 기본적으로 쿠버네티스 안에있는 파드, 서비스들 끼리는 볼 수 있지만 쿠버네티스 클러스터 밖에서는 박에서 못본다, kubectl을 사용하여 api endpoint를 사용해서 어플리케이션과 의사소통할 수 있다.</p>
-<p>어플리케이션을 쿠버네티스 클러스터에서 노출시키는 방법은 모듈 4에서 본다.</p>
-<p>kubectl proxy<br>를 입력하여 프록시 다른탭에서 만들면 클러스터 wide , private network와 의사소통 할 수 있게된다. 프록시를 컨트롤 씨로 종료시킬 수도 있다</p>
-<p>디폴리먼트 하나, 파드하나 , 레플리카 셋이 하나 있는것을 웹 프리뷰로 볼 수 있다.</p>
-<p>이를 만들면 호스트와 쿠버네티스 클러스트간에 연결된것이고, 프록시를 사용하면 API 를 직접 사용할 수 있다.</p>
-<p>여기서 말하는 API는 쿠버네티스 매니저의 API</p>
-<p>API서버는 자동으로 endpoint 를 각각의 pod기반으로 만들어준다. 우리는 pod네임을 가져오려면 다음과 같이하면된다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export POD_NAME=$(kubectl get pods -o go-template --template &apos;&#123;&#123;range .items&#125;&#125;&#123;&#123;.metadata.name&#125;&#125;&#123;&#123;&quot;\n&quot;&#125;&#125;&#123;&#123;end&#125;&#125;&apos;)</div><div class="line">echo Name of the Pod: $POD_NAME</div></pre></td></tr></table></figure></p>
-<p>curl <a href="http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME/proxy/" target="_blank" rel="external">http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME/proxy/</a><br>를 입력하여 pod의 api로 라우팅할수있다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;클러스터-생성-및-앱-배포&quot;&gt;&lt;a href=&quot;#클러스터-생성-및-앱-배포&quot; class=&quot;headerlink&quot; title=&quot;클러스터 생성 및 앱 배포&quot;&gt;&lt;/a&gt;클러스터 생성 및 앱 배포&lt;/h4&gt;&lt;p&gt;이번에는 쿠버네티스란 무엇인지, 미니큐브
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(K8s) 1. 쿠버네티스 개요</title>
-    <link href="http://KKimSangHeon.github.io/2019/04/23/kubernetes1/"/>
-    <id>http://KKimSangHeon.github.io/2019/04/23/kubernetes1/</id>
-    <published>2019-04-23T12:07:19.000Z</published>
-    <updated>2019-04-23T12:09:25.350Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="쿠버네티스-개요"><a href="#쿠버네티스-개요" class="headerlink" title="쿠버네티스 개요"></a>쿠버네티스 개요</h4><p><a href="https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/" target="_blank" rel="external">https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/</a> 참고</p>
-<p>컨테이너화된 애플리케이션들을 관리할 수 있게 해준다.</p>
-<ul>
-<li>컨테이너화 된 어플리케이션을 클러스터에 배포하는가. 즉 도커이미지로 만든것을 클러스터 배포하는가. 이번엔 스웜이 아닌 쿠버네티스라는 클러스터에 배포하는것.</li>
-<li>어떻게 스케일할것인가.</li>
-<li>어떻게 새 버전을 배포할것인가</li>
-<li>어떻게 디버깅할것인지</li>
-</ul>
-<p>카타코드를 사용하여 가상머신을 웹에서 실행 할 수 있다.<br>미니큐브는 작게 만든 쿠버네티스이며 아무곳에서나 설치할 수 있다.</p>
-<h4 id="쿠버네티스로-할수-있는것"><a href="#쿠버네티스로-할수-있는것" class="headerlink" title="쿠버네티스로 할수 있는것."></a>쿠버네티스로 할수 있는것.</h4><p>모던한 서비스는 24시간 7일동안 무정지를 기대한다. 개발자들도 새버전을 하루에 몇번씩 배포 할 수 있다는것을 기대한다. 즉 배포에 대한 수준이 높아졌다.</p>
-<p>커테나이제이션을 통해 위의 높아진 수준에 부응할 수 있다. 쿠버네티스는 컨테나이저된 어플리케이션을 어디서든 실행할 수 있도록 도와준다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;쿠버네티스-개요&quot;&gt;&lt;a href=&quot;#쿠버네티스-개요&quot; class=&quot;headerlink&quot; title=&quot;쿠버네티스 개요&quot;&gt;&lt;/a&gt;쿠버네티스 개요&lt;/h4&gt;&lt;p&gt;&lt;a href=&quot;https://kubernetes.io/ko/docs/tutoria
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(Docker) 4. Stacks</title>
-    <link href="http://KKimSangHeon.github.io/2019/04/21/docker4/"/>
-    <id>http://KKimSangHeon.github.io/2019/04/21/docker4/</id>
-    <published>2019-04-21T10:40:15.000Z</published>
-    <updated>2019-04-21T10:53:13.101Z</updated>
-    
-    <content type="html"><![CDATA[<p>docker-machine start $(docker-machine ls -q)<br>를 입력하여 도커머신들을 띄우자</p>
-<h4 id="Swarm"><a href="#Swarm" class="headerlink" title="Swarm?"></a>Swarm?</h4><p><code>스웜</code>은 <u>도커를 실행하는 머신들의 클러스터이며 애플리케이션을 배포할 수 있다. 컨테이너를 실행하고 여러머신에서 실행할 수 있다.</u></p>
-<h4 id="Stack"><a href="#Stack" class="headerlink" title="Stack?"></a>Stack?</h4><p>이번에는 구조중 가장 맨위에 있는 스택을 다루겠다. <code>스택</code>은 <u>의존성을 공유하고 있는 관련있는 서비스들의 집합이다. 스택은 전체 어플리케이션과 어떻게 조화를 이루어야하는지 짤 수 있다. 복잡한 어플리케이션의 경우 여러개의 스택을 사용할 수 있다.</u></p>
-<p>docker-machine ssh myvm1 “docker swarm init –advertise-addr <myvm1의 ip="">“<br>을 입력하여 스웜 매니저로 띄워주자<br>위를 입력하면 docker swarm join –token …..이라고 출력되는데 이는 스웜에 워커를 추가하고 싶으면 이렇게 입력하라는 것이다,</myvm1의></p>
-<p>두번째 머신에 아래와 같이 입력하여 워커를 추가하자<br>docker-machine ssh myvm2 “위에서 출력된값 복붙”</p>
-<p>이제 머신 두개를 띄웠다.<br>즉 스웜 매니저, 워커로 띄움</p>
-<p>여러개의 멀티 머신에서 띄워보자.</p>
-<p>yml 파일을 아래와 같이 수정하자.<br>이전것에서 visualizer 라는 서비스가 추가됨.<br>추가된것은 호스트에 있는 파일을 컨테이너 안에다 집어넣어놨다.(dockersamples/visualizer:stable 안에 /var/run/docker.sock:/var/run/docker.sock 파일 넣음)<br><figure class="highlight"><figcaption><span>default</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">version: "3"</div><div class="line">services:</div><div class="line">  web:</div><div class="line">    # replace username/repo:tag with your name and image details</div><div class="line">    image: username/repo:tag</div><div class="line">    deploy:</div><div class="line">      replicas: 5</div><div class="line">      restart_policy:</div><div class="line">        condition: on-failure</div><div class="line">      resources:</div><div class="line">        limits:</div><div class="line">          cpus: "0.1"</div><div class="line">          memory: 50M</div><div class="line">    ports:</div><div class="line">      - "80:80"</div><div class="line">    networks:</div><div class="line">      - webnet</div><div class="line">  visualizer:</div><div class="line">    image: dockersamples/visualizer:stable</div><div class="line">    ports:</div><div class="line">      - "8080:8080"</div><div class="line">    volumes:</div><div class="line">      - "/var/run/docker.sock:/var/run/docker.sock"</div><div class="line">    deploy:</div><div class="line">      placement:</div><div class="line">        constraints: [node.role == manager]</div><div class="line">    networks:</div><div class="line">      - webnet</div><div class="line">networks:</div><div class="line">  webnet:</div><div class="line">  </div></pre></td></tr></table></figure></p>
-<p>docker-machine ev myvm1<br>을 입력하여 매니저와 연결하자.</p>
-<p> docker stack deploy -c docker-compose.yml getstartedlab<br> 를 입력하자. (이는 myvm1에서 실행하는것이다.)</p>
-<p> docker-machine ls를 입력하여 머신의 ip를 입력하고 8080포트로 접속해보자.</p>
-<p>아래를 입력하여 레디스를 추가하자<br><figure class="highlight java"><figcaption><span>default</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">redis:</div><div class="line">  image: redis</div><div class="line">  ports:</div><div class="line">    - <span class="string">"6379:6379"</span></div><div class="line">  volumes:</div><div class="line">    - <span class="string">"/home/docker/data:/data"</span></div><div class="line">  deploy:</div><div class="line">    placement:</div><div class="line">      constraints: [node.role == manager]</div><div class="line">  command: redis-server --appendonly yes</div><div class="line">  networks:</div><div class="line">    - webnet</div><div class="line">    </div></pre></td></tr></table></figure></p>
-<p> docker stack deploy -c docker-compose.yml getstartedlab<br> 를 입력하여 디플로이 하자.</p>
-<p>레디스는 매니저에서만 실행되므로 동일한 파일 시스템을 쓴다.(워커것과 섞이지 않음)<br>영속화를 위해 볼륨파일을 로컬에서 갖다 쓰고 매니저에서만 돌린다.</p>
-<p>docker service ls<br>를 입력해서 돌아가고 있는 서비스를 확인해보자.</p>
-<p>docker container ls<br>를 입력해서 각 떠있는 컨테이너들을 확인하자.</p>
-<h4 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h4><p>배포하는 방법은 CE(Cloud Provider),Enterprise(Cloud provier), Enterprise(On-Premise)가 있다</p>
-<p>도커 클라우드를 써서 앱을 관리할 수 있다.<br>외부 클라우드에 배포하는 방법을 알아보자.</p>
-<p>도커 클라우드는 스탠다드모드, 스웜모드로 쓸 수 있다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;docker-machine start $(docker-machine ls -q)&lt;br&gt;를 입력하여 도커머신들을 띄우자&lt;/p&gt;
-&lt;h4 id=&quot;Swarm&quot;&gt;&lt;a href=&quot;#Swarm&quot; class=&quot;headerlink&quot; title=&quot;Swarm?&quot;&gt;&lt;
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="Docker" scheme="http://KKimSangHeon.github.io/tags/Docker/"/>
     
   </entry>
   

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>msa2 | Kim Sang Heon&#39;s Bolg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="" />
+    
+    
+
+      <meta name="description" content="DDD의 이점 기술보다는 비즈니스에 초점을 맞춘다, 코드르 재사용하고 읽기 쉽다. 개선사항이 있을 때 유연하다.  성공적인 DDD 도메인전문가, 기술 전문가의 협업을 통해 모델 빌드 어플리케이션의 반복적인 빌드 테스트하고 테스트하고 또 테스트하라  세계지도에서 DDD가 어떻게 적용되는지 보자.Model Driven DesiginDomain = Word Ma">
+<meta property="og:type" content="article">
+<meta property="og:title" content="msa2">
+<meta property="og:url" content="http://KKimSangHeon.github.io/2019/06/08/msa2/index.html">
+<meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
+<meta property="og:description" content="DDD의 이점 기술보다는 비즈니스에 초점을 맞춘다, 코드르 재사용하고 읽기 쉽다. 개선사항이 있을 때 유연하다.  성공적인 DDD 도메인전문가, 기술 전문가의 협업을 통해 모델 빌드 어플리케이션의 반복적인 빌드 테스트하고 테스트하고 또 테스트하라  세계지도에서 DDD가 어떻게 적용되는지 보자.Model Driven DesiginDomain = Word Ma">
+<meta property="og:updated_time" content="2019-06-08T05:20:02.962Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="msa2">
+<meta name="twitter:description" content="DDD의 이점 기술보다는 비즈니스에 초점을 맞춘다, 코드르 재사용하고 읽기 쉽다. 개선사항이 있을 때 유연하다.  성공적인 DDD 도메인전문가, 기술 전문가의 협업을 통해 모델 빌드 어플리케이션의 반복적인 빌드 테스트하고 테스트하고 또 테스트하라  세계지도에서 DDD가 어떻게 적용되는지 보자.Model Driven DesiginDomain = Word Ma">
+        <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-101744076-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/2017/06/29/about-me/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/">About Me</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/Introduction/">Introduction</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/My-Projects/">My Projects</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/About-Me/Travel/">Travel</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Search/">Search</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Sort/">Sort</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/">CS</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/Data-Base/">Data Base</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/Design-Pattern/">Design Pattern</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/IOT/">IOT</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/MSA/">MSA</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CS/Operating-System/">Operating System</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/">Etc</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/HEX-Team/">HEX Team</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/면접/">면접</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/아무거나/">아무거나</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Etc/자격증/">자격증</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/">Language</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/C/">C++</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/Embeded-C/">Embeded C</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/Python/">Python</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Language/SQL-Oracle/">SQL(Oracle)</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/OS/">OS</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/OS/Linux/">Linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/">Web/App</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/Angular2/">Angular2</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/Firebase/">Firebase</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/Servlet-JSP/">Servlet/JSP</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web-App/Spring/">Spring</a></li></ul></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    uncategorized
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2850951807285210"
+     data-ad-slot="1831621923"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                            <article id="post-msa2" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        msa2
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/06/08/msa2/" class="article-date">
+            <time datetime="2019-06-08T05:18:16.000Z" itemprop="datePublished">2019-06-08</time>
+        </a>
+    </div>
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h4 id="DDD의-이점"><a href="#DDD의-이점" class="headerlink" title="DDD의 이점"></a>DDD의 이점</h4><ul>
+<li>기술보다는 비즈니스에 초점을 맞춘다,</li>
+<li>코드르 재사용하고 읽기 쉽다.</li>
+<li>개선사항이 있을 때 유연하다.</li>
+</ul>
+<h4 id="성공적인-DDD"><a href="#성공적인-DDD" class="headerlink" title="성공적인 DDD"></a>성공적인 DDD</h4><ul>
+<li>도메인전문가, 기술 전문가의 협업을 통해 모델 빌드</li>
+<li>어플리케이션의 반복적인 빌드</li>
+<li>테스트하고 테스트하고 또 테스트하라</li>
+</ul>
+<h4 id="세계지도에서-DDD가-어떻게-적용되는지-보자"><a href="#세계지도에서-DDD가-어떻게-적용되는지-보자" class="headerlink" title="세계지도에서 DDD가 어떻게 적용되는지 보자."></a>세계지도에서 DDD가 어떻게 적용되는지 보자.</h4><p>Model Driven Desigin<br>Domain = Word Map<br>Sub domain = 오세아니아, 아시아, 북아메리카,….<br>Bounded Context = Countries(South Korea)<br>Ubiquitous Language = Korean Language<br>Domain Model = Map of Korea</p>
+<h3 id="Microservices-Architecture"><a href="#Microservices-Architecture" class="headerlink" title="Microservices  Architecture"></a>Microservices  Architecture</h3><ul>
+<li>비즈니스 로직을 나누었다.</li>
+<li>큰 프로그램 대신 몇몇의 작은 어플리케이션이다.</li>
+<li>잘 정의된 API로 소통한다.(HTTP, AMQP 활용)</li>
+<li>하나의 서비스가 정지될경우 다른것에 영향을 미치지 않는다</li>
+</ul>
+<h4 id="What-is-Microservice-Architecture"><a href="#What-is-Microservice-Architecture" class="headerlink" title="What is Microservice Architecture?"></a>What is Microservice Architecture?</h4><ul>
+<li>각각의 컴포넌트를 시스템에 집어넣는것이며 각각 빌드되고 배포될수 있다.</li>
+<li>Microservice 는 vertical 하며 layered하다. 또한 Process driven 형태이다.</li>
+<li>Microservice를 잘 정의하면 TDD가 가능하다.</li>
+<li>엔터프라이즈 아키텍처가 아니다. Microservice Architecture는 SOA와 유사하다.</li>
+<li>단일 비즈니스 기능을 구현한다.</li>
+<li>자신만의 데이터베이스를 갖는것이 일반적이나 데이터베이스를 갖지않는경우도 있다.</li>
+<li>HTTP, AMQP 로 통신한다.</li>
+<li>독립적으로 배포가 가능하다.</li>
+<li>각각의 레파지토리를 갖는다.</li>
+<li>마이크로 서비스 팀은 몇명이 적당할까? 피자 두판을 먹을 수 있을만한 인원수! 6명 ? 좋다!</li>
+</ul>
+<h4 id="Microservice의-구성"><a href="#Microservice의-구성" class="headerlink" title="Microservice의 구성"></a>Microservice의 구성</h4><ul>
+<li>Data Store</li>
+<li>Application/Logic</li>
+<li>Public API(POST, GET )</li>
+</ul>
+<h4 id="Microservices-application의-전형적인-생태계"><a href="#Microservices-application의-전형적인-생태계" class="headerlink" title="Microservices application의 전형적인 생태계"></a>Microservices application의 전형적인 생태계</h4><p>원칙1. Microservices들은 각 public API에 서로 의존한다.</p>
+<ul>
+<li>백엔드의 마이크로 서비스는 노출되면 안된다. 오직 프론트 마이크로 서비스만 노출되어야 한다.</li>
+</ul>
+<p>원칙2. 작업에 적합한 tool(ex. 프레임워크)을 사용하라.</p>
+<p>원칙3. 서비스 보안에 신경써라</p>
+<p>원칙4. 생태계에서 좋은 시민이 되어라!</p>
+<ul>
+<li>모니터링, 로깅, 추적을 분산하라</li>
+</ul>
+<p>원칙5. 기술 변화 이상의 것이다.</p>
+<ul>
+<li>조직 변화를 수용하라</li>
+</ul>
+<p>원칙6. 모든것을 자동화하라(DevOps!)</p>
+<h4 id="Micro-Service를-위해서…"><a href="#Micro-Service를-위해서…" class="headerlink" title="Micro Service를 위해서…"></a>Micro Service를 위해서…</h4><ul>
+<li>비즈니스 도메인을 이해하자</li>
+<li>일관성 유지하자</li>
+<li>서비스 발견해보자</li>
+<li>불필요한 상호통신이 많다면 조정해보자</li>
+</ul>
+<h4 id="Microservice-계획하기"><a href="#Microservice-계획하기" class="headerlink" title="Microservice 계획하기"></a>Microservice 계획하기</h4><ul>
+<li>정말 옳은 선택인가?(트레이드 오프 고려)</li>
+<li>시스템의 주요기능을 식별하자</li>
+<li>서비스 컴포넌트의 스코프를 세부적으로 결정하라(Function의 크기, 타입, 복잡성)</li>
+<li>API들을 디자인하라</li>
+<li>커뮤니케이션의 메커니즘을 결정하라</li>
+<li>데이터 모델을 결정하라(중앙 데이터베이스 vs 여러 데이터 저장소)</li>
+</ul>
+<h4 id="Benefits-of-microservices"><a href="#Benefits-of-microservices" class="headerlink" title="Benefits of microservices"></a>Benefits of microservices</h4><ul>
+<li>각각의 microservices를 쉽개 확장할 수 있다</li>
+<li>빠른 빌드, 테스트, 릴리즈의 싸이클</li>
+<li>agility의 증가</li>
+<li>빠른혁신이 가능하다.</li>
+<li>명확한 소유권 그리고 책임의 분배.</li>
+</ul>
+<h4 id="Microservice-Architecture"><a href="#Microservice-Architecture" class="headerlink" title="Microservice Architecture"></a>Microservice Architecture</h4><p>!!!!!!!!!!!!!!!!!!!그림넣기(Microservice Architecture)</p>
+<ul>
+<li>각 microservice는 컨테이너에 할당된다. 컨테이너는 microservice 기반 어플리케이션을 개별적으로 개발, 배포하기 좋은 방법이다.</li>
+<li>microservice 간 stateless server 형태로 소통한다.</li>
+<li>클라이언트는 서비스를 바로 호출할수 없고 API 게이트웨이가 클라이언트의 요청을 적절한 microservice로 전달한다.<br>(API 게이트웨이는microservice로인가요? 하드웨어나 소프트웨어로 볼 수 있다. microservice로 일수도 있지만 아닐수도 있다.)</li>
+<li>각 서비스는 상호 독립적이다.</li>
+<li>Single-responsibility 원칙을 따름</li>
+<li>아무것도 공유하지 않는다.</li>
+<li>비동기가 가능하다.</li>
+<li>configuration의 외부화</li>
+<li>결합도가 느슨하다.</li>
+<li>하나의 서비스가 문제를 일으켜도 나머지는 상관없다.</li>
+</ul>
+<h4 id="Microservices-Disadvantages"><a href="#Microservices-Disadvantages" class="headerlink" title="Microservices - Disadvantages"></a>Microservices - Disadvantages</h4><p>Complex networking으로 인해 데이터베이스, 서버의 오버헤드 발생</p>
+<h4 id="Monolithic-Architecture-vs-Microservice-Architecture"><a href="#Monolithic-Architecture-vs-Microservice-Architecture" class="headerlink" title="Monolithic Architecture vs Microservice Architecture"></a>Monolithic Architecture vs Microservice Architecture</h4><p>!!!!!!!!!!!!!!!!!!!그림넣기(Monolithic Architecture vs Microservice)</p>
+<p><code>Monolithic Architecture</code> : 모든 기능이 단일 코드베이스에 위치하고 하나의 DB를 사용한다. 또한 한 기능이 마비되면 전체가 마비되며 크고 복잡한 어플리케이션형태</p>
+<h4 id="Microservices-vs-SOA"><a href="#Microservices-vs-SOA" class="headerlink" title="Microservices vs SOA"></a>Microservices vs SOA</h4><p>!!!!!!!!!!!!!!!!!!!그림넣기(MicroservicesvsSOA)<br>SOA 컨센은 centrallize이다.<br>MS는 not centrallize이다.<br>즉 SOA는 오케스트라와 같다. (한 지위자가 전체를 통솔한다) Microservices는 발레와 같다. (각 댄서가 각자 율동한다)</p>
+<h4 id="Monolithic-Architecture-vs-SOA-vs-Microservices"><a href="#Monolithic-Architecture-vs-SOA-vs-Microservices" class="headerlink" title="Monolithic Architecture vs SOA vs Microservices"></a>Monolithic Architecture vs SOA vs Microservices</h4><p>!!!!!!!!!!!!!!!!!!1그림넣기(Monolithic Architecture vs SOA vs Microservices)</p>
+<p><code>coarse-grained</code> : 특정 프로세스(서비스)를 큰 덩어리로 나누는것<br><code>fine-grained</code> :  특정 프로세스(서비스)를 잘게 쪼개는 것</p>
+<h3 id="Microservices를-구현해야-하는-9가지-이유"><a href="#Microservices를-구현해야-하는-9가지-이유" class="headerlink" title="Microservices를 구현해야 하는 9가지 이유"></a>Microservices를 구현해야 하는 9가지 이유</h3><ul>
+<li>Easy To Build &amp; Maintain</li>
+<li>Continuous Delivery</li>
+<li>Hybrid Technologies</li>
+<li>Cross Team Coordination</li>
+<li>Higher Quality Code</li>
+<li>Smarter Scaling</li>
+<li>Risk Reduction</li>
+<li>Promote Big Data Best Practices</li>
+<li>Improved ROI with reduced TCO</li>
+</ul>
+<h4 id="Illustration-of-Monolithic-Module-Refactoring"><a href="#Illustration-of-Monolithic-Module-Refactoring" class="headerlink" title="Illustration of Monolithic Module Refactoring"></a>Illustration of Monolithic Module Refactoring</h4><p>!!!!!!!!!!!!!!!!!!!그림넣기(Illustration of Monolithic Module Refactoring)</p>
+<hr>
+<p>.</p>
+<p>Top 9 Reasons to implement Microservices</p>
+<ul>
+<li>Easy To Build &amp; Maintain</li>
+<li>Continuous Delivery</li>
+<li>Hybrid Technologies</li>
+<li>Cross Team Coordination</li>
+<li>Higher Quality Code</li>
+<li>Smarter Scaling</li>
+<li>Risk Reduction</li>
+<li>Promote Big Data Best Practices</li>
+<li>Improved ROI with reduced TCO</li>
+</ul>
+<h4 id="Illustration-of-Monolithic-Module-Refactoring-1"><a href="#Illustration-of-Monolithic-Module-Refactoring-1" class="headerlink" title="Illustration of Monolithic Module Refactoring"></a>Illustration of Monolithic Module Refactoring</h4><p>!!!!!!!!!!!!!! 그림넣기</p>
+<h4 id="The-twelve-Factors"><a href="#The-twelve-Factors" class="headerlink" title="The twelve Factors"></a>The twelve Factors</h4><p>I. Codebase: One codebase that is tracked in revision control, with many deployments<br>II. Dependencies: Explicitly declare and isolate dependencies<br>III.Configuration: Store Configuration in the environment<br>IV.Backing services: Treat backing services as attached resources<br>V. Build, release, run: Strictly separate build and run stages<br>VI.Processes: Execute the app as one or more stateless processes<br>VII.Port binding: Export services with port binding<br>VIII.Concurrency: Scale out using the process model<br>IX.Disposability: 빠른 시작 및 효율적인 종료가 가능하다.<br>X. Development and production parity: Keep development, staging, and production as similar as possible<br>XI.Logs: Treat logs as event streams<br>XII.Admin processes: Run administrative and management tasks as one-off processes</p>
+<p>-</p>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2850951807285210"
+     data-ad-slot="1831621923"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://KKimSangHeon.github.io/2019/06/08/msa2/" data-id="cjwn2kyjy00m138v70fe6fv0o" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/KKimSangHeon/" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/tkdgjs1501/" target="_blank">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/06/08/msa3/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            msa3
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/06/06/msa1/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">msa1</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">16</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Travel/">Travel</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/">CS</a><span class="category-list-count">63</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Data-Base/">Data Base</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Design-Pattern/">Design Pattern</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/IOT/">IOT</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/MSA/">MSA</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Operating-System/">Operating System</a><span class="category-list-count">30</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/">Etc</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/HEX-Team/">HEX Team</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/면접/">면접</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/아무거나/">아무거나</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/자격증/">자격증</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">69</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/C/">C++</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Embeded-C/">Embeded C</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Java/">Java</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Python/">Python</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/SQL-Oracle/">SQL(Oracle)</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">45</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/OS/Linux/">Linux</a><span class="category-list-count">45</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/">Web/App</a><span class="category-list-count">26</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Angular2/">Angular2</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Firebase/">Firebase</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Servlet-JSP/">Servlet/JSP</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Spring/">Spring</a><span class="category-list-count">8</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="auto"
+     data-ad-client="ca-pub-2850951807285210"
+     data-ad-slot="1831621923"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Kim Sang Heon</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'https-kkimsangheon-github-io-2';
+    
+    
+    var disqus_url = 'http://KKimSangHeon.github.io/2019/06/08/msa2/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

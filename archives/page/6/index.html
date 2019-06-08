@@ -162,6 +162,201 @@ ga('send', 'pageview');
         <article class="article article-summary">
     <div class="article-summary-inner">
         
+        <a href="/2019/02/28/operating-system23/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/os.png)" alt="23.페이지 교체 필요성, 희생 페이지 설정 원칙" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2019/02/28/operating-system23/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/CS/">CS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/CS/Operating-System/">Operating System</a>
+            </div>
+            <div class="date"><time datetime="2019-02-28T05:39:51.000Z" itemprop="datePublished">2019-02-28</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/02/28/operating-system23/">23.페이지 교체 필요성, 희생 페이지 설정 원칙</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            가상메모리프로세스를 페이지 크기로 쪼개서 메인메모리로 올리는데 당장 필요한 것들만 올리고 보자
+그러다 메모리가 꽉차게 되면 한놈을 쫒아내고 필요한놈을 불러온다,
+Demand Paging프로세스 이미지는 backing store 에 저장프로세스는 페이지의 집합
+가상메모리를 위한 하드웨어 지원valid 비트 추가된 페이지 테이블backing store (= s
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2019/02/27/operating-system22/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/os.png)" alt="22.가상메모리 개요와 원리" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2019/02/27/operating-system22/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/CS/">CS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/CS/Operating-System/">Operating System</a>
+            </div>
+            <div class="date"><time datetime="2019-02-26T22:48:09.000Z" itemprop="datePublished">2019-02-27</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/02/27/operating-system22/">22.가상메모리 개요와 원리</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            일정크기로 자르는 페이징논리적 크기로 자르는 세그멘테이션
+보호와 공유적인 측면에서는 페이징보다 세그먼트가 낫다.
+세그먼트는 코드,데이터,스택이라고 잘랐을 때 각 크기는 다르다. 다른 데이터를 남는부분에 넣을라 하면 들어갈 수가 없다. 즉 외부단편화가 발생한다. 치명적인 문제! 외부단편화는 너무 치명적이다.
+그럼 세그멘테이션과 페이징을 합치면 좋지않을까?1.
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2019/02/26/operating-system21/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/os.png)" alt="21.세그멘트 테이블, 주소변환" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2019/02/26/operating-system21/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/CS/">CS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/CS/Operating-System/">Operating System</a>
+            </div>
+            <div class="date"><time datetime="2019-02-26T11:40:29.000Z" itemprop="datePublished">2019-02-26</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/02/26/operating-system21/">21.세그멘트 테이블, 주소변환</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            내부단편화, 페이지 테이블파워를 키면 OS가 메인 메모리로 올라간다. 프로세스들이 메모리에 연속으로 들어가게되면외부단편화 문제가 발생그래서 메모리에 프로그램을 프레임 단위로 나눠 흩어져서 들어가게 했다.하지만 CPU는 페이지 테이블로 인해 연속적으로 위치한다고 생각하게 된다.페이지를 이용해서 내부단편화가 발생하지만 이는 미미한 정도이다!! 페이지 테이블은 
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2019/02/26/operating-system20/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/os.png)" alt="20.페이지 테이블, 주소변환/페이징에서의 주소변환" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2019/02/26/operating-system20/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/CS/">CS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/CS/Operating-System/">Operating System</a>
+            </div>
+            <div class="date"><time datetime="2019-02-25T23:57:15.000Z" itemprop="datePublished">2019-02-26</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/02/26/operating-system20/">20.페이지 테이블, 주소변환/페이징에서의 주소변환</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            페이지 테이블, 주소변환
+주소변환?컴퓨터에는 CPU, 메모리, 보조기억장치가 존재.파워를 켜면 메모리 안에 OS가 들어오고 요청하는 대로 프로그램들이 메모리로 들어온다.프로그램들이 연속으로 들어갈 경우 외부단편화 문제가 발생한다. 그래서 메모리를 프레임 단위로 쪼개서 넣는다. 프로세스들은 흩어져서 프레임 단위로 저장된다. 이것이 가능한것은 CPU와 메모리 
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
         <a href="/2019/02/25/operating-system19/" class="thumbnail">
     
     
@@ -441,204 +636,6 @@ OS : 하드웨어를 어플리케이션이 활용할 수 있도록 함.CPU 자�
 Reader &amp; WriterDB 읽기만 하는 프로세스 DB를 바꾸는 프로세스
 A가 DB를 읽고 있을 때 B가 읽을 수 있다.즉 한 프로세스가 DB를 읽을 때 다른 프로세스도 읽을 수 있게 허용해줘야 한다.
 The first R/W problem (readers-preference)리더가 있으면 라이터가 미뤄지는
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/02/21/operating-system13/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/os.png)" alt="13.전통적 동기화 문제, 생산자-소비자 문제" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2019/02/21/operating-system13/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/CS/">CS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/CS/Operating-System/">Operating System</a>
-            </div>
-            <div class="date"><time datetime="2019-02-21T13:10:14.000Z" itemprop="datePublished">2019-02-21</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/02/21/operating-system13/">13.전통적 동기화 문제, 생산자-소비자 문제</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            OS에서 가장중요한게 프로세스 관리이중 CPU 스케줄링, 프로세스 동기화가 중요하다.이때 임계구역 처리를 잘해야한다.
-전통적 동기화 예제1.Producer and Consumer Problem(생산자-소비자 문제, 유한버퍼 문제 (Bounded Buffer Problem))2.Readers-Writers Problem(공유 데이터베이스 접근)3.Dining
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/02/20/operating-system12/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/os.png)" alt="12.세마포를 사용한 프로세스 동기화" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2019/02/20/operating-system12/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/CS/">CS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/CS/Operating-System/">Operating System</a>
-            </div>
-            <div class="date"><time datetime="2019-02-20T14:16:51.000Z" itemprop="datePublished">2019-02-20</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/02/20/operating-system12/">12.세마포를 사용한 프로세스 동기화</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-프로세스 관리에서 중요한것들CPU 스케줄링 : 이전포스팅 참고
-프로세스(쓰레드) 동기화필요이유 : 보통컴퓨터 안에있는 프로세스들은 독립적이지 않고 협조적이므로 즉 공통된 자원에 접근함동기화가 되지 않으면? : 누군가는 계속 입금하고 누군가는 출금하는 로직이 있을 때 다 더한값이 0이 아닐 수 있다.임계구역 : 공통적으로 사용되는 부분
-임계구역 문제 해결 
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/02/19/operating-system11/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/os.png)" alt="11.임계구역 문제, 동기화 도구" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2019/02/19/operating-system11/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/CS/">CS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/CS/Operating-System/">Operating System</a>
-            </div>
-            <div class="date"><time datetime="2019-02-19T11:04:12.000Z" itemprop="datePublished">2019-02-19</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/02/19/operating-system11/">11.임계구역 문제, 동기화 도구</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            임계구역 문제(critical-section problem)여러개의 쓰레드로 이뤄진 시스템에서 각각의 쓰레드는 코드영역을 갖고있는데 이를 크리티컬 섹션이라한다. 또한 쓰레드로 부터 공통으로 사용되고 변경될 수 있는 부분을 의미한다.
-어떤 복수개의 쓰레드들이 공통적으로 사용하는 부분.
-임계영역 해결이를 해결하기 위해 다음 세가지가 만족되어야 한다.
-Mutua
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/02/18/operating-system10/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/os.png)" alt="10.프로세스 동기화의 중요성, 은행계좌 문제" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2019/02/18/operating-system10/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/CS/">CS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/CS/Operating-System/">Operating System</a>
-            </div>
-            <div class="date"><time datetime="2019-02-18T13:31:45.000Z" itemprop="datePublished">2019-02-18</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/02/18/operating-system10/">10.프로세스 동기화의 중요성, 은행계좌 문제</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            1. 쓰레드란?프로그램 내부의 흐름, 맥
-맥이 하나만 있는 프로그램 : 싱글쓰레드여러개있는것: 멀티(다중)쓰레드
-쓰레드가 여러개가 빠르게 동시에(왔다갔다하면서) 실행됨. 우리는 CPU하나임을 가정하고 공부하기 때문에
-1.1 쓰레드 구조프로세스의 메모리 공간 공유 : (code, data)프로세스의 자원 공유 : (file, i/o, …)비공유: 개별적인 P
         </p>
     </div>
 </article>
