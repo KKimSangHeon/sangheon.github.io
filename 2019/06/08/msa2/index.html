@@ -16,10 +16,12 @@
 <meta property="og:url" content="http://KKimSangHeon.github.io/2019/06/08/msa2/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="DDD의 이점 기술보다는 비즈니스에 초점을 맞춘다, 코드르 재사용하고 읽기 쉽다. 개선사항이 있을 때 유연하다.  성공적인 DDD 도메인전문가, 기술 전문가의 협업을 통해 모델 빌드 어플리케이션의 반복적인 빌드 테스트하고 테스트하고 또 테스트하라  세계지도에서 DDD가 어떻게 적용되는지 보자.Model Driven DesiginDomain = Word Ma">
-<meta property="og:updated_time" content="2019-06-08T05:20:02.962Z">
+<meta property="og:image" content="http://kkimsangheon.github.io/2019/06/08/msa2/MonolithicArchitecturevsMicroservice.PNG">
+<meta property="og:updated_time" content="2019-06-08T12:49:56.678Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="msa2">
 <meta name="twitter:description" content="DDD의 이점 기술보다는 비즈니스에 초점을 맞춘다, 코드르 재사용하고 읽기 쉽다. 개선사항이 있을 때 유연하다.  성공적인 DDD 도메인전문가, 기술 전문가의 협업을 통해 모델 빌드 어플리케이션의 반복적인 빌드 테스트하고 테스트하고 또 테스트하라  세계지도에서 DDD가 어떻게 적용되는지 보자.Model Driven DesiginDomain = Word Ma">
+<meta name="twitter:image" content="http://kkimsangheon.github.io/2019/06/08/msa2/MonolithicArchitecturevsMicroservice.PNG">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
 
@@ -243,7 +245,7 @@ ga('send', 'pageview');
 <li>빠른혁신이 가능하다.</li>
 <li>명확한 소유권 그리고 책임의 분배.</li>
 </ul>
-<h4 id="Microservice-Architecture"><a href="#Microservice-Architecture" class="headerlink" title="Microservice Architecture"></a>Microservice Architecture</h4><p>!!!!!!!!!!!!!!!!!!!그림넣기(Microservice Architecture)</p>
+<h4 id="Microservice-Architecture"><a href="#Microservice-Architecture" class="headerlink" title="Microservice Architecture"></a>Microservice Architecture</h4>
 <ul>
 <li>각 microservice는 컨테이너에 할당된다. 컨테이너는 microservice 기반 어플리케이션을 개별적으로 개발, 배포하기 좋은 방법이다.</li>
 <li>microservice 간 stateless server 형태로 소통한다.</li>
@@ -257,10 +259,11 @@ ga('send', 'pageview');
 <li>하나의 서비스가 문제를 일으켜도 나머지는 상관없다.</li>
 </ul>
 <h4 id="Microservices-Disadvantages"><a href="#Microservices-Disadvantages" class="headerlink" title="Microservices - Disadvantages"></a>Microservices - Disadvantages</h4><p>Complex networking으로 인해 데이터베이스, 서버의 오버헤드 발생</p>
-<h4 id="Monolithic-Architecture-vs-Microservice-Architecture"><a href="#Monolithic-Architecture-vs-Microservice-Architecture" class="headerlink" title="Monolithic Architecture vs Microservice Architecture"></a>Monolithic Architecture vs Microservice Architecture</h4><p>!!!!!!!!!!!!!!!!!!!그림넣기(Monolithic Architecture vs Microservice)</p>
+<h4 id="Monolithic-Architecture-vs-Microservice-Architecture"><a href="#Monolithic-Architecture-vs-Microservice-Architecture" class="headerlink" title="Monolithic Architecture vs Microservice Architecture"></a>Monolithic Architecture vs Microservice Architecture</h4><img src="/2019/06/08/msa2/MonolithicArchitecturevsMicroservice.PNG" alt="Monolithic vs Microservice" title="Monolithic vs Microservice">
 <p><code>Monolithic Architecture</code> : 모든 기능이 단일 코드베이스에 위치하고 하나의 DB를 사용한다. 또한 한 기능이 마비되면 전체가 마비되며 크고 복잡한 어플리케이션형태</p>
-<h4 id="Microservices-vs-SOA"><a href="#Microservices-vs-SOA" class="headerlink" title="Microservices vs SOA"></a>Microservices vs SOA</h4><p>!!!!!!!!!!!!!!!!!!!그림넣기(MicroservicesvsSOA)<br>SOA 컨센은 centrallize이다.<br>MS는 not centrallize이다.<br>즉 SOA는 오케스트라와 같다. (한 지위자가 전체를 통솔한다) Microservices는 발레와 같다. (각 댄서가 각자 율동한다)</p>
-<h4 id="Monolithic-Architecture-vs-SOA-vs-Microservices"><a href="#Monolithic-Architecture-vs-SOA-vs-Microservices" class="headerlink" title="Monolithic Architecture vs SOA vs Microservices"></a>Monolithic Architecture vs SOA vs Microservices</h4><p>!!!!!!!!!!!!!!!!!!1그림넣기(Monolithic Architecture vs SOA vs Microservices)</p>
+<h4 id="Microservices-vs-SOA"><a href="#Microservices-vs-SOA" class="headerlink" title="Microservices vs SOA"></a>Microservices vs SOA</h4><img src="/2019/06/08/msa2/MicroservicesvsSOA.PNG" alt="Microservices vs SOA" title="Microservices vs SOA">
+<p>SOA 컨센은 centrallize이다.<br>MS는 not centrallize이다.<br>즉 SOA는 오케스트라와 같다. (한 지위자가 전체를 통솔한다) Microservices는 발레와 같다. (각 댄서가 각자 율동한다)</p>
+<h4 id="Monolithic-Architecture-vs-SOA-vs-Microservices"><a href="#Monolithic-Architecture-vs-SOA-vs-Microservices" class="headerlink" title="Monolithic Architecture vs SOA vs Microservices"></a>Monolithic Architecture vs SOA vs Microservices</h4><img src="/2019/06/08/msa2/MonolithicArchitecturevsSOAvsMicroservices.PNG" alt="Microservices vs SOA" title="Microservices vs SOA">
 <p><code>coarse-grained</code> : 특정 프로세스(서비스)를 큰 덩어리로 나누는것<br><code>fine-grained</code> :  특정 프로세스(서비스)를 잘게 쪼개는 것</p>
 <h3 id="Microservices를-구현해야-하는-9가지-이유"><a href="#Microservices를-구현해야-하는-9가지-이유" class="headerlink" title="Microservices를 구현해야 하는 9가지 이유"></a>Microservices를 구현해야 하는 9가지 이유</h3><ul>
 <li>Easy To Build &amp; Maintain</li>
@@ -273,9 +276,8 @@ ga('send', 'pageview');
 <li>Promote Big Data Best Practices</li>
 <li>Improved ROI with reduced TCO</li>
 </ul>
-<h4 id="Illustration-of-Monolithic-Module-Refactoring"><a href="#Illustration-of-Monolithic-Module-Refactoring" class="headerlink" title="Illustration of Monolithic Module Refactoring"></a>Illustration of Monolithic Module Refactoring</h4><p>!!!!!!!!!!!!!!!!!!!그림넣기(Illustration of Monolithic Module Refactoring)</p>
-<hr>
-<p>.</p>
+<h4 id="Illustration-of-Monolithic-Module-Refactoring"><a href="#Illustration-of-Monolithic-Module-Refactoring" class="headerlink" title="Illustration of Monolithic Module Refactoring"></a>Illustration of Monolithic Module Refactoring</h4><img src="/2019/06/08/msa2/IllustrationofMonolithicModuleRefactoring.PNG" alt="IllustrationofMonolithicModuleRefactoring" title="IllustrationofMonolithicModuleRefactoring">
+<h2 id="Microservice-Architecture는-3계층이다-Container-Orchestration-Application"><a href="#Microservice-Architecture는-3계층이다-Container-Orchestration-Application" class="headerlink" title="Microservice Architecture는 3계층이다.Container/ Orchestration /Application"></a>Microservice Architecture는 3계층이다.Container/ Orchestration /Application</h2><p>.</p>
 <p>Top 9 Reasons to implement Microservices</p>
 <ul>
 <li>Easy To Build &amp; Maintain</li>
@@ -290,7 +292,6 @@ ga('send', 'pageview');
 </ul>
 <h4 id="Illustration-of-Monolithic-Module-Refactoring-1"><a href="#Illustration-of-Monolithic-Module-Refactoring-1" class="headerlink" title="Illustration of Monolithic Module Refactoring"></a>Illustration of Monolithic Module Refactoring</h4><p>!!!!!!!!!!!!!! 그림넣기</p>
 <h4 id="The-twelve-Factors"><a href="#The-twelve-Factors" class="headerlink" title="The twelve Factors"></a>The twelve Factors</h4><p>I. Codebase: One codebase that is tracked in revision control, with many deployments<br>II. Dependencies: Explicitly declare and isolate dependencies<br>III.Configuration: Store Configuration in the environment<br>IV.Backing services: Treat backing services as attached resources<br>V. Build, release, run: Strictly separate build and run stages<br>VI.Processes: Execute the app as one or more stateless processes<br>VII.Port binding: Export services with port binding<br>VIII.Concurrency: Scale out using the process model<br>IX.Disposability: 빠른 시작 및 효율적인 종료가 가능하다.<br>X. Development and production parity: Keep development, staging, and production as similar as possible<br>XI.Logs: Treat logs as event streams<br>XII.Admin processes: Run administrative and management tasks as one-off processes</p>
-<p>-</p>
 
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

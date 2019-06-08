@@ -10,16 +10,18 @@
     
     
 
-      <meta name="description" content="Microservice Architecture는 3계층이다.Container/ Orchestration /Application Database Design for Microservices트랜잭션, Aggregates에 영향을 많이끼친다, Front Microservice는 쉽다. ACID가 적용되는 것들Transaction, Aggregates, Entit">
+      <meta name="description" content="Database Design for Microservices트랜잭션, Aggregates에 영향을 많이끼친다. Front Microservice는 쉽다. ACID가 적용되는 것들Transaction, Aggregates, Entity ACID vs BASEACID  Atomicity, Consistency, Isolation, and Durability S">
 <meta property="og:type" content="article">
 <meta property="og:title" content="msa3">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2019/06/08/msa3/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="Microservice Architecture는 3계층이다.Container/ Orchestration /Application Database Design for Microservices트랜잭션, Aggregates에 영향을 많이끼친다, Front Microservice는 쉽다. ACID가 적용되는 것들Transaction, Aggregates, Entit">
-<meta property="og:updated_time" content="2019-06-08T05:20:02.058Z">
+<meta property="og:description" content="Database Design for Microservices트랜잭션, Aggregates에 영향을 많이끼친다. Front Microservice는 쉽다. ACID가 적용되는 것들Transaction, Aggregates, Entity ACID vs BASEACID  Atomicity, Consistency, Isolation, and Durability S">
+<meta property="og:image" content="http://kkimsangheon.github.io/2019/06/08/msa3/EventsChoreography.PNG">
+<meta property="og:updated_time" content="2019-06-08T12:57:44.009Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="msa3">
-<meta name="twitter:description" content="Microservice Architecture는 3계층이다.Container/ Orchestration /Application Database Design for Microservices트랜잭션, Aggregates에 영향을 많이끼친다, Front Microservice는 쉽다. ACID가 적용되는 것들Transaction, Aggregates, Entit">
+<meta name="twitter:description" content="Database Design for Microservices트랜잭션, Aggregates에 영향을 많이끼친다. Front Microservice는 쉽다. ACID가 적용되는 것들Transaction, Aggregates, Entity ACID vs BASEACID  Atomicity, Consistency, Isolation, and Durability S">
+<meta name="twitter:image" content="http://kkimsangheon.github.io/2019/06/08/msa3/EventsChoreography.PNG">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
 
@@ -173,8 +175,7 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>Microservice Architecture는 3계층이다.<br>Container/ Orchestration /Application</p>
-<h3 id="Database-Design-for-Microservices"><a href="#Database-Design-for-Microservices" class="headerlink" title="Database Design for Microservices"></a>Database Design for Microservices</h3><p>트랜잭션, Aggregates에 영향을 많이끼친다,</p>
+            <h3 id="Database-Design-for-Microservices"><a href="#Database-Design-for-Microservices" class="headerlink" title="Database Design for Microservices"></a>Database Design for Microservices</h3><p>트랜잭션, Aggregates에 영향을 많이끼친다.</p>
 <p>Front Microservice는 쉽다.</p>
 <h4 id="ACID가-적용되는-것들"><a href="#ACID가-적용되는-것들" class="headerlink" title="ACID가 적용되는 것들"></a>ACID가 적용되는 것들</h4><p>Transaction, Aggregates, Entity</p>
 <h3 id="ACID-vs-BASE"><a href="#ACID-vs-BASE" class="headerlink" title="ACID vs BASE"></a>ACID vs BASE</h3><p>ACID</p>
@@ -214,18 +215,21 @@ ga('send', 'pageview');
 <li>최소 O(4n) 메세지 발생, 여러번시도할 경우 O(n^2)</li>
 <li>lock으로 인한 처리량 감소</li>
 </ul>
-<h4 id="Distributed-Transactions-in-Microservices"><a href="#Distributed-Transactions-in-Microservices" class="headerlink" title="Distributed Transactions in Microservices"></a>Distributed Transactions in Microservices</h4><p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Distributed Transactions in Microservices<br>microservice에는 ACID를 적용하기가 복잡하다. 이는 microservice Architecture가  Single Responsibility Principle (SRP)를 따르므로 각 microservice가 해당 데이터를 유지하고 관리해야하고, microservice의 책임에 대한 지식없이는 다른서비의 데이터에 접근할 수 없기때문이다.</p>
+<h4 id="Distributed-Transactions-in-Microservices"><a href="#Distributed-Transactions-in-Microservices" class="headerlink" title="Distributed Transactions in Microservices"></a>Distributed Transactions in Microservices</h4>
+<p>microservice에는 ACID를 적용하기가 복잡하다. 이는 microservice Architecture가  Single Responsibility Principle (SRP)를 따르므로 각 microservice가 해당 데이터를 유지하고 관리해야하고, microservice의 책임에 대한 지식없이는 다른서비의 데이터에 접근할 수 없기때문이다.</p>
 <p>위 그림에서 두개의 microservice가 하나의 db에 연결되어있는게 왜 잘못되었을까? 우측의 경우에는 API, Queue로 해당 호출이 가능하다. 하지만 좌측의 경우에는 두개의 db 아답터가 가 존재해야 하는데 Isolation 원칙을 위배한다.</p>
-<h4 id="Distributed-Transaction-–-Event-Driven-Architecture-amp-Two-Phase-Commit"><a href="#Distributed-Transaction-–-Event-Driven-Architecture-amp-Two-Phase-Commit" class="headerlink" title="Distributed Transaction – Event Driven Architecture &amp; Two Phase Commit"></a>Distributed Transaction – Event Driven Architecture &amp; Two Phase Commit</h4><p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Distributed Transaction – Event Driven Architecture &amp; Two Phase Commit1</p>
+<h4 id="Distributed-Transaction-–-Event-Driven-Architecture-amp-Two-Phase-Commit"><a href="#Distributed-Transaction-–-Event-Driven-Architecture-amp-Two-Phase-Commit" class="headerlink" title="Distributed Transaction – Event Driven Architecture &amp; Two Phase Commit"></a>Distributed Transaction – Event Driven Architecture &amp; Two Phase Commit</h4>
 <ul>
 <li>이는 가장 일관된 시스템을 제공하지만 Two Phase Commit으로 인해 시스템 성능에 부정적 영향을 끼친다.</li>
 <li>이벤트는 트랜잭션의 매 단계를 실행시키는 트리거이며 각 이벤트는 고유한 ID를 갖는다. 또한 작업이 처리되었으면 커밋되었음을 나타내야 한다.</li>
 </ul>
-<p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Distributed Transaction – Event Driven Architecture &amp; Two Phase Commit2<br>위의 그림은 microservice1이 microservice2에 자동이체를 하는 트랜잭션이다.</p>
+
+<p>위의 그림은 microservice1이 microservice2에 자동이체를 하는 트랜잭션이다.</p>
 <ul>
 <li>completed라는 컬럼은 트랜잭션이 커밋되어야 하는지를 나타내며 microservice1이 완료되면 microservice2를 호출하여 트랜잭션을 완료한다.(그림은 microservice1의 작업이 커밋되고 microservice2의 작업이 커밋되기 전 단계)</li>
 </ul>
-<h4 id="CAP-Theorem"><a href="#CAP-Theorem" class="headerlink" title="CAP Theorem"></a>CAP Theorem</h4><p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!CAP Theorem<br> 분산시스템에서는 일관성(Consistency), 가용성(Availability,항상 데이터를 읽고 쓸 수 있음), 분할 용인(Partition tolerance,데이터베이스를 분할할 수 있고 네트워크 중단에도 계속 동작할 수 있다.)이라는 세 가지 조건을 모두 만족할 수 없다. 대부분 세 조건중 두 가지만 만족시킬 수 있다.<br>만약 가용성을 만족시키려면 BASE(Basically available, soft state, eventually consistent)를 생각해 볼 수 있다. 이를 위해 앞서 설명한 Event Driven Architecture를 도입할 수 있다.<br><code>BASE</code> : 기본적으로 Availability하고, 사용자가 관리하지 않으면 데이터가 expire 될 수 있으며, 언젠가는 데이터가 일관성을 가진다는 것.</p>
+<h4 id="CAP-Theorem"><a href="#CAP-Theorem" class="headerlink" title="CAP Theorem"></a>CAP Theorem</h4>
+<p>분산시스템에서는 일관성(Consistency), 가용성(Availability,항상 데이터를 읽고 쓸 수 있음), 분할 용인(Partition tolerance,데이터베이스를 분할할 수 있고 네트워크 중단에도 계속 동작할 수 있다.)이라는 세 가지 조건을 모두 만족할 수 없다. 대부분 세 조건중 두 가지만 만족시킬 수 있다.<br>만약 가용성을 만족시키려면 BASE(Basically available, soft state, eventually consistent)를 생각해 볼 수 있다. 이를 위해 앞서 설명한 Event Driven Architecture를 도입할 수 있다.<br><code>BASE</code> : 기본적으로 Availability하고, 사용자가 관리하지 않으면 데이터가 expire 될 수 있으며, 언젠가는 데이터가 일관성을 가진다는 것.</p>
 <h4 id="Eventual-Consistency-and-Compensation"><a href="#Eventual-Consistency-and-Compensation" class="headerlink" title="Eventual Consistency and Compensation"></a>Eventual Consistency and Compensation</h4><ul>
 <li>microservice에서 일관성을 다루는 것중 가장 실현 가능한것은 Eventual Consistency이다.</li>
 <li>microservice에서 분산 ACID 트랜잭션을 사용하지 않는다. 대신 미래의 어떤시점에서는 시스템이 결국 일관성을 유지할것을 제안한다.</li>
@@ -264,9 +268,9 @@ ga('send', 'pageview');
 <li>validation microservice가 메세지를 받게되면 user를 검증하지만 메세지 플랫폼 문제가 발생하면 응답을 보내지 못하고 추 후 다시 보낸다.</li>
 </ul>
 <p>그러나 일부메세지가 여러번 발행되더라도 데이터 일관성에는 영향을 미치지 않는다.<br>발생할 수 있는 좋지 않은 시나리오들을 고려함으로써 Eventual Consistency를 충족시킬 수 있으며 비용소모가 심한  distributed transactions를 처리할 필요가 없다.</p>
-<h4 id="Distributed-Transactions-The-Solution"><a href="#Distributed-Transactions-The-Solution" class="headerlink" title="Distributed Transactions: The Solution"></a>Distributed Transactions: The Solution</h4><p>결제하고 배송하는 시스템을 Distributed Transaction방식으로 구현한다고 해보자<br>!!!!!!!!!!!!!!!!!!!!!Distributed Transactions The Solution1</p>
+<h4 id="Distributed-Transactions-The-Solution"><a href="#Distributed-Transactions-The-Solution" class="headerlink" title="Distributed Transactions: The Solution"></a>Distributed Transactions: The Solution</h4><p>결제하고 배송하는 시스템을 Distributed Transaction방식으로 구현한다고 해보자<br></p>
 <p>위와 같은 방식으로 할 수 있으나 일련의 과정은 동기방식이다.<br>이를 비동기 방식으로 처리하기 위해 아래와 같은 방식을 따르면 된다. 즉 쓰레드를 하나 만들어서 처리한다.</p>
-<p>!!!!!!!!!!!!!!!!!!!!!Distributed Transactions The Solution2</p>
+
 <p>안전한 Distributed Transactions를 위해서</p>
 <ul>
 <li>원격 업데이트에 대한 영향 감수</li>
@@ -275,8 +279,7 @@ ga('send', 'pageview');
 <li>하나의 작업단위를 완료하더라도 시스템 오류가 발생하면 동기화 되지 않을 수 있다.</li>
 <li>이를통해볼 때 microservice는 Distributed 트랜잭션에 호의적이지 않다.</li>
 </ul>
-<p>동기관련 문제를 해결할 수 있는 메세지 브로커<br>!!!!!!!!!!!!!!!!!!!!!Distributed Transactions The Solution3</p>
-<p>————————여기부터 지라에 추가</p>
+<p>동기관련 문제를 해결할 수 있는 메세지 브로커<br></p>
 <h4 id="Two-Consequences-of-Eventual-Consistency"><a href="#Two-Consequences-of-Eventual-Consistency" class="headerlink" title="Two Consequences of Eventual Consistency"></a>Two Consequences of Eventual Consistency</h4><ul>
 <li>재시도를 하는것은 시스템에 문제가 생긴것을 의미한다.</li>
 <li>일관성이 결국에는 생기는것이기 때문에 비즈니스 일관성이 충돌하는 경우도 있을 수 있다.<br>만약 책을 구매하는 비즈니스가 있다고 할 때 결제를 하는순간 재고가 있어 결제가 진행되었는데 결제가 완료되는 순간 재고가 없을 때를 가정해보자. 이 때는 비동기식으로 사용자에게 다시 보고하지 않고 환불절차를 진행 후 직원이 처리 할 내용을 conflicts큐에 넣고 제공할 수 있다.</li>
@@ -288,13 +291,14 @@ ga('send', 'pageview');
 <li>분산 트랜잭션의 잘알려진 패턴중 하나가 SAGA이다.</li>
 <li>SAGA는 일련의 local 트랙잭션들을 의미하며 각 트랜잭션은 하나의 서비스안에서 데이터를 업데이트 한다. 첫 번째 트랜잭션은 시스템 작업에 해당하는 외부 요청에 의해 시작되고 이후엔 이전단계 완료가 될 때마다 트리거링되어 작동한다.<br>-SAGA 트랜잭션을 구현하는 인기있는 두 가지 방법이 있다.<h4 id="1-Events-Choreography"><a href="#1-Events-Choreography" class="headerlink" title="1. Events/Choreography"></a>1. Events/Choreography</h4>각 서비스는 다른 서비스의 event, decides를 보고 action을 할지 말지 결정하며 non centralize 한것. (발레와 유사함)</li>
 </ul>
-<p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!EventsChoreography<br>첫번째 서비스는 트랜잭션을 실행하고 이벤트를 publish한다. 발행된 이벤트는 하나 혹은 그 이상의 서비스가 지켜보며 해당 이벤트는 로컬 트랜잭션을 실행하고 새로운 이벤트를 publish한다.<br>분산 트랜잭션은 마지막에 서비스가 로컬 트랜잭션을 실행할 때 종료된되며 마지막 이벤트는 이벤트를 publish하지 않는다.<br>분산 트랜잭션의 경우 롤백에 대한 로직은 직접 만들어야 한다.</p>
+<img src="/2019/06/08/msa3/EventsChoreography.PNG" alt="Events/Choreography" title="Events/Choreography">
+<p>첫번째 서비스는 트랜잭션을 실행하고 이벤트를 publish한다. 발행된 이벤트는 하나 혹은 그 이상의 서비스가 지켜보며 해당 이벤트는 로컬 트랜잭션을 실행하고 새로운 이벤트를 publish한다.<br>분산 트랜잭션은 마지막에 서비스가 로컬 트랜잭션을 실행할 때 종료된되며 마지막 이벤트는 이벤트를 publish하지 않는다.<br>분산 트랜잭션의 경우 롤백에 대한 로직은 직접 만들어야 한다.</p>
 <p>Event/Choreography design의 장단점</p>
 <ul>
 <li>이해하기 쉽고 SAGA패턴을 구현하는 자연스러운 방법이다. 구축에 많은 노력이 필요하지 않으며 느슨한 결합을 유지한다. 2~4단계로 구성되는 트랜잭션에 매우 적합하다.</li>
 <li>어떤 서비스가 어떤 이벤트를 수신하는지 추적하기 어렵기 때문에 단계를 계속 추가할 경우 혼란스러울 수 있다.</li>
 </ul>
-<h4 id="2-Command-Orchestration-coordinator-서비스가-의사결정-및-sequncing-비즈니스-로직에-대한-책임이-있는-것-즉-centralize-한것-오케스트라와-유사함"><a href="#2-Command-Orchestration-coordinator-서비스가-의사결정-및-sequncing-비즈니스-로직에-대한-책임이-있는-것-즉-centralize-한것-오케스트라와-유사함" class="headerlink" title="2. Command/Orchestration : coordinator 서비스가 의사결정 및 sequncing 비즈니스 로직에 대한 책임이 있는 것. 즉 centralize 한것. (오케스트라와 유사함)"></a>2. Command/Orchestration : coordinator 서비스가 의사결정 및 sequncing 비즈니스 로직에 대한 책임이 있는 것. 즉 centralize 한것. (오케스트라와 유사함)</h4><p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!CommandOrchestration</p>
+<h4 id="2-Command-Orchestration-coordinator-서비스가-의사결정-및-sequncing-비즈니스-로직에-대한-책임이-있는-것-즉-centralize-한것-오케스트라와-유사함"><a href="#2-Command-Orchestration-coordinator-서비스가-의사결정-및-sequncing-비즈니스-로직에-대한-책임이-있는-것-즉-centralize-한것-오케스트라와-유사함" class="headerlink" title="2. Command/Orchestration : coordinator 서비스가 의사결정 및 sequncing 비즈니스 로직에 대한 책임이 있는 것. 즉 centralize 한것. (오케스트라와 유사함)"></a>2. Command/Orchestration : coordinator 서비스가 의사결정 및 sequncing 비즈니스 로직에 대한 책임이 있는 것. 즉 centralize 한것. (오케스트라와 유사함)</h4><img src="/2019/06/08/msa3/CommandOrchestration.PNG" alt="CommandOrchestration" title="CommandOrchestration">
 <ul>
 <li>Orchestration 접근법에서는 각 참가자에게 할 일을 알려줄 책임이 있는 새로운 서비스를 정의한다. 각 서비스와 명령/응답 형태로 통신하여 수행해야 할 작업을 알려준다.</li>
 <li>위 그림의 경우 Orchestration은 트랜잭션을 실행하는데 필요한 흐름을 알고있다.</li>

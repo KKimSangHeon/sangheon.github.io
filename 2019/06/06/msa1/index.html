@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://KKimSangHeon.github.io/2019/06/06/msa1/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="Implementing Domain-Driven Design For Microservices ArchitectureDDD의 원칙Values: Meaning, Unity, Usability, Fitness, Flexibility, MaintainabilityPrinciples:  Continuous Learning, Knowledge Rich Design,">
-<meta property="og:updated_time" content="2019-06-08T06:10:28.955Z">
+<meta property="og:updated_time" content="2019-06-08T12:41:42.812Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="msa1">
 <meta name="twitter:description" content="Implementing Domain-Driven Design For Microservices ArchitectureDDD의 원칙Values: Meaning, Unity, Usability, Fitness, Flexibility, MaintainabilityPrinciples:  Continuous Learning, Knowledge Rich Design,">
@@ -195,12 +195,12 @@ ga('send', 'pageview');
 <li>복잡한 도메인 디자인은 모델을 기반으로 한다.</li>
 <li>대부분의 소프트웨어 프로젝트는 도메인 및 도메인로직에 중점을 둔다. (시스템 구현을 위한 특정 기술에 중점을 두는것이 아님)</li>
 </ul>
-<h4 id="전통적인-Layered-Architecture"><a href="#전통적인-Layered-Architecture" class="headerlink" title="전통적인 Layered Architecture"></a>전통적인 Layered Architecture</h4><p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!그림 추가할것</p>
+<h4 id="전통적인-Layered-Architecture"><a href="#전통적인-Layered-Architecture" class="headerlink" title="전통적인 Layered Architecture"></a>전통적인 Layered Architecture</h4>
 <p><code>User Interface</code>: 정보를 보여주고 사용자의 명령을 해석<br><code>Application</code> : 비즈니스 rule,지식 미포함 / 작업 조율 그리고 도메인에 작업 위임역할<br><code>Domain</code> : 비즈니스로직, 룰 포함/ 소프트웨어의 심장부<br><code>Infrastructure</code> : 상위 레이어를 지원하는 기술제공</p>
-<h4 id="Domain-Driven-Design-with-Onion-Architecture"><a href="#Domain-Driven-Design-with-Onion-Architecture" class="headerlink" title="Domain-Driven Design with Onion Architecture"></a>Domain-Driven Design with Onion Architecture</h4><p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!그림 추가할것</p>
+<h4 id="Domain-Driven-Design-with-Onion-Architecture"><a href="#Domain-Driven-Design-with-Onion-Architecture" class="headerlink" title="Domain-Driven Design with Onion Architecture"></a>Domain-Driven Design with Onion Architecture</h4>
 <p><code>Core</code>: 특정 도메인이나 기술에 국한되지 않는 building blocks로 볼 수 있다. 예로 List, Maps, Case Classes, Actor and Lenses가 있다.<br><code>Domain</code> : 공통언어를 통해 작성된 비즈니스 로직 관련 메소드, 클래스가 상주하는 영역이다.<br><code>API</code> :  도메인의 진입점 역할을 한다. API는 도메인을 조작하지 못하도록 immutable한 객체만 노출해야 한다. 코어, 도메인은 API에 액세스할 수 있지만 Infrastructure는 API에 액세스할 수 없다.<br><code>Infrastructure</code> : DB, 사용자 인터페이스 같은 다얗안 기술을 포함하는 가장 바깥쪽 영역이다. 모든 영역은 Infrastructure 영역에 접근 할 수 있다.</p>
 <h4 id="Bounded-Contexts-에-대해-자세히-알아보자"><a href="#Bounded-Contexts-에-대해-자세히-알아보자" class="headerlink" title="Bounded Contexts 에 대해 자세히 알아보자"></a>Bounded Contexts 에 대해 자세히 알아보자</h4><p>전체 비즈니스 모델은 너무 커 한번에 이해하기 힘들다. Bounded Contexts는 서로 다른 모델간 경계와 관계를 표현하기 위해 존재하는 명시적인 경계로서 경계 내의 Ubiquitous Language는 특정한 의미를 갖는다.</p>
-<p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!그림 추가할것</p>
+
 <h4 id="Bounded-Context의-구현"><a href="#Bounded-Context의-구현" class="headerlink" title="Bounded Context의 구현"></a>Bounded Context의 구현</h4><ul>
 <li>Bounded Context당 한팀이 존재한다.</li>
 <li>코드 Repository가 Bounded Context마다 존재한다.</li>
@@ -224,7 +224,7 @@ ga('send', 'pageview');
 <li>다른 Aggregates참조는 Identity로 하라.</li>
 <li>경계밖에서의 일관성유지</li>
 </ol>
-<h4 id="Relationships-Between-Aggregate"><a href="#Relationships-Between-Aggregate" class="headerlink" title="Relationships Between Aggregate"></a>Relationships Between Aggregate</h4><p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!사진넣기</p>
+<h4 id="Relationships-Between-Aggregate"><a href="#Relationships-Between-Aggregate" class="headerlink" title="Relationships Between Aggregate"></a>Relationships Between Aggregate</h4><p>RelationshipsBetweenAggregate<br></p>
 <p>Aggregate Root만 다른 Bounded Context의 Aggregate Root에 접근 가능</p>
 <h4 id="Aggregate-팁"><a href="#Aggregate-팁" class="headerlink" title="Aggregate 팁"></a>Aggregate 팁</h4><ul>
 <li>Aggregate는 항상 정답이 아니다.</li>
