@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-06-08T05:23:44.886Z</updated>
+  <updated>2019-06-08T14:36:51.027Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://KKimSangHeon.github.io/2019/06/08/msa4/"/>
     <id>http://KKimSangHeon.github.io/2019/06/08/msa4/</id>
     <published>2019-06-08T05:19:44.000Z</published>
-    <updated>2019-06-08T05:23:44.886Z</updated>
+    <updated>2019-06-08T14:36:51.027Z</updated>
     
     <content type="html"><![CDATA[<h3 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h3><p>Using DevOps to Solve your Delivery Challenges</p>
 <ul>
@@ -149,7 +149,7 @@
 <li>통합 testing 진행<br><code>3. Deploy to Prod</code></li>
 <li>사용자가 사용할 수 있도록 빌드</li>
 </ul>
-<h4 id="Continuous-Delivery-vs-continuous-Deployment"><a href="#Continuous-Delivery-vs-continuous-Deployment" class="headerlink" title="Continuous Delivery vs continuous Deployment"></a>Continuous Delivery vs continuous Deployment</h4><p>!!!!!!!!!!!!!!!!!!!!!!!!!!Continuous Delivery vs continuous Deployment</p>
+<h4 id="Continuous-Delivery-vs-continuous-Deployment"><a href="#Continuous-Delivery-vs-continuous-Deployment" class="headerlink" title="Continuous Delivery vs continuous Deployment"></a>Continuous Delivery vs continuous Deployment</h4><p>!!!!!!!!!!!!!!!!!!!!!!!!!!Continuous Delivery vs continuous Deployment<br></p>
 <h4 id="Zero-Downtime-Deployment"><a href="#Zero-Downtime-Deployment" class="headerlink" title="Zero Downtime Deployment"></a>Zero Downtime Deployment</h4><p>서비스 중단없이 새로운 버전을 배포하는것을 의미한다. DevOps는 잦은 배포를 하므로 필요하다.</p>
 <h4 id="Zero-Downtime-Deployment-특징"><a href="#Zero-Downtime-Deployment-특징" class="headerlink" title="Zero Downtime Deployment 특징"></a>Zero Downtime Deployment 특징</h4><ul>
 <li>어플리케이션은 항상 사용가능하다.</li>
@@ -370,7 +370,7 @@
     <link href="http://KKimSangHeon.github.io/2019/06/08/msa2/"/>
     <id>http://KKimSangHeon.github.io/2019/06/08/msa2/</id>
     <published>2019-06-08T05:18:16.000Z</published>
-    <updated>2019-06-08T12:49:56.678Z</updated>
+    <updated>2019-06-08T14:31:19.504Z</updated>
     
     <content type="html"><![CDATA[<h4 id="DDD의-이점"><a href="#DDD의-이점" class="headerlink" title="DDD의 이점"></a>DDD의 이점</h4><ul>
 <li>기술보다는 비즈니스에 초점을 맞춘다,</li>
@@ -474,20 +474,7 @@
 <li>Improved ROI with reduced TCO</li>
 </ul>
 <h4 id="Illustration-of-Monolithic-Module-Refactoring"><a href="#Illustration-of-Monolithic-Module-Refactoring" class="headerlink" title="Illustration of Monolithic Module Refactoring"></a>Illustration of Monolithic Module Refactoring</h4><img src="/2019/06/08/msa2/IllustrationofMonolithicModuleRefactoring.PNG" alt="IllustrationofMonolithicModuleRefactoring" title="IllustrationofMonolithicModuleRefactoring">
-<h2 id="Microservice-Architecture는-3계층이다-Container-Orchestration-Application"><a href="#Microservice-Architecture는-3계층이다-Container-Orchestration-Application" class="headerlink" title="Microservice Architecture는 3계층이다.Container/ Orchestration /Application"></a>Microservice Architecture는 3계층이다.Container/ Orchestration /Application</h2><p>.</p>
-<p>Top 9 Reasons to implement Microservices</p>
-<ul>
-<li>Easy To Build &amp; Maintain</li>
-<li>Continuous Delivery</li>
-<li>Hybrid Technologies</li>
-<li>Cross Team Coordination</li>
-<li>Higher Quality Code</li>
-<li>Smarter Scaling</li>
-<li>Risk Reduction</li>
-<li>Promote Big Data Best Practices</li>
-<li>Improved ROI with reduced TCO</li>
-</ul>
-<h4 id="Illustration-of-Monolithic-Module-Refactoring-1"><a href="#Illustration-of-Monolithic-Module-Refactoring-1" class="headerlink" title="Illustration of Monolithic Module Refactoring"></a>Illustration of Monolithic Module Refactoring</h4><p>!!!!!!!!!!!!!! 그림넣기</p>
+<p>Microservice Architecture는 3계층이다.Container/ Orchestration /Application</p>
 <h4 id="The-twelve-Factors"><a href="#The-twelve-Factors" class="headerlink" title="The twelve Factors"></a>The twelve Factors</h4><p>I. Codebase: One codebase that is tracked in revision control, with many deployments<br>II. Dependencies: Explicitly declare and isolate dependencies<br>III.Configuration: Store Configuration in the environment<br>IV.Backing services: Treat backing services as attached resources<br>V. Build, release, run: Strictly separate build and run stages<br>VI.Processes: Execute the app as one or more stateless processes<br>VII.Port binding: Export services with port binding<br>VIII.Concurrency: Scale out using the process model<br>IX.Disposability: 빠른 시작 및 효율적인 종료가 가능하다.<br>X. Development and production parity: Keep development, staging, and production as similar as possible<br>XI.Logs: Treat logs as event streams<br>XII.Admin processes: Run administrative and management tasks as one-off processes</p>
 ]]></content>
     
