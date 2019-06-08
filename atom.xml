@@ -507,44 +507,9 @@
     <link href="http://KKimSangHeon.github.io/2019/06/06/msa1/"/>
     <id>http://KKimSangHeon.github.io/2019/06/06/msa1/</id>
     <published>2019-06-06T10:26:59.000Z</published>
-    <updated>2019-06-08T05:20:03.875Z</updated>
+    <updated>2019-06-08T06:10:28.955Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="Event-storming"><a href="#Event-storming" class="headerlink" title="Event storming?"></a>Event storming?</h3><p><u>프로그램 도메인에서 어떤일이 일어나는지 신속하게 알 수 있게 해준다</u>. 또한 복잡한 비즈니스 문제를 이해하고 탐구하는데 어려움을 겪는 팀에게 문제를 모델링할 수 있게 해주며 비즈니스를 어떻게 지원해야할지에 대한 통찰력을 기를 수 있게 해준다.</p>
-<h4 id="진행방법"><a href="#진행방법" class="headerlink" title="진행방법"></a>진행방법</h4><p>Step 1: Create domain events<br>Step 2: Add the commands that caused the domain event<br>Step 2b: Add the actor that executes the command<br>Step 3: Add corresponding aggregate</p>
-<h4 id="Event-storming의-장애물이-될-수-있는것"><a href="#Event-storming의-장애물이-될-수-있는것" class="headerlink" title="Event storming의 장애물이 될 수 있는것"></a>Event storming의 장애물이 될 수 있는것</h4><ul>
-<li>성공과 관련해 많은 지식을 갖고있는 전문가.<br>(기술자는 비즈니스적으로 비즈니스 전문가는 기술적으로 보도록 해보자!)</li>
-<li>참가하지 않는 인원.</li>
-</ul>
-<h4 id="Event-storming의-장점"><a href="#Event-storming의-장점" class="headerlink" title="Event storming의 장점"></a>Event storming의 장점</h4><ul>
-<li>잠재적 솔루션 도출</li>
-<li>비즈니스의 시각화 및 각 부분의 관련성 도출</li>
-<li>누락된 개념을 찾아낼 수 있다.</li>
-<li>짧은시간안에 결과가 도출된다.</li>
-<li>다양한 관점을 통해 더 강력한 솔루션을 만들 수 있다.</li>
-<li>진정한 비즈니스 가치를 찾을 수 있다.</li>
-<li>실제 비즈니스 사례에 중점을 둔다.</li>
-</ul>
-<h3 id="Software-Design"><a href="#Software-Design" class="headerlink" title="Software Design"></a>Software Design</h3><p>해당 비즈니스에 전문가, 비전문가가 모여 진행한다.</p>
-<h4 id="진행절차"><a href="#진행절차" class="headerlink" title="진행절차"></a>진행절차</h4><ol>
-<li>Event<br>전문가는 시간순으로 발생할 수 있는 이벤트를 과거형으로 작성한다.<br>(빨간 포스트잇 사용)</li>
-</ol>
-<p>이 중 이상한 내용은 과감하게 버리고 애매한 내용은 연분홍색으로 덧붙인다.</p>
-<ol>
-<li><p>Actor &amp; Command<br>Actor가 어떤 커맨드를 통해 도메인 이벤트가 발생한다고 했을 때 Actor은 노란색으로 붙이고 커맨드 내용은 현재형으로 하고 파란색으로 붙인다. 즉 다음과 같은 형태가 된다.</p>
-</li>
-<li><p>Business rule<br>시스템이 이벤트까지 어떻게 발생는데 있어 정책, 제약사항, 암묵적인 정책, 명시적인 정책을 보라색 포스트잇으로 붙인다.</p>
-</li>
-<li><p>Bounded Context<br>하나의 트랜잭션, specific function 단위로 나누어 그루핑한다.</p>
-</li>
-<li><p>Bounded Context 기반 Highest priority/Hard to solve/Requires experiments 로 투표진행</p>
-</li>
-<li><p>Bounded Context에 투표했던 결과중 가장 효과적이라 투표된것만 따로 빼내고 이에서 파생되는 서브도메인을 초록 포스트잇으로 붙이고 이에 해당하는 시나리오를 파랑 포스트잇으로 붙여보자.<br>여기까지 Micro Service의 Level 2까지 진행했다고 볼 수 있다. (Level 1 - Value Domain/ Level 2- Capability Domain)</p>
-</li>
-<li><p>시퀀스 다이어그램을 그리자.</p>
-</li>
-</ol>
-<hr>
-<h3 id="Implementing-Domain-Driven-Design-For-Microservices-Architecture"><a href="#Implementing-Domain-Driven-Design-For-Microservices-Architecture" class="headerlink" title="Implementing Domain-Driven Design For Microservices Architecture"></a>Implementing Domain-Driven Design For Microservices Architecture</h3><h4 id="DDD의-원칙"><a href="#DDD의-원칙" class="headerlink" title="DDD의 원칙"></a>DDD의 원칙</h4><p><code>Values:</code> Meaning, Unity, Usability, Fitness, Flexibility, Maintainability<br><code>Principles:</code>  Continuous Learning, Knowledge Rich Design, Ubiquitous Language, Model-Driven Design, Separation of Concerns<br>Deep Models, Declarative Style<br><code>Patterns:</code><br>Layered Architecture<br>Ubiquitous Language (Entities, Value Objects, Services, Modules, Aggregates, Factories, Specification) /<br>Supple Design (Intention-Revealing Interfaces, Side-Effect Free Functions, Assertions, Conceptual Contours, Standalone Classes, Closure of Operations)</p>
+    <content type="html"><![CDATA[<h3 id="Implementing-Domain-Driven-Design-For-Microservices-Architecture"><a href="#Implementing-Domain-Driven-Design-For-Microservices-Architecture" class="headerlink" title="Implementing Domain-Driven Design For Microservices Architecture"></a>Implementing Domain-Driven Design For Microservices Architecture</h3><h4 id="DDD의-원칙"><a href="#DDD의-원칙" class="headerlink" title="DDD의 원칙"></a>DDD의 원칙</h4><p><code>Values:</code> Meaning, Unity, Usability, Fitness, Flexibility, Maintainability<br><code>Principles:</code>  Continuous Learning, Knowledge Rich Design, Ubiquitous Language, Model-Driven Design, Separation of Concerns<br>Deep Models, Declarative Style<br><code>Patterns:</code><br>Layered Architecture<br>Ubiquitous Language (Entities, Value Objects, Services, Modules, Aggregates, Factories, Specification) /<br>Supple Design (Intention-Revealing Interfaces, Side-Effect Free Functions, Assertions, Conceptual Contours, Standalone Classes, Closure of Operations)</p>
 <h3 id="What-is-Domain-Driven-Design"><a href="#What-is-Domain-Driven-Design" class="headerlink" title="What is Domain Driven Design"></a>What is Domain Driven Design</h3><p>도메인 전문가, 기술 전문가가 소프트웨어 개발를 위해 협엽하는 기술<br>아이디어와 도메인은 공통언어를 통해 코드에 반영되어야 한다.<br>Domain Driven Design 에 대해 알아보기 위해 다양한 Domain에 대해 알아보자.</p>
 <h4 id="Domain"><a href="#Domain" class="headerlink" title="Domain?"></a>Domain?</h4><p>팀은 특정 비즈니스 도메인에 맞게 일한다.<br>팀은 비즈니스 도메인에 초점을 맞춘다<br>도메인의 세부사항은 팀의 포지션마다 다르다.</p>
 <p>도메인의 예시<br>Hotel / Banking / Mortgage / Credit / Debit Accounts / Credit Cards / Retails loans</p>
@@ -652,7 +617,7 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Event-storming&quot;&gt;&lt;a href=&quot;#Event-storming&quot; class=&quot;headerlink&quot; title=&quot;Event storming?&quot;&gt;&lt;/a&gt;Event storming?&lt;/h3&gt;&lt;p&gt;&lt;u&gt;프로그램 도메인에서 어떤일이 일
+      &lt;h3 id=&quot;Implementing-Domain-Driven-Design-For-Microservices-Architecture&quot;&gt;&lt;a href=&quot;#Implementing-Domain-Driven-Design-For-Microservices-Arch
     
     </summary>
     
