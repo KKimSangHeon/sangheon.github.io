@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="쿠버네티스 사용자마다 권한을 제어하는 것은 쿠버네티스 운영하는데 있어 보안을 확보하는 기본적인 방법이다. 쿠버네티스 사용자는 두 가지 개념으로 나뉜다.일반사용자: 클러스터 외부에서 쿠버네티스를 조작하는 사용자로 다양한 방법으로 인증을 거친다. 개발자 및 운영 실무자가 쿠버네티스를 조작하기 위해 사용하며 쿠버네티스 클러스터 외부로부터 들어오는 접근을 관리하기">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/dockerandkube.jpg">
-<meta property="og:updated_time" content="2019-06-06T08:27:54.525Z">
+<meta property="og:updated_time" content="2019-06-09T07:34:17.107Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="12. 사용자 관리와 RBAC(role-based access control)">
 <meta name="twitter:description" content="쿠버네티스 사용자마다 권한을 제어하는 것은 쿠버네티스 운영하는데 있어 보안을 확보하는 기본적인 방법이다. 쿠버네티스 사용자는 두 가지 개념으로 나뉜다.일반사용자: 클러스터 외부에서 쿠버네티스를 조작하는 사용자로 다양한 방법으로 인증을 거친다. 개발자 및 운영 실무자가 쿠버네티스를 조작하기 위해 사용하며 쿠버네티스 클러스터 외부로부터 들어오는 접근을 관리하기">
@@ -187,6 +187,7 @@ ga('send', 'pageview');
 <p>서비스 계정 및 일반 사용자의 권한은 RBAC(role-based access control) 라는 메커니즘을 통해 제어된다. RBAC는 롤에 따라 리소스에 대한 권한을 제어하는 기능이자 개념이다.</p>
 <p>Role, Cluster Role은 접근가능한것에 대한 범위이고 binding은 롤을 주는것을 의미한다고 판단.</p>
 <p><code>롤</code> : 각 쿠버네티스 API의 사용권한을 정의. 네임스페이스 안에서만 유효<br><code>롤바인딩</code> : 일반 사용자 및 그룹/서비스 계정과 롤을 연결<br><code>클러스터롤</code>: 각 쿠버네티스 API의 사용 권한을 정의. 클러스터 전체에서 유효<br><code>클러스터롤바인딩</code>: 일반사용자 및 그룹/서비스 계정과 클러스터롤을 연결</p>
+<p>262p부터</p>
 
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -315,7 +316,7 @@ ga('send', 'pageview');
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            kube13
+            13. 헬름
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>

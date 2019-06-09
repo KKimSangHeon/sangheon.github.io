@@ -667,15 +667,15 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/kubernetes/</loc>
-        <lastmod>2019-06-06T08:27:54.525Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/tags/MSA/</loc>
+        <lastmod>2019-06-09T01:41:40.922Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/MSA/</loc>
-        <lastmod>2019-06-09T01:41:40.922Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/tags/kubernetes/</loc>
+        <lastmod>2019-06-09T07:34:17.107Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
