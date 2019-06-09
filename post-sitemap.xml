@@ -7,8 +7,48 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2019/06/01/kube9/</loc>
+        <lastmod>2019-06-09T08:23:09.708Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2019/06/06/kube13/</loc>
-        <lastmod>2019-06-09T08:20:03.004Z</lastmod>
+        <lastmod>2019-06-09T08:22:08.621Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2019/06/08/msa4/</loc>
+        <lastmod>2019-06-09T08:22:05.710Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2019/06/08/msa3/</loc>
+        <lastmod>2019-06-09T08:22:01.910Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2019/06/06/msa1/</loc>
+        <lastmod>2019-06-09T08:21:59.817Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2019/06/08/msa2/</loc>
+        <lastmod>2019-06-09T08:21:58.499Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,46 +57,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2019/06/06/kube12/</loc>
         <lastmod>2019-06-09T07:34:17.107Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2019/06/01/kube9/</loc>
-        <lastmod>2019-06-09T05:19:02.669Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2019/06/08/msa4/</loc>
-        <lastmod>2019-06-09T01:41:40.922Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2019/06/08/msa3/</loc>
-        <lastmod>2019-06-09T01:41:38.421Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2019/06/08/msa2/</loc>
-        <lastmod>2019-06-09T01:41:36.269Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2019/06/06/msa1/</loc>
-        <lastmod>2019-06-09T01:41:30.360Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

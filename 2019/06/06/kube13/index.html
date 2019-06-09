@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://KKimSangHeon.github.io/2019/06/06/kube13/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="하나 이상의 클러스터를 운영하다 보면 같은 어플리케이션을 여러 클러스터에 배포해야 하는 경우가 발생한다.이럴 때 배포 환경에 따라 달라지는 설정값들때문에 문제점들이 많이 발생한다. 그래서 배포 환경에 따라 달라지는 설정값만 정의해 둔 다음 이에 따라 배포하는 메커니즘이 필요했는데 이를 해결한것이 바로 헬름이다.헬름은 쿠버네티스 차트를 관리하기 위한 도구이다">
-<meta property="og:updated_time" content="2019-06-09T08:20:03.004Z">
+<meta property="og:updated_time" content="2019-06-09T08:22:08.621Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="13. 헬름">
 <meta name="twitter:description" content="하나 이상의 클러스터를 운영하다 보면 같은 어플리케이션을 여러 클러스터에 배포해야 하는 경우가 발생한다.이럴 때 배포 환경에 따라 달라지는 설정값들때문에 문제점들이 많이 발생한다. 그래서 배포 환경에 따라 달라지는 설정값만 정의해 둔 다음 이에 따라 배포하는 메커니즘이 필요했는데 이를 해결한것이 바로 헬름이다.헬름은 쿠버네티스 차트를 관리하기 위한 도구이다">
@@ -188,7 +188,7 @@ ga('send', 'pageview');
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ helm init</div></pre></td></tr></table></figure>
 <p>잘 만들어졌나 확인해보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kubectl -n kube-system get service,deployment,pod --selector app=helm</div></pre></td></tr></table></figure></p>
 <p>버전을 확인해보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ helm version</div></pre></td></tr></table></figure></p>
-<p>여러 클러스터를 다룰 때는 클라이언트/서버의 버전을 일치시키는것이 좋다.</p>
+<p>여러 클러스터를 다룰 때는 클라이언트/서버의 버전을 일치시키는것이 좋다. 이를 위해 다음을 입력하여 업그레이드하자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ helm init --upgrade</div></pre></td></tr></table></figure></p>
 
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -317,7 +317,7 @@ ga('send', 'pageview');
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            이론1. Domain-Driven Design / Aggregates
+            MSA이론1. Domain-Driven Design / Aggregates
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
