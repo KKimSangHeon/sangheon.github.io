@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-06-08T14:36:51.027Z</updated>
+  <updated>2019-06-09T01:41:40.922Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>msa4</title>
+    <title>이론4. DevOps</title>
     <link href="http://KKimSangHeon.github.io/2019/06/08/msa4/"/>
     <id>http://KKimSangHeon.github.io/2019/06/08/msa4/</id>
     <published>2019-06-08T05:19:44.000Z</published>
-    <updated>2019-06-08T14:36:51.027Z</updated>
+    <updated>2019-06-09T01:41:40.922Z</updated>
     
     <content type="html"><![CDATA[<h3 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h3><p>Using DevOps to Solve your Delivery Challenges</p>
 <ul>
@@ -195,15 +195,21 @@
     
     </summary>
     
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
+    
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/tags/MSA/"/>
     
   </entry>
   
   <entry>
-    <title>msa3</title>
+    <title>이론3. Database Design for Microservices</title>
     <link href="http://KKimSangHeon.github.io/2019/06/08/msa3/"/>
     <id>http://KKimSangHeon.github.io/2019/06/08/msa3/</id>
     <published>2019-06-08T05:18:22.000Z</published>
-    <updated>2019-06-08T12:57:44.009Z</updated>
+    <updated>2019-06-09T01:41:38.421Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Database-Design-for-Microservices"><a href="#Database-Design-for-Microservices" class="headerlink" title="Database Design for Microservices"></a>Database Design for Microservices</h3><p>트랜잭션, Aggregates에 영향을 많이끼친다.</p>
 <p>Front Microservice는 쉽다.</p>
@@ -362,28 +368,23 @@
     
     </summary>
     
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
+    
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/tags/MSA/"/>
     
   </entry>
   
   <entry>
-    <title>msa2</title>
+    <title>이론2. Microservice Architecturure</title>
     <link href="http://KKimSangHeon.github.io/2019/06/08/msa2/"/>
     <id>http://KKimSangHeon.github.io/2019/06/08/msa2/</id>
     <published>2019-06-08T05:18:16.000Z</published>
-    <updated>2019-06-08T14:31:19.504Z</updated>
+    <updated>2019-06-09T01:41:36.269Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="DDD의-이점"><a href="#DDD의-이점" class="headerlink" title="DDD의 이점"></a>DDD의 이점</h4><ul>
-<li>기술보다는 비즈니스에 초점을 맞춘다,</li>
-<li>코드르 재사용하고 읽기 쉽다.</li>
-<li>개선사항이 있을 때 유연하다.</li>
-</ul>
-<h4 id="성공적인-DDD"><a href="#성공적인-DDD" class="headerlink" title="성공적인 DDD"></a>성공적인 DDD</h4><ul>
-<li>도메인전문가, 기술 전문가의 협업을 통해 모델 빌드</li>
-<li>어플리케이션의 반복적인 빌드</li>
-<li>테스트하고 테스트하고 또 테스트하라</li>
-</ul>
-<h4 id="세계지도에서-DDD가-어떻게-적용되는지-보자"><a href="#세계지도에서-DDD가-어떻게-적용되는지-보자" class="headerlink" title="세계지도에서 DDD가 어떻게 적용되는지 보자."></a>세계지도에서 DDD가 어떻게 적용되는지 보자.</h4><p>Model Driven Desigin<br>Domain = Word Map<br>Sub domain = 오세아니아, 아시아, 북아메리카,….<br>Bounded Context = Countries(South Korea)<br>Ubiquitous Language = Korean Language<br>Domain Model = Map of Korea</p>
-<h3 id="Microservices-Architecture"><a href="#Microservices-Architecture" class="headerlink" title="Microservices  Architecture"></a>Microservices  Architecture</h3><ul>
+    <content type="html"><![CDATA[<h3 id="Microservices-Architecture"><a href="#Microservices-Architecture" class="headerlink" title="Microservices  Architecture"></a>Microservices  Architecture</h3><ul>
 <li>비즈니스 로직을 나누었다.</li>
 <li>큰 프로그램 대신 몇몇의 작은 어플리케이션이다.</li>
 <li>잘 정의된 API로 소통한다.(HTTP, AMQP 활용)</li>
@@ -480,21 +481,25 @@
     
     <summary type="html">
     
-      &lt;h4 id=&quot;DDD의-이점&quot;&gt;&lt;a href=&quot;#DDD의-이점&quot; class=&quot;headerlink&quot; title=&quot;DDD의 이점&quot;&gt;&lt;/a&gt;DDD의 이점&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;기술보다는 비즈니스에 초점을 맞춘다,&lt;/li&gt;
-&lt;li&gt;코드르 재사용하고 읽기 쉽
+      &lt;h3 id=&quot;Microservices-Architecture&quot;&gt;&lt;a href=&quot;#Microservices-Architecture&quot; class=&quot;headerlink&quot; title=&quot;Microservices  Architecture&quot;&gt;&lt;/a&gt;Microse
     
     </summary>
     
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
+    
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/tags/MSA/"/>
     
   </entry>
   
   <entry>
-    <title>msa1</title>
+    <title>이론1. Domain-Driven Design / Aggregates</title>
     <link href="http://KKimSangHeon.github.io/2019/06/06/msa1/"/>
     <id>http://KKimSangHeon.github.io/2019/06/06/msa1/</id>
     <published>2019-06-06T10:26:59.000Z</published>
-    <updated>2019-06-08T12:41:42.812Z</updated>
+    <updated>2019-06-09T01:41:30.360Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Implementing-Domain-Driven-Design-For-Microservices-Architecture"><a href="#Implementing-Domain-Driven-Design-For-Microservices-Architecture" class="headerlink" title="Implementing Domain-Driven Design For Microservices Architecture"></a>Implementing Domain-Driven Design For Microservices Architecture</h3><h4 id="DDD의-원칙"><a href="#DDD의-원칙" class="headerlink" title="DDD의 원칙"></a>DDD의 원칙</h4><p><code>Values:</code> Meaning, Unity, Usability, Fitness, Flexibility, Maintainability<br><code>Principles:</code>  Continuous Learning, Knowledge Rich Design, Ubiquitous Language, Model-Driven Design, Separation of Concerns<br>Deep Models, Declarative Style<br><code>Patterns:</code><br>Layered Architecture<br>Ubiquitous Language (Entities, Value Objects, Services, Modules, Aggregates, Factories, Specification) /<br>Supple Design (Intention-Revealing Interfaces, Side-Effect Free Functions, Assertions, Conceptual Contours, Standalone Classes, Closure of Operations)</p>
 <h3 id="What-is-Domain-Driven-Design"><a href="#What-is-Domain-Driven-Design" class="headerlink" title="What is Domain Driven Design"></a>What is Domain Driven Design</h3><p>도메인 전문가, 기술 전문가가 소프트웨어 개발를 위해 협엽하는 기술<br>아이디어와 도메인은 공통언어를 통해 코드에 반영되어야 한다.<br>Domain Driven Design 에 대해 알아보기 위해 다양한 Domain에 대해 알아보자.</p>
@@ -600,6 +605,17 @@
 <li>엔티티나 value object를 생성한다</li>
 <li>엔티티의 생성이 복잡할 때 사용한다.</li>
 </ul>
+<h4 id="DDD의-이점"><a href="#DDD의-이점" class="headerlink" title="DDD의 이점"></a>DDD의 이점</h4><ul>
+<li>기술보다는 비즈니스에 초점을 맞춘다,</li>
+<li>코드르 재사용하고 읽기 쉽다.</li>
+<li>개선사항이 있을 때 유연하다.</li>
+</ul>
+<h4 id="성공적인-DDD"><a href="#성공적인-DDD" class="headerlink" title="성공적인 DDD"></a>성공적인 DDD</h4><ul>
+<li>도메인전문가, 기술 전문가의 협업을 통해 모델 빌드</li>
+<li>어플리케이션의 반복적인 빌드</li>
+<li>테스트하고 테스트하고 또 테스트하라</li>
+</ul>
+<h4 id="세계지도에서-DDD가-어떻게-적용되는지-보자"><a href="#세계지도에서-DDD가-어떻게-적용되는지-보자" class="headerlink" title="세계지도에서 DDD가 어떻게 적용되는지 보자."></a>세계지도에서 DDD가 어떻게 적용되는지 보자.</h4><p>Model Driven Desigin<br>Domain = Word Map<br>Sub domain = 오세아니아, 아시아, 북아메리카,….<br>Bounded Context = Countries(South Korea)<br>Ubiquitous Language = Korean Language<br>Domain Model = Map of Korea</p>
 ]]></content>
     
     <summary type="html">
@@ -608,6 +624,12 @@
     
     </summary>
     
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
+    
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/tags/MSA/"/>
     
   </entry>
   
