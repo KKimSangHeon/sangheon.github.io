@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2019/06/11/kube15/</loc>
+        <lastmod>2019-06-11T11:17:50.712Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2019/06/08/msa2/</loc>
         <lastmod>2019-06-11T11:09:16.950Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -33,14 +41,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2019/06/08/msa3/</loc>
         <lastmod>2019-06-11T11:05:18.913Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2019/06/11/kube15/</loc>
-        <lastmod>2019-06-11T10:59:23.301Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

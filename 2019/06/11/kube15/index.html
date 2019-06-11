@@ -10,18 +10,18 @@
     
     
 
-      <meta name="description" content="젠킨스 플러그인 설치Jenkins관리 -&amp;gt; 플러그인 관리Build Pipeline(Build Pipeline Plugin?)Aqua MicroScannerGitlab Authentication pluginGitLab PluginKubernetesPipelinePipeline Utility StepsSimple Theme PluginSlack Notif">
+      <meta name="description" content="젠킨스 플러그인 설치Jenkins관리 -&amp;gt; 플러그인 관리에 들어가서 다음 항목을 설치하자.1234567891011Build Pipeline(Build Pipeline Plugin?)Aqua MicroScannerGitlab Authentication pluginGitLab PluginKubernetesPipelinePipeline Utility Ste">
 <meta name="keywords" content="kubernetes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="실습2. 젠킨스 설정(깃랩, 도커레지스트리,슬랙, 소나큐브 연동)">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2019/06/11/kube15/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="젠킨스 플러그인 설치Jenkins관리 -&amp;gt; 플러그인 관리Build Pipeline(Build Pipeline Plugin?)Aqua MicroScannerGitlab Authentication pluginGitLab PluginKubernetesPipelinePipeline Utility StepsSimple Theme PluginSlack Notif">
+<meta property="og:description" content="젠킨스 플러그인 설치Jenkins관리 -&amp;gt; 플러그인 관리에 들어가서 다음 항목을 설치하자.1234567891011Build Pipeline(Build Pipeline Plugin?)Aqua MicroScannerGitlab Authentication pluginGitLab PluginKubernetesPipelinePipeline Utility Ste">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/dockerandkube.jpg">
-<meta property="og:updated_time" content="2019-06-11T10:59:23.301Z">
+<meta property="og:updated_time" content="2019-06-11T11:17:50.712Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="실습2. 젠킨스 설정(깃랩, 도커레지스트리,슬랙, 소나큐브 연동)">
-<meta name="twitter:description" content="젠킨스 플러그인 설치Jenkins관리 -&amp;gt; 플러그인 관리Build Pipeline(Build Pipeline Plugin?)Aqua MicroScannerGitlab Authentication pluginGitLab PluginKubernetesPipelinePipeline Utility StepsSimple Theme PluginSlack Notif">
+<meta name="twitter:description" content="젠킨스 플러그인 설치Jenkins관리 -&amp;gt; 플러그인 관리에 들어가서 다음 항목을 설치하자.1234567891011Build Pipeline(Build Pipeline Plugin?)Aqua MicroScannerGitlab Authentication pluginGitLab PluginKubernetesPipelinePipeline Utility Ste">
 <meta name="twitter:image" content="http://kkimsangheon.github.io/images/dockerandkube.jpg">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
@@ -181,27 +181,20 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="젠킨스-플러그인-설치"><a href="#젠킨스-플러그인-설치" class="headerlink" title="젠킨스 플러그인 설치"></a>젠킨스 플러그인 설치</h3><p>Jenkins관리 -&gt; 플러그인 관리<br>Build Pipeline(Build Pipeline Plugin?)<br>Aqua MicroScanner<br>Gitlab Authentication plugin<br>GitLab Plugin<br>Kubernetes<br>Pipeline<br>Pipeline Utility Steps<br>Simple Theme Plugin<br>Slack Notification<br>SonarQube Scanner<br>Version Number Plug-In</p>
-<h3 id="젠킨스-설정"><a href="#젠킨스-설정" class="headerlink" title="젠킨스 설정"></a>젠킨스 설정</h3><p>Jenkins 관리-&gt; 시스템 설정</p>
-<ol>
-<li>깃랩과 연결</li>
-</ol>
-<p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! gitlab_tokenmake 사진넣기<br>젠킨스에서 설정<br>위와같이 connection name, gitlab host url(이전에 생성했던 깃랩) 설정</p>
-<p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! jenkins1 사진넣기</p>
-<p>위의 화면에서 Add-&gt;Jenkins를 선택</p>
-<p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! jenkins2 사진넣기<br>Kind를 위와 같이 선택하고<br>API token, Id, Description 입력하고 추가</p>
-<p>Test Connection을 눌러 잘 동작하나 확인해보자.</p>
-<p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! jenkins3 사진넣기<br>Jenkins location을 설정하고 email을 위와같이 설정</p>
-<ol>
-<li>도커레지스트리와 연결<br>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! dockerConnection1<br>위와같이 설정</li>
-</ol>
-<p>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! dockerConnection2<br>저장 후</p>
-<ol>
-<li>슬랙과 연동</li>
-</ol>
-<ol>
-<li>소나큐브 연동</li>
-</ol>
+            <h3 id="젠킨스-플러그인-설치"><a href="#젠킨스-플러그인-설치" class="headerlink" title="젠킨스 플러그인 설치"></a>젠킨스 플러그인 설치</h3><p>Jenkins관리 -&gt; 플러그인 관리에 들어가서 다음 항목을 설치하자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Build Pipeline(Build Pipeline Plugin?)</div><div class="line">Aqua MicroScanner</div><div class="line">Gitlab Authentication plugin</div><div class="line">GitLab Plugin</div><div class="line">Kubernetes</div><div class="line">Pipeline</div><div class="line">Pipeline Utility Steps</div><div class="line">Simple Theme Plugin</div><div class="line">Slack Notification</div><div class="line">SonarQube Scanner</div><div class="line">Version Number Plug-In</div></pre></td></tr></table></figure></p>
+<h3 id="젠킨스-설정"><a href="#젠킨스-설정" class="headerlink" title="젠킨스 설정"></a>젠킨스 설정</h3><p><code>1. 깃랩과 연결</code><br><img src="/2019/06/11/kube15/gitlab_maketoken.PNG" alt="깃랩에서 설정" title="깃랩에서 설정"><br>우측 상단 이미지를 클릭하고 User Setting로 들어가서 Access Token 탭을 선택한다.<br>3개 모두 체크하고 토큰을 생성하자.</p>
+<img src="/2019/06/11/kube15/jenkins_1.PNG" alt="젠킨스에서 깃랩연결" title="젠킨스에서 깃랩연결">
+<p>Jenkins 관리-&gt; 시스템 설정으로 들어간 후 위와같이 connection name, gitlab host url(이전에 생성했던) 설정</p>
+<p>위의 화면의 Credentials 옆 Add-&gt;Jenkins를 선택</p>
+<img src="/2019/06/11/kube15/jenkins_2.PNG" alt="젠킨스에서 깃랩연결" title="젠킨스에서 깃랩연결">
+<p>Kind를 위와 같이 선택하고 API token, Id, Description 입력하고 추가하고 Test Connection을 눌러 잘 동작하나 확인해보자.</p>
+<img src="/2019/06/11/kube15/jenkins_3.PNG" alt="젠킨스에서 깃랩연결" title="젠킨스에서 깃랩연결">
+<p>Jenkins location을 설정하고 email을 위와같이 설정</p>
+<p><code>2. 도커레지스트리와 연결</code><br><img src="/2019/06/11/kube15/dockerConnection1.PNG" alt="젠킨스에서 깃랩연결" title="젠킨스에서 깃랩연결"><br>위와같이 설정</p>
+<img src="/2019/06/11/kube15/dockerConnection2.PNG" alt="젠킨스에서 깃랩연결" title="젠킨스에서 깃랩연결">
+<p>Add 버튼 클릭</p>
+<p><code>3. 슬랙과 연동</code></p>
+<p><code>4. 소나큐브 연동</code></p>
 
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
