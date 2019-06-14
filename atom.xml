@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-06-14T10:35:25.687Z</updated>
+  <updated>2019-06-14T11:15:18.987Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://KKimSangHeon.github.io/2019/06/14/kube16/"/>
     <id>http://KKimSangHeon.github.io/2019/06/14/kube16/</id>
     <published>2019-06-14T10:34:59.000Z</published>
-    <updated>2019-06-14T10:35:25.687Z</updated>
+    <updated>2019-06-14T11:15:18.987Z</updated>
     
     <content type="html"><![CDATA[<p>깃랩에 프로젝트를 커밋하기 위해 다음 과정을 거친다.<br>!!!!!!!!!!그림9<br>다음과 같이 프로젝트를 깃랩에 생성 및 코드 반영<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git config --global user.name &quot;sangheonKim&quot;</div><div class="line">git config --global user.email &quot;tkdgjs1501@nate.com&quot;</div><div class="line"></div><div class="line">git init</div><div class="line">git remote add origin http://35.200.116.34/sangheonKim/sangheonProject.git</div><div class="line">git commit -m &quot;init&quot;</div><div class="line">git push origin master</div></pre></td></tr></table></figure></p>
 <p>커밋하는데 아래와 같은 에러가 뜰 경우 레파지토리 이름에 .git를 넣었는지 확인해보자.</p>
@@ -35,6 +35,12 @@
     
     </summary>
     
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
+    
+    
+      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
     
   </entry>
   
@@ -43,7 +49,7 @@
     <link href="http://KKimSangHeon.github.io/2019/06/11/kube15/"/>
     <id>http://KKimSangHeon.github.io/2019/06/11/kube15/</id>
     <published>2019-06-11T10:57:54.000Z</published>
-    <updated>2019-06-14T10:42:21.533Z</updated>
+    <updated>2019-06-14T11:15:22.586Z</updated>
     
     <content type="html"><![CDATA[<h3 id="젠킨스-플러그인-설치"><a href="#젠킨스-플러그인-설치" class="headerlink" title="젠킨스 플러그인 설치"></a>젠킨스 플러그인 설치</h3><p>Jenkins관리 -&gt; 플러그인 관리에 들어가서 다음 항목을 설치하자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Build Pipeline(Build Pipeline Plugin?)</div><div class="line">Aqua MicroScanner</div><div class="line">Gitlab Authentication plugin</div><div class="line">GitLab Plugin</div><div class="line">Kubernetes</div><div class="line">Pipeline</div><div class="line">Pipeline Utility Steps</div><div class="line">Simple Theme Plugin</div><div class="line">Slack Notification</div><div class="line">SonarQube Scanner</div><div class="line">Version Number Plug-In</div></pre></td></tr></table></figure></p>
 <h3 id="젠킨스-설정"><a href="#젠킨스-설정" class="headerlink" title="젠킨스 설정"></a>젠킨스 설정</h3><p><code>1. 깃랩과 연결</code><br><img src="/2019/06/11/kube15/gitlab_maketoken.PNG" alt="깃랩에서 설정" title="깃랩에서 설정"><br>우측 상단 이미지를 클릭하고 User Setting로 들어가서 Access Token 탭을 선택한다.<br>3개 모두 체크하고 토큰을 생성하자.</p>
