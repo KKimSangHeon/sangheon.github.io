@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-06-11T11:17:50.712Z</updated>
+  <updated>2019-06-14T10:35:25.687Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>실습3. 프로젝트 생성 및 테스트</title>
+    <link href="http://KKimSangHeon.github.io/2019/06/14/kube16/"/>
+    <id>http://KKimSangHeon.github.io/2019/06/14/kube16/</id>
+    <published>2019-06-14T10:34:59.000Z</published>
+    <updated>2019-06-14T10:35:25.687Z</updated>
+    
+    <content type="html"><![CDATA[<p>깃랩에 프로젝트를 커밋하기 위해 다음 과정을 거친다.<br>!!!!!!!!!!그림9<br>다음과 같이 프로젝트를 깃랩에 생성 및 코드 반영<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git config --global user.name &quot;sangheonKim&quot;</div><div class="line">git config --global user.email &quot;tkdgjs1501@nate.com&quot;</div><div class="line"></div><div class="line">git init</div><div class="line">git remote add origin http://35.200.116.34/sangheonKim/sangheonProject.git</div><div class="line">git commit -m &quot;init&quot;</div><div class="line">git push origin master</div></pre></td></tr></table></figure></p>
+<p>커밋하는데 아래와 같은 에러가 뜰 경우 레파지토리 이름에 .git를 넣었는지 확인해보자.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">error: RPC failed; result=22, HTTP code = 404</div><div class="line">fatal: The remote end hung up unexpectedly</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div></pre></td><td class="code"><pre><div class="line">def label = &quot;masterapi-$&#123;UUID.randomUUID().toString()&#125;&quot;</div><div class="line"></div><div class="line"> def notifyStarted() &#123;</div><div class="line">    slackSend (color: &apos;#FFFF00&apos;, message: &quot;STARTED: Job &apos;$&#123;env.JOB_NAME&#125; [$&#123;env.BUILD_NUMBER&#125;]&apos; ($&#123;env.BUILD_URL&#125;)&quot;)</div><div class="line">&#125;</div><div class="line"></div><div class="line"> def notifySuccessful() &#123;</div><div class="line">    slackSend (color: &apos;#00FF00&apos;, message: &quot;SUCCESSFUL: Job &apos;$&#123;env.JOB_NAME&#125; [$&#123;env.BUILD_NUMBER&#125;]&apos; ($&#123;env.BUILD_URL&#125;)&quot;)</div><div class="line">&#125;</div><div class="line"></div><div class="line"> def notifyFailed() &#123;</div><div class="line">  slackSend (color: &apos;#FF0000&apos;, message: &quot;FAILED: Job &apos;$&#123;env.JOB_NAME&#125; [$&#123;env.BUILD_NUMBER&#125;]&apos; ($&#123;env.BUILD_URL&#125;)&quot;)</div><div class="line">&#125;</div><div class="line"></div><div class="line"> podTemplate(label: label,</div><div class="line">	containers: [</div><div class="line">	  containerTemplate(name: &apos;maven&apos;, image: &apos;maven:3.3.9-jdk-8-alpine&apos;, ttyEnabled: true, command: &apos;cat&apos;),</div><div class="line">	  containerTemplate(name: &apos;docker&apos;, image: &apos;docker:stable&apos;, ttyEnabled: true, command: &apos;cat&apos;),</div><div class="line">	  containerTemplate(name: &apos;kubectl&apos;, image: &apos;lachlanevenson/k8s-kubectl:v1.8.0&apos;, command: &apos;cat&apos;, ttyEnabled: true)</div><div class="line">	],</div><div class="line">	volumes: [hostPathVolume(hostPath: &apos;/var/run/docker.sock&apos;, mountPath: &apos;/var/run/docker.sock&apos;),</div><div class="line">		hostPathVolume(hostPath: &apos;/root/.m2&apos;, mountPath: &apos;/root/.m2&apos;)</div><div class="line">	]</div><div class="line"></div><div class="line"> 	) &#123;</div><div class="line"></div><div class="line"> 	node(label) &#123;</div><div class="line">	try &#123;</div><div class="line"></div><div class="line"></div><div class="line"> 	  stage(&apos;Get Source&apos;) &#123;</div><div class="line">		git &quot;http://gitlab.169.56.70.69.nip.io/sangheonkim/masterapi&quot;</div><div class="line">	  &#125;</div><div class="line"></div><div class="line"> 	  def props = readProperties  file:&apos;deployment/pipeline.properties&apos;</div><div class="line">	  /*def tag = VersionNumber (versionNumberString: &apos;$&#123;BUILD_DATE_FORMATTED, &quot;yyyyMMdd&quot;&#125;-develop-$&#123;BUILDS_TODAY&#125;&apos;)*/</div><div class="line">	  def tag = props[&apos;version&apos;]</div><div class="line">	  def gitSrc = props[&apos;gitSrc&apos;]</div><div class="line">	  def dockerRegistry = props[&apos;dockerRegistry&apos;]</div><div class="line">	  def image = props[&apos;image&apos;]</div><div class="line">	  def deployment = props[&apos;deployment&apos;]</div><div class="line">	  def service = props[&apos;service&apos;]</div><div class="line">	  def selector = props[&apos;selector&apos;]</div><div class="line">	  def namespace = props[&apos;namespace&apos;]</div><div class="line"></div><div class="line"></div><div class="line"> 	  stage(&apos;Build Maven project&apos;) &#123;</div><div class="line">		container(&apos;maven&apos;) &#123;</div><div class="line">			sh &quot;mvn -B clean package&quot;</div><div class="line">		&#125;</div><div class="line">	  &#125;</div><div class="line">/*</div><div class="line"> 	  stage(&apos;Inspection Code&apos;) &#123;</div><div class="line">		  container(&apos;maven&apos;) &#123;</div><div class="line">			  sh &quot;mvn sonar:sonar \</div><div class="line">        -Dsonar.projectKey=sangheon \</div><div class="line">        -Dsonar.host.url=http://34.85.31.212:9000 \</div><div class="line">        -Dsonar.login=62cf8d43f8fda31db0c5682c71b584c8650f4509&quot;</div><div class="line">		  &#125;</div><div class="line">	  &#125;</div><div class="line">*/</div><div class="line"> 	  stage(&apos;Build Docker image&apos;) &#123;</div><div class="line">		container(&apos;docker&apos;) &#123;</div><div class="line">		  docker.withRegistry(&quot;$&#123;dockerRegistry&#125;&quot;, &apos;registry-credentials&apos;) &#123;</div><div class="line">			sh &quot;docker build -t $&#123;image&#125;:$&#123;tag&#125; .&quot;</div><div class="line">			sh &quot;docker push $&#123;image&#125;:$&#123;tag&#125;&quot;</div><div class="line">			sh &quot;docker tag $&#123;image&#125;:$&#123;tag&#125; $&#123;image&#125;:latest&quot;</div><div class="line">			sh &quot;docker push $&#123;image&#125;:latest&quot;</div><div class="line">		  &#125;</div><div class="line">		&#125;</div><div class="line">	  &#125;</div><div class="line"></div><div class="line"> 	  stage( &apos;Clean Up Existing Deployments&apos; ) &#123;</div><div class="line">		container(&apos;kubectl&apos;) &#123;</div><div class="line">		  withCredentials([[$class: &apos;UsernamePasswordMultiBinding&apos;,</div><div class="line">							  credentialsId: &apos;registry-credentials&apos;,</div><div class="line">							  usernameVariable: &apos;DOCKER_HUB_USER&apos;,</div><div class="line">							  passwordVariable: &apos;DOCKER_HUB_PASSWORD&apos;]]) &#123;</div><div class="line"></div><div class="line"> 			  sh &quot;kubectl delete deployments -n $&#123;namespace&#125; --selector=app=$&#123;selector&#125;&quot;</div><div class="line">		  &#125;</div><div class="line">		&#125;</div><div class="line">	  &#125;</div><div class="line"></div><div class="line"> 	  stage( &apos;Deploy to Cluster&apos; ) &#123;</div><div class="line">		container(&apos;kubectl&apos;) &#123;</div><div class="line">		  withCredentials([[$class: &apos;UsernamePasswordMultiBinding&apos;,</div><div class="line">							  credentialsId: &apos;registry-credentials&apos;,</div><div class="line">							  usernameVariable: &apos;DOCKER_HUB_USER&apos;,</div><div class="line">							  passwordVariable: &apos;DOCKER_HUB_PASSWORD&apos;]]) &#123;</div><div class="line"></div><div class="line"> 			  sh &quot;kubectl apply -n $&#123;namespace&#125; -f $&#123;deployment&#125;&quot;</div><div class="line">			  sh &quot;sleep 5&quot;</div><div class="line">			  sh &quot;kubectl apply -n $&#123;namespace&#125; -f $&#123;service&#125;&quot;</div><div class="line">		  &#125;</div><div class="line">		&#125;</div><div class="line">	  &#125;</div><div class="line"></div><div class="line"> 	  notifySuccessful()</div><div class="line">	  &#125; catch(e) &#123;</div><div class="line">	print(e)</div><div class="line">        currentBuild.result = &quot;FAILED&quot;</div><div class="line">        notifyFailed()</div><div class="line">    &#125;</div><div class="line"></div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">version=0.1.0</div><div class="line">cluster=devcluster.icp</div><div class="line">namespace=kkim</div><div class="line">dockerRegistry=https://devcluster.icp:8500</div><div class="line">image=devcluster.icp:8500/kkim/masterapi</div><div class="line">deployment=deployment/masterapi-deploy.yaml</div><div class="line">service=deployment/masterapi-svc.yaml</div><div class="line">selector=masterapi</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;깃랩에 프로젝트를 커밋하기 위해 다음 과정을 거친다.&lt;br&gt;!!!!!!!!!!그림9&lt;br&gt;다음과 같이 프로젝트를 깃랩에 생성 및 코드 반영&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gu
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>실습2. 젠킨스 설정(깃랩, 도커레지스트리,슬랙, 소나큐브 연동)</title>
     <link href="http://KKimSangHeon.github.io/2019/06/11/kube15/"/>
     <id>http://KKimSangHeon.github.io/2019/06/11/kube15/</id>
     <published>2019-06-11T10:57:54.000Z</published>
-    <updated>2019-06-11T11:17:50.712Z</updated>
+    <updated>2019-06-14T10:42:21.533Z</updated>
     
     <content type="html"><![CDATA[<h3 id="젠킨스-플러그인-설치"><a href="#젠킨스-플러그인-설치" class="headerlink" title="젠킨스 플러그인 설치"></a>젠킨스 플러그인 설치</h3><p>Jenkins관리 -&gt; 플러그인 관리에 들어가서 다음 항목을 설치하자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Build Pipeline(Build Pipeline Plugin?)</div><div class="line">Aqua MicroScanner</div><div class="line">Gitlab Authentication plugin</div><div class="line">GitLab Plugin</div><div class="line">Kubernetes</div><div class="line">Pipeline</div><div class="line">Pipeline Utility Steps</div><div class="line">Simple Theme Plugin</div><div class="line">Slack Notification</div><div class="line">SonarQube Scanner</div><div class="line">Version Number Plug-In</div></pre></td></tr></table></figure></p>
 <h3 id="젠킨스-설정"><a href="#젠킨스-설정" class="headerlink" title="젠킨스 설정"></a>젠킨스 설정</h3><p><code>1. 깃랩과 연결</code><br><img src="/2019/06/11/kube15/gitlab_maketoken.PNG" alt="깃랩에서 설정" title="깃랩에서 설정"><br>우측 상단 이미지를 클릭하고 User Setting로 들어가서 Access Token 탭을 선택한다.<br>3개 모두 체크하고 토큰을 생성하자.</p>
@@ -34,8 +57,25 @@
 <p><code>2. 도커레지스트리와 연결</code><br><img src="/2019/06/11/kube15/dockerConnection1.PNG" alt="젠킨스에서 깃랩연결" title="젠킨스에서 깃랩연결"><br>위와같이 설정</p>
 <img src="/2019/06/11/kube15/dockerConnection2.PNG" alt="젠킨스에서 깃랩연결" title="젠킨스에서 깃랩연결">
 <p>Add 버튼 클릭</p>
-<p><code>3. 슬랙과 연동</code></p>
-<p><code>4. 소나큐브 연동</code></p>
+<p><code>3. 슬랙과 연동</code><br>슬랙에서 Apps선택하고 jenkins검색하여 view를 클릭하면 새 창이 나온다.</p>
+<img src="/2019/06/11/kube15/1.PNG" alt="1.PNG" title="">
+<p>Add Configuration 클릭</p>
+<img src="/2019/06/11/kube15/2.PNG" alt="2.PNG" title="">
+<p>노티를 보낼 슬랙을 선택 후 Add Jenkins CI integration 클릭</p>
+<img src="/2019/06/11/kube15/3.PNG" alt="3.PNG" title="">
+<p>다음과 같이 친절하게 스탭별로 알려주므로 따라하면 된다.</p>
+<img src="/2019/06/11/kube15/4.PNG" alt="4.PNG" title="">
+<p>스텝에서 설명하는 그림과 약간 다를 경우 Integration Token Credential ID 옆의 Add를 누르고 Secret text로 선택하여 추가하면 된다.</p>
+<p>그 후 Test Connection을 클릭하여 테스트해보자</p>
+<p><code>4. 소나큐브 연동</code><br>생성한 소나큐브에 접속 및 admin/admin으로 로그인</p>
+<img src="/2019/06/11/kube15/5.PNG" alt="5.PNG" title="">
+<p>Create new project 선택</p>
+<img src="/2019/06/11/kube15/6.PNG" alt="6.PNG" title="">
+<p>다음과 같이 프로젝트키, 디스플레이 네임 입력.</p>
+<img src="/2019/06/11/kube15/7.PNG" alt="7.PNG" title="">
+<p>생성된 토큰을 기록해둔다.</p>
+<img src="/2019/06/11/kube15/8.PNG" alt="8.PNG" title="">
+<p>Continue를 클릭하여 다음과같이 진행한다.(프로젝트의 종류에 따라 다를 수 있음)</p>
 ]]></content>
     
     <summary type="html">
@@ -1279,44 +1319,6 @@
     <summary type="html">
     
       &lt;h3 id=&quot;도커-amp-쿠버네티스&quot;&gt;&lt;a href=&quot;#도커-amp-쿠버네티스&quot; class=&quot;headerlink&quot; title=&quot;도커 &amp;amp; 쿠버네티스&quot;&gt;&lt;/a&gt;도커 &amp;amp; 쿠버네티스&lt;/h3&gt;&lt;p&gt;도커와 쿠버네티스에 대해 더 공부해보고 싶어 아
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(K8s) 6. 윈도우에서 실습해보기</title>
-    <link href="http://KKimSangHeon.github.io/2019/05/06/kubernetes6/"/>
-    <id>http://KKimSangHeon.github.io/2019/05/06/kubernetes6/</id>
-    <published>2019-05-06T14:26:48.000Z</published>
-    <updated>2019-05-06T14:28:07.985Z</updated>
-    
-    <content type="html"><![CDATA[<p>도커툴박스설치</p>
-<p><a href="https://docs.docker.com/toolbox/overview/" target="_blank" rel="external">https://docs.docker.com/toolbox/overview/</a></p>
-<p>virtual machine 가 없다면 체크하여 설치</p>
-<p>PowerShell 관리자 권한으로 실행</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">$ ExecutionPolicy      &lt;-- 현재상태확인</div><div class="line">$ Set-ExecutionPolicy Unrestricted</div><div class="line"></div><div class="line"></div><div class="line">$ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString(&apos;https://chocolatey.org/install.ps1&apos;))</div><div class="line"></div><div class="line">$ choco install minikube kubernetes-cli</div><div class="line"></div><div class="line">$ kubectl run sangheonkim --image=gcr.io/google-samples/kubernetes-bootcamp:v1 --port=8080</div><div class="line"></div><div class="line"></div><div class="line">$ minikube dashboard</div></pre></td></tr></table></figure>
-<p>파드 내부에서 출력하는 로그를 보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ kubectl get pods</div><div class="line">를 통해 파드의 정보를 복사하자,</div><div class="line">$ kubectl logs $POD_NAME</div></pre></td></tr></table></figure></p>
-<p>컨테이너로 들어가서 여러 명령어를 실행해보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ kubectl exec $POD_NAME env</div><div class="line"></div><div class="line">$ kubectl exec -ti $POD_NAME bash</div></pre></td></tr></table></figure></p>
-<p>서비스를 만들어보자</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ kubectl get services</div><div class="line">서비스를 확인해보자. 미니쿠베가 만든게 하나 존재한다.</div><div class="line"></div><div class="line">$ kubectl expose deployment/sangheonkim --type=&quot;NodePort&quot; --port 8080</div><div class="line">서비스를 노출시켜보자</div><div class="line"></div><div class="line">$ kubectl describe services/sangheonkim</div><div class="line">서비스를 자세히 보자</div></pre></td></tr></table></figure>
-<p>Deployment를 자세히보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kubectl describe deployments</div></pre></td></tr></table></figure></p>
-<p>보면 레이블이 있는것을 확인할 수 있는데 디플로이먼트는 저절로 레이블이 하나 생긴다.</p>
-<p>레이블을 변경해보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ kubectl label pod $POD_NAME app=v1</div><div class="line">를 입력하여 레이블을 app=v1 으로 변경하고</div><div class="line"></div><div class="line">$ kubectl describe pods $POD_NAME</div><div class="line">을 입력하여 확인해보자.</div><div class="line"></div><div class="line">$ kubectl get pods -l app=v1</div><div class="line">을 입력하여 잘반영되었나 확인해보자</div></pre></td></tr></table></figure></p>
-<p>서비스를 삭제해보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kubectl delete service -l run=sangheonkim</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;도커툴박스설치&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://docs.docker.com/toolbox/overview/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://docs.docker.com/toolbox/overvie
     
     </summary>
     

@@ -8,7 +8,15 @@
 
     <url>
         <loc>http://KKimSangHeon.github.io/2019/06/11/kube15/</loc>
-        <lastmod>2019-06-11T11:17:50.712Z</lastmod>
+        <lastmod>2019-06-14T10:42:21.533Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2019/06/14/kube16/</loc>
+        <lastmod>2019-06-14T10:35:25.687Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
