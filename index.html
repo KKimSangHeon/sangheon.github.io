@@ -167,7 +167,7 @@ ga('send', 'pageview');
         <a href="/2019/06/15/kube17/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/dockerandkube.jpg)" alt="14. 쿠버네티스 배포 전략" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/dockerandkube.jpg)" alt="14. 쿠버네티스 배포 전략(롤링업데이트, 블루그린)" class="thumbnail-image"></span>
     
     
         
@@ -191,7 +191,7 @@ ga('send', 'pageview');
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/15/kube17/">14. 쿠버네티스 배포 전략</a>
+        <a href="/2019/06/15/kube17/">14. 쿠버네티스 배포 전략(롤링업데이트, 블루그린)</a>
         </h1>
     
 
@@ -336,11 +336,8 @@ ga('send', 'pageview');
     
 
         <p class="article-excerpt">
-            깃랩설치
-깃랩설치helm install –name sangheon-gitlab –set externalUrl=http://sangheon-gitlab.com stable/gitlab-ce
-
-접속
-1234$ kubectl get svc -w sangheon-gitlab-gitlab-ce  # 설치가 잘 되었나 확인$ export SERVICE_IP=$(kub
+            깃랩설치1.깃랩설치helm install –name sangheon-gitlab –set externalUrl=http://sangheon-gitlab.com stable/gitlab-ce
+2.접속1234$ kubectl get svc -w sangheon-gitlab-gitlab-ce  # 설치가 잘 되었나 확인$ export SERVICE_IP=$(ku
         </p>
     </div>
 </article>

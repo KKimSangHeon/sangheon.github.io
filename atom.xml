@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-06-15T14:45:21.683Z</updated>
+  <updated>2019-06-15T14:58:25.510Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>14. 쿠버네티스 배포 전략</title>
+    <title>14. 쿠버네티스 배포 전략(롤링업데이트, 블루그린)</title>
     <link href="http://KKimSangHeon.github.io/2019/06/15/kube17/"/>
     <id>http://KKimSangHeon.github.io/2019/06/15/kube17/</id>
     <published>2019-06-15T12:30:25.000Z</published>
-    <updated>2019-06-15T14:45:21.683Z</updated>
+    <updated>2019-06-15T14:58:25.510Z</updated>
     
     <content type="html"><![CDATA[<p>어플리케이션을 컨테이너로 배포하는 시대에 들어오면서 배포 전략에도 변화가 생겼다. 컨테이너의 장점을 살려 작업을 자동화하고 서비스 무중단을 어떻게 유지해야 할지를 고민한다.</p>
 <h3 id="롤링-업데이트"><a href="#롤링-업데이트" class="headerlink" title="롤링 업데이트"></a>롤링 업데이트</h3><p>디플로이먼트의 파드를 교체하는 전략은 .specs.strategy.type로 정의 되며 RollingUpdate(기본값), Recreate(기존 파드가 모두 삭제된 다음 새로운 파드를 생성함) 중 선택한다.</p>
@@ -34,6 +34,7 @@
 <h3 id="실행중인-컨테이너에-대한-헬스체크-설정"><a href="#실행중인-컨테이너에-대한-헬스체크-설정" class="headerlink" title="실행중인 컨테이너에 대한 헬스체크 설정"></a>실행중인 컨테이너에 대한 헬스체크 설정</h3><p>쿠버네티스의 컨테이너 헬스체크에는 livenessProbe, readinessProbe 기능이 있다.</p>
 <p><code>livenessProbe</code>: 어플리케이션 헬스 체크 기능으로 어플리케이션이 의존하는 컨테이너 안의 파일이 존재하는지를 확인하는 용도로 사용된다.<br><code>readinessProbe</code> : 컨테이너 외부에서 HTTP 요청같은 트래픽을 발생시켜 이를 처리할 수 있는 상태인지를 확인하는 기능이다.</p>
 <p>헬스체크 기능을 포함한 컨테이너는 Running 상태가 되어도 READY 가 0/1 로 나오다가 모든 헬스 체크를 통과하고 1/1로 된다.</p>
+<h3 id="블루그린-배포"><a href="#블루그린-배포" class="headerlink" title="블루그린 배포"></a>블루그린 배포</h3><p>롤링업데이트는 강력하지만 새버전, 구버전이 동시에 존재하는 경우도 생길 수 있다. 이는 때로는 부작용을 가져올 수 있다. 이럴 때 사용할 수 있는것이 블루그린 배포인데 <code>블루그린은 새버전, 구버전의 2세트의 서버를 마련하고 한꺼번에 교체하는 배포 방법이다.</code> 이는 로드 밸런서 혹은 서비스 디스커버리 수준에서 참조 대상을 교체하는 방식으로 이뤄지는 배포형태이다. 이는 서버군이 아닌 켄테이너군을 통해 구현되고 배포할 서버군을 2게통으로 유지해야 하므로 롤링 업데이트보다 필요 리소스 양이 늘어난다. 그럼에도 다음 두가지의 장점을 누릴 수 있다.<br>1.신버전과 구버전이 혼재하는 시간없이 순간적인 교체가능<br>2.한쪽 서버군을 릴리즈 전 스탠바이 상태로 사용할 수 있음</p>
 ]]></content>
     
     <summary type="html">
@@ -146,46 +147,26 @@
     <link href="http://KKimSangHeon.github.io/2019/06/11/kube14/"/>
     <id>http://KKimSangHeon.github.io/2019/06/11/kube14/</id>
     <published>2019-06-11T10:57:50.000Z</published>
-    <updated>2019-06-11T10:59:05.192Z</updated>
+    <updated>2019-06-15T14:58:59.586Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="깃랩설치"><a href="#깃랩설치" class="headerlink" title="깃랩설치"></a>깃랩설치</h3><ol>
-<li><p>깃랩설치<br>helm install –name sangheon-gitlab –set externalUrl=<a href="http://sangheon-gitlab.com" target="_blank" rel="external">http://sangheon-gitlab.com</a> stable/gitlab-ce</p>
-</li>
-<li><p>접속</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ kubectl get svc -w sangheon-gitlab-gitlab-ce  # 설치가 잘 되었나 확인</div><div class="line"></div><div class="line">$ export SERVICE_IP=$(kubectl get svc --namespace default sangheon-gitlab-gitlab-ce -o jsonpath=&apos;&#123;.status.loadBalancer.ingress[0].ip&#125;&apos;)</div><div class="line">$ echo http://$SERVICE_IP/  # 접속해보자</div></pre></td></tr></table></figure>
-</li>
-</ol>
+    <content type="html"><![CDATA[<h3 id="깃랩설치"><a href="#깃랩설치" class="headerlink" title="깃랩설치"></a>깃랩설치</h3><p>1.깃랩설치<br>helm install –name sangheon-gitlab –set externalUrl=<a href="http://sangheon-gitlab.com" target="_blank" rel="external">http://sangheon-gitlab.com</a> stable/gitlab-ce</p>
+<p>2.접속<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ kubectl get svc -w sangheon-gitlab-gitlab-ce  # 설치가 잘 되었나 확인</div><div class="line"></div><div class="line">$ export SERVICE_IP=$(kubectl get svc --namespace default sangheon-gitlab-gitlab-ce -o jsonpath=&apos;&#123;.status.loadBalancer.ingress[0].ip&#125;&apos;)</div><div class="line">$ echo http://$SERVICE_IP/  # 접속해보자</div></pre></td></tr></table></figure></p>
 <p>처음 접속하면 root 계정의 password를 설정하게 된다. 설정하고 root로 로그인해보자.</p>
-<h3 id="젠킨스-설치"><a href="#젠킨스-설치" class="headerlink" title="젠킨스 설치"></a>젠킨스 설치</h3><ol>
-<li><p>젠킨스 설치</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ helm install --name sangheonkim-jenkins stable/jenkins</div></pre></td></tr></table></figure>
-</li>
-<li><p>접속</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ printf $(kubectl get secret --namespace default sangheonkim-jenkins -o jsonpath=&quot;&#123;.data.jenkins-admin-password&#125;&quot; | base64 --decode);echo</div><div class="line"></div><div class="line">출력값을 잘 기억하자. admin의 password이다.</div><div class="line"></div><div class="line">$ kubectl get svc --namespace default -w sangheonkim-jenkins</div><div class="line">$ export SERVICE_IP=$(kubectl get svc --namespace default sangheonkim-jenkins --template &quot;&#123;&#123; range (index .status.loadBalancer.ingress 0) &#125;&#125;&#123;&#123; . &#125;&#125;&#123;&#123; end &#125;&#125;&quot;)</div><div class="line">$ echo http://$SERVICE_IP:8080/login</div></pre></td></tr></table></figure>
-</li>
-</ol>
+<h3 id="젠킨스-설치"><a href="#젠킨스-설치" class="headerlink" title="젠킨스 설치"></a>젠킨스 설치</h3><p>1.젠킨스 설치<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ helm install --name sangheonkim-jenkins stable/jenkins</div></pre></td></tr></table></figure></p>
+<p>2.접속<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ printf $(kubectl get secret --namespace default sangheonkim-jenkins -o jsonpath=&quot;&#123;.data.jenkins-admin-password&#125;&quot; | base64 --decode);echo</div><div class="line"></div><div class="line">출력값을 잘 기억하자. admin의 password이다.</div><div class="line"></div><div class="line">$ kubectl get svc --namespace default -w sangheonkim-jenkins</div><div class="line">$ export SERVICE_IP=$(kubectl get svc --namespace default sangheonkim-jenkins --template &quot;&#123;&#123; range (index .status.loadBalancer.ingress 0) &#125;&#125;&#123;&#123; . &#125;&#125;&#123;&#123; end &#125;&#125;&quot;)</div><div class="line">$ echo http://$SERVICE_IP:8080/login</div></pre></td></tr></table></figure></p>
 <p>출력된 주소로 접속하여 admin/출력된 password를 입력하자.</p>
-<h3 id="소나큐브-설치"><a href="#소나큐브-설치" class="headerlink" title="소나큐브 설치"></a>소나큐브 설치</h3><ol>
-<li>설치</li>
-</ol>
+<h3 id="소나큐브-설치"><a href="#소나큐브-설치" class="headerlink" title="소나큐브 설치"></a>소나큐브 설치</h3><p>1.설치</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ helm install --name sangheonkim-sonarqube stable/sonarqube</div></pre></td></tr></table></figure>
-<ol>
-<li>접속<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ kubectl get svc -w sangheonkim-sonarqube-sonarqube</div><div class="line"></div><div class="line">$ export SERVICE_IP=$(kubectl get svc --namespace default sangheonkim-sonarqube-sonarqube -o jsonpath=&apos;&#123;.status.loadBalancer.ingress[0].ip&#125;&apos;)</div><div class="line"></div><div class="line">$ echo http://$SERVICE_IP:9000</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="dockerRegistry-구축"><a href="#dockerRegistry-구축" class="headerlink" title="dockerRegistry 구축"></a>dockerRegistry 구축</h3><ol>
-<li>설치<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ helm install --name docker-registry stable/docker-registry</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>2.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ export POD_NAME=$(kubectl get pods --namespace default -l &quot;app=docker-registry,release=docker-registry&quot; -o jsonpath=&quot;&#123;.items[0].metadata.name&#125;&quot;)</div><div class="line"></div><div class="line">$ echo &quot;Visit http://127.0.0.1:8080</div><div class="line"></div><div class="line">$ kubectl port-forward $POD_NAME 8080:5000</div></pre></td></tr></table></figure></p>
+<p>2.접속<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ kubectl get svc -w sangheonkim-sonarqube-sonarqube</div><div class="line"></div><div class="line">$ export SERVICE_IP=$(kubectl get svc --namespace default sangheonkim-sonarqube-sonarqube -o jsonpath=&apos;&#123;.status.loadBalancer.ingress[0].ip&#125;&apos;)</div><div class="line"></div><div class="line">$ echo http://$SERVICE_IP:9000</div></pre></td></tr></table></figure></p>
+<h3 id="dockerRegistry-구축"><a href="#dockerRegistry-구축" class="headerlink" title="dockerRegistry 구축"></a>dockerRegistry 구축</h3><p>1.설치<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ helm install --name docker-registry stable/docker-registry</div></pre></td></tr></table></figure></p>
+<p>2.접속<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ export POD_NAME=$(kubectl get pods --namespace default -l &quot;app=docker-registry,release=docker-registry&quot; -o jsonpath=&quot;&#123;.items[0].metadata.name&#125;&quot;)</div><div class="line"></div><div class="line">$ echo &quot;Visit http://127.0.0.1:8080</div><div class="line"></div><div class="line">$ kubectl port-forward $POD_NAME 8080:5000</div></pre></td></tr></table></figure></p>
 <p> <a href="http://127.0.0.1:8080" target="_blank" rel="external">http://127.0.0.1:8080</a> 로 앱에서 접속가능한듯?<br> 포트포워딩을 통해 5000으로도 가능?<br><a href="http://docker-registry.default.svc.cluster.local:5000" target="_blank" rel="external">http://docker-registry.default.svc.cluster.local:5000</a></p>
 <p>/</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;깃랩설치&quot;&gt;&lt;a href=&quot;#깃랩설치&quot; class=&quot;headerlink&quot; title=&quot;깃랩설치&quot;&gt;&lt;/a&gt;깃랩설치&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;깃랩설치&lt;br&gt;helm install –name sangheon-gitlab –set exter
+      &lt;h3 id=&quot;깃랩설치&quot;&gt;&lt;a href=&quot;#깃랩설치&quot; class=&quot;headerlink&quot; title=&quot;깃랩설치&quot;&gt;&lt;/a&gt;깃랩설치&lt;/h3&gt;&lt;p&gt;1.깃랩설치&lt;br&gt;helm install –name sangheon-gitlab –set externalUrl=
     
     </summary>
     
