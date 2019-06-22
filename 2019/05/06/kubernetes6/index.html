@@ -10,18 +10,18 @@
     
     
 
-      <meta name="description" content="도커툴박스설치 https://docs.docker.com/toolbox/overview/ virtual machine 가 없다면 체크하여 설치 PowerShell 관리자 권한으로 실행 1234567891011121314$ ExecutionPolicy      &amp;lt;-- 현재상태확인$ Set-ExecutionPolicy Unrestricted$ Set-Ex">
+      <meta name="description" content="도커툴박스설치 https://docs.docker.com/toolbox/overview/ virtual machine 가 없다면 체크하여 설치 PowerShell 관리자 권한으로 실행 12345678910111213141516$ ExecutionPolicy      &amp;lt;-- 현재상태확인$ Set-ExecutionPolicy Unrestricted$ Se">
 <meta name="keywords" content="kubernetes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(K8s) 6. 윈도우에서 실습해보기">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2019/05/06/kubernetes6/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="도커툴박스설치 https://docs.docker.com/toolbox/overview/ virtual machine 가 없다면 체크하여 설치 PowerShell 관리자 권한으로 실행 1234567891011121314$ ExecutionPolicy      &amp;lt;-- 현재상태확인$ Set-ExecutionPolicy Unrestricted$ Set-Ex">
+<meta property="og:description" content="도커툴박스설치 https://docs.docker.com/toolbox/overview/ virtual machine 가 없다면 체크하여 설치 PowerShell 관리자 권한으로 실행 12345678910111213141516$ ExecutionPolicy      &amp;lt;-- 현재상태확인$ Set-ExecutionPolicy Unrestricted$ Se">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/K8s.png">
-<meta property="og:updated_time" content="2019-05-06T14:28:07.985Z">
+<meta property="og:updated_time" content="2019-06-22T07:57:47.885Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(K8s) 6. 윈도우에서 실습해보기">
-<meta name="twitter:description" content="도커툴박스설치 https://docs.docker.com/toolbox/overview/ virtual machine 가 없다면 체크하여 설치 PowerShell 관리자 권한으로 실행 1234567891011121314$ ExecutionPolicy      &amp;lt;-- 현재상태확인$ Set-ExecutionPolicy Unrestricted$ Set-Ex">
+<meta name="twitter:description" content="도커툴박스설치 https://docs.docker.com/toolbox/overview/ virtual machine 가 없다면 체크하여 설치 PowerShell 관리자 권한으로 실행 12345678910111213141516$ ExecutionPolicy      &amp;lt;-- 현재상태확인$ Set-ExecutionPolicy Unrestricted$ Se">
 <meta name="twitter:image" content="http://kkimsangheon.github.io/images/K8s.png">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
@@ -185,7 +185,7 @@ ga('send', 'pageview');
 <p><a href="https://docs.docker.com/toolbox/overview/" target="_blank" rel="external">https://docs.docker.com/toolbox/overview/</a></p>
 <p>virtual machine 가 없다면 체크하여 설치</p>
 <p>PowerShell 관리자 권한으로 실행</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">$ ExecutionPolicy      &lt;-- 현재상태확인</div><div class="line">$ Set-ExecutionPolicy Unrestricted</div><div class="line"></div><div class="line"></div><div class="line">$ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString(&apos;https://chocolatey.org/install.ps1&apos;))</div><div class="line"></div><div class="line">$ choco install minikube kubernetes-cli</div><div class="line"></div><div class="line">$ kubectl run sangheonkim --image=gcr.io/google-samples/kubernetes-bootcamp:v1 --port=8080</div><div class="line"></div><div class="line"></div><div class="line">$ minikube dashboard</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">$ ExecutionPolicy      &lt;-- 현재상태확인</div><div class="line">$ Set-ExecutionPolicy Unrestricted</div><div class="line"></div><div class="line"></div><div class="line">$ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString(&apos;https://chocolatey.org/install.ps1&apos;))</div><div class="line"></div><div class="line">$ choco install minikube kubernetes-cli</div><div class="line"></div><div class="line">$ minikube start</div><div class="line"></div><div class="line">$ kubectl run sangheonkim --image=gcr.io/google-samples/kubernetes-bootcamp:v1 --port=8080</div><div class="line"></div><div class="line"></div><div class="line">$ minikube dashboard</div></pre></td></tr></table></figure>
 <p>파드 내부에서 출력하는 로그를 보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ kubectl get pods</div><div class="line">를 통해 파드의 정보를 복사하자,</div><div class="line">$ kubectl logs $POD_NAME</div></pre></td></tr></table></figure></p>
 <p>컨테이너로 들어가서 여러 명령어를 실행해보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ kubectl exec $POD_NAME env</div><div class="line"></div><div class="line">$ kubectl exec -ti $POD_NAME bash</div></pre></td></tr></table></figure></p>
 <p>서비스를 만들어보자</p>
