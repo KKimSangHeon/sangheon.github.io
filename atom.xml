@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-06-23T07:38:42.130Z</updated>
+  <updated>2019-06-23T08:57:57.219Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,44 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>16. 장애대책</title>
+    <link href="http://KKimSangHeon.github.io/2019/06/23/kube20/"/>
+    <id>http://KKimSangHeon.github.io/2019/06/23/kube20/</id>
+    <published>2019-06-23T08:30:27.000Z</published>
+    <updated>2019-06-23T08:57:57.219Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="도커-운영-시의-장애-대책"><a href="#도커-운영-시의-장애-대책" class="headerlink" title="도커 운영 시의 장애 대책"></a>도커 운영 시의 장애 대책</h3><p>주로 dockerd 자체보다는 운영하는 사람의 실수나 부주의에서 비롯되거나 서버 리소스에 의한것이많다.</p>
+<p><code>장애를 막기 위한 이미지 운영</code><br>의도하지 않은 컨테이너가 실행되는 경우</p>
+<ul>
+<li>운영 환경에서 latest버전의 이미지를 실행하거나 컨테이너 오케스트레이션 과정에서 최신 이미지를 실행한 상황</li>
+<li>latest 외의 버전 이미지를 덮어쓴 상황</li>
+<li>example/aaa:latest 태그로 빌드해야될 이미지를 example/bbb:latest 태그로 빌드한 상황(다른 이미지와 바뀜)</li>
+</ul>
+<p><code>이미지 테스트</code><br>실행단계에서 이미지가 잘못되었는지 판단하면 늦다. 이전에 이미지 테스트를 거치는것이 좋은데 이를 위해 container-structure-test가 많이 사용된다.<br> container-structure-test는 구글에서 오픈 소스로 공개한 테스트 프레임워크로 도커이미지를 테스트 대상으로 한다. 컨테이너안에 특정 파일의 존재여부, 파일 내용확인등을 진행할 수 있다.</p>
+<p> <code>디스크 용량 부족</code><br> 도커 호스트 역시 디스크 용량 부족을 주의해야 한다. 용량이 가득차면 새로운 컨테이너를 만들수도 없고 기존 컨테이너의 실행에도 지장이 생긴다. 서드파티 모니터링 도구를 사용한 호스트 디스크 용량 모니터링은 필수이며 도커에서도 디스크 용량을 낭비하지 않도록 해야한다. 이를 위해 불필요한 이미지나 컨테이너는 디스크에서 삭제하는것이 좋다. 이럴경우 docker prune 명령어(사용하지 않는 이미지나 컨테이너 일괄 삭제)를 cron을 통해 야간에 실행하면 좋다</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;도커-운영-시의-장애-대책&quot;&gt;&lt;a href=&quot;#도커-운영-시의-장애-대책&quot; class=&quot;headerlink&quot; title=&quot;도커 운영 시의 장애 대책&quot;&gt;&lt;/a&gt;도커 운영 시의 장애 대책&lt;/h3&gt;&lt;p&gt;주로 dockerd 자체보다는 운영하는 
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
+    
+    
+      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
     <title>15-1. 로그 관리방법(구글스택드라이버, stern)</title>
     <link href="http://KKimSangHeon.github.io/2019/06/23/kube19/"/>
     <id>http://KKimSangHeon.github.io/2019/06/23/kube19/</id>
     <published>2019-06-23T06:45:10.000Z</published>
-    <updated>2019-06-23T07:38:42.130Z</updated>
+    <updated>2019-06-23T08:30:01.300Z</updated>
     
     <content type="html"><![CDATA[<h3 id="구글-구글스택드라이버"><a href="#구글-구글스택드라이버" class="headerlink" title="구글 구글스택드라이버"></a>구글 구글스택드라이버</h3><p>구글 스택드라이버는 GCP나 AWS에서 로깅 및 모니터링에 사용되는 매니지드 서비스이다.</p>
 <p><a href="https://app.google.stackdriver.com/" target="_blank" rel="external">https://app.google.stackdriver.com/</a> 으로 접속하거나 콘솔메뉴(왼쪽메뉴바)에서 모니터링을 선택하자.</p>
@@ -1250,37 +1283,6 @@
 <p>컨테이너 이미지가 수정된 경우 기존 파드는 단계적으로 정지된다. 또한 <code>kubectl rollout history deployment echo</code>를 입력해보면 새로운 리비전으로 변경된것을 확인할 수 있다.</p>
 <h3 id="롤백하기"><a href="#롤백하기" class="headerlink" title="롤백하기"></a>롤백하기</h3><p>undo를 실행하면 디플로이먼트가 바로 직전 리비전으로 롤백된다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kubectl rollout undo deployment echo</div></pre></td></tr></table></figure></p>
 <p>디플로이먼트는 다음 명령어를 통해 삭제할 수 있다. 이와 관련된 레플리카세트와 파드가 함께 삭제된다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kubectl delete -f simple-deployment.yaml</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;docker container prune&lt;/code&gt;&lt;br&gt;docker container prune [options]&lt;br&gt;도커를 오래 사용하다 보면 디스케이 컨테이너와 이미지가 점점 늘어나게 된다. 이런 경우 prune 명령을 사용해
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>5.도커 운영과 관리를 위한 명령</title>
-    <link href="http://KKimSangHeon.github.io/2019/05/26/kube5/"/>
-    <id>http://KKimSangHeon.github.io/2019/05/26/kube5/</id>
-    <published>2019-05-26T08:30:05.000Z</published>
-    <updated>2019-05-27T12:19:49.742Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>docker container prune</code><br>docker container prune [options]<br>도커를 오래 사용하다 보면 디스케이 컨테이너와 이미지가 점점 늘어나게 된다. 이런 경우 prune 명령을 사용해 필요없는 컨테이너를 일괄 삭제할 수 있다.</p>
-<p>docker image prune [options]<br>도커를 오래 사용하다 보면 디스케이 컨테이너와 이미지가 점점 늘어나게 된다. 이런 경우 prune 명령을 사용해 필요없는 이미지를 일괄 삭제할 수 있다.</p>
-<p>docker system prune [options]<br>사용하지 않는 도커 이미지 및 컨테이너,볼륨,네트워크 등 모든 리소스를 일괄적으로 삭제할 수 있다.</p>
-<p><code>docker iamge prune</code><br>docker image prune [options]<br>이미지도 컨테이너와 마찬가지로 사용하지 않는 것이 점차 누적된다. 디스크 용량을 너무 차지하지 않도록 정기적으로 삭제 해줘야 한다. docker image prune명령은 태그가 붙지않은 모든 이미지를 삭제한다.</p>
-<p><code>docker system prune</code><br>사용하지 않는 도커 이미지 및 컨테이너, 볼륨, 네트워크 등 모든 도커 리소스를 일괄적으로 삭제한다.</p>
-<p><code>docker container stats</code><br>시스템 리소스 사용 현황을 컨테이너 단위로 확인할 때 사용한다. 유닉스 계열 운영 체제의 top 명령과 같은 역할을 한다고 보면 된다.<br>docker container stats [options] [대상_컨테이너ID]</p>
-<p>80P부터</p>
 ]]></content>
     
     <summary type="html">
