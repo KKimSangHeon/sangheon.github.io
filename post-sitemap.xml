@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2019/06/19/network1/</loc>
+        <lastmod>2019-06-25T11:46:52.012Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2019/06/25/network2/</loc>
+        <lastmod>2019-06-25T11:46:46.996Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2019/06/23/kube20/</loc>
         <lastmod>2019-06-23T10:21:05.006Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -33,14 +49,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2019/05/06/kubernetes6/</loc>
         <lastmod>2019-06-22T07:57:47.885Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2019/06/19/network1/</loc>
-        <lastmod>2019-06-19T14:03:01.833Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

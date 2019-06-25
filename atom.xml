@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-06-23T10:21:05.006Z</updated>
+  <updated>2019-06-25T11:46:46.996Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2.TCP/IP와의 만남</title>
+    <link href="http://KKimSangHeon.github.io/2019/06/25/network2/"/>
+    <id>http://KKimSangHeon.github.io/2019/06/25/network2/</id>
+    <published>2019-06-25T11:46:10.000Z</published>
+    <updated>2019-06-25T11:46:46.996Z</updated>
+    
+    <content type="html"><![CDATA[<p>오늘날 가장 많이 사용되는 프로토콜은 TCP/IP 이다.(인터넷 때문..)<br>Transmission Control Protocol/Internet Protocol의 약자로서 ARPANET에 의해 처음 개발되었다. 각각의 네트워크에 접속되는 호스트는 다른 네트워크에 연결되어 있는 호스트까지도 서로 데이터를 주고받을 수 있다. 이 때 사용하는 호스트들의 고유 주소는 Internet Network Information Center(InterNIC)이란 단체에서 관리 분배되고 있다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;오늘날 가장 많이 사용되는 프로토콜은 TCP/IP 이다.(인터넷 때문..)&lt;br&gt;Transmission Control Protocol/Internet Protocol의 약자로서 ARPANET에 의해 처음 개발되었다. 각각의 네트워크에 접속되는 호
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="Network" scheme="http://KKimSangHeon.github.io/categories/CS/Network/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>16. 장애대책</title>
@@ -90,11 +113,11 @@
   </entry>
   
   <entry>
-    <title>network1</title>
+    <title>1.네트워크 세상에 들어서며</title>
     <link href="http://KKimSangHeon.github.io/2019/06/19/network1/"/>
     <id>http://KKimSangHeon.github.io/2019/06/19/network1/</id>
     <published>2019-06-19T14:00:51.000Z</published>
-    <updated>2019-06-19T14:03:01.833Z</updated>
+    <updated>2019-06-25T11:46:52.012Z</updated>
     
     <content type="html"><![CDATA[<h3 id="인터넷"><a href="#인터넷" class="headerlink" title="인터넷"></a>인터넷</h3><p>여러개의 네트워크를 묶었다는 의미.<br><code>인터넷의 특징</code><br>1.TCP/IP라는 하나의 프로토콜만 사용<br>2.웹브라우저를 통해 인터넷을 탐험한다.<br>3.없는정보가 없다.</p>
 <h3 id="인트라넷"><a href="#인트라넷" class="headerlink" title="인트라넷"></a>인트라넷</h3><p>내부의 네트워크를 의미. 사내업무도 웹 브라우저만으로 할 수 있다. TCP/IP 프로토콜을 사용함.</p>
@@ -111,11 +134,26 @@
 <p><code>TP 케이블?</code> : Twisted-pair의 약어로써 즉 꼬인녀석이라는 의미이다. TP에는 UTP와 STP가 존재하며 <code>UTP</code>는 Unshielded(감싸지 않은) UP를 의미하는데 우리가 주로 사용하는 케이블이다. <code>STP</code>는 Shielded로 케이블 주위를 어떤 절연체로 감싸서 만든것을 말한다. STP가 좀더 비싸고 성능이 좋다.<br>기존 UTP가 많았기에 UTP가 주를 이루게 되었고 STP는 주로 토큰링 쪽에서 많이 쓰이고 있다.</p>
 <h3 id="케이블"><a href="#케이블" class="headerlink" title="케이블"></a>케이블</h3><p><code>10 Base T</code>에서 10은 속도를 나타낸다. 즉 10Mbps의 속도를 지원하는 케이블을 의미한다.<br>Base란 말은 케이블이 Baseband용 케이블이라는 것을 의미한다. 케이블의 종류에는 Baseband와 Broadband가 있는데 Baseband는 디지털 방식이고 Broadband는 아날로그 방식이라고 볼 수 있다.<br>T가 있는 자리에는 케이블의 종류 또는 이 케이블이 전송할 수 있는 최대거리가 나온다. 여기서는 케이블의 종류가 나온것으로 T란 TP(Twisted Pair)케이블이라는 것을 나타낸다. 이것이 바로 UTP 케이블을 나타낸다.<br>가령 T 대신 숫자가 나왔을 땐 최대 통신거리를 의미하는데 10 Base 5 일경우 최대 500m까지 통신이 가능함을 의미한다.</p>
 <p>즉 10 Base T는 10M의 속도로 최대 500미터까지 전송이 가능한 케이블을 의미한다.</p>
-<h3 id="맥어드레스"><a href="#맥어드레스" class="headerlink" title="맥어드레스"></a>맥어드레스</h3><p>MAC는  Media Access Control의 약어로서 네트워크 상에서 어떻게 서로를 구분해서 인식할지에 대한것이다. 통신을 위해서는 서로를 구분할 일종의 주소가 필요한데 이를 MAC주소라 한다. 6옥테트(48bit) 의 주소를 갖게 되는데 이 주소는 랜카드 또는 네트워크 장비에 고정되어 있는 주소이고 유일하다. 6개의 16진수로 표현되는데 앞의 6개는 OUI(Organizational Unique Identifier) 즉 생산자를 나타내고 뒤의 6개는 시리얼 넘버로 볼 수 있다.</p>
-<p><code>ARP:Address Resolution Protocol</code>:IP주소를 다시 MAC로 바꾸는 절차를 의미.<br>iconfig/all을 입력했을 때 Physical address를 맥 어드레스라 한다.</p>
+<h3 id="맥어드레스"><a href="#맥어드레스" class="headerlink" title="맥어드레스"></a>맥어드레스</h3><p>MAC는 Media Access Control의 약어로서 네트워크 상에서 어떻게 서로를 구분해서 인식할지에 대한것이다. 통신을 위해서는 서로를 구분할 일종의 주소가 필요한데 이를 MAC주소라 한다. 6옥테트(48bit) 의 주소를 갖게 되는데 이 주소는 랜카드 또는 네트워크 장비에 고정되어 있는 주소이고 유일하다. 6개의 16진수로 표현되는데 앞의 6개는 OUI(Organizational Unique Identifier) 즉 생산자를 나타내고 뒤의 6개는 시리얼 넘버로 볼 수 있다.</p>
+<p>ARP:Address Resolution Protocol:IP주소를 다시 MAC로 바꾸는 절차를 의미.<br>iconfig/all을 입력했을 때 Physical address를 맥 어드레스라 한다.</p>
 <p><code>같은 네트워크에서의 통신</code><br>PC Y는 자기가 속한 네트워크에 있는 모든 PC에게 메시지를 보내는데 이때 메시지의 의미는 “여기 네트워크안에 Z있으면 통신하고싶으니 맥어드레스좀 알려줘라”라는 것이다. PC Z는 Y에게 자신의 맥 어드레스를 알려주게 되고 통신을 시작하게 된다.</p>
-<p><code>다른 네트워크간 통신</code><br>호스트 Z가 다른네트워크에 있을 때 즉 라우터를 통해 가야하는 경우라 생각해보자.<br>이경우 Y가 브로드 캐스트를 보내도 Z는 메세지를 받아볼 수 없다. 이 경우 라우터는 Y가 브로드캐스트를 보내도 Z가 대답하지 못할것을 알게된다. 그 후 라우터는 Y에게 자신 즉 라우터의 맥 어드레스를 보내면서 “나한테 전달해주면 내가 Z에게 전달해준다고 메세지를 보냅니다.”</p>
+<p><code>다른 네트워크간 통신</code><br>호스트 Z가 다른네트워크에 있을 때 즉 라우터를 통해 가야하는 경우라 생각해보자.<br>이경우 Y가 브로드 캐스트를 보내도 Z는 메세지를 받아볼 수 없다(라우터는 브로드 캐스팅을 통과시켜 주지 않는다.). 이 경우 라우터는 Y가 브로드캐스트를 보내도 Z가 대답하지 못할것을 알게된다. 그 후 라우터는 Y에게 자신 즉 라우터의 맥 어드레스를 보내면서 “나한테 전달해주면 내가 Z에게 전달해준다고 메세지를 보냅니다.”</p>
 <p>따라서 PC Y는 PC Z에게 정보를 보낼 때 받는 맥 어드레스를 라우터의 맥 어드레스로 해서 보내게 된다. 그 다음 라우터가 Z가 있는 네트워크로 넘겨준다. 그럼 그곳에 살고있는 라우터는 Z의 맥 어드레스를 알아내고 해당 목적지로 데이터를 전송해준다.</p>
+<p>이번에는 네트워크 통신방식에 대해 알아보자.</p>
+<h3 id="유니캐스트"><a href="#유니캐스트" class="headerlink" title="유니캐스트"></a>유니캐스트</h3><p>네트워크상에서 가장 많이 사용되고 있는 트래픽이다. <u>출발지와 목적지의 주소 즉 맥어드레스를 프레임 안에 세팅하고 통신하는 방식을 의미한다. (받는 PC의 주소를 프레임 안에 하나 넣음)</u><br>특정 PC가 유니캐스트 프레임을 뿌리면 로컬 이더넷의 기본 성격이 붙어있는 모든 PC들을 일단 이프레임을 받아들여서 랜카드에서 자신의 맥 어드레스와 비교하게 된다. <u>자신이 받아야할것이라고 판단되면 받아서 처리하지만 자신이 받지말아야할 프레임일경우 프레임을 버리게 된다. 이 때는 PC의 CPU까지는 영향을 주지 않기 때문에 PC의 성능이 저하되는 일은 발생하지 않는다.</u> 즉 자신의 것이 아니면 랜카드가 해당 프레임을 버리고 자신의 것이면 CPU로 올려보내준다.</p>
+<h3 id="브로드캐스트"><a href="#브로드캐스트" class="headerlink" title="브로드캐스트"></a>브로드캐스트</h3><p>로컬 랜 상에 붙어있는 모든 네트워크 장비들에게 보내는 통신. 로컬랜이란 라우터에 의해 구분지어진 공간, 즉 브로드 캐스트 도메인이라고 하는공간을 뜻한다. 브로드캐스트는 통신의 대상이 특정한 어떤 한 네트워크 장비가 아니고 내가 살고 있는 네트워크 안의 모든 네트워크 장비들에게 통신할 때 쓰기위한 방식이다. 브로드 캐스트의 주소는 FFFF.FFFF.FFFF이며 이 주소를 받은 랜카드는 해당 패킷을 CPU로 올려 보내게 되고 CPU는 이를 처리하게 된다. 이로인해 유니캐스트에 비해 CPU에 부담에 많아지는 방식이다. (해당 패킷을 받으면 CPU는 하던일을 중지하고 브로드캐스트 받은 것을 처리한다.)</p>
+<p><code>브로드캐스트가 발생하는 경우</code> : ARP - 우리동네 사는 모든 사람들에게 이 IP주소 가진사람 누구야 라고 브로드캐스팅을 보내고 응답을 통해 알아낸다.</p>
+<h3 id="멀티캐스트"><a href="#멀티캐스트" class="headerlink" title="멀티캐스트"></a>멀티캐스트</h3><p>200명중 150명에게만 데이터를 보내야 할경우 150명에게 유니캐스트를 보내는것은 150번을 반복해야 하므로 트래픽을 가중시키는 행위이다. 200명 모두에게 전송하는 브로드 캐스팅 또한 불합리한 방식이다.<br>이중 적합한 방법은 멀티캐스트이다. 멀티캐스트는 보내고자 하는 그룹 멤버들에게만 한번에 보낼 수 있으며 특정 그룹에 속해있는 사람들에게만 선택적으로, 한번에 보낼 수 있다. 만약 라우터나 스위치가 멀티캐스트를 지원하지 않는경우 이를 브로드캐스트처럼 취급해서 다 막아버리는 경우가 생길 수 있다.(라우터는 브로드 캐스트를 막는다)</p>
+<h3 id="OSI7계층"><a href="#OSI7계층" class="headerlink" title="OSI7계층"></a>OSI7계층</h3><p>통신에 관한 국제적인 표준기구인 International Organization for Standardization(ISO)라는 곳에서 만든 OSI7레이어는 통신이 일어나는 단계를 7단게로 나눔.<br>장점</p>
+<ul>
+<li>데이터의 흐름이 한눈에 보인다.</li>
+<li>문제 해결이 편리하다.(작은 문제들로 나누어져있음.)<br>메일이 안보내지면 ping를 통해 연결되었나 확인하고 되어있을경우 네트워크 영역까지는 잘 동작하는것이라 판단가능(피지컬.데이터링크,네트워크)</li>
+<li>층별로 표준화를 하므로 여러 회사 장비를 써도 이상없이 돌아간다.(케이블 국산, 랜카드 인텔, 스위치나 허브는 시스코)</li>
+</ul>
+<p><code>피지컬 계층</code><br>전기,기계,기능적인 특성을 이용해서 통신 케이블로 데이터를 전송한다. 단지 데이터를 전달만 할뿐 에러, 통신의 효율등에는 관여하지 않음. 장비로는 통신케이블,리피터, 허브등이 있다.</p>
+<p><code>데이터 링크 계층</code><br>정보의 오류와 흐름을 관리하여 안전한 정보의 전달 수행. 통신의 오류도 찾아주고 재전송도 하는 기능을 갖고있을 뿐 아니라 맥어드레스를 가지고 통신할 수 있게 해줌. 여기서 전송되는 단위를 프레임이라 함. 브릿지, 스위치 등이 있다.</p>
+<p><code>네트워크 계층</code><br>데이터를 목적지까지 빠르고 안전하게 전달하는 라우팅을 한다. 라우터가 이 계층에 속하며 스위치 중에서도 라우팅 기능을 하는것들이 있기에 스위치를 보통 Layer3 스위치라 한다.</p>
+<h3 id="프로토콜"><a href="#프로토콜" class="headerlink" title="프로토콜"></a>프로토콜</h3><p>규약 협약이란 뜻으로 인터넷을 사용하기 위해서는 모든 PC가 TCP/IP라는 프로토콜을 사용해야 한다. 즉 프로토콜이란 컴퓨터끼리 서로 통신하기 위해서 꼭 필요한 서로간의 통신규약 또는 통신방식에 대한 약속이다.</p>
 ]]></content>
     
     <summary type="html">
@@ -124,7 +162,9 @@
     
     </summary>
     
-      <category term="Etc" scheme="http://KKimSangHeon.github.io/categories/Etc/"/>
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="Network" scheme="http://KKimSangHeon.github.io/categories/CS/Network/"/>
     
     
   </entry>
@@ -1249,55 +1289,6 @@
     <summary type="html">
     
       &lt;p&gt;쿠버네티스 클러스터 안에서 파드의 집합(주로 레플리카세트)에 대한 경로나 서비스 디스커버리(API 주소가 동적으로 바뀌어도 클라이언트가 대상을 바꾸지않고 접근할 수 있음)를 제공하는 리소스이다. 서비스의 대상이 되는 파드는 서비스에서 정의하는 레
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>6.쿠버네티스의 주요 개념(리소스 개요,파드,네임스페이스,레플리카세트,디플로이먼트</title>
-    <link href="http://KKimSangHeon.github.io/2019/05/27/kube6/"/>
-    <id>http://KKimSangHeon.github.io/2019/05/27/kube6/</id>
-    <published>2019-05-27T11:01:24.000Z</published>
-    <updated>2019-05-29T10:21:11.518Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>docker container prune</code><br>docker container prune [options]<br>도커를 오래 사용하다 보면 디스케이 컨테이너와 이미지가 점점 늘어나게 된다. 이런 경우 prune 명령을 사용해 필요없는 컨테이너를 일괄 삭제할 수 있다.</p>
-<p>docker image prune [options]<br>도커를 오래 사용하다 보면 디스케이 컨테이너와 이미지가 점점 늘어나게 된다. 이런 경우 prune 명령을 사용해 필요없는 이미지를 일괄 삭제할 수 있다.</p>
-<p>docker system prune [options]<br>사용하지 않는 도커 이미지 및 컨테이너,볼륨,네트워크 등 모든 리소스를 일괄적으로 삭제할 수 있다.</p>
-<p>쿠버네티스로 실행하는 애펄리케이션은 애플리케이션을 구성하는 다양한 리소스가 함께 연동해 동작한다.</p>
-<h3 id="리소스의-종류-및-용도"><a href="#리소스의-종류-및-용도" class="headerlink" title="리소스의 종류 및 용도"></a>리소스의 종류 및 용도</h3><p><code>노드</code> : 컨테이너가 배치되는 서버<br><code>네임스페이스</code> : 쿠버네티스 클러스터 안의 가상 클러스터.<br><code>파드</code> : 컨테이너의 집합 중 가장 작은 단위로 컨테이너 실행 방법을 정의한다.<br><code>레플리카 세트</code>: 같은 스펙을 갖는 파드를 여러개 생성하고 관리하는 역할을 한다.<br><code>디플로이먼트</code> : 레플리카 세트의 리비전을 관리한다.<br><code>서비스</code>: 파드의 집합에 접근하기 위한 경로를 정의한다.<br><code>인그레스</code>:서비스를 쿠버네티스 클러스터 외부로 노출시킨다.<br><code>컨피그맵</code> : 설정 정보를 정의하고 파드에 전달한다.<br><code>퍼시스턴트 볼륨</code> : 파드가 사용할 스토리지의 크기 및 종류를 정의.<br><code>퍼시스턴스 볼륨 클레임</code> : 퍼시스턴트 볼륨을 동적으로 확보.<br><code>스토리지 클래스</code> : 퍼시스턴트 볼륨이 확보하는 스토리지의 종류를 정의<br><code>스테이트풀 세트</code> : 같은 스펙으로 모두 동일한 파드를 여러개 생성하고 관리한다.<br><code>잡</code>: 상주 실행을 목적으로 하지 않는 파드를 여러개 생성하고 정상적인 종료를 보장한다.<br><code>크론잡</code>: 크론 문법으로 스케줄링되는 잡.<br><code>시크릿</code> : 인증 정보같은 기밀 데이터를 정의한다.<br><code>롤</code>: 네임스페이스 안에서 조작 가능한 쿠버네티스 리소스의 규칙을 정의한다.<br><code>롤바인딩</code>: 쿠버네티스 리소스 사용자와 롤을 연결 짓는다.<br><code>클러스터룰</code>: 클러스터 전체적으로 조작 가능한 쿠버네티스 리소스의 규칙을 정의한다.<br><code>클러스터롤바인딩</code>:쿠버네티스 리소스 사용자와 클러스터 롤을 연결 짓는다.<br><code>서비스 계정</code>: 파드가 쿠버네티스 리소스를 조작할 때 사용하는 계정</p>
-<h3 id="쿠버네티스-클러스터와-노드"><a href="#쿠버네티스-클러스터와-노드" class="headerlink" title="쿠버네티스 클러스터와 노드"></a>쿠버네티스 클러스터와 노드</h3><p>쿠버네티스 리소스 중에서 가장 큰 개념은 노드이다. 쿠버네티스는 클러스터 전체를 관리하는 서버인 마스터가 적어도 하나 이상 있어야 하며 쿠버네티스 클러스터는 마스터와 노드의 그룹으로 구성된다.</p>
-<h3 id="네임스페이스"><a href="#네임스페이스" class="headerlink" title="네임스페이스"></a>네임스페이스</h3><p>쿠버네티스는 클러스터 안에 가상 클러스터를 또 다시 만들 수 있다. 이를 네임스페이스라 한다. 클러스터를 처음 구축하면 default, docker, kube-public, kube-system의 네임스페이스 4개가 이미 만들어져 있다.</p>
-<h3 id="파드"><a href="#파드" class="headerlink" title="파드"></a>파드</h3><p>파드는 컨테이너가 모인 집합체의 단위로 적어도 하나 이상의 컨테이너로 이루어진다. 쿠버네티스에서는 결합이 강한 컨테이너를 파드로 묶어 일괄 배포한다.<br>파드 하나는 여러 노드에 걸쳐 배치될 수 없다. 함께 배포해야 정합성을 유지할 수 있는 컨테이너 등에도 해당 컨테이너를 같은 파드로 묶어두는 전략이 유용하다.<br>쿠버네티스에서는 관리용 서버인 마스터가 클러스터 전체를 제어하며 마스터 노드는 관리용 컴포넌트가 담긴 파드만 배포된 노드이다. 어플리케이션에 사용되는 파드는 배포할 수 없다.</p>
-<h3 id="파드생성-및-배포"><a href="#파드생성-및-배포" class="headerlink" title="파드생성 및 배포"></a>파드생성 및 배포</h3><p>파드생성은 kubectl만 사용해도 가능하지만, 버전관리 관점에서도 yaml파일로 정의하는것이 좋다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">apiVersion: v1  # 리소스의 유형을 지정하는 속성</div><div class="line">kind: Pod</div><div class="line">metadata:       # 리소스에 부여되는 메타데이터. metadata.name 속성의 값이 리소스의 이름이 된다.</div><div class="line">  name: simple-echo</div><div class="line">spec:           # 리소스를 정의하기 위한 속성.</div><div class="line">  containers:</div><div class="line">  - name: nginx # 컨테이너 이름</div><div class="line">    image: gihyodocker/nginx:latest # 도커 허브에 저장된 이미지 태그값</div><div class="line">    env:        # 환경변수</div><div class="line">    - name: BACKEND_HOST</div><div class="line">      value: localhost:8080</div><div class="line">    ports:      # 컨테이너가 노출시킬 포트를 지정 (도커파일에서 지정한 경우 따로 지정할필요 x)</div><div class="line">    - containerPort: 80</div><div class="line">  - name: echo</div><div class="line">    image: gihyodocker/echo:latest</div><div class="line">    ports:</div><div class="line">    - containerPort: 8080</div></pre></td></tr></table></figure>
-<p>아래 명령어를 입력하여 클러스터에 배포할 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ kubectl apply -f simple-pod.yaml</div><div class="line">$ kubectl get pod</div><div class="line">를 입력하여 파드 정보를 볼 수 있다. READY에 분모는 파드에 정의된 컨테이너 수이고 분자는 실행 상태의 컨테이너 수 이다.</div></pre></td></tr></table></figure></p>
-<p>아래 명령어를 통해 파드안에 있는 컨테이너의 표준 출력을 화면에 출력할 수 있다.<br>뒤 -c는 컨테이너를 지정한것.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kubectl logs -f simple-echo -c echo</div></pre></td></tr></table></figure></p>
-<p>파드를 삭제하기 위해 다음명령어를 사용할 수 있다<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kubectl delete pod simple-echo</div></pre></td></tr></table></figure></p>
-<p>매니페스트 파일로도 파드를 삭제할 수 있다. 이 경우 메니패스트에 작성된 리소스 전체가 삭제된다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kubectl delete -f simple-pod.yaml</div></pre></td></tr></table></figure>
-<p>파드에는 각각 고유의 가상 IP주소가 할당된다. 이는 파드에 속하는 모든 컨테이너가 공유하며 이로인해 같은 파드 안의 모든 컨테이너의 가상 IP가 같기 때문에 컨테이너간 통신이 가능해진다.</p>
-<h3 id="레플리카세트"><a href="#레플리카세트" class="headerlink" title="레플리카세트"></a>레플리카세트</h3><p>레플리카세트는 똑같은 정의를 갖는 파드를 여러개 생성하고 관리하기 위한 리소스다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">apiVersion: apps/v1</div><div class="line">kind: ReplicaSet</div><div class="line">metadata:</div><div class="line">  name: echo</div><div class="line">  labels:</div><div class="line">    app: echo</div><div class="line">spec:</div><div class="line">  replicas: 3</div><div class="line">  selector:</div><div class="line">    matchLabels:</div><div class="line">      app: echo</div><div class="line">  template: # template 아래는 파드 리소스 정의와 같음</div><div class="line">    metadata:</div><div class="line">      labels:</div><div class="line">        app: echo</div><div class="line">    spec:</div><div class="line">      containers:</div><div class="line">      - name: nginx</div><div class="line">        image: gihyodocker/nginx:latest</div><div class="line">        env:</div><div class="line">        - name: BACKEND_HOST</div><div class="line">          value: localhost:8080</div><div class="line">        ports:</div><div class="line">        - containerPort: 80</div><div class="line">      - name: echo</div><div class="line">        image: gihyodocker/echo:latest</div><div class="line">        ports:</div><div class="line">        - containerPort: 8080</div></pre></td></tr></table></figure>
-<h3 id="디플로이먼트"><a href="#디플로이먼트" class="headerlink" title="디플로이먼트"></a>디플로이먼트</h3><p>레플리카세트보다 상위에 해당하는 리소스로 디플로이먼트가 있다. 디플로이먼트는 어플리케이션 배포의 기본단위가 되는 리소스이다.<br>디플로이먼트의 정의는 레플리카세트의 정의와 크게 다르지 않다. 차이가 있다면 디플로이먼트가 레플리카세트의 리비전 관리를 할 수 있다는 점 정도다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">apiVersion: apps/v1</div><div class="line">kind: Deployment</div><div class="line">metadata:</div><div class="line">  name: echo</div><div class="line">  labels:</div><div class="line">    app: echo</div><div class="line">spec:</div><div class="line">  replicas: 3</div><div class="line">  selector:</div><div class="line">    matchLabels:</div><div class="line">      app: echo</div><div class="line">  template: # template 아래는 파드 리소스 정의와 같음</div><div class="line">    metadata:</div><div class="line">      labels:</div><div class="line">        app: echo</div><div class="line">    spec:</div><div class="line">      containers:</div><div class="line">      - name: nginx</div><div class="line">        image: gihyodocker/nginx:latest</div><div class="line">        env:</div><div class="line">        - name: BACKEND_HOST</div><div class="line">          value: localhost:8080</div><div class="line">        ports:</div><div class="line">        - containerPort: 80</div><div class="line">      - name: echo</div><div class="line">        image: gihyodocker/echo:patched</div><div class="line">        env:</div><div class="line">        - name: HOGE</div><div class="line">          value: fuga</div><div class="line">        ports:</div><div class="line">        - containerPort: 8080</div></pre></td></tr></table></figure>
-<h3 id="레플리카세트의-생애주기"><a href="#레플리카세트의-생애주기" class="headerlink" title="레플리카세트의 생애주기"></a>레플리카세트의 생애주기</h3><p>실제운영에서는 디폴로이먼트 매니페스트 파일을 통해 레플리카 세트를 다룬다.<br>디플로이먼트를 수정하면 레플리카세트가 새로 생성되고 기존 레플리카 세트와 교체된다.</p>
-<h4 id="레플리카-세트의-다양한-경우의-수"><a href="#레플리카-세트의-다양한-경우의-수" class="headerlink" title="레플리카 세트의 다양한 경우의 수"></a>레플리카 세트의 다양한 경우의 수</h4><p>파드 개수만 수정할 경우 (replicas값을 3에서 4로) 레플리카세트가 새로 생성되지 않는다.</p>
-<p>컨테이너 이미지가 수정된 경우 기존 파드는 단계적으로 정지된다. 또한 <code>kubectl rollout history deployment echo</code>를 입력해보면 새로운 리비전으로 변경된것을 확인할 수 있다.</p>
-<h3 id="롤백하기"><a href="#롤백하기" class="headerlink" title="롤백하기"></a>롤백하기</h3><p>undo를 실행하면 디플로이먼트가 바로 직전 리비전으로 롤백된다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kubectl rollout undo deployment echo</div></pre></td></tr></table></figure></p>
-<p>디플로이먼트는 다음 명령어를 통해 삭제할 수 있다. 이와 관련된 레플리카세트와 파드가 함께 삭제된다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kubectl delete -f simple-deployment.yaml</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;docker container prune&lt;/code&gt;&lt;br&gt;docker container prune [options]&lt;br&gt;도커를 오래 사용하다 보면 디스케이 컨테이너와 이미지가 점점 늘어나게 된다. 이런 경우 prune 명령을 사용해
     
     </summary>
     
