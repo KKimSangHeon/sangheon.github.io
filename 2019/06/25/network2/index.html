@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://KKimSangHeon.github.io/2019/06/25/network2/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="오늘날 가장 많이 사용되는 프로토콜은 TCP/IP 이다.(인터넷 때문..)Transmission Control Protocol/Internet Protocol의 약자로서 ARPANET에 의해 처음 개발되었다. 각각의 네트워크에 접속되는 호스트는 다른 네트워크에 연결되어 있는 호스트까지도 서로 데이터를 주고받을 수 있다. 이 때 사용하는 호스트들의 고유 주소">
-<meta property="og:updated_time" content="2019-06-25T11:46:46.996Z">
+<meta property="og:updated_time" content="2019-06-25T13:12:51.692Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2.TCP&#x2F;IP와의 만남">
 <meta name="twitter:description" content="오늘날 가장 많이 사용되는 프로토콜은 TCP/IP 이다.(인터넷 때문..)Transmission Control Protocol/Internet Protocol의 약자로서 ARPANET에 의해 처음 개발되었다. 각각의 네트워크에 접속되는 호스트는 다른 네트워크에 연결되어 있는 호스트까지도 서로 데이터를 주고받을 수 있다. 이 때 사용하는 호스트들의 고유 주소">
@@ -173,7 +173,28 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>오늘날 가장 많이 사용되는 프로토콜은 TCP/IP 이다.(인터넷 때문..)<br>Transmission Control Protocol/Internet Protocol의 약자로서 ARPANET에 의해 처음 개발되었다. 각각의 네트워크에 접속되는 호스트는 다른 네트워크에 연결되어 있는 호스트까지도 서로 데이터를 주고받을 수 있다. 이 때 사용하는 호스트들의 고유 주소는 Internet Network Information Center(InterNIC)이란 단체에서 관리 분배되고 있다.</p>
+            <p>오늘날 가장 많이 사용되는 프로토콜은 TCP/IP 이다.(인터넷 때문..)<br>Transmission Control Protocol/Internet Protocol의 약자로서 ARPANET에 의해 처음 개발되었다. 각각의 네트워크에 접속되는 호스트는 다른 네트워크에 연결되어 있는 호스트까지도 서로 데이터를 주고받을 수 있다. 이 때 사용하는 호스트들의 고유 주소인 IP주소는 Internet Network Information Center(InterNIC)이란 단체에서 관리 분배되고 있다.</p>
+<p>IP의 한정으로 인해 내부 네트워크에서는 공인되지 않은 IP주소를 사용하고 인터넷으로 나갈 때만 공인주소(유일한 IPwnth)를 가지고 나가는 방식인 NAT(Network Address Translation)나 동일한 IP 주소를 가지고 여러 명이 인터넷에 접속하면서 포트 넘버만을 바꾸는 PAT 등이 사용되고 있다.</p>
+<p>IP주소는 2진수 32개로 만들어졌다. 즉 만들 수 있는 주소는 2^32만큼이다. 이를 IPv4라 하고 고갈 대책으로 나온것이 IPv6인데 2^128개의 주소를 표현할 수 있다.</p>
+<p><code>DHCP</code><br>IP주소를 자동으로 배정해준다. DHCP 서버가 따로 존재하며 DHCP클라이언트들이 주소를 요청하면 DHCP 서버는 갖고있는 주소중에서 하나를 자동으로 할당해준다.</p>
+<p><code>NIC(Network Interface Card) 즉 랜카드</code><br>유저의 데이터를 케이블에실어서 허브나 스위치 혹은 라우터 등으로 전달해주고 자신에게 온 데이터를 CPU에게 전달해주는 역할<br>대부분(90% 이상) 이더넷용 랜카드이다. UTP타입을 많이쓴다고만 알아두자.</p>
+<p><code>허브</code><br>직사각형 상자에 구멍이 뚫려있는 모양으로 구멍에 따라 몇 포트 허브다라고 한다. 구멍의 숫자가 몇대의 장비를 연결할수 있는지 결정한다. 또한 같은 허브에 연결된 PC끼리는 서로 통신이 가능하다. 허브는 멀티포트 리피터라고 말 할 수 있다. 즉 포트가 많고 들어온 데이터를 그대로 재전송한다는것. 쉽게말하면 한 포트로 들어온 데이터를 나머지 모든 포트로 뿌려준다는 것(이 때 받은 데이터를 수신한 랜카드들은 목적지 맥 어드레스를 보고 버릴지 CPU로 올릴지 판단한다.). 한 허브에 연결된 모든 PC는 같은 콜리전 도메인 안에 있다.</p>
+<p><code>리피터</code><br>두 장비를 UTP로 통신할 때 100m 이상인경우 권장되지 않는다. (완전한 통신보장x) 이 경우 중간에 리피터를 두어 들어온 데이터를 다른 쪽으로 전달해 주는 역할을 한다. 허브가 리피터의 역할을 대신하게 되어 만나기가 쉽지 않다.</p>
+<p><code>허브의 한계</code><br>허브의 수를 늘리기 위해 다른 허브에 물리게 된다면 collistion domain이 커지게 된다. 이로 인해 콜리전이 자주 발생하게 되는 결과를 낳는다.</p>
+<h3 id="허브의-종류"><a href="#허브의-종류" class="headerlink" title="허브의 종류"></a>허브의 종류</h3><p>허브는 보통 인텔리전트 허브, 더미허브, SemiIntelligent 허브로 나뉜다.</p>
+<p><code>인텔리전트 허브</code> : NMS(네트워크 관리시스템)를 통해서 관리가 되는가로 인텔리전트 허브와 더미 허브로 나눈다. 즉 인텔리전트 허브는 NMS상에서 모든 데이터를 분석, 제어가 가능하다. 특정 PC가 자꾸 데이터를 보내 컬리전이 발생킨다면 네트워크에서 분리시킴으로써 해결할 수있는 기능도 갖고있다. 또한 분리된 포트는 허브에서 램프로 표시되기 때문에 바로 조치가 가능하고 이를 Auto Partition이라고 한다.</p>
+<p><code>Semi 더미 허브</code> : 더미 허브이지만 인텔리전트 허브와 연결하면 자기도 인텔리전트 허브가 된다. 즉 혼자 있을때는 더미허브, 인텔리전트 허브랑 같이 있으면 인텔리전트 허브가 된다.</p>
+<p><code>Stackable 허브</code>: 스택이 가능한 허브, 즉 쌓을 수 있는 허브, 학교 전산실에 허브 여러개 쌓아둔거 생각해보자.</p>
+<h3 id="허브의-끝-스위치의-시작-허브보다-두-수-높은-스위치"><a href="#허브의-끝-스위치의-시작-허브보다-두-수-높은-스위치" class="headerlink" title="허브의 끝 스위치의 시작(허브보다 두 수 높은 스위치!)"></a>허브의 끝 스위치의 시작(허브보다 두 수 높은 스위치!)</h3><p><code>콜리전 도메인을 낮춘 브리지 또는 스위치!</code><br>스위치가 나오기 전까지는 브릿지가 다 해주었지만 이제 브릿지보다 빠른 스위치가 나와 브릿지는 물러나고 있다.<br>스위치는 1번 포트에 연결된 PC가 2번 포트에 연결된 PC와 데이터를 주고받는 동안에도 3번 포트에 연결된 PC와 4번 포트에 연결된 PC가 서로 데이터를 주고 받을수 있게 해주는 장비.<br>유식하게 포트별로 콜리전 도메인이 나뉘어져 있다고 한다.<br>허브는 한 순간에 한대의 차만달릴 수 있다면 스위치는 포트 수별로 차선이 존재하여 여러대가 달릴 수 있는구조이다. 그렇지만 스위치 또한 서버와의 통신은 한순간에 하나의 PC만이 가능하다.</p>
+<h3 id="허브보다-한-수-높은-브릿지"><a href="#허브보다-한-수-높은-브릿지" class="headerlink" title="허브보다 한 수 높은 브릿지"></a>허브보다 한 수 높은 브릿지</h3><p>말그대로 다리이다. 스위치와 사촌지간이며 하는일이 서로 비슷하다.<br>브릿지는 허브로 만들어진 콜리전 도메인 사이를 반으로 나누고 중간에 다리를 놓는다. 이로 인해 다리 남단은 남단끼리 북단은 북단끼리 동시에 통신이 가능해진다.<br>정리하자면 브릿지는 허브보다 한 수 위 장비인데 콜리전 도메인을 나누어 준다.(중간에 브릿지를 만들어서)</p>
+<h3 id="브릿지-스위치의-기능"><a href="#브릿지-스위치의-기능" class="headerlink" title="브릿지/스위치의 기능"></a>브릿지/스위치의 기능</h3><ul>
+<li>Learning. 배운다</li>
+<li>Flooding. 모르면 들어온 포트를 제외한 다른 모든 포트로 뿌린다.</li>
+<li>Forwarding. 해당 포트로 건네준다.</li>
+<li>Filtering. 다른 포트로는 못건너가게 막는다</li>
+<li>Aging. 나이를 먹는다.</li>
+</ul>
+<p>/</p>
 
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
