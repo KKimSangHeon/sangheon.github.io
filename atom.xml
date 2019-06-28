@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-06-27T13:12:31.690Z</updated>
+  <updated>2019-06-28T13:29:06.650Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>network3</title>
+    <link href="http://KKimSangHeon.github.io/2019/06/28/network3/"/>
+    <id>http://KKimSangHeon.github.io/2019/06/28/network3/</id>
+    <published>2019-06-28T13:28:19.000Z</published>
+    <updated>2019-06-28T13:29:06.650Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="IP주소이야기"><a href="#IP주소이야기" class="headerlink" title="IP주소이야기"></a>IP주소이야기</h3><p>TCP/IP 라는 프로토콜을 사용하는 모든 장비들을 구분해 주기 위해 만들어낸것이다.<br>이진수 8개마다 점을 찍는데 이를 묶어서 옥테트(octet)라고 부른다. IP주소는 32비트이며 즉 IP주소는 4개의 옥테트로 나누어진다.</p>
+<h3 id="라우터에서의-IP주소"><a href="#라우터에서의-IP주소" class="headerlink" title="라우터에서의 IP주소"></a>라우터에서의 IP주소</h3><p>라우토가 IP의 라우팅(경로배정)만 담당하는 것은 아니다.<br>pc여러대 - 스위치 - 라우터 - 인터넷의 구성을 생각해보자.<br>내부 네트워크에 연결되는 라우터의 포트를 <code>이더넷 인터페이스</code>라 생각하고(즉 스위치-라우터 사이) 외부 즉 인터넷쪽으로 연결되는 인터페이스를 <code>시리얼 인터페이스</code>라고 생각하자.<br>그러므로 라우터에 부여해야하는 IP주소는 두 개가 된다. 하나는 이더넷 인터페이스에 부여할 것이고 하나는 시리얼 인터페이스에 부여할 주소이다.<br><code>이더넷 인터페이스의 주소</code>:이더넷용 IP주소는 우리가 내부에서 사용하기 위해 부여 받은 IP주소 중 하나를 배정해야 한다.(라우터의 이더넷쪽은 내부 네트워크에 접속되기 때문에..) 보통은 부여받은 주소중 맨 앞의 주소를 쓴다.<br><code>시리얼 인터페이스의 주소</code> : 시리얼의 주소는 마음대로 부여할 수 있는게 아니다. 라우터가 접속하는 상대편(ISP 업체) 라우터의 시리얼 인터페이스와 IP 주소를 서로 맞추어야 하기 때문이다.(라우터에서 인터페이스가 달라지면 네트워크가 달라진다는 것을 의미. 즉 상대편 라우터의 시리얼과는 같은 네트워크가 되어야 한다.)<br>예를 들어 상대편 라우터의 시리얼이 203.150.150.5에 서브넷 마스크가 255.255.255.252라면 우리 라우터의 시리얼은 203.150.150.6에 서브넷 마스크는 255.255.255.252가 된다.(왜 시리얼이 다를까?? 아직은 이해가 되질 않는다. 같아야 할 것이라 생각하는데… 잘못이해 했구나. 상대편 라우터의 시리얼 인터페이스와 IP 주소를 서로 맞추어야 한다는 뜻은 그것을 똑같이 일치시켜야 한다는 뜻이 아니라 mapping 해야 한다는 뜻으로 이해하자! )</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;IP주소이야기&quot;&gt;&lt;a href=&quot;#IP주소이야기&quot; class=&quot;headerlink&quot; title=&quot;IP주소이야기&quot;&gt;&lt;/a&gt;IP주소이야기&lt;/h3&gt;&lt;p&gt;TCP/IP 라는 프로토콜을 사용하는 모든 장비들을 구분해 주기 위해 만들어낸것이다.&lt;br
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="Network" scheme="http://KKimSangHeon.github.io/categories/CS/Network/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>2.TCP/IP와의 만남</title>
@@ -1301,42 +1325,6 @@
     <summary type="html">
     
       &lt;p&gt;NodePort의 경우 L4레벨까지 다룰수 있기 때문에 HTTP/HTTPS처럼 경로를 기반으로 서비스를 전환하는 L7레벨의 제어는 불가능하다.&lt;br&gt;이를 해결하기 위한것이 인그레스이다. 서비스를 이용한 쿠버네티스 외부에 대한 노출(NodePort
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>7. 서비스</title>
-    <link href="http://KKimSangHeon.github.io/2019/05/29/kube7/"/>
-    <id>http://KKimSangHeon.github.io/2019/05/29/kube7/</id>
-    <published>2019-05-29T10:23:39.000Z</published>
-    <updated>2019-05-29T10:24:38.043Z</updated>
-    
-    <content type="html"><![CDATA[<p>쿠버네티스 클러스터 안에서 파드의 집합(주로 레플리카세트)에 대한 경로나 서비스 디스커버리(API 주소가 동적으로 바뀌어도 클라이언트가 대상을 바꾸지않고 접근할 수 있음)를 제공하는 리소스이다. 서비스의 대상이 되는 파드는 서비스에서 정의하는 레이블 셀렉터로 정해진다. spec.selector 속성값으로 특정 파트의 레이블값을 설정하여 특정 파드만 접근할 수 있도록 yaml파일을 작성해보자.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">apiVersion: v1</div><div class="line">kind: Service</div><div class="line">metadata:</div><div class="line">  name: echo</div><div class="line">spec:</div><div class="line">  selector:     # 특정 파드만 접근할수 있도록 함.</div><div class="line">    app: echo</div><div class="line">    release: summer</div><div class="line">  ports:</div><div class="line">    - name: http</div><div class="line">      port: 80</div></pre></td></tr></table></figure>
-<p>위의 서비스를 실행하고 컨테이너 안에 존재하는 아무 컨테이너에 들어가서 <code>curl http://echo</code> 를 입력하면 잘 동작하는것을 확인할 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ kubectl exec -it 파드명 bash</div><div class="line"></div><div class="line">혹은</div><div class="line"></div><div class="line">$ kubectl run -i --rm --tty debug --image=gihyodocker/fundamental:0.1.0 --restart=Never -- bash -il</div><div class="line"></div><div class="line"></div><div class="line"># curl http://echo</div></pre></td></tr></table></figure></p>
-<p>다음명령어를 통해 로그를 summer안에서 생기는 로그를 확인할 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kubeclt logs -f echo-summer-dtblk -c echo</div></pre></td></tr></table></figure></p>
-<p>쿠버네티스 클러스터는 <code>서비스명.네임스페이스명.svc.local</code>로 연결해준다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ curl http://echo.default.svc.local</div><div class="line"></div><div class="line">$ curl http://echo.default</div><div class="line"># svc.local 생략가능</div><div class="line"></div><div class="line">$ curl http://echo  </div><div class="line"># 같은네임스페이스일 경우만 가능</div></pre></td></tr></table></figure>
-<h3 id="ClusterIP-서비스"><a href="#ClusterIP-서비스" class="headerlink" title="ClusterIP 서비스"></a>ClusterIP 서비스</h3><p>서비스의 종류는 여러가지가 있고 기본값은 ClusterIP 서비스이다. ClusterIP를 통해 클러스터 내부 IP 주소에 서비스를 공개할 수 있다.</p>
-<h3 id="NodePort-서비스"><a href="#NodePort-서비스" class="headerlink" title="NodePort 서비스"></a>NodePort 서비스</h3><p>이는 클러스터 외부에서 접근할 수 있는 서비스이다. ClusterIP를 만든다는 점은 ClusterIP 서비스와 같다. 각 노드에서 서비스 포트로 접속하기 위한 글로벌 포트를 개방하는것이 차이점이다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">apiVersion: v1</div><div class="line">kind: Service</div><div class="line">metadata:</div><div class="line">  name: echo</div><div class="line">spec:</div><div class="line">  type: NodePort  # 추가함</div><div class="line">  selector:     </div><div class="line">    app: echo</div><div class="line">    release: summer</div><div class="line">  ports:</div><div class="line">    - name: http</div><div class="line">      port: 80</div></pre></td></tr></table></figure>
-<p>다음 명령어를 통해 포트를 알아내고 curl요청을 보낼 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kubectl get svc echo</div></pre></td></tr></table></figure></p>
-<h3 id="LoadBalancer-서비스"><a href="#LoadBalancer-서비스" class="headerlink" title="LoadBalancer 서비스"></a>LoadBalancer 서비스</h3><p>이는 각 클라우드 플랫폼에서 제공하는 로드밸런서와 연동하기 위해 사용된다.</p>
-<h3 id="ExternalName-서비스"><a href="#ExternalName-서비스" class="headerlink" title="ExternalName 서비스"></a>ExternalName 서비스</h3><p>이는 셀렉터도 포트 정의도 없는 특이한 서비스다. 쿠버네티스 클러스터에서 외부 호스트를 네임 레졸루션 하기위한 별칭을 제공한다.<br>아래의 경우 gihyo.jp를 gihyo로 참조할 수 있게해준다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">apiVersion: v1</div><div class="line">kind: Service</div><div class="line">metadata:</div><div class="line">  name: gihyo</div><div class="line">spec:</div><div class="line">  type: ExternalName  # 추가함</div><div class="line">  externalName: gihyo.jp</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;쿠버네티스 클러스터 안에서 파드의 집합(주로 레플리카세트)에 대한 경로나 서비스 디스커버리(API 주소가 동적으로 바뀌어도 클라이언트가 대상을 바꾸지않고 접근할 수 있음)를 제공하는 리소스이다. 서비스의 대상이 되는 파드는 서비스에서 정의하는 레
     
     </summary>
     
