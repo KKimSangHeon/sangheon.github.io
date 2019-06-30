@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://KKimSangHeon.github.io/2019/06/28/network3/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
 <meta property="og:description" content="IP주소이야기TCP/IP 라는 프로토콜을 사용하는 모든 장비들을 구분해 주기 위해 만들어낸것이다.이진수 8개마다 점을 찍는데 이를 묶어서 옥테트(octet)라고 부른다. IP주소는 32비트이며 즉 IP주소는 4개의 옥테트로 나누어진다. 라우터에서의 IP주소라우토가 IP의 라우팅(경로배정)만 담당하는 것은 아니다.pc여러대 - 스위치 - 라우터 - 인터넷의">
-<meta property="og:updated_time" content="2019-06-29T13:27:10.093Z">
+<meta property="og:updated_time" content="2019-06-30T06:27:25.488Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="3. IP주소">
 <meta name="twitter:description" content="IP주소이야기TCP/IP 라는 프로토콜을 사용하는 모든 장비들을 구분해 주기 위해 만들어낸것이다.이진수 8개마다 점을 찍는데 이를 묶어서 옥테트(octet)라고 부른다. IP주소는 32비트이며 즉 IP주소는 4개의 옥테트로 나누어진다. 라우터에서의 IP주소라우토가 IP의 라우팅(경로배정)만 담당하는 것은 아니다.pc여러대 - 스위치 - 라우터 - 인터넷의">
@@ -188,6 +188,7 @@ ga('send', 'pageview');
 <p>클래스 C가 가질 수 있는 호스트의 수는 2^8-2 즉 254개이다.</p>
 <p>이렇게 나눈 이유는 IP주소를 적정하고 효율적으로 배분하기 위한것으로서 IP 앞주소분만 보면 클래스를 알 수 있다.</p>
 <p><code>요약</code> :<br>시작하는비트/네트워크비트/호스트비트<br>클래스A: 0/7/24<br>클래스B: 10/14/16<br>클래스C: 110/21/8</p>
+<h3 id="서브넷마스크"><a href="#서브넷마스크" class="headerlink" title="서브넷마스크"></a>서브넷마스크</h3><p>메인이 아닌 어떤 가공을 통한 네트워크를 만들기 위해서 씌우는 마스크이다. 다시 말해 우리가 어떤 IP주소를 받게되면 이주소를 그대로 사용하지 않고 입맛에 맞게 가공하여쓴다. 클래스 B 주소를 받았을 때 하나의 네트워크가 65000여개의 호스트를 가지는데 이렇게 큰 네트워크를 구성하면 브로드 캐스트 영향이 많아 아무것도 할 수 없다. 부여받은 IP주소에 서브넷 마스크를 씌워 네트워크를 나눈다.</p>
 
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
