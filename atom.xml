@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-06-30T08:10:28.923Z</updated>
+  <updated>2019-07-02T12:13:48.710Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,67 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>규칙20. 태그달린 클래스 대신 클래스 계층을 활용하라.</title>
+    <link href="http://KKimSangHeon.github.io/2019/07/02/effective2/"/>
+    <id>http://KKimSangHeon.github.io/2019/07/02/effective2/</id>
+    <published>2019-07-02T12:08:50.000Z</published>
+    <updated>2019-07-02T12:13:48.710Z</updated>
+    
+    <content type="html"><![CDATA[<p>두 가지 이상의 기능을 가지고 있으며, 그 중 어떤 기능을 제공하는지 표시하는 태그가 달린 클래스를 만날 수 있다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">class Figure &#123;</div><div class="line">  enum Shape &#123; RECTANGLE, CIRCLR &#125;;</div><div class="line"></div><div class="line">  // 어떤 모양인지 나타내는 태그 필드.</div><div class="line">  final Shape shape;</div><div class="line"></div><div class="line">  //사각형일때만 생성되는 필드</div><div class="line">  double length;</div><div class="line">  double width;</div><div class="line"></div><div class="line">  //원일때만 사용되는 필드</div><div class="line">  double radius;</div><div class="line"></div><div class="line">  double area()&#123;</div><div class="line">    ...</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위의 클래스는 원을 표현할 수도 있고 사각형을 표현할 수 도 있다.</p>
+<p>위 처럼 태그달린 클래스는 다양한 문제가 있다.enum선언, 태그필드, switch문 등의 상투적 코드가 반복되는 클래스가 만들어지며, 서로 다른 기능을 위한 코드가 한 클래스가 모여있어 가독성도 떨어진다. 또한 객체를 만들때 불필요한 필드도 함께 생성되어 메모리 요구량도 늘어난다. final을 초기화 하기 위한 상투적인 코드도 늘어나기도 한다. 마지막으로 그 객체가 무슨 기능을 제공하는지 알 수 없다.<br><u>한줄로 정리하자면 태그기반(tagged class) 클래스는 너저분하고 오류발생가능성이 높고 비 효율적이다.</u></p>
+<h3 id="태그기반-클래스-대신-하위-자료형-정의-subtyping-를-사용하자"><a href="#태그기반-클래스-대신-하위-자료형-정의-subtyping-를-사용하자" class="headerlink" title="태그기반 클래스 대신 하위 자료형 정의(subtyping)를 사용하자."></a>태그기반 클래스 대신 하위 자료형 정의(subtyping)를 사용하자.</h3><ul>
+<li>다양한 기능의 객체들을 하나로 표현하기 위해 태그달린 클래스 대신 하위 자료형 정의(subtyping)를 사용하자.</li>
+<li>태그 기반 클래스를 클래스 계층으로 변환하려면 먼저 태그 값에 따라 달리 동작하는 메서드를 추상 메서드로 선언하는 추상클래스를 정의해야 한다. 그리고 추상 클래스를 클래스 계층 맨꼭대기에 둔다.</li>
+<li>그리고 태그 값에 좌우되지 않는 메서드는 전부 그 클래스에 넣는다.</li>
+<li>모든 기능에 공통되는 데이터 필드도 전부 그 클래스에 넣는다.</li>
+<li>태그 기반 클래스가 제공하던 각각의 기능을 방금 만든 최상위 클래스의 객체 생성 가능 하위클래스로 정의한다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">abstract class Figure &#123;</div><div class="line">  abstract double area();  </div><div class="line">&#125;</div><div class="line"></div><div class="line">class Circle extends Figure &#123;</div><div class="line">  final double radius;</div><div class="line"></div><div class="line">  double area()&#123;</div><div class="line">    ...</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Rectangle extends Figure &#123;</div><div class="line">  final double length;</div><div class="line">  final double width;</div><div class="line"></div><div class="line">  double area()&#123;</div><div class="line">    ...</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위 코드가 하위자료형 정의한것이다. 단순하고명료하며 원래 클래스에 있던 단점들이 없다. 또한 최상위 클래스의 소스코드를 보지 않고도 독립적으로 일하면서 협력할 수 있게 된다. 기능마다 별도의 자료형이 있기 때문에 변수가 가진 기능이 무엇인지 명시적으로 표현 가능하며, 특정한 기능을 갖춘 자료형의 객체만이 변수나 인자에 할당되도록 할 수 있다.</p>
+<p>요약하자면 태그 기반 클래스 사용은 피하고 클래스 안에 태그 필드를 명시적으로 두고 싶다면 클래스 계층을 통해 태그를 제거할 방법이 없는지 생각해 봐라.</p>
+<p>/</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;두 가지 이상의 기능을 가지고 있으며, 그 중 어떤 기능을 제공하는지 표시하는 태그가 달린 클래스를 만날 수 있다.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;
+    
+    </summary>
+    
+      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
+    
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>규칙 18.인터페이스는 자료형을 정의할 때만 사용하라</title>
+    <link href="http://KKimSangHeon.github.io/2019/07/02/effective1/"/>
+    <id>http://KKimSangHeon.github.io/2019/07/02/effective1/</id>
+    <published>2019-07-02T12:08:33.000Z</published>
+    <updated>2019-07-02T12:13:34.185Z</updated>
+    
+    <content type="html"><![CDATA[<p>인터페이스를 구현하는 클래스를 만들게 되면 그 인터페이스는 해당 클래스의 객체를 참조할 수 있는 자료형(type)역할을 하게된다. 인터페이스를 구혆 클래스를 만든다는 것은, 해당 클래스의 객체로 어떤 일을 할 수 있는지 클라이언트에게 알리는 행위다. 다른 목적으로 인터페이스를 정의하고 사용하는것은 적절치 못하다.<br><code>적절하지 못한예</code>: 상수 인터페이스(메서드가 없고 static final 필드만 있음)가 있다. 상수 정의를 인터페이스에 포함시키면 구현 세부사항이 클래스의 공개 API에 스며들게 된다. 다음번 릴리스에서 더 이상 그런 상수를 사용하지 않도록 변경할 것이라 해보자. 그렇다 해도 호환성을 보장하려면 그인터페이스를 계속 구현해야 한다.<br>상수를 API일부로 공개하고 싶을때는 더 좋은 방법이 있다. 상수가 존재하는 클래스나 인터페이스에 강하게 연결되어있을 때는 그 상수들을 해당 클래스나 인터페이스에 추가해야 한다. 그렇지 않을 경우에는 상수들을 객체 생성이 불가능한 유틸리티 클래스에 넣어서 공개해야 한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public class PC&#123;</div><div class="line">  private PC()&#123;&#125;</div><div class="line"></div><div class="line">  public static final double HI = 10.0;</div><div class="line">  public static final double BYE = 20.0;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위와같은 PC 클래스를 사용할 일이 많다면 JDK 1.5부터 도입된 저억 임포트 기능을 사용하면 클래스이름을 제거할 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">import static com.sh.PC.*;</div><div class="line">public class Test&#123;</div><div class="line">  double getHi() &#123;</div><div class="line">    return HI;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;인터페이스를 구현하는 클래스를 만들게 되면 그 인터페이스는 해당 클래스의 객체를 참조할 수 있는 자료형(type)역할을 하게된다. 인터페이스를 구혆 클래스를 만든다는 것은, 해당 클래스의 객체로 어떤 일을 할 수 있는지 클라이언트에게 알리는 행위
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>3. IP주소</title>
@@ -1265,86 +1326,6 @@
     
       &lt;p&gt;마스터 슬레이브 형태로 MySQL을 구성하자.&lt;/p&gt;
 &lt;h3 id=&quot;쿠버네티스의-스토리지&quot;&gt;&lt;a href=&quot;#쿠버네티스의-스토리지&quot; class=&quot;headerlink&quot; title=&quot;쿠버네티스의 스토리지&quot;&gt;&lt;/a&gt;쿠버네티스의 스토리지&lt;/h3&gt;&lt;p&gt;쿠
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>9. GCP 를 활용한 실습환경 구축</title>
-    <link href="http://KKimSangHeon.github.io/2019/06/01/kube9/"/>
-    <id>http://KKimSangHeon.github.io/2019/06/01/kube9/</id>
-    <published>2019-06-01T04:15:34.000Z</published>
-    <updated>2019-06-09T08:31:04.737Z</updated>
-    
-    <content type="html"><![CDATA[<p>온프레미스 환경 또는 퍼블릭 클라우드에서 쿠버네티스를 실제로 사용해 보자.<br>클라우드에서 Google Kubernetes Engine을이용하거나 온프레미스 환경에서 Kuberspray를 이용해 클러스터를 구축하자</p>
-<h3 id="윈도우-OS의-경우"><a href="#윈도우-OS의-경우" class="headerlink" title="윈도우 OS의 경우"></a>윈도우 OS의 경우</h3><p>GCP를 생성하고 구글 클라우드 SDK를 설치하자</p>
-<p>아래의 링크에서 GCP 설치<br><a href="https://cloud.google.com/sdk/docs/quickstart-windows?hl=ko" target="_blank" rel="external">https://cloud.google.com/sdk/docs/quickstart-windows?hl=ko</a></p>
-<p>환경변수에 다음 추가<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">C:\Users\SangHeon\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin</div></pre></td></tr></table></figure></p>
-<p>gcloud 버전 업데이트<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gcloud components update</div></pre></td></tr></table></figure></p>
-<p>아래 입력 후 계정입력<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gcloud auth login</div></pre></td></tr></table></figure></p>
-<p>아래를 입력하여 대상 프로젝트 ID 선택<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gcloud config set project xxxx</div></pre></td></tr></table></figure></p>
-<p>아래 입력 하여 리전 설정<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gcloud config set compute/zone asia-northeast1-a</div></pre></td></tr></table></figure></p>
-<h3 id="CentOS일-때"><a href="#CentOS일-때" class="headerlink" title="CentOS일 때"></a>CentOS일 때</h3><p>Centos 환경에서의 진행</p>
-<p>아래를 복붙하자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo &lt;&lt; EOM</div><div class="line">[google-cloud-sdk]</div><div class="line">name=Google Cloud SDK</div><div class="line">baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64</div><div class="line">enabled=1</div><div class="line">gpgcheck=1</div><div class="line">repo_gpgcheck=1</div><div class="line">gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg</div><div class="line">       https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg</div><div class="line">EOM</div></pre></td></tr></table></figure></p>
-<p>아래 명령어 입력<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># sudo yum install google-cloud-sdk</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># gcloud init</div></pre></td></tr></table></figure>
-<p>나오는 url로 들어가 코드 복사 및 붙여넣기</p>
-<p>아래 입력 하여 리전 설정<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gcloud config set compute/zone asia-northeast1-a</div></pre></td></tr></table></figure></p>
-<h3 id="쿠버네티스-클러스터를-생성해보자"><a href="#쿠버네티스-클러스터를-생성해보자" class="headerlink" title="쿠버네티스 클러스터를 생성해보자"></a>쿠버네티스 클러스터를 생성해보자</h3><p> <a href="https://console.cloud.google.com/apis/api/container.googleapis.com/overview?project=xxxxxx" target="_blank" rel="external">https://console.cloud.google.com/apis/api/container.googleapis.com/overview?project=xxxxxx</a><br> 으로 접속해서 사용 설정가능토록 해주자</p>
-<p>아래 명령어로 클러스터 생성<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gcloud container clusters create sangheon --cluster-version=latest --machine-type=n1-standard-1 --num-nodes=3</div></pre></td></tr></table></figure></p>
-<p>–cluster-version 으로 클러스터 버전 지정<br>–num-nodes  으로 인스턴수 수 지정</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gcloud components install kubectl #센토스의 경우 안될경우 10줄짜리를 다시 복붙해보고 sudo yum update kubectl 로</div></pre></td></tr></table></figure>
-<p>kubectl 에 인증정보 설정<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gcloud container clusters get-credentials sangheon</div></pre></td></tr></table></figure></p>
-<p>잘되었나 확인해보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kubectl get nodes</div></pre></td></tr></table></figure></p>
-<p>다음을 입력하여 로컬에서 접속해보자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">kubectl proxy</div></pre></td></tr></table></figure></p>
-<hr>
-<p>/</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;온프레미스 환경 또는 퍼블릭 클라우드에서 쿠버네티스를 실제로 사용해 보자.&lt;br&gt;클라우드에서 Google Kubernetes Engine을이용하거나 온프레미스 환경에서 Kuberspray를 이용해 클러스터를 구축하자&lt;/p&gt;
-&lt;h3 id=&quot;윈도우-
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>8. 인그레스</title>
-    <link href="http://KKimSangHeon.github.io/2019/05/29/kube8/"/>
-    <id>http://KKimSangHeon.github.io/2019/05/29/kube8/</id>
-    <published>2019-05-29T10:23:51.000Z</published>
-    <updated>2019-05-29T12:56:24.086Z</updated>
-    
-    <content type="html"><![CDATA[<p>NodePort의 경우 L4레벨까지 다룰수 있기 때문에 HTTP/HTTPS처럼 경로를 기반으로 서비스를 전환하는 L7레벨의 제어는 불가능하다.<br>이를 해결하기 위한것이 인그레스이다. 서비스를 이용한 쿠버네티스 외부에 대한 노출(NodePort)과 가상 호스트 및 경로 기반의 정교한 HTTP 라우팅(인그레스)을 양립시킬 수 있다.<br>(무슨말인지 이해가 되지 않는다면 아래 밑줄부분을 보자.)</p>
-<p>클러스터 외부에서 온 HTTP 요청을 서비스로 라우팅 하기위해 다음을 입력하자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.16.2/deploy/mandatory.yaml</div><div class="line">$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.16.2/deploy/provider/cloud-generic.yaml</div><div class="line"></div><div class="line">$ kubectl get pod,svc -n ingress-nginx</div></pre></td></tr></table></figure></p>
-<p>서비스를 다음과 같이 생성하고 반영시켜보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">apiVersion: v1</div><div class="line">kind: Service</div><div class="line">metadata:</div><div class="line">  name: echo</div><div class="line">spec:</div><div class="line">  selector:</div><div class="line">    app: echo</div><div class="line">  ports:</div><div class="line">    - name: http</div><div class="line">      port: 80</div></pre></td></tr></table></figure></p>
-<p>다음과같이 인그레스를 정의하고 반영해보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">apiVersion: extensions/v1beta1</div><div class="line">kind: Ingress</div><div class="line">metadata:</div><div class="line">  name: echo</div><div class="line">spec:</div><div class="line">  rules:</div><div class="line">  - host: ch05.gihyo.local</div><div class="line">    http:</div><div class="line">      paths:</div><div class="line">      - path: /</div><div class="line">        backend:</div><div class="line">          serviceName: echo</div><div class="line">          servicePort: 80</div></pre></td></tr></table></figure></p>
-<p>잘 생성되었는지 확인해보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kubectl get ingress</div></pre></td></tr></table></figure></p>
-<p><u>인그레스는 L7 라우팅이 가능하므로 가상 호스팅 기능처럼 지정된 호스트 혹은 경로와 일치하는 서비스로 요청을 전달할 수 있다</u> 가령 헤더에 Mobile라는 값이 포함될경우 특정 URL로 리다이렉트 할 수 있다.</p>
-<h3 id="apiVersion"><a href="#apiVersion" class="headerlink" title="apiVersion??"></a>apiVersion??</h3><p>항상 맨위에 위치하는 apiVersion은 무엇일까?<br>쿠버네티스 리소스를 생성, 수정, 삭제하는 작업은 쿠버네티스 클러스터에 배포된 API가 수행한다. 이 API는 여러 API를 하나로 묶은 형태로 구성되는데 이 apiVersion은 해당 작업에 사용되는 API의 종류를 나타내는 것이다. 다음명령어를 통해 쿠버네티스에서 사용할 수 있는 명령어들을 볼 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kubectl api-versions</div></pre></td></tr></table></figure></p>
-<p>서비스나 파드는 쿠버네티스의 핵심 API인 v1, 디플로이먼트는 파드의 생성을 제어하는 API인 apps/v1에 해당한다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;NodePort의 경우 L4레벨까지 다룰수 있기 때문에 HTTP/HTTPS처럼 경로를 기반으로 서비스를 전환하는 L7레벨의 제어는 불가능하다.&lt;br&gt;이를 해결하기 위한것이 인그레스이다. 서비스를 이용한 쿠버네티스 외부에 대한 노출(NodePort
     
     </summary>
     

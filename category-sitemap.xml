@@ -182,20 +182,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/Language/</loc>
-        <lastmod>2019-04-21T10:52:11.245Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/categories/Language/Java/</loc>
-        <lastmod>2019-04-21T10:52:11.245Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/categories/About-Me/</loc>
         <lastmod>2019-05-12T04:10:36.532Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -226,6 +212,20 @@
     <url>
         <loc>http://KKimSangHeon.github.io/categories/CS/Network/</loc>
         <lastmod>2019-06-30T08:10:28.923Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/Language/</loc>
+        <lastmod>2019-07-02T12:13:48.710Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/Language/Java/</loc>
+        <lastmod>2019-07-02T12:13:48.710Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
