@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-07-02T12:13:48.710Z</updated>
+  <updated>2019-07-23T12:22:03.000Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>effective</title>
+    <link href="http://KKimSangHeon.github.io/2019/07/23/effective/"/>
+    <id>http://KKimSangHeon.github.io/2019/07/23/effective/</id>
+    <published>2019-07-23T12:22:02.000Z</published>
+    <updated>2019-07-23T12:22:03.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>규칙20. 태그달린 클래스 대신 클래스 계층을 활용하라.</title>
@@ -1289,49 +1303,6 @@
     <summary type="html">
     
       &lt;p&gt;파드, 레플리카세트, 디플로이먼트, 서비스, 인그레스는 데몬으로 동작하는 서버 어플리케이션을 구축할 때 사용되는 기본 리소스이다&lt;br&gt;쿠버네티스는 데몬으로 동작하는 서버 어플리케이션 외에도 배치 서버등 다양한 형태의 어플리케이션을 구축할 수 있다
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>10. 쿠버네티스의 스토리지</title>
-    <link href="http://KKimSangHeon.github.io/2019/06/01/kube10/"/>
-    <id>http://KKimSangHeon.github.io/2019/06/01/kube10/</id>
-    <published>2019-06-01T04:17:08.000Z</published>
-    <updated>2019-06-02T08:11:02.042Z</updated>
-    
-    <content type="html"><![CDATA[<p>마스터 슬레이브 형태로 MySQL을 구성하자.</p>
-<h3 id="쿠버네티스의-스토리지"><a href="#쿠버네티스의-스토리지" class="headerlink" title="쿠버네티스의 스토리지"></a>쿠버네티스의 스토리지</h3><p>쿠버네티스에서는 호스트에서 분리할 수 있는 외부 스토리지를 볼륨으로 사용할 수 있다. 파드가 다른 호스트로 재배치 되어도 외부 스토리지 형태의 볼륨은 새로 배치된 호스트에 자동으로 할당된다. 그러므로 호스트와 데이터 볼륨의 결합이 느슨해지고 외부 스토리지를 사용하므로 퍼시스턴스 데이터를 다루는 애플리케이션을 컨테이너로 운영하기가 쉽다.<br>쿠버네티스에서 관련 리소스는 다음의 요소들이 있다.</p>
-<ul>
-<li>퍼시스턴트볼륨</li>
-<li>퍼시스턴트볼륨클레임</li>
-<li>스토리지클래스</li>
-<li>스테이트풀세트</li>
-</ul>
-<h3 id="퍼시스턴트볼륨과-퍼시트턴트볼륨클레임"><a href="#퍼시스턴트볼륨과-퍼시트턴트볼륨클레임" class="headerlink" title="퍼시스턴트볼륨과 퍼시트턴트볼륨클레임"></a>퍼시스턴트볼륨과 퍼시트턴트볼륨클레임</h3><p>퍼시스턴트볼륨은 스토리지 자체이며 퍼시스턴트볼륨클레임은 추상화된 논리 리소스로 퍼시스턴볼륨과 달리 용량을 필요한 만큼 동적으로 확보 할 수 있는것이다.<br>퍼시스턴트볼륨클레임은 클러스터가 구축된 플랫폼을 지원하는 퍼시스턴스 볼륨을 생성하기 위해 사용된다.</p>
-<p>다음은 퍼시스턴스볼륨클레임 리소스의 매니페스트 파일이다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">apiVersion: v1</div><div class="line">kind: PersitentVolumeClaim</div><div class="line">metadata:</div><div class="line">  name: pvc-example</div><div class="line">spec:</div><div class="line">  accessModes:</div><div class="line">    - ReadWriteOnce</div><div class="line">  storageClassName: ssd</div><div class="line">  resource:</div><div class="line">    requests:</div><div class="line">      storage: 4Gi</div></pre></td></tr></table></figure></p>
-<p>위의 <code>accessModes</code>는 파드가 스토리지에 접근한는 방식을 지정한다. ReadWriteOnce 는 마운트 될 수 있는 노드를 하나로 제한한다는 의미이다. 이 외에도 ReadOnlyMany 혹은 ReadWriteMany가 있다. 이들은 이러한 제약이 없으며 플랫폼에 따라 사용할 수 없는 경우가 있으므로 주의하<br><code>storageClassName</code>는 StorageClass리소스의 종류 즉 어떤 스토리지를 사용할지를 정의한다.</p>
-<h3 id="스토리지클래스-StorageClass"><a href="#스토리지클래스-StorageClass" class="headerlink" title="스토리지클래스(StorageClass)"></a>스토리지클래스(StorageClass)</h3><p>스토리지클래스는 퍼시스턴트볼륨으로 확보한 스토리지 종류를 정의하는 리소스다. 앞에서의 storageClassName속성값의 실체가 이것이다. GCP의 경우 storageClassName의 종류는 표준,SSD가 있다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">kind: StorageClass</div><div class="line">apiVersion: storage.k8s.io/v1</div><div class="line">metadata:</div><div class="line">  name: ssd</div><div class="line">  annotations:</div><div class="line">    storageclass.kubernetes.io/is-default-class: &quot;false&quot;</div><div class="line">  labels:</div><div class="line">    kubernetes.io/cluster-service: &quot;true&quot;</div><div class="line">provisioner: kubernetes.io/gce-pd</div><div class="line">parameters:</div><div class="line">  type: pd-ssd</div></pre></td></tr></table></figure>
-<p>SSD 스토리지를 사용하도록 스토리지 클래스의  name 속성을 ssd로 하고 provisioner는 GCP 의 퍼시스턴스 스토리지인 GCEPersistentDisk에 해당하는 gcd-pd로 지정한다. 그리고 파라미터의 type 속성값을 pd-ssd로 지정한다.</p>
-<h3 id="스테이트풀세트-StatefulSet"><a href="#스테이트풀세트-StatefulSet" class="headerlink" title="스테이트풀세트(StatefulSet)"></a>스테이트풀세트(StatefulSet)</h3><p>디플로이먼트는 함께 포함된 파드 정의를 따라 파드를 생성하는 리소스로 하나만 있으면 되는 파드 혹은 퍼시스턴스 데이터를 갖지않는 즉 상태가 없는(stateless) 어플리케이션을 배포하는데 적합하다.<br><u>이에 비해 스테이트풀 세트는 데이터 스토어처럼 데이터를 계속 유지하는 상태가 있는 애플리케이션을 관리하는데 적합한 리소스다.</u></p>
-<p>디플로이먼트에서 생성한 파드는 무작위로 생성된 식별자가 부여된다. <u>스테이트풀세트는 pod-1, pod-2, pod-2와 같이 일련번호가 붙는 유일한 식별자를 붙여 파드를 생성한다.</u><br>이 식별자는 파드를 재생성해도 유지되며, 스케일링 할 때도 식별자의 일련번호가 계속 이어진다.</p>
-<p>파드가 재생성되어도 스토리지가 계속 같은 파드에 연결되어 파드의 데이터를 그대로 복원할 수 있다.</p>
-<p>/</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;마스터 슬레이브 형태로 MySQL을 구성하자.&lt;/p&gt;
-&lt;h3 id=&quot;쿠버네티스의-스토리지&quot;&gt;&lt;a href=&quot;#쿠버네티스의-스토리지&quot; class=&quot;headerlink&quot; title=&quot;쿠버네티스의 스토리지&quot;&gt;&lt;/a&gt;쿠버네티스의 스토리지&lt;/h3&gt;&lt;p&gt;쿠
     
     </summary>
     
