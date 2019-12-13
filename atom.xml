@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-07-23T12:22:03.000Z</updated>
+  <updated>2019-12-13T07:23:43.967Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,184 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>devground1</title>
+    <link href="http://KKimSangHeon.github.io/2019/12/13/devground1/"/>
+    <id>http://KKimSangHeon.github.io/2019/12/13/devground1/</id>
+    <published>2019-12-13T00:31:45.000Z</published>
+    <updated>2019-12-13T07:23:43.967Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="9-Skill-for-Developers"><a href="#9-Skill-for-Developers" class="headerlink" title="9 Skill for Developers"></a>9 Skill for Developers</h1><p>박종천 상무님</p>
+<p>Hard Skills</p>
+<ol>
+<li><ul>
+<li>Basic Knowledge(C++, OS)</li>
+</ul>
+</li>
+<li><ul>
+<li>제품에 대한 이해(제품 분석)</li>
+</ul>
+</li>
+<li><ul>
+<li>개발 사이클(요구사항/분석, 디자인 모델링, Implementation, Test/Release, Feedback/Update)<br>계속 잘 해야함</li>
+</ul>
+<p>Soft Skills</p>
+</li>
+<li><ul>
+<li>Project Management : 비용(Resources), 시간(Schedule), Scope(Quallity)</li>
+</ul>
+</li>
+<li><ul>
+<li>Team Management : Forming, Storming, Norming, Performing 모든 조직은 해당 네가지를 거치게 된다.</li>
+</ul>
+</li>
+<li><ul>
+<li>Process(Agile, Zero-Bug) : 어떤일을 잘하기 위한것이 아니라 실패하지 않기 위한것. PMMM(Project Management Maturit Model)</li>
+</ul>
+</li>
+</ol>
+<p>Business Skills</p>
+<ol>
+<li><ul>
+<li>HR System : 잘하는 사람보다 못하는 사람을 안뽑는것</li>
+</ul>
+</li>
+<li><p>Business Management</p>
+</li>
+<li><p>Vision/Goals/Culture</p>
+</li>
+</ol>
+<p>세상은 배우는 사람, 배우지 않는 사람으로 나뉜다.<br>벤자민</p>
+<p>자기관리는 시간관리이다.<br>필요한데 써라<br>낭비 - 최소한으로<br>invest  - 극한으로 올려라<br>많은사람을 만나기 위해 이메일을 많이 돌리셨다고 함.</p>
+<h1 id="AI-막막해하는-당신에게"><a href="#AI-막막해하는-당신에게" class="headerlink" title="AI:막막해하는 당신에게"></a>AI:막막해하는 당신에게</h1><p>임태규 Motion2AI</p>
+<p>AI에서 갖가야할 7가지</p>
+<h3 id="프로그래밍-언어"><a href="#프로그래밍-언어" class="headerlink" title="프로그래밍 언어"></a>프로그래밍 언어</h3><p>남의 코드를 얼마나 이해할 수 있는지. 최소한 80%는 이해할 수 있어야 해당 언어를 안다고 할 수 있다.</p>
+<p>스킬업을 위해 코드리뷰를 자주해라<br>하나를 깊게 파봐라</p>
+<p>Pytorch , 텐서플로우 한번씩 봐두면 좋다</p>
+<h3 id="데이터-구조"><a href="#데이터-구조" class="headerlink" title="데이터 구조"></a>데이터 구조</h3><p>데이터를 어떻게 뽑아쓰고 저장하는지 알아둬야함.</p>
+<p>메모리가 적다는 상황이라 가정하고 효율적으로 하는것을 익혀라</p>
+<h2 id="전략1"><a href="#전략1" class="headerlink" title="전략1"></a>전략1</h2><h3 id="알고리즘"><a href="#알고리즘" class="headerlink" title="알고리즘"></a>알고리즘</h3><p>알고리즘은 외우기 보다는 어떻게 동작하는지 이해를 해라<br>또한 이를 잘 사용할 줄 알아야 한다.</p>
+<p>자신만의 라이브러리를 만들어서 활용하는것도 좋다</p>
+<h2 id="전략2"><a href="#전략2" class="headerlink" title="전략2"></a>전략2</h2><h3 id="수학을-공부해라"><a href="#수학을-공부해라" class="headerlink" title="수학을 공부해라."></a>수학을 공부해라.</h3><p>Linear Algebra, Probability, Geometry는 알아야 한다.</p>
+<h3 id="Insight를-가져라"><a href="#Insight를-가져라" class="headerlink" title="Insight를 가져라"></a>Insight를 가져라</h3><p>특정 프로젝트를 했다면 장점,단점,가치를 말할 수 있어야한다.</p>
+<p>특정 프로젝트를 했는데 펑션 X에서 문제가 있어서 개선하고 해결했다</p>
+<p>프로젝트를 했으면 얻은게 무엇이고 보완할것이 무엇인지</p>
+<p>시간, 일<br>아침에 출근하면 30분 단위로 할일을 정한다고 함</p>
+<p>일을 할 때 3가지로 분리함<br>해야할 것, 할 수 있는것, 하지말아야 할 것</p>
+<p>통찰력을 기르기 위해 책을 많이 읽어라</p>
+<p>사소한것에 목숨걸지 말것.<br>자신감은 없어도 자존감은 가득<br>내 자신에게 한 약속은 반드시 지킬 것</p>
+<h1 id="개발-분야와-상관없이-알아야-하는-기술-10가지"><a href="#개발-분야와-상관없이-알아야-하는-기술-10가지" class="headerlink" title="개발 분야와 상관없이 알아야 하는 기술 10가지"></a>개발 분야와 상관없이 알아야 하는 기술 10가지</h1><p>수아랩 이기곤 리드 엔지니어</p>
+<h3 id="문자열-인코딩"><a href="#문자열-인코딩" class="headerlink" title="문자열 인코딩"></a>문자열 인코딩</h3><p>컴퓨터가 문자를 이해할 수 있게 만든 규칙<br>인코딩마다 지원하는 문자의 종류와 문자를 구분하는 체계가 다르다.</p>
+<p>아스키 코드 1byte<br>EUC-KR : 한글 숫자 영어 지원<br>UTF-8 : 표준이 된 문자열 인코딩 1~4byte<br>UTF-16 : 자바 윈도우 API에서  UTF-8보다 많이 사용되지 않지만 멀티바이트라고도 부름 고정2byte<br>UTF-32 : 고정된 4byte</p>
+<h3 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h3><p>바이너리 데이터를 아스키코드 기반 문자열로 인코딩하는 방법. (이미지, 텍스트, 동영상 등)</p>
+<p>이메일, HTTPbody 등에서 많이 사용된다.</p>
+<p>OTP가 랜덤하게 생성되는게 바이너리로 나오는데 이를 HTTP로 전달하기 위해서는 Base64로 인코딩 해야한다.</p>
+<p>인코딩을 할경우 바이너리에 비해 33% 늘어난다.<br>Base64는 암호화 기법이 아니므로 암호화를 위해 해싱을 해야함</p>
+<h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><p>여러 형태의 데이터를 구조화 할 때 사용하는 텍스트 기반 데이터 규격</p>
+<p>여러 정보를 하나의 구조체처럼 묶어서 사용하고 싶을 때 사용</p>
+<p>json의 장점 : map, list자료구조와 비슷해 다루기 쉽고 텍스트 기반이어서 디버깅하기 쉽다.</p>
+<p>json의 단점 : 바이너리 기반 규격보다 용량이 더 필요하고, 처리 비용도 크다.</p>
+<p>게임, 금융 분야처럼 초당 메시지 처리가 중요한곳에서는 크리티컬할 수 있다.</p>
+<p>데이터 규격이 바뀌어도 프로그램에 직접적으로 반영되지 않는다. - 직렬화를 통해 개선 가능</p>
+<p>모든 데이터를 직접 가공해야 한다.</p>
+<p>알아두면 좋은 내용<br>GraphQL, 직렬화, XML, YAML, Pbu(프로토콜 버퍼)</p>
+<h3 id="다국어-처리"><a href="#다국어-처리" class="headerlink" title="다국어 처리"></a>다국어 처리</h3><p>프로그램을 수정하지 않고 여러 언어를 동시에 지원하는 기술<br>다국어 처리는 1. 리소스파일 2. 언어설정, 3.프로그램 으로 구성된다.</p>
+<p>파이썬의 gettext 함수<br>안드로이드에서 프레임웍상에서 제공한다.<br>다국어처리는 프레임워크마다 다르나<u> i18n</u>이라는 표준이 있다.</p>
+<p>언어마다 글자수가 달라 레이아웃이 언어에 따라 꺠질 수 있다.</p>
+<p>알아두면 좋은내용<br>i18n, gettext, resx (C#에서 사용됨)</p>
+<h3 id="날짜와-시간"><a href="#날짜와-시간" class="headerlink" title="날짜와 시간"></a>날짜와 시간</h3><p>국가별로 사용하는 표준 시가 다르다. 그래서 사용됨. 이로인해 발생할 수 있는 문제 예방</p>
+<p>시간은 단조시간 실제시간으로 구분된다.</p>
+<p>타임존- 타임존은 나라마다 다르며 한국가에서 여러 타임 존을 사용하기도 한다.<br>한 시스템을 구성하는 여러 서버간 타임존이 달라지면 문제가 생길 수 있다.</p>
+<p>단조시간- 운영체제나 CPU에서 직접 계산하는 시간이다. 실제 시간과는 단위는 같지만 다른 값을 사용한다. 점진적으로 증가한다. 운영체제가 시작하고 종료될때 까지 절대 바뀌지 않는다.</p>
+<p>실제시간- 벽시계 시간으로도 부른다. 단조시간과는 다르게 동기로 인해 언제든지 바뀔 수 있다.</p>
+<p>컴퓨터의 1초와 실제시간의 1차는 약간의 오차가 있다.</p>
+<p>한달이상 걸리는 작업은 실제시간을 사용해야 한다.<br>왜? 한달이라는 기준은 모호하다.(ex 윤년계산 등)</p>
+<p>단조시간은<br>짧은시간의 주기로 수행해야 할 때, 특정 작업의 실행 시간을 계산할 때 사용</p>
+<p>실제 시간을 사용하는곳<br>어떤 작업을 특정 날짜, 또는 한달 이상 걸리는 주기로 실행해야 할 때<br>단순히 실제 시간을 표시해야 할 떄</p>
+<p>날짜를 다룰 때 항상 UTC를 사용하거나 동일한 타임존을 사용해야 한다.</p>
+<h3 id="정규표현식"><a href="#정규표현식" class="headerlink" title="정규표현식"></a>정규표현식</h3><p>주어진 문자열 속에서 특정 패턴을 가진 문자열을 찾을때 사용한다.<br><a href="https://regex101.com" target="_blank" rel="external">https://regex101.com</a> 에서 도움받을 수 있다.</p>
+<h3 id="UUID"><a href="#UUID" class="headerlink" title="UUID"></a>UUID</h3><p>소프트웨어는 여러 식별자가 필요하다. (유저, 작업, 세션, 아이템 등)<br>식별자를 만들 때 사용되는것으로 4개의 하이픈과 32개의 16진수 문자들로 구성되어있다.<br>v4가 많이 사용되며 v5는 해시 함수와 유사해 대체되었다고 봐도 무관</p>
+<p>UUID만으로 정확한 내용을 파악하기 어려우므로 요청ip,주소 메서드 등을 같이출력해야 어떤정보인지 알 수 있다.<br>확률은 낮지만 같은 UUID가 만들어져 충돌이 발생할 때를 염두해 둬야함</p>
+<h3 id="난수"><a href="#난수" class="headerlink" title="난수"></a>난수</h3><p>무작위로 생성된 값을 뜻한다. 많이들 완벽한 난수를 생성할수 없다고 하지만 가능하다고 함</p>
+<p>UUID와 비슷하게 사용되기도 함.</p>
+<p>유사난수:난수표, 난수 알고리즘, 시드를 합쳐 난수를 생성한다<br>유명한 알고리즘은 mt19937(메르센 트위스터)<br>유사난수는 암호학적으로 안전하지 않다.<br>알고리즘, 시드값을 알고 있다면 동일한 난수를 획득할 수 있다.<br>타임스탬프를 시드로 사용하면 안된다.(예측이 가능하므로)</p>
+<p>암호학적으로 안전한 난수<br>하드웨어 난수 생성기로 난수를 만든다. 3배에서 4배정도 유사난수에 비해 느리다.<br>이는 열 잡음, 광 전자 등의 노이즈를 이용해 예측이 불가능하다.<br>인증키 생성, 게임 아이템 및 재화 생성에 사용된다.</p>
+<h3 id="해시함수"><a href="#해시함수" class="headerlink" title="해시함수"></a>해시함수</h3><p>임의의 입력값을 고정된 길이의 값으로 변환하는 함수<br>입력값이 동일하면 해시값도 동일<br>길이는 입력값과 관계없이 동일하다. (알고리즘마다 길이는 다르겠지만 보통 64비트)<br>서로다른 입력값이 같은 해시 값을 만들 확률이 낮다.</p>
+<p>해시함수는 해시맵을 만드는데 사용한다.<br>해시맵은 데이터 접근 비용이 O(1)이다. 입력값이 동일하면 해시값도 동일하다.</p>
+<p>이를 통해 민감한 데이터의 변조를 막을 수 있다.<br>비밀번호 검증시에 사용할 수 있다. 비밀번호를 해시를 해서 저장한다. 입력값이 동일하면 해시값도 동일하기 떄문에…<br>비밀번호 저장은 암호학적으로 안전한 해시 함수를 사용해야 한다. 해시충돌이 불가능하고 원복이 불가능하도록</p>
+<p>실무에서는 비밀번호에 salt값을 넣어 해시를 생성한다.</p>
+<p>해시함수의 종류는 MD5, SHA-1은 더이상 사용되지 않으며</p>
+<p>SHA-256이상 사용할것을 권장한다.</p>
+<p>알아두면 좋은내용<br>SHA-1, SHA-2 HashMap, O(1)</p>
+<h3 id="HTTP-S"><a href="#HTTP-S" class="headerlink" title="HTTP(S)"></a>HTTP(S)</h3><p>텍스트 기반 통신에 사용하며 오늘날 웹의 기초가 되는 프로토콜이다.<br>상태가 없는 프로토콜로서 요청을 보내기 직전까지 서버가 살아있는지 알 수 없다.<br>요청을 보낼 때 연결을 맺고 응답을 받으면 연결을 끊는다.<br>대부분 1.1버전을 사용하는데 2.0도 꽤 사용된다.</p>
+<p>요청하나당 소켓을 열고 닫기때문에 Websocket,HTTP/2기술을 사용해 이를 개선하여 한번열고 계속 사용할 수 있다,</p>
+<p>응답<br>성공 200<br>서버이동:300 너는 이서버로 올게 아니라 다른쪽으로 가야해<br>인자실패 400<br>서버내부실패 500</p>
+<p>HTTPS<br>HTTP에 TLS암호화 기법을 적용한것.<br>주고받는것을 타인이 볼 수 없다.<br>암호화 수준은 TLS에 따라 달라진다.<br>HTTPS통신을 하려면 서버는 반드시 인증된 제3자가 발급한 인증서가 필요하다.</p>
+<p>프론트엔드 개발자라면 Sticky Session(한번 요청으로 계속 보내는것), CORS(도메인이 다를때 브라우저에서 요청 막는것)</p>
+<p>SSL 랩스에서 도메인에 대한 암호화 등급을 확인할 수 있다.</p>
+<p>letsencrypt, godaddy,codomo등에서 인증서를 받을 수 있다.</p>
+<h2 id="성장을-바라는-웹프로트엔드-개발자를-위한-제언"><a href="#성장을-바라는-웹프로트엔드-개발자를-위한-제언" class="headerlink" title="성장을 바라는 웹프로트엔드 개발자를 위한 제언"></a>성장을 바라는 웹프로트엔드 개발자를 위한 제언</h2><p>우아한 형제들 김민태님</p>
+<p>성장바라보는 두가지 시선<br>내가 생각하는 성장<br>내가 상상하는 성장</p>
+<p>열심히 하는것만 중요하지 않다, 전략을 잘 짜는것이 중요하다.</p>
+<p>성장을 바라보는 두 가지 시선<br>타인이 바라보는성장<br>타인이 평가하는 성장</p>
+<p>성장을 위한 결심만으로 부족하고 객관화를 위한 측정 지표를 만들자</p>
+<p>결심한 목표와 형태가 적절한가<br>달성 기준은 무엇인가<br>성장 목적은 무엇인가</p>
+<p>왜 특정기술을 선택했고 유사기술은 무엇이있을까요<br>즉 why에 대한고민을 많이해라</p>
+<p>나의 부족함을 알고있어야 한다</p>
+<p>성장은 환경에 대한 적응이므로 성장해야만 한다. 그러기 위해 어떻게 성장할지 끊임없이 질문하자.</p>
+<h2 id="오픈소스속에서-성장하기"><a href="#오픈소스속에서-성장하기" class="headerlink" title="오픈소스속에서 성장하기"></a>오픈소스속에서 성장하기</h2><p>강대명님 유데미</p>
+<p>ARCUS 깃헙 github.com/naver/arcus 오픈소스<br>레디스 github.com/antirez/redis</p>
+<p>레디스를 선택한 이유<br>Arcus처럼 Collection 기능을 제공<br>C로 개발됨<br>실제로 코드를 볼 생각이었따.</p>
+<p>Centos 5.3버전에서는 레디스가 잘 안돌아갔다.</p>
+<h3 id="빌드문제를-고치기-위한-접근-방법"><a href="#빌드문제를-고치기-위한-접근-방법" class="headerlink" title="빌드문제를 고치기 위한 접근 방법"></a>빌드문제를 고치기 위한 접근 방법</h3><p>1.먼저 재현하기</p>
+<ul>
+<li>안되는 방법 찾기<br>2.해결방법 찾기<ul>
+<li>해당방법이 해결이 되는지, 더 좋은 방법이 없는지<br>3.수정후 테스트</li>
+</ul>
+</li>
+</ul>
+<p>해당 주제에만 집중.<br>주제와 상관없는 다른것들은 굳이 고치지 말자</p>
+<p>큰프로젝트는 알아야 할것도 많다.</p>
+<p>내가 많이쓰는 오픈소스를 고르자.</p>
+<h3 id="내가-많이-쓰는-오픈소스의-장점"><a href="#내가-많이-쓰는-오픈소스의-장점" class="headerlink" title="내가 많이 쓰는 오픈소스의 장점."></a>내가 많이 쓰는 오픈소스의 장점.</h3><p>1.좀 더 장애를 겪어볼 수 있다.<br>2.계속 쓰고 있다.<br>3.오픈소스의 학습이 업무지식에도 도움이 된다.</p>
+<h3 id="오픈소스를-고를-떄"><a href="#오픈소스를-고를-떄" class="headerlink" title="오픈소스를 고를 떄?"></a>오픈소스를 고를 떄?</h3><ul>
+<li>언어가 익숙한 언어로 구현되어있는지??<br>카프카를 한다면 Scala/Java<br>쿠버네티스 같은것을 한다면 Go로</li>
+<li>기반지식을 충분히 이해하고 있는가</li>
+</ul>
+<p>전체 모든 지식이 아니라 필요한것에 대한 지식이 필요함<br>PR을 했는데 타이밍 어택에 취약하다 한다.<br>그러면 타이밍 어택에 대해 공부해야 한다..</p>
+<ul>
+<li>커뮤니티가 활발한가?<br>사람이 많으면 공헌하기 어렵고 적으면 공헌해도 배울게 얼마없다.</li>
+</ul>
+<h3 id="오픈소스를-통한-세속적인-장점"><a href="#오픈소스를-통한-세속적인-장점" class="headerlink" title="오픈소스를 통한 세속적인 장점"></a>오픈소스를 통한 세속적인 장점</h3><p>업무에 필요한 툴에 대한 이해도가 더 높아진다.<br>내가 이 부분을 이해하고 있다는 근거가 되어준다.</p>
+<p>결론<br>오픈소스를 통해 여러가지 지식습득, 선행학습이 가능하다.<br>오픈 소스에 참여하면서 생기는 이점도 많다.</p>
+<hr>
+<h2 id="내가-미리-알았으면-좋았을-개발-생활-팁"><a href="#내가-미리-알았으면-좋았을-개발-생활-팁" class="headerlink" title="내가 미리 알았으면 좋았을 개발 생활 팁"></a>내가 미리 알았으면 좋았을 개발 생활 팁</h2><p>강윤신 - 라인 파이낸셜 플러스</p>
+<p>어떻게 물어봐야 할까요</p>
+<p>왜 내말을 알아듣지 못할까요</p>
+<p>프로그래머 - 해결하려는 문제를 정의하고 코드로 해결하는 사람</p>
+<h3 id="질문하기전에-준비해야-할것"><a href="#질문하기전에-준비해야-할것" class="headerlink" title="질문하기전에 준비해야 할것"></a>질문하기전에 준비해야 할것</h3><p>내문제를 이해하자</p>
+<ul>
+<li>내가 정의한 문제가 무엇인지.</li>
+<li>이 문제를 이 사람에게 물어보는게 맞을까</li>
+<li>상대방은 내가 정의한 문제를 이해 했나</li>
+<li>나는 상대방의 대답을 이해 했나</li>
+</ul>
+<p>low context인지 high context인지 상호 정하는것이 중요하다.</p>
+<h3 id="개발자의-세가지-덕목"><a href="#개발자의-세가지-덕목" class="headerlink" title="개발자의 세가지 덕목"></a>개발자의 세가지 덕목</h3><p>나태 / 조바심 / 자만심</p>
+<hr>
+<h2 id="홀로-성장하는-시대는-끝났다"><a href="#홀로-성장하는-시대는-끝났다" class="headerlink" title="홀로 성장하는 시대는 끝났다"></a>홀로 성장하는 시대는 끝났다</h2><p>한국마이크로소프트 이소영님</p>
+<p>/</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;9-Skill-for-Developers&quot;&gt;&lt;a href=&quot;#9-Skill-for-Developers&quot; class=&quot;headerlink&quot; title=&quot;9 Skill for Developers&quot;&gt;&lt;/a&gt;9 Skill for Develope
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>effective</title>
@@ -1266,43 +1444,6 @@
     
       &lt;p&gt;쿠버네티스 사용자마다 권한을 제어하는 것은 쿠버네티스 운영하는데 있어 보안을 확보하는 기본적인 방법이다.&lt;/p&gt;
 &lt;p&gt;쿠버네티스 사용자는 두 가지 개념으로 나뉜다.&lt;br&gt;&lt;code&gt;일반사용자&lt;/code&gt;: 클러스터 외부에서 쿠버네티스를 조작하는 
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>11. 쿠버네티스 실전편(잡, 크론잡, 시크릿)</title>
-    <link href="http://KKimSangHeon.github.io/2019/06/02/kube11/"/>
-    <id>http://KKimSangHeon.github.io/2019/06/02/kube11/</id>
-    <published>2019-06-02T08:11:52.000Z</published>
-    <updated>2019-06-06T08:27:16.197Z</updated>
-    
-    <content type="html"><![CDATA[<p>파드, 레플리카세트, 디플로이먼트, 서비스, 인그레스는 데몬으로 동작하는 서버 어플리케이션을 구축할 때 사용되는 기본 리소스이다<br>쿠버네티스는 데몬으로 동작하는 서버 어플리케이션 외에도 배치 서버등 다양한 형태의 어플리케이션을 구축할 수 있다.</p>
-<h3 id="잡"><a href="#잡" class="headerlink" title="잡"></a>잡</h3><p>잡은 하나 이상의 파드를 생성해 지정된 수의 파드가 정상 종료될 때까지 이를 관리하는 리소스다.<br>잡이 생성한 파드는 정상 종료된 후에도 삭제되지 않고 그대로 남아있기 때문에 작업이 종료된 후에 파드의 로그나 실행 결과를 분석할 수 있다. 그러므로 배치작업 위추의 어플리케이션에 적합하다.<br>잡은 파드 여러개를 병렬로 실행하는 방법으로 쉽게 스케일 아웃이 가능하다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">apiVersion: batch/v1</div><div class="line">kind: Job</div><div class="line">metadata:</div><div class="line">  name: pingpong</div><div class="line">  labels:</div><div class="line">    app: pingpong</div><div class="line">spec:</div><div class="line">  parallelism: 3    # 동시에 실행하는 파드의 수를 지정하는 속성. 파드를 병렬로 실행해야할 때 편리</div><div class="line">  template:</div><div class="line">    metadata:</div><div class="line">      labels:</div><div class="line">        app: pingpong</div><div class="line">    spec:</div><div class="line">      containers:</div><div class="line">      - name: pingpong</div><div class="line">        image: gihyodocker/alpine:bash</div><div class="line">        command: [&quot;/bin/sh&quot;]</div><div class="line">        args:</div><div class="line">          - &quot;-c&quot;</div><div class="line">          - |</div><div class="line">            echo [`date`] ping!</div><div class="line">            sleep 10</div><div class="line">            echo [`date`] pong!</div><div class="line">      restartPolicy: Never</div></pre></td></tr></table></figure>
-<p>위의 코드를 yaml파일로 만들고 아래 명령어를 통해 확인해보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ kubectl apply -f test.yaml</div><div class="line">$ kubectl get pod -l app=pingpong --show-all</div></pre></td></tr></table></figure></p>
-<p>parallelism와 replicas의 차이점은 무엇일까?<br>replicas가 3이면 동일한 파드를 3개 만들라는 것이고, parallelism이 이면 동시에 3개의 파드를 실행하는것인데… 확인해보니 parallelism도 파드를 3개 만들긴함.</p>
-<p>잡 리소스는 restartPolicy 속성을 Never, OnFailure중 하나를 설정해야 한다.</p>
-<h3 id="크론잡"><a href="#크론잡" class="headerlink" title="크론잡"></a>크론잡</h3><p>잡 리소스는 파드가 단 한번만 실행되는데 반해 크론잡 리소스는 스케줄을 지정해 정기적으로 파드를 실행할 수 있다. 즉 정기적으로 파드를 실행할 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">apiVersion: batch/v1beta1</div><div class="line">kind: CronJob</div><div class="line">metadata:</div><div class="line">  name: pingpong</div><div class="line">spec:</div><div class="line">  schedule: &quot;*/1 * * * *&quot;</div><div class="line">  jobTemplate:</div><div class="line">    spec:</div><div class="line">      template:</div><div class="line">        metadata:</div><div class="line">          labels:</div><div class="line">            app: pingpong</div><div class="line">        spec:</div><div class="line">          containers:</div><div class="line">          - name: pingpong</div><div class="line">            image: gihyodocker/alpine:bash</div><div class="line">            command: [&quot;/bin/sh&quot;]</div><div class="line">            args:</div><div class="line">              - &quot;-c&quot;</div><div class="line">              - |</div><div class="line">                echo [`date`] ping!</div><div class="line">                sleep 10</div><div class="line">                echo [`date`] pong!</div><div class="line">          restartPolicy: OnFailure</div></pre></td></tr></table></figure></p>
-<p>spec.schedule속성에 Cron과 같은 포맷으로 파드를 실행할 스케줄을 정의한다. 또한 spec.jobTemplate 아래에 잡 리소스와 마찬가지로 파드 정의가 들어가면 된다.<br>보통의 경우 리눅스 crontab으로 스케줄에 맞춰 스크립트를 실행하는게 대부분이었따. 하지만 크론잡 리소스를 이용하면 이 모든것을 컨테이너로 해결할 수 있다.</p>
-<h3 id="시크릿"><a href="#시크릿" class="headerlink" title="시크릿"></a>시크릿</h3><p>쿠버네티스의 시크릿 리소스를 사용하면 기밀정보 문자열을 Base 인코딩으로 만들 수 있다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">apiVersion: v1</div><div class="line">kind: Secret</div><div class="line">metadata:</div><div class="line">  name: nginx-secret</div><div class="line">type: Opaque</div><div class="line">data:</div><div class="line">  .htpasswd: eW91cl91c2VybmFtZTpyejc5SXpTalplaWZvCg==</div></pre></td></tr></table></figure>
-<p>위 코드를 활용해 아래에 적용가능하다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line">apiVersion: v1</div><div class="line">kind: Service</div><div class="line">metadata:</div><div class="line">  name: basic-auth</div><div class="line">spec:</div><div class="line">  type: NodePort</div><div class="line">  selector:</div><div class="line">    app: basic-auth</div><div class="line">  ports:</div><div class="line">  - protocol: TCP</div><div class="line">    port: 80</div><div class="line">    targetPort: http</div><div class="line">    nodePort: 30060</div><div class="line"></div><div class="line">---</div><div class="line">apiVersion: apps/v1</div><div class="line">kind: Deployment</div><div class="line">metadata:</div><div class="line">  name: basic-auth</div><div class="line">  labels:</div><div class="line">    app: basic-auth</div><div class="line">spec:</div><div class="line">  replicas: 1</div><div class="line">  selector:</div><div class="line">    matchLabels:</div><div class="line">      app: basic-auth</div><div class="line">  template:</div><div class="line">    metadata:</div><div class="line">      labels:</div><div class="line">        app: basic-auth</div><div class="line">    spec:</div><div class="line">      containers:</div><div class="line">      - name: nginx</div><div class="line">        image: &quot;gihyodocker/nginx:latest&quot;</div><div class="line">        imagePullPolicy: Always</div><div class="line">        ports:</div><div class="line">          - name: http</div><div class="line">            containerPort: 80</div><div class="line">        env:</div><div class="line">          - name: BACKEND_HOST</div><div class="line">            value: &quot;localhost:8080&quot;</div><div class="line">          - name: BASIC_AUTH_FILE</div><div class="line">            value: &quot;/etc/nginx/secret/.htpasswd&quot;    </div><div class="line">        volumeMounts:</div><div class="line">          - mountPath: /etc/nginx/secret    # 이 경로에 .htpasswd가 생성된다.</div><div class="line">            name: nginx-secret</div><div class="line">            readOnly: true</div><div class="line">      - name: echo</div><div class="line">        image: &quot;gihyodocker/echo:latest&quot;</div><div class="line">        imagePullPolicy: Always</div><div class="line">        ports:</div><div class="line">          - containerPort: 8080</div><div class="line">        env:</div><div class="line">          - name: HTTP_PORT</div><div class="line">            value: &quot;8080&quot;</div><div class="line">      volumes:</div><div class="line">      - name: nginx-secret</div><div class="line">        secret:</div><div class="line">          secretName: nginx-secret</div></pre></td></tr></table></figure>
-<p>인증정보를 환경 변수로 관리하는 기법또한 존재한다. 이는 259p를 참고하자.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;파드, 레플리카세트, 디플로이먼트, 서비스, 인그레스는 데몬으로 동작하는 서버 어플리케이션을 구축할 때 사용되는 기본 리소스이다&lt;br&gt;쿠버네티스는 데몬으로 동작하는 서버 어플리케이션 외에도 배치 서버등 다양한 형태의 어플리케이션을 구축할 수 있다
     
     </summary>
     
