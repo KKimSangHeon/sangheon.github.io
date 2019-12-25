@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-12-25T14:01:40.199Z</updated>
+  <updated>2019-12-25T14:07:19.695Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,44 +16,59 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>photography7</title>
-    <link href="http://KKimSangHeon.github.io/2019/12/25/photography7/"/>
-    <id>http://KKimSangHeon.github.io/2019/12/25/photography7/</id>
-    <published>2019-12-25T14:01:40.000Z</published>
-    <updated>2019-12-25T14:01:40.199Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>photography6</title>
+    <title>20191222 부산 UFC 관람</title>
     <link href="http://KKimSangHeon.github.io/2019/12/25/photography6/"/>
     <id>http://KKimSangHeon.github.io/2019/12/25/photography6/</id>
     <published>2019-12-25T14:01:35.000Z</published>
-    <updated>2019-12-25T14:01:35.898Z</updated>
+    <updated>2019-12-25T14:07:19.695Z</updated>
     
     <summary type="html">
     
     </summary>
     
+      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
+    
+      <category term="Photography" scheme="http://KKimSangHeon.github.io/categories/About-Me/Photography/"/>
+    
+    
+      <category term="Photography" scheme="http://KKimSangHeon.github.io/tags/Photography/"/>
     
   </entry>
   
   <entry>
-    <title>photography5</title>
+    <title>20191214 우면산</title>
     <link href="http://KKimSangHeon.github.io/2019/12/25/photography5/"/>
     <id>http://KKimSangHeon.github.io/2019/12/25/photography5/</id>
     <published>2019-12-25T14:01:30.000Z</published>
-    <updated>2019-12-25T14:01:30.525Z</updated>
+    <updated>2019-12-25T14:06:29.635Z</updated>
+    
+    <content type="html"><![CDATA[<p>주말에 등산하며</p>
+<img src="/2019/12/25/photography5/IMG_1678.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography5/IMG_1680.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography5/IMG_1688.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography5/IMG_1720.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography5/IMG_1772.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography5/IMG_1774.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography5/IMG_1793.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography5/IMG_1795.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography5/IMG_1832.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography5/IMG_1843.jpg" alt="1" title="1">
+]]></content>
     
     <summary type="html">
     
+      &lt;p&gt;주말에 등산하며&lt;/p&gt;
+&lt;img src=&quot;/2019/12/25/photography5/IMG_1678.jpg&quot; alt=&quot;1&quot; title=&quot;1&quot;&gt;
+&lt;img src=&quot;/2019/12/25/photography5/IMG_1680.jpg&quot; alt=&quot;1&quot;
+    
     </summary>
     
+      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
+    
+      <category term="Photography" scheme="http://KKimSangHeon.github.io/categories/About-Me/Photography/"/>
+    
+    
+      <category term="Photography" scheme="http://KKimSangHeon.github.io/tags/Photography/"/>
     
   </entry>
   
@@ -880,6 +895,43 @@
     <summary type="html">
     
       &lt;h3 id=&quot;젠킨스-플러그인-설치&quot;&gt;&lt;a href=&quot;#젠킨스-플러그인-설치&quot; class=&quot;headerlink&quot; title=&quot;젠킨스 플러그인 설치&quot;&gt;&lt;/a&gt;젠킨스 플러그인 설치&lt;/h3&gt;&lt;p&gt;Jenkins관리 -&amp;gt; 플러그인 관리에 들어가서 다음 항
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
+    
+    
+      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>실습1. helm을 이용한 툴 설치</title>
+    <link href="http://KKimSangHeon.github.io/2019/06/11/kube14/"/>
+    <id>http://KKimSangHeon.github.io/2019/06/11/kube14/</id>
+    <published>2019-06-11T10:57:50.000Z</published>
+    <updated>2019-06-15T14:58:59.586Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="깃랩설치"><a href="#깃랩설치" class="headerlink" title="깃랩설치"></a>깃랩설치</h3><p>1.깃랩설치<br>helm install –name sangheon-gitlab –set externalUrl=<a href="http://sangheon-gitlab.com" target="_blank" rel="external">http://sangheon-gitlab.com</a> stable/gitlab-ce</p>
+<p>2.접속<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ kubectl get svc -w sangheon-gitlab-gitlab-ce  # 설치가 잘 되었나 확인</div><div class="line"></div><div class="line">$ export SERVICE_IP=$(kubectl get svc --namespace default sangheon-gitlab-gitlab-ce -o jsonpath=&apos;&#123;.status.loadBalancer.ingress[0].ip&#125;&apos;)</div><div class="line">$ echo http://$SERVICE_IP/  # 접속해보자</div></pre></td></tr></table></figure></p>
+<p>처음 접속하면 root 계정의 password를 설정하게 된다. 설정하고 root로 로그인해보자.</p>
+<h3 id="젠킨스-설치"><a href="#젠킨스-설치" class="headerlink" title="젠킨스 설치"></a>젠킨스 설치</h3><p>1.젠킨스 설치<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ helm install --name sangheonkim-jenkins stable/jenkins</div></pre></td></tr></table></figure></p>
+<p>2.접속<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ printf $(kubectl get secret --namespace default sangheonkim-jenkins -o jsonpath=&quot;&#123;.data.jenkins-admin-password&#125;&quot; | base64 --decode);echo</div><div class="line"></div><div class="line">출력값을 잘 기억하자. admin의 password이다.</div><div class="line"></div><div class="line">$ kubectl get svc --namespace default -w sangheonkim-jenkins</div><div class="line">$ export SERVICE_IP=$(kubectl get svc --namespace default sangheonkim-jenkins --template &quot;&#123;&#123; range (index .status.loadBalancer.ingress 0) &#125;&#125;&#123;&#123; . &#125;&#125;&#123;&#123; end &#125;&#125;&quot;)</div><div class="line">$ echo http://$SERVICE_IP:8080/login</div></pre></td></tr></table></figure></p>
+<p>출력된 주소로 접속하여 admin/출력된 password를 입력하자.</p>
+<h3 id="소나큐브-설치"><a href="#소나큐브-설치" class="headerlink" title="소나큐브 설치"></a>소나큐브 설치</h3><p>1.설치</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ helm install --name sangheonkim-sonarqube stable/sonarqube</div></pre></td></tr></table></figure>
+<p>2.접속<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ kubectl get svc -w sangheonkim-sonarqube-sonarqube</div><div class="line"></div><div class="line">$ export SERVICE_IP=$(kubectl get svc --namespace default sangheonkim-sonarqube-sonarqube -o jsonpath=&apos;&#123;.status.loadBalancer.ingress[0].ip&#125;&apos;)</div><div class="line"></div><div class="line">$ echo http://$SERVICE_IP:9000</div></pre></td></tr></table></figure></p>
+<h3 id="dockerRegistry-구축"><a href="#dockerRegistry-구축" class="headerlink" title="dockerRegistry 구축"></a>dockerRegistry 구축</h3><p>1.설치<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ helm install --name docker-registry stable/docker-registry</div></pre></td></tr></table></figure></p>
+<p>2.접속<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ export POD_NAME=$(kubectl get pods --namespace default -l &quot;app=docker-registry,release=docker-registry&quot; -o jsonpath=&quot;&#123;.items[0].metadata.name&#125;&quot;)</div><div class="line"></div><div class="line">$ echo &quot;Visit http://127.0.0.1:8080</div><div class="line"></div><div class="line">$ kubectl port-forward $POD_NAME 8080:5000</div></pre></td></tr></table></figure></p>
+<p> <a href="http://127.0.0.1:8080" target="_blank" rel="external">http://127.0.0.1:8080</a> 로 앱에서 접속가능한듯?<br> 포트포워딩을 통해 5000으로도 가능?<br><a href="http://docker-registry.default.svc.cluster.local:5000" target="_blank" rel="external">http://docker-registry.default.svc.cluster.local:5000</a></p>
+<p>/</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;깃랩설치&quot;&gt;&lt;a href=&quot;#깃랩설치&quot; class=&quot;headerlink&quot; title=&quot;깃랩설치&quot;&gt;&lt;/a&gt;깃랩설치&lt;/h3&gt;&lt;p&gt;1.깃랩설치&lt;br&gt;helm install –name sangheon-gitlab –set externalUrl=
     
     </summary>
     
