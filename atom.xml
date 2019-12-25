@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-12-25T13:04:19.011Z</updated>
+  <updated>2019-12-25T13:51:31.483Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>devground1</title>
+    <title>20191122 양재공원</title>
+    <link href="http://KKimSangHeon.github.io/2019/12/25/photography1/"/>
+    <id>http://KKimSangHeon.github.io/2019/12/25/photography1/</id>
+    <published>2019-12-25T13:46:14.000Z</published>
+    <updated>2019-12-25T13:51:31.483Z</updated>
+    
+    <content type="html"><![CDATA[<p> 점심시간에 날이 좋아서</p>
+<img src="/2019/12/25/photography1/IMG_0609.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography1/IMG_0617.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography1/IMG_0618.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography1/IMG_0665.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography1/IMG_0676.jpg" alt="1" title="1">
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt; 점심시간에 날이 좋아서&lt;/p&gt;
+&lt;img src=&quot;/2019/12/25/photography1/IMG_0609.jpg&quot; alt=&quot;1&quot; title=&quot;1&quot;&gt;
+&lt;img src=&quot;/2019/12/25/photography1/IMG_0617.jpg&quot; al
+    
+    </summary>
+    
+      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
+    
+      <category term="Photography" scheme="http://KKimSangHeon.github.io/categories/About-Me/Photography/"/>
+    
+    
+      <category term="Photography" scheme="http://KKimSangHeon.github.io/tags/Photography/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DevGround Junior 2019 내용 요약</title>
     <link href="http://KKimSangHeon.github.io/2019/12/13/devground1/"/>
     <id>http://KKimSangHeon.github.io/2019/12/13/devground1/</id>
     <published>2019-12-13T00:31:45.000Z</published>
-    <updated>2019-12-25T13:04:19.011Z</updated>
+    <updated>2019-12-25T13:52:06.581Z</updated>
     
     <content type="html"><![CDATA[<h1 id="9-Skill-for-Developers"><a href="#9-Skill-for-Developers" class="headerlink" title="9 Skill for Developers"></a>9 Skill for Developers</h1><p>박종천 상무님</p>
 <h3 id="Hard-Skills"><a href="#Hard-Skills" class="headerlink" title="Hard Skills"></a>Hard Skills</h3><ol>
@@ -110,7 +142,7 @@
 <p>SSL 랩스에서 도메인에 대한 암호화 등급을 확인할 수 있다.</p>
 <p>letsencrypt, godaddy,codomo등에서 인증서를 받을 수 있다.</p>
 <hr>
-<h2 id="성장을-바라는-웹프로트엔드-개발자를-위한-제언"><a href="#성장을-바라는-웹프로트엔드-개발자를-위한-제언" class="headerlink" title="성장을 바라는 웹프로트엔드 개발자를 위한 제언"></a>성장을 바라는 웹프로트엔드 개발자를 위한 제언</h2><p>우아한 형제들 김민태님</p>
+<h1 id="성장을-바라는-웹프로트엔드-개발자를-위한-제언"><a href="#성장을-바라는-웹프로트엔드-개발자를-위한-제언" class="headerlink" title="성장을 바라는 웹프로트엔드 개발자를 위한 제언"></a>성장을 바라는 웹프로트엔드 개발자를 위한 제언</h1><p>우아한 형제들 김민태님</p>
 <p>성장바라보는 두가지 시선<br>내가 생각하는 성장<br>내가 상상하는 성장</p>
 <p>열심히 하는것만 중요하지 않다, 전략을 잘 짜는것이 중요하다.</p>
 <p>성장을 바라보는 두 가지 시선<br>타인이 바라보는성장<br>타인이 평가하는 성장</p>
@@ -120,7 +152,7 @@
 <p>나의 부족함을 알고있어야 한다</p>
 <p>성장은 환경에 대한 적응이므로 성장해야만 한다. 그러기 위해 어떻게 성장할지 끊임없이 질문하자.</p>
 <hr>
-<h2 id="오픈소스속에서-성장하기"><a href="#오픈소스속에서-성장하기" class="headerlink" title="오픈소스속에서 성장하기"></a>오픈소스속에서 성장하기</h2><p>강대명님 유데미</p>
+<h1 id="오픈소스속에서-성장하기"><a href="#오픈소스속에서-성장하기" class="headerlink" title="오픈소스속에서 성장하기"></a>오픈소스속에서 성장하기</h1><p>강대명님 유데미</p>
 <p>ARCUS 깃헙 github.com/naver/arcus 오픈소스<br>레디스 github.com/antirez/redis</p>
 <p>레디스를 선택한 이유<br>Arcus처럼 Collection 기능을 제공<br>C로 개발됨<br>실제로 코드를 볼 생각이었따.</p>
 <p>Centos 5.3버전에서는 레디스가 잘 안돌아갔다.</p>
@@ -146,7 +178,7 @@
 <h3 id="오픈소스를-통한-세속적인-장점"><a href="#오픈소스를-통한-세속적인-장점" class="headerlink" title="오픈소스를 통한 세속적인 장점"></a>오픈소스를 통한 세속적인 장점</h3><p>업무에 필요한 툴에 대한 이해도가 더 높아진다.<br>내가 이 부분을 이해하고 있다는 근거가 되어준다.</p>
 <p>결론<br>오픈소스를 통해 여러가지 지식습득, 선행학습이 가능하다.<br>오픈 소스에 참여하면서 생기는 이점도 많다.</p>
 <hr>
-<h2 id="내가-미리-알았으면-좋았을-개발-생활-팁"><a href="#내가-미리-알았으면-좋았을-개발-생활-팁" class="headerlink" title="내가 미리 알았으면 좋았을 개발 생활 팁"></a>내가 미리 알았으면 좋았을 개발 생활 팁</h2><p>강윤신 - 라인 파이낸셜 플러스</p>
+<h1 id="내가-미리-알았으면-좋았을-개발-생활-팁"><a href="#내가-미리-알았으면-좋았을-개발-생활-팁" class="headerlink" title="내가 미리 알았으면 좋았을 개발 생활 팁"></a>내가 미리 알았으면 좋았을 개발 생활 팁</h1><p>강윤신 - 라인 파이낸셜 플러스</p>
 <p>어떻게 물어봐야 할까요</p>
 <p>왜 내말을 알아듣지 못할까요</p>
 <p>프로그래머 - 해결하려는 문제를 정의하고 코드로 해결하는 사람</p>
@@ -164,7 +196,7 @@
 <p>커뮤니티 공부 =’~하기’공부<br>내향적 - 전문서적 번역하기/ 블로그에 올릴 글이나 컬럼 작성하기/ 도서 집필하기/ 지식인 기술 포럼 답변하기/ 트위터 페이스북 등의 소셜 활동하기</p>
 <p>외향적 - 페이스북/ 카페 밋업 등의 그룹 활동하기/ 유튜브 방송하기/ 컨퍼런스 발표하기/ 스터디 활동하기/ 앱개발,메이크 활동하기</p>
 <p>마이크로스프트의 직원평가<br>다른사람 성공에 어떻게 기여하는지 평가한다.</p>
-<h2 id="계속배우려하고-모험이나-도전이-오면-자신감있고-뒤"><a href="#계속배우려하고-모험이나-도전이-오면-자신감있고-뒤" class="headerlink" title="계속배우려하고 모험이나 도전이 오면 자신감있고 뒤##"></a>계속배우려하고 모험이나 도전이 오면 자신감있고 뒤##</h2><h2 id="AI-Data-시대를-위한-개발자-생존-가이드"><a href="#AI-Data-시대를-위한-개발자-생존-가이드" class="headerlink" title="AI/Data 시대를 위한 개발자 생존 가이드"></a>AI/Data 시대를 위한 개발자 생존 가이드</h2><p>상성리서치 임백준님</p>
+<h2 id="계속배우려하고-모험이나-도전이-오면-자신감있고-뒤"><a href="#계속배우려하고-모험이나-도전이-오면-자신감있고-뒤" class="headerlink" title="계속배우려하고 모험이나 도전이 오면 자신감있고 뒤##"></a>계속배우려하고 모험이나 도전이 오면 자신감있고 뒤##</h2><h1 id="AI-Data-시대를-위한-개발자-생존-가이드"><a href="#AI-Data-시대를-위한-개발자-생존-가이드" class="headerlink" title="AI/Data 시대를 위한 개발자 생존 가이드"></a>AI/Data 시대를 위한 개발자 생존 가이드</h1><p>상성리서치 임백준님</p>
 <ol>
 <li>Programming 2.0</li>
 </ol>
@@ -192,6 +224,12 @@
     
     </summary>
     
+      <category term="Etc" scheme="http://KKimSangHeon.github.io/categories/Etc/"/>
+    
+      <category term="강연" scheme="http://KKimSangHeon.github.io/categories/Etc/%EA%B0%95%EC%97%B0/"/>
+    
+    
+      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
     
   </entry>
   
@@ -1414,38 +1452,6 @@
     
       &lt;p&gt;하나 이상의 클러스터를 운영하다 보면 같은 어플리케이션을 여러 클러스터에 배포해야 하는 경우가 발생한다.&lt;br&gt;이럴 때 배포 환경에 따라 달라지는 설정값들때문에 문제점들이 많이 발생한다.&lt;/p&gt;
 &lt;p&gt;그래서 배포 환경에 따라 달라지는 설정값만 정
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>12. 사용자 관리와 RBAC(role-based access control)</title>
-    <link href="http://KKimSangHeon.github.io/2019/06/06/kube12/"/>
-    <id>http://KKimSangHeon.github.io/2019/06/06/kube12/</id>
-    <published>2019-06-06T08:17:55.000Z</published>
-    <updated>2019-06-09T07:34:17.107Z</updated>
-    
-    <content type="html"><![CDATA[<p>쿠버네티스 사용자마다 권한을 제어하는 것은 쿠버네티스 운영하는데 있어 보안을 확보하는 기본적인 방법이다.</p>
-<p>쿠버네티스 사용자는 두 가지 개념으로 나뉜다.<br><code>일반사용자</code>: 클러스터 외부에서 쿠버네티스를 조작하는 사용자로 다양한 방법으로 인증을 거친다. 개발자 및 운영 실무자가 쿠버네티스를 조작하기 위해 사용하며 쿠버네티스 클러스터 외부로부터 들어오는 접근을 관리하기 위한 사용자이다.<br>배포와 관련된 서비스나 디플로이먼트의 접근 권한을 일부 사용자에게만 허용하거나 파드의 로그 열람 권한을 다른 일반 사용자에게도 허용하는 등의 정책을 일반 사용자 권한 부여로 실현할 수있다.</p>
-<p><code>서비스 계정</code>: 쿠버네티스 내부적으로 관리되며 파드가 쿠버네티스 API를 다룰 때 사용하는 사용자.(kubectl또한 쿠버네티스 API와 통신해 작동함) 주어진 권한에 따라 쿠버네티스 리소스(파드, 디플로이먼트 등)를 다룰 수 있다.<br>서비스 계정은 어플리케이션을 통해 쿠버네티스 조작을 통제할 수 있다는 점이 장점이다. 클러스터 안에서 봇을 동작시키는 파드에 권한을 부여해두고, 이 봇으로 기존 디플로이먼트를 업데이트하거나 레플리카 수를 조절하는 식으로 활용할 수 있다.</p>
-<p>서비스 계정 및 일반 사용자의 권한은 RBAC(role-based access control) 라는 메커니즘을 통해 제어된다. RBAC는 롤에 따라 리소스에 대한 권한을 제어하는 기능이자 개념이다.</p>
-<p>Role, Cluster Role은 접근가능한것에 대한 범위이고 binding은 롤을 주는것을 의미한다고 판단.</p>
-<p><code>롤</code> : 각 쿠버네티스 API의 사용권한을 정의. 네임스페이스 안에서만 유효<br><code>롤바인딩</code> : 일반 사용자 및 그룹/서비스 계정과 롤을 연결<br><code>클러스터롤</code>: 각 쿠버네티스 API의 사용 권한을 정의. 클러스터 전체에서 유효<br><code>클러스터롤바인딩</code>: 일반사용자 및 그룹/서비스 계정과 클러스터롤을 연결</p>
-<p>262p부터</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;쿠버네티스 사용자마다 권한을 제어하는 것은 쿠버네티스 운영하는데 있어 보안을 확보하는 기본적인 방법이다.&lt;/p&gt;
-&lt;p&gt;쿠버네티스 사용자는 두 가지 개념으로 나뉜다.&lt;br&gt;&lt;code&gt;일반사용자&lt;/code&gt;: 클러스터 외부에서 쿠버네티스를 조작하는 
     
     </summary>
     

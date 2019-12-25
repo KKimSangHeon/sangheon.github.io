@@ -210,29 +210,36 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/Etc/</loc>
-        <lastmod>2019-12-25T13:28:11.002Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/categories/Etc/%EA%B0%95%EC%97%B0/</loc>
-        <lastmod>2019-12-25T13:28:11.002Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/categories/About-Me/Introduction/</loc>
+        <lastmod>2019-12-25T13:43:41.653Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://KKimSangHeon.github.io/categories/About-Me/</loc>
-        <lastmod>2019-12-25T13:43:41.653Z</lastmod>
+        <lastmod>2019-12-25T13:51:31.483Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/About-Me/Introduction/</loc>
-        <lastmod>2019-12-25T13:43:41.653Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/categories/About-Me/Photography/</loc>
+        <lastmod>2019-12-25T13:51:31.483Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/Etc/</loc>
+        <lastmod>2019-12-25T13:52:06.581Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/Etc/%EA%B0%95%EC%97%B0/</loc>
+        <lastmod>2019-12-25T13:52:06.581Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
