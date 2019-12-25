@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-12-25T13:55:08.824Z</updated>
+  <updated>2019-12-25T14:01:40.199Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,16 +16,100 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>photography3</title>
-    <link href="http://KKimSangHeon.github.io/2019/12/25/photography3/"/>
-    <id>http://KKimSangHeon.github.io/2019/12/25/photography3/</id>
-    <published>2019-12-25T13:55:08.000Z</published>
-    <updated>2019-12-25T13:55:08.824Z</updated>
+    <title>photography7</title>
+    <link href="http://KKimSangHeon.github.io/2019/12/25/photography7/"/>
+    <id>http://KKimSangHeon.github.io/2019/12/25/photography7/</id>
+    <published>2019-12-25T14:01:40.000Z</published>
+    <updated>2019-12-25T14:01:40.199Z</updated>
     
     <summary type="html">
     
     </summary>
     
+    
+  </entry>
+  
+  <entry>
+    <title>photography6</title>
+    <link href="http://KKimSangHeon.github.io/2019/12/25/photography6/"/>
+    <id>http://KKimSangHeon.github.io/2019/12/25/photography6/</id>
+    <published>2019-12-25T14:01:35.000Z</published>
+    <updated>2019-12-25T14:01:35.898Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>photography5</title>
+    <link href="http://KKimSangHeon.github.io/2019/12/25/photography5/"/>
+    <id>http://KKimSangHeon.github.io/2019/12/25/photography5/</id>
+    <published>2019-12-25T14:01:30.000Z</published>
+    <updated>2019-12-25T14:01:30.525Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>photography4</title>
+    <link href="http://KKimSangHeon.github.io/2019/12/25/photography4/"/>
+    <id>http://KKimSangHeon.github.io/2019/12/25/photography4/</id>
+    <published>2019-12-25T14:01:19.000Z</published>
+    <updated>2019-12-25T14:01:19.333Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>20191208 이화마을 낙상공원</title>
+    <link href="http://KKimSangHeon.github.io/2019/12/25/photography3/"/>
+    <id>http://KKimSangHeon.github.io/2019/12/25/photography3/</id>
+    <published>2019-12-25T13:55:08.000Z</published>
+    <updated>2019-12-25T14:01:09.176Z</updated>
+    
+    <content type="html"><![CDATA[<p>소모임 가입 후 첫 활동</p>
+<img src="/2019/12/25/photography3/IMG_0995.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography3/IMG_1015.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography3/IMG_1040.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography3/IMG_1107.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography3/IMG_1117.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography3/IMG_1120.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography3/IMG_1136.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography3/IMG_1168.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography3/IMG_1169.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography3/IMG_1178.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography3/IMG_1179.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography3/IMG_1194.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography3/IMG_1198.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography3/IMG_1226.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography3/IMG_1245.jpg" alt="1" title="1">
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;소모임 가입 후 첫 활동&lt;/p&gt;
+&lt;img src=&quot;/2019/12/25/photography3/IMG_0995.jpg&quot; alt=&quot;1&quot; title=&quot;1&quot;&gt;
+&lt;img src=&quot;/2019/12/25/photography3/IMG_1015.jpg&quot; al
+    
+    </summary>
+    
+      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
+    
+      <category term="Photography" scheme="http://KKimSangHeon.github.io/categories/About-Me/Photography/"/>
+    
+    
+      <category term="Photography" scheme="http://KKimSangHeon.github.io/tags/Photography/"/>
     
   </entry>
   
@@ -786,522 +870,6 @@
     
     
       <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>실습1. helm을 이용한 툴 설치</title>
-    <link href="http://KKimSangHeon.github.io/2019/06/11/kube14/"/>
-    <id>http://KKimSangHeon.github.io/2019/06/11/kube14/</id>
-    <published>2019-06-11T10:57:50.000Z</published>
-    <updated>2019-06-15T14:58:59.586Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="깃랩설치"><a href="#깃랩설치" class="headerlink" title="깃랩설치"></a>깃랩설치</h3><p>1.깃랩설치<br>helm install –name sangheon-gitlab –set externalUrl=<a href="http://sangheon-gitlab.com" target="_blank" rel="external">http://sangheon-gitlab.com</a> stable/gitlab-ce</p>
-<p>2.접속<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ kubectl get svc -w sangheon-gitlab-gitlab-ce  # 설치가 잘 되었나 확인</div><div class="line"></div><div class="line">$ export SERVICE_IP=$(kubectl get svc --namespace default sangheon-gitlab-gitlab-ce -o jsonpath=&apos;&#123;.status.loadBalancer.ingress[0].ip&#125;&apos;)</div><div class="line">$ echo http://$SERVICE_IP/  # 접속해보자</div></pre></td></tr></table></figure></p>
-<p>처음 접속하면 root 계정의 password를 설정하게 된다. 설정하고 root로 로그인해보자.</p>
-<h3 id="젠킨스-설치"><a href="#젠킨스-설치" class="headerlink" title="젠킨스 설치"></a>젠킨스 설치</h3><p>1.젠킨스 설치<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ helm install --name sangheonkim-jenkins stable/jenkins</div></pre></td></tr></table></figure></p>
-<p>2.접속<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ printf $(kubectl get secret --namespace default sangheonkim-jenkins -o jsonpath=&quot;&#123;.data.jenkins-admin-password&#125;&quot; | base64 --decode);echo</div><div class="line"></div><div class="line">출력값을 잘 기억하자. admin의 password이다.</div><div class="line"></div><div class="line">$ kubectl get svc --namespace default -w sangheonkim-jenkins</div><div class="line">$ export SERVICE_IP=$(kubectl get svc --namespace default sangheonkim-jenkins --template &quot;&#123;&#123; range (index .status.loadBalancer.ingress 0) &#125;&#125;&#123;&#123; . &#125;&#125;&#123;&#123; end &#125;&#125;&quot;)</div><div class="line">$ echo http://$SERVICE_IP:8080/login</div></pre></td></tr></table></figure></p>
-<p>출력된 주소로 접속하여 admin/출력된 password를 입력하자.</p>
-<h3 id="소나큐브-설치"><a href="#소나큐브-설치" class="headerlink" title="소나큐브 설치"></a>소나큐브 설치</h3><p>1.설치</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ helm install --name sangheonkim-sonarqube stable/sonarqube</div></pre></td></tr></table></figure>
-<p>2.접속<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ kubectl get svc -w sangheonkim-sonarqube-sonarqube</div><div class="line"></div><div class="line">$ export SERVICE_IP=$(kubectl get svc --namespace default sangheonkim-sonarqube-sonarqube -o jsonpath=&apos;&#123;.status.loadBalancer.ingress[0].ip&#125;&apos;)</div><div class="line"></div><div class="line">$ echo http://$SERVICE_IP:9000</div></pre></td></tr></table></figure></p>
-<h3 id="dockerRegistry-구축"><a href="#dockerRegistry-구축" class="headerlink" title="dockerRegistry 구축"></a>dockerRegistry 구축</h3><p>1.설치<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ helm install --name docker-registry stable/docker-registry</div></pre></td></tr></table></figure></p>
-<p>2.접속<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ export POD_NAME=$(kubectl get pods --namespace default -l &quot;app=docker-registry,release=docker-registry&quot; -o jsonpath=&quot;&#123;.items[0].metadata.name&#125;&quot;)</div><div class="line"></div><div class="line">$ echo &quot;Visit http://127.0.0.1:8080</div><div class="line"></div><div class="line">$ kubectl port-forward $POD_NAME 8080:5000</div></pre></td></tr></table></figure></p>
-<p> <a href="http://127.0.0.1:8080" target="_blank" rel="external">http://127.0.0.1:8080</a> 로 앱에서 접속가능한듯?<br> 포트포워딩을 통해 5000으로도 가능?<br><a href="http://docker-registry.default.svc.cluster.local:5000" target="_blank" rel="external">http://docker-registry.default.svc.cluster.local:5000</a></p>
-<p>/</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;깃랩설치&quot;&gt;&lt;a href=&quot;#깃랩설치&quot; class=&quot;headerlink&quot; title=&quot;깃랩설치&quot;&gt;&lt;/a&gt;깃랩설치&lt;/h3&gt;&lt;p&gt;1.깃랩설치&lt;br&gt;helm install –name sangheon-gitlab –set externalUrl=
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MSA이론4. DevOps</title>
-    <link href="http://KKimSangHeon.github.io/2019/06/08/msa4/"/>
-    <id>http://KKimSangHeon.github.io/2019/06/08/msa4/</id>
-    <published>2019-06-08T05:19:44.000Z</published>
-    <updated>2019-06-11T11:05:58.469Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h3><p>Using DevOps to Solve your Delivery Challenges</p>
-<ul>
-<li>배포는 너무 오래걸린다.</li>
-<li>테스트에 대해 혼란스럽다.</li>
-<li>특정 개인에 대한 높은 의존성.</li>
-<li>데브옵스 모델은 lock을 제거한다.</li>
-<li>데브옵스 모델은 프로비저닝한다.</li>
-</ul>
-<p><code>Delivery는 Continuous integration + continuous deployment를 의미한다.</code></p>
-<h4 id="데프옵스의-특징"><a href="#데프옵스의-특징" class="headerlink" title="데프옵스의 특징"></a>데프옵스의 특징</h4><ul>
-<li>높은신뢰성, 높은 퍼포먼스</li>
-<li>데브옵스는 프로덕트, 툴이아니다. 데브옵스는 문화이다.</li>
-<li>고수준의 자동화 프로세스</li>
-<li>정기적이고 반복적인 플로우를 따른다. 싸이클은 짧고, 작고 잦은 변경을 선호한다.</li>
-</ul>
-<h4 id="DevOps-1"><a href="#DevOps-1" class="headerlink" title="DevOps"></a>DevOps</h4><ul>
-<li>데브옵스의 철학은 개발과 운영의 통합 문화를 만들고, 협업 변화를 촉진하기 위해 기술의 linked toolchain 을 요구하는 것이다.<br><code>toolchain?</code> : Target 시스템의 Software 개발을 진행하기 위해 필요한 host system의 Cross Compile(교차 컴파일) 환경이다.</li>
-<li>DevOps의 toolchain은 수십개의 non-collaborative 툴을 포함할 수 있고, 복잡하고 어려운 작업을 자동화를 통해 task로 만들 수 있다.</li>
-<li>DepOps의 정의에 따르면 one-size-fits-all이 해결책이 아니다.</li>
-<li>DevOps는 특정 문제 및 과제에 대한 정보를 제공한다.</li>
-</ul>
-<h4 id="DevOps를-위한-microservice-requirements"><a href="#DevOps를-위한-microservice-requirements" class="headerlink" title="DevOps를 위한 microservice requirements"></a>DevOps를 위한 microservice requirements</h4><ul>
-<li>microservice에 기반한 새로운 어플리케이션을 빌드하라</li>
-<li>기존 microservice 어플리케이션을 클라우드로 마이그레이션하라</li>
-<li>하이브리드 microservice 어플리케이션을 배포하라</li>
-<li>존재하는 어플리케이션들을 microservice architecture로 발전하라.</li>
-</ul>
-<h4 id="Microservice-배포를-위해-따라야-할-Roles"><a href="#Microservice-배포를-위해-따라야-할-Roles" class="headerlink" title="Microservice 배포를 위해 따라야 할 Roles"></a>Microservice 배포를 위해 따라야 할 Roles</h4><ul>
-<li>개발자는 테스트를 반복하며 각 테스트는 pass해야한다. 또한 계속되는 피드백에 대비하자.</li>
-<li>테스터는 자동화 된 파이프라인에 컴포넌트, 통합, 회귀를 포함하고 크로스 플랫폼간 API를 통해 테스트가 가능토록 하자.</li>
-<li>성능테스터는 로딩 테스팅을 모니터링하고 blue/green, rolling 배포를 하자.</li>
-</ul>
-<p><code>rolling 배포:</code>일반적인 배포를 의미하는데, 단순하게 한 대씩 재시작한다. 코드 변경에 따른 side effect가 발생할 수 있다<br><code>blue-green 배포:</code> 예전 배포물을 블루(blue), 신규 배포물을 그린(green)이라고 해서 붙여진 이름이다. 새로운 배포물을 배포하고 모든 연결을 새로운 배포물만 보게 하며 코드 변경에 따른 side effect가 없다. (배포시 중단시점이 없음!)</p>
-<ul>
-<li>Release 하는사람은 성능 측정을 해야한다.</li>
-<li>운영자는 가용성을 모니터링하고 blue/green 배포를 해야한다.</li>
-<li>엔드유저는 지속적인 피드백을 주고 변경에 대해 대비한다.</li>
-</ul>
-<h4 id="DevOps의-평가기준"><a href="#DevOps의-평가기준" class="headerlink" title="DevOps의 평가기준"></a>DevOps의 평가기준</h4><p>배포빈도(얼마나 자주 배포하나)</p>
-<ul>
-<li>최상: 요구될때마다</li>
-<li>보통: 일주일 혹은 한달에 한번</li>
-<li>최하: 한달에서 여섯달 사이에 한번</li>
-</ul>
-<p>Lead time for changes(ie.코드가 커밋되고 정상적으로 동작하는데 걸리는 시간)</p>
-<ul>
-<li>최상: 한시간 이내</li>
-<li>보통: 일주일 ~ 한달사이</li>
-<li>최하: 한달~여섯달 사이</li>
-</ul>
-<p>Mean time to recover(복구하는데 걸리는 시간)</p>
-<ul>
-<li>최상: 한시간 이내</li>
-<li>보통: 하루 이상</li>
-<li>최하: 하루 이상</li>
-</ul>
-<p>Change failure rate</p>
-<ul>
-<li>최상: 0~15%</li>
-<li>보통: 31~45%</li>
-<li>최하: 16~30%</li>
-</ul>
-<h4 id="Database-관련-생각해봐야-할것들"><a href="#Database-관련-생각해봐야-할것들" class="headerlink" title="Database 관련 생각해봐야 할것들"></a>Database 관련 생각해봐야 할것들</h4><ul>
-<li>Production data에 대한 보호,보안(바꾸는 것은 리스크가 있다)</li>
-<li>Test data 필요</li>
-<li>환경이 다름</li>
-<li>의존성</li>
-<li>다수 어플리케이션이 동일 db에 접근한다.</li>
-<li>이전버전과 호환성 유지</li>
-<li>롤백을 어떻게 할지</li>
-</ul>
-<h4 id="DevOps-Values"><a href="#DevOps-Values" class="headerlink" title="DevOps Values"></a>DevOps Values</h4><p>CALMS</p>
-<ul>
-<li>Culture - 변화를 수용하라</li>
-<li>Automation - CI/CD</li>
-<li>Lean - 엔드유저가 생상하는 value에 초점을 맞추고, 배치사이즈를 작게하라</li>
-<li>Measurement - 모든것을 측정하고 개선된것을 보여줘라</li>
-<li>Sharing - 정보를 공유하고 협업하라</li>
-</ul>
-<h4 id="DevOps-Tools"><a href="#DevOps-Tools" class="headerlink" title="DevOps Tools"></a>DevOps Tools</h4><p><code>Configuration Automation / Management:</code> Puppet, Ansible, Chef, Salt<br><code>Continuous Integration:</code>Jenkins, CruiseControl, Capistrano<br><code>Monitoring:</code>Icinga (nagios), Zenoss, Sweet, Graphite<br><code>Containerization:</code> Docker, Rocket</p>
-<h4 id="DevOps-관련용어"><a href="#DevOps-관련용어" class="headerlink" title="DevOps 관련용어"></a>DevOps 관련용어</h4><p>CI/CD</p>
-<ul>
-<li>Continuous Integration 그리고 Continuous Deployment의 약어</li>
-</ul>
-<p>Continuous integration</p>
-<ul>
-<li>최신코드에서 변경된것을 사용가능하도록 빌드한다.</li>
-</ul>
-<p>Continuous deployment</p>
-<ul>
-<li>가능한 빠르게 배포 단계를 거치고 빌드된 해당 패키지가 프로덕션 환경으로 전환되도록 한다.</li>
-</ul>
-<p>Continuous delivery</p>
-<ul>
-<li>Continuous integration + continuous deployment</li>
-</ul>
-<p>Delivery pipeline</p>
-<ul>
-<li>일련의 자동화 단계로써 CI/CD를 수행한다.</li>
-</ul>
-<h4 id="Continuous-Integration"><a href="#Continuous-Integration" class="headerlink" title="Continuous Integration"></a>Continuous Integration</h4><p>아래와 같은 단계를 빈번하게 수행한다.</p>
-<p><code>1. Development</code></p>
-<ul>
-<li>배치 테스를 거친 작은 변화들이 빠르게 구현된다.</li>
-</ul>
-<p><code>2. SCM(Source Code management)</code></p>
-<ul>
-<li>여러 개발자의 변경된것사항을 병합한다.(GitHub, SVN … 활용)</li>
-</ul>
-<p><code>3. Build</code></p>
-<ul>
-<li>배포할것을 만든다.(Jenkins, Gradle, Maven …  활용)</li>
-</ul>
-<p><code>4. Package</code></p>
-<ul>
-<li>런타임때 빌드를 설치한다.</li>
-<li>변경할 수 없는 이미지를 런타임때 releasing 한다.</li>
-<li>클라우드에 푸쉬하고 컨테이너 이미지 빌드</li>
-</ul>
-<h4 id="Continuous-integration-–-package-step"><a href="#Continuous-integration-–-package-step" class="headerlink" title="Continuous integration – package step"></a>Continuous integration – package step</h4><p>package step에선 변경 불가능한 이미지가 만들어진다. 이는 deploying instance를 생성할 때 사용된다. 이미지를 변경하고 싶다면 삭제하고 새로 만들어야 한다.</p>
-<h4 id="Continuous-Deployment"><a href="#Continuous-Deployment" class="headerlink" title="Continuous Deployment"></a>Continuous Deployment</h4><p>Production 배포까지의 과정<br><code>1. Deploy to Test</code></p>
-<ul>
-<li>functional testing 진행, test tool을 활용한 자동화<br><code>2. Deploy to Stage</code></li>
-<li>Production 배포 전 리허설</li>
-<li>통합 testing 진행<br><code>3. Deploy to Prod</code></li>
-<li>사용자가 사용할 수 있도록 빌드</li>
-</ul>
-<h4 id="Continuous-Delivery-vs-continuous-Deployment"><a href="#Continuous-Delivery-vs-continuous-Deployment" class="headerlink" title="Continuous Delivery vs continuous Deployment"></a>Continuous Delivery vs continuous Deployment</h4><img src="/2019/06/08/msa4/1.PNG" alt="Continuous Delivery vs continuous Deployment" title="Continuous Delivery vs continuous Deployment">
-<h4 id="Zero-Downtime-Deployment"><a href="#Zero-Downtime-Deployment" class="headerlink" title="Zero Downtime Deployment"></a>Zero Downtime Deployment</h4><p>서비스 중단없이 새로운 버전을 배포하는것을 의미한다. DevOps는 잦은 배포를 하므로 필요하다.</p>
-<h4 id="Zero-Downtime-Deployment-특징"><a href="#Zero-Downtime-Deployment-특징" class="headerlink" title="Zero Downtime Deployment 특징"></a>Zero Downtime Deployment 특징</h4><ul>
-<li>어플리케이션은 항상 사용가능하다.</li>
-<li>사용자가 중단(Downtime)없이 사용할 수 있다.</li>
-<li>이전버전, 새버전이 동시에 배포됨 - 트래픽이 둘 다로 전달됨.</li>
-</ul>
-<h4 id="Implementing-Zero-Downtime-Deployment-–-Blue-Green"><a href="#Implementing-Zero-Downtime-Deployment-–-Blue-Green" class="headerlink" title="Implementing Zero Downtime Deployment – Blue Green"></a>Implementing Zero Downtime Deployment – Blue Green</h4><p>Deployment<br>필요한경우 이전버전으로 신성하게 되돌릴 수 있다.</p>
-<p>1.v1(blue)이 배포되어 사용자들이 사용하고 있을 때  v2(green)을 배포한다.<br>2.자동화된 테스트 도구로 테스트, 검증을 진행하고 사용자를 v1에서 v2환경으로 변환한다.<br>3.v1(blue)을 삭제한다.</p>
-<h4 id="DevOps로의-Transformation"><a href="#DevOps로의-Transformation" class="headerlink" title="DevOps로의 Transformation"></a>DevOps로의 Transformation</h4><ul>
-<li>Top to Bottom문화를 변화시키는 것이 핵심이다.</li>
-<li>교육을 늘리고 커뮤니케이션하고 cross-skilling 하라</li>
-<li>DevOps가 가능한 새로운 프로세스를 평가하라</li>
-<li>스스로 재평가하고 재빌드하라</li>
-<li>DevOps를 지원하는 새로운 기술 평가</li>
-<li>조직을 작게 나눠라</li>
-</ul>
-<h4 id="Bottom-Up-Implementation"><a href="#Bottom-Up-Implementation" class="headerlink" title="Bottom-Up Implementation"></a>Bottom-Up Implementation</h4><ul>
-<li>협업을 위한 방법을 찾아라. (사람들을 초기부터 참가시킨다.)</li>
-<li>자동화 방법을 찾아라</li>
-<li>metrics driven이 되어라</li>
-<li>새로운것을 배우고 지속적으로 개선해라</li>
-<li>작은 batches와 함께 병렬적으로 일해라</li>
-<li>리팩토링을 허락해라</li>
-<li>경영진에게 비즈니스 가치를 입증해라</li>
-<li>비즈니스의 목표, metrics, 우선순위를 이해하라.</li>
-</ul>
-<h4 id="Top-Down-Implementation"><a href="#Top-Down-Implementation" class="headerlink" title="Top-Down Implementation"></a>Top-Down Implementation</h4><ul>
-<li>시험 케이스를 파일럿으로 선택하라</li>
-<li>우수 사레를 문서화하고 전파하라</li>
-<li>팀의 역량을 강화하고 가치를 이끌어내라</li>
-<li>측정 가능한 결과를 요구하라</li>
-<li>과거의 baseline이 충분치 않을때 변명하지 마라</li>
-<li>빠르게 실패하고 지속적으로 향상하라</li>
-<li>작은성공을 기반으로 나아가라</li>
-<li>비효율적인 경우 그룹간 역할 및 책임을 조율하라.</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;DevOps&quot;&gt;&lt;a href=&quot;#DevOps&quot; class=&quot;headerlink&quot; title=&quot;DevOps&quot;&gt;&lt;/a&gt;DevOps&lt;/h3&gt;&lt;p&gt;Using DevOps to Solve your Delivery Challenges&lt;/p&gt;
-&lt;ul
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/tags/MSA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MSA이론3. Database Design for Microservices</title>
-    <link href="http://KKimSangHeon.github.io/2019/06/08/msa3/"/>
-    <id>http://KKimSangHeon.github.io/2019/06/08/msa3/</id>
-    <published>2019-06-08T05:18:22.000Z</published>
-    <updated>2019-06-11T11:05:18.913Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Database-Design-for-Microservices"><a href="#Database-Design-for-Microservices" class="headerlink" title="Database Design for Microservices"></a>Database Design for Microservices</h3><p>트랜잭션, Aggregates에 영향을 많이끼친다.</p>
-<p>Front Microservice는 쉽다.</p>
-<h4 id="ACID가-적용되는-것들"><a href="#ACID가-적용되는-것들" class="headerlink" title="ACID가 적용되는 것들"></a>ACID가 적용되는 것들</h4><p>Transaction, Aggregates, Entity</p>
-<h3 id="ACID-vs-BASE"><a href="#ACID-vs-BASE" class="headerlink" title="ACID vs BASE"></a>ACID vs BASE</h3><p>ACID</p>
-<ul>
-<li>Atomicity, Consistency, Isolation, and Durability</li>
-<li>Strong consistency</li>
-<li>commit에 초점을 맞춘다.</li>
-<li>보수적이다.(혁신이 어렵다)</li>
-</ul>
-<p>BASE</p>
-<ul>
-<li>Basically Available, Soft-state, Eventual consistency</li>
-<li>Weak consistency</li>
-<li>Availability first</li>
-<li>간단하고 빠르다(혁신이 쉽다)</li>
-</ul>
-<h4 id="구현을-위해-생각해보자"><a href="#구현을-위해-생각해보자" class="headerlink" title="구현을 위해 생각해보자"></a>구현을 위해 생각해보자</h4><ul>
-<li>마이크로서비스에서 데이터는 dependency를 갖기 때문에 어려운부분이다.</li>
-<li>microservice에 각각의 db가 있을 때 어떻게 읽고 어떻게 업데이트할까? join활용</li>
-<li>data inside, 서비스, data outside 를 이해할 필요가있다.</li>
-<li>데이터를 어떻게 읽고 업데이트하는가?</li>
-<li>읽고 쓰는 명령 쿼리를 분할한다.(CQRS, Command Query Responsibility Segregation)</li>
-</ul>
-<h4 id="Two-phase-commit"><a href="#Two-phase-commit" class="headerlink" title="Two-phase commit"></a>Two-phase commit</h4><p>모든 트랜잭션은 트랜잭션 관리자를 거쳐야 한다. 이는 모든 서비스에서 트랜잭션을 보장하며 커밋 요청, 커밋 두단계의 메커니즘을 거친다.</p>
-<p>커밋요청단계(커밋 투표단계라고도 함) : 관리자가 모든 서비스에 커밋메세지 쿼리를 보낸다. 관리자는 모든 서비스의 투표 결과를 대기하고 각 서버는 커밋해야 할 지점까지 트랜잭션을 수행한다. 서비스는 일부가 준비되지 않아도 동의한다는 응답을 보낸다.</p>
-<p>커밋단계(완료단계라고도 함)</p>
-<ul>
-<li>관리자가 모든 서비스에서 동의를 받았을 때: 관리자는 트랜잭션 커밋을 요청하는 메세지를 모든 서비스에게 전송한다. 커밋 후에 서비스는 트랜잭션이 끝났다는 확인을 관리자에게 보낸다.</li>
-<li>관리자가 하나 이상의 거절을 받았을 때 : 관리자는 모든 서비스들에게 롤백을 요청하고 서비스는 롤백 후 관리자에게 승인응답을 보낸다.</li>
-</ul>
-<h4 id="Two-phase-commit-의-장점"><a href="#Two-phase-commit-의-장점" class="headerlink" title="Two-phase commit 의 장점"></a>Two-phase commit 의 장점</h4><p>많은 DB가 영향을 받을경우 이를 하나의 트랜잭션으로 다루는것이 좋다.<br>준비단계는 모든 구성요소가 커밋을 허용하는지 확인하는 단계이다.</p>
-<h4 id="Two-phase-commit-의-단점"><a href="#Two-phase-commit-의-단점" class="headerlink" title="Two-phase commit 의 단점"></a>Two-phase commit 의 단점</h4><ul>
-<li>관리자는 서비스에서 메세지를 수신할 때 까지 잠금이 걸려 리소스가 해제되지 않음.(가용성 측면)</li>
-<li>서비스 중 하나가 커밋을 거부하면 모든 서비스가 롤백한다.(일관성을 유지할 수 있다는 장점)</li>
-<li>서비스에서 응답을 수신할 때 까지 잠금,리소스가 해제되지 않음</li>
-<li>NoSQL을 지원하지 않음.</li>
-<li>최소 O(4n) 메세지 발생, 여러번시도할 경우 O(n^2)</li>
-<li>lock으로 인한 처리량 감소</li>
-</ul>
-<h4 id="Distributed-Transactions-in-Microservices"><a href="#Distributed-Transactions-in-Microservices" class="headerlink" title="Distributed Transactions in Microservices"></a>Distributed Transactions in Microservices</h4><img src="/2019/06/08/msa3/1.PNG" alt="Distributed Transactions in Microservices" title="Distributed Transactions in Microservices">
-<p>microservice에는 ACID를 적용하기가 복잡하다. 이는 microservice Architecture가  Single Responsibility Principle (SRP)를 따르므로 각 microservice가 해당 데이터를 유지하고 관리해야하고, microservice의 책임에 대한 지식없이는 다른서비의 데이터에 접근할 수 없기때문이다.</p>
-<p>위 그림에서 두개의 microservice가 하나의 db에 연결되어있는게 왜 잘못되었을까? 우측의 경우에는 API, Queue로 해당 호출이 가능하다. 하지만 좌측의 경우에는 두개의 db 아답터가 가 존재해야 하는데 Isolation 원칙을 위배한다.</p>
-<h4 id="Distributed-Transaction-–-Event-Driven-Architecture-amp-Two-Phase-Commit"><a href="#Distributed-Transaction-–-Event-Driven-Architecture-amp-Two-Phase-Commit" class="headerlink" title="Distributed Transaction – Event Driven Architecture &amp; Two Phase Commit"></a>Distributed Transaction – Event Driven Architecture &amp; Two Phase Commit</h4>
-<ul>
-<li>이는 가장 일관된 시스템을 제공하지만 Two Phase Commit으로 인해 시스템 성능에 부정적 영향을 끼친다.</li>
-<li>이벤트는 트랜잭션의 매 단계를 실행시키는 트리거이며 각 이벤트는 고유한 ID를 갖는다. 또한 작업이 처리되었으면 커밋되었음을 나타내야 한다.</li>
-</ul>
-<img src="/2019/06/08/msa3/3.PNG" alt="Distributed Transaction – Event Driven Architecture & Two Phase Commit2" title="Distributed Transaction – Event Driven Architecture & Two Phase Commit2">
-<p>위의 그림은 microservice1이 microservice2에 자동이체를 하는 트랜잭션이다.</p>
-<ul>
-<li>completed라는 컬럼은 트랜잭션이 커밋되어야 하는지를 나타내며 microservice1이 완료되면 microservice2를 호출하여 트랜잭션을 완료한다.(그림은 microservice1의 작업이 커밋되고 microservice2의 작업이 커밋되기 전 단계)</li>
-</ul>
-<h4 id="CAP-Theorem"><a href="#CAP-Theorem" class="headerlink" title="CAP Theorem"></a>CAP Theorem</h4><img src="/2019/06/08/msa3/4.PNG" alt="CAP Theorem" title="CAP Theorem">
-<p>분산시스템에서는 일관성(Consistency), 가용성(Availability,항상 데이터를 읽고 쓸 수 있음), 분할 용인(Partition tolerance,데이터베이스를 분할할 수 있고 네트워크 중단에도 계속 동작할 수 있다.)이라는 세 가지 조건을 모두 만족할 수 없다. 대부분 세 조건중 두 가지만 만족시킬 수 있다.<br>만약 가용성을 만족시키려면 BASE(Basically available, soft state, eventually consistent)를 생각해 볼 수 있다. 이를 위해 앞서 설명한 Event Driven Architecture를 도입할 수 있다.<br><code>BASE</code> : 기본적으로 Availability하고, 사용자가 관리하지 않으면 데이터가 expire 될 수 있으며, 언젠가는 데이터가 일관성을 가진다는 것.</p>
-<h4 id="Eventual-Consistency-and-Compensation"><a href="#Eventual-Consistency-and-Compensation" class="headerlink" title="Eventual Consistency and Compensation"></a>Eventual Consistency and Compensation</h4><ul>
-<li>microservice에서 일관성을 다루는 것중 가장 실현 가능한것은 Eventual Consistency이다.</li>
-<li>microservice에서 분산 ACID 트랜잭션을 사용하지 않는다. 대신 미래의 어떤시점에서는 시스템이 결국 일관성을 유지할것을 제안한다.</li>
-<li>Eventual Consistency 서비스는 종종 BASE를 제공하는것으로 분류된다.</li>
-<li>Eventual Consistency는 분산 소프트웨어의 복잡성을 증가시킨다고 비판받기도 하는데 이는 동일값을 읽는다는 안전보장을 하지 않기 때문에 발생한다(결국에는 읽었을 때 동일값을 반환 함 예시로 배치프로그램이 있음).</li>
-</ul>
-<h4 id="Eventual-Consistency의-예시"><a href="#Eventual-Consistency의-예시" class="headerlink" title="Eventual Consistency의 예시"></a>Eventual Consistency의 예시</h4><p>다음의 문제를 해결해야 된다고 가정해보자.</p>
-<ul>
-<li>user profile 등록</li>
-<li>백그라운드에서는 사용자가 시스템에 접근할 수 있는지 자동으로 확인</li>
-</ul>
-<p>Eventual Consistenc 적용을 하려면..</p>
-<ul>
-<li>user의 접근 가능유무는 반드시 필요하다.</li>
-<li>user검증 시간이 오래 걸리더라도 microservice로 분할해야한다.</li>
-</ul>
-<p>compensation을 포함한 message-driven방법 적용</p>
-<ul>
-<li>user profile을 등록하는 작업</li>
-<li>백그라운드에서 유효성을 검사하는 microservice</li>
-<li>지속적인 큐를 제공하는 메세지 플랫폼<br>(메세지 플랫폼은 microservice가 보낸 메세지가 지속가능토록 한다. 수신부가 문제가 있다면 나중에 배달해주기도 함)<br>-이는 하나의 microservice가 중지될 경우 정보는 다른 큐, 서비스에 존재한다. 즉 지속성을 보장한다.</li>
-</ul>
-<p>위의 방법을 적용했을 때 좋은 시나리오</p>
-<ul>
-<li>user microservice는 user를 등록하고 로컬 db에 정보를 저장한다.</li>
-<li>user microservice는 플래그를 활용해 해당 user가 검증 과정을 거치지 않음을 표시한다.</li>
-<li>user에게 지금 당장은 접근 불가능하다는 경고를 보낸다.</li>
-<li>user microservice는 백그라운드에서 user검증을 위해 validation microservice에 메세지를 보낸다.</li>
-<li>검증결과 접근가능하다면 user microservice는 user를 unblock한다/ 검증결과 접근 불가능하다면 user microservice는 user 계정을 제거한다. (이를 compensation(보상)단계라고 볼 수 있다.)</li>
-</ul>
-<p>일련의 과정을 거친후에는 시스템은 일관된 상태이다. 하지만 일정기간동안은 사용자 엔티티가 불완전한 상태였다.</p>
-<p>위의 방법을 적용했을 때 좋지 않은 시나리오</p>
-<ul>
-<li>validation microservice에 접근할수 없는경우 메세지 플랫폼은 나중에 validation microservice가 접근 가능하게 되었을 때 validation microservice는 메세지를 받아볼 수 있다.</li>
-<li>메세지 플랫폼에 문제가 발생하면 user microservice는 또 다시 다른 user의 검증 메세지를 보낸다.</li>
-<li>validation microservice가 메세지를 받게되면 user를 검증하지만 메세지 플랫폼 문제가 발생하면 응답을 보내지 못하고 추 후 다시 보낸다.</li>
-</ul>
-<p>그러나 일부메세지가 여러번 발행되더라도 데이터 일관성에는 영향을 미치지 않는다.<br>발생할 수 있는 좋지 않은 시나리오들을 고려함으로써 Eventual Consistency를 충족시킬 수 있으며 비용소모가 심한  distributed transactions를 처리할 필요가 없다.</p>
-<h4 id="Distributed-Transactions-The-Solution"><a href="#Distributed-Transactions-The-Solution" class="headerlink" title="Distributed Transactions: The Solution"></a>Distributed Transactions: The Solution</h4><p>결제하고 배송하는 시스템을 Distributed Transaction방식으로 구현한다고 해보자<br><img src="/2019/06/08/msa3/5.PNG" alt="Distributed Transactions The Solution1" title="Distributed Transactions The Solution1"></p>
-<p>위와 같은 방식으로 할 수 있으나 일련의 과정은 동기방식이다.<br>이를 비동기 방식으로 처리하기 위해 아래와 같은 방식을 따르면 된다. 즉 쓰레드를 하나 만들어서 처리한다.</p>
-<img src="/2019/06/08/msa3/6.PNG" alt="Distributed Transactions The Solution1" title="Distributed Transactions The Solution1">
-<p>안전한 Distributed Transactions를 위해서</p>
-<ul>
-<li>원격 업데이트에 대한 영향 감수</li>
-<li>원격 업데이트를 시도하고 응답을 받지 못했을 경우 재시도를 해야한다. 또한 응답이 오더라도 자체 대기열을 업데이트하지 못할 경우 대기열이 사용가능해지면 다시 시도해서 업데이트 해야한다.</li>
-<li>재시도로 발생하는 중복수신은한번만 처리한다</li>
-<li>하나의 작업단위를 완료하더라도 시스템 오류가 발생하면 동기화 되지 않을 수 있다.</li>
-<li>이를통해볼 때 microservice는 Distributed 트랜잭션에 호의적이지 않다.</li>
-</ul>
-<p>동기관련 문제를 해결할 수 있는 메세지 브로커<br><img src="/2019/06/08/msa3/7.PNG" alt="Distributed Transactions The Solution3" title="Distributed Transactions The Solution3"></p>
-<h4 id="Two-Consequences-of-Eventual-Consistency"><a href="#Two-Consequences-of-Eventual-Consistency" class="headerlink" title="Two Consequences of Eventual Consistency"></a>Two Consequences of Eventual Consistency</h4><ul>
-<li>재시도를 하는것은 시스템에 문제가 생긴것을 의미한다.</li>
-<li>일관성이 결국에는 생기는것이기 때문에 비즈니스 일관성이 충돌하는 경우도 있을 수 있다.<br>만약 책을 구매하는 비즈니스가 있다고 할 때 결제를 하는순간 재고가 있어 결제가 진행되었는데 결제가 완료되는 순간 재고가 없을 때를 가정해보자. 이 때는 비동기식으로 사용자에게 다시 보고하지 않고 환불절차를 진행 후 직원이 처리 할 내용을 conflicts큐에 넣고 제공할 수 있다.</li>
-</ul>
-<h4 id="Saga-Pattern-microservice에서-어떻게-비즈니스-트랜잭션을-구현-할것인가"><a href="#Saga-Pattern-microservice에서-어떻게-비즈니스-트랜잭션을-구현-할것인가" class="headerlink" title="Saga Pattern : microservice에서 어떻게 비즈니스 트랜잭션을 구현 할것인가."></a>Saga Pattern : microservice에서 어떻게 비즈니스 트랜잭션을 구현 할것인가.</h4><p>트랜잭션은 어플리케이션의 필수적인 부분이다. 트랜잭션이 없다면 데이터의 일관성을 유지하는 것은 불가능하다.</p>
-<p>가장 강력한 트랜잭션 유형중 하나는 Two-Phase Commit이다. 이는 여러 엔티티를 동시에 업데이트 할 때 유용하다.(ex. 주문확인 및 재고 업데이트)</p>
-<p>그러나 microservice로 작업할 경우 데이터베이스가 분리되므로 로컬  Two-Phase Commit를 활용하여 전체 시스템의 일관성을 간단하게 유지할 수 없다. 이 경우 RDBMS와 마찬가지로 단일엔티티 원자 트랜잭션이 가능한 Couchbase와 같은 NoSQL 데이터베이스를 사용하면 수십배 빠르게 처리할 수 있다. 그래서 microservice를 사용하는 대다수 기업들이 NoSQL을 사용하고 있다.</p>
-<h4 id="SAGA-Pattern"><a href="#SAGA-Pattern" class="headerlink" title="SAGA Pattern"></a>SAGA Pattern</h4><ul>
-<li>분산 트랜잭션의 잘알려진 패턴중 하나가 SAGA이다.</li>
-<li>SAGA는 일련의 local 트랙잭션들을 의미하며 각 트랜잭션은 하나의 서비스안에서 데이터를 업데이트 한다. 첫 번째 트랜잭션은 시스템 작업에 해당하는 외부 요청에 의해 시작되고 이후엔 이전단계 완료가 될 때마다 트리거링되어 작동한다.<br>-SAGA 트랜잭션을 구현하는 인기있는 두 가지 방법이 있다.<h4 id="1-Events-Choreography"><a href="#1-Events-Choreography" class="headerlink" title="1. Events/Choreography"></a>1. Events/Choreography</h4>각 서비스는 다른 서비스의 event, decides를 보고 action을 할지 말지 결정하며 non centralize 한것. (발레와 유사함)</li>
-</ul>
-<img src="/2019/06/08/msa3/EventsChoreography.PNG" alt="Events/Choreography" title="Events/Choreography">
-<p>첫번째 서비스는 트랜잭션을 실행하고 이벤트를 publish한다. 발행된 이벤트는 하나 혹은 그 이상의 서비스가 지켜보며 해당 이벤트는 로컬 트랜잭션을 실행하고 새로운 이벤트를 publish한다.<br>분산 트랜잭션은 마지막에 서비스가 로컬 트랜잭션을 실행할 때 종료된되며 마지막 이벤트는 이벤트를 publish하지 않는다.<br>분산 트랜잭션의 경우 롤백에 대한 로직은 직접 만들어야 한다.</p>
-<p>Event/Choreography design의 장단점</p>
-<ul>
-<li>이해하기 쉽고 SAGA패턴을 구현하는 자연스러운 방법이다. 구축에 많은 노력이 필요하지 않으며 느슨한 결합을 유지한다. 2~4단계로 구성되는 트랜잭션에 매우 적합하다.</li>
-<li>어떤 서비스가 어떤 이벤트를 수신하는지 추적하기 어렵기 때문에 단계를 계속 추가할 경우 혼란스러울 수 있다.</li>
-</ul>
-<h4 id="2-Command-Orchestration-coordinator-서비스가-의사결정-및-sequncing-비즈니스-로직에-대한-책임이-있는-것-즉-centralize-한것-오케스트라와-유사함"><a href="#2-Command-Orchestration-coordinator-서비스가-의사결정-및-sequncing-비즈니스-로직에-대한-책임이-있는-것-즉-centralize-한것-오케스트라와-유사함" class="headerlink" title="2. Command/Orchestration : coordinator 서비스가 의사결정 및 sequncing 비즈니스 로직에 대한 책임이 있는 것. 즉 centralize 한것. (오케스트라와 유사함)"></a>2. Command/Orchestration : coordinator 서비스가 의사결정 및 sequncing 비즈니스 로직에 대한 책임이 있는 것. 즉 centralize 한것. (오케스트라와 유사함)</h4><img src="/2019/06/08/msa3/CommandOrchestration.PNG" alt="CommandOrchestration" title="CommandOrchestration">
-<ul>
-<li>Orchestration 접근법에서는 각 참가자에게 할 일을 알려줄 책임이 있는 새로운 서비스를 정의한다. 각 서비스와 명령/응답 형태로 통신하여 수행해야 할 작업을 알려준다.</li>
-<li>위 그림의 경우 Orchestration은 트랜잭션을 실행하는데 필요한 흐름을 알고있다.</li>
-<li>만약 트랜잭션이 실패하면 이전 작업을 취소하기 위해 각 참가자에게 롤백 명령을 보내야 한다. 롤백은 Orchestrator을 갖고있으면 훨씬 쉽다.</li>
-<li>saga orchestrator을 모델링하는 표준 방법은 각 변환이 명령 또는 메세지에 해당하는지에 대한 State Machine이다. State Machine는 구현하기 쉽고 테스트에 적합하기 때문에 잘 정의된 동작을 구조화 하는데 훌륭한 패턴이다.</li>
-</ul>
-<p>Event/Choreography design의 장단점</p>
-<ul>
-<li>saga orchestrator는 saga participants를 호출할 수 있지만 saga participants는 saga orchestrator를 호출할수 없기에  서비스간 cyclic 종속성을 피할수 있다.</li>
-<li>command에 대해 응답 혹은 실행만 하므로 participants간 복잡성을 줄일 수 있다.</li>
-<li>새로운 단계가 추가될 때 트랜잭션의 복잡성은 linear하게 늘어난다.</li>
-<li>쉬운 롤백관리 가능</li>
-<li>첫번째,두번째 트랜잭션이 동일한 개체를 변경하고자 할 때 orchestrator를 활용하여 첫번째 트랜잭션이 끝날때 까지 두번째 트랜잭션을 보류상태로 둘 수 있다.</li>
-<li>하지만 이는 orchestrator에 많은 로직이 들어가 risk가 있다</li>
-<li>추가 서비스를 관리해야 하므로 인프라 복잡성이 증가한다.</li>
-</ul>
-<h4 id="Saga-Pattern-Tips"><a href="#Saga-Pattern-Tips" class="headerlink" title="Saga Pattern Tips"></a>Saga Pattern Tips</h4><p>트랜잭션마다 unique Id를 만들어라</p>
-<ul>
-<li>이를 통해 추적이 가능하고 participants간 통신을 위한 표준방법을 갖는데 도움을 준다.<br>command에 응답 address를 추가해라</li>
-<li>participant가 고정된 주소에 응답하기 보다는 message에 응답 address를 추가하여 보내는것을 고려해봐라. 이를 통해 participants는 여러 orchestrator에 응답할 수 있다.</li>
-<li>큐(SQS, Kafka, RabbitMQ, etc)를 사용할 경우 서비스간 통신할 수 있다.</li>
-<li>버그로 인해 원치않은 메세지를 수신함으로써 데이터베이스가 엉망이 될 수 있다.<br>동기식 통신을 피하라</li>
-<li>이를 통해 더 많은 데이터를 요청할 수 있고 다른 서비스가 오프라인 일 때도 서비스가 로컬 트랜잭션을 실행할 수 있다.</li>
-<li>orchestrator는 각 요청/응답을 다뤄야하므로 선형적으로 복잡성이 증가한다.</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Database-Design-for-Microservices&quot;&gt;&lt;a href=&quot;#Database-Design-for-Microservices&quot; class=&quot;headerlink&quot; title=&quot;Database Design for Micros
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/tags/MSA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MSA이론2. Microservice Architecturure</title>
-    <link href="http://KKimSangHeon.github.io/2019/06/08/msa2/"/>
-    <id>http://KKimSangHeon.github.io/2019/06/08/msa2/</id>
-    <published>2019-06-08T05:18:16.000Z</published>
-    <updated>2019-06-11T11:09:16.950Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Microservices-Architecture"><a href="#Microservices-Architecture" class="headerlink" title="Microservices  Architecture"></a>Microservices  Architecture</h3><ul>
-<li>비즈니스 로직을 나누었다.</li>
-<li>큰 프로그램 대신 몇몇의 작은 어플리케이션이다.</li>
-<li>잘 정의된 API로 소통한다.(HTTP, AMQP 활용)</li>
-<li>하나의 서비스가 정지될경우 다른것에 영향을 미치지 않는다</li>
-</ul>
-<h4 id="What-is-Microservice-Architecture"><a href="#What-is-Microservice-Architecture" class="headerlink" title="What is Microservice Architecture?"></a>What is Microservice Architecture?</h4><ul>
-<li>각각의 컴포넌트를 시스템에 집어넣는것이며 각각 빌드되고 배포될수 있다.</li>
-<li>Microservice 는 vertical 하며 layered하다. 또한 Process driven 형태이다.</li>
-<li>Microservice를 잘 정의하면 TDD가 가능하다.</li>
-<li>엔터프라이즈 아키텍처가 아니다. Microservice Architecture는 SOA와 유사하다.</li>
-<li>단일 비즈니스 기능을 구현한다.</li>
-<li>자신만의 데이터베이스를 갖는것이 일반적이나 데이터베이스를 갖지않는경우도 있다.</li>
-<li>HTTP, AMQP 로 통신한다.</li>
-<li>독립적으로 배포가 가능하다.</li>
-<li>각각의 레파지토리를 갖는다.</li>
-<li>마이크로 서비스 팀은 몇명이 적당할까? 피자 두판을 먹을 수 있을만한 인원수! 6명 ? 좋다!</li>
-</ul>
-<h4 id="Microservice의-구성"><a href="#Microservice의-구성" class="headerlink" title="Microservice의 구성"></a>Microservice의 구성</h4><ul>
-<li>Data Store</li>
-<li>Application/Logic</li>
-<li>Public API(POST, GET )</li>
-</ul>
-<h4 id="Microservices-application의-전형적인-생태계"><a href="#Microservices-application의-전형적인-생태계" class="headerlink" title="Microservices application의 전형적인 생태계"></a>Microservices application의 전형적인 생태계</h4><p>원칙1. Microservices들은 각 public API에 서로 의존한다.</p>
-<ul>
-<li>백엔드의 마이크로 서비스는 노출되면 안된다. 오직 프론트 마이크로 서비스만 노출되어야 한다.</li>
-</ul>
-<p>원칙2. 작업에 적합한 tool(ex. 프레임워크)을 사용하라.</p>
-<p>원칙3. 서비스 보안에 신경써라</p>
-<p>원칙4. 생태계에서 좋은 시민이 되어라!</p>
-<ul>
-<li>모니터링, 로깅, 추적을 분산하라</li>
-</ul>
-<p>원칙5. 기술 변화 이상의 것이다.</p>
-<ul>
-<li>조직 변화를 수용하라</li>
-</ul>
-<p>원칙6. 모든것을 자동화하라(DevOps!)</p>
-<h4 id="Micro-Service를-위해서…"><a href="#Micro-Service를-위해서…" class="headerlink" title="Micro Service를 위해서…"></a>Micro Service를 위해서…</h4><ul>
-<li>비즈니스 도메인을 이해하자</li>
-<li>일관성 유지하자</li>
-<li>서비스 발견해보자</li>
-<li>불필요한 상호통신이 많다면 조정해보자</li>
-</ul>
-<h4 id="Microservice-계획하기"><a href="#Microservice-계획하기" class="headerlink" title="Microservice 계획하기"></a>Microservice 계획하기</h4><ul>
-<li>정말 옳은 선택인가?(트레이드 오프 고려)</li>
-<li>시스템의 주요기능을 식별하자</li>
-<li>서비스 컴포넌트의 스코프를 세부적으로 결정하라(Function의 크기, 타입, 복잡성)</li>
-<li>API들을 디자인하라</li>
-<li>커뮤니케이션의 메커니즘을 결정하라</li>
-<li>데이터 모델을 결정하라(중앙 데이터베이스 vs 여러 데이터 저장소)</li>
-</ul>
-<h4 id="Benefits-of-microservices"><a href="#Benefits-of-microservices" class="headerlink" title="Benefits of microservices"></a>Benefits of microservices</h4><ul>
-<li>각각의 microservices를 쉽개 확장할 수 있다</li>
-<li>빠른 빌드, 테스트, 릴리즈의 싸이클</li>
-<li>agility의 증가</li>
-<li>빠른혁신이 가능하다.</li>
-<li>명확한 소유권 그리고 책임의 분배.</li>
-</ul>
-<h4 id="Microservice-Architecture"><a href="#Microservice-Architecture" class="headerlink" title="Microservice Architecture"></a>Microservice Architecture</h4><img src="/2019/06/08/msa2/MicroserviceArchitecture.PNG" alt="Microservice Architectur" title="Microservice Architectur">
-<ul>
-<li>각 microservice는 컨테이너에 할당된다. 컨테이너는 microservice 기반 어플리케이션을 개별적으로 개발, 배포하기 좋은 방법이다.</li>
-<li>microservice 간 stateless server 형태로 소통한다.</li>
-<li>클라이언트는 서비스를 바로 호출할수 없고 API 게이트웨이가 클라이언트의 요청을 적절한 microservice로 전달한다.<br>(API 게이트웨이는microservice로인가요? 하드웨어나 소프트웨어로 볼 수 있다. microservice로 일수도 있지만 아닐수도 있다.)</li>
-<li>각 서비스는 상호 독립적이다.</li>
-<li>Single-responsibility 원칙을 따름</li>
-<li>아무것도 공유하지 않는다.</li>
-<li>비동기가 가능하다.</li>
-<li>configuration의 외부화</li>
-<li>결합도가 느슨하다.</li>
-<li>하나의 서비스가 문제를 일으켜도 나머지는 상관없다.</li>
-</ul>
-<h4 id="Microservices-Disadvantages"><a href="#Microservices-Disadvantages" class="headerlink" title="Microservices - Disadvantages"></a>Microservices - Disadvantages</h4><p>Complex networking으로 인해 데이터베이스, 서버의 오버헤드 발생</p>
-<h4 id="Monolithic-Architecture-vs-Microservice-Architecture"><a href="#Monolithic-Architecture-vs-Microservice-Architecture" class="headerlink" title="Monolithic Architecture vs Microservice Architecture"></a>Monolithic Architecture vs Microservice Architecture</h4><img src="/2019/06/08/msa2/MonolithicArchitecturevsMicroservice.PNG" alt="Monolithic vs Microservice" title="Monolithic vs Microservice">
-<p><code>Monolithic Architecture</code> : 모든 기능이 단일 코드베이스에 위치하고 하나의 DB를 사용한다. 또한 한 기능이 마비되면 전체가 마비되며 크고 복잡한 어플리케이션형태</p>
-<h4 id="Microservices-vs-SOA"><a href="#Microservices-vs-SOA" class="headerlink" title="Microservices vs SOA"></a>Microservices vs SOA</h4><img src="/2019/06/08/msa2/MicroservicesvsSOA.PNG" alt="Microservices vs SOA" title="Microservices vs SOA">
-<p>SOA 컨센은 centrallize이다.<br>MS는 not centrallize이다.<br>즉 SOA는 오케스트라와 같다. (한 지위자가 전체를 통솔한다) Microservices는 발레와 같다. (각 댄서가 각자 율동한다)</p>
-<h4 id="Monolithic-Architecture-vs-SOA-vs-Microservices"><a href="#Monolithic-Architecture-vs-SOA-vs-Microservices" class="headerlink" title="Monolithic Architecture vs SOA vs Microservices"></a>Monolithic Architecture vs SOA vs Microservices</h4><img src="/2019/06/08/msa2/MonolithicArchitecturevsSOAvsMicroservices.PNG" alt="Microservices vs SOA" title="Microservices vs SOA">
-<p><code>coarse-grained</code> : 특정 프로세스(서비스)를 큰 덩어리로 나누는것<br><code>fine-grained</code> :  특정 프로세스(서비스)를 잘게 쪼개는 것</p>
-<h3 id="Microservices를-구현해야-하는-9가지-이유"><a href="#Microservices를-구현해야-하는-9가지-이유" class="headerlink" title="Microservices를 구현해야 하는 9가지 이유"></a>Microservices를 구현해야 하는 9가지 이유</h3><ul>
-<li>Easy To Build &amp; Maintain</li>
-<li>Continuous Delivery</li>
-<li>Hybrid Technologies</li>
-<li>Cross Team Coordination</li>
-<li>Higher Quality Code</li>
-<li>Smarter Scaling</li>
-<li>Risk Reduction</li>
-<li>Promote Big Data Best Practices</li>
-<li>Improved ROI with reduced TCO</li>
-</ul>
-<h4 id="Illustration-of-Monolithic-Module-Refactoring"><a href="#Illustration-of-Monolithic-Module-Refactoring" class="headerlink" title="Illustration of Monolithic Module Refactoring"></a>Illustration of Monolithic Module Refactoring</h4><img src="/2019/06/08/msa2/IllustrationofMonolithicModuleRefactoring.PNG" alt="IllustrationofMonolithicModuleRefactoring" title="IllustrationofMonolithicModuleRefactoring">
-<p>Microservice Architecture는 3계층이다.Container/ Orchestration /Application</p>
-<h4 id="The-twelve-Factors"><a href="#The-twelve-Factors" class="headerlink" title="The twelve Factors"></a>The twelve Factors</h4><p>I. Codebase: One codebase that is tracked in revision control, with many deployments<br>II. Dependencies: Explicitly declare and isolate dependencies<br>III.Configuration: Store Configuration in the environment<br>IV.Backing services: Treat backing services as attached resources<br>V. Build, release, run: Strictly separate build and run stages<br>VI.Processes: Execute the app as one or more stateless processes<br>VII.Port binding: Export services with port binding<br>VIII.Concurrency: Scale out using the process model<br>IX.Disposability: 빠른 시작 및 효율적인 종료가 가능하다.<br>X. Development and production parity: Keep development, staging, and production as similar as possible<br>XI.Logs: Treat logs as event streams<br>XII.Admin processes: Run administrative and management tasks as one-off processes</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Microservices-Architecture&quot;&gt;&lt;a href=&quot;#Microservices-Architecture&quot; class=&quot;headerlink&quot; title=&quot;Microservices  Architecture&quot;&gt;&lt;/a&gt;Microse
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/tags/MSA/"/>
     
   </entry>
   
