@@ -133,13 +133,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/About-Me/Introduction/</loc>
-        <lastmod>2019-01-21T15:15:16.932Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/categories/CS/Data-Base/</loc>
         <lastmod>2019-02-07T11:31:59.183Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -170,13 +163,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/categories/CS/Operating-System/</loc>
         <lastmod>2019-03-24T04:23:07.112Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/categories/About-Me/</loc>
-        <lastmod>2019-05-12T04:10:36.532Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -233,6 +219,20 @@
     <url>
         <loc>http://KKimSangHeon.github.io/categories/Etc/%EA%B0%95%EC%97%B0/</loc>
         <lastmod>2019-12-25T13:28:11.002Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/About-Me/</loc>
+        <lastmod>2019-12-25T13:43:41.653Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/About-Me/Introduction/</loc>
+        <lastmod>2019-12-25T13:43:41.653Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
