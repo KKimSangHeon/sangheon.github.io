@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-12-25T14:10:16.473Z</updated>
+  <updated>2019-12-26T12:19:44.590Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,85 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Centos에서 kafka 설치 및 테스트</title>
+    <link href="http://KKimSangHeon.github.io/2019/12/26/kafka/"/>
+    <id>http://KKimSangHeon.github.io/2019/12/26/kafka/</id>
+    <published>2019-12-26T12:11:45.000Z</published>
+    <updated>2019-12-26T12:19:44.590Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="카프카-설치법"><a href="#카프카-설치법" class="headerlink" title="카프카 설치법"></a>카프카 설치법</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"># yum install java-1.8.0-openjdk.x86_64</div><div class="line"></div><div class="line"># vi /etc/profile</div><div class="line">	profile 파일 안에 아래의 내용을 추가</div><div class="line">export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk</div><div class="line">export JRE_HOME=/usr/lib/jvm/jre</div><div class="line"></div><div class="line">source 명령어를 이용해서 변경된 내용 적용</div><div class="line"># source /etc/profile</div><div class="line"></div><div class="line"># yum install -y wget</div><div class="line"></div><div class="line"># wget http://www-us.apache.org/dist/kafka/2.3.0/kafka_2.11-2.3.0.tgz</div><div class="line"></div><div class="line">#  tar xvf kafka_2.11-2.3.0.tgz</div><div class="line"></div><div class="line">#  mv kafka_2.11-2.3.0 /opt</div><div class="line"></div><div class="line">#  cd /opt/kafka_2.11-2.3.0/</div><div class="line"></div><div class="line"># vi conifg/server.properties</div><div class="line">아래 두줄 추가</div><div class="line">port = 9092</div><div class="line">advertised.host.name = localhost (서버주소를 입력하는것인데 vm상에서 띄울때는 서버가 될 주소 입력)</div><div class="line"></div><div class="line"></div><div class="line">서버 시작</div><div class="line"># ./bin/zookeeper-server-start.sh -daemon config/zookeeper.properties</div><div class="line"># ./bin/kafka-server-start.sh -daemon config/server.properties</div><div class="line"></div><div class="line">토픽 생성</div><div class="line">./bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test</div><div class="line"></div><div class="line">토픽 조회</div><div class="line"># ./bin/kafka-topics.sh --list --zookeeper localhost:2181</div><div class="line"></div><div class="line"></div><div class="line">Producer</div><div class="line"># ./bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test</div><div class="line"></div><div class="line"></div><div class="line">Consumer</div><div class="line"># ./bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning</div><div class="line"></div><div class="line"># ./bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic test --from-beginning</div><div class="line"></div><div class="line">컨슈머 그룹 확인</div><div class="line">./kafka-consumer-groups.sh --all-groups --list --bootstrap-server localhost:9092</div><div class="line"></div><div class="line"></div><div class="line">실시간 변화 확인</div><div class="line">$ watch -d -n 1 &apos;./kafka-consumer-groups.sh  --bootstrap-server localhost:9092 --group console-consumer-33229  --describe&apos;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;카프카-설치법&quot;&gt;&lt;a href=&quot;#카프카-설치법&quot; class=&quot;headerlink&quot; title=&quot;카프카 설치법&quot;&gt;&lt;/a&gt;카프카 설치법&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=
+    
+    </summary>
+    
+      <category term="Etc" scheme="http://KKimSangHeon.github.io/categories/Etc/"/>
+    
+      <category term="오픈소스,기술" scheme="http://KKimSangHeon.github.io/categories/Etc/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EA%B8%B0%EC%88%A0/"/>
+    
+    
+      <category term="Kafka" scheme="http://KKimSangHeon.github.io/tags/Kafka/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Centos에서 Streamset 설치하기</title>
+    <link href="http://KKimSangHeon.github.io/2019/12/26/streamset/"/>
+    <id>http://KKimSangHeon.github.io/2019/12/26/streamset/</id>
+    <published>2019-12-26T12:11:21.000Z</published>
+    <updated>2019-12-26T12:19:34.489Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="StreamSet-설치"><a href="#StreamSet-설치" class="headerlink" title="StreamSet 설치"></a>StreamSet 설치</h1><p>스트림셋<br>오픈소스 데이터 콜렉터 : ETL 도구라함 (추출, 변환, 적재)<br>동일기종 또는 타기종으로 부터 추출하고, 이를 변환하고 적재하는 과정을 의미<br>NIFI / KNIME도 유명하다</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"># wget https://archives.streamsets.com/datacollector/3.11.0/tarball/streamsets-datacollector-all-3.11.0.tgz</div><div class="line"></div><div class="line"># tar xvf &#123;datacollector&#125;.tar</div><div class="line"></div><div class="line"># cd streamsets-datacollector-all-3.11.0</div><div class="line"></div><div class="line">// 설정</div><div class="line"># cp ./etc /tc/sdc -r</div><div class="line"></div><div class="line"># cd libexec // 환경변수 세팅하는 디렉</div><div class="line"></div><div class="line"># vi sdc-env.sh  // 아래 네개항목 주석 해제</div><div class="line">export SDC_DATA=/var/lib/sdc</div><div class="line">export SDC_LOG=/var/log/sdc</div><div class="line">export SDC_CONF=/etc/sdc</div><div class="line">export SDC_RESOURCES=/var/lib/sdc-resources</div><div class="line"></div><div class="line"># cd ..</div><div class="line"># cd bin</div><div class="line"></div><div class="line"># ulimit -n 32768  // 최대 열 수 있는 갯수를 늘려줌</div><div class="line"></div><div class="line"># ./streamsets dc</div><div class="line"></div><div class="line"># firewall-cmd --zone=public --add-port=18630/tcp --permanent</div><div class="line"># service sshd start</div><div class="line"></div><div class="line">xxx:18630 접속</div><div class="line"></div><div class="line">admin/ admin</div><div class="line"># cd ..</div><div class="line"></div><div class="line"># mkdir data</div><div class="line"># cd data</div><div class="line"># mkdir BasicTutorial</div><div class="line"># cd BasicTutorial</div><div class="line"># mkdir error</div><div class="line"># mkdir origin		// 원천데이터</div><div class="line"># mkdir destination	//최종적으로 변환된 것이 저장된 공간</div></pre></td></tr></table></figure>
+<p>만약 경로관련 문제로 실행이 안될경우<br>스트림셋 실행하기 전에<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">export SDC_CONF=/etc/sdc</div><div class="line">export SDC_DATA=/var/lib/sdc</div><div class="line">export SDC_LOG=/var/log/sdc</div><div class="line">export SDC_HOME=/opt/streamsets-datacollector</div></pre></td></tr></table></figure></p>
+<p>하고 실행</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;StreamSet-설치&quot;&gt;&lt;a href=&quot;#StreamSet-설치&quot; class=&quot;headerlink&quot; title=&quot;StreamSet 설치&quot;&gt;&lt;/a&gt;StreamSet 설치&lt;/h1&gt;&lt;p&gt;스트림셋&lt;br&gt;오픈소스 데이터 콜렉터 : ETL 도구라
+    
+    </summary>
+    
+      <category term="Etc" scheme="http://KKimSangHeon.github.io/categories/Etc/"/>
+    
+      <category term="오픈소스,기술" scheme="http://KKimSangHeon.github.io/categories/Etc/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EA%B8%B0%EC%88%A0/"/>
+    
+    
+      <category term="Streamset" scheme="http://KKimSangHeon.github.io/tags/Streamset/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VirtualBox에 Centos Minimal 설치</title>
+    <link href="http://KKimSangHeon.github.io/2019/12/26/centosminimal/"/>
+    <id>http://KKimSangHeon.github.io/2019/12/26/centosminimal/</id>
+    <published>2019-12-26T12:10:51.000Z</published>
+    <updated>2019-12-26T12:20:24.044Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Centos-minimal-설치-및-기본-세팅"><a href="#Centos-minimal-설치-및-기본-세팅" class="headerlink" title="Centos minimal 설치 및 기본 세팅"></a>Centos minimal 설치 및 기본 세팅</h1><p>Virtual Box 이용</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">$ vi /etc/sysconfig/network-scripts/ifcfg-enp0s3</div><div class="line"></div><div class="line">네트워크 설정 파일을 열어 필요한 부분을 수정한다. 단, ifcfg-enp0s3 부분은 장비에 따라 다르게 나올 수 있다.</div><div class="line">기본적으로 dhcp를 사용하도록 되어 있을텐데 dhcp를 그대로 사용한다면 ONBOOT=no 부분을 ONBOOT=yes으로 바꿔주기만 하면된다. dhcp를 사용하지 않는다면 사용할 IP를 지정한다</div><div class="line"></div><div class="line"># service network restart</div><div class="line"></div><div class="line"></div><div class="line"># ip addr</div><div class="line"></div><div class="line"># yum install -y openssh-server net-tools</div><div class="line"></div><div class="line"># service sshd start</div><div class="line">Redirecting to /bin/systemctl restart  sshd.service</div><div class="line"></div><div class="line"># chkconfig sshd on</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"># firewall-cmd --zone=public --add-port=22/tcp --permanent</div><div class="line"></div><div class="line"># service sshd start</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Centos-minimal-설치-및-기본-세팅&quot;&gt;&lt;a href=&quot;#Centos-minimal-설치-및-기본-세팅&quot; class=&quot;headerlink&quot; title=&quot;Centos minimal 설치 및 기본 세팅&quot;&gt;&lt;/a&gt;Centos mini
+    
+    </summary>
+    
+      <category term="OS" scheme="http://KKimSangHeon.github.io/categories/OS/"/>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/OS/Linux/"/>
+    
+    
+      <category term="centos" scheme="http://KKimSangHeon.github.io/tags/centos/"/>
+    
+  </entry>
   
   <entry>
     <title>20191222 부산 UFC 관람</title>
@@ -829,132 +908,6 @@
     
       &lt;p&gt;어플리케이션을 컨테이너로 배포하는 시대에 들어오면서 배포 전략에도 변화가 생겼다. 컨테이너의 장점을 살려 작업을 자동화하고 서비스 무중단을 어떻게 유지해야 할지를 고민한다.&lt;/p&gt;
 &lt;h3 id=&quot;롤링-업데이트&quot;&gt;&lt;a href=&quot;#롤링-업데이트&quot; 
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>실습3. 프로젝트 생성 및 테스트</title>
-    <link href="http://KKimSangHeon.github.io/2019/06/14/kube16/"/>
-    <id>http://KKimSangHeon.github.io/2019/06/14/kube16/</id>
-    <published>2019-06-14T10:34:59.000Z</published>
-    <updated>2019-06-15T12:27:53.138Z</updated>
-    
-    <content type="html"><![CDATA[<p>깃랩에 프로젝트를 커밋하기 위해 다음 과정을 거친다.<br><img src="/2019/06/14/kube16/9.PNG" alt="9.PNG" title=""><br>다음과 같이 프로젝트를 깃랩에 생성 및 코드 반영<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git config --global user.name &quot;sangheonKim&quot;</div><div class="line">git config --global user.email &quot;tkdgjs1501@nate.com&quot;</div><div class="line"></div><div class="line">git init</div><div class="line">git remote add origin http://35.200.116.34/sangheonKim/sangheonProject.git</div><div class="line">git commit -m &quot;init&quot;</div><div class="line">git push origin master</div></pre></td></tr></table></figure></p>
-<p>커밋하는데 아래와 같은 에러가 뜰 경우 레파지토리 이름에 .git를 넣었는지 확인해보자.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">error: RPC failed; result=22, HTTP code = 404</div><div class="line">fatal: The remote end hung up unexpectedly</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div></pre></td><td class="code"><pre><div class="line">def label = &quot;master&quot;</div><div class="line"></div><div class="line"> def notifyStarted() &#123;</div><div class="line">    slackSend (color: &apos;#FFFF00&apos;, message: &quot;STARTED: Job &apos;$&#123;env.JOB_NAME&#125; [$&#123;env.BUILD_NUMBER&#125;]&apos; ($&#123;env.BUILD_URL&#125;)&quot;)</div><div class="line">&#125;</div><div class="line"></div><div class="line"> def notifySuccessful() &#123;</div><div class="line">    slackSend (color: &apos;#00FF00&apos;, message: &quot;SUCCESSFUL: Job &apos;$&#123;env.JOB_NAME&#125; [$&#123;env.BUILD_NUMBER&#125;]&apos; ($&#123;env.BUILD_URL&#125;)&quot;)</div><div class="line">&#125;</div><div class="line"></div><div class="line"> def notifyFailed() &#123;</div><div class="line">  slackSend (color: &apos;#FF0000&apos;, message: &quot;FAILED: Job &apos;$&#123;env.JOB_NAME&#125; [$&#123;env.BUILD_NUMBER&#125;]&apos; ($&#123;env.BUILD_URL&#125;)&quot;)</div><div class="line">&#125;</div><div class="line"></div><div class="line"> podTemplate(label: label,</div><div class="line">	containers: [</div><div class="line">	  containerTemplate(name: &apos;maven&apos;, image: &apos;maven:3.3.9-jdk-8-alpine&apos;, ttyEnabled: true, command: &apos;cat&apos;),</div><div class="line">	  containerTemplate(name: &apos;docker&apos;, image: &apos;docker:stable&apos;, ttyEnabled: true, command: &apos;cat&apos;),</div><div class="line">	  containerTemplate(name: &apos;kubectl&apos;, image: &apos;lachlanevenson/k8s-kubectl:v1.8.0&apos;, command: &apos;cat&apos;, ttyEnabled: true)</div><div class="line">	],</div><div class="line">	volumes: [hostPathVolume(hostPath: &apos;/var/run/docker.sock&apos;, mountPath: &apos;/var/run/docker.sock&apos;),</div><div class="line">		hostPathVolume(hostPath: &apos;/root/.m2&apos;, mountPath: &apos;/root/.m2&apos;)</div><div class="line">	]</div><div class="line"></div><div class="line"> 	) &#123;</div><div class="line"></div><div class="line"> 	node(label) &#123;</div><div class="line">	try &#123;</div><div class="line"></div><div class="line"></div><div class="line"> 	  stage(&apos;Get Source&apos;) &#123;</div><div class="line">		git &quot;http://35.200.116.34/sangheonKim/sangheonProject&quot;</div><div class="line">	  &#125;</div><div class="line"></div><div class="line"> 	  def props = readProperties  file:&apos;deployment/pipeline.properties&apos;</div><div class="line">	  /*def tag = VersionNumber (versionNumberString: &apos;$&#123;BUILD_DATE_FORMATTED, &quot;yyyyMMdd&quot;&#125;-develop-$&#123;BUILDS_TODAY&#125;&apos;)*/</div><div class="line">	  def tag = props[&apos;version&apos;]</div><div class="line">	  def gitSrc = props[&apos;gitSrc&apos;]</div><div class="line">	  def dockerRegistry = props[&apos;dockerRegistry&apos;]</div><div class="line">	  def image = props[&apos;image&apos;]</div><div class="line">	  def deployment = props[&apos;deployment&apos;]</div><div class="line">	  def service = props[&apos;service&apos;]</div><div class="line">	  def selector = props[&apos;selector&apos;]</div><div class="line">	  def namespace = props[&apos;namespace&apos;]</div><div class="line"></div><div class="line"></div><div class="line"> 	  stage(&apos;Build Maven project&apos;) &#123;</div><div class="line">		container(&apos;maven&apos;) &#123;</div><div class="line">			sh &quot;mvn -B clean package&quot;</div><div class="line">		&#125;</div><div class="line">	  &#125;</div><div class="line">/*</div><div class="line"> 	  stage(&apos;Inspection Code&apos;) &#123;</div><div class="line">		  container(&apos;maven&apos;) &#123;</div><div class="line">			  sh &quot;mvn sonar:sonar \</div><div class="line">        -Dsonar.projectKey=sangheon \</div><div class="line">        -Dsonar.host.url=http://34.85.31.212:9000 \</div><div class="line">        -Dsonar.login=62cf8d43f8fda31db0c5682c71b584c8650f4509&quot;</div><div class="line">		  &#125;</div><div class="line">	  &#125;</div><div class="line">*/</div><div class="line"> 	  stage(&apos;Build Docker image&apos;) &#123;</div><div class="line">		container(&apos;docker&apos;) &#123;</div><div class="line">		  docker.withRegistry(&quot;$&#123;dockerRegistry&#125;&quot;, &apos;registry-credentials&apos;) &#123;</div><div class="line">			sh &quot;docker build -t $&#123;image&#125;:$&#123;tag&#125; .&quot;</div><div class="line">			sh &quot;docker push $&#123;image&#125;:$&#123;tag&#125;&quot;</div><div class="line">			sh &quot;docker tag $&#123;image&#125;:$&#123;tag&#125; $&#123;image&#125;:latest&quot;</div><div class="line">			sh &quot;docker push $&#123;image&#125;:latest&quot;</div><div class="line">		  &#125;</div><div class="line">		&#125;</div><div class="line">	  &#125;</div><div class="line"></div><div class="line"> 	  stage( &apos;Clean Up Existing Deployments&apos; ) &#123;</div><div class="line">		container(&apos;kubectl&apos;) &#123;</div><div class="line">		  withCredentials([[$class: &apos;UsernamePasswordMultiBinding&apos;,</div><div class="line">							  credentialsId: &apos;registry-credentials&apos;,</div><div class="line">							  usernameVariable: &apos;DOCKER_HUB_USER&apos;,</div><div class="line">							  passwordVariable: &apos;DOCKER_HUB_PASSWORD&apos;]]) &#123;</div><div class="line"></div><div class="line"> 			  sh &quot;kubectl delete deployments -n $&#123;namespace&#125; --selector=app=$&#123;selector&#125;&quot;</div><div class="line">		  &#125;</div><div class="line">		&#125;</div><div class="line">	  &#125;</div><div class="line"></div><div class="line"> 	  stage( &apos;Deploy to Cluster&apos; ) &#123;</div><div class="line">		container(&apos;kubectl&apos;) &#123;</div><div class="line">		  withCredentials([[$class: &apos;UsernamePasswordMultiBinding&apos;,</div><div class="line">							  credentialsId: &apos;registry-credentials&apos;,</div><div class="line">							  usernameVariable: &apos;DOCKER_HUB_USER&apos;,</div><div class="line">							  passwordVariable: &apos;DOCKER_HUB_PASSWORD&apos;]]) &#123;</div><div class="line"></div><div class="line"> 			  sh &quot;kubectl apply -n $&#123;namespace&#125; -f $&#123;deployment&#125;&quot;</div><div class="line">			  sh &quot;sleep 5&quot;</div><div class="line">			  sh &quot;kubectl apply -n $&#123;namespace&#125; -f $&#123;service&#125;&quot;</div><div class="line">		  &#125;</div><div class="line">		&#125;</div><div class="line">	  &#125;</div><div class="line"></div><div class="line"> 	  notifySuccessful()</div><div class="line">	  &#125; catch(e) &#123;</div><div class="line">	print(e)</div><div class="line">        currentBuild.result = &quot;FAILED&quot;</div><div class="line">        notifyFailed()</div><div class="line">    &#125;</div><div class="line"></div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">version=0.1.0</div><div class="line">cluster=devcluster.icp</div><div class="line">namespace=default</div><div class="line">dockerRegistry=http://docker-registry.default.svc.cluster.local:5000</div><div class="line">image=http://docker-registry.default.svc.cluster.local:5000/default/masterapi</div><div class="line">deployment=deployment/masterapi-deploy.yaml</div><div class="line">service=deployment/masterapi-svc.yaml</div><div class="line">selector=masterapi</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">apiVersion: extensions/v1beta1</div><div class="line">kind: Deployment</div><div class="line">metadata:</div><div class="line">  name: masterapi-sangheonkim</div><div class="line">spec:</div><div class="line">  replicas: 3</div><div class="line">  template:</div><div class="line">    metadata:</div><div class="line">      labels:</div><div class="line">        app: masterapi-sangheonkim</div><div class="line">    spec:</div><div class="line">      containers:</div><div class="line">        - name: masterapi-sangheonkim</div><div class="line">          image: http://docker-registry.default.svc.cluster.local:5000/default/masterapi</div><div class="line">          imagePullPolicy: Always</div><div class="line">          ports:</div><div class="line">            - containerPort: 8280</div></pre></td></tr></table></figure>
-<p>다음 그림처럼 파이프라인을 생성하자</p>
-<p>kubectl create clusterrolebinding default-binding –clusterrole=cluster-admin –user=admin –user=kubelet –group=system:serviceaccounts:default</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Running in Durability level: MAX_SURVIVABILITY</div><div class="line">[Pipeline] Start of Pipeline</div><div class="line">[Pipeline] podTemplate</div><div class="line">[Pipeline] &#123;</div><div class="line">[Pipeline] node</div><div class="line">Still waiting to schedule task</div><div class="line">Waiting for next available executor</div></pre></td></tr></table></figure>
-<p>위와 같은 오류가 뜬다면</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;깃랩에 프로젝트를 커밋하기 위해 다음 과정을 거친다.&lt;br&gt;&lt;img src=&quot;/2019/06/14/kube16/9.PNG&quot; alt=&quot;9.PNG&quot; title=&quot;&quot;&gt;&lt;br&gt;다음과 같이 프로젝트를 깃랩에 생성 및 코드 반영&lt;br&gt;&lt;figure clas
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>실습2. 젠킨스 설정(깃랩, 도커레지스트리,슬랙, 소나큐브 연동)</title>
-    <link href="http://KKimSangHeon.github.io/2019/06/11/kube15/"/>
-    <id>http://KKimSangHeon.github.io/2019/06/11/kube15/</id>
-    <published>2019-06-11T10:57:54.000Z</published>
-    <updated>2019-06-14T11:15:22.586Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="젠킨스-플러그인-설치"><a href="#젠킨스-플러그인-설치" class="headerlink" title="젠킨스 플러그인 설치"></a>젠킨스 플러그인 설치</h3><p>Jenkins관리 -&gt; 플러그인 관리에 들어가서 다음 항목을 설치하자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Build Pipeline(Build Pipeline Plugin?)</div><div class="line">Aqua MicroScanner</div><div class="line">Gitlab Authentication plugin</div><div class="line">GitLab Plugin</div><div class="line">Kubernetes</div><div class="line">Pipeline</div><div class="line">Pipeline Utility Steps</div><div class="line">Simple Theme Plugin</div><div class="line">Slack Notification</div><div class="line">SonarQube Scanner</div><div class="line">Version Number Plug-In</div></pre></td></tr></table></figure></p>
-<h3 id="젠킨스-설정"><a href="#젠킨스-설정" class="headerlink" title="젠킨스 설정"></a>젠킨스 설정</h3><p><code>1. 깃랩과 연결</code><br><img src="/2019/06/11/kube15/gitlab_maketoken.PNG" alt="깃랩에서 설정" title="깃랩에서 설정"><br>우측 상단 이미지를 클릭하고 User Setting로 들어가서 Access Token 탭을 선택한다.<br>3개 모두 체크하고 토큰을 생성하자.</p>
-<img src="/2019/06/11/kube15/jenkins_1.PNG" alt="젠킨스에서 깃랩연결" title="젠킨스에서 깃랩연결">
-<p>Jenkins 관리-&gt; 시스템 설정으로 들어간 후 위와같이 connection name, gitlab host url(이전에 생성했던) 설정</p>
-<p>위의 화면의 Credentials 옆 Add-&gt;Jenkins를 선택</p>
-<img src="/2019/06/11/kube15/jenkins_2.PNG" alt="젠킨스에서 깃랩연결" title="젠킨스에서 깃랩연결">
-<p>Kind를 위와 같이 선택하고 API token, Id, Description 입력하고 추가하고 Test Connection을 눌러 잘 동작하나 확인해보자.</p>
-<img src="/2019/06/11/kube15/jenkins_3.PNG" alt="젠킨스에서 깃랩연결" title="젠킨스에서 깃랩연결">
-<p>Jenkins location을 설정하고 email을 위와같이 설정</p>
-<p><code>2. 도커레지스트리와 연결</code><br><img src="/2019/06/11/kube15/dockerConnection1.PNG" alt="젠킨스에서 깃랩연결" title="젠킨스에서 깃랩연결"><br>위와같이 설정</p>
-<img src="/2019/06/11/kube15/dockerConnection2.PNG" alt="젠킨스에서 깃랩연결" title="젠킨스에서 깃랩연결">
-<p>Add 버튼 클릭</p>
-<p><code>3. 슬랙과 연동</code><br>슬랙에서 Apps선택하고 jenkins검색하여 view를 클릭하면 새 창이 나온다.</p>
-<img src="/2019/06/11/kube15/1.PNG" alt="1.PNG" title="">
-<p>Add Configuration 클릭</p>
-<img src="/2019/06/11/kube15/2.PNG" alt="2.PNG" title="">
-<p>노티를 보낼 슬랙을 선택 후 Add Jenkins CI integration 클릭</p>
-<img src="/2019/06/11/kube15/3.PNG" alt="3.PNG" title="">
-<p>다음과 같이 친절하게 스탭별로 알려주므로 따라하면 된다.</p>
-<img src="/2019/06/11/kube15/4.PNG" alt="4.PNG" title="">
-<p>스텝에서 설명하는 그림과 약간 다를 경우 Integration Token Credential ID 옆의 Add를 누르고 Secret text로 선택하여 추가하면 된다.</p>
-<p>그 후 Test Connection을 클릭하여 테스트해보자</p>
-<p><code>4. 소나큐브 연동</code><br>생성한 소나큐브에 접속 및 admin/admin으로 로그인</p>
-<img src="/2019/06/11/kube15/5.PNG" alt="5.PNG" title="">
-<p>Create new project 선택</p>
-<img src="/2019/06/11/kube15/6.PNG" alt="6.PNG" title="">
-<p>다음과 같이 프로젝트키, 디스플레이 네임 입력.</p>
-<img src="/2019/06/11/kube15/7.PNG" alt="7.PNG" title="">
-<p>생성된 토큰을 기록해둔다.</p>
-<img src="/2019/06/11/kube15/8.PNG" alt="8.PNG" title="">
-<p>Continue를 클릭하여 다음과같이 진행한다.(프로젝트의 종류에 따라 다를 수 있음)</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;젠킨스-플러그인-설치&quot;&gt;&lt;a href=&quot;#젠킨스-플러그인-설치&quot; class=&quot;headerlink&quot; title=&quot;젠킨스 플러그인 설치&quot;&gt;&lt;/a&gt;젠킨스 플러그인 설치&lt;/h3&gt;&lt;p&gt;Jenkins관리 -&amp;gt; 플러그인 관리에 들어가서 다음 항
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>실습1. helm을 이용한 툴 설치</title>
-    <link href="http://KKimSangHeon.github.io/2019/06/11/kube14/"/>
-    <id>http://KKimSangHeon.github.io/2019/06/11/kube14/</id>
-    <published>2019-06-11T10:57:50.000Z</published>
-    <updated>2019-06-15T14:58:59.586Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="깃랩설치"><a href="#깃랩설치" class="headerlink" title="깃랩설치"></a>깃랩설치</h3><p>1.깃랩설치<br>helm install –name sangheon-gitlab –set externalUrl=<a href="http://sangheon-gitlab.com" target="_blank" rel="external">http://sangheon-gitlab.com</a> stable/gitlab-ce</p>
-<p>2.접속<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ kubectl get svc -w sangheon-gitlab-gitlab-ce  # 설치가 잘 되었나 확인</div><div class="line"></div><div class="line">$ export SERVICE_IP=$(kubectl get svc --namespace default sangheon-gitlab-gitlab-ce -o jsonpath=&apos;&#123;.status.loadBalancer.ingress[0].ip&#125;&apos;)</div><div class="line">$ echo http://$SERVICE_IP/  # 접속해보자</div></pre></td></tr></table></figure></p>
-<p>처음 접속하면 root 계정의 password를 설정하게 된다. 설정하고 root로 로그인해보자.</p>
-<h3 id="젠킨스-설치"><a href="#젠킨스-설치" class="headerlink" title="젠킨스 설치"></a>젠킨스 설치</h3><p>1.젠킨스 설치<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ helm install --name sangheonkim-jenkins stable/jenkins</div></pre></td></tr></table></figure></p>
-<p>2.접속<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ printf $(kubectl get secret --namespace default sangheonkim-jenkins -o jsonpath=&quot;&#123;.data.jenkins-admin-password&#125;&quot; | base64 --decode);echo</div><div class="line"></div><div class="line">출력값을 잘 기억하자. admin의 password이다.</div><div class="line"></div><div class="line">$ kubectl get svc --namespace default -w sangheonkim-jenkins</div><div class="line">$ export SERVICE_IP=$(kubectl get svc --namespace default sangheonkim-jenkins --template &quot;&#123;&#123; range (index .status.loadBalancer.ingress 0) &#125;&#125;&#123;&#123; . &#125;&#125;&#123;&#123; end &#125;&#125;&quot;)</div><div class="line">$ echo http://$SERVICE_IP:8080/login</div></pre></td></tr></table></figure></p>
-<p>출력된 주소로 접속하여 admin/출력된 password를 입력하자.</p>
-<h3 id="소나큐브-설치"><a href="#소나큐브-설치" class="headerlink" title="소나큐브 설치"></a>소나큐브 설치</h3><p>1.설치</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ helm install --name sangheonkim-sonarqube stable/sonarqube</div></pre></td></tr></table></figure>
-<p>2.접속<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ kubectl get svc -w sangheonkim-sonarqube-sonarqube</div><div class="line"></div><div class="line">$ export SERVICE_IP=$(kubectl get svc --namespace default sangheonkim-sonarqube-sonarqube -o jsonpath=&apos;&#123;.status.loadBalancer.ingress[0].ip&#125;&apos;)</div><div class="line"></div><div class="line">$ echo http://$SERVICE_IP:9000</div></pre></td></tr></table></figure></p>
-<h3 id="dockerRegistry-구축"><a href="#dockerRegistry-구축" class="headerlink" title="dockerRegistry 구축"></a>dockerRegistry 구축</h3><p>1.설치<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ helm install --name docker-registry stable/docker-registry</div></pre></td></tr></table></figure></p>
-<p>2.접속<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ export POD_NAME=$(kubectl get pods --namespace default -l &quot;app=docker-registry,release=docker-registry&quot; -o jsonpath=&quot;&#123;.items[0].metadata.name&#125;&quot;)</div><div class="line"></div><div class="line">$ echo &quot;Visit http://127.0.0.1:8080</div><div class="line"></div><div class="line">$ kubectl port-forward $POD_NAME 8080:5000</div></pre></td></tr></table></figure></p>
-<p> <a href="http://127.0.0.1:8080" target="_blank" rel="external">http://127.0.0.1:8080</a> 로 앱에서 접속가능한듯?<br> 포트포워딩을 통해 5000으로도 가능?<br><a href="http://docker-registry.default.svc.cluster.local:5000" target="_blank" rel="external">http://docker-registry.default.svc.cluster.local:5000</a></p>
-<p>/</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;깃랩설치&quot;&gt;&lt;a href=&quot;#깃랩설치&quot; class=&quot;headerlink&quot; title=&quot;깃랩설치&quot;&gt;&lt;/a&gt;깃랩설치&lt;/h3&gt;&lt;p&gt;1.깃랩설치&lt;br&gt;helm install –name sangheon-gitlab –set externalUrl=
     
     </summary>
     

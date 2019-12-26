@@ -42,20 +42,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/OS/</loc>
-        <lastmod>2018-09-03T06:00:55.200Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/categories/OS/Linux/</loc>
-        <lastmod>2018-09-03T06:00:55.200Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/categories/Web-App/Angular2/</loc>
         <lastmod>2018-09-03T06:01:02.191Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -217,13 +203,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/Etc/</loc>
-        <lastmod>2019-12-25T13:52:06.581Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/categories/Etc/%EA%B0%95%EC%97%B0/</loc>
         <lastmod>2019-12-25T13:52:06.581Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -240,6 +219,34 @@
     <url>
         <loc>http://KKimSangHeon.github.io/categories/About-Me/Photography/</loc>
         <lastmod>2019-12-25T14:10:16.473Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/Etc/</loc>
+        <lastmod>2019-12-26T12:19:44.590Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/Etc/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EA%B8%B0%EC%88%A0/</loc>
+        <lastmod>2019-12-26T12:19:44.590Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/OS/</loc>
+        <lastmod>2019-12-26T12:20:24.044Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/OS/Linux/</loc>
+        <lastmod>2019-12-26T12:20:24.044Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
