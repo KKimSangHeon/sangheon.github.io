@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2019-12-26T12:19:44.590Z</updated>
+  <updated>2019-12-29T04:45:37.042Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>20191229 판교</title>
+    <link href="http://KKimSangHeon.github.io/2019/12/29/photography/"/>
+    <id>http://KKimSangHeon.github.io/2019/12/29/photography/</id>
+    <published>2019-12-29T04:42:02.000Z</published>
+    <updated>2019-12-29T04:45:37.042Z</updated>
+    
+    <content type="html"><![CDATA[<p>오후 반차쓴 날 현석이형 집들이 가기전에 판교에서</p>
+<img src="/2019/12/29/photography/IMG_2508.jpg" alt="1" title="1">
+<img src="/2019/12/29/photography/IMG_2522.jpg" alt="1" title="1">
+<img src="/2019/12/29/photography/IMG_2535.jpg" alt="1" title="1">
+<img src="/2019/12/29/photography/IMG_2537.jpg" alt="1" title="1">
+<img src="/2019/12/29/photography/IMG_2560.jpg" alt="1" title="1">
+<img src="/2019/12/29/photography/IMG_2569.jpg" alt="1" title="1">
+<img src="/2019/12/29/photography/IMG_2575.jpg" alt="1" title="1">
+<img src="/2019/12/29/photography/IMG_2576.jpg" alt="1" title="1">
+<img src="/2019/12/29/photography/IMG_2590.jpg" alt="1" title="1">
+<img src="/2019/12/29/photography/IMG_2592.jpg" alt="1" title="1">
+<img src="/2019/12/29/photography/IMG_2617.jpg" alt="1" title="1">
+<img src="/2019/12/29/photography/IMG_2619.jpg" alt="1" title="1">
+<img src="/2019/12/29/photography/IMG_2630.jpg" alt="1" title="1">
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;오후 반차쓴 날 현석이형 집들이 가기전에 판교에서&lt;/p&gt;
+&lt;img src=&quot;/2019/12/29/photography/IMG_2508.jpg&quot; alt=&quot;1&quot; title=&quot;1&quot;&gt;
+&lt;img src=&quot;/2019/12/29/photography/IMG_
+    
+    </summary>
+    
+      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
+    
+      <category term="Photography" scheme="http://KKimSangHeon.github.io/categories/About-Me/Photography/"/>
+    
+    
+      <category term="Photography" scheme="http://KKimSangHeon.github.io/tags/Photography/"/>
+    
+  </entry>
   
   <entry>
     <title>Centos에서 kafka 설치 및 테스트</title>
@@ -99,7 +139,7 @@
     <link href="http://KKimSangHeon.github.io/2019/12/25/photography6/"/>
     <id>http://KKimSangHeon.github.io/2019/12/25/photography6/</id>
     <published>2019-12-25T14:01:35.000Z</published>
-    <updated>2019-12-25T14:10:16.473Z</updated>
+    <updated>2019-12-29T04:41:33.682Z</updated>
     
     <content type="html"><![CDATA[<p>웅형과 부산 UFC 관람</p>
 <img src="/2019/12/25/photography6/IMG_2060.jpg" alt="1" title="1">
@@ -118,6 +158,8 @@
 <img src="/2019/12/25/photography6/IMG_2300.jpg" alt="1" title="1">
 <img src="/2019/12/25/photography6/IMG_2368.jpg" alt="1" title="1">
 <img src="/2019/12/25/photography6/IMG_2398.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography6/IMG_2459.jpg" alt="1" title="1">
+<img src="/2019/12/25/photography6/IMG_2493.jpg" alt="1" title="1">
 ]]></content>
     
     <summary type="html">
@@ -859,55 +901,6 @@
     <summary type="html">
     
       &lt;p&gt;도커에서는 로그 라이브러리를 사용한다 해도 로그를 파일이 아닌 표준 출력으로 출력하고 이를 Fluentd 같은 로그 컬렉터로 수집하는 경우가 많다. 이를 활용할 경우 어플리케이션 쪽에서 로그 로테이션을 할 필요가 없으며 로그 전송을 돕는 로깅 드
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>14. 쿠버네티스 배포 전략(롤링업데이트, 블루그린)</title>
-    <link href="http://KKimSangHeon.github.io/2019/06/15/kube17/"/>
-    <id>http://KKimSangHeon.github.io/2019/06/15/kube17/</id>
-    <published>2019-06-15T12:30:25.000Z</published>
-    <updated>2019-06-16T11:40:35.289Z</updated>
-    
-    <content type="html"><![CDATA[<p>어플리케이션을 컨테이너로 배포하는 시대에 들어오면서 배포 전략에도 변화가 생겼다. 컨테이너의 장점을 살려 작업을 자동화하고 서비스 무중단을 어떻게 유지해야 할지를 고민한다.</p>
-<h3 id="롤링-업데이트"><a href="#롤링-업데이트" class="headerlink" title="롤링 업데이트"></a>롤링 업데이트</h3><p>디플로이먼트의 파드를 교체하는 전략은 .specs.strategy.type로 정의 되며 RollingUpdate(기본값), Recreate(기존 파드가 모두 삭제된 다음 새로운 파드를 생성함) 중 선택한다.</p>
-<p>다음 코드를 통해 서비스와 디플로이먼트를 생성하고 롤링업데이트가 어떻게 진행되는지 보자. 해당 서비스는 get 요청에 버전정보를 리턴하는 서비스이다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">apiVersion: v1</div><div class="line">kind: Service</div><div class="line">metadata:</div><div class="line">  name: echo-version</div><div class="line">  labels:</div><div class="line">    app: echo-version</div><div class="line">spec:</div><div class="line">  ports:</div><div class="line">  - port: 80</div><div class="line">    targetPort: 8080</div><div class="line">  selector:</div><div class="line">    app: echo-version</div><div class="line">---</div><div class="line">apiVersion: apps/v1</div><div class="line">kind: Deployment</div><div class="line">metadata:</div><div class="line">  name: echo-version</div><div class="line">  labels:</div><div class="line">    app: echo-version</div><div class="line">spec:</div><div class="line">  replicas: 1</div><div class="line">  selector:</div><div class="line">    matchLabels:</div><div class="line">      app: echo-version</div><div class="line">  template:</div><div class="line">    metadata:</div><div class="line">      labels:</div><div class="line">        app: echo-version</div><div class="line">    spec:</div><div class="line">      containers:</div><div class="line">      - name: echo-version</div><div class="line">        image: gihyodocker/echo-version:0.1.0</div><div class="line">        ports:</div><div class="line">        - containerPort: 8080</div></pre></td></tr></table></figure></p>
-<p>get요청을 지속적으로 보내어 버전정보를 출력하기 위한 파드를 정의하자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">apiVersion: v1</div><div class="line">kind: Pod</div><div class="line">metadata:</div><div class="line">  name: update-checker</div><div class="line">  labels:</div><div class="line">    app: update-checker</div><div class="line">spec:</div><div class="line">  containers:</div><div class="line">  - name: kubectl</div><div class="line">    image: gihyodocker/fundamental:0.1.0</div><div class="line">    command:</div><div class="line">    - sh</div><div class="line">    - -c</div><div class="line">    - |</div><div class="line">      while true</div><div class="line">      do</div><div class="line">        APP_VERSION=`curl -s http://echo-version/`</div><div class="line">        echo &quot;[`date`] $APP_VERSION &quot;</div><div class="line">        sleep 1</div><div class="line">      done</div></pre></td></tr></table></figure></p>
-<p>다음을 입력하여 배포하자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ kubectl apply -f 생성한 파일(디플로이먼트,서비스)</div><div class="line">$ kubectl apply -f 생성한 파일(파드)</div></pre></td></tr></table></figure></p>
-<p>출력되는 버전정보를 확인해보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$  kubectl logs -f update-checker</div></pre></td></tr></table></figure></p>
-<p>위에 이미지의 버전을 변경해보자. 그리고<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">image: gihyodocker/echo-version:0.1.0 -&gt;image: gihyodocker/echo-version:0.2.0</div></pre></td></tr></table></figure></p>
-<p>반영 후 롤링업데이트를 확인해보자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ kubectl apply -f 수정된파일.</div><div class="line"></div><div class="line">$ kubectl logs -f update-checker</div></pre></td></tr></table></figure></p>
-<p><code>재배포 과정</code>: 새로운 파드가 생성되고 있을 때 기존 파드는 여전히 Running이다. 이후 새로운 파드가 생성되어 실행상태가 되고 기존파드는 Terminating이 된다. 그 후 기존파드는 완전히 폐기된다.</p>
-<h3 id="실행중인-컨테이너에-대한-헬스체크-설정"><a href="#실행중인-컨테이너에-대한-헬스체크-설정" class="headerlink" title="실행중인 컨테이너에 대한 헬스체크 설정"></a>실행중인 컨테이너에 대한 헬스체크 설정</h3><p>쿠버네티스의 컨테이너 헬스체크에는 livenessProbe, readinessProbe 기능이 있다.</p>
-<p><code>livenessProbe</code>: 어플리케이션 헬스 체크 기능으로 어플리케이션이 의존하는 컨테이너 안의 파일이 존재하는지를 확인하는 용도로 사용된다.<br><code>readinessProbe</code> : 컨테이너 외부에서 HTTP 요청같은 트래픽을 발생시켜 이를 처리할 수 있는 상태인지를 확인하는 기능이다.</p>
-<p>헬스체크 기능을 포함한 컨테이너는 Running 상태가 되어도 READY 가 0/1 로 나오다가 모든 헬스 체크를 통과하고 1/1로 된다.</p>
-<h3 id="블루그린-배포"><a href="#블루그린-배포" class="headerlink" title="블루그린 배포"></a>블루그린 배포</h3><p>롤링업데이트는 강력하지만 새버전, 구버전이 동시에 존재하는 경우도 생길 수 있다. 이는 때로는 부작용을 가져올 수 있다. 이럴 때 사용할 수 있는것이 블루그린 배포인데 <code>블루그린은 새버전, 구버전의 2세트의 서버를 마련하고 한꺼번에 교체하는 배포 방법이다.</code> 이는 로드 밸런서 혹은 서비스 디스커버리 수준에서 참조 대상을 교체하는 방식으로 이뤄지는 배포형태이다. 이는 서버군이 아닌 켄테이너군을 통해 구현되고 배포할 서버군을 2게통으로 유지해야 하므로 롤링 업데이트보다 필요 리소스 양이 늘어난다. 그럼에도 다음 두가지의 장점을 누릴 수 있다.<br>1.신버전과 구버전이 혼재하는 시간없이 순간적인 교체가능<br>2.한쪽 서버군을 릴리즈 전 스탠바이 상태로 사용할 수 있음</p>
-<h3 id="블루그린-배포-실습"><a href="#블루그린-배포-실습" class="headerlink" title="블루그린 배포 실습"></a>블루그린 배포 실습</h3><p>2세트를 미리 만둘어주자.</p>
-<figure class="highlight xml"><figcaption><span>echo-version-blue.yaml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">apiVersion: apps/v1</div><div class="line">kind: Deployment</div><div class="line">metadata:</div><div class="line">  name: echo-version-blue</div><div class="line">  labels:</div><div class="line">    app: echo-version</div><div class="line">    color: blue</div><div class="line">spec:</div><div class="line">  replicas: 1</div><div class="line">  selector:</div><div class="line">    matchLabels:</div><div class="line">      app: echo-version</div><div class="line">      color: blue</div><div class="line">  template:</div><div class="line">    metadata:</div><div class="line">      labels:</div><div class="line">        app: echo-version</div><div class="line">        color: blue</div><div class="line">    spec:</div><div class="line">      containers:</div><div class="line">      - name: echo-version</div><div class="line">        image: gihyodocker/echo-version:0.1.0</div><div class="line">        ports:</div><div class="line">        - containerPort: 8080</div><div class="line"></div></pre></td></tr></table></figure>
-<figure class="highlight xml"><figcaption><span>echo-version-green.yaml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">apiVersion: apps/v1</div><div class="line">kind: Deployment</div><div class="line">metadata:</div><div class="line">  name: echo-version-green</div><div class="line">  labels:</div><div class="line">    app: echo-version</div><div class="line">    color: green</div><div class="line">spec:</div><div class="line">  replicas: 1</div><div class="line">  selector:</div><div class="line">    matchLabels:</div><div class="line">      app: echo-version</div><div class="line">      color: green</div><div class="line">  template:</div><div class="line">    metadata:</div><div class="line">      labels:</div><div class="line">        app: echo-version</div><div class="line">        color: green</div><div class="line">    spec:</div><div class="line">      containers:</div><div class="line">      - name: echo-version</div><div class="line">        image: gihyodocker/echo-version:0.2.0</div><div class="line">        ports:</div><div class="line">        - containerPort: 8080</div><div class="line"></div></pre></td></tr></table></figure>
-<p>echo-version-blue / echo-version-green으로 정의한 두개의 디플로이먼트파일을 준비하자. metadata.label을 주목해서 보자.</p>
-<p>그 후 다음명령어를 통해 디플로이먼트를 배포하자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ kubectl apply -f echo-version-blue.yaml</div><div class="line">$ kubectl apply -f echo-version-green.yaml</div></pre></td></tr></table></figure></p>
-<p>셀렉터 레이블을 변경해 디플로이먼트를 변경할 수 있다.<br><figure class="highlight xml"><figcaption><span>echo-version-service.yaml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">apiVersion: v1</div><div class="line">kind: Service</div><div class="line">metadata:</div><div class="line">  name: echo-version</div><div class="line">  labels:</div><div class="line">    app: echo-version</div><div class="line">spec:</div><div class="line">  ports:</div><div class="line">  - port: 80</div><div class="line">    targetPort: 8080</div><div class="line">  selector:</div><div class="line">    app: echo-version</div><div class="line">    color: blue</div><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">kubectl apply -f echo-service</div><div class="line"></div><div class="line">kubectl logs -f update-checker</div></pre></td></tr></table></figure>
-<p>위의 명령어를 통해 서비스를 배포하고 업데이트 체크를 해보자.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">kubectl patch service echo-version -p &apos;&#123;&quot;spec&quot;:&#123;&quot;selector&quot;:&#123;&quot;color&quot;:&quot;green&quot;&#125;&#125;&#125;&apos;</div></pre></td></tr></table></figure>
-<p>위의 명령어를 입력하여 서비스 대상 디플로이먼트를 변경하자.</p>
-<p>이후에 출력되는 버전을 보면 버전이 바뀐것을 확인할 수 있다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;어플리케이션을 컨테이너로 배포하는 시대에 들어오면서 배포 전략에도 변화가 생겼다. 컨테이너의 장점을 살려 작업을 자동화하고 서비스 무중단을 어떻게 유지해야 할지를 고민한다.&lt;/p&gt;
-&lt;h3 id=&quot;롤링-업데이트&quot;&gt;&lt;a href=&quot;#롤링-업데이트&quot; 
     
     </summary>
     

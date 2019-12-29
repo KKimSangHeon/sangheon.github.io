@@ -681,13 +681,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Photography/</loc>
-        <lastmod>2019-12-25T14:10:16.473Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/Streamset/</loc>
         <lastmod>2019-12-26T12:19:34.489Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -704,6 +697,13 @@
     <url>
         <loc>http://KKimSangHeon.github.io/tags/centos/</loc>
         <lastmod>2019-12-26T12:20:24.044Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Photography/</loc>
+        <lastmod>2019-12-29T04:45:37.042Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
