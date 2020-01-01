@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2017/06/29/about-me/</loc>
+        <lastmod>2020-01-01T12:35:28.765Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2020/01/01/photography/</loc>
+        <lastmod>2020-01-01T12:31:19.134Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2019/12/29/photography/</loc>
         <lastmod>2019-12-29T04:45:37.042Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -89,14 +105,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2019/12/13/devground1/</loc>
         <lastmod>2019-12-25T13:52:06.581Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2017/06/29/about-me/</loc>
-        <lastmod>2019-12-25T13:43:41.653Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
