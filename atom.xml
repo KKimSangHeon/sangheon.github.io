@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2020-01-07T11:25:56.850Z</updated>
+  <updated>2020-01-07T11:31:24.931Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,16 +16,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>streamsets4</title>
+    <title>StreamSets 이란</title>
     <link href="http://KKimSangHeon.github.io/2020/01/07/streamsets4/"/>
     <id>http://KKimSangHeon.github.io/2020/01/07/streamsets4/</id>
     <published>2020-01-07T11:25:56.000Z</published>
-    <updated>2020-01-07T11:25:56.850Z</updated>
+    <updated>2020-01-07T11:31:24.931Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="StreamSets란"><a href="#StreamSets란" class="headerlink" title="StreamSets란?"></a>StreamSets란?</h3><p>데이터 흐름을 관리할 수 있으며 Data drift에 유연하게 대처가능한 솔루션</p>
+<img src="/2020/01/07/streamsets4/SS1.png" alt="StreamSets의 플랫폼들" title="StreamSets의 플랫폼들">
+<h3 id="StreamSets-활용-및-장점-요약"><a href="#StreamSets-활용-및-장점-요약" class="headerlink" title="StreamSets 활용 및 장점 요약"></a>StreamSets 활용 및 장점 요약</h3><p>글로벌 社에서 StreamSets을 Data Lakes, Big Data/Hadoop Ingestion, Event Streaming, IoT/edge device integration 등 용도로 사용중.</p>
+<ul>
+<li>데이터센터, AWS, GCP 등에 배포 가능하며 YARN, MESOS, Kubernetes을 활용한 스케일링 가능.</li>
+<li>처리량, 지연, 에러율 등을 UI로 확인할 수 있음.</li>
+<li>민감한 데이터를 보호할 수 있음.</li>
+</ul>
+<h3 id="StreamSets의-개발-운영-Agility-측면의-장점"><a href="#StreamSets의-개발-운영-Agility-측면의-장점" class="headerlink" title="StreamSets의 개발, 운영, Agility 측면의 장점"></a>StreamSets의 개발, 운영, Agility 측면의 장점</h3><p>개발자 생산성 측면</p>
+<ul>
+<li>코드작성의 최소화, 자동 인스턴스 관리, 파이프라인 로직의 재활용 가능<br>운영효율 측면</li>
+<li>파이프라인 시각화, 파이프라인 성능 모니터링, 이벤트에 대한 동작설정 가능<br>Agility 측면</li>
+<li>Downtime 없는 파이프라인 내 데이터 시스템 업데이트, 데이터 변경 시 자동탐지 및 동기화, 버전 별 파이프라인의 성능 비교 가능</li>
+</ul>
+<h3 id="StreamSets-Data-Collector"><a href="#StreamSets-Data-Collector" class="headerlink" title="StreamSets Data Collector"></a>StreamSets Data Collector</h3><p>드래그앤드롭 방식으로 데이터 flow를 파이프라인으로 생성 및 관리</p>
+<img src="/2020/01/07/streamsets4/SS2.png" alt="파이프라인 예시" title="파이프라인 예시">
+<p>파이프라인은 Origin/Processor/Destination/Executor 로 구성된다.</p>
+]]></content>
     
     <summary type="html">
     
+      &lt;h3 id=&quot;StreamSets란&quot;&gt;&lt;a href=&quot;#StreamSets란&quot; class=&quot;headerlink&quot; title=&quot;StreamSets란?&quot;&gt;&lt;/a&gt;StreamSets란?&lt;/h3&gt;&lt;p&gt;데이터 흐름을 관리할 수 있으며 Data drift에 유연
+    
     </summary>
     
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="오픈소스,기술" scheme="http://KKimSangHeon.github.io/categories/CS/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EA%B8%B0%EC%88%A0/"/>
+    
+    
+      <category term="Streamset" scheme="http://KKimSangHeon.github.io/tags/Streamset/"/>
     
   </entry>
   
