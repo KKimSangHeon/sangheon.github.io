@@ -79,14 +79,14 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Reco-Beacon/</loc>
+        <loc>http://KKimSangHeon.github.io/tags/Beacon/</loc>
         <lastmod>2017-10-03T18:02:21.818Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Beacon/</loc>
+        <loc>http://KKimSangHeon.github.io/tags/Reco-Beacon/</loc>
         <lastmod>2017-10-03T18:02:21.818Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -597,13 +597,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Spring/</loc>
-        <lastmod>2019-03-13T12:33:16.618Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/Docker/</loc>
         <lastmod>2019-04-21T10:53:13.101Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -704,6 +697,13 @@
     <url>
         <loc>http://KKimSangHeon.github.io/tags/Sang-Heon-Kim/</loc>
         <lastmod>2020-01-06T12:50:53.094Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Spring/</loc>
+        <lastmod>2020-01-07T10:57:36.392Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

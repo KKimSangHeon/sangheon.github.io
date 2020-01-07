@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2020-01-06T13:57:17.242Z</updated>
+  <updated>2020-01-07T11:16:31.698Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>스프링 IoC 컨테이너와 빈</title>
+    <title>Aggregation vs Composition</title>
+    <link href="http://KKimSangHeon.github.io/2020/01/07/aggregationvscomposition/"/>
+    <id>http://KKimSangHeon.github.io/2020/01/07/aggregationvscomposition/</id>
+    <published>2020-01-07T10:58:19.000Z</published>
+    <updated>2020-01-07T11:16:31.698Z</updated>
+    
+    <content type="html"><![CDATA[<p>다양한 책에서 볼 수 있는 Aggregation, Composition.<br>같은듯 다른 두개의 차이를 공부해봤다.</p>
+<h3 id="Composition"><a href="#Composition" class="headerlink" title="Composition"></a>Composition</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class Car &#123;</div><div class="line">    //final will make sure engine is initialized</div><div class="line">    private final Engine engine;  </div><div class="line"></div><div class="line">    public Car()&#123;</div><div class="line">       engine  = new Engine();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Engine &#123;</div><div class="line">    private String type;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위와같이 차는 엔진을 갖고있는 것이기 때문에 변수로 엔진을 갖고있다.</p>
+<h3 id="Aggregation"><a href="#Aggregation" class="headerlink" title="Aggregation"></a>Aggregation</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">public class Organization &#123;</div><div class="line">    private List employees;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">public class Person &#123;</div><div class="line">    private String name;   </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>조직은 Employees 들의 리스트를 갖고(Composition)있다. 해당 Epmloyees들은 Person들이다. <u> 회사가 없어지더라도 Person 들은 그대로 유지된다.</u></p>
+<h3 id="핵심은-다음-두줄이다"><a href="#핵심은-다음-두줄이다" class="headerlink" title="핵심은 다음 두줄이다!"></a>핵심은 다음 두줄이다!</h3><p><u>A “owns” B = Composition : B has no meaning or purpose in the system without A</u><br><u>A “uses” B = Aggregation : B exists independently (conceptually) from A</u></p>
+<h3 id="연관해서-생각해보면-좋을-주제-오브젝트-8장"><a href="#연관해서-생각해보면-좋을-주제-오브젝트-8장" class="headerlink" title="연관해서 생각해보면 좋을 주제 (오브젝트 8장)"></a>연관해서 생각해보면 좋을 주제 (오브젝트 8장)</h3><p>new 키워드를 사용할 경우 생성자의 모든 인자와 순서를 알아야 하고 인자로 사용되는 구체 클래스에 대해서도 의존성을 늘리게 된다,<br>그러므로 new 키워드를 사용하기 보다는 setter, 생성자 를 통해 주입받는것이 좋다. (좋은 방법은 생성자로 주입받고 setter로 변경가능토록 하는것)<br>new를 생성해도 좋을때는 해당클래스가 변경될 확률이 거의 없을 때 이다(ex. ArrayList, Data 클래스 등)</p>
+<p>참고 : <a href="https://javarevisited.blogspot.com/2014/02/ifference-between-association-vs-composition-vs-aggregation.html" target="_blank" rel="external">https://javarevisited.blogspot.com/2014/02/ifference-between-association-vs-composition-vs-aggregation.html</a><br>오브젝트 도서</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;다양한 책에서 볼 수 있는 Aggregation, Composition.&lt;br&gt;같은듯 다른 두개의 차이를 공부해봤다.&lt;/p&gt;
+&lt;h3 id=&quot;Composition&quot;&gt;&lt;a href=&quot;#Composition&quot; class=&quot;headerlink&quot; titl
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>1.스프링 IoC 컨테이너와 빈</title>
     <link href="http://KKimSangHeon.github.io/2020/01/06/spring1/"/>
     <id>http://KKimSangHeon.github.io/2020/01/06/spring1/</id>
     <published>2020-01-06T12:50:41.000Z</published>
-    <updated>2020-01-06T13:57:17.242Z</updated>
+    <updated>2020-01-07T10:57:36.392Z</updated>
     
     <content type="html"><![CDATA[<p>스프링 부트를 통해 학습하면서 스프링을 공부해 보겠다</p>
 <h3 id="스프링의-역사"><a href="#스프링의-역사" class="headerlink" title="스프링의 역사"></a>스프링의 역사</h3><ul>
@@ -61,6 +88,12 @@
     
     </summary>
     
+      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/categories/Web-App/Spring/"/>
+    
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/tags/Spring/"/>
     
   </entry>
   
@@ -841,37 +874,6 @@
     <summary type="html">
     
       &lt;h3 id=&quot;도커-운영-시의-장애-대책&quot;&gt;&lt;a href=&quot;#도커-운영-시의-장애-대책&quot; class=&quot;headerlink&quot; title=&quot;도커 운영 시의 장애 대책&quot;&gt;&lt;/a&gt;도커 운영 시의 장애 대책&lt;/h3&gt;&lt;p&gt;주로 dockerd 자체보다는 운영하는 
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="MSA" scheme="http://KKimSangHeon.github.io/categories/CS/MSA/"/>
-    
-    
-      <category term="kubernetes" scheme="http://KKimSangHeon.github.io/tags/kubernetes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>15-1. 로그 관리방법(구글스택드라이버, stern)</title>
-    <link href="http://KKimSangHeon.github.io/2019/06/23/kube19/"/>
-    <id>http://KKimSangHeon.github.io/2019/06/23/kube19/</id>
-    <published>2019-06-23T06:45:10.000Z</published>
-    <updated>2019-06-23T08:30:01.300Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="구글-구글스택드라이버"><a href="#구글-구글스택드라이버" class="headerlink" title="구글 구글스택드라이버"></a>구글 구글스택드라이버</h3><p>구글 스택드라이버는 GCP나 AWS에서 로깅 및 모니터링에 사용되는 매니지드 서비스이다.</p>
-<p><a href="https://app.google.stackdriver.com/" target="_blank" rel="external">https://app.google.stackdriver.com/</a> 으로 접속하거나 콘솔메뉴(왼쪽메뉴바)에서 모니터링을 선택하자.</p>
-<p>그 후 Logging 탭을 선택하자.<br>스택드라이버에서는 로그를 Cloud HTTP 로드 밸런서나 GKE 컨테이너와 같은 카테고리 별로 나눠 볼 수 있다. 또한 컨테이너에서 JSON포맷 등으로 구조를 가진 로그를 출력한다면 <code>jsonPayload.속성:값</code> 형식으로 검색 결과를 좁힐 수 있다. 또한 입력 시에 가능한 속성명에 자동완성 기능을 제공해 더욱 편리하다. 이는 GKE 쿠버네티스 클러스터 노드에 배치된 fluentd-gcp리소스에서 제공한다.</p>
-<p>개발자가 이를 관리할 필요가 없으며 컨테이너에서 로그를 json형태로 출력만 하면 로그를 확인할 수 있다. 스택드라이버는 어플리케이션 병목 검출(스택드라이버 트레이스), 어플리케이션 오류 탐지 기능(스택드라이버 에러 리포팅) 등의 기능을 제공한다. GKE에서는 필수적인 도구이다.</p>
-<h3 id="stern"><a href="#stern" class="headerlink" title="stern"></a>stern</h3><p>키바나, 스택드라이버는 좋긴하지만 조금 거창한느낌이 있다. 이보다 가볍개 보는 방법으로 <code>kubectl logs -f 파드ID</code>라는 방법이 있지만 파드 ID를 매번 확인해야 하는것이 불편하다.</p>
-<p>쿠버네티스 로그 열람을 돕는 도구로서 stern이 있는데 이는 레이블만 지정하면 로그확인이 가능하다.</p>
-<p><code>stern -l app=echo</code> 라는 명령어를 통해 특정 파드가 삭제되거나 다시 생성되어도 로그를 볼 수 있다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;구글-구글스택드라이버&quot;&gt;&lt;a href=&quot;#구글-구글스택드라이버&quot; class=&quot;headerlink&quot; title=&quot;구글 구글스택드라이버&quot;&gt;&lt;/a&gt;구글 구글스택드라이버&lt;/h3&gt;&lt;p&gt;구글 스택드라이버는 GCP나 AWS에서 로깅 및 모니터링에 사
     
     </summary>
     
