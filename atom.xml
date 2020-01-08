@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2020-01-07T13:07:03.458Z</updated>
+  <updated>2020-01-08T13:36:13.935Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,72 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>spring</title>
+    <link href="http://KKimSangHeon.github.io/2020/01/08/spring/"/>
+    <id>http://KKimSangHeon.github.io/2020/01/08/spring/</id>
+    <published>2020-01-08T12:48:13.000Z</published>
+    <updated>2020-01-08T13:36:13.935Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h3><p>필요한 의존 객체의 “타입”에 해당하는 빈을 찾아 주입한다.</p>
+<p>생성자, 세터, 필드에 사용가능하다 아래 예시를 참고하자.</p>
+<p>BookService의 생성자에 Autowired를 달았다. 잘동작할것이다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">@Service</div><div class="line">public class BookService &#123;</div><div class="line">  BookRepository bookRepository;</div><div class="line"></div><div class="line">  @Autowired</div><div class="line">  public BookService(BookRepository bookRepository) &#123;</div><div class="line">    this.bookRepository = bookRepository;</div><div class="line">  &#125;  </div><div class="line">&#125;</div><div class="line">///////////////////////////////////</div><div class="line">@Repository</div><div class="line">public class BookRepository&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>이번에는 세터에다 Autowired를 달아주고 @Repository를 지워보자.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">@Service</div><div class="line">public class BookService &#123;</div><div class="line">  BookRepository bookRepository;</div><div class="line"></div><div class="line">  @Autowired</div><div class="line">  public void setBookRepository(BookRepository bookRepository) &#123;</div><div class="line">    this.bookRepository = bookRepository;</div><div class="line">  &#125;  </div><div class="line">&#125;</div><div class="line">///////////////////////////////////</div><div class="line"></div><div class="line">public class BookRepository&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위는 실패하는데 왜 실패할까<br><code>단순 세터에 Autowired만 붙였으므로 인스턴스 생성은 되어야 하는거아녀?</code></p>
+<p>Autowired가 있기때문에 의존성 주입을 시도하게되고 이로 인해 실패한다.</p>
+<p>실패를 벗어나기 위해서는 @Autowired(require = false)로 해결할 수 있다.</p>
+<p>즉 생성자가 아닌곳에 붙은 @Autowird는 require = false 옵션을 적절히 활용할 수 있다.<br>(생성자에 Autowired(required = false) 가 붙어있으면 객체 자체 생성이 불가능하므로 생성자에는 부적절)</p>
+<h3 id="해당-타입의-빈이-여러개인-경우"><a href="#해당-타입의-빈이-여러개인-경우" class="headerlink" title="해당 타입의 빈이 여러개인 경우"></a>해당 타입의 빈이 여러개인 경우</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">interface A &#123;</div><div class="line">  ..</div><div class="line">&#125;</div><div class="line"></div><div class="line">@Repository</div><div class="line">class BRepository implements ARepository &#123;</div><div class="line">  ..</div><div class="line">&#125;</div><div class="line"></div><div class="line">@Repository</div><div class="line">class CRepository implements ARepository &#123;</div><div class="line">  ..</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">@service</div><div class="line">public class AService &#123;</div><div class="line">  @Autowired</div><div class="line">  ARepository aRepository;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>AService의 aRepository에는 누가 주입될까?<br>내가 어떤걸 원하는지 스프링은 모르기 때문에 에러가 발생한다.</p>
+<p>해결방법은?</p>
+<ol>
+<li>@Primary 어노테이션 붙이기 (추천)<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@Repository @Primary</div><div class="line">class CRepository implements ARepository &#123;</div><div class="line">  ..</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>위처럼 할경우 CRepository가 주입된다.</p>
+<ol>
+<li>Qualifier 활용<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@service</div><div class="line">public class AService &#123;</div><div class="line">  @Autowired @Qualifier(&quot;cRepository&quot;)</div><div class="line">  ARepository aRepository;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>위처럼 할경우 CRepository가 주입된다.</p>
+<ol>
+<li>해당 타입의 빈 모두 주입받기<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@service</div><div class="line">public class AService &#123;</div><div class="line">  @Autowired</div><div class="line">   List&lt;ARepository&gt; aRepository;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>리스트에 BRepository , CRepository가 들어간다.</p>
+<ol>
+<li>추천하진 않지만 알고만 있어라<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@service</div><div class="line">public class AService &#123;</div><div class="line">  @Autowired</div><div class="line">  ARepository cRepository;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>Autowired는 타입만 보는것이 아니라 이름도 한번 보기때문에 위처럼 할 경우 cRepository를 주입받을 수 있다.</p>
+<hr>
+<h3 id="동작원리는"><a href="#동작원리는" class="headerlink" title="동작원리는?"></a>동작원리는?</h3><p><code>BeanPostProcessor</code><br>새로 만든 빈 인스턴스를 수정할 수 있도록 도와주는 인터페이스이다.</p>
+<p><code>AutowiredAnnotationBeanPostProcessor​ extends BeanPostProcessor</code><br>위에 보다시피 AutowiredAnnotationBeanPostProcessor​가 BeanPostProcessor을 상속하여 사용하는데 초기화 이전에 @Autowired같은 어노테이션을 찾아 주입을 해준다.</p>
+<p><code>이제 동작원리 설명</code><br>ApplicationContext (BeanFactory)가 BeanPostProcessor을 구현한 빈을 찾고 AutowiredAnnotationBeanPostProcessor를 찾아 일반적인 빈들에게 해당 로직을 적용하는것이다.<br>(결국 AutowiredAnnotationBeanPostProcessor​도 빈으로 등록되어있다는것)<br>(ApplicationContext는 빈 들을 갖고있다)</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Autowired&quot;&gt;&lt;a href=&quot;#Autowired&quot; class=&quot;headerlink&quot; title=&quot;@Autowired&quot;&gt;&lt;/a&gt;@Autowired&lt;/h3&gt;&lt;p&gt;필요한 의존 객체의 “타입”에 해당하는 빈을 찾아 주입한다.&lt;/p&gt;
+&lt;p
+    
+    </summary>
+    
+      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/categories/Web-App/Spring/"/>
+    
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2.스프링  ApplicationContext와 다양한 빈 설정 방법</title>
     <link href="http://KKimSangHeon.github.io/2020/01/07/spring/"/>
     <id>http://KKimSangHeon.github.io/2020/01/07/spring/</id>
     <published>2020-01-07T12:26:10.000Z</published>
-    <updated>2020-01-07T13:07:03.458Z</updated>
+    <updated>2020-01-08T12:51:34.926Z</updated>
     
     <content type="html"><![CDATA[<h3 id="고전적인-빈-생성방법"><a href="#고전적인-빈-생성방법" class="headerlink" title="고전적인 빈 생성방법"></a>고전적인 빈 생성방법</h3><h4 id="application-xml의-등장"><a href="#application-xml의-등장" class="headerlink" title="application.xml의 등장"></a>application.xml의 등장</h4><p>리소스에 application.xml을 생성하고</p>
 <p><beans></beans> 안에 <bean> 을 생성한다<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;beans .....&gt;</div><div class="line">  &lt;bean id=&quot;bookService&quot; class=&quot;xxxxxx&quot; &gt;</div><div class="line">    &lt;property name=&quot;bookRepository&quot; ref=&quot;bookRepository&quot;/&gt;</div><div class="line">  &lt;/bean&gt;</div><div class="line"></div><div class="line">  &lt;bean id=&quot;bookRepository&quot; class=&quot;bookRepository&quot;/&gt;</div><div class="line">&lt;/beans&gt;</div></pre></td></tr></table></figure></bean></p>
@@ -29,7 +90,7 @@
 <h4 id="component-scan의-등장"><a href="#component-scan의-등장" class="headerlink" title="component-scan의 등장"></a>component-scan의 등장</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;beans ...&gt;</div><div class="line"> &lt;context:component-scan base-package=&quot;xxxxxxxx&quot;/&gt;</div><div class="line"></div><div class="line">&lt;/beans&gt;</div></pre></td></tr></table></figure>
 <p>이 경우 @Componet라는 어노테이션을 클래스 위에 붙여줌으로써 빈을 생성할 수 있다.</p>
 <p>위의 두 경우(xml로 빈생성) ClassPathXmlApplicationContext 클래스를 통해 ApplicationContext 인스턴스를 생성한다.</p>
-<p>빈을 xml말고 자바로 할 수 없을까? 있다<br><u> ApplicationConfig</u></p>
+<p>빈을 xml말고 자바로 빈을생성 할 수 없을까? 있다<br><u> ApplicationConfig</u></p>
 <h4 id="자바로-빈생성-할래-ApplicationConfig"><a href="#자바로-빈생성-할래-ApplicationConfig" class="headerlink" title="자바로 빈생성 할래 . ApplicationConfig"></a>자바로 빈생성 할래 . ApplicationConfig</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">@Configuration</div><div class="line">public class ApplicationConfig&#123;</div><div class="line">  @Bean</div><div class="line">  public BookRepository bookRepository() &#123;</div><div class="line">    return new BookRepository();</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  @Bean</div><div class="line">  public BookService bookService()&#123;</div><div class="line">    BookService bookService = new BookService();</div><div class="line">    bookService.setBookRepository(bookRepository());</div><div class="line">    return bookService;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  위 메소드는 아래 메소드와 동일</div><div class="line">  @Bean</div><div class="line">  public BookService bookService(BookRepository bookRepository)&#123;</div><div class="line">    BookService bookService = new BookService();</div><div class="line">    bookService.setBookRepository(bookRepository);</div><div class="line">    return bookService;</div><div class="line">  &#125;  </div><div class="line"></div><div class="line">  두번째 것을 아래 메소드로 할 경우 BookService내 bookRepository에 Autowired를 넣어주면 주입이 된다.</div><div class="line">  //생성자로 주입받아야 할 경우에는 Autowired로 어떻게 할 수 가 없다.</div><div class="line">  @Bean</div><div class="line">  public BookService bookService()&#123;</div><div class="line">      return new BookService();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>자바로 할 땐 오히려 xml보다 불편한다 다른 편한방법없나? 있다<br><u>ComponentScan 어노테이션  </u></p>
 <h4 id="좀더-편하게-자바로-빈생성할래-ComponentScan"><a href="#좀더-편하게-자바로-빈생성할래-ComponentScan" class="headerlink" title="좀더 편하게 자바로 빈생성할래 @ComponentScan"></a>좀더 편하게 자바로 빈생성할래 @ComponentScan</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@Configuration</div><div class="line">@ComponentScan(basePackageClasses = XXX.class)</div><div class="line">//XXX 클래스가 위치한 곳부터 스캐닝을 함</div><div class="line">public class ApplicationConfig&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -236,7 +297,7 @@
     <link href="http://KKimSangHeon.github.io/2020/01/06/spring1/"/>
     <id>http://KKimSangHeon.github.io/2020/01/06/spring1/</id>
     <published>2020-01-06T12:50:41.000Z</published>
-    <updated>2020-01-07T10:57:36.392Z</updated>
+    <updated>2020-01-08T12:51:34.030Z</updated>
     
     <content type="html"><![CDATA[<p>스프링 부트를 통해 학습하면서 스프링을 공부해 보겠다</p>
 <h3 id="스프링의-역사"><a href="#스프링의-역사" class="headerlink" title="스프링의 역사"></a>스프링의 역사</h3><ul>
@@ -847,46 +908,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>규칙20. 태그달린 클래스 대신 클래스 계층을 활용하라.</title>
-    <link href="http://KKimSangHeon.github.io/2019/07/02/effective2/"/>
-    <id>http://KKimSangHeon.github.io/2019/07/02/effective2/</id>
-    <published>2019-07-02T12:08:50.000Z</published>
-    <updated>2019-07-02T12:13:48.710Z</updated>
-    
-    <content type="html"><![CDATA[<p>두 가지 이상의 기능을 가지고 있으며, 그 중 어떤 기능을 제공하는지 표시하는 태그가 달린 클래스를 만날 수 있다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">class Figure &#123;</div><div class="line">  enum Shape &#123; RECTANGLE, CIRCLR &#125;;</div><div class="line"></div><div class="line">  // 어떤 모양인지 나타내는 태그 필드.</div><div class="line">  final Shape shape;</div><div class="line"></div><div class="line">  //사각형일때만 생성되는 필드</div><div class="line">  double length;</div><div class="line">  double width;</div><div class="line"></div><div class="line">  //원일때만 사용되는 필드</div><div class="line">  double radius;</div><div class="line"></div><div class="line">  double area()&#123;</div><div class="line">    ...</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>위의 클래스는 원을 표현할 수도 있고 사각형을 표현할 수 도 있다.</p>
-<p>위 처럼 태그달린 클래스는 다양한 문제가 있다.enum선언, 태그필드, switch문 등의 상투적 코드가 반복되는 클래스가 만들어지며, 서로 다른 기능을 위한 코드가 한 클래스가 모여있어 가독성도 떨어진다. 또한 객체를 만들때 불필요한 필드도 함께 생성되어 메모리 요구량도 늘어난다. final을 초기화 하기 위한 상투적인 코드도 늘어나기도 한다. 마지막으로 그 객체가 무슨 기능을 제공하는지 알 수 없다.<br><u>한줄로 정리하자면 태그기반(tagged class) 클래스는 너저분하고 오류발생가능성이 높고 비 효율적이다.</u></p>
-<h3 id="태그기반-클래스-대신-하위-자료형-정의-subtyping-를-사용하자"><a href="#태그기반-클래스-대신-하위-자료형-정의-subtyping-를-사용하자" class="headerlink" title="태그기반 클래스 대신 하위 자료형 정의(subtyping)를 사용하자."></a>태그기반 클래스 대신 하위 자료형 정의(subtyping)를 사용하자.</h3><ul>
-<li>다양한 기능의 객체들을 하나로 표현하기 위해 태그달린 클래스 대신 하위 자료형 정의(subtyping)를 사용하자.</li>
-<li>태그 기반 클래스를 클래스 계층으로 변환하려면 먼저 태그 값에 따라 달리 동작하는 메서드를 추상 메서드로 선언하는 추상클래스를 정의해야 한다. 그리고 추상 클래스를 클래스 계층 맨꼭대기에 둔다.</li>
-<li>그리고 태그 값에 좌우되지 않는 메서드는 전부 그 클래스에 넣는다.</li>
-<li>모든 기능에 공통되는 데이터 필드도 전부 그 클래스에 넣는다.</li>
-<li>태그 기반 클래스가 제공하던 각각의 기능을 방금 만든 최상위 클래스의 객체 생성 가능 하위클래스로 정의한다.</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">abstract class Figure &#123;</div><div class="line">  abstract double area();  </div><div class="line">&#125;</div><div class="line"></div><div class="line">class Circle extends Figure &#123;</div><div class="line">  final double radius;</div><div class="line"></div><div class="line">  double area()&#123;</div><div class="line">    ...</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Rectangle extends Figure &#123;</div><div class="line">  final double length;</div><div class="line">  final double width;</div><div class="line"></div><div class="line">  double area()&#123;</div><div class="line">    ...</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>위 코드가 하위자료형 정의한것이다. 단순하고명료하며 원래 클래스에 있던 단점들이 없다. 또한 최상위 클래스의 소스코드를 보지 않고도 독립적으로 일하면서 협력할 수 있게 된다. 기능마다 별도의 자료형이 있기 때문에 변수가 가진 기능이 무엇인지 명시적으로 표현 가능하며, 특정한 기능을 갖춘 자료형의 객체만이 변수나 인자에 할당되도록 할 수 있다.</p>
-<p>요약하자면 태그 기반 클래스 사용은 피하고 클래스 안에 태그 필드를 명시적으로 두고 싶다면 클래스 계층을 통해 태그를 제거할 방법이 없는지 생각해 봐라.</p>
-<p>/</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;두 가지 이상의 기능을 가지고 있으며, 그 중 어떤 기능을 제공하는지 표시하는 태그가 달린 클래스를 만날 수 있다.&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;
-    
-    </summary>
-    
-      <category term="Language" scheme="http://KKimSangHeon.github.io/categories/Language/"/>
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/categories/Language/Java/"/>
-    
-    
-      <category term="Java" scheme="http://KKimSangHeon.github.io/tags/Java/"/>
     
   </entry>
   
