@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2020-01-08T13:36:13.935Z</updated>
+  <updated>2020-01-08T13:39:54.023Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>spring</title>
+    <title>3.Autowired</title>
     <link href="http://KKimSangHeon.github.io/2020/01/08/spring/"/>
     <id>http://KKimSangHeon.github.io/2020/01/08/spring/</id>
     <published>2020-01-08T12:48:13.000Z</published>
-    <updated>2020-01-08T13:36:13.935Z</updated>
+    <updated>2020-01-08T13:39:54.023Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h3><p>필요한 의존 객체의 “타입”에 해당하는 빈을 찾아 주입한다.</p>
 <p>생성자, 세터, 필드에 사용가능하다 아래 예시를 참고하자.</p>
