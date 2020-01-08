@@ -7,8 +7,24 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2020/01/07/streamset2/</loc>
+        <lastmod>2020-01-08T12:09:17.794Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2019/12/26/streamset/</loc>
+        <lastmod>2020-01-08T12:03:16.802Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2020/01/07/spring/</loc>
-        <lastmod>2020-01-07T13:05:37.639Z</lastmod>
+        <lastmod>2020-01-07T13:07:03.458Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -25,22 +41,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2020/01/07/streamsets3/</loc>
         <lastmod>2020-01-07T11:25:11.110Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2020/01/07/streamset2/</loc>
-        <lastmod>2020-01-07T11:20:23.022Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2019/12/26/streamset/</loc>
-        <lastmod>2020-01-07T11:18:51.605Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
