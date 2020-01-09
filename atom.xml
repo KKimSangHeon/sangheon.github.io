@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2020-01-09T12:59:00.484Z</updated>
+  <updated>2020-01-09T13:03:39.876Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,16 +16,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>streamset</title>
+    <title>StreamSets의 에러처리</title>
     <link href="http://KKimSangHeon.github.io/2020/01/09/streamset/"/>
     <id>http://KKimSangHeon.github.io/2020/01/09/streamset/</id>
     <published>2020-01-09T12:59:00.000Z</published>
-    <updated>2020-01-09T12:59:00.484Z</updated>
+    <updated>2020-01-09T13:03:39.876Z</updated>
+    
+    <content type="html"><![CDATA[<p>에러 처리는 Stage(Origin, Processor, Destination, Executor) 관점, 파이프라인 관점에서 처리방법이 존재</p>
+<h3 id="Stage-Origin-Processor-Destination-Executor-관점"><a href="#Stage-Origin-Processor-Destination-Executor-관점" class="headerlink" title="Stage(Origin, Processor, Destination, Executor) 관점"></a>Stage(Origin, Processor, Destination, Executor) 관점</h3><p>Discard , Send to Error, Stop Pipeline</p>
+<h3 id="파이프라인-관점"><a href="#파이프라인-관점" class="headerlink" title="파이프라인 관점"></a>파이프라인 관점</h3><p>Discard, Send Response to Origin, Write to Another Pipeline, Write to Elasticsearch/File/Kafka …</p>
+<img src="/2020/01/09/streamset/error1.png" alt="에러처리 예시" title="에러처리 예시">
+<p>위 그림은 파이프라인을 총 2개 생성한 상황이다.</p>
+<p><code>카프카 컨슘 파이프라인</code>에서 에러가 발생할 경우 SDC RPC를 통해 다른 파이프라인으로 에러내용을 전달하도록 하였고 <code>에러처리 파이프라인</code>에서는 RPC로 받은 에러데이터를 Email로 보내고 Local 파일로 저장하는 상황이다.</p>
+]]></content>
     
     <summary type="html">
     
+      &lt;p&gt;에러 처리는 Stage(Origin, Processor, Destination, Executor) 관점, 파이프라인 관점에서 처리방법이 존재&lt;/p&gt;
+&lt;h3 id=&quot;Stage-Origin-Processor-Destination-Executor-관점
+    
     </summary>
     
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="오픈소스,기술" scheme="http://KKimSangHeon.github.io/categories/CS/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EA%B8%B0%EC%88%A0/"/>
+    
+    
+      <category term="Streamset" scheme="http://KKimSangHeon.github.io/tags/Streamset/"/>
     
   </entry>
   
@@ -34,10 +51,17 @@
     <link href="http://KKimSangHeon.github.io/2020/01/09/object/"/>
     <id>http://KKimSangHeon.github.io/2020/01/09/object/</id>
     <published>2020-01-09T12:57:06.000Z</published>
-    <updated>2020-01-09T12:58:46.007Z</updated>
+    <updated>2020-01-09T13:05:05.619Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="오브젝트-9장"><a href="#오브젝트-9장" class="headerlink" title="오브젝트 9장"></a>오브젝트 9장</h3><p>OCP - 추상화에 의존하여 컴파일 타임의존성은 유지하면서 런타임 의존성의 가능성을 확장하고 수정할 수 있는 구조.<br>객체 생성,사용자 분리 - 동일 클래스 안에서 객체 생성과 사용이라는 두가지 이질적인 목적을 가진 코드가 공존할 경우 부적절.<br>(Movie에게 금액할인정책을 적용할지, 비율할인 정책을 적용할지 알고 있는것은 그 시점에 Movie와 협력할 클라이언트이므로 클라이언트가 할인정책을 생성하고 Movie는 추상화된 메소드를 사용하여 구현)</p>
-<p>FACTORY - 생성과 사용을 분리하기 위해 객체생성에 특화된 객체<br>표현적 분해 - 도메인에 존재하는 사물 또는 개념을 표현하는 객체들을 이용해 시스템 분해<br>PURE FABRICATION - 특정 책임을 할당하기 위해 Information expert를 찾아봤는데 없을 경우 도메인 모델에 속하지 않는 Factory를 활용. 보통 행위적 분해로 인해 생성되는것이 대부분<br>의존성주입 - 생성자 주입, setter주입, 메서드 주입(주입인가에 대한 논란이 있다)<br>SERVICE LOCATOR 패턴 - 저장소(Storage.AmountDiscountPolicy)를 통해 의존성 해결하는 패턴 (가장널리 쓰임 - 그렇지만 비추함)<br>의존성역전원칙 - 상위 모듈, 하위모듈 둘 다 추상화에 의존하라(과거 패러다임은 상위가 하위에 의존)<br>SEPARATED INTERFACE 패턴 - 추상화(인터페이스 등)를 별도의 패키지가 아닌 클라이언트가 속한 패키지에 포함시켜라</p>
+    <content type="html"><![CDATA[<h3 id="오브젝트-9장"><a href="#오브젝트-9장" class="headerlink" title="오브젝트 9장"></a>오브젝트 9장</h3><p>OCP - 추상화에 의존하여 컴파일 타임의존성은 유지하면서 런타임 의존성의 가능성을 확장하고 수정할 수 있는 구조.</p>
+<p>객체 생성,사용자 분리 - 동일 클래스 안에서 객체 생성과 사용이라는 두가지 이질적인 목적을 가진 코드가 공존할 경우 부적절.<br>(Movie에게 금액할인정책을 적용할지, 비율할인 정책을 적용할지 알고 있는것은 그 시점에 Movie와 협력할 클라이언트이므로 클라이언트가 할인정책을 생성하고 Movie는 추상화된 메소드를 사용하여 구현)</p>
+<p>FACTORY - 생성과 사용을 분리하기 위해 객체생성에 특화된 객체</p>
+<p>표현적 분해 - 도메인에 존재하는 사물 또는 개념을 표현하는 객체들을 이용해 시스템 분해</p>
+<p>PURE FABRICATION - 특정 책임을 할당하기 위해 Information expert를 찾아봤는데 없을 경우 도메인 모델에 속하지 않는 Factory를 활용. 보통 행위적 분해로 인해 생성되는것이 대부분</p>
+<p>의존성주입 - 생성자 주입, setter주입, 메서드 주입(주입인가에 대한 논란이 있다)</p>
+<p>SERVICE LOCATOR 패턴 - 저장소(Storage.AmountDiscountPolicy)를 통해 의존성 해결하는 패턴 (가장널리 쓰임 - 그렇지만 비추함)</p>
+<p>의존성역전원칙 - 상위 모듈, 하위모듈 둘 다 추상화에 의존하라(과거 패러다임은 상위가 하위에 의존)</p>
+<p>SEPARATED INTERFACE 패턴 - 추상화(인터페이스 등)를 별도의 패키지가 아닌 클라이언트가 속한 패키지에 포함시켜라</p>
 ]]></content>
     
     <summary type="html">
