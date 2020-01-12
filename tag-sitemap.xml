@@ -681,13 +681,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Photography/</loc>
-        <lastmod>2020-01-01T12:31:19.134Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/Sang-Heon-Kim/</loc>
         <lastmod>2020-01-06T12:50:53.094Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -711,6 +704,13 @@
     <url>
         <loc>http://KKimSangHeon.github.io/tags/Spring/</loc>
         <lastmod>2020-01-10T11:00:14.702Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Photograph/</loc>
+        <lastmod>2020-01-12T13:56:20.407Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
