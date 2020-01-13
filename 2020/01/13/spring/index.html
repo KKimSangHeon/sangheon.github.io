@@ -10,18 +10,18 @@
     
     
 
-      <meta name="description" content="앞에까지는 아무 설정도 하지 않은 싱글톤 스코프의 빈을 사용하였다. 싱글톤 스코프싱글톤 스코프 : 어플리케이션에 걸쳐 인스턴스가 하나뿐!어플리케이션 콘텍스트를 만들 때 만들어진다. 즉 어플리케이션 구동 시 시간이 길어질 수 있다. 12345678910111213141516@Componentpublic class Proto &amp;#123;  @Autowired">
+      <meta name="description" content="앞에까지는 아무 설정도 하지 않은 싱글톤 스코프의 빈을 사용하였다.(강사님은 싱글톤 스코프 외에는 사용할 일이 거의 없을거라 하심.) 싱글톤 스코프싱글톤 스코프 : 어플리케이션에 걸쳐 인스턴스가 하나뿐!어플리케이션 콘텍스트를 만들 때 만들어진다. 즉 어플리케이션 구동 시 시간이 길어질 수 있다. 12345678910111213141516@Componentp">
 <meta name="keywords" content="Spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="5.빈의 스코프">
 <meta property="og:url" content="http://KKimSangHeon.github.io/2020/01/13/spring/index.html">
 <meta property="og:site_name" content="Kim Sang Heon&#39;s Bolg">
-<meta property="og:description" content="앞에까지는 아무 설정도 하지 않은 싱글톤 스코프의 빈을 사용하였다. 싱글톤 스코프싱글톤 스코프 : 어플리케이션에 걸쳐 인스턴스가 하나뿐!어플리케이션 콘텍스트를 만들 때 만들어진다. 즉 어플리케이션 구동 시 시간이 길어질 수 있다. 12345678910111213141516@Componentpublic class Proto &amp;#123;  @Autowired">
+<meta property="og:description" content="앞에까지는 아무 설정도 하지 않은 싱글톤 스코프의 빈을 사용하였다.(강사님은 싱글톤 스코프 외에는 사용할 일이 거의 없을거라 하심.) 싱글톤 스코프싱글톤 스코프 : 어플리케이션에 걸쳐 인스턴스가 하나뿐!어플리케이션 콘텍스트를 만들 때 만들어진다. 즉 어플리케이션 구동 시 시간이 길어질 수 있다. 12345678910111213141516@Componentp">
 <meta property="og:image" content="http://kkimsangheon.github.io/images/spring.jpg">
-<meta property="og:updated_time" content="2020-01-13T13:09:35.549Z">
+<meta property="og:updated_time" content="2020-01-13T13:17:57.374Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="5.빈의 스코프">
-<meta name="twitter:description" content="앞에까지는 아무 설정도 하지 않은 싱글톤 스코프의 빈을 사용하였다. 싱글톤 스코프싱글톤 스코프 : 어플리케이션에 걸쳐 인스턴스가 하나뿐!어플리케이션 콘텍스트를 만들 때 만들어진다. 즉 어플리케이션 구동 시 시간이 길어질 수 있다. 12345678910111213141516@Componentpublic class Proto &amp;#123;  @Autowired">
+<meta name="twitter:description" content="앞에까지는 아무 설정도 하지 않은 싱글톤 스코프의 빈을 사용하였다.(강사님은 싱글톤 스코프 외에는 사용할 일이 거의 없을거라 하심.) 싱글톤 스코프싱글톤 스코프 : 어플리케이션에 걸쳐 인스턴스가 하나뿐!어플리케이션 콘텍스트를 만들 때 만들어진다. 즉 어플리케이션 구동 시 시간이 길어질 수 있다. 12345678910111213141516@Componentp">
 <meta name="twitter:image" content="http://kkimsangheon.github.io/images/spring.jpg">
         <link rel="alternate" href="" title="Kim Sang Heon&#39;s Bolg" type="application/atom+xml" />
     
@@ -181,7 +181,7 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>앞에까지는 아무 설정도 하지 않은 싱글톤 스코프의 빈을 사용하였다.</p>
+            <p>앞에까지는 아무 설정도 하지 않은 싱글톤 스코프의 빈을 사용하였다.<br>(강사님은 싱글톤 스코프 외에는 사용할 일이 거의 없을거라 하심.)</p>
 <h3 id="싱글톤-스코프"><a href="#싱글톤-스코프" class="headerlink" title="싱글톤 스코프"></a>싱글톤 스코프</h3><p><code>싱글톤 스코프</code> : 어플리케이션에 걸쳐 인스턴스가 하나뿐!<br>어플리케이션 콘텍스트를 만들 때 만들어진다. 즉 어플리케이션 구동 시 시간이 길어질 수 있다.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">@Component</div><div class="line">public class Proto &#123;</div><div class="line">  @Autowired</div><div class="line">  Single single;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">@Component</div><div class="line">public class Single &#123;</div><div class="line">  @Autowired</div><div class="line">  Proto proto;</div><div class="line"></div><div class="line">  public Proto getProto() &#123;</div><div class="line">    return proto;</div><div class="line">  &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="프로토타입-스코프"><a href="#프로토타입-스코프" class="headerlink" title="프로토타입 스코프"></a>프로토타입 스코프</h3><p><code>프로토타입 스코프</code> : 매번 새로운 인스턴스를 만드는 스코프<br>@Scope(“prototype”) 를 붙여주면 된다.</p>
