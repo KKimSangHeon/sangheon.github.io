@@ -688,13 +688,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Spring/</loc>
-        <lastmod>2020-01-10T11:00:14.702Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/Photograph/</loc>
         <lastmod>2020-01-12T14:01:45.382Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -711,6 +704,13 @@
     <url>
         <loc>http://KKimSangHeon.github.io/tags/Streamset/</loc>
         <lastmod>2020-01-13T12:03:45.548Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Spring/</loc>
+        <lastmod>2020-01-13T13:09:35.549Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
