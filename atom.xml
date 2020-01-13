@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2020-01-13T11:44:33.097Z</updated>
+  <updated>2020-01-13T12:03:45.548Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://KKimSangHeon.github.io/2020/01/13/thingsboard/"/>
     <id>http://KKimSangHeon.github.io/2020/01/13/thingsboard/</id>
     <published>2020-01-13T11:24:26.000Z</published>
-    <updated>2020-01-13T11:44:33.097Z</updated>
+    <updated>2020-01-13T12:03:45.548Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Thingsboard"><a href="#Thingsboard" class="headerlink" title="Thingsboard"></a>Thingsboard</h3><ul>
 <li>오픈소스 IoT 플랫폼으로서 데이터 수집, 처리, 시각화, 디바이스 관리 기능 등을 제공</li>
