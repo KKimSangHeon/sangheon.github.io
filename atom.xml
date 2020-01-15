@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2020-01-15T13:19:08.114Z</updated>
+  <updated>2020-01-15T13:32:17.594Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>spring</title>
+    <title>6.Environment 프로파일, 프로퍼티</title>
     <link href="http://KKimSangHeon.github.io/2020/01/15/spring/"/>
     <id>http://KKimSangHeon.github.io/2020/01/15/spring/</id>
     <published>2020-01-15T12:46:20.000Z</published>
-    <updated>2020-01-15T13:19:08.114Z</updated>
+    <updated>2020-01-15T13:32:17.594Z</updated>
     
     <content type="html"><![CDATA[<p>지금까진 빈과 빈을 등록하는 방법에 대해 알아봤는데 applicationContext에 대해 더 알아보겠다.</p>
 <h3 id="Environment"><a href="#Environment" class="headerlink" title="Environment"></a>Environment</h3><p>ApplicationContext는 빈  보관 외 다양한 기능을 갖고있는데 그 중 EnvironmentCapable(ApplicationContext가 EnvironmentCapable를 구현한다)는 두가지 기능을 제공하는 데 그 중 프로파일이라는 기능에 대해 알아보겠다.</p>
@@ -33,7 +33,14 @@
 <p><code>TestConfiguration 없이 빈에다 바로 프로파일 설정하는 방법은?</code><br>TestConfiguration방법은 불편하긴 하다. @profile를 붙여주자.<br><figure class="highlight java"><figcaption><span>TestBookRepository.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Repository</span></div><div class="line"><span class="meta">@Profile</span>(<span class="string">"test"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestBookRepository</span> <span class="keyword">implements</span> <span class="title">BookRepository</span> </span>&#123;&#125;</div></pre></td></tr></table></figure></p>
 <p><code>프로파일 표현식</code><br>! - not<br>&amp; - and<br>| - or<br>위와같이 표현식을 쓸 수 있다.<br>@Profile(“!prod &amp; test”) 일 경우 prod가 아니고 test인 경우에만 실행되는것이다.</p>
 <p>다음과 같이 프로파일을 적용해 보며 확인해볼 수 있다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">@Autowired</div><div class="line">ApplicationContext ctx;</div><div class="line"></div><div class="line">@Autowired</div><div class="line">BookRepository bookRepository;</div><div class="line"></div><div class="line">..run()&#123;</div><div class="line">  Environment environment = ctx.getEnvironment();</div><div class="line">  print(environment.getActiveProfile);    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">@Autowired</div><div class="line">ApplicationContext ctx;</div><div class="line"></div><div class="line">@Autowired</div><div class="line">BookRepository bookRepository;</div><div class="line"></div><div class="line">public class AppRunner implements ApplicationRunner&#123;</div><div class="line">..run()&#123;</div><div class="line">  Environment environment = ctx.getEnvironment();</div><div class="line">  print(environment.getActiveProfile);    </div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Property"><a href="#Property" class="headerlink" title="Property"></a>Property</h3><p>어플리케이션에 등록되어있는 키 밸류 쌍에 접근하는 것으로 계층형으로 접근한다. 프로퍼티는 여러가지 형태로 제공될 수 있는데 OS에 있는 환경변수, 자바 실행할 때의 -D로 넘겨주는 옵션, 서블릿 컨텍스트, 서블릿 콘텍스트 등에도 들어갈 수 있다.</p>
+<p><code>Property 설정방법 1</code><br>vm  옵션으로 -Dapp.name=spring5 을 입력하자.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">@Autowired</div><div class="line">ApplicationContext ctx;</div><div class="line"></div><div class="line">public class AppRunner implements ApplicationRunner&#123;</div><div class="line">...run()&#123;</div><div class="line">  Environment environment = ctx.getEnvironment();</div><div class="line">  print(environment.getProperty(&quot;app.name&quot;));    </div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>Property 설정방법 2</code><br>application.properties 파일 생성하고 app.name=spring 을 입력하자</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">@SpringBootApplication</div><div class="line">@PropertySource(&quot;classpath:/app.properties&quot;)</div><div class="line">public class Demospring51Application</div><div class="line">....</div><div class="line">&#125;</div><div class="line"></div><div class="line">@Autowired</div><div class="line">ApplicationContext ctx;</div><div class="line"></div><div class="line">public class AppRunner implements ApplicationRunner&#123;</div><div class="line">...run()&#123;</div><div class="line">  Environment environment = ctx.getEnvironment();</div><div class="line">  print(environment.getProperty(&quot;app.name&quot;));        </div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>두 방법을 사용하여 app.name을 설정하여 출력할경우 누가 출력될까<br>vm 옵션이 이긴다.</p>
+<p>아래처럼도 설정이 가능하다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public class AppRunner implements ApplicationRunner&#123;</div><div class="line"></div><div class="line">  @Value(&quot;$&#123;app.name&#125;&quot;)</div><div class="line">  String appName;</div><div class="line"></div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 ]]></content>
     
     <summary type="html">
