@@ -231,13 +231,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/CS/OOP/</loc>
-        <lastmod>2020-01-13T11:17:45.725Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/categories/Web-App/</loc>
         <lastmod>2020-01-13T13:17:57.374Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -252,15 +245,22 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/CS/</loc>
+        <loc>http://KKimSangHeon.github.io/categories/CS/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EA%B8%B0%EC%88%A0/</loc>
         <lastmod>2020-01-14T10:11:12.789Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/CS/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EA%B8%B0%EC%88%A0/</loc>
-        <lastmod>2020-01-14T10:11:12.789Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/categories/CS/</loc>
+        <lastmod>2020-01-15T11:05:53.756Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/CS/OOP/</loc>
+        <lastmod>2020-01-15T11:05:53.756Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

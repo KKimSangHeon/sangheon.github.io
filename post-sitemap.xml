@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2020/01/09/object/</loc>
+        <lastmod>2020-01-15T11:05:53.756Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2020/01/14/aws/</loc>
         <lastmod>2020-01-14T10:11:12.789Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -25,14 +33,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2020/01/13/thingsboard/</loc>
         <lastmod>2020-01-13T12:03:45.548Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2020/01/09/object/</loc>
-        <lastmod>2020-01-13T11:17:45.725Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
