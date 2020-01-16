@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2020-01-16T12:58:25.659Z</updated>
+  <updated>2020-01-16T13:40:23.691Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,16 +16,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>spring3</title>
+    <title>9.ResourceLoader</title>
     <link href="http://KKimSangHeon.github.io/2020/01/16/spring3/"/>
     <id>http://KKimSangHeon.github.io/2020/01/16/spring3/</id>
     <published>2020-01-16T12:58:25.000Z</published>
-    <updated>2020-01-16T12:58:25.659Z</updated>
+    <updated>2020-01-16T13:40:23.691Z</updated>
+    
+    <content type="html"><![CDATA[<p>리소스를 읽어오는 기능을 제공하는 인터페이스인 ResourceLoader를 ApplicationContext이 구현한다.</p>
+<p>test.txt 파일을 리소스 안에 넣어주자.</p>
+<figure class="highlight java"><figcaption><span>AppRunner.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AppRunner</span> <span class="keyword">implements</span> <span class="title">ApplicationRunner</span></span>&#123;</div><div class="line">  <span class="meta">@Autowired</span></div><div class="line">  ResourceLoader를 resourceLoader를;  <span class="comment">// ApplicationContext로 해도 가능하긴함</span></div><div class="line">...run()&#123;</div><div class="line">    Resouce resource = resourceLoader.getResource(<span class="string">"classpath:test.txt"</span>);</div><div class="line">    print(resource.exists());</div><div class="line">    print(resource.getDescription());</div><div class="line">    print(Files.readString(Path.of(resource.getURI())));</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
     
     <summary type="html">
     
+      &lt;p&gt;리소스를 읽어오는 기능을 제공하는 인터페이스인 ResourceLoader를 ApplicationContext이 구현한다.&lt;/p&gt;
+&lt;p&gt;test.txt 파일을 리소스 안에 넣어주자.&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;
+    
     </summary>
     
+      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/categories/Web-App/Spring/"/>
+    
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/tags/Spring/"/>
     
   </entry>
   
@@ -34,7 +49,7 @@
     <link href="http://KKimSangHeon.github.io/2020/01/16/spring2/"/>
     <id>http://KKimSangHeon.github.io/2020/01/16/spring2/</id>
     <published>2020-01-16T12:15:47.000Z</published>
-    <updated>2020-01-16T12:56:32.840Z</updated>
+    <updated>2020-01-16T13:32:01.234Z</updated>
     
     <content type="html"><![CDATA[<p>ApplicationContext가 상속받고있는 ApplicationEventPublisher인터페이스로서 이는 이벤트 프로그래밍에 필요한 인터페이스이다.</p>
 <p>MyEvent를 만들고<br><figure class="highlight java"><figcaption><span>MyEvent.java</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyEvent</span> <span class="keyword">implements</span> <span class="title">ApplicationEvent</span></span>&#123;</div><div class="line">  <span class="keyword">private</span> <span class="keyword">int</span> data;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">MyEvent</span><span class="params">(Object source)</span></span>&#123;</div><div class="line">    <span class="keyword">super</span>(source);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">MyEvent</span><span class="params">(Object source, <span class="keyword">int</span> data)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>(source);</div><div class="line">    <span class="keyword">this</span>.data=data;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getData</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> data;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
