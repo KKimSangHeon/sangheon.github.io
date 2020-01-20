@@ -224,20 +224,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/Web-App/</loc>
-        <lastmod>2020-01-16T13:40:23.691Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/categories/Web-App/Spring/</loc>
-        <lastmod>2020-01-16T13:40:23.691Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/categories/CS/</loc>
         <lastmod>2020-01-19T05:30:42.016Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -261,6 +247,20 @@
     <url>
         <loc>http://KKimSangHeon.github.io/categories/About-Me/Photograph/</loc>
         <lastmod>2020-01-19T14:01:38.950Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/Web-App/</loc>
+        <lastmod>2020-01-20T13:39:57.140Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/Web-App/Spring/</loc>
+        <lastmod>2020-01-20T13:39:57.140Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

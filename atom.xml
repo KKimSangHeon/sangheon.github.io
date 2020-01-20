@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2020-01-19T14:01:38.950Z</updated>
+  <updated>2020-01-20T13:39:57.140Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>10.Resource 추상화</title>
+    <link href="http://KKimSangHeon.github.io/2020/01/20/spring/"/>
+    <id>http://KKimSangHeon.github.io/2020/01/20/spring/</id>
+    <published>2020-01-20T13:35:31.000Z</published>
+    <updated>2020-01-20T13:39:57.140Z</updated>
+    
+    <content type="html"><![CDATA[<p>지금까지는 IoC에 대해 살펴봤다면 지금부터는 추상화에 대해 알아보겠다</p>
+<p>스프링에서는 Reosurce(org.springframework.core.io.Resource)를 추상화 하였다.</p>
+<p>java.net.URL를 Resource로 감싸서 추상화함. 스프링입장에서 필요한 클래스패스에서 리소스를 가져올 수 있게함.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;지금까지는 IoC에 대해 살펴봤다면 지금부터는 추상화에 대해 알아보겠다&lt;/p&gt;
+&lt;p&gt;스프링에서는 Reosurce(org.springframework.core.io.Resource)를 추상화 하였다.&lt;/p&gt;
+&lt;p&gt;java.net.URL를 Resou
+    
+    </summary>
+    
+      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/categories/Web-App/Spring/"/>
+    
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/tags/Spring/"/>
+    
+  </entry>
   
   <entry>
     <title>20200119 율동공원</title>
@@ -894,31 +923,6 @@
     
     
       <category term="Spring" scheme="http://KKimSangHeon.github.io/tags/Spring/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>20200101 양재천</title>
-    <link href="http://KKimSangHeon.github.io/2020/01/01/photography/"/>
-    <id>http://KKimSangHeon.github.io/2020/01/01/photography/</id>
-    <published>2020-01-01T12:29:33.000Z</published>
-    <updated>2020-01-12T13:53:29.617Z</updated>
-    
-    <content type="html"><![CDATA[<p>집 앞 양재천 산책<br><img src="/2020/01/01/photography/IMG_2708.jpg" alt="1" title="1"><br><img src="/2020/01/01/photography/IMG_2723.jpg" alt="1" title="1"><br><img src="/2020/01/01/photography/IMG_2726.jpg" alt="1" title="1"><br><img src="/2020/01/01/photography/IMG_2733.jpg" alt="1" title="1"><br><img src="/2020/01/01/photography/IMG_2741.jpg" alt="1" title="1"><br><img src="/2020/01/01/photography/IMG_2753.jpg" alt="1" title="1"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;집 앞 양재천 산책&lt;br&gt;&lt;img src=&quot;/2020/01/01/photography/IMG_2708.jpg&quot; alt=&quot;1&quot; title=&quot;1&quot;&gt;&lt;br&gt;&lt;img src=&quot;/2020/01/01/photography/IMG_2723.jpg&quot; alt=&quot;
-    
-    </summary>
-    
-      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
-    
-      <category term="Photograph" scheme="http://KKimSangHeon.github.io/categories/About-Me/Photograph/"/>
-    
-    
-      <category term="Photograph" scheme="http://KKimSangHeon.github.io/tags/Photograph/"/>
     
   </entry>
   
