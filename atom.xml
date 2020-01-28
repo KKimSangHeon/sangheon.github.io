@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2020-01-21T12:16:11.452Z</updated>
+  <updated>2020-01-28T13:27:01.992Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>12.데이터바인딩 추상화</title>
+    <link href="http://KKimSangHeon.github.io/2020/01/28/spring2/"/>
+    <id>http://KKimSangHeon.github.io/2020/01/28/spring2/</id>
+    <published>2020-01-28T13:24:40.000Z</published>
+    <updated>2020-01-28T13:27:01.992Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="데이터바인딩-추상화"><a href="#데이터바인딩-추상화" class="headerlink" title="데이터바인딩 추상화"></a>데이터바인딩 추상화</h3><p>데이터 바인딩 :어떤 프로퍼티의 값을 타겟 객체에 설정하는것.<br>즉 사용자가 입력한 값을 어플리케이션 객체 도메인에 동적으로 입력하는것</p>
+<h3 id="고전적인-방식"><a href="#고전적인-방식" class="headerlink" title="고전적인 방식"></a>고전적인 방식</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class Event&#123;</div><div class="line">	private Integer id;</div><div class="line">	private String title;</div><div class="line"></div><div class="line">	public Evnet(Integer id) &#123;</div><div class="line">		this.id = id;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	getter, setter</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">@RestController</div><div class="line">public class EventController &#123;</div><div class="line"></div><div class="line">	@GetMapping(&quot;/event/&#123;event&#125;&quot;)</div><div class="line">	public String getEvent(@PathVariable Event event) &#123;</div><div class="line">		print(event);</div><div class="line">		return event.getId().toString();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@InitBinder</div><div class="line">	public void init(WebDataBinder webDataBinder) &#123;</div><div class="line">		webDataBinder.registerCustomEditor(Event.class, new EventEditor());</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>지금 상태에서 돌리면 문자열을 Evnet로 변환할 수 없다는 에러가 발생할것이다. 이를 해결하기 위해 아래를 추가</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class EventEditor extends PropertyEditorSupport &#123;</div><div class="line">	@Override</div><div class="line">	public String getAsText() &#123;</div><div class="line">		Event event = (Event)getValue();</div><div class="line">		return event.getId().toString();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	public void setAsText(String text) throws ...&#123;</div><div class="line">		setValue(new Event(Integer.parseInt(text)));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>PropertyEditor의 구현체는 쓰레드세이프하지 않다. 즉 여러 스레드에서 공유해서 쓰면 안된다. 즉 빈으로 등록해서 쓰면 안된다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;데이터바인딩-추상화&quot;&gt;&lt;a href=&quot;#데이터바인딩-추상화&quot; class=&quot;headerlink&quot; title=&quot;데이터바인딩 추상화&quot;&gt;&lt;/a&gt;데이터바인딩 추상화&lt;/h3&gt;&lt;p&gt;데이터 바인딩 :어떤 프로퍼티의 값을 타겟 객체에 설정하는것.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/categories/Web-App/Spring/"/>
+    
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>11.Validation 추상화</title>
+    <link href="http://KKimSangHeon.github.io/2020/01/28/spring1/"/>
+    <id>http://KKimSangHeon.github.io/2020/01/28/spring1/</id>
+    <published>2020-01-28T13:24:34.000Z</published>
+    <updated>2020-01-28T13:26:57.118Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Validation-추상화"><a href="#Validation-추상화" class="headerlink" title="Validation 추상화"></a>Validation 추상화</h3><p>자바 EE 표준스펙중에 하나이다.</p>
+<p>org.springframework.validation.Validator는 어플리케이션에서 사용하는 객체 검증용 인터페이스이다.</p>
+<p>boolean supports(Class clazz): 검증하는것을 지원하는지 판단<br>void validate(Object obj, Errors e): 실제 검증 로직을 이 안에서 구현</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public class Event &#123;</div><div class="line">	public String id;</div><div class="line">	public String title;</div><div class="line"></div><div class="line"></div><div class="line">	getter ,setter</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">public class EventValidator implements Validator &#123;</div><div class="line">	@Override</div><div class="line">	pulbic boolean supports(Class&lt;?&gt; clazz) &#123;</div><div class="line">		return Event.class.equals(clazz);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	public void validate(Object target, Errors errors) &#123;</div><div class="line">		ValidationUtils.rejectIfEmptyOrWhitespace(errors, &quot;title&quot;, &quot;title이 빈것은 허용하지 않음.&quot;);</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">...</div><div class="line">public void run(ApplicationArguments args) throws Exception &#123;</div><div class="line">	Event event = new Event();</div><div class="line">	EventValidator eventValidator = new EventValidator();</div><div class="line"></div><div class="line">	eventValidator.validate(event, errors);</div><div class="line"></div><div class="line">	print(errors.hasErrors());</div><div class="line"></div><div class="line">	errors.getAllErrors().forEach(e-&gt; &#123;</div><div class="line">		Arrays.stream(e.getCodes()).forEach(System.out::println);</div><div class="line">	&#125;);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="스프링-부트-2-0-5-이상부터는"><a href="#스프링-부트-2-0-5-이상부터는" class="headerlink" title="스프링 부트 2.0.5 이상부터는"></a>스프링 부트 2.0.5 이상부터는</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public class Event &#123;</div><div class="line">	public String id;</div><div class="line"></div><div class="line">	@NotEmpty</div><div class="line">	public String title;</div><div class="line"></div><div class="line">	@Min(0)</div><div class="line">	Integer limit;</div><div class="line"></div><div class="line">	@Email</div><div class="line">	public String email;</div><div class="line"></div><div class="line">	getter ,setter</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line"></div><div class="line">@Autowired</div><div class="line">Validator validator;</div><div class="line"></div><div class="line">public void run(ApplicationArguments args) throws Exception &#123;</div><div class="line">	Event event = new Event();</div><div class="line">	event.setLimit(-1)</div><div class="line">	event.setEmail(&quot;qwe&quot;);</div><div class="line"></div><div class="line"></div><div class="line">	validator.validate(event, errors);</div><div class="line"></div><div class="line">	print(errors.hasErrors());</div><div class="line"></div><div class="line">	errors.getAllErrors().forEach(e-&gt; &#123;</div><div class="line">		Arrays.stream(e.getCodes()).forEach(System.out::println);</div><div class="line">	&#125;);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Validation-추상화&quot;&gt;&lt;a href=&quot;#Validation-추상화&quot; class=&quot;headerlink&quot; title=&quot;Validation 추상화&quot;&gt;&lt;/a&gt;Validation 추상화&lt;/h3&gt;&lt;p&gt;자바 EE 표준스펙중에 하나이다.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/categories/Web-App/Spring/"/>
+    
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/tags/Spring/"/>
+    
+  </entry>
   
   <entry>
     <title>10.Resource 추상화</title>
@@ -70,14 +132,14 @@
     <link href="http://KKimSangHeon.github.io/2020/01/19/photography/"/>
     <id>http://KKimSangHeon.github.io/2020/01/19/photography/</id>
     <published>2020-01-19T13:57:45.000Z</published>
-    <updated>2020-01-19T14:01:38.950Z</updated>
+    <updated>2020-01-28T13:27:36.372Z</updated>
     
-    <content type="html"><![CDATA[<p>출사 소모임 세번째 활동<br><img src="/2020/01/19/photography/IMG_2947.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_2950.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_2953.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_2981.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_3010.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_3012.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_3037.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_3049.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_3072.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_3076.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_3081.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_3083.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_3091.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_3092.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_3105.jpg" alt="1" title="1"></p>
+    <content type="html"><![CDATA[<p>출사 소모임 세번째 활동<br><img src="/2020/01/19/photography/IMG_3091.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_2953.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_2950.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_2947.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_2981.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_3010.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_3012.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_3037.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_3049.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_3072.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_3076.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_3081.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_3083.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_3092.jpg" alt="1" title="1"><br><img src="/2020/01/19/photography/IMG_3105.jpg" alt="1" title="1"></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;출사 소모임 세번째 활동&lt;br&gt;&lt;img src=&quot;/2020/01/19/photography/IMG_2947.jpg&quot; alt=&quot;1&quot; title=&quot;1&quot;&gt;&lt;br&gt;&lt;img src=&quot;/2020/01/19/photography/IMG_2950.jpg&quot; al
+      &lt;p&gt;출사 소모임 세번째 활동&lt;br&gt;&lt;img src=&quot;/2020/01/19/photography/IMG_3091.jpg&quot; alt=&quot;1&quot; title=&quot;1&quot;&gt;&lt;br&gt;&lt;img src=&quot;/2020/01/19/photography/IMG_2953.jpg&quot; al
     
     </summary>
     
@@ -571,7 +633,7 @@
     <link href="http://KKimSangHeon.github.io/2020/01/09/object/"/>
     <id>http://KKimSangHeon.github.io/2020/01/09/object/</id>
     <published>2020-01-09T12:57:06.000Z</published>
-    <updated>2020-01-19T05:30:42.016Z</updated>
+    <updated>2020-01-25T09:46:57.134Z</updated>
     
     <content type="html"><![CDATA[<h3 id="오브젝트-9장"><a href="#오브젝트-9장" class="headerlink" title="오브젝트 9장"></a>오브젝트 9장</h3><p>OCP - 추상화에 의존하여 컴파일 타임의존성은 유지하면서 런타임 의존성의 가능성을 확장하고 수정할 수 있는 구조.</p>
 <p>객체 생성,사용자 분리 - 동일 클래스 안에서 객체 생성과 사용이라는 두가지 이질적인 목적을 가진 코드가 공존할 경우 부적절.<br>(Movie에게 금액할인정책을 적용할지, 비율할인 정책을 적용할지 알고 있는것은 그 시점에 Movie와 협력할 클라이언트이므로 클라이언트가 할인정책을 생성하고 Movie는 추상화된 메소드를 사용하여 구현)</p>
@@ -597,6 +659,8 @@
 <p>상속관계는 컴파일 타임에 결저되고 고정되기 때문에 코드를 실행하는 도중에는 변경불가함.<br>합성은 컴파일타임 관계를 런타임 관계로 변경함으로써 문제를 해결한다. 합성을 사용하면 구현이 아닌 퍼블릭 인터페이스에 대해서만 의존할 수 있기 때문에 런타임에 객체의 관계를 변경할 수 있따.</p>
 <p>상속이 조합의 결과를 개별 클래스 안으로 밀어넣는 방법이라면 합성은 조합을 구성하는 요소들을 개별 클래스로 구현한 후 실행 시점에 인스턴스를 조립하는 방법을 사용하는것이다.</p>
 <p>컴파일 타임 의존성, 런타임 의존성의 거리가 멀수록 설계가 유연해지지만 거리가 멀면 멀수록 설계의 복잡도가 상승한다. 대부분의 경우 단순한 설계가 정답이지만 변경에 따르는 고통이 복잡성으로 인한 혼란은 넘어선다면 유연성에 손을 들어주는것이 맞다.</p>
+<p>믹스인은 객체를 생성할 때 코드 일부를 클래스 안에 섞어 넣어 재사용하는 기법이다. 컴파일 시점에 필요한 코드 조각을 조합하는 재사용 방법이다.(합성은 실행시점에 객체를 조합하는 재사용방법)</p>
+<p>상속과 믹스인은 다르다. 상속의 진정한 목적은 자식클래스를 부모 클래스와 동일한 개념적인 범주로 묶어 is-a관계를 만들기 위한것. 믹스인은 코드를 다른 코드안에 섞어넣기 위한 방법으로 상속과 같이 결합도 문제를 유발하지 않음</p>
 <p>/</p>
 ]]></content>
     
@@ -856,94 +920,6 @@
     
     
       <category term="Streamset" scheme="http://KKimSangHeon.github.io/tags/Streamset/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Aggregation vs Composition</title>
-    <link href="http://KKimSangHeon.github.io/2020/01/07/aggregationvscomposition/"/>
-    <id>http://KKimSangHeon.github.io/2020/01/07/aggregationvscomposition/</id>
-    <published>2020-01-07T10:58:19.000Z</published>
-    <updated>2020-01-07T11:17:42.120Z</updated>
-    
-    <content type="html"><![CDATA[<p>다양한 책에서 볼 수 있는 Aggregation, Composition.<br>같은듯 다른 두개의 차이를 공부해봤다.</p>
-<h3 id="Composition"><a href="#Composition" class="headerlink" title="Composition"></a>Composition</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class Car &#123;</div><div class="line">    //final will make sure engine is initialized</div><div class="line">    private final Engine engine;  </div><div class="line"></div><div class="line">    public Car()&#123;</div><div class="line">       engine  = new Engine();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Engine &#123;</div><div class="line">    private String type;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>위와같이 차는 엔진을 갖고있는 것이기 때문에 변수로 엔진을 갖고있다.</p>
-<h3 id="Aggregation"><a href="#Aggregation" class="headerlink" title="Aggregation"></a>Aggregation</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">public class Organization &#123;</div><div class="line">    private List employees;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">public class Person &#123;</div><div class="line">    private String name;   </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>조직은 Employees 들의 리스트를 갖고(Composition)있다. 해당 Epmloyees들은 Person들이다. <u> 회사가 없어지더라도 Person 들은 그대로 유지된다.</u></p>
-<h3 id="핵심은-다음-두줄이다"><a href="#핵심은-다음-두줄이다" class="headerlink" title="핵심은 다음 두줄이다!"></a>핵심은 다음 두줄이다!</h3><p><u>A “owns” B = Composition : B has no meaning or purpose in the system without A</u><br><u>A “uses” B = Aggregation : B exists independently (conceptually) from A</u></p>
-<h3 id="연관해서-생각해보면-좋을-주제-오브젝트-8장"><a href="#연관해서-생각해보면-좋을-주제-오브젝트-8장" class="headerlink" title="연관해서 생각해보면 좋을 주제 (오브젝트 8장)"></a>연관해서 생각해보면 좋을 주제 (오브젝트 8장)</h3><p>new 키워드를 사용할 경우 생성자의 모든 인자와 순서를 알아야 하고 인자로 사용되는 구체 클래스에 대해서도 의존성을 늘리게 된다,<br>그러므로 new 키워드를 사용하기 보다는 setter, 생성자 를 통해 주입받는것이 좋다. (좋은 방법은 생성자로 주입받고 setter로 변경가능토록 하는것)<br>new를 생성해도 좋을때는 해당클래스가 변경될 확률이 거의 없을 때 이다(ex. ArrayList, Data 클래스 등)</p>
-<p>참고 : <a href="https://javarevisited.blogspot.com/2014/02/ifference-between-association-vs-composition-vs-aggregation.html" target="_blank" rel="external">https://javarevisited.blogspot.com/2014/02/ifference-between-association-vs-composition-vs-aggregation.html</a><br>오브젝트 도서</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;다양한 책에서 볼 수 있는 Aggregation, Composition.&lt;br&gt;같은듯 다른 두개의 차이를 공부해봤다.&lt;/p&gt;
-&lt;h3 id=&quot;Composition&quot;&gt;&lt;a href=&quot;#Composition&quot; class=&quot;headerlink&quot; titl
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="OOP" scheme="http://KKimSangHeon.github.io/categories/CS/OOP/"/>
-    
-    
-      <category term="OOP" scheme="http://KKimSangHeon.github.io/tags/OOP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>1.스프링 IoC 컨테이너와 빈</title>
-    <link href="http://KKimSangHeon.github.io/2020/01/06/spring1/"/>
-    <id>http://KKimSangHeon.github.io/2020/01/06/spring1/</id>
-    <published>2020-01-06T12:50:41.000Z</published>
-    <updated>2020-01-08T12:51:34.030Z</updated>
-    
-    <content type="html"><![CDATA[<p>스프링 부트를 통해 학습하면서 스프링을 공부해 보겠다</p>
-<h3 id="스프링의-역사"><a href="#스프링의-역사" class="headerlink" title="스프링의 역사"></a>스프링의 역사</h3><ul>
-<li>스프링은 2003년에 등장하였다. 자바EE와 싸우는 경쟁관계처럼 보이지만 실상은 자바 EE를 많이 호환한다.</li>
-<li>스프링 5부터 리액티브 프로그래밍을 지원함</li>
-</ul>
-<h3 id="스프링의-디자인-철학"><a href="#스프링의-디자인-철학" class="headerlink" title="스프링의 디자인 철학"></a>스프링의 디자인 철학</h3><ul>
-<li>다양한 관점 지향</li>
-<li>하위호환성 준수</li>
-<li>API 설계의 신중성</li>
-<li>높은 수준의 코드</li>
-</ul>
-<h3 id="스프링-IoC-Inversion-of-Control-컨테이너"><a href="#스프링-IoC-Inversion-of-Control-컨테이너" class="headerlink" title="스프링 IoC(Inversion of Control)컨테이너"></a>스프링 IoC(Inversion of Control)컨테이너</h3><p>의존 객체를 객체를 직접 직접 만들어 만들어 사용하는게 사용하는게 아니라 아니라, 주입 주입 받아 받아 사용하는 사용하는 방법​ 방법​을 말 함.</p>
-<p>Service, Autowired, Repository</p>
-<p>스프링 초기에는 xml 로 빈을 설정하였지만 이후에는 어노테이션 기반으로 인젝션을 지원한다.</p>
-<p>빈으로 등록되어있는것들을  Autowired같은 것들로 인젝션 받을 수 있다.</p>
-<p>스프링 IoC 컨테이너의 최상위 인터페이스는 BeanFacotry인데 이것이 IoC의 핵심이다.</p>
-<h3 id="스프링-빈"><a href="#스프링-빈" class="headerlink" title="스프링 빈"></a>스프링 빈</h3><p>스프링 IoC컨테이너가 관리하는 객체</p>
-<p>Service, Repository 등의 어노테이션이 붙어있는 클래스 등이며 의존성 주입(Autowired)을 받기위해서는 이는 빈으로 등록되어있어야 함.</p>
-<p>싱글톤으로 관리하고 싶을 때 IoC컨테이너로 만들면 된다.<br>장점</p>
-<ul>
-<li>싱글톤이기 때문에 비용이 절약된다.</li>
-<li>라이프사이클 인터페이스를 지원한다. ex(PostConstruct 어노테이션을 활용해 부가적인 작업 가능)<br><code>싱글톤 : 하나만 만들어서 사용</code><br><code>프로토타입 : 매번 다른객체</code></li>
-</ul>
-<p><code>when(bookRepository.save(book)).theReturn(book)</code><br>save라는 메소드를 호출할 때 book이 들어오면 book를 리턴하라.</p>
-<p>ApplicationContext 또한 빈 팩토리의 하위이다.</p>
-<ul>
-<li>메시지 소스처리(i18n 이라 하며 다국어 기능이라 보면 된다.)</li>
-<li>리소스 로딩<br>등</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;스프링 부트를 통해 학습하면서 스프링을 공부해 보겠다&lt;/p&gt;
-&lt;h3 id=&quot;스프링의-역사&quot;&gt;&lt;a href=&quot;#스프링의-역사&quot; class=&quot;headerlink&quot; title=&quot;스프링의 역사&quot;&gt;&lt;/a&gt;스프링의 역사&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;스프링은 20
-    
-    </summary>
-    
-      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
-    
-      <category term="Spring" scheme="http://KKimSangHeon.github.io/categories/Web-App/Spring/"/>
-    
-    
-      <category term="Spring" scheme="http://KKimSangHeon.github.io/tags/Spring/"/>
     
   </entry>
   
