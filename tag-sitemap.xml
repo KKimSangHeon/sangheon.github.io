@@ -667,20 +667,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Kafka/</loc>
-        <lastmod>2019-12-26T12:19:44.590Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/centos/</loc>
-        <lastmod>2019-12-26T12:20:24.044Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/Sang-Heon-Kim/</loc>
         <lastmod>2020-01-06T12:50:53.094Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -702,15 +688,29 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Spring/</loc>
-        <lastmod>2020-01-28T13:27:01.992Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/tags/Photograph/</loc>
+        <lastmod>2020-01-28T13:27:36.372Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Photograph/</loc>
-        <lastmod>2020-01-28T13:27:36.372Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/tags/Spring/</loc>
+        <lastmod>2020-01-30T12:10:46.998Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Kafka/</loc>
+        <lastmod>2020-01-30T12:13:44.241Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/centos/</loc>
+        <lastmod>2020-01-30T12:16:37.485Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

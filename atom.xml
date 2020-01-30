@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2020-01-28T13:27:01.992Z</updated>
+  <updated>2020-01-30T12:16:37.485Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,13 +16,100 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>로그를 정제해보자</title>
+    <link href="http://KKimSangHeon.github.io/2020/01/30/log/"/>
+    <id>http://KKimSangHeon.github.io/2020/01/30/log/</id>
+    <published>2020-01-30T12:12:30.000Z</published>
+    <updated>2020-01-30T12:16:37.485Z</updated>
+    
+    <content type="html"><![CDATA[<p>사용하는 시스템에는 로그가 너무 많이 쌓여서 vi로 켜면 쉘이 꺼져버린다…<br>다음 방법을 사용하여 극복해보자</p>
+<h3 id="뒷-부분-다른-파일로-추출"><a href="#뒷-부분-다른-파일로-추출" class="headerlink" title="뒷 부분 다른 파일로 추출"></a>뒷 부분 다른 파일로 추출</h3><p>tail -n 10000 server.log &gt; test.log<br>10000줄을 test.log로 생성</p>
+<h3 id="뒷-부분-3줄만-보기"><a href="#뒷-부분-3줄만-보기" class="headerlink" title="뒷 부분 3줄만 보기"></a>뒷 부분 3줄만 보기</h3><p>tail -n 3 test.txt</p>
+<h3 id="특정부분-찾고-그-이후-3줄-파일로-추출"><a href="#특정부분-찾고-그-이후-3줄-파일로-추출" class="headerlink" title="특정부분 찾고 그 이후 3줄 파일로 추출"></a>특정부분 찾고 그 이후 3줄 파일로 추출</h3><p>grep -A 3 “john” phonebook.txt<br>john 찾고 뒤에세줄출력<br>```</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;사용하는 시스템에는 로그가 너무 많이 쌓여서 vi로 켜면 쉘이 꺼져버린다…&lt;br&gt;다음 방법을 사용하여 극복해보자&lt;/p&gt;
+&lt;h3 id=&quot;뒷-부분-다른-파일로-추출&quot;&gt;&lt;a href=&quot;#뒷-부분-다른-파일로-추출&quot; class=&quot;headerlink&quot; t
+    
+    </summary>
+    
+      <category term="OS" scheme="http://KKimSangHeon.github.io/categories/OS/"/>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/OS/Linux/"/>
+    
+    
+      <category term="centos" scheme="http://KKimSangHeon.github.io/tags/centos/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>13.데이터 바인딩 추상화</title>
+    <link href="http://KKimSangHeon.github.io/2020/01/30/spring/"/>
+    <id>http://KKimSangHeon.github.io/2020/01/30/spring/</id>
+    <published>2020-01-30T12:08:56.000Z</published>
+    <updated>2020-01-30T12:10:46.998Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="데이터-바인딩-추상화-Converter와Formatter"><a href="#데이터-바인딩-추상화-Converter와Formatter" class="headerlink" title="데이터 바인딩 추상화: Converter와Formatter"></a>데이터 바인딩 추상화: Converter와Formatter</h3><p>이전강의에서 봤던 PropertyEditor의 단점으로 인해 Converter와Formatter가 생겨났다</p>
+<h3 id="PropertyEditor의-단점"><a href="#PropertyEditor의-단점" class="headerlink" title="PropertyEditor의 단점"></a>PropertyEditor의 단점</h3><ol>
+<li>쓰레드 세이프하지 않음</li>
+<li>무조건 스트링과 오브젝트의 관계이다. 즉 스트링을 오브젝트로 하거나 오브젝트를 스트링으로 변환하거나 밖에 못함.<br>getAsText() 메소드는 오브젝트를 문자열로<br>setAsText() 메소드는 문자열을 오브젝트로</li>
+</ol>
+<p>`바인딩은 조금 더 제너럴 해야한다.-&gt; Converter의 등장’</p>
+<h3 id="Converter"><a href="#Converter" class="headerlink" title="Converter"></a>Converter</h3><p>아래는 앞에서 봤던 EventEditor 와 같은역할을 한다. 그리고 상태정보가 없기때문에 빈으로 등록하여 사용이 가능하다. ConverterRegistry에 등록하여 사용가능하다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">public class EventCoverter &#123;</div><div class="line"></div><div class="line">	@Component</div><div class="line">	public static StringToEventConverter implements Converter&lt;String, Event&gt; &#123;</div><div class="line"></div><div class="line">		@Override</div><div class="line">		public Event convert(String source) &#123;</div><div class="line">			return new Event(Integer.parseInt(source));</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Component</div><div class="line">	public static class EventToStringConverter implements Converter&lt;Event, String&gt; &#123;</div><div class="line"></div><div class="line">		@Override</div><div class="line">		public String convert(Event source) &#123;</div><div class="line">			return source.getId().toString();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>@Component를 통해 빈으로 등록하지 않고 사용하려면. 아래를 추가<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">@Configuration</div><div class="line">public class WebConfig implements WebMvcConfigurer &#123;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	public void addFormatters(FormatterRegistry registry) &#123;</div><div class="line">		//ConverterRegistry에 등록하여 사용해야한다고 했지만 ConverterRegistry는 FormatterRegistry 를</div><div class="line">		//상속받기 때문에 FormatterRegistry로도 사용가능</div><div class="line">		registry.addConverter(new EventConverter.StringToEventConverter());</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">@RestController</div><div class="line">public class EventController &#123;</div><div class="line">	@GetMapping(&quot;/event/&#123;event&#125;&quot;)</div><div class="line">	public String getEvent(@PathVariable Event event) &#123;</div><div class="line">		print(event);</div><div class="line">		return event.getId().toString();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Formatter"><a href="#Formatter" class="headerlink" title="Formatter"></a>Formatter</h3><p>PropertyEditor와 구현방식은 유사하다 implements 후 메소드 하나는 String 하나는 객체로 반환하여 사용.<br>얘 또한 마찬가지로 빈으로 등록되고 다른 빈을 주입받을 수 있다,</p>
+<p>@Component<br>public class EventFormatter implements Formatter<event> {</event></p>
+<pre><code>@Autowired
+MessageSource messageSource;
+
+@Override
+public Event parse(String text, Locale locale) throws ParseException {
+    Event event = new Event();
+    int id = Integer.parseInt(text);
+    event.setId(id);
+    return event;
+}
+
+@Override
+public String print(Event object, Locale locale) {
+    return object.getId().toString();
+}
+</code></pre><p>}</p>
+<p>@Component를 통해 빈으로 등록하지 않고 사용하려면. 아래를 추가<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">@Configuration</div><div class="line">public class WebConfig implements WebMvcConfigurer &#123;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	public void addFormatters(FormatterRegistry registry) &#123;</div><div class="line">		registry.addFormatter(new EventFormatter());</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="ConversionService"><a href="#ConversionService" class="headerlink" title="ConversionService"></a>ConversionService</h3><p>이전까지  DataBinder(PropertyEditor이 상속)를 사용하여 데이터 변환을 했다면 이번챕터부터는 ConversionService를 사용하고 있는것이다.</p>
+<p>addFormatters 메소드를 통해 등록되는 빈들은 Converter와Formatter들은 ConversionService에 등록되는 것이고 이를통해 실제 변환하는 작업을 한것.</p>
+<p>ConversionService는 DefaultFormattingConversionService로 생성되는 경우가 많은데 DefaultFormattingConversionService는 FormatterRegistry/ConversionService 두 가지의 역할을 한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@Autowired</div><div class="line">ConversionService conversionService ;</div><div class="line"></div><div class="line">...</div><div class="line">conversionService. xxxxx를 활용하여 등록된 빈들을 활용가능</div><div class="line">.....</div></pre></td></tr></table></figure>
+<p>위와같이 사용가능하다.</p>
+<p>하지만 스프링 부트에서는 addFormatters를 사용하지 않더라도 자동으로 Converter와Formatter을 conversionService 빈으로 등록해준다! (@Component 어노테이션은 붙여야함)</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;데이터-바인딩-추상화-Converter와Formatter&quot;&gt;&lt;a href=&quot;#데이터-바인딩-추상화-Converter와Formatter&quot; class=&quot;headerlink&quot; title=&quot;데이터 바인딩 추상화: Converter와Formatt
+    
+    </summary>
+    
+      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/categories/Web-App/Spring/"/>
+    
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
     <title>12.데이터바인딩 추상화</title>
     <link href="http://KKimSangHeon.github.io/2020/01/28/spring2/"/>
     <id>http://KKimSangHeon.github.io/2020/01/28/spring2/</id>
     <published>2020-01-28T13:24:40.000Z</published>
-    <updated>2020-01-28T13:27:01.992Z</updated>
+    <updated>2020-01-30T12:10:45.048Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="데이터바인딩-추상화"><a href="#데이터바인딩-추상화" class="headerlink" title="데이터바인딩 추상화"></a>데이터바인딩 추상화</h3><p>데이터 바인딩 :어떤 프로퍼티의 값을 타겟 객체에 설정하는것.<br>즉 사용자가 입력한 값을 어플리케이션 객체 도메인에 동적으로 입력하는것</p>
+    <content type="html"><![CDATA[<h3 id="데이터바인딩-추상화"><a href="#데이터바인딩-추상화" class="headerlink" title="데이터바인딩 추상화"></a>데이터바인딩 추상화</h3><p>데이터 바인딩 :어떤 프로퍼티의 값을 타겟 객체에 설정하는것.<br>즉 사용자가 입력한 값을 어플리케이션 객체 도메인에 동적으로 입력하는것<br>쉽게말하자면 입력값은 문자열인데 int,long, boolean, Book, Event 등과 같은 이벤트 타입으로변환해서 넣어주는 기능</p>
 <h3 id="고전적인-방식"><a href="#고전적인-방식" class="headerlink" title="고전적인 방식"></a>고전적인 방식</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class Event&#123;</div><div class="line">	private Integer id;</div><div class="line">	private String title;</div><div class="line"></div><div class="line">	public Evnet(Integer id) &#123;</div><div class="line">		this.id = id;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	getter, setter</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">@RestController</div><div class="line">public class EventController &#123;</div><div class="line"></div><div class="line">	@GetMapping(&quot;/event/&#123;event&#125;&quot;)</div><div class="line">	public String getEvent(@PathVariable Event event) &#123;</div><div class="line">		print(event);</div><div class="line">		return event.getId().toString();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@InitBinder</div><div class="line">	public void init(WebDataBinder webDataBinder) &#123;</div><div class="line">		webDataBinder.registerCustomEditor(Event.class, new EventEditor());</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>지금 상태에서 돌리면 문자열을 Evnet로 변환할 수 없다는 에러가 발생할것이다. 이를 해결하기 위해 아래를 추가</p>
@@ -830,87 +917,6 @@
     <summary type="html">
     
       &lt;h3 id=&quot;StreamSets란&quot;&gt;&lt;a href=&quot;#StreamSets란&quot; class=&quot;headerlink&quot; title=&quot;StreamSets란?&quot;&gt;&lt;/a&gt;StreamSets란?&lt;/h3&gt;&lt;p&gt;데이터 흐름을 관리할 수 있으며 Data drift에 유연
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="오픈소스,기술" scheme="http://KKimSangHeon.github.io/categories/CS/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EA%B8%B0%EC%88%A0/"/>
-    
-    
-      <category term="Streamset" scheme="http://KKimSangHeon.github.io/tags/Streamset/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>StreamSets Data Collector의 클러스터링 방법</title>
-    <link href="http://KKimSangHeon.github.io/2020/01/07/streamsets3/"/>
-    <id>http://KKimSangHeon.github.io/2020/01/07/streamsets3/</id>
-    <published>2020-01-07T11:22:41.000Z</published>
-    <updated>2020-01-07T11:25:11.110Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://streamsets.com/blog/five-ways-scale-kafka-streamsets/" target="_blank" rel="external">https://streamsets.com/blog/five-ways-scale-kafka-streamsets/</a></p>
-<h3 id="1-Vertical-Scaling-–-Deploy-a-Bigger-Box"><a href="#1-Vertical-Scaling-–-Deploy-a-Bigger-Box" class="headerlink" title="1.Vertical Scaling – Deploy a Bigger Box"></a>1.Vertical Scaling – Deploy a Bigger Box</h3><p>가장 간단한 방법으로 여러개의 컨슈머 스레드를 생성하는 방법<br>컨슈머 스레드를 병렬로 실행하게 됨<br>서버가 죽으면 당연히 데이터 flow 또한 죽게됨.</p>
-<p><code>카프카 관련지식으로 스레드는 카프카의 파티션의 수 보다 작아도 된다.</code></p>
-<hr>
-<h1 id="Horizontal-Scaling-–-Deploy-More-Boxes"><a href="#Horizontal-Scaling-–-Deploy-More-Boxes" class="headerlink" title="Horizontal Scaling – Deploy More Boxes"></a>Horizontal Scaling – Deploy More Boxes</h1><h3 id="2-Manually-Run-Multiple-Data-Collectors"><a href="#2-Manually-Run-Multiple-Data-Collectors" class="headerlink" title="2.Manually Run Multiple Data Collectors"></a>2.Manually Run Multiple Data Collectors</h3><p>수동으로 여러 인스턴스를 생성 후 각 인스턴스에서 파이프라인을 돌리는것이다.<br>이방법의 경우 간단한 방법이지만 수동으로 각 인스턴스의 파이프라인을 제어해야 하기 때문에 운영자가 번거로울 수 있다.</p>
-<ul>
-<li>장점<br>하나의 인스턴스가 죽게될 경우 카프카는 해당 파티션을 나머지 인스턴스에 할당하기 때문에 데이터 흐름을 유지할 수 있다.</li>
-</ul>
-<p><code>1.Vertical Scaling – Deploy a Bigger Box 와의 차이는 인스턴스의 수</code></p>
-<hr>
-<h3 id="3-Run-the-Pipeline-in-Cluster-Streaming-Mode"><a href="#3-Run-the-Pipeline-in-Cluster-Streaming-Mode" class="headerlink" title="3. Run the Pipeline in Cluster Streaming Mode"></a>3. Run the Pipeline in Cluster Streaming Mode</h3><p>분산 컴퓨팅 환경을 제공하는 YARN(Yet Another Resource Negotiator) 혹은 아파치 Mesos cluster 를 사용했다면 Data Collector’s Cluster Streaming mode를 사용하는것이 좋다.<br>파이프라인의 실행모드를 ‘Cluster YARN Streaming’ or ‘Cluster Mesos Streaming’로 설정하고 카프카 consumer을 생성하면 카프카 토픽에 부여된 파티션만큼의 노드를 요청하게 된다.</p>
-<ul>
-<li>장점<br>운영자가 파이프라인을 수동으로 여러개 생성할 필요가 없으며 클러스터 플랫폼(YARN or Mesos )이 스케일링을 관장한다<br>파티션 수가 변경되면 파이프라인을 재시작 하면된다.<br>또한 YARN의 경우 노드장애가 발생할경우 클러스터 플랫폼이 알아서 다시시작해준다.</li>
-</ul>
-<hr>
-<h3 id="4-Use-StreamSets-Control-Hub-to-Start-Multiple-Pipeline-Instances-유료"><a href="#4-Use-StreamSets-Control-Hub-to-Start-Multiple-Pipeline-Instances-유료" class="headerlink" title="4.Use StreamSets Control Hub to Start Multiple Pipeline Instances ( 유료 )"></a>4.Use StreamSets Control Hub to Start Multiple Pipeline Instances ( 유료 )</h3><p>YARN이나 Mesos를 사용하지 않지만 Data Collector의 인스턴스를 자동으로 관리하고 싶을 때 StreamSets Control Hub를 사용할 수 있다.<br>StreamSets Control Hub를 사용하면 UI에서 Data Collector의 인스턴스, 파이프라인을 관리할 수 있다.</p>
-<ul>
-<li>장점<br>인스턴스 관리 설정만 해두면 알아서 해줌<br>한 인스턴스가 오프라인이 되면 다른 인스턴스로 스스로 대체한다.</li>
-</ul>
-<hr>
-<h3 id="5-Use-StreamSets-Control-Hub-with-Kubernetes-to-Start-Multiple-Data-Collector-Containers-On-Demand-유료"><a href="#5-Use-StreamSets-Control-Hub-with-Kubernetes-to-Start-Multiple-Data-Collector-Containers-On-Demand-유료" class="headerlink" title="5.Use StreamSets Control Hub with Kubernetes to Start Multiple Data Collector Containers On Demand (유료)"></a>5.Use StreamSets Control Hub with Kubernetes to Start Multiple Data Collector Containers On Demand (유료)</h3><p>쿠버네티스 클러스터를 사용한다면  Control Hub’s Kubernetes Control Agent를 사용할 수 있다.<br>Google Kubernetes Engine 또는 Azure Kubernetes Service 에서도 사용 가능하며 데이터 센터에도 배포가 가능하다.<br>YARN or Mesos 보다 유연한 클러스터링 환경을 제공한다.</p>
-<ul>
-<li>장점<br>Control Agent는 Control Hub와 통신하여 실행중인 Kubernetes 클러스터에서 Data Collector 컨테이너를 자동으로 프로비저닝합니다.<br><code>프로비저닝(deploying, registering, starting, scaling, and stopping the Data Collector containers)</code></li>
-</ul>
-<hr>
-<h3 id="Cluster-Streaming-Mode-vs-StreamSets-Control-Hub"><a href="#Cluster-Streaming-Mode-vs-StreamSets-Control-Hub" class="headerlink" title="Cluster Streaming Mode vs StreamSets Control Hub"></a>Cluster Streaming Mode vs StreamSets Control Hub</h3><p>YARN이나 Mesos를 사용하지 않지만 Data Collector의 인스턴스를 수동으로 관리하고 싶지 않을 때 StreamSets Control Hub를 사용할 수 있다.</p>
-<p>Control Hub는 Cluster Streaming Mode와 유사한 자동화 기능을 제공하지만 파이프 라인을 실행할 할 수 있는 Data Collector 인스턴스가 요구됨</p>
-<p>Control Hub는 Data Collector 인스턴스의 모니터링, 하나의 인스턴스가 죽었을 때 대체하는 기능등을 제공한다.<br>Control Hub는 자체적인 통계기능을 제공함, 파이프라인 커밋 히스토리를 볼 수 있다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;https://streamsets.com/blog/five-ways-scale-kafka-streamsets/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://streamsets.com/blog/five-w
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="오픈소스,기술" scheme="http://KKimSangHeon.github.io/categories/CS/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EA%B8%B0%EC%88%A0/"/>
-    
-    
-      <category term="Streamset" scheme="http://KKimSangHeon.github.io/tags/Streamset/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>StreamSets 과거 라이브러리 추가하기</title>
-    <link href="http://KKimSangHeon.github.io/2020/01/07/streamset2/"/>
-    <id>http://KKimSangHeon.github.io/2020/01/07/streamset2/</id>
-    <published>2020-01-07T11:19:02.000Z</published>
-    <updated>2020-01-08T12:09:17.794Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="StreamSet-과거-라이브러리-추가하기"><a href="#StreamSet-과거-라이브러리-추가하기" class="headerlink" title="StreamSet 과거 라이브러리 추가하기"></a>StreamSet 과거 라이브러리 추가하기</h3><p>Origin, Destination의 과거버전 지원하도록 라이브러리 추가</p>
-<h3 id="상황"><a href="#상황" class="headerlink" title="상황"></a>상황</h3><p>카프카 0.8버전을 사용해야 하는데 스트림셋에서는 0.10 부터 지원하는 상황이었다.</p>
-<p>찾아보니 해결방법은 있다.</p>
-<h3 id="해결방법"><a href="#해결방법" class="headerlink" title="해결방법"></a>해결방법</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">https://archives.streamsets.com/index.html 에 접속하여 LegacyLibs를 검색 후 자신의 스트림셋에 맞는 것을 찾아 들어가자</div><div class="line">그 후 자신이 받을 라이브러리의 링크복사.</div><div class="line"></div><div class="line"></div><div class="line"># wget https://archives.streamsets.com/datacollector/3.12.0/legacy/streamsets-datacollector-apache-kafka_0_8_2-lib-3.12.0.tgz</div><div class="line">스트림셋 경로 혹은 추가 라이브러리를 저장할 디렉토리에 들어간 후 wget 명령어를 통해 해당 파일을 다운받고</div><div class="line"></div><div class="line"># tar -xvzf streamsets-datacollector-apache-kafka_0_8_2-lib-3.12.0.tgz</div><div class="line">해당 라이브러리가 저장된 디렉토리를 복사</div><div class="line"></div><div class="line"></div><div class="line"># cd streamsets-datacollector-3.11.0/libexec</div><div class="line">스트림셋이 설치된 디렉토리 내 libexec디렉토리</div><div class="line"></div><div class="line"># vi sdc-env.sh</div><div class="line">맨아래 다음을 추가</div><div class="line">export USER_LIBRARIES_DIR=&quot;아까 설치한 라이브러리가 저장된 경로 복붙&quot;</div><div class="line"></div><div class="line"># vi $SDC_CONF/sdc-security.policy</div><div class="line">나의경우 SDC_CONF는 /etc/sdc이다.</div><div class="line"></div><div class="line">맨아래 다음을 추가하자 &quot;file:/&quot; 뒤에는 라이브러리가 설치된 경로</div><div class="line">grant codebase &quot;file:///home/tkdgjs1501/streamsets-datacollector-3.11.0/user-libs/-&quot; &#123;</div><div class="line">  permission java.security.AllPermission;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">스트림셋 리스타트</div></pre></td></tr></table></figure>
-<h3 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h3><p><a href="https://streamsets.com/documentation/datacollector/3.4.2/help/datacollector/UserGuide/Installation/AddtionalStageLibs.html" target="_blank" rel="external">https://streamsets.com/documentation/datacollector/3.4.2/help/datacollector/UserGuide/Installation/AddtionalStageLibs.html</a><br><a href="https://streamsets.com/documentation/datacollector/3.4.2/help/datacollector/UserGuide/Configuration/CustomStageLibraries.html#concept_pmc_jk1_1x" target="_blank" rel="external">https://streamsets.com/documentation/datacollector/3.4.2/help/datacollector/UserGuide/Configuration/CustomStageLibraries.html#concept_pmc_jk1_1x</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;StreamSet-과거-라이브러리-추가하기&quot;&gt;&lt;a href=&quot;#StreamSet-과거-라이브러리-추가하기&quot; class=&quot;headerlink&quot; title=&quot;StreamSet 과거 라이브러리 추가하기&quot;&gt;&lt;/a&gt;StreamSet 과거 라이브러
     
     </summary>
     

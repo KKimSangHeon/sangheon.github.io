@@ -175,36 +175,15 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/Etc/%EA%B0%95%EC%97%B0/</loc>
+        <loc>http://KKimSangHeon.github.io/categories/Etc/</loc>
         <lastmod>2019-12-25T13:52:06.581Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/Etc/</loc>
-        <lastmod>2019-12-26T12:19:44.590Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/categories/Etc/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EA%B8%B0%EC%88%A0/</loc>
-        <lastmod>2019-12-26T12:19:44.590Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/categories/OS/</loc>
-        <lastmod>2019-12-26T12:20:24.044Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/categories/OS/Linux/</loc>
-        <lastmod>2019-12-26T12:20:24.044Z</lastmod>
+        <loc>http://KKimSangHeon.github.io/categories/Etc/%EA%B0%95%EC%97%B0/</loc>
+        <lastmod>2019-12-25T13:52:06.581Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -217,36 +196,8 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/CS/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EA%B8%B0%EC%88%A0/</loc>
-        <lastmod>2020-01-14T10:11:12.789Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/categories/CS/</loc>
-        <lastmod>2020-01-25T09:46:57.134Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/categories/CS/OOP/</loc>
         <lastmod>2020-01-25T09:46:57.134Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/categories/Web-App/</loc>
-        <lastmod>2020-01-28T13:27:01.992Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/categories/Web-App/Spring/</loc>
-        <lastmod>2020-01-28T13:27:01.992Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -261,6 +212,48 @@
     <url>
         <loc>http://KKimSangHeon.github.io/categories/About-Me/Photograph/</loc>
         <lastmod>2020-01-28T13:27:36.372Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/Web-App/</loc>
+        <lastmod>2020-01-30T12:10:46.998Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/Web-App/Spring/</loc>
+        <lastmod>2020-01-30T12:10:46.998Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/CS/</loc>
+        <lastmod>2020-01-30T12:13:44.241Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/CS/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EA%B8%B0%EC%88%A0/</loc>
+        <lastmod>2020-01-30T12:13:44.241Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/OS/</loc>
+        <lastmod>2020-01-30T12:16:37.485Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/OS/Linux/</loc>
+        <lastmod>2020-01-30T12:16:37.485Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
