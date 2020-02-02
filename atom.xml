@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2020-01-30T12:16:37.485Z</updated>
+  <updated>2020-02-02T10:57:15.198Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>20200201 서울미술관</title>
+    <link href="http://KKimSangHeon.github.io/2020/02/02/photograph/"/>
+    <id>http://KKimSangHeon.github.io/2020/02/02/photograph/</id>
+    <published>2020-02-02T10:51:10.000Z</published>
+    <updated>2020-02-02T10:57:15.198Z</updated>
+    
+    <content type="html"><![CDATA[<p>서울미술관 - 보통의 거짓말<br><img src="/2020/02/02/photograph/IMG_3299_1.jpg" alt="1" title="1"><br><img src="/2020/02/02/photograph/IMG_3262.jpg" alt="1" title="1"><br><img src="/2020/02/02/photograph/IMG_3265.jpg" alt="1" title="1"><br><img src="/2020/02/02/photograph/IMG_3265_1.jpg" alt="1" title="1"><br><img src="/2020/02/02/photograph/IMG_3266.jpg" alt="1" title="1"><br><img src="/2020/02/02/photograph/IMG_3269.jpg" alt="1" title="1"><br><img src="/2020/02/02/photograph/IMG_3274.jpg" alt="1" title="1"><br><img src="/2020/02/02/photograph/IMG_3277.jpg" alt="1" title="1"><br><img src="/2020/02/02/photograph/IMG_3284.jpg" alt="1" title="1"><br><img src="/2020/02/02/photograph/IMG_3285.jpg" alt="1" title="1"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;서울미술관 - 보통의 거짓말&lt;br&gt;&lt;img src=&quot;/2020/02/02/photograph/IMG_3299_1.jpg&quot; alt=&quot;1&quot; title=&quot;1&quot;&gt;&lt;br&gt;&lt;img src=&quot;/2020/02/02/photograph/IMG_3262.jpg&quot; 
+    
+    </summary>
+    
+      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
+    
+      <category term="Photograph" scheme="http://KKimSangHeon.github.io/categories/About-Me/Photograph/"/>
+    
+    
+      <category term="Photograph" scheme="http://KKimSangHeon.github.io/tags/Photograph/"/>
+    
+  </entry>
   
   <entry>
     <title>로그를 정제해보자</title>
@@ -861,71 +886,6 @@ public String print(Event object, Locale locale) {
     
     
       <category term="Spring" scheme="http://KKimSangHeon.github.io/tags/Spring/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>StreamSets 이란</title>
-    <link href="http://KKimSangHeon.github.io/2020/01/07/streamsets4/"/>
-    <id>http://KKimSangHeon.github.io/2020/01/07/streamsets4/</id>
-    <published>2020-01-07T11:25:56.000Z</published>
-    <updated>2020-01-07T12:09:34.525Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="StreamSets란"><a href="#StreamSets란" class="headerlink" title="StreamSets란?"></a>StreamSets란?</h3><p>데이터 흐름을 관리할 수 있으며 Data drift에 유연하게 대처가능한 솔루션</p>
-<img src="/2020/01/07/streamsets4/SS1.jpg" alt="StreamSets의 플랫폼들" title="StreamSets의 플랫폼들">
-<h3 id="StreamSets-활용-및-장점-요약"><a href="#StreamSets-활용-및-장점-요약" class="headerlink" title="StreamSets 활용 및 장점 요약"></a>StreamSets 활용 및 장점 요약</h3><p>글로벌 社에서 StreamSets을 Data Lakes, Big Data/Hadoop Ingestion, Event Streaming, IoT/edge device integration 등 용도로 사용중.</p>
-<ul>
-<li>데이터센터, AWS, GCP 등에 배포 가능하며 YARN, MESOS, Kubernetes을 활용한 스케일링 가능.</li>
-<li>처리량, 지연, 에러율 등을 UI로 확인할 수 있음.</li>
-<li>민감한 데이터를 보호할 수 있음.</li>
-</ul>
-<h3 id="StreamSets의-개발-운영-Agility-측면의-장점"><a href="#StreamSets의-개발-운영-Agility-측면의-장점" class="headerlink" title="StreamSets의 개발, 운영, Agility 측면의 장점"></a>StreamSets의 개발, 운영, Agility 측면의 장점</h3><p>개발자 생산성 측면</p>
-<ul>
-<li>코드작성의 최소화, 자동 인스턴스 관리, 파이프라인 로직의 재활용 가능</li>
-</ul>
-<p>운영효율 측면</p>
-<ul>
-<li>파이프라인 시각화, 파이프라인 성능 모니터링, 이벤트에 대한 동작설정 가능</li>
-</ul>
-<p>Agility 측면</p>
-<ul>
-<li>Downtime 없는 파이프라인 내 데이터 시스템 업데이트, 데이터 변경 시 자동탐지 및 동기화, 버전 별 파이프라인의 성능 비교 가능</li>
-</ul>
-<h3 id="StreamSets-Data-Collector"><a href="#StreamSets-Data-Collector" class="headerlink" title="StreamSets Data Collector"></a>StreamSets Data Collector</h3><img src="/2020/01/07/streamsets4/SS2.png" alt="파이프라인 생성 시 예시" title="파이프라인 생성 시 예시">
-<p>위의 화면에서 드래그앤드롭 방식으로 데이터 flow를 파이프라인으로 생성 및 관리 가능</p>
-<p>파이프라인은 Origin/Processor/Destination/Executor 로 구성된다.</p>
-<img src="/2020/01/07/streamsets4/SS3.png" alt="파이프라인 요소별 구분" title="파이프라인 요소별 구분">
-<h4 id="Origin"><a href="#Origin" class="headerlink" title="Origin"></a>Origin</h4><ul>
-<li>파이프라인의 시작점을 의미하며 파이프라인 내 하나만 생성할 수 있다.</li>
-<li>Kafka / Redis / GCP / TCP / UDP 를 포함한 약 60여개를 data 근원지로 활용가능</li>
-</ul>
-<h4 id="Processor"><a href="#Processor" class="headerlink" title="Processor"></a>Processor</h4><ul>
-<li>데이터 처리, 가공</li>
-<li>Stream Selector / JSON Parser / Jython Evaluator /  Field Masker 를 포함한 약 50여개 기능 제공</li>
-</ul>
-<h4 id="Destination"><a href="#Destination" class="headerlink" title="Destination"></a>Destination</h4><ul>
-<li>파이프라인의 목적지</li>
-<li>Hbase / Local file / Redis / DB 를 포함한 50여개를 data 목적지로 활용가능</li>
-</ul>
-<h4 id="Executor"><a href="#Executor" class="headerlink" title="Executor"></a>Executor</h4><ul>
-<li>이벤트를 수신했을 때 동작 정의</li>
-<li>Email Executor / Shell Executor / JDBC Query Executor 를 포함한 약 10여개 기능 제공</li>
-</ul>
-<p>세부지원 요소 확인하기<br><a href="https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Processors/Processors_overview.html#concept_hpr_twm_jq" target="_blank" rel="external">https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Processors/Processors_overview.html#concept_hpr_twm_jq</a><br><a href="https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Executors/Executors-title.html" target="_blank" rel="external">https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Executors/Executors-title.html</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;StreamSets란&quot;&gt;&lt;a href=&quot;#StreamSets란&quot; class=&quot;headerlink&quot; title=&quot;StreamSets란?&quot;&gt;&lt;/a&gt;StreamSets란?&lt;/h3&gt;&lt;p&gt;데이터 흐름을 관리할 수 있으며 Data drift에 유연
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="오픈소스,기술" scheme="http://KKimSangHeon.github.io/categories/CS/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EA%B8%B0%EC%88%A0/"/>
-    
-    
-      <category term="Streamset" scheme="http://KKimSangHeon.github.io/tags/Streamset/"/>
     
   </entry>
   
