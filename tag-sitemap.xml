@@ -681,20 +681,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/OOP/</loc>
-        <lastmod>2020-01-25T09:46:57.134Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/tags/Spring/</loc>
-        <lastmod>2020-01-30T12:10:46.998Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/tags/Kafka/</loc>
         <lastmod>2020-01-30T12:13:44.241Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -711,6 +697,20 @@
     <url>
         <loc>http://KKimSangHeon.github.io/tags/Photograph/</loc>
         <lastmod>2020-02-02T10:57:15.198Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/OOP/</loc>
+        <lastmod>2020-02-03T11:35:00.293Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Spring/</loc>
+        <lastmod>2020-02-03T11:35:47.921Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

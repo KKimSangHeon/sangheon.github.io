@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2020/02/03/spring/</loc>
+        <lastmod>2020-02-03T11:35:47.921Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2020/01/09/object/</loc>
+        <lastmod>2020-02-03T11:35:00.293Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2020/02/02/photograph/</loc>
         <lastmod>2020-02-02T10:57:15.198Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -57,14 +73,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2020/01/28/spring1/</loc>
         <lastmod>2020-01-28T13:26:57.118Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2020/01/09/object/</loc>
-        <lastmod>2020-01-25T09:46:57.134Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
