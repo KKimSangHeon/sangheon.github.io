@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2020-02-03T12:50:08.049Z</updated>
+  <updated>2020-02-04T11:33:39.621Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -16,17 +16,50 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>16.프록시 기반 AOP</title>
+    <link href="http://KKimSangHeon.github.io/2020/02/04/spring/"/>
+    <id>http://KKimSangHeon.github.io/2020/02/04/spring/</id>
+    <published>2020-02-04T11:31:16.000Z</published>
+    <updated>2020-02-04T11:33:39.621Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="프록시-기반-AOP"><a href="#프록시-기반-AOP" class="headerlink" title="프록시 기반 AOP"></a>프록시 기반 AOP</h3><p>스프링 AOP: 프록시 기반 AOP<br>스프링 AOP 특징<br> 모든 AOP 기능을 제공하는 것이 목적이 아니라, 스프링 IoC와 연동하여 엔터프라이즈<br>애플리케이션에서 가장 흔한 문제에 대한 해결책을 제공하는 것이 목적.</p>
+<p>프록시 패턴?<br>아래그림과 같이 인터페이스가 있고 클라이언트는 프록시 객체를 갖는다. 프록시는 타겟 객체를 원래해야할 일을 갖고있는 객체를 감싸 실체 클라이언트의 요청을 처리</p>
+<img src="/2020/02/04/spring/Proxy.PNG" alt="Proxy" title="Proxy">
+<p>프록시 패턴의 존재 이유?<br>(기존 코드 변경 없이) 접근 제어 또는 부가 기능 추가</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">public interface EventService &#123;</div><div class="line">	void createEvent();</div><div class="line">	void publishEvent();</div><div class="line">	void deleteEvent();</div><div class="line">&#125;</div><div class="line"></div><div class="line">@Service</div><div class="line">public class SimpleEventServeice implemets EventService &#123;</div><div class="line">	@Override</div><div class="line">	public void createEvent() &#123;</div><div class="line">		//로직</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	public void publishEvent() &#123;</div><div class="line">		//로직</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	public void deleteEvent() &#123;</div><div class="line">		//로직</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">@Component</div><div class="line">public class AppRunner implemets ApplicationRunner &#123;</div><div class="line">	@Autowired</div><div class="line">	EventService eventService;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	public void run(.....)&#123;</div><div class="line">		eventService.createEvent();</div><div class="line">		eventService.publishEvent();</div><div class="line">		eventService.deleteEvent();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>위와같이 클래스가 있을 때     void createEvent(); / void publishEvent(); 두메소드의 내부 동작시간을 확인하고 싶을떄 어떻게 해야할까</code><br>SimpleEventServeice 내부에 currentTime 와 endTime를 빼는 로직을 추가할 순 있지만 프록시로 구현가능하다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">@Primary	//EventService를 여러곳에서 impl했을 때 활용하는것이었다</div><div class="line">@Service</div><div class="line">public class ProxySimpleEvenService implements EventService &#123;</div><div class="line"></div><div class="line">	@Autowired</div><div class="line">	SimpleEventService simpleEventService;	//EventService simpleEventService; 도 가능</div><div class="line"></div><div class="line">	@Override</div><div class="line">	public void createEvent() &#123;</div><div class="line">		long begin = System.currentTimeMilliis();</div><div class="line">		simpleEventService.createEvent();</div><div class="line">		print(System.currentTimeMills()-begin);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	public void publishEvent() &#123;</div><div class="line">		long begin = System.currentTimeMilliis();</div><div class="line">		simpleEventService.publishEvent();</div><div class="line">		print(System.currentTimeMills()-begin);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	public void deleteEvent() &#123;</div><div class="line">		simpleEventService.deleteEvent();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위와같이 할경우 프록시 기반으로 구현가능하다.<br>하지만 위의경우 중복코드 추가, 해당 클래스를 만드는 비용이 든다. 또한 해당기능(타임을 재는것)을 다른곳에도 추가해야 한다면 모든 클래스에 프록시를 만들고 중복 코드를 추가해야되나????</p>
+<p><code>위의 문제점을 해결한것이 스프링AOP</code><br>동적으로 프록시 객체를 생성하는 방법이다. 이는 스프링 IoC컨테이너가제공하는 기반 시설과 다이나믹 프록시를 사용하여 문제를 해결함</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;프록시-기반-AOP&quot;&gt;&lt;a href=&quot;#프록시-기반-AOP&quot; class=&quot;headerlink&quot; title=&quot;프록시 기반 AOP&quot;&gt;&lt;/a&gt;프록시 기반 AOP&lt;/h3&gt;&lt;p&gt;스프링 AOP: 프록시 기반 AOP&lt;br&gt;스프링 AOP 특징&lt;br&gt; 
+    
+    </summary>
+    
+      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/categories/Web-App/Spring/"/>
+    
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
     <title>15.스프링 AOP</title>
     <link href="http://KKimSangHeon.github.io/2020/02/03/spring-1/"/>
     <id>http://KKimSangHeon.github.io/2020/02/03/spring-1/</id>
     <published>2020-02-03T12:21:26.000Z</published>
-    <updated>2020-02-03T12:50:08.049Z</updated>
+    <updated>2020-02-04T11:33:45.829Z</updated>
     
     <content type="html"><![CDATA[<h3 id="스프링-AOP"><a href="#스프링-AOP" class="headerlink" title="스프링 AOP"></a>스프링 AOP</h3><p>AOP의 구현체를 제공하며 AspectJ와 연동하여 사용할 수 있으며 스프링 내부적으로 구현한 Spring AOP를 사용할 수 있음. 이를 기반으로 다양한 기능이 제공되고있다.</p>
 <p><code>AOP?</code><br>흩어진 Aspect를 모듈화 하는 프로그래밍 기법이다. OOP와 서로 보완하는 관계이다. 즉 OOP를 더 잘할 수 있게 도와줌</p>
 <p>AOP는 Aspect로 흩어져 있는것을 모은다. 모을 때는 관심별로 각각 독립적으로 만든다.<br>즉 해야할 일과 어디어디에 적용해야 할지 묶어둔것!</p>
 <h3 id="AOP의-주요개념"><a href="#AOP의-주요개념" class="headerlink" title="AOP의 주요개념"></a>AOP의 주요개념</h3><p>Aspect : 공통적인것을 꺼내서 모듈화 한것.<br>Target: 적용이 되는 대상<br>Advice : 해야할 일<br>Joint Point : 메서드 실행시점. 즉 생성자 호출하기 직전, 생성자 호출했을때, 필드에 접근하기전, 필드에서 값을 가져갔을 때 등 여러가지의 합류접이 있다.<br>Pointcut : “A라는 클래스의 B라는 메소드를 호출할 때 만 해당 어디바이스를 적용할 것이다”라는것으로 즉 어디에 적용해야 하는지.</p>
-<img src="/2020/02/03/spring-1/spring1.PNG" alt="1" title="1">
+<img src="/2020/02/03/spring-1/spring1.PNG" alt="AOP" title="AOP">
 <h3 id="AOP-구현체"><a href="#AOP-구현체" class="headerlink" title="AOP 구현체"></a>AOP 구현체</h3><p>자바에는 대표적으로 AspectJ, Spring AOP가 있다.</p>
 <h3 id="AOP-적용하는-방법"><a href="#AOP-적용하는-방법" class="headerlink" title="AOP 적용하는 방법"></a>AOP 적용하는 방법</h3><p><code>컴파일타임</code> : 자바파일을 클래스 파일로 만들 때 조작이된 바이트 코드를 생성해 내는것.<br>로드타임, 런타임때 성능 부하가 없지만 이렇게 만들기 위해서는 별도의 컴파일 과정을 거쳐야함</p>
 <p><code>로드타임</code> : 컴파일은 아주 순수하게 됐다. 그런데 A라는 클래스를 로딩하는 시점에 뭔가를 끼워서 넣는것(로드타임 위빙이라 함)<br>클래스 로딩시점에 약간의 부하가 발생하며 로드타임 위버를 설정해줘야함. 다양한 문법을 사용할 수 있다(AspectJ)</p>
@@ -808,58 +841,6 @@ public String print(Event object, Locale locale) {
     
     
       <category term="Streamset" scheme="http://KKimSangHeon.github.io/tags/Streamset/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>object</title>
-    <link href="http://KKimSangHeon.github.io/2020/01/09/object/"/>
-    <id>http://KKimSangHeon.github.io/2020/01/09/object/</id>
-    <published>2020-01-09T12:57:06.000Z</published>
-    <updated>2020-02-03T11:35:00.293Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="오브젝트-9장"><a href="#오브젝트-9장" class="headerlink" title="오브젝트 9장"></a>오브젝트 9장</h3><p>OCP - 추상화에 의존하여 컴파일 타임의존성은 유지하면서 런타임 의존성의 가능성을 확장하고 수정할 수 있는 구조.</p>
-<p>객체 생성,사용자 분리 - 동일 클래스 안에서 객체 생성과 사용이라는 두가지 이질적인 목적을 가진 코드가 공존할 경우 부적절.<br>(Movie에게 금액할인정책을 적용할지, 비율할인 정책을 적용할지 알고 있는것은 그 시점에 Movie와 협력할 클라이언트이므로 클라이언트가 할인정책을 생성하고 Movie는 추상화된 메소드를 사용하여 구현)</p>
-<p>FACTORY - 생성과 사용을 분리하기 위해 객체생성에 특화된 객체</p>
-<p>표현적 분해 - 도메인에 존재하는 사물 또는 개념을 표현하는 객체들을 이용해 시스템 분해</p>
-<p>PURE FABRICATION - 특정 책임을 할당하기 위해 Information expert를 찾아봤는데 없을 경우 도메인 모델에 속하지 않는 Factory를 활용. 보통 행위적 분해로 인해 생성되는것이 대부분</p>
-<p>의존성주입 - 생성자 주입, setter주입, 메서드 주입(주입인가에 대한 논란이 있다)</p>
-<p>SERVICE LOCATOR 패턴 - 저장소(Storage.AmountDiscountPolicy)를 통해 의존성 해결하는 패턴 (가장널리 쓰임 - 그렇지만 비추함)</p>
-<p>의존성역전원칙 - 상위 모듈, 하위모듈 둘 다 추상화에 의존하라(과거 패러다임은 상위가 하위에 의존)</p>
-<p>SEPARATED INTERFACE 패턴 - 추상화(인터페이스 등)를 별도의 패키지가 아닌 클라이언트가 속한 패키지에 포함시켜라</p>
-<h3 id="오브젝트-10장"><a href="#오브젝트-10장" class="headerlink" title="오브젝트 10장"></a>오브젝트 10장</h3><p>상속을 위한 경고- 자식 클래스의 메소드 아넹서 super 참조를 이용해 부모클래스의 메소드를 호출할 경우 두 클래스는 강하게 결합된다. super호출을 제거 할 수읶는 방법을 찾아라</p>
-<p>경고2 상속받은 부모 클래스의 메소드가 자식 클래스의 내부 구조에 대한 규칙을 깨뜨릴수있다<br>ex 스택 add(0,”data”) 으로 맨앞에 넣는것…</p>
-<p>경고3 자식 클래스가 부모 클래스의 메소드를 오버라이딩 할 경우 부모클래스가 자신의 메소드를 사용하는 방법에 클래스가 결합될 수 있다</p>
-<p>경고4 클래스를 상속하면 결합도로 인해 자식 클래스와 부모 클래스의 구현을 영원히 변경하지 않거나, 자식 클래스와 부모 클래스를 동시에 변경하거나 둘 중 하나를 선택할 수 밖에 없다</p>
-<p>취약한 기반 클래스문제- 자식클래스가 부모 클래스의 뱐경에 취약해지는 현상</p>
-<p>상속문제 해결방법<br>1.차이를 메서드로 추출하라 -&gt; 중복코드를 부모 클래스로 올려라(메소드 먼저 올리면 불필요한 인스턴스 변수를 남겨두기 쉽다) -&gt; 다른부분은 시그니처만 올려라(protected로)</p>
-<p>상속의 오용과 남용은 어플리케이션을 이해하고 확장하기 어렵게 만드므로 정말로 필요한 경우에만 사용하라</p>
-<h3 id="오브젝트-11장"><a href="#오브젝트-11장" class="headerlink" title="오브젝트 11장"></a>오브젝트 11장</h3><p>재사용을 위한 방법 - 상속, 합성<br>상속관계 - Is-a - 화이트박스 재사용(부모클래스의 내부가 자식에 공개되기 때문)<br>합성관계 - Has-a - 블랙박스 재사용(객체의 내부는 공개되지 않고 인터페이스를 통해서만 재사용됨.)</p>
-<p>상속은 결합도를 높이며 코드재사용을 위해서는 상속보다는 합성을 써라</p>
-<p>상속은 부모클래스의 안에 구현된 코드에 의존하지만 합성은 객체의 퍼블릭 인터페이스를 의존하므로 결합도 낮아진다.</p>
-<p>상속은 프로그램을 구성하는 개념들을 기반으로 다형성을 가능하게 하는 타입계층을 구축하기 위한것이다.</p>
-<p>훅메서드 - 추상 메서드와 동일하게 자식 클래스에서 오버라이딩할 의도로 메서드를 추가했지만 편의를 위해 기본 구현을 제공하는 메서드.<br>ex , 추상클래스 내 afterCalculate 메소드를 단순히 retrun fee; 로 구현하고 다른 메서드가 afterCalculate를 호출할 경우 추상클래스를 상속한 클래스들은  afterCalculate메서드를 적절히 오버라이딩 하여 활용할 수 있다.</p>
-<p>클래스폭발/조합의 폭발- 상속의 경우 부모의 구현에 강하게 결합되므로 하나의 기능을 추가하기 위해 필요이상으로 많은 수의 클래스를 추가해야하는 경우를 말함.</p>
-<p>상속관계는 컴파일 타임에 결저되고 고정되기 때문에 코드를 실행하는 도중에는 변경불가함.<br>합성은 컴파일타임 관계를 런타임 관계로 변경함으로써 문제를 해결한다. 합성을 사용하면 구현이 아닌 퍼블릭 인터페이스에 대해서만 의존할 수 있기 때문에 런타임에 객체의 관계를 변경할 수 있따.</p>
-<p>상속이 조합의 결과를 개별 클래스 안으로 밀어넣는 방법이라면 합성은 조합을 구성하는 요소들을 개별 클래스로 구현한 후 실행 시점에 인스턴스를 조립하는 방법을 사용하는것이다.</p>
-<p>컴파일 타임 의존성, 런타임 의존성의 거리가 멀수록 설계가 유연해지지만 거리가 멀면 멀수록 설계의 복잡도가 상승한다. 대부분의 경우 단순한 설계가 정답이지만 변경에 따르는 고통이 복잡성으로 인한 혼란은 넘어선다면 유연성에 손을 들어주는것이 맞다.</p>
-<p>믹스인은 객체를 생성할 때 코드 일부를 클래스 안에 섞어 넣어 재사용하는 기법이다. 컴파일 시점에 필요한 코드 조각을 조합하는 재사용 방법이다.(합성은 실행시점에 객체를 조합하는 재사용방법)</p>
-<p>상속과 믹스인은 다르다. 상속의 진정한 목적은 자식클래스를 부모 클래스와 동일한 개념적인 범주로 묶어 is-a관계를 만들기 위한것. 믹스인은 코드를 다른 코드안에 섞어넣기 위한 방법으로 상속과 같이 결합도 문제를 유발하지 않음</p>
-<p>/</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;오브젝트-9장&quot;&gt;&lt;a href=&quot;#오브젝트-9장&quot; class=&quot;headerlink&quot; title=&quot;오브젝트 9장&quot;&gt;&lt;/a&gt;오브젝트 9장&lt;/h3&gt;&lt;p&gt;OCP - 추상화에 의존하여 컴파일 타임의존성은 유지하면서 런타임 의존성의 가능성을 확장하
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="OOP" scheme="http://KKimSangHeon.github.io/categories/CS/OOP/"/>
-    
-    
-      <category term="OOP" scheme="http://KKimSangHeon.github.io/tags/OOP/"/>
     
   </entry>
   
