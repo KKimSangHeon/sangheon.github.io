@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2020-02-04T11:33:39.621Z</updated>
+  <updated>2020-02-05T12:28:02.035Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>17.스프링 AOP</title>
+    <link href="http://KKimSangHeon.github.io/2020/02/05/spring/"/>
+    <id>http://KKimSangHeon.github.io/2020/02/05/spring/</id>
+    <published>2020-02-05T12:02:03.000Z</published>
+    <updated>2020-02-05T12:28:02.035Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="스프링-AOP"><a href="#스프링-AOP" class="headerlink" title="스프링 AOP"></a>스프링 AOP</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">public interface EventService &#123;</div><div class="line">	void createEvent();</div><div class="line">	void publishEvent();</div><div class="line">	void deleteEvent();</div><div class="line">&#125;</div><div class="line"></div><div class="line">@Service</div><div class="line">public class SimpleEventServeice implemets EventService &#123;</div><div class="line">	@Override</div><div class="line">	public void createEvent() &#123;</div><div class="line">		//로직</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	public void publishEvent() &#123;</div><div class="line">		//로직</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	public void deleteEvent() &#123;</div><div class="line">		//로직</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">@Component</div><div class="line">public class AppRunner implemets ApplicationRunner &#123;</div><div class="line">	@Autowired</div><div class="line">	EventService eventService;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	public void run(.....)&#123;</div><div class="line">		eventService.createEvent();</div><div class="line">		eventService.publishEvent();</div><div class="line">		eventService.deleteEvent();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위와같이 코드를 작성하고 pom파일에 의존성을 추가하자.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">  &lt;artifactId&gt;spring-boot-starter-aop&lt;/artifactId&gt;</div><div class="line"></div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure></p>
+<p>이제 해야할일(어드바이스) 어디에 적용할지(포인트컷)를 정하자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">@Component</div><div class="line">@Aspect</div><div class="line">public class PerfAspect &#123;</div><div class="line"></div><div class="line">  @Around(&quot;execution(* com.sangheon.*.EventService.*())&quot;)</div><div class="line">  // com.sangheon으로 시작하는 EventService의 모든 메서드에 아래 행위를 적용하라</div><div class="line">  // 포인트컷을 여러곳에서 재사용할것이 아니라면 이렇게 사용하라.</div><div class="line"></div><div class="line">  public Object logPerf(ProceedingJoinPoint pjp) &#123;</div><div class="line">    //pjp는 어드바이스가 적용되는 대상 즉 메소드 자체로 보면된다.</div><div class="line">    long begin = System.currentTimeMills());</div><div class="line">    Object reVal = pjp.proceed();</div><div class="line">    return reVal;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>위의 경우 모든 메소드에 적용된다. deleteEvent에는 적용되기를 원치 않을경우 @annotation 을 만들어서 사용해보자.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">@Target(ElementType.METHOD)</div><div class="line">@Retention(RetentionPolicy.CLASS)   //컴파일까지 해당 어노테이션을 유지.. 이 줄은 생략가능</div><div class="line">public @interface PerLogging &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>이 후 적용되길 원하는 메소드에만 @PerLogging를 붙이자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">@PerLogging</div><div class="line">@Override</div><div class="line">public void createEvent() &#123;</div><div class="line">  //로직</div><div class="line">&#125;</div><div class="line"></div><div class="line">@PerLogging</div><div class="line">@Override</div><div class="line">public void publishEvent() &#123;</div><div class="line">  //로직</div><div class="line">&#125;</div><div class="line"></div><div class="line">@Override</div><div class="line">public void deleteEvent() &#123;</div><div class="line">  //로직</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>그리고 아래처럼 @Around 어노테이션을 수정하자<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">@Component</div><div class="line">@Aspect</div><div class="line">public class PerfAspect &#123;</div><div class="line"></div><div class="line">  @Around(&quot;@annotation(PerLogging)&quot;)</div><div class="line">  // com.sangheon으로 시작하는 EventService의 모든 메서드에 아래 행위를 적용하라</div><div class="line">  // 포인트컷을 여러곳에서 재사용할것이 아니라면 이렇게 사용하라.</div><div class="line"></div><div class="line">  public Object logPerf(ProceedingJoinPoint pjp) &#123;</div><div class="line">    //pjp는 어드바이스가 적용되는 대상 즉 메소드 자체로 보면된다.</div><div class="line">    long begin = System.currentTimeMills());</div><div class="line">    Object reVal = pjp.proceed();</div><div class="line">    return reVal;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>이제 돌려보면 deleteEvent외에만 적용되는것을 확인할 수있다.</p>
+<p>어드바이스 정의는 @Around 뿐만 아니라 @Before ,@AfterReturning, @AfterThrowing이 가능하다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;스프링-AOP&quot;&gt;&lt;a href=&quot;#스프링-AOP&quot; class=&quot;headerlink&quot; title=&quot;스프링 AOP&quot;&gt;&lt;/a&gt;스프링 AOP&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=
+    
+    </summary>
+    
+      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/categories/Web-App/Spring/"/>
+    
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/tags/Spring/"/>
+    
+  </entry>
   
   <entry>
     <title>16.프록시 기반 AOP</title>
@@ -810,37 +843,6 @@ public String print(Event object, Locale locale) {
     
     
       <category term="Spring" scheme="http://KKimSangHeon.github.io/tags/Spring/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>StreamSets의 에러처리</title>
-    <link href="http://KKimSangHeon.github.io/2020/01/09/streamset/"/>
-    <id>http://KKimSangHeon.github.io/2020/01/09/streamset/</id>
-    <published>2020-01-09T12:59:00.000Z</published>
-    <updated>2020-01-09T13:03:39.876Z</updated>
-    
-    <content type="html"><![CDATA[<p>에러 처리는 Stage(Origin, Processor, Destination, Executor) 관점, 파이프라인 관점에서 처리방법이 존재</p>
-<h3 id="Stage-Origin-Processor-Destination-Executor-관점"><a href="#Stage-Origin-Processor-Destination-Executor-관점" class="headerlink" title="Stage(Origin, Processor, Destination, Executor) 관점"></a>Stage(Origin, Processor, Destination, Executor) 관점</h3><p>Discard , Send to Error, Stop Pipeline</p>
-<h3 id="파이프라인-관점"><a href="#파이프라인-관점" class="headerlink" title="파이프라인 관점"></a>파이프라인 관점</h3><p>Discard, Send Response to Origin, Write to Another Pipeline, Write to Elasticsearch/File/Kafka …</p>
-<img src="/2020/01/09/streamset/error1.png" alt="에러처리 예시" title="에러처리 예시">
-<p>위 그림은 파이프라인을 총 2개 생성한 상황이다.</p>
-<p><code>카프카 컨슘 파이프라인</code>에서 에러가 발생할 경우 SDC RPC를 통해 다른 파이프라인으로 에러내용을 전달하도록 하였고 <code>에러처리 파이프라인</code>에서는 RPC로 받은 에러데이터를 Email로 보내고 Local 파일로 저장하는 상황이다.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;에러 처리는 Stage(Origin, Processor, Destination, Executor) 관점, 파이프라인 관점에서 처리방법이 존재&lt;/p&gt;
-&lt;h3 id=&quot;Stage-Origin-Processor-Destination-Executor-관점
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="오픈소스,기술" scheme="http://KKimSangHeon.github.io/categories/CS/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EA%B8%B0%EC%88%A0/"/>
-    
-    
-      <category term="Streamset" scheme="http://KKimSangHeon.github.io/tags/Streamset/"/>
     
   </entry>
   
