@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2020-02-05T12:28:02.035Z</updated>
+  <updated>2020-02-06T10:37:26.732Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>18.Null-safety</title>
+    <link href="http://KKimSangHeon.github.io/2020/02/06/spring/"/>
+    <id>http://KKimSangHeon.github.io/2020/02/06/spring/</id>
+    <published>2020-02-06T10:36:34.000Z</published>
+    <updated>2020-02-06T10:37:26.732Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Null-safety"><a href="#Null-safety" class="headerlink" title="Null-safety"></a>Null-safety</h3><p>컴파일타임에 널포인트 익셉션을 최소화</p>
+<p>널을 허용하느냐 안하느냐에 따라 툴의 지원을 받아 컴파일타임에 널포인트 익셉션 발생을 방지할 수 있다.</p>
+<p>Null-safety<br>스프링 프레임워크 5에 추가된 Null 관련 애노테이션<br>@NonNull, @Nullable, @NonNullApi (패키지 레벨 설정), @NonNullFields (패키지 레벨 설정) 을 설정하고 IDE에서 추가설정을 하고 아래처럼 코드를 작성하면 IDE상에서 null을 확인해준다,<br>목적<br>● (툴의 지원을 받아) 컴파일 시점에 최대한 NullPointerException을 방지하는 것</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">@Service</div><div class="line">public class EventService &#123;</div><div class="line">	@NonNull</div><div class="line">	public String createEvent(@NonNull String name) &#123;</div><div class="line">		return &quot;hello&quot; + name;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">@Component</div><div class="line">public class AppRunner implements ApplicationRunner &#123;</div><div class="line"></div><div class="line">	@Autowired</div><div class="line">	EventService eventService;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	public void run(ApplicationArguments args) throws Exception &#123;</div><div class="line">		eventService.createEvent(null);</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>다음과 같이 패키지 레벨에서 NonNull을 설정하고 Null을 허용할 부분에만 Nullable를 붙여 활용할 수 있다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@NonNullApi</div><div class="line">package sangheon.spring</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Null-safety&quot;&gt;&lt;a href=&quot;#Null-safety&quot; class=&quot;headerlink&quot; title=&quot;Null-safety&quot;&gt;&lt;/a&gt;Null-safety&lt;/h3&gt;&lt;p&gt;컴파일타임에 널포인트 익셉션을 최소화&lt;/p&gt;
+&lt;p&gt;널을 허용하
+    
+    </summary>
+    
+      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/categories/Web-App/Spring/"/>
+    
+    
+      <category term="Spring" scheme="http://KKimSangHeon.github.io/tags/Spring/"/>
+    
+  </entry>
   
   <entry>
     <title>17.스프링 AOP</title>
@@ -807,42 +838,6 @@ public String print(Event object, Locale locale) {
     
     
       <category term="Photograph" scheme="http://KKimSangHeon.github.io/tags/Photograph/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>4.@Component와 컴포넌트스캔</title>
-    <link href="http://KKimSangHeon.github.io/2020/01/10/spring/"/>
-    <id>http://KKimSangHeon.github.io/2020/01/10/spring/</id>
-    <published>2020-01-10T10:02:18.000Z</published>
-    <updated>2020-01-10T11:00:14.702Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Component와-컴포넌트스캔"><a href="#Component와-컴포넌트스캔" class="headerlink" title="@Component와 컴포넌트스캔"></a>@Component와 컴포넌트스캔</h3><h3 id="ComponentScan"><a href="#ComponentScan" class="headerlink" title="@ComponentScan"></a>@ComponentScan</h3><p>SpringBootApplication이 @ComponentScan을 갖고있는데 @ComponentScan으로 인해 @Service @Repository @Controller @Configuration를 붙이면 빈으로 등록되게 해준것이다.<br>(@Service/ @Repository/ @Controller/ @Configuration 은 내부적으로 @Component 를 갖고있다)</p>
-<p>ComponentScan은 basePackagesClasses로 값을 주면 스캔을 해서 빈을 생성하게 된다.</p>
-<p>즉 @SpringBootApplication이 어플리케이션 클래스에 붙어있을 경우 해당패키지에 대해 컴포넌트 스캔을 하게된다.(타 패키지는 스캔을 하지않음)</p>
-<p>컴포넌트 스캔을 한다고 해서 모든것을 빈으로 생성해주진 않는다. @Filter 으로 원하지 않는것에 대해 거를 수 있다.</p>
-<p><code>빈 주입이 잘안될땐 컴포넌트 스캔의 범위를 잘 생각해보자</code></p>
-<p>요약하면 @Component스캔은 basePackagesClasses /  @Filter 만 기억하자!</p>
-<p>빈이 많을경우 어플리케이션을 실행할 때 구동시간이 오래걸릴 수 있다.</p>
-<p>구동시간이 오래걸려서 싫을 때는 펑션을 사용한 빈 등록을 고려해보자(Spring 5부터 지원)</p>
-<h3 id="펑션을-사용한-빈-등록"><a href="#펑션을-사용한-빈-등록" class="headerlink" title="펑션을 사용한 빈 등록"></a>펑션을 사용한 빈 등록</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">MyBean 클래스는 @ComponentScan의 basePackagesClasses 범위 밖이다. MyBean은 @Service 없어도 됨.</div><div class="line"></div><div class="line">public static void main(String[] args) &#123;</div><div class="line">	new SpringApplicationBuilder().sources(Demospring51Application.class)</div><div class="line">		.initializers((ApplicationContextInitializer&lt;GenericApplicationContext&gt;)applicationContext -&gt; &#123;</div><div class="line">			applicationContext.registerBean(MyBean.class);</div><div class="line">		&#125;).run(args);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>위를 할경우 빈을 생성할 때 자신의 코드를 추가할 수 있고 구동시간의 이점이 있다.</p>
-<h3 id="ComponentScan의-동작-원리"><a href="#ComponentScan의-동작-원리" class="headerlink" title="ComponentScan의 동작 원리"></a>ComponentScan의 동작 원리</h3><p>BeanPostProcessor이 아닌 BeanFactoryPostProcessor를 구현한 ConfigurationClassPostProcessor와 연결되어 있다.<br>BeanFactoryPostProcessor은 BeanPostProcessor와 비슷한데 실행되는 시점이 다름. 다른 모든 빈들이 만들어지기 전에 적용해준다.<br>다른빈들이 모두 등록되기전에 컴포넌트 스캔을 해서 빈을 등록해준다.<br>여기서 다른빈이란 펑션을 사용한 빈 등록 등등…</p>
-<h3 id="참고사항"><a href="#참고사항" class="headerlink" title="참고사항"></a>참고사항</h3><p>펑션을 사용한 빈등록, @Bean 을 통해 빈을 등록하는 방법은 @ComponentScan을 나오게한 원인(많은 빈을 수동으로 등록하는 불편함)을 다시 야기하므로<br>@ComponentScan외의 것들을 사용하여 빈을 등록할 때는 잘생각해보자.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Component와-컴포넌트스캔&quot;&gt;&lt;a href=&quot;#Component와-컴포넌트스캔&quot; class=&quot;headerlink&quot; title=&quot;@Component와 컴포넌트스캔&quot;&gt;&lt;/a&gt;@Component와 컴포넌트스캔&lt;/h3&gt;&lt;h3 id=&quot;Com
-    
-    </summary>
-    
-      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
-    
-      <category term="Spring" scheme="http://KKimSangHeon.github.io/categories/Web-App/Spring/"/>
-    
-    
-      <category term="Spring" scheme="http://KKimSangHeon.github.io/tags/Spring/"/>
     
   </entry>
   
