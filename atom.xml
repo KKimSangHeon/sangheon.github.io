@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2020-02-09T04:29:48.265Z</updated>
+  <updated>2020-02-20T11:43:54.300Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>프로세스별 사용하는 포트확인하는 쉘</title>
+    <link href="http://KKimSangHeon.github.io/2020/02/20/linux/"/>
+    <id>http://KKimSangHeon.github.io/2020/02/20/linux/</id>
+    <published>2020-02-20T11:40:41.000Z</published>
+    <updated>2020-02-20T11:43:54.300Z</updated>
+    
+    <content type="html"><![CDATA[<p>특정서버에서 프로세스 별 사용하는 포트를 확인해야 했기에 처음으로 쉘 스크립트를 짜봤다..부끄러운 코드지만 추 후 쉘스크립트를 공부하고 돌아볼 용도로 업로드..</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line">unset process_info</div><div class="line">unset process_id</div><div class="line">unset program_name</div><div class="line">unset local_address</div><div class="line"></div><div class="line">rm -f sorttarget.txt</div><div class="line"></div><div class="line">fileter_program_list=(&quot;java&quot; &quot;redis&quot;)</div><div class="line"></div><div class="line">is_exist() &#123;</div><div class="line">	local needle array value</div><div class="line">	needle=&quot;$&#123;1&#125;&quot;; shift; array=(&quot;$&#123;@&#125;&quot;)</div><div class="line">	#for value in $&#123;array[@]&#125;; do [ $&#123;value&#125; == $&#123;needle&#125; ] &amp;&amp; echo &quot;true&quot; &amp;&amp; return; done</div><div class="line">	for value in $&#123;array[@]&#125;;</div><div class="line">  do [[ &quot;$&#123;needle&#125;&quot; == *&quot;$&#123;value&#125;&quot;* ]] &amp;&amp; echo &quot;true&quot; &amp;&amp; return; done</div><div class="line">	echo &quot;false&quot;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">netstat -nltp | while read line</div><div class="line">do</div><div class="line">        process_info=`echo $line | cut -d &apos; &apos; -f7`              # get PID/Program name</div><div class="line"></div><div class="line">        process_id=`echo $process_info | cut -d &apos;/&apos; -f1`        # seprated by &apos;/&apos;</div><div class="line">        program_name=`echo $process_info | cut -d &apos;/&apos; -f2`</div><div class="line">        local_address=`echo $line | cut -d &apos; &apos; -f4`</div><div class="line"></div><div class="line">#       if [[ &quot;$program_name&quot; != *&quot;java&quot;* ]] &amp;&amp; [[ &quot;$program_name&quot; != *&quot;redis&quot;* ]]; then</div><div class="line">#                continue</div><div class="line">#        fi</div><div class="line"></div><div class="line">	program_checker=`is_exist $program_name $&#123;fileter_program_list[@]&#125;`</div><div class="line">	if [ &quot;$&#123;program_checker&#125;&quot; == &quot;false&quot; ]; then</div><div class="line">  continue</div><div class="line">	fi</div><div class="line"></div><div class="line">        echo $process_id &quot; &quot; $program_name &quot; &quot; $local_address &quot; &quot;  &gt;&gt; sorttarget.txt</div><div class="line">done</div><div class="line"></div><div class="line">unset current_process_id</div><div class="line">unset new_porcess_id</div><div class="line">unset new_program_name</div><div class="line">unset address_port</div><div class="line">unset command</div><div class="line"></div><div class="line">cat sorttarget.txt | sort -k 1 -t &quot; &quot; | while read line</div><div class="line">do</div><div class="line">        new_process_id=`echo $line | cut -d &apos; &apos; -f1`</div><div class="line">        if [[ &quot;$new_process_id&quot; != &quot;$current_process_id&quot; ]]; then</div><div class="line">                printf &quot;\n\n&quot;</div><div class="line">  new_program_name=`echo $line | cut -d &apos; &apos; -f2`</div><div class="line">                echo &quot;Pid/PName :&quot;  $new_process_id &quot;/&quot; $new_program_name</div><div class="line">                current_process_id=$new_process_id</div><div class="line">                ps -ef |grep $new_process_id | while read line</div><div class="line">                do</div><div class="line">                        command=`echo $line | cut -d &apos; &apos; -f8`</div><div class="line">                        if [[ &quot;$command&quot; == &quot;grep&quot; ]]; then</div><div class="line">                                continue</div><div class="line">                        fi</div><div class="line">                        echo $line</div><div class="line">                        break</div><div class="line">                done</div><div class="line">        fi</div><div class="line"></div><div class="line">        address_port=`echo $line | cut -d &apos; &apos; -f3`</div><div class="line">        echo &quot;   &quot; $address_port</div><div class="line">done</div><div class="line">rm -f sorttarget.txt</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;특정서버에서 프로세스 별 사용하는 포트를 확인해야 했기에 처음으로 쉘 스크립트를 짜봤다..부끄러운 코드지만 추 후 쉘스크립트를 공부하고 돌아볼 용도로 업로드..&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;
+    
+    </summary>
+    
+      <category term="OS" scheme="http://KKimSangHeon.github.io/categories/OS/"/>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/OS/Linux/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>20200209 벗고개</title>
@@ -775,78 +800,6 @@ public String print(Event object, Locale locale) {
     
     
       <category term="Spring" scheme="http://KKimSangHeon.github.io/tags/Spring/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Thingsboard</title>
-    <link href="http://KKimSangHeon.github.io/2020/01/13/thingsboard/"/>
-    <id>http://KKimSangHeon.github.io/2020/01/13/thingsboard/</id>
-    <published>2020-01-13T11:24:26.000Z</published>
-    <updated>2020-01-13T12:03:45.548Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Thingsboard"><a href="#Thingsboard" class="headerlink" title="Thingsboard"></a>Thingsboard</h3><ul>
-<li>오픈소스 IoT 플랫폼으로서 데이터 수집, 처리, 시각화, 디바이스 관리 기능 등을 제공</li>
-<li>클라우드, on-premise 환경에서 손쉬운 설치를 제공하며 데이터 유실이 없음 (한 노드가 죽었을 때 downtime 없이 대체 가능)</li>
-<li>Multi-tenancy 구조</li>
-<li>Downtime 없는 Scale Out 가능</li>
-<li>SQL / NoSQL / SQL + NoSQL 사용 가능</li>
-</ul>
-<h3 id="가격정책"><a href="#가격정책" class="headerlink" title="가격정책"></a>가격정책</h3><img src="/2020/01/13/thingsboard/1.jpg" alt="가격정책" title="가격정책">
-<p>사용 환경에 따른 다양한 가격정책이 존재. 영구사용의 경우 2999$</p>
-<h3 id="Use-Case"><a href="#Use-Case" class="headerlink" title="Use Case"></a>Use Case</h3><img src="/2020/01/13/thingsboard/2.jpg" alt="Use Case" title="Use Case">
-<h3 id="제공-설치환경"><a href="#제공-설치환경" class="headerlink" title="제공 설치환경"></a>제공 설치환경</h3><img src="/2020/01/13/thingsboard/3.jpg" alt="가격정책" title="가격정책">
-<p>다양한 플랫폼에서 설치를 지원하므로 on premise 혹은 cloud 환경에 손쉽게 설치 가능.</p>
-<h3 id="Multi-tenancy"><a href="#Multi-tenancy" class="headerlink" title="Multi-tenancy"></a>Multi-tenancy</h3><p>ThingsBoard의 유저 구분</p>
-<ul>
-<li>System Administrator</li>
-<li>Tenant Administrator</li>
-<li>Customer</li>
-</ul>
-<h3 id="Asset"><a href="#Asset" class="headerlink" title="Asset"></a>Asset</h3><img src="/2020/01/13/thingsboard/5.jpg" alt="Asset" title="Asset">
-<p>논리적 구성단위인 Asset</p>
-<ul>
-<li>Asset과 Device를 계층 형태(Contain, Manage), 즉 상위/하위 개념으로 구성가능</li>
-<li>Device, Asset에 속성 정보 지정가능</li>
-</ul>
-<p>속성정보 활용예</p>
-<ul>
-<li>Device의 속성정보에 위경도를 지정해 지도상에 표시 가능</li>
-</ul>
-<h3 id="Multi-tenancy-amp-Asset의-활용예"><a href="#Multi-tenancy-amp-Asset의-활용예" class="headerlink" title="Multi-tenancy &amp; Asset의 활용예"></a>Multi-tenancy &amp; Asset의 활용예</h3><img src="/2020/01/13/thingsboard/6.jpg" alt="Multi-tenancy & Asset" title="Multi-tenancy & Asset">
-<h3 id="System-Administrator의-역할"><a href="#System-Administrator의-역할" class="headerlink" title="System Administrator의 역할"></a>System Administrator의 역할</h3><ul>
-<li>IoT 플랫폼을 사용할 Tenant 관리</li>
-<li>위젯관리</li>
-<li>보안설정</li>
-</ul>
-<p>Security Setting 내 항목</p>
-<ul>
-<li>최대 로그인 시도횟수, 계정이 잠기게 될 경우 메일을 수신할 주소 설정</li>
-<li>최소 패스워드 길이 설정</li>
-<li>최소 소문자/대문자/숫자/특수문자 의 수 설정</li>
-<li>패스워드 유지 기간 설정</li>
-</ul>
-<h3 id="Tenant-Administrator의-역할"><a href="#Tenant-Administrator의-역할" class="headerlink" title="Tenant Administrator의 역할"></a>Tenant Administrator의 역할</h3><ul>
-<li>디바이스, 룰, 대시보드, 위젯 등을 관리하며 Customer 가 각종 정보를 확인할 수 있도록 권한을 부여 함.</li>
-</ul>
-<h3 id="기능-정리"><a href="#기능-정리" class="headerlink" title="기능 정리"></a>기능 정리</h3><img src="/2020/01/13/thingsboard/7.jpg" alt="룰관리 기능" title="룰관리 기능">
-<img src="/2020/01/13/thingsboard/8.jpg" alt="디바이스 연동" title="디바이스 연동">
-<img src="/2020/01/13/thingsboard/9.jpg" alt="기타" title="기타">
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Thingsboard&quot;&gt;&lt;a href=&quot;#Thingsboard&quot; class=&quot;headerlink&quot; title=&quot;Thingsboard&quot;&gt;&lt;/a&gt;Thingsboard&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;오픈소스 IoT 플랫폼으로서 데이터 수집, 처리, 
-    
-    </summary>
-    
-      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
-    
-      <category term="오픈소스,기술" scheme="http://KKimSangHeon.github.io/categories/CS/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EA%B8%B0%EC%88%A0/"/>
-    
-    
-      <category term="Streamset" scheme="http://KKimSangHeon.github.io/tags/Streamset/"/>
     
   </entry>
   
