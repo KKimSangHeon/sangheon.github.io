@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2020/01/09/object/</loc>
+        <lastmod>2020-03-25T12:45:12.468Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2018/10/24/interview6/</loc>
         <lastmod>2020-03-04T13:09:53.764Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -49,14 +57,6 @@
     <url>
         <loc>http://KKimSangHeon.github.io/2020/02/20/linux/</loc>
         <lastmod>2020-02-20T11:43:54.300Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/2020/01/09/object/</loc>
-        <lastmod>2020-02-20T11:40:14.685Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
