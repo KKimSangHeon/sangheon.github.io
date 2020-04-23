@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2020-02-20T11:43:54.300Z</updated>
+  <updated>2020-04-23T13:49:26.145Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>20200223 강릉</title>
+    <link href="http://KKimSangHeon.github.io/2020/04/23/photograph1/"/>
+    <id>http://KKimSangHeon.github.io/2020/04/23/photograph1/</id>
+    <published>2020-04-23T13:48:12.000Z</published>
+    <updated>2020-04-23T13:49:26.145Z</updated>
+    
+    <content type="html"><![CDATA[<img src="/2020/04/23/photograph1/IMG_3695.jpg" alt="IMG_3695" title="IMG_3695">
+<img src="/2020/04/23/photograph1/IMG_3696.jpg" alt="IMG_3696" title="IMG_3696">
+<img src="/2020/04/23/photograph1/IMG_3699.jpg" alt="IMG_3699" title="IMG_3699">
+<img src="/2020/04/23/photograph1/IMG_3793.jpg" alt="IMG_3793" title="IMG_3793">
+<img src="/2020/04/23/photograph1/IMG_3815.jpg" alt="IMG_3815" title="IMG_3815">
+<img src="/2020/04/23/photograph1/IMG_3824.jpg" alt="IMG_3824" title="IMG_3824">
+<img src="/2020/04/23/photograph1/IMG_3885.jpg" alt="IMG_3885" title="IMG_3885">
+<img src="/2020/04/23/photograph1/IMG_4002.jpg" alt="IMG_4002" title="IMG_4002">
+<img src="/2020/04/23/photograph1/IMG_4006.jpg" alt="IMG_4006" title="IMG_4006">
+<img src="/2020/04/23/photograph1/IMG_4015.jpg" alt="IMG_4015" title="IMG_4015">
+<img src="/2020/04/23/photograph1/IMG_4068.jpg" alt="IMG_4068" title="IMG_4068">
+<img src="/2020/04/23/photograph1/IMG_4180.jpg" alt="IMG_4180" title="IMG_4180">
+<img src="/2020/04/23/photograph1/IMG_4202.jpg" alt="IMG_4202" title="IMG_4202">
+<img src="/2020/04/23/photograph1/IMG_4375.jpg" alt="IMG_4375" title="IMG_4375">
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;img src=&quot;/2020/04/23/photograph1/IMG_3695.jpg&quot; alt=&quot;IMG_3695&quot; title=&quot;IMG_3695&quot;&gt;
+&lt;img src=&quot;/2020/04/23/photograph1/IMG_3696.jpg&quot; alt=&quot;IMG_36
+    
+    </summary>
+    
+      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
+    
+      <category term="Photograph" scheme="http://KKimSangHeon.github.io/categories/About-Me/Photograph/"/>
+    
+    
+      <category term="Photograph" scheme="http://KKimSangHeon.github.io/tags/Photograph/"/>
+    
+  </entry>
   
   <entry>
     <title>프로세스별 사용하는 포트확인하는 쉘</title>
@@ -760,46 +799,6 @@ public String print(Event object, Locale locale) {
     
     
       <category term="Streamset" scheme="http://KKimSangHeon.github.io/tags/Streamset/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>5.빈의 스코프</title>
-    <link href="http://KKimSangHeon.github.io/2020/01/13/spring/"/>
-    <id>http://KKimSangHeon.github.io/2020/01/13/spring/</id>
-    <published>2020-01-13T12:27:57.000Z</published>
-    <updated>2020-01-13T13:17:57.374Z</updated>
-    
-    <content type="html"><![CDATA[<p>앞에까지는 아무 설정도 하지 않은 싱글톤 스코프의 빈을 사용하였다.<br>(강사님은 싱글톤 스코프 외에는 사용할 일이 거의 없을거라 하심.)</p>
-<h3 id="싱글톤-스코프"><a href="#싱글톤-스코프" class="headerlink" title="싱글톤 스코프"></a>싱글톤 스코프</h3><p><code>싱글톤 스코프</code> : 어플리케이션에 걸쳐 인스턴스가 하나뿐!<br>어플리케이션 콘텍스트를 만들 때 만들어진다. 즉 어플리케이션 구동 시 시간이 길어질 수 있다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">@Component</div><div class="line">public class Proto &#123;</div><div class="line">  @Autowired</div><div class="line">  Single single;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">@Component</div><div class="line">public class Single &#123;</div><div class="line">  @Autowired</div><div class="line">  Proto proto;</div><div class="line"></div><div class="line">  public Proto getProto() &#123;</div><div class="line">    return proto;</div><div class="line">  &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="프로토타입-스코프"><a href="#프로토타입-스코프" class="headerlink" title="프로토타입 스코프"></a>프로토타입 스코프</h3><p><code>프로토타입 스코프</code> : 매번 새로운 인스턴스를 만드는 스코프<br>@Scope(“prototype”) 를 붙여주면 된다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@Component @Scope(&quot;prototype&quot;)</div><div class="line">public class Proto &#123;</div><div class="line">  @Autowired</div><div class="line">  Single single;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>위 처럼 프로토 타입 빈이 싱글톤 빈을 참조하면 문제가 없다<br>(프로토타입의 빈은 매번 새롭겠지만 프로토타입의 빈은 동일 한 것)</p>
-<p>하지만 싱글톤 빈이 프로토 타입 빈을 참조하면??<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">@Component</div><div class="line">public class Single &#123;</div><div class="line"></div><div class="line">  @Autowired</div><div class="line">  private Proto proto;</div><div class="line"></div><div class="line">  public Proto getProto() &#123;</div><div class="line">    return proto;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">....getBean(Single.class).getProto()  </div><div class="line">....getBean(Single.class).getProto()</div><div class="line">....getBean(Single.class).getProto()</div></pre></td></tr></table></figure></p>
-<p>마지막 3줄의 Proto 는 모두 동일<br>의도한 바가 아님!</p>
-<h3 id="해결방법은"><a href="#해결방법은" class="headerlink" title="해결방법은?"></a>해결방법은?</h3><h4 id="해결방법-1-scoped-proxy"><a href="#해결방법-1-scoped-proxy" class="headerlink" title="해결방법 1. scoped-proxy"></a>해결방법 1. scoped-proxy</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@Component @Scope(&quot;prototype&quot;, proxyMode = ScopedProxyMode.TARGET_CLASS)</div><div class="line">public class Proto &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Proto 빈을 클래스기반 프록시로 감싸라<br>프록시로 감싸는 이유 : 다른 빈들이 프로토 빈을 직접 참조하면 안되기 때문에… 직접 쓰면 바궈줄 여지가 없다. cg라이브러리를 활용해 클래스 기반 프록시를 만들어준다.</p>
-<p>Single 내 Proto의 참조변수는 Proto 클래스를 상속한 Proxy가 주입되게 되는것이다.</p>
-<h4 id="해결방법-2-ObjectProvider"><a href="#해결방법-2-ObjectProvider" class="headerlink" title="해결방법 2.ObjectProvider"></a>해결방법 2.ObjectProvider</h4><p>1번이 어렵고 성능에도 영향을 줄것같다면 이 방법을 쓰자.  하지만 ObjectProvider라는 스프링 코드가 들어가기 때문에 조금 그렇다….</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">@Component @Scope(&quot;prototype&quot;)</div><div class="line">public class Proto &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@Component</div><div class="line">public class Single &#123;</div><div class="line"></div><div class="line">  @Autowired</div><div class="line">  private ObjectProvider&lt;Proto&gt; proto;</div><div class="line"></div><div class="line">  public Proto getProto() &#123;</div><div class="line">    return proto.getIfAvailable();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="싱글톤-객체를-사용할-때-주의해야-할-점"><a href="#싱글톤-객체를-사용할-때-주의해야-할-점" class="headerlink" title="싱글톤 객체를 사용할 때 주의해야 할 점"></a>싱글톤 객체를 사용할 때 주의해야 할 점</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">@Component</div><div class="line">public class Single &#123;</div><div class="line"></div><div class="line">  int counter;</div><div class="line"></div><div class="line">  ...</div><div class="line"></div><div class="line">  counter++;  //Thread Safe하지 않다.</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="참고할것"><a href="#참고할것" class="headerlink" title="참고할것"></a>참고할것</h3><p><a href="https://en.wikipedia.org/wiki/Proxy_pattern" target="_blank" rel="external">https://en.wikipedia.org/wiki/Proxy_pattern</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;앞에까지는 아무 설정도 하지 않은 싱글톤 스코프의 빈을 사용하였다.&lt;br&gt;(강사님은 싱글톤 스코프 외에는 사용할 일이 거의 없을거라 하심.)&lt;/p&gt;
-&lt;h3 id=&quot;싱글톤-스코프&quot;&gt;&lt;a href=&quot;#싱글톤-스코프&quot; class=&quot;headerlink&quot;
-    
-    </summary>
-    
-      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
-    
-      <category term="Spring" scheme="http://KKimSangHeon.github.io/categories/Web-App/Spring/"/>
-    
-    
-      <category term="Spring" scheme="http://KKimSangHeon.github.io/tags/Spring/"/>
     
   </entry>
   
