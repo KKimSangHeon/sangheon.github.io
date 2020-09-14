@@ -162,6 +162,151 @@ ga('send', 'pageview');
         <article class="article article-summary">
     <div class="article-summary-inner">
         
+        <a href="/2020/01/28/spring2/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/spring.jpg)" alt="12.데이터바인딩 추상화" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2020/01/28/spring2/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Web-App/">Web/App</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Web-App/Spring/">Spring</a>
+            </div>
+            <div class="date"><time datetime="2020-01-28T13:24:40.000Z" itemprop="datePublished">2020-01-28</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2020/01/28/spring2/">12.데이터바인딩 추상화</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            데이터바인딩 추상화데이터 바인딩 :어떤 프로퍼티의 값을 타겟 객체에 설정하는것.즉 사용자가 입력한 값을 어플리케이션 객체 도메인에 동적으로 입력하는것쉽게말하자면 입력값은 문자열인데 int,long, boolean, Book, Event 등과 같은 이벤트 타입으로변환해서 넣어주는 기능
+고전적인 방식123456789101112public class Event&
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2020/01/28/spring1/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/spring.jpg)" alt="11.Validation 추상화" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2020/01/28/spring1/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Web-App/">Web/App</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Web-App/Spring/">Spring</a>
+            </div>
+            <div class="date"><time datetime="2020-01-28T13:24:34.000Z" itemprop="datePublished">2020-01-28</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2020/01/28/spring1/">11.Validation 추상화</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            Validation 추상화자바 EE 표준스펙중에 하나이다.
+org.springframework.validation.Validator는 어플리케이션에서 사용하는 객체 검증용 인터페이스이다.
+boolean supports(Class clazz): 검증하는것을 지원하는지 판단void validate(Object obj, Errors e): 실제 검증 로직을 이 
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2020/01/20/spring/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/spring.jpg)" alt="10.Resource 추상화" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2020/01/20/spring/">0</span>
+    
+</span>
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Web-App/">Web/App</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Web-App/Spring/">Spring</a>
+            </div>
+            <div class="date"><time datetime="2020-01-20T13:35:31.000Z" itemprop="datePublished">2020-01-20</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2020/01/20/spring/">10.Resource 추상화</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            지금까지 ApplicationContext는 단순한 빈 팩토리가아니라 여러가지 기능을 하는것을 알아봤었다.
+Resource 추상화지금까지는 IoC에 대해 살펴봤다면 지금부터는 추상화에 대해 알아보겠다
+스프링에서는 Reosurce(org.springframework.core.io.Resource)를 추상화 하였다.
+java.net.URL를 Resource라는
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
         <a href="/2020/01/19/photography/" class="thumbnail">
     
     
@@ -200,10 +345,14 @@ ga('send', 'pageview');
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -247,14 +396,10 @@ AppRunner.java12345678910public class AppRunner implements ApplicationRunner&#12
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -297,10 +442,14 @@ MyEvent를 만들고MyEvent.java12345678910111213141516public class MyEvent impl
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -345,14 +494,10 @@ messages.properties1greet
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -395,10 +540,14 @@ EnvironmentApplicationContext는 빈  보관 외 다양한 기능을 갖고있�
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -442,14 +591,10 @@ AZ 하나는 CIDC(클라우드 IDC)로서 하나의 단위이다
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -489,151 +634,6 @@ AZ 하나는 CIDC(클라우드 IDC)로서 하나의 단위이다
             앞에까지는 아무 설정도 하지 않은 싱글톤 스코프의 빈을 사용하였다.(강사님은 싱글톤 스코프 외에는 사용할 일이 거의 없을거라 하심.)
 싱글톤 스코프싱글톤 스코프 : 어플리케이션에 걸쳐 인스턴스가 하나뿐!어플리케이션 콘텍스트를 만들 때 만들어진다. 즉 어플리케이션 구동 시 시간이 길어질 수 있다.
 12345678910111213141516@Componentp
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2020/01/13/thingsboard/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/thingsboard.jpg)" alt="Thingsboard" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2020/01/13/thingsboard/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/CS/">CS</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/CS/오픈소스-기술/">오픈소스,기술</a>
-            </div>
-            <div class="date"><time datetime="2020-01-13T11:24:26.000Z" itemprop="datePublished">2020-01-13</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2020/01/13/thingsboard/">Thingsboard</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Thingsboard
-오픈소스 IoT 플랫폼으로서 데이터 수집, 처리, 시각화, 디바이스 관리 기능 등을 제공
-클라우드, on-premise 환경에서 손쉬운 설치를 제공하며 데이터 유실이 없음 (한 노드가 죽었을 때 downtime 없이 대체 가능)
-Multi-tenancy 구조
-Downtime 없는 Scale Out 가능
-SQL / NoSQL / SQL 
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2020/01/12/photography/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/2020/01/12/photography/IMG_2802.jpg)" alt="20200112 돈의문마을" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2020/01/12/photography/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/About-Me/">About Me</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/About-Me/Photograph/">Photograph</a>
-            </div>
-            <div class="date"><time datetime="2020-01-12T13:51:39.000Z" itemprop="datePublished">2020-01-12</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2020/01/12/photography/">20200112 돈의문마을</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            출사 소모임 두번째 활동
-
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2020/01/10/spring/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/spring.jpg)" alt="4.@Component와 컴포넌트스캔" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://KKimSangHeon.github.io/2020/01/10/spring/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Web-App/">Web/App</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Web-App/Spring/">Spring</a>
-            </div>
-            <div class="date"><time datetime="2020-01-10T10:02:18.000Z" itemprop="datePublished">2020-01-10</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2020/01/10/spring/">4.@Component와 컴포넌트스캔</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            @Component와 컴포넌트스캔@ComponentScanSpringBootApplication이 @ComponentScan을 갖고있는데 @ComponentScan으로 인해 @Service @Repository @Controller @Configuration를 붙이면 빈으로 등록되게 해준것이다.(@Service/ @Repository/ @Controller
         </p>
     </div>
 </article>
@@ -685,7 +685,7 @@ SQL / NoSQL / SQL
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">31</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Photograph/">Photograph</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Travel/">Travel</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/">CS</a><span class="category-list-count">88</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Data-Base/">Data Base</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Design-Pattern/">Design Pattern</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/IOT/">IOT</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/MSA/">MSA</a><span class="category-list-count">34</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Network/">Network</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/OOP/">OOP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Operating-System/">Operating System</a><span class="category-list-count">30</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/오픈소스-기술/">오픈소스,기술</a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/">Etc</a><span class="category-list-count">25</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/HEX-Team/">HEX Team</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/강연/">강연</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/면접/">면접</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/아무거나/">아무거나</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/자격증/">자격증</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">71</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/C/">C++</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Embeded-C/">Embeded C</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Java/">Java</a><span class="category-list-count">40</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Python/">Python</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/SQL-Oracle/">SQL(Oracle)</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">52</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/OS/Linux/">Linux</a><span class="category-list-count">52</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/">Web/App</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Angular2/">Angular2</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Firebase/">Firebase</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Servlet-JSP/">Servlet/JSP</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Spring/">Spring</a><span class="category-list-count">26</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/">About Me</a><span class="category-list-count">31</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Introduction/">Introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/My-Projects/">My Projects</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Photograph/">Photograph</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/About-Me/Travel/">Travel</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Search/">Search</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/">CS</a><span class="category-list-count">90</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Data-Base/">Data Base</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Design-Pattern/">Design Pattern</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/IOT/">IOT</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/MSA/">MSA</a><span class="category-list-count">34</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Network/">Network</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/OOP/">OOP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/Operating-System/">Operating System</a><span class="category-list-count">30</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CS/오픈소스-기술/">오픈소스,기술</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/">Etc</a><span class="category-list-count">25</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/HEX-Team/">HEX Team</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/강연/">강연</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/면접/">면접</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/아무거나/">아무거나</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Etc/자격증/">자격증</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><span class="category-list-count">71</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/C/">C++</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Embeded-C/">Embeded C</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Java/">Java</a><span class="category-list-count">40</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/Python/">Python</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/SQL-Oracle/">SQL(Oracle)</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">53</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/OS/Linux/">Linux</a><span class="category-list-count">53</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/">Web/App</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Angular2/">Angular2</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Firebase/">Firebase</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Servlet-JSP/">Servlet/JSP</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web-App/Spring/">Spring</a><span class="category-list-count">26</span></li></ul></li></ul>
         </div>
     </div>
 
