@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2020-11-24T12:25:59.257Z</updated>
+  <updated>2020-11-24T12:35:15.864Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ubuntu usb설치시 발생하는 오류 해결방법</title>
+    <link href="http://KKimSangHeon.github.io/2020/11/24/linux-1/"/>
+    <id>http://KKimSangHeon.github.io/2020/11/24/linux-1/</id>
+    <published>2020-11-24T12:28:18.000Z</published>
+    <updated>2020-11-24T12:35:15.864Z</updated>
+    
+    <content type="html"><![CDATA[<p>데스크톱에 usb를 활용하여 우분투를 설치하며 꽤 오랜시간 삽질을 했었는데 gpu와 충돌로 인한 문제였다.</p>
+<p>증상은 설치화면으로 들어가지지 않고 어찌어찌 설치를 완료해도 부팅이 안되는 문제…</p>
+<p>해결방법<br><a href="http://ejklike.github.io/2017/03/05/install-ubuntu-16.04-with-nvidia-gpu.html" target="_blank" rel="external">http://ejklike.github.io/2017/03/05/install-ubuntu-16.04-with-nvidia-gpu.html</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;데스크톱에 usb를 활용하여 우분투를 설치하며 꽤 오랜시간 삽질을 했었는데 gpu와 충돌로 인한 문제였다.&lt;/p&gt;
+&lt;p&gt;증상은 설치화면으로 들어가지지 않고 어찌어찌 설치를 완료해도 부팅이 안되는 문제…&lt;/p&gt;
+&lt;p&gt;해결방법&lt;br&gt;&lt;a href=&quot;
+    
+    </summary>
+    
+      <category term="OS" scheme="http://KKimSangHeon.github.io/categories/OS/"/>
+    
+      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/OS/Linux/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>hexo 포스트 생성 및 배포방법</title>
@@ -634,31 +661,6 @@
     
     
       <category term="Spring" scheme="http://KKimSangHeon.github.io/tags/Spring/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>20200201 서울미술관</title>
-    <link href="http://KKimSangHeon.github.io/2020/02/02/photograph/"/>
-    <id>http://KKimSangHeon.github.io/2020/02/02/photograph/</id>
-    <published>2020-02-02T10:51:10.000Z</published>
-    <updated>2020-02-02T10:57:15.198Z</updated>
-    
-    <content type="html"><![CDATA[<p>서울미술관 - 보통의 거짓말<br><img src="/2020/02/02/photograph/IMG_3299_1.jpg" alt="1" title="1"><br><img src="/2020/02/02/photograph/IMG_3262.jpg" alt="1" title="1"><br><img src="/2020/02/02/photograph/IMG_3265.jpg" alt="1" title="1"><br><img src="/2020/02/02/photograph/IMG_3265_1.jpg" alt="1" title="1"><br><img src="/2020/02/02/photograph/IMG_3266.jpg" alt="1" title="1"><br><img src="/2020/02/02/photograph/IMG_3269.jpg" alt="1" title="1"><br><img src="/2020/02/02/photograph/IMG_3274.jpg" alt="1" title="1"><br><img src="/2020/02/02/photograph/IMG_3277.jpg" alt="1" title="1"><br><img src="/2020/02/02/photograph/IMG_3284.jpg" alt="1" title="1"><br><img src="/2020/02/02/photograph/IMG_3285.jpg" alt="1" title="1"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;서울미술관 - 보통의 거짓말&lt;br&gt;&lt;img src=&quot;/2020/02/02/photograph/IMG_3299_1.jpg&quot; alt=&quot;1&quot; title=&quot;1&quot;&gt;&lt;br&gt;&lt;img src=&quot;/2020/02/02/photograph/IMG_3262.jpg&quot; 
-    
-    </summary>
-    
-      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
-    
-      <category term="Photograph" scheme="http://KKimSangHeon.github.io/categories/About-Me/Photograph/"/>
-    
-    
-      <category term="Photograph" scheme="http://KKimSangHeon.github.io/tags/Photograph/"/>
     
   </entry>
   
