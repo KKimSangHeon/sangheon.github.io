@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2020-11-24T12:35:15.864Z</updated>
+  <updated>2021-01-04T01:59:46.443Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue 네아로(네이버아이디)로 로그인 기능 구현</title>
+    <link href="http://KKimSangHeon.github.io/2021/01/04/naveroauth/"/>
+    <id>http://KKimSangHeon.github.io/2021/01/04/naveroauth/</id>
+    <published>2021-01-04T01:42:27.000Z</published>
+    <updated>2021-01-04T01:59:46.443Z</updated>
+    
+    <content type="html"><![CDATA[<p>vue를 활용한 naver 아이디로 로그인 기능 구현</p>
+<h3 id="플로우"><a href="#플로우" class="headerlink" title="플로우"></a>플로우</h3><ol>
+<li>front에서 code를 얻고</li>
+<li>code를 서버로 던지고</li>
+<li>서버에서 code를 활용하여 토큰을 얻고</li>
+<li>얻은 토큰을 통해 사용자 정보를 조회함</li>
+</ol>
+<h3 id="문제사항"><a href="#문제사항" class="headerlink" title="문제사항"></a>문제사항</h3><p>위 1번과정 중 네이버 아이디로 로그인 버튼을 클릭시 axios get함수를 활용하여 코드를 얻으려 하니 CORS 에러가 발생<br><figure class="highlight plain"><figcaption><span>Access to XMLHttpRequest at 'https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=XXXXXXXXXXXX&redirect_uri=http%3A%2F%2F127.0.0.1%3A8080%2FnaverLogin&state=78577e6c-3f10-4146-910c-3fd4e684dfb5' from origin 'http://127.0.0.1:8080' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
+<p>카카오 아이디로 로그인의 경우 해당 에러가 발생하지 않았는데… 네이버 서버에서 헤더에 CORS관련 세팅을 안해줘서 그렇다고 생각한다.</p>
+<h3 id="해결방법"><a href="#해결방법" class="headerlink" title="해결방법"></a>해결방법</h3><p>해당방법이 적합한 방법인지는 확실하지 않으나 여러 사이트들의 네이버아이디로 로그인에 대해 살펴보니 해당방법으로 처리한것을 확인할 수 있었음.</p>
+<h4 id="해결방법상세"><a href="#해결방법상세" class="headerlink" title="해결방법상세"></a>해결방법상세</h4><p>아래의 주소로 직접 접속하면 리다이렉트도 정상적으로 되고, 코드값도 쿼리파람을 통해 확인할 수 있었음<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://nid.naver.com/oauth2.0/authorize?response_type=code&amp;client_id=XXXXXXXXXXXX&amp;redirect_uri=http%3A%2F%2F127.0.0.1%3A8080%2FnaverLogin&amp;state=78577e6c-3f10-4146-910c-3fd4e684dfb5</div></pre></td></tr></table></figure></p>
+<p>그래서 네이버 아이디로 로그인 버튼 클릭시 axios를 활용하지 않고 위 주소로 페이지 이동을 하도록 처리함.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">window.location.href = authUri</div></pre></td></tr></table></figure></p>
+<p>리다이렉트 된 곳에선 쿼리파람을 통해 얻은 code, state를 서버로 보내도록 함<br>이후 서버에선 <code>https://nid.naver.com/oauth2.0/token</code>을 호출하여 토큰을 얻고 <code>https://openapi.naver.com/v1/nid/me</code> 에 접속해서 사용자 데이터를 얻어옴.</p>
+<p>http get 함수로만 구현되어있는게 약간 독특했던 기억..</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;vue를 활용한 naver 아이디로 로그인 기능 구현&lt;/p&gt;
+&lt;h3 id=&quot;플로우&quot;&gt;&lt;a href=&quot;#플로우&quot; class=&quot;headerlink&quot; title=&quot;플로우&quot;&gt;&lt;/a&gt;플로우&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;front에서 code를 얻고&lt;/li&gt;
+&lt;
+    
+    </summary>
+    
+      <category term="CS" scheme="http://KKimSangHeon.github.io/categories/CS/"/>
+    
+      <category term="오픈소스,기술" scheme="http://KKimSangHeon.github.io/categories/CS/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EA%B8%B0%EC%88%A0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>ubuntu usb설치시 발생하는 오류 해결방법</title>
@@ -615,43 +654,6 @@
     <summary type="html">
     
       &lt;h3 id=&quot;스프링-AOP&quot;&gt;&lt;a href=&quot;#스프링-AOP&quot; class=&quot;headerlink&quot; title=&quot;스프링 AOP&quot;&gt;&lt;/a&gt;스프링 AOP&lt;/h3&gt;&lt;p&gt;AOP의 구현체를 제공하며 AspectJ와 연동하여 사용할 수 있으며 스프링 내부적으로 구
-    
-    </summary>
-    
-      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
-    
-      <category term="Spring" scheme="http://KKimSangHeon.github.io/categories/Web-App/Spring/"/>
-    
-    
-      <category term="Spring" scheme="http://KKimSangHeon.github.io/tags/Spring/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>14.SpEL</title>
-    <link href="http://KKimSangHeon.github.io/2020/02/03/spring/"/>
-    <id>http://KKimSangHeon.github.io/2020/02/03/spring/</id>
-    <published>2020-02-03T11:35:26.000Z</published>
-    <updated>2020-02-03T11:35:47.921Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="SpEL"><a href="#SpEL" class="headerlink" title="SpEL"></a>SpEL</h3><p>객체 그래프를 조회하고 조작하는 기능을 말한다.<br>Unified EL과 비슷하지만, 메소드 호출을 지원하며, 문자열 템플릿 기능도 제공한다.<br>스프링 3.0 부터 지원.</p>
-<p>JSP에서 봤던 Unified EL<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;c:if test=&quot;$&#123;sessionScope.cart.numberOfItems &gt; 0&#125;&quot;&gt;</div><div class="line">  ...</div><div class="line">&lt;/c:if&gt;</div></pre></td></tr></table></figure></p>
-<h3 id="어떻게-사용하나"><a href="#어떻게-사용하나" class="headerlink" title="어떻게 사용하나"></a>어떻게 사용하나</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">public class AppRunner implements ApplicationRunner &#123;</div><div class="line"></div><div class="line">	@Value(&quot;#&#123;1+1&#125;&quot;)</div><div class="line">	int value;</div><div class="line"></div><div class="line">	@Value(&quot;#&#123;&apos;hello&apos; +&apos;world&apos;&#125;&quot;)</div><div class="line">	String greeting;</div><div class="line"></div><div class="line">	@Value (&quot;#&#123;1 eq1&#125;&quot;)</div><div class="line">	boolean trueOrFalse;</div><div class="line"></div><div class="line">	@Value(&quot;$&#123;my.value&#125;&quot;)</div><div class="line">	int myValue</div><div class="line"></div><div class="line">	//표현식 안에 프로퍼티를 넣음</div><div class="line">	// 프로퍼티 안에 표현식은 넣을 수 없다.</div><div class="line">	//my.value는 application.properties에 정의되어있다.</div><div class="line">	@Value(&quot;#&#123;$&#123;my.value&#125; eq 100&#125;&quot;)</div><div class="line">	int isMyValue100;</div><div class="line"></div><div class="line"></div><div class="line">	@Override</div><div class="line">	public void run() throws Exception &#123;</div><div class="line">		print(value);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>#은 표현식을 참고하는 방법 $는 프로퍼티를 참고하는 방법.</code></p>
-<p><code>#{“표현식&quot;}</code><br><code>${“프로퍼티&quot;}</code></p>
-<p>아래와 같이 빈도 가능하다!<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">@Component</div><div class="line">public class Sample &#123;</div><div class="line">	private intdata = 200;</div><div class="line"></div><div class="line">	public int getData() &#123;</div><div class="line">		return data;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public void setData(int data) &#123;</div><div class="line">		this.data = data;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">public AppRunner implements ApplicationRunner &#123;</div><div class="line">	@Value(&quot;#&#123;sample.data&#125;&quot;)</div><div class="line">	int sampleData;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#expressions-language-ref" target="_blank" rel="external">https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#expressions-language-ref</a></p>
-<h3 id="실제로-어디서-쓰나"><a href="#실제로-어디서-쓰나" class="headerlink" title="실제로 어디서 쓰나?"></a>실제로 어디서 쓰나?</h3><p>@Value 애노테이션<br>@ConditionalOnExpression 애노테이션 : 선별적으로 빈 등록<br>스프링 시큐리티</p>
-<ul>
-<li>메소드 시큐리티, @PreAuthorize, @PostAuthorize, @PreFilter, @PostFilter<br>@Query</li>
-</ul>
-<p>ExpressionParser으로 직접 활용할 수도 있다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public AppRunner implements ApplicationRunner &#123;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	public void run() throws Exception &#123;</div><div class="line"></div><div class="line">		ExpressionParser parser = new SpelExpressionParser();</div><div class="line">		Expression expression = parser.parseExpression(&quot;2+100&quot;);</div><div class="line">		Integer value = expression.getValue(Integer.class);		</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;SpEL&quot;&gt;&lt;a href=&quot;#SpEL&quot; class=&quot;headerlink&quot; title=&quot;SpEL&quot;&gt;&lt;/a&gt;SpEL&lt;/h3&gt;&lt;p&gt;객체 그래프를 조회하고 조작하는 기능을 말한다.&lt;br&gt;Unified EL과 비슷하지만, 메소드 호출을 지원하며,
     
     </summary>
     

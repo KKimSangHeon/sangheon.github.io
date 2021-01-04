@@ -224,20 +224,6 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/categories/CS/</loc>
-        <lastmod>2020-09-14T00:47:21.978Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://KKimSangHeon.github.io/categories/CS/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EA%B8%B0%EC%88%A0/</loc>
-        <lastmod>2020-09-14T00:47:21.978Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://KKimSangHeon.github.io/categories/OS/</loc>
         <lastmod>2020-11-24T12:35:15.864Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -247,6 +233,20 @@
     <url>
         <loc>http://KKimSangHeon.github.io/categories/OS/Linux/</loc>
         <lastmod>2020-11-24T12:35:15.864Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/CS/</loc>
+        <lastmod>2021-01-04T01:59:46.443Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/categories/CS/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EA%B8%B0%EC%88%A0/</loc>
+        <lastmod>2021-01-04T01:59:46.443Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
