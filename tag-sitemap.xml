@@ -79,14 +79,14 @@
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Beacon/</loc>
+        <loc>http://KKimSangHeon.github.io/tags/Reco-Beacon/</loc>
         <lastmod>2017-10-03T18:02:21.818Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://KKimSangHeon.github.io/tags/Reco-Beacon/</loc>
+        <loc>http://KKimSangHeon.github.io/tags/Beacon/</loc>
         <lastmod>2017-10-03T18:02:21.818Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -704,6 +704,13 @@
     <url>
         <loc>http://KKimSangHeon.github.io/tags/Photograph/</loc>
         <lastmod>2020-04-23T14:18:01.921Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/tags/Django/</loc>
+        <lastmod>2021-02-21T13:14:58.311Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

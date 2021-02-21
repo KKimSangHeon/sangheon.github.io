@@ -7,6 +7,38 @@
     </url>
 
     <url>
+        <loc>http://KKimSangHeon.github.io/2021/02/21/django-model-values/</loc>
+        <lastmod>2021-02-21T13:14:58.311Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2021/02/21/django-model-join/</loc>
+        <lastmod>2021-02-21T13:08:58.611Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2021/02/21/hardReset/</loc>
+        <lastmod>2021-02-21T13:04:42.464Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://KKimSangHeon.github.io/2021/02/21/rsync/</loc>
+        <lastmod>2021-02-21T12:46:22.038Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://KKimSangHeon.github.io/2021/01/04/naveroauth/</loc>
         <lastmod>2021-01-04T01:59:46.443Z</lastmod>
         <changefreq>weekly</changefreq>
