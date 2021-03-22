@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://KKimSangHeon.github.io/"/>
-  <updated>2021-02-21T13:14:58.311Z</updated>
+  <updated>2021-03-22T13:17:06.896Z</updated>
   <id>http://KKimSangHeon.github.io/</id>
   
   <author>
@@ -14,6 +14,63 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>django model사용시 one to many , many to one 활용</title>
+    <link href="http://KKimSangHeon.github.io/2021/03/22/django/"/>
+    <id>http://KKimSangHeon.github.io/2021/03/22/django/</id>
+    <published>2021-03-22T13:14:10.000Z</published>
+    <updated>2021-03-22T13:17:06.896Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="order-detail-order가-있을-때"><a href="#order-detail-order가-있을-때" class="headerlink" title="order / detail order가 있을 때"></a>order / detail order가 있을 때</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">many to one일때</div><div class="line">detail_order = DetailOrder.objects.select_related(&apos;order&apos;).get(id=request.data[&apos;id&apos;])</div><div class="line"></div><div class="line">one  to many일땐</div><div class="line">order = order.objects.filter(id=1).prefetch_related(&quot;detail_order&quot;)</div><div class="line"></div><div class="line">remain_detail_order = DetailOrder.objects.filter(order__id=detail_order.order.id).count()</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;order-detail-order가-있을-때&quot;&gt;&lt;a href=&quot;#order-detail-order가-있을-때&quot; class=&quot;headerlink&quot; title=&quot;order / detail order가 있을 때&quot;&gt;&lt;/a&gt;order / deta
+    
+    </summary>
+    
+      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
+    
+      <category term="Django" scheme="http://KKimSangHeon.github.io/categories/Web-App/Django/"/>
+    
+    
+      <category term="Django" scheme="http://KKimSangHeon.github.io/tags/Django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vuejs EventBus 공통모듈로 사용할 때 모든 페이지가 이벤트를 수신하는 상황</title>
+    <link href="http://KKimSangHeon.github.io/2021/03/22/vue/"/>
+    <id>http://KKimSangHeon.github.io/2021/03/22/vue/</id>
+    <published>2021-03-22T13:04:31.000Z</published>
+    <updated>2021-03-22T13:12:23.373Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="이벤트버스를-공통함수로-빼서-사용할-때의-이슈"><a href="#이벤트버스를-공통함수로-빼서-사용할-때의-이슈" class="headerlink" title="이벤트버스를 공통함수로 빼서 사용할 때의 이슈"></a>이벤트버스를 공통함수로 빼서 사용할 때의 이슈</h3><p>헤더에서 특정값을 변경하면 라우터 뷰에 정의된 페이지도 변경되어야 해서 특정값 변경시 헤더에서 event emit하도록 해놓음…</p>
+<p>이벤트 버스를 공통모듈로 쓰니 해당 이벤트 버스를 쓰는 모든 화면들이 해당 이벤트를 수신하여 난리가남…<br>(SPA라 그런가…. 더 알아볼것.)</p>
+<p>화면이 바뀌면 이벤트를 수신하도록 on 걸어놓은것들은 파괴될줄 알았는데…</p>
+<p>무튼 해결방법은 모든 페이지에 접근할 때마다  created() 내에서 해당 이벤트를 지우고 신규로 등록하도록 하는것.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">created()&#123;</div><div class="line">    EventBus.$off(&apos;change-server&apos;);</div><div class="line">    EventBus.$on(&apos;change-server&apos;, function() &#123;~~~~&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>또는 해당 페이지가 destory 될 때 없애버리기….</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">beforeDestroy()&#123;</div><div class="line">    EventBus.$off(&apos;change-server&apos;);</div><div class="line">&#125;,</div><div class="line"></div><div class="line">created()&#123;</div><div class="line">  EventBus.$on(&apos;change-server&apos;, function() &#123;~~~~&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;이벤트버스를-공통함수로-빼서-사용할-때의-이슈&quot;&gt;&lt;a href=&quot;#이벤트버스를-공통함수로-빼서-사용할-때의-이슈&quot; class=&quot;headerlink&quot; title=&quot;이벤트버스를 공통함수로 빼서 사용할 때의 이슈&quot;&gt;&lt;/a&gt;이벤트버스를 공통함수
+    
+    </summary>
+    
+      <category term="Web/App" scheme="http://KKimSangHeon.github.io/categories/Web-App/"/>
+    
+      <category term="Vuejs" scheme="http://KKimSangHeon.github.io/categories/Web-App/Vuejs/"/>
+    
+    
+      <category term="Web" scheme="http://KKimSangHeon.github.io/tags/Web/"/>
+    
+      <category term="Vuejs" scheme="http://KKimSangHeon.github.io/tags/Vuejs/"/>
+    
+  </entry>
   
   <entry>
     <title>django model사용시 queryset의 values 활용</title>
@@ -578,65 +635,6 @@
     
       &lt;img src=&quot;/2020/04/23/photography2/IMG_3695.jpg&quot; alt=&quot;IMG_3695&quot; title=&quot;IMG_3695&quot;&gt;
 &lt;img src=&quot;/2020/04/23/photography2/IMG_3696.jpg&quot; alt=&quot;IMG_
-    
-    </summary>
-    
-      <category term="About Me" scheme="http://KKimSangHeon.github.io/categories/About-Me/"/>
-    
-      <category term="Photograph" scheme="http://KKimSangHeon.github.io/categories/About-Me/Photograph/"/>
-    
-    
-      <category term="Photograph" scheme="http://KKimSangHeon.github.io/tags/Photograph/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>프로세스별 사용하는 포트확인하는 쉘</title>
-    <link href="http://KKimSangHeon.github.io/2020/02/20/linux/"/>
-    <id>http://KKimSangHeon.github.io/2020/02/20/linux/</id>
-    <published>2020-02-20T11:40:41.000Z</published>
-    <updated>2020-02-20T11:43:54.300Z</updated>
-    
-    <content type="html"><![CDATA[<p>특정서버에서 프로세스 별 사용하는 포트를 확인해야 했기에 처음으로 쉘 스크립트를 짜봤다..부끄러운 코드지만 추 후 쉘스크립트를 공부하고 돌아볼 용도로 업로드..</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line">unset process_info</div><div class="line">unset process_id</div><div class="line">unset program_name</div><div class="line">unset local_address</div><div class="line"></div><div class="line">rm -f sorttarget.txt</div><div class="line"></div><div class="line">fileter_program_list=(&quot;java&quot; &quot;redis&quot;)</div><div class="line"></div><div class="line">is_exist() &#123;</div><div class="line">	local needle array value</div><div class="line">	needle=&quot;$&#123;1&#125;&quot;; shift; array=(&quot;$&#123;@&#125;&quot;)</div><div class="line">	#for value in $&#123;array[@]&#125;; do [ $&#123;value&#125; == $&#123;needle&#125; ] &amp;&amp; echo &quot;true&quot; &amp;&amp; return; done</div><div class="line">	for value in $&#123;array[@]&#125;;</div><div class="line">  do [[ &quot;$&#123;needle&#125;&quot; == *&quot;$&#123;value&#125;&quot;* ]] &amp;&amp; echo &quot;true&quot; &amp;&amp; return; done</div><div class="line">	echo &quot;false&quot;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">netstat -nltp | while read line</div><div class="line">do</div><div class="line">        process_info=`echo $line | cut -d &apos; &apos; -f7`              # get PID/Program name</div><div class="line"></div><div class="line">        process_id=`echo $process_info | cut -d &apos;/&apos; -f1`        # seprated by &apos;/&apos;</div><div class="line">        program_name=`echo $process_info | cut -d &apos;/&apos; -f2`</div><div class="line">        local_address=`echo $line | cut -d &apos; &apos; -f4`</div><div class="line"></div><div class="line">#       if [[ &quot;$program_name&quot; != *&quot;java&quot;* ]] &amp;&amp; [[ &quot;$program_name&quot; != *&quot;redis&quot;* ]]; then</div><div class="line">#                continue</div><div class="line">#        fi</div><div class="line"></div><div class="line">	program_checker=`is_exist $program_name $&#123;fileter_program_list[@]&#125;`</div><div class="line">	if [ &quot;$&#123;program_checker&#125;&quot; == &quot;false&quot; ]; then</div><div class="line">  continue</div><div class="line">	fi</div><div class="line"></div><div class="line">        echo $process_id &quot; &quot; $program_name &quot; &quot; $local_address &quot; &quot;  &gt;&gt; sorttarget.txt</div><div class="line">done</div><div class="line"></div><div class="line">unset current_process_id</div><div class="line">unset new_porcess_id</div><div class="line">unset new_program_name</div><div class="line">unset address_port</div><div class="line">unset command</div><div class="line"></div><div class="line">cat sorttarget.txt | sort -k 1 -t &quot; &quot; | while read line</div><div class="line">do</div><div class="line">        new_process_id=`echo $line | cut -d &apos; &apos; -f1`</div><div class="line">        if [[ &quot;$new_process_id&quot; != &quot;$current_process_id&quot; ]]; then</div><div class="line">                printf &quot;\n\n&quot;</div><div class="line">  new_program_name=`echo $line | cut -d &apos; &apos; -f2`</div><div class="line">                echo &quot;Pid/PName :&quot;  $new_process_id &quot;/&quot; $new_program_name</div><div class="line">                current_process_id=$new_process_id</div><div class="line">                ps -ef |grep $new_process_id | while read line</div><div class="line">                do</div><div class="line">                        command=`echo $line | cut -d &apos; &apos; -f8`</div><div class="line">                        if [[ &quot;$command&quot; == &quot;grep&quot; ]]; then</div><div class="line">                                continue</div><div class="line">                        fi</div><div class="line">                        echo $line</div><div class="line">                        break</div><div class="line">                done</div><div class="line">        fi</div><div class="line"></div><div class="line">        address_port=`echo $line | cut -d &apos; &apos; -f3`</div><div class="line">        echo &quot;   &quot; $address_port</div><div class="line">done</div><div class="line">rm -f sorttarget.txt</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;특정서버에서 프로세스 별 사용하는 포트를 확인해야 했기에 처음으로 쉘 스크립트를 짜봤다..부끄러운 코드지만 추 후 쉘스크립트를 공부하고 돌아볼 용도로 업로드..&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;
-    
-    </summary>
-    
-      <category term="OS" scheme="http://KKimSangHeon.github.io/categories/OS/"/>
-    
-      <category term="Linux" scheme="http://KKimSangHeon.github.io/categories/OS/Linux/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>20200209 벗고개</title>
-    <link href="http://KKimSangHeon.github.io/2020/02/09/photograph/"/>
-    <id>http://KKimSangHeon.github.io/2020/02/09/photograph/</id>
-    <published>2020-02-09T04:26:01.000Z</published>
-    <updated>2020-02-09T04:29:48.265Z</updated>
-    
-    <content type="html"><![CDATA[<img src="/2020/02/09/photograph/IMG_3353.jpg" alt="1" title="1">
-<img src="/2020/02/09/photograph/IMG_3346.jpg" alt="1" title="1">
-<img src="/2020/02/09/photograph/IMG_3341.jpg" alt="1" title="1">
-<img src="/2020/02/09/photograph/IMG_3339.jpg" alt="1" title="1">
-<img src="/2020/02/09/photograph/IMG_3328.jpg" alt="1" title="1">
-<img src="/2020/02/09/photograph/IMG_3326.jpg" alt="1" title="1">
-<img src="/2020/02/09/photograph/IMG_3320.jpg" alt="1" title="1">
-<img src="/2020/02/09/photograph/IMG_3312.jpg" alt="1" title="1">
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;img src=&quot;/2020/02/09/photograph/IMG_3353.jpg&quot; alt=&quot;1&quot; title=&quot;1&quot;&gt;
-&lt;img src=&quot;/2020/02/09/photograph/IMG_3346.jpg&quot; alt=&quot;1&quot; title=&quot;1&quot;&gt;
-&lt;img src
     
     </summary>
     
